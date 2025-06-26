@@ -21,7 +21,7 @@
             <h3 class="text-sm font-semibold text-gray-900 mb-4">On this page</h3>
             <nav class="space-y-1" id="toc-nav">
                 <template x-for="item in tocItems" :key="item.anchor">
-                    <a :href="'#' + item.anchor" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">
+                    <a :href="'#' + item.anchor" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative hover:text-brand-blue">
                         <span x-text="item.title"></span>
                         <span class="toc-arrow">↓</span>
                     </a>

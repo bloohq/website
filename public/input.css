@@ -25,15 +25,6 @@ body {
     background-color: var(--gray-hover);
 }
 
-.nav-item {
-    position: relative;
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.nav-item:hover {
-    background-color: var(--gray-hover);
-    color: #00a0d2;
-}
 
 .nav-arrow {
     position: absolute;
@@ -46,7 +37,7 @@ body {
     font-size: 12px;
 }
 
-.nav-item:hover .nav-arrow {
+.nav-link:hover .nav-arrow {
     opacity: 1;
 }
 
