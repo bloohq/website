@@ -69,7 +69,10 @@ type Router struct {
 func NewRouter(pagesDir string) *Router {
 	// Configure Goldmark with extensions
 	md := goldmark.New(
-		goldmark.WithExtensions(extension.GFM),
+		goldmark.WithExtensions(
+			extension.GFM,
+			NewYouTubeExtension(),
+		),
 		goldmark.WithParserOptions(
 			parser.WithAutoHeadingID(),
 		),
