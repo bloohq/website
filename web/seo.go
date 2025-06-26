@@ -2,7 +2,6 @@ package web
 
 import (
 	"encoding/json"
-	"html/template"
 	"log"
 	"os"
 	"strings"
@@ -58,18 +57,6 @@ type Redirects struct {
 	Rules     RedirectRules     `json:"rules"`
 }
 
-// PageData holds data for template rendering
-type PageData struct {
-	Title       string
-	Content     template.HTML
-	Navigation  *Navigation
-	PageMeta    *PageMetadata
-	SiteMeta    *SiteMetadata
-	Description string
-	Keywords    []string
-	IsMarkdown  bool
-	Frontmatter *Frontmatter
-}
 
 // SEOService handles all SEO-related functionality
 type SEOService struct {
@@ -177,8 +164,8 @@ func (s *SEOService) ParseFrontmatter(content []byte) (*Frontmatter, []byte, err
 	return &frontmatter, markdownContent, nil
 }
 
-// PreparePageData creates PageData with metadata for the given path
-func (s *SEOService) PreparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter, navigation *Navigation) PageData {
+// PreparePageMetadata creates page metadata for the given path
+func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatter *Frontmatter) (string, string, []string, *PageMetadata, *SiteMetadata) {
 	// Get page key for metadata lookup
 	pageKey := s.getPageKey(path)
 	
@@ -237,17 +224,7 @@ func (s *SEOService) PreparePageData(path string, content template.HTML, isMarkd
 		siteMeta = &s.metadata.Site
 	}
 	
-	return PageData{
-		Title:       title,
-		Content:     content,
-		Navigation:  navigation,
-		PageMeta:    pageMeta,
-		SiteMeta:    siteMeta,
-		Description: description,
-		Keywords:    keywords,
-		IsMarkdown:  isMarkdown,
-		Frontmatter: frontmatter,
-	}
+	return title, description, keywords, pageMeta, siteMeta
 }
 
 // getPageKey converts URL path to metadata key

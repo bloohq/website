@@ -37,6 +37,20 @@ type DirMetadata struct {
 	Title string `yaml:"title"`
 }
 
+// PageData holds data for template rendering
+type PageData struct {
+	Title       string
+	Content     template.HTML
+	Navigation  *Navigation
+	PageMeta    *PageMetadata
+	SiteMeta    *SiteMetadata
+	Description string
+	Keywords    []string
+	IsMarkdown  bool
+	Frontmatter *Frontmatter
+	Changelog   []ChangelogMonth
+}
+
 // Router handles file-based routing for HTML pages
 type Router struct {
 	pagesDir        string
@@ -47,6 +61,7 @@ type Router struct {
 	docsNavigation  *Navigation
 	apiNavigation   *Navigation
 	seoService      *SEOService
+	changelogService *ChangelogService
 	markdown        goldmark.Markdown
 }
 
@@ -70,13 +85,20 @@ func NewRouter(pagesDir string) *Router {
 		log.Printf("Error loading SEO data: %v", err)
 	}
 	
+	// Initialize changelog service
+	changelogService := NewChangelogService()
+	if err := changelogService.LoadChangelog(); err != nil {
+		log.Printf("Error loading changelog data: %v", err)
+	}
+	
 	router := &Router{
-		pagesDir:      pagesDir,
-		layoutsDir:    "layouts",
-		componentsDir: "components",
-		contentDir:    "content",
-		markdown:      md,
-		seoService:    seoService,
+		pagesDir:         pagesDir,
+		layoutsDir:       "layouts",
+		componentsDir:    "components",
+		contentDir:       "content",
+		markdown:         md,
+		seoService:       seoService,
+		changelogService: changelogService,
 	}
 	
 	// Load navigation data
@@ -217,6 +239,37 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 		isMarkdown = false
+		
+		// Special handling for pages that need template processing
+		if path == "/changelog" {
+			// Process the changelog.html as a template with page data
+			pageData := r.preparePageData(path, "", isMarkdown, frontmatter, r.getNavigationForPath(path))
+			
+			// Create a template for the changelog content
+			contentTmpl := template.New("changelog").Funcs(template.FuncMap{
+				"toJSON": func(v any) template.JS {
+					data, _ := json.Marshal(v)
+					return template.JS(data)
+				},
+			})
+			
+			contentTmpl, err = contentTmpl.Parse(string(contentBytes))
+			if err != nil {
+				http.Error(w, "Error parsing changelog template", http.StatusInternalServerError)
+				log.Printf("Changelog template parsing error: %v", err)
+				return
+			}
+			
+			// Execute the changelog template with the page data
+			var renderedContent strings.Builder
+			if err = contentTmpl.Execute(&renderedContent, pageData); err != nil {
+				http.Error(w, "Error rendering changelog template", http.StatusInternalServerError)
+				log.Printf("Changelog template execution error: %v", err)
+				return
+			}
+			
+			contentBytes = []byte(renderedContent.String())
+		}
 	}
 
 	// Prepare template files - start with layout
@@ -252,7 +305,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// Prepare page data
-	pageData := r.seoService.PreparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.getNavigationForPath(path))
+	pageData := r.preparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.getNavigationForPath(path))
 
 	// Set content type and execute main layout
 	w.Header().Set("Content-Type", "text/html")
@@ -529,7 +582,7 @@ func (r *Router) processDirectory(dirPath, dirName, baseURL string) (*NavItem, e
 			// Try to get title from frontmatter
 			if filePath := filepath.Join(dirPath, entry.Name()); filePath != "" {
 				if data, err := os.ReadFile(filePath); err == nil {
-					if frontmatter, _, err := r.parseFrontmatter(data); err == nil && frontmatter != nil && frontmatter.Title != "" {
+					if frontmatter, _, err := r.seoService.ParseFrontmatter(data); err == nil && frontmatter != nil && frontmatter.Title != "" {
 						fileTitle = frontmatter.Title
 					}
 				}
@@ -656,4 +709,33 @@ func (r *Router) extractNumericPrefix(name string) int {
 	
 	// Fallback: assign high number for non-numbered items
 	return 9999
+}
+
+// preparePageData creates PageData with metadata for the given path
+func (r *Router) preparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter, navigation *Navigation) PageData {
+	// Get metadata from SEO service
+	title, description, keywords, pageMeta, siteMeta := r.seoService.PreparePageMetadata(path, isMarkdown, frontmatter)
+	
+	// Prepare changelog data - only include if on changelog page
+	var changelog []ChangelogMonth
+	if path == "/changelog" && r.changelogService != nil {
+		changelog = r.changelogService.GetChangelog()
+		log.Printf("Loading changelog for path=%s, found %d entries", path, len(changelog))
+	} else {
+		log.Printf("Not loading changelog: path=%s, service=%v", path, r.changelogService != nil)
+	}
+	
+	// Return PageData with all components
+	return PageData{
+		Title:       title,
+		Content:     content,
+		Navigation:  navigation,
+		PageMeta:    pageMeta,
+		SiteMeta:    siteMeta,
+		Description: description,
+		Keywords:    keywords,
+		IsMarkdown:  isMarkdown,
+		Frontmatter: frontmatter,
+		Changelog:   changelog,
+	}
 }
