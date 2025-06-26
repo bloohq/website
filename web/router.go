@@ -67,15 +67,35 @@ type Frontmatter struct {
 	Description string `yaml:"description"`
 }
 
+// DirMetadata represents _dir.yml file content
+type DirMetadata struct {
+	Title string `yaml:"title"`
+}
+
+// RedirectRules represents redirect configuration rules
+type RedirectRules struct {
+	StatusCode    int    `json:"status_code"`
+	TrailingSlash string `json:"trailing_slash"`
+}
+
+// Redirects holds the complete redirect configuration
+type Redirects struct {
+	Redirects map[string]string `json:"redirects"`
+	Rules     RedirectRules     `json:"rules"`
+}
+
 // Router handles file-based routing for HTML pages
 type Router struct {
-	pagesDir      string
-	layoutsDir    string
-	componentsDir string
-	contentDir    string
-	navigation    *Navigation
-	metadata      *Metadata
-	markdown      goldmark.Markdown
+	pagesDir        string
+	layoutsDir      string
+	componentsDir   string
+	contentDir      string
+	navigation      *Navigation
+	docsNavigation  *Navigation
+	apiNavigation   *Navigation
+	metadata        *Metadata
+	redirects       *Redirects
+	markdown        goldmark.Markdown
 }
 
 // NewRouter creates a new router instance
@@ -110,6 +130,25 @@ func NewRouter(pagesDir string) *Router {
 		log.Printf("Error loading metadata: %v", err)
 	}
 	
+	// Load redirects
+	if err := router.loadRedirects(); err != nil {
+		log.Printf("Error loading redirects: %v", err)
+	}
+	
+	// Generate dynamic navigation for docs
+	if docsNav, err := router.generateContentNavigation("content/docs", "/docs"); err != nil {
+		log.Printf("Error generating docs navigation: %v", err)
+	} else {
+		router.docsNavigation = docsNav
+	}
+	
+	// Generate dynamic navigation for API
+	if apiNav, err := router.generateContentNavigation("content/api-docs", "/api"); err != nil {
+		log.Printf("Error generating API navigation: %v", err)
+	} else {
+		router.apiNavigation = apiNav
+	}
+	
 	return router
 }
 
@@ -135,6 +174,17 @@ func (r *Router) loadMetadata() error {
 	return json.Unmarshal(data, r.metadata)
 }
 
+// loadRedirects loads redirect configuration from JSON file
+func (r *Router) loadRedirects() error {
+	data, err := os.ReadFile("data/redirects.json")
+	if err != nil {
+		return err
+	}
+	
+	r.redirects = &Redirects{}
+	return json.Unmarshal(data, r.redirects)
+}
+
 // PageData holds data for template rendering
 type PageData struct {
 	Title       string
@@ -157,6 +207,18 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	// Get the requested path
 	path := req.URL.Path
+	
+	// Check for redirects first
+	if r.redirects != nil {
+		if redirectTo, exists := r.redirects.Redirects[path]; exists {
+			statusCode := r.redirects.Rules.StatusCode
+			if statusCode == 0 {
+				statusCode = 301 // Default to permanent redirect
+			}
+			http.Redirect(w, req, redirectTo, statusCode)
+			return
+		}
+	}
 	
 	// Redirect .html URLs to clean URLs
 	if strings.HasSuffix(path, ".html") && path != "/" {
@@ -352,7 +414,7 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 	return PageData{
 		Title:       title,
 		Content:     content,
-		Navigation:  r.navigation,
+		Navigation:  r.getNavigationForPath(path),
 		PageMeta:    pageMeta,
 		SiteMeta:    siteMeta,
 		Description: description,
@@ -397,6 +459,17 @@ func (r *Router) getFallbackTitle(path string) string {
 	}
 	
 	return strings.Join(parts, " - ")
+}
+
+// getNavigationForPath returns the appropriate navigation based on the URL path
+func (r *Router) getNavigationForPath(path string) *Navigation {
+	if strings.HasPrefix(path, "/docs") && r.docsNavigation != nil {
+		return r.docsNavigation
+	}
+	if (strings.HasPrefix(path, "/api") || strings.HasPrefix(path, "/api-docs")) && r.apiNavigation != nil {
+		return r.apiNavigation
+	}
+	return r.navigation
 }
 
 // findMarkdownFile searches for a markdown file matching the given path
@@ -458,4 +531,164 @@ func (r *Router) parseFrontmatter(content []byte) (*Frontmatter, []byte, error) 
 	// Return frontmatter and content without frontmatter
 	markdownContent := []byte(parts[1])
 	return &frontmatter, markdownContent, nil
+}
+
+// generateContentNavigation creates navigation tree from content directory
+func (r *Router) generateContentNavigation(contentDir, baseURL string) (*Navigation, error) {
+	var sections []NavItem
+	
+	// Read the content directory
+	entries, err := os.ReadDir(contentDir)
+	if err != nil {
+		return nil, err
+	}
+	
+	// Process each directory/file
+	for _, entry := range entries {
+		if entry.IsDir() {
+			navItem, err := r.processDirectory(filepath.Join(contentDir, entry.Name()), entry.Name(), baseURL)
+			if err != nil {
+				log.Printf("Error processing directory %s: %v", entry.Name(), err)
+				continue
+			}
+			if navItem != nil {
+				sections = append(sections, *navItem)
+			}
+		}
+	}
+	
+	// Sort sections by numeric prefix
+	r.sortNavItems(sections)
+	
+	return &Navigation{Sections: sections}, nil
+}
+
+// processDirectory processes a content directory and creates NavItem
+func (r *Router) processDirectory(dirPath, dirName, baseURL string) (*NavItem, error) {
+	// Read directory metadata
+	title := r.cleanTitle(dirName)
+	dirMetaPath := filepath.Join(dirPath, "_dir.yml")
+	if data, err := os.ReadFile(dirMetaPath); err == nil {
+		var dirMeta DirMetadata
+		if err := yaml.Unmarshal(data, &dirMeta); err == nil && dirMeta.Title != "" {
+			title = dirMeta.Title
+		}
+	}
+	
+	// Create nav item
+	navItem := &NavItem{
+		ID:       r.cleanID(dirName),
+		Name:     title,
+		Expanded: false,
+	}
+	
+	// Read directory contents
+	entries, err := os.ReadDir(dirPath)
+	if err != nil {
+		return navItem, nil
+	}
+	
+	var children []NavItem
+	
+	// Process subdirectories and files
+	for _, entry := range entries {
+		if entry.Name() == "_dir.yml" {
+			continue
+		}
+		
+		if entry.IsDir() {
+			// Recursive subdirectory
+			childNav, err := r.processDirectory(filepath.Join(dirPath, entry.Name()), entry.Name(), baseURL)
+			if err != nil {
+				log.Printf("Error processing subdirectory %s: %v", entry.Name(), err)
+				continue
+			}
+			if childNav != nil {
+				children = append(children, *childNav)
+			}
+		} else if strings.HasSuffix(entry.Name(), ".md") {
+			// Markdown file
+			fileName := strings.TrimSuffix(entry.Name(), ".md")
+			fileTitle := r.cleanTitle(fileName)
+			
+			// Try to get title from frontmatter
+			if filePath := filepath.Join(dirPath, entry.Name()); filePath != "" {
+				if data, err := os.ReadFile(filePath); err == nil {
+					if frontmatter, _, err := r.parseFrontmatter(data); err == nil && frontmatter != nil && frontmatter.Title != "" {
+						fileTitle = frontmatter.Title
+					}
+				}
+			}
+			
+			// Create relative path for href
+			relDir := strings.TrimPrefix(dirPath, r.contentDir+"/")
+			href := baseURL + "/" + relDir + "/" + r.cleanID(fileName)
+			
+			children = append(children, NavItem{
+				ID:   r.cleanID(fileName),
+				Name: fileTitle,
+				Href: href,
+			})
+		}
+	}
+	
+	// Sort children by numeric prefix
+	r.sortNavItems(children)
+	
+	if len(children) > 0 {
+		navItem.Children = children
+	}
+	
+	return navItem, nil
+}
+
+// cleanTitle removes numeric prefixes and cleans up titles
+func (r *Router) cleanTitle(name string) string {
+	// Remove numeric prefix (e.g., "1.start-guide" -> "start-guide")
+	parts := strings.SplitN(name, ".", 2)
+	if len(parts) == 2 {
+		name = parts[1]
+	}
+	
+	// Replace hyphens/underscores with spaces and title case
+	name = strings.ReplaceAll(name, "-", " ")
+	name = strings.ReplaceAll(name, "_", " ")
+	
+	// Simple title case
+	words := strings.Fields(name)
+	for i, word := range words {
+		if len(word) > 0 {
+			words[i] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+		}
+	}
+	
+	return strings.Join(words, " ")
+}
+
+// cleanID creates clean IDs for navigation
+func (r *Router) cleanID(name string) string {
+	// Remove numeric prefix
+	parts := strings.SplitN(name, ".", 2)
+	if len(parts) == 2 {
+		name = parts[1]
+	}
+	
+	// Convert to lowercase and replace spaces/special chars with hyphens
+	name = strings.ToLower(name)
+	name = strings.ReplaceAll(name, " ", "-")
+	name = strings.ReplaceAll(name, "_", "-")
+	
+	return name
+}
+
+// sortNavItems sorts navigation items by numeric prefix
+func (r *Router) sortNavItems(items []NavItem) {
+	// Simple sort by ID (which should preserve numeric order after cleaning)
+	for i := 0; i < len(items)-1; i++ {
+		for j := i + 1; j < len(items); j++ {
+			if items[i].ID > items[j].ID {
+				items[i], items[j] = items[j], items[i]
+			}
+		}
+	}
 }

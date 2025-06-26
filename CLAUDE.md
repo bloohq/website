@@ -21,6 +21,9 @@
 10. Setup TailwindCSS Properly with CLI and Watcher ✅
 11. Dynamic left sidebar ✅
 12. Metadata.json for dynmaic titles and so on ✅
+13. Markdown generation ✅
+14. Dynamic sidebar for docs and api docs ✅
+15. Centralized redirets in redirects.json
 
 
 

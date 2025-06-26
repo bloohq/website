@@ -1,0 +1,11 @@
+{
+  "redirects": {
+    "/docs": "/docs/welcome",
+    "/api": "/api-docs/introduction",
+    "/api-docs": "/api-docs/introduction"
+  },
+  "rules": {
+    "status_code": 301,
+    "trailing_slash": "ignore"
+  }
+}
