@@ -122,9 +122,25 @@ func indexMarkdownContent(items *[]SearchItem) error {
 			yaml.Unmarshal([]byte(frontmatter), &fm)
 		}
 
-		// Convert file path to URL
+		// Convert file path to URL with cleaning
 		url := "/" + strings.TrimSuffix(path, ".md")
 		url = strings.ReplaceAll(url, "content/", "")
+		
+		// Clean URL parts: remove number prefixes and normalize
+		urlParts := strings.Split(url, "/")
+		for i, part := range urlParts {
+			if part != "" {
+				// Remove number prefixes like "1.", "4.", "11."
+				re := regexp.MustCompile(`^\d+\.?\s*`)
+				part = re.ReplaceAllString(part, "")
+				// Replace spaces with hyphens for clean URLs
+				part = strings.ReplaceAll(part, " ", "-")
+				// Convert to lowercase
+				part = strings.ToLower(part)
+				urlParts[i] = part
+			}
+		}
+		url = strings.Join(urlParts, "/")
 
 		// Determine section from path
 		section := strings.Split(strings.TrimPrefix(path, "content/"), "/")[0]
