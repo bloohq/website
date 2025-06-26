@@ -48,6 +48,7 @@ type PageData struct {
 	IsMarkdown  bool
 	Frontmatter *Frontmatter
 	Changelog   []ChangelogMonth
+	TOC         []TOCEntry
 }
 
 // Router handles file-based routing for HTML pages
@@ -771,6 +772,26 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		log.Printf("Not loading changelog: path=%s, service=%v", path, r.changelogService != nil)
 	}
 	
+	// Extract table of contents
+	var toc []TOCEntry
+	if string(content) != "" {
+		var err error
+		if isMarkdown {
+			// For markdown content, we need the original markdown source
+			// Since we already converted to HTML, we'll parse the HTML
+			toc, err = ExtractHTMLTOC(string(content))
+		} else {
+			// For HTML pages, extract from HTML content
+			toc, err = ExtractHTMLTOC(string(content))
+		}
+		
+		if err != nil {
+			log.Printf("Error extracting TOC for path=%s: %v", path, err)
+		} else {
+			log.Printf("Extracted %d TOC entries for path=%s", len(toc), path)
+		}
+	}
+	
 	// Return PageData with all components
 	return PageData{
 		Title:       title,
@@ -783,5 +804,6 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		IsMarkdown:  isMarkdown,
 		Frontmatter: frontmatter,
 		Changelog:   changelog,
+		TOC:         toc,
 	}
 }

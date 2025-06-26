@@ -3,30 +3,78 @@
 <aside :class="sidebarsOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"
        class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden transition-all duration-300 w-64 transform"
        x-data="{ 
-           tocItems: [
-               { anchor: 'overview', title: 'Overview' },
-               { anchor: 'key-features', title: 'Key Features' },
-               { anchor: 'getting-started', title: 'Getting Started' },
-               { anchor: 'examples', title: 'Examples' },
-               { anchor: 'next-steps', title: 'Next Steps' },
-               { anchor: 'why-teams-choose-blue', title: 'Why Teams Choose Blue' },
-               { anchor: 'security-privacy', title: 'Security & Privacy' },
-               { anchor: 'integrations', title: 'Integrations' },
-               { anchor: 'pricing', title: 'Pricing' },
-               { anchor: 'faq', title: 'FAQ' }
-           ]
+           tocItems: {{toJSON .TOC}},
+           activeSection: '',
+           currentScrollY: 0,
+           init() {
+               // Initialize scroll position
+               this.currentScrollY = window.scrollY;
+               // Set up intersection observer for active section tracking
+               this.setupScrollTracking();
+               // Set up scroll tracking for arrow directions
+               this.setupScrollListener();
+           },
+           setupScrollTracking() {
+               if (this.tocItems.length === 0) return;
+               
+               const observer = new IntersectionObserver((entries) => {
+                   entries.forEach(entry => {
+                       if (entry.isIntersecting) {
+                           this.activeSection = entry.target.id;
+                       }
+                   });
+               }, {
+                   rootMargin: '-20% 0% -35% 0%'
+               });
+
+               // Observe all heading elements
+               this.tocItems.forEach(item => {
+                   const element = document.getElementById(item.id);
+                   if (element) {
+                       observer.observe(element);
+                   }
+               });
+           },
+           setupScrollListener() {
+               window.addEventListener('scroll', () => {
+                   this.currentScrollY = window.scrollY;
+               });
+           },
+           scrollToSection(anchor) {
+               const element = document.getElementById(anchor);
+               if (element) {
+                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+               }
+           },
+           getArrowDirection(itemId) {
+               const element = document.getElementById(itemId);
+               if (!element) return '→';
+               
+               const elementTop = element.offsetTop;
+               const viewportCenter = this.currentScrollY + (window.innerHeight / 2);
+               
+               return elementTop > viewportCenter ? '↓' : '↑';
+           }
        }">
     <div class="pt-32 p-6 overflow-y-auto flex flex-col h-full">
         <div class="flex-1">
             <h3 class="text-sm font-semibold text-gray-900 mb-4">On this page</h3>
-            <nav class="space-y-1" id="toc-nav">
-                <template x-for="item in tocItems" :key="item.anchor">
-                    <a :href="'#' + item.anchor" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative hover:text-brand-blue">
+            <nav class="space-y-1" id="toc-nav" x-show="tocItems.length > 0">
+                <template x-for="item in tocItems" :key="item.id">
+                    <a :href="'#' + item.id" 
+                       @click.prevent="scrollToSection(item.id)"
+                       :class="activeSection === item.id ? 'text-brand-blue bg-blue-50 font-medium' : 'text-gray-600 hover:text-brand-blue'"
+                       class="toc-link block text-sm px-2 py-1.5 rounded-md relative transition-colors duration-200">
                         <span x-text="item.title"></span>
-                        <span class="toc-arrow">↓</span>
+                        <span class="toc-arrow transition-transform duration-200" x-text="getArrowDirection(item.id)"></span>
                     </a>
                 </template>
             </nav>
+            
+            <!-- Show message when no TOC available -->
+            <div x-show="tocItems.length === 0" class="text-sm text-gray-500 italic">
+                No headings found on this page.
+            </div>
         </div>
         
         <!-- System Status -->
