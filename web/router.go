@@ -284,6 +284,10 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			log.Printf("Frontmatter parsing error: %v", err)
 			// Continue without frontmatter
 			markdownContent = mdBytes
+		} else if frontmatter != nil {
+			log.Printf("Successfully parsed frontmatter: title=%s, desc=%s", frontmatter.Title, frontmatter.Description)
+		} else {
+			log.Printf("No frontmatter found in file")
 		}
 		
 		// Convert markdown to HTML
@@ -646,26 +650,47 @@ func (r *Router) findFileIgnoreCase(dir, pattern string, matches *[]string) erro
 
 // parseFrontmatter extracts frontmatter from markdown content
 func (r *Router) parseFrontmatter(content []byte) (*Frontmatter, []byte, error) {
+	contentStr := string(content)
+	
+	// Normalize line endings to Unix style
+	contentStr = strings.ReplaceAll(contentStr, "\r\n", "\n")
+	contentStr = strings.ReplaceAll(contentStr, "\r", "\n")
+	
 	// Check if content starts with frontmatter delimiter
-	if !strings.HasPrefix(string(content), "---\n") {
+	if !strings.HasPrefix(contentStr, "---\n") {
 		return nil, content, nil
 	}
 	
-	// Find the end of frontmatter
-	parts := strings.SplitN(string(content), "\n---\n", 2)
-	if len(parts) != 2 {
+	// Find the end of frontmatter - look for closing --- on its own line
+	lines := strings.Split(contentStr, "\n")
+	var frontmatterLines []string
+	var contentStart int
+	
+	// Skip the opening ---
+	for i := 1; i < len(lines); i++ {
+		if strings.TrimSpace(lines[i]) == "---" {
+			// Found closing delimiter
+			contentStart = i + 1
+			break
+		}
+		frontmatterLines = append(frontmatterLines, lines[i])
+	}
+	
+	// If we didn't find a closing delimiter, treat as regular content
+	if contentStart == 0 {
 		return nil, content, nil
 	}
 	
 	// Parse the frontmatter YAML
-	frontmatterYAML := strings.TrimPrefix(parts[0], "---\n")
+	frontmatterYAML := strings.Join(frontmatterLines, "\n")
 	var frontmatter Frontmatter
 	if err := yaml.Unmarshal([]byte(frontmatterYAML), &frontmatter); err != nil {
 		return nil, content, err
 	}
 	
 	// Return frontmatter and content without frontmatter
-	markdownContent := []byte(parts[1])
+	remainingLines := lines[contentStart:]
+	markdownContent := []byte(strings.Join(remainingLines, "\n"))
 	return &frontmatter, markdownContent, nil
 }
 

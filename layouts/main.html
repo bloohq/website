@@ -22,6 +22,12 @@
                     <div class="max-w-6xl mx-auto">
                         {{if .IsMarkdown}}
                         <div class="prose prose-lg prose-slate max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+                            {{if .Frontmatter}}
+                            <h1>{{.Frontmatter.Title}}</h1>
+                            {{if .Frontmatter.Description}}
+                            <p class="text-xl text-gray-600 mb-8">{{.Frontmatter.Description}}</p>
+                            {{end}}
+                            {{end}}
                             {{.Content}}
                         </div>
                         {{else}}
