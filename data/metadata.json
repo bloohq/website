@@ -1,0 +1,36 @@
+{
+  "site": {
+    "name": "Blue",
+    "description": "Blue is a powerful platform to create, manage, and scale processes.",
+    "url": "https://blue.cc",
+    "language": "en",
+    "author": "Blue Team"
+  },
+  "pages": {
+    "home": {
+      "title": "Blue - Powerful Process Management Platform",
+      "description": "Blue revolutionizes how teams collaborate and manage their work. Built for the modern workplace, our platform combines powerful project management tools with intuitive design.",
+      "keywords": ["process management", "project management", "team collaboration", "workflow automation", "blue"]
+    },
+    "about": {
+      "title": "About Blue - Modern Team Collaboration Platform",
+      "description": "Learn more about Blue and how we're revolutionizing team collaboration and process management for modern workplaces.",
+      "keywords": ["about blue", "company", "team collaboration", "process management"]
+    },
+    "company/about": {
+      "title": "About Our Company - Blue",
+      "description": "Discover Blue's mission to transform how teams work together and manage their processes with our innovative platform.",
+      "keywords": ["about", "company", "mission", "team", "blue"]
+    },
+    "pricing": {
+      "title": "Pricing",
+      "description": "Choose the Blue plan that fits your team's needs. Simple, transparent pricing with no hidden fees. Start your free trial today.",
+      "keywords": ["pricing", "plans", "free trial", "team management", "blue"]
+    }
+  },
+  "defaults": {
+    "title_suffix": " - Blue",
+    "description": "Blue - Powerful platform to create, manage, and scale processes for modern teams.",
+    "keywords": ["blue", "process management", "team collaboration", "workflow"]
+  }
+}

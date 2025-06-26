@@ -19,6 +19,8 @@
 8. Made topbar buttons hotkeys work ✅
 9. Make left/right sidebar toggle open/close ✅
 10. Setup TailwindCSS Properly with CLI and Watcher ✅
+11. Dynamic left sidebar ✅
+12. Metadata.json for dynmaic titles and so on ✅
 
 
 

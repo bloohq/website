@@ -2,8 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{.Title}} - Blue</title>
-    <meta name="description" content="Blue is a modern B2B SaaS process management platform that helps teams streamline workflows, improve collaboration, and scale operations efficiently.">
+    <title>{{.Title}}</title>
+    <meta name="description" content="{{.Description}}">
+    {{if .Keywords}}<meta name="keywords" content="{{range $i, $keyword := .Keywords}}{{if $i}}, {{end}}{{$keyword}}{{end}}">{{end}}
+    {{if .SiteMeta}}<meta name="author" content="{{.SiteMeta.Author}}">{{end}}
+    {{if .SiteMeta}}<meta property="og:site_name" content="{{.SiteMeta.Name}}">{{end}}
+    <meta property="og:title" content="{{.Title}}">
+    <meta property="og:description" content="{{.Description}}">
+    {{if .SiteMeta}}<meta property="og:url" content="{{.SiteMeta.URL}}">{{end}}
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{.Title}}">
+    <meta name="twitter:description" content="{{.Description}}">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/public/favicon.ico">

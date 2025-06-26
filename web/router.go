@@ -25,12 +25,43 @@ type Navigation struct {
 	Legal    []NavItem `json:"legal"`
 }
 
+// PageMetadata represents metadata for a specific page
+type PageMetadata struct {
+	Title       string   `json:"title"`
+	Description string   `json:"description"`
+	Keywords    []string `json:"keywords"`
+}
+
+// SiteMetadata represents global site metadata
+type SiteMetadata struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	URL         string `json:"url"`
+	Language    string `json:"language"`
+	Author      string `json:"author"`
+}
+
+// MetadataDefaults represents default metadata values
+type MetadataDefaults struct {
+	TitleSuffix string   `json:"title_suffix"`
+	Description string   `json:"description"`
+	Keywords    []string `json:"keywords"`
+}
+
+// Metadata holds the complete metadata structure
+type Metadata struct {
+	Site     SiteMetadata                `json:"site"`
+	Pages    map[string]PageMetadata     `json:"pages"`
+	Defaults MetadataDefaults            `json:"defaults"`
+}
+
 // Router handles file-based routing for HTML pages
 type Router struct {
 	pagesDir      string
 	layoutsDir    string
 	componentsDir string
 	navigation    *Navigation
+	metadata      *Metadata
 }
 
 // NewRouter creates a new router instance
@@ -44,6 +75,11 @@ func NewRouter(pagesDir string) *Router {
 	// Load navigation data
 	if err := router.loadNavigation(); err != nil {
 		log.Printf("Error loading navigation: %v", err)
+	}
+	
+	// Load metadata
+	if err := router.loadMetadata(); err != nil {
+		log.Printf("Error loading metadata: %v", err)
 	}
 	
 	return router
@@ -60,11 +96,26 @@ func (r *Router) loadNavigation() error {
 	return json.Unmarshal(data, r.navigation)
 }
 
+// loadMetadata loads metadata from JSON file
+func (r *Router) loadMetadata() error {
+	data, err := os.ReadFile("data/metadata.json")
+	if err != nil {
+		return err
+	}
+	
+	r.metadata = &Metadata{}
+	return json.Unmarshal(data, r.metadata)
+}
+
 // PageData holds data for template rendering
 type PageData struct {
-	Title      string
-	Content    template.HTML
-	Navigation *Navigation
+	Title       string
+	Content     template.HTML
+	Navigation  *Navigation
+	PageMeta    *PageMetadata
+	SiteMeta    *SiteMetadata
+	Description string
+	Keywords    []string
 }
 
 // ServeHTTP implements the http.Handler interface
@@ -159,11 +210,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// Prepare page data
-	pageData := PageData{
-		Title:      r.getPageTitle(path),
-		Content:    template.HTML(contentBytes),
-		Navigation: r.navigation,
-	}
+	pageData := r.preparePageData(path, template.HTML(contentBytes))
 
 	// Set content type and execute main layout
 	w.Header().Set("Content-Type", "text/html")
@@ -174,8 +221,65 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-// getPageTitle extracts a title from the URL path
-func (r *Router) getPageTitle(path string) string {
+// preparePageData creates PageData with metadata for the given path
+func (r *Router) preparePageData(path string, content template.HTML) PageData {
+	// Get page key for metadata lookup
+	pageKey := r.getPageKey(path)
+	
+	// Get page metadata
+	var pageMeta *PageMetadata
+	var title, description string
+	var keywords []string
+	
+	if r.metadata != nil {
+		// Check if specific page metadata exists
+		if meta, exists := r.metadata.Pages[pageKey]; exists {
+			pageMeta = &meta
+			title = meta.Title
+			description = meta.Description
+			keywords = meta.Keywords
+		} else {
+			// Use defaults
+			title = r.getFallbackTitle(path) + r.metadata.Defaults.TitleSuffix
+			description = r.metadata.Defaults.Description
+			keywords = r.metadata.Defaults.Keywords
+		}
+	} else {
+		// Fallback if no metadata loaded
+		title = r.getFallbackTitle(path)
+		description = "Blue - Powerful platform to create, manage, and scale processes for modern teams."
+		keywords = []string{"blue", "process management", "team collaboration"}
+	}
+	
+	var siteMeta *SiteMetadata
+	if r.metadata != nil {
+		siteMeta = &r.metadata.Site
+	}
+	
+	return PageData{
+		Title:       title,
+		Content:     content,
+		Navigation:  r.navigation,
+		PageMeta:    pageMeta,
+		SiteMeta:    siteMeta,
+		Description: description,
+		Keywords:    keywords,
+	}
+}
+
+// getPageKey converts URL path to metadata key
+func (r *Router) getPageKey(path string) string {
+	if path == "/" {
+		return "home"
+	}
+	
+	// Remove leading/trailing slashes
+	cleanPath := strings.Trim(path, "/")
+	return cleanPath
+}
+
+// getFallbackTitle creates a fallback title from URL path
+func (r *Router) getFallbackTitle(path string) string {
 	if path == "/" {
 		return "Home"
 	}
@@ -187,7 +291,14 @@ func (r *Router) getPageTitle(path string) string {
 	// Replace slashes with spaces and title case
 	parts := strings.Split(cleanPath, "/")
 	for i, part := range parts {
-		parts[i] = strings.Title(strings.ReplaceAll(part, "-", " "))
+		// Simple title case replacement for strings.Title
+		words := strings.Split(strings.ReplaceAll(part, "-", " "), " ")
+		for j, word := range words {
+			if len(word) > 0 {
+				words[j] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+			}
+		}
+		parts[i] = strings.Join(words, " ")
 	}
 	
 	return strings.Join(parts, " - ")
