@@ -74,7 +74,31 @@ body {
     opacity: 1;
 }
 
-/* Custom scrollbar for left sidebar */
+/* Global custom scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #00a0d2 #f3f4f6;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #00a0d2;
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #0088b8;
+}
+
+/* Maintain custom-scrollbar class for compatibility */
 .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #00a0d2 #f3f4f6;
