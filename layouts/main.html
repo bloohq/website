@@ -46,6 +46,22 @@
             </div>
         </main>
     </div>
+    
+
+    <script>       
+        // Add hover prefetching for navigation links
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('a[href^="/"]');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    const prefetchLink = document.createElement('link');
+                    prefetchLink.rel = 'prefetch';
+                    prefetchLink.href = link.href;
+                    document.head.appendChild(prefetchLink);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 {{end}}
