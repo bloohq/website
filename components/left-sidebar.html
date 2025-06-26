@@ -5,6 +5,31 @@
          currentPath: window.location.pathname,
          isActive(href) {
              return this.currentPath === href || this.currentPath === href + '/' || this.currentPath + '/' === href;
+         },
+         init() {
+             this.expandActiveParents();
+         },
+         expandActiveParents() {
+             // Auto-expand sections and children that contain the active page
+             this.sections.forEach(section => {
+                 if (section.children) {
+                     let hasActivePage = false;
+                     section.children.forEach(child => {
+                         if (child.children) {
+                             let hasActiveSubPage = child.children.some(subchild => this.isActive(subchild.href));
+                             if (hasActiveSubPage) {
+                                 child.expanded = true;
+                                 hasActivePage = true;
+                             }
+                         } else if (this.isActive(child.href)) {
+                             hasActivePage = true;
+                         }
+                     });
+                     if (hasActivePage) {
+                         section.expanded = true;
+                     }
+                 }
+             });
          }
      }" 
      :class="sidebarsOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'"
