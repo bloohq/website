@@ -97,3 +97,17 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #0088b8;
 }
+
+/* Custom Prose Styling */
+@layer components {
+  .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    color: var(--color-brand-blue) !important;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+    color: var(--color-brand-blue-hover) !important;
+    text-decoration: underline;
+  }
+}
