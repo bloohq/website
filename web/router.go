@@ -282,6 +282,9 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 				return template.JS(data)
 			},
 			"dict": dict,
+			"html": func(s string) template.HTML {
+				return template.HTML(s)
+			},
 		})
 
 		// Auto-scan all component templates for page content parsing
@@ -344,6 +347,9 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			return template.JS(data)
 		},
 		"dict": dict,
+		"html": func(s string) template.HTML {
+			return template.HTML(s)
+		},
 	})
 
 	// Parse all template files
