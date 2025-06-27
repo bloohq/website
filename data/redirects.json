@@ -7,7 +7,7 @@
     "/platform/releases": "/platform/changelog",
     "/platform/changelog": "/changelog",
     "/blog": "/insights",
-    "/insights": "/resources/insights",
+    "/resources/insights": "/insights",
     "/blog/deep-work": "/insights/deep-work",
     "/insights/deep-work": "/resources/deep-work",
     "/blog/great-teamwork": "/insights/great-teamwork",
