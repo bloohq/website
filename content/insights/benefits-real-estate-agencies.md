@@ -6,10 +6,6 @@ description: Discover the key benefits to implementing project management softwa
 image: /resources/real-estate-software-background.png
 date: 31/06/2024
 showdate: false
-sitemap:
-  loc: /resources/real-estate-agencies-pm-benefits
-  lastmod: 2024/06/31
-  changefreq: monthly
 ---
 [We previously wrote about the key features required for real estate project management software](/resources/real-estate-pm-features), but today we want to cover the benefits of using these types of platform.
 

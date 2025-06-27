@@ -6,10 +6,6 @@ description: A business is the sum of multiple processes happening simultaneousl
 image: /resources/critical-thinking-whiteboard-flowchart.jpeg
 date: 06/07/2024
 showdate: true
-sitemap:
-  loc: /resources/applying-critical-thinking-to-process-design
-  lastmod: 2021/07/06
-  changefreq: monthly
 ---
 
 When coming across roadblocks in business operations and growth, intelligent organizations start their search for the root cause by conducting **business process analyses (BPA)**.

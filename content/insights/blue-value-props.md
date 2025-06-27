@@ -6,10 +6,6 @@ description: Discover why Blue's self-funded, customer-focused approach delivers
 image: /resources/pm-background.png
 date: 24/07/2024
 showdate: true
-sitemap:
-  loc: /resources/value-proposition-blue
-  lastmod: 2024/07/24
-  changefreq: monthly
 ---
 
 At Blue, we know that customers have options when it comes to project and process management software. 

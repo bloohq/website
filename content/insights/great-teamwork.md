@@ -4,10 +4,6 @@ slug: great-teamwork
 tags: ["insights", "modern-work-practices"]
 description: 'Great teamwork is the foundation of any organization. In this comprehensive writeup, we dive into the key elements and principles that define exceptional teamwork.' 
 image: /patterns/diamonds1.png
-sitemap:
-  loc: /resources/great-teamwork
-  lastmod: 2024/06/01
-  changefreq: monthly
 ---
 Unlock the secrets to great teamwork: Learn how structured collaboration and the right balance can boost your team's performance. Start transforming your team today!
 

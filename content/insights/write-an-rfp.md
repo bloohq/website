@@ -6,10 +6,6 @@ description: Requests for Proposals (RFPs) are key tools that businesses and org
 image: /resources/whiteboard-brainstorm.jpeg
 date: 06/07/2024
 showdate: true
-sitemap:
-  loc: /resources/how-to-write-an-outstanding-rfp
-  lastmod: 2021/07/06
-  changefreq: monthly
 ---
 
 Requests for Proposals (RFPs) are a key tool that businesses and organizations of all sizes can use to ensure that they choose the best partners for any tasks and projects that are not handled in-house.

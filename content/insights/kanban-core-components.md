@@ -6,10 +6,6 @@ description: Discover the essential components of kanban software such as boards
 image: /resources/kanban-background.png
 date: 27/07/2024
 showdate: true
-sitemap:
-  loc: /resources/kanban-board-software-core-components
-  lastmod: 2024/07/27
-  changefreq: monthly
 ---
 
 Picture this: It's the late 1940s in post-war Japan. Toyota is looking for a way to streamline production to be as efficient as possible with limited resources. 

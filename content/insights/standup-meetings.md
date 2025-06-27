@@ -6,10 +6,6 @@ description: Discover the top 10 practical project management automation example
 image: /resources/user-background.png
 date: 12/08/2024
 showdate: true
-sitemap:
-  loc: /resources/how-to-make-stand-up-meetings-more-fun
-  lastmod: 2024/08/12
-  changefreq: monthly
 # CTA Fields
 CtaHeader: Automate Everything
 CtaText: Join thousands of professionals who use Blue to put project management on autopilot.

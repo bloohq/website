@@ -6,10 +6,6 @@ description: Better business processes lead to a better return on investment (RO
 image: /resources/roi-business-process.jpeg
 date: 06/07/2024
 showdate: true
-sitemap:
-  loc: /resources/the-roi-of-good-business-processes
-  lastmod: 2021/07/06
-  changefreq: monthly
 ---
 
 We’ve previously discussed how organizations can improve business processes by regularly running business process analyses (BPA), and also the importance of applying critical thinking in designing (and re-designing) efficient processes.

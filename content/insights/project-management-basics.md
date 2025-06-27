@@ -6,10 +6,6 @@ description: This guide offers practical and straightforward rules to help non-p
 image: /resources/project-management-guide-background.png
 date: 27/05/2024
 showdate: false
-sitemap:
-  loc: /resources/project-management-basics-guide
-  lastmod: 2024/05/27
-  changefreq: monthly
 ---
 
 Welcome to **The Non-Project Manager's Guide to Project Management.**

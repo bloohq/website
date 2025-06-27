@@ -6,10 +6,6 @@ description: An interview with Lorenzo Hickey, founder of ShapeShift World and B
 image: /customer-photos/lorenzohickey2.jpeg
 date: 05/07/2024
 showdate: true
-sitemap:
-  loc: /resources/lorenzo-interview
-  lastmod: 2024/07/06
-  changefreq: monthly
 ---
 **Where are you from and what is your background?**
 

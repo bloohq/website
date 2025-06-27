@@ -6,10 +6,6 @@ description: Explore essential prioritization strategies for leaders. There's al
 image: /resources/prioritization-for-leaders.jpeg
 date: 07/07/2024
 showdate: true
-sitemap:
-  loc: /resources/prioritization-for-leaders
-  lastmod: 2024/07/07
-  changefreq: monthly
 ---
 
 The key issue is that many leaders confuse business with busyness. Being busy does not *automatically* mean that you are being effective, and often it can actually mean quite the opposite.

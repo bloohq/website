@@ -6,10 +6,6 @@ description:
 image: /resources/value-proposition.jpeg
 date: 07/08/2024
 showdate: false
-sitemap:
-  loc: /resources/understanding-value-propositions
-  lastmod: 2024/08/07
-  changefreq: monthly
 ---
 ## Understanding Value Propositions
 

@@ -6,10 +6,6 @@ description: Explore the top features of real estate project management software
 image: /resources/real-estate-software-background.png
 date: 31/05/2024
 showdate: false
-sitemap:
-  loc: /resources/real-estate-pm-features
-  lastmod: 2024/05/31
-  changefreq: monthly
 ---
 
 Technology is transforming every industry. As Marc Andreessen famously said, "software is eating the world." The real estate industry is no exception. Real estate companies must adapt to these technological changes to stay competitive and relevant.

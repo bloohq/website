@@ -4,10 +4,6 @@ slug: future-teamwork
 tags: ["insights", "modern-work-practices"]
 description: Our mission is to create the future of teamwork, today. We're doing this step by step with a multi-decade vision in mind.
 image: /patterns/squaressquares2.png
-sitemap:
-  loc: /resources/future-teamwork
-  lastmod: 2024/06/01
-  changefreq: monthly
 ---
 
 

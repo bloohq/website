@@ -6,10 +6,6 @@ description: Learn the difference between push workflows and pull workflows.
 image: /resources/custom-permissons-background.png
 date: 05/08/2024
 showdate: true
-sitemap:
-  loc: /resources/push-vs-pull-kanban
-  lastmod: 2024/08/05
-  changefreq: monthly
 ---
 
 How often do organizations and teams *consciously* think about how they work? 

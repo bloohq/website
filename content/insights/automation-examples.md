@@ -6,10 +6,6 @@ description: Discover the top 10 practical project management automation example
 image: /resources/wrench-background.png
 date: 19/07/2024
 showdate: true
-sitemap:
-  loc: /resources/top-10-automation-examples
-  lastmod: 2024/07/19
-  changefreq: monthly
 # CTA Fields
 CtaHeader: Automate Everything
 CtaText: Join thousands of professionals who use Blue to put project management on autopilot.

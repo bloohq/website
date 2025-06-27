@@ -6,10 +6,6 @@ description: Interview with Eran Bucai, founder of DotComTruths.com and a Blue p
 image: /customer-photos/eranbucai.jpeg
 date: 28/05/2024
 showdate: true
-sitemap:
-  loc: /resources/eran-interview
-  lastmod: 2024/05/28
-  changefreq: monthly
 ---
 **Hey Eran! Thank you for agreeing to be interviewed. Before we discuss how you use Blue, why don’t you introduce yourself and your work?**
 

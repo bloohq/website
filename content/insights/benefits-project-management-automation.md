@@ -6,10 +6,6 @@ description: Discover Blue's new automation features designed to streamline proj
 image: /resources/automation-background.png
 date: 09/07/2024
 showdate: true
-sitemap:
-  loc: /resources/benefits-project-management-automation
-  lastmod: 2024/07/09
-  changefreq: monthly
 ---
 
 

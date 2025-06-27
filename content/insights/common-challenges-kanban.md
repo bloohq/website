@@ -6,10 +6,6 @@ description: Discover common challenges in implementing Kanban boards and learn 
 image: /resources/kanban-background.png
 date: 10/08/2024
 showdate: true
-sitemap:
-  loc: /resources/kanban-boards-common-challenges
-  lastmod: 2024/08/10
-  changefreq: monthly
 ---
 
 At Blue, it's no secret that we love [Kanban boards for project management.](/solutions/project-management). 

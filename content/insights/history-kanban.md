@@ -6,10 +6,6 @@ description: Learn the history of Kanban Boards, and how they evolved from facto
 image: /resources/japan-kanban-boards.jpg
 date: 23/07/2024
 showdate: true
-sitemap:
-  loc: /resources/kanban-board-history
-  lastmod: 2024/07/23
-  changefreq: monthly
 ---
 At Blue, we love [Kanban boards](/platform/kanban-boards). 
 

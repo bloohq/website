@@ -6,10 +6,6 @@ description:
 image: /resources/kanban-background.png
 date: 10/08/2024
 showdate: true
-sitemap:
-  loc: /resources/kanban-board-software-core-components
-  lastmod: 2024/08/10
-  changefreq: monthly
 ---
 
 At Blue, it's no secret that we love [Kanban boards for project management.](/platform/kanban-boards)

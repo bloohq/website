@@ -6,10 +6,6 @@ description: Discover why its important for brands to build their brands in a st
 image: /resources/brand-pyramids.jpeg
 date: 01/08/2024
 showdate: false
-sitemap:
-  loc: /resources/brand-pyramid
-  lastmod: 2024/08/01
-  changefreq: monthly
 ---
 
 This article comes from our previous experience in running a successful design agency. 
