@@ -1,0 +1,10 @@
+{{define "page-heading"}}
+<div class="{{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}">
+    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
+        {{.Title}}
+    </h1>
+    {{if .Subtitle}}
+    <p class="text-xl text-gray-600">{{.Subtitle}}</p>
+    {{end}}
+</div>
+{{end}}
