@@ -5,14 +5,51 @@
       "name": "Platform",
       "expanded": false,
       "children": [
-        {"id": "roadmap", "name": "Roadmap", "href": "/platform/roadmap"},
-        {"id": "changelog", "name": "Changelog", "href": "/changelog"},
-        {"id": "automations", "name": "Automations", "href": "/platform/automations"},
-        {"id": "views", "name": "Views", "href": "/platform/views"},
-        {"id": "dashboards", "name": "Dashboards", "href": "/platform/dashboards"},
-        {"id": "integrations", "name": "Integrations", "href": "/platform/integrations"},
-        {"id": "audit-trails", "name": "Audit Trails", "href": "/audit-trails"},
-        {"id": "user-permissions", "name": "User Permissions", "href": "/user-permissions"}
+        {
+          "id": "key-concepts",
+          "name": "Key Concepts",
+          "expanded": false,
+          "children": [
+            {"id": "overview", "name": "Overview", "href": "/platform/overview"},
+            {"id": "records", "name": "Records", "href": "/platform/records"},
+            {"id": "custom-fields", "name": "Custom Fields", "href": "/platform/custom-fields"},
+            {"id": "automations", "name": "Automations", "href": "/platform/automations"},
+            {"id": "files", "name": "Files", "href": "/platform/files"},
+            {"id": "chat", "name": "Chat", "href": "/platform/chat"},
+            {"id": "wiki-docs", "name": "Wiki & Docs", "href": "/platform/wiki-docs"},
+            {"id": "user-permissions", "name": "User Permissions", "href": "/platform/user-permissions"},
+            {"id": "forms", "name": "Forms", "href": "/platform/forms"},
+            {"id": "ai", "name": "AI", "href": "/platform/ai"}
+          ]
+        },
+        {
+          "id": "views",
+          "name": "Views",
+          "expanded": false,
+          "children": [
+            {"id": "boards", "name": "Boards", "href": "/platform/views/boards"},
+            {"id": "calendars", "name": "Calendars", "href": "/platform/views/calendars"},
+            {"id": "databases", "name": "Databases", "href": "/platform/views/databases"},
+            {"id": "maps", "name": "Maps", "href": "/platform/views/maps"},
+            {"id": "timelines", "name": "Timelines", "href": "/platform/views/timelines"},
+            {"id": "lists", "name": "Lists", "href": "/platform/views/lists"},
+            {"id": "dashboards", "name": "Dashboards", "href": "/platform/dashboards"},
+            {"id": "audit-trails", "name": "Audit Trails", "href": "/platform/audit-trails"}
+          ]
+        },
+        {
+          "id": "info",
+          "name": "Info",
+          "expanded": false,
+          "children": [
+            {"id": "roadmap", "name": "Roadmap", "href": "/platform/roadmap"},
+            {"id": "changelog", "name": "Changelog", "href": "/changelog"},
+            {"id": "api", "name": "API", "href": "/platform/api"},
+            {"id": "integrations", "name": "Integrations", "href": "/platform/integrations"},
+            {"id": "security", "name": "Security", "href": "/platform/security"},
+            {"id": "white-label", "name": "White Label", "href": "/platform/white-label"}
+          ]
+        }
       ]
     },
     {
