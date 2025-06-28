@@ -73,7 +73,7 @@ Ohno identified seven sources of waste in production, which are now recognized a
 We've found an interesting 5-minute interview that's worth watching:
 
 <video controls>
-  <source src="/resources/taiichi-ohno-video-interview.mp4" type="video/mp4">
+  <source src="/public/videos/taiichi-ohno-video-interview.mp4" type="video/mp4">
 </video>
 
 

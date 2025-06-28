@@ -397,7 +397,7 @@ Or, you may get annoying upsells to Jira right within your Trello Premium accoun
 See below:
 
 <video autoplay loop muted playsinline>
-  <source src="/resources/trello-jira-upsells.mp4" type="video/mp4">
+  <source src="/public/videos/trello-jira-upsells.mp4" type="video/mp4">
 </video>
 
 Atlassian is mostly focused on catering to large enterprises, which might mean that some of their features and pricing don’t really fit the needs of small and medium-sized businesses (SMEs). With such a massive user base across various products, it can be tough for them to offer personalized support or truly grasp the unique needs of smaller companies.

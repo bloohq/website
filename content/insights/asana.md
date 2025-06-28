@@ -101,7 +101,7 @@ With regards to support, you can only rely on the Asana Community Forum, where y
 You can see just how limited Asana's free plan is in the video below. Most tabs and features you click on are locked away:
 
 <video controls>
-  <source src="/resources/asana-free.mp4" type="video/mp4">
+  <source src="/public/videos/asana-free.mp4" type="video/mp4">
 </video>
 
 With regards to paid plans, even Asana's cheapest paid plan ("Starter") is almost **double** the price of Blue, and comes with its own set of limitations. You only get 250 automations per month (Blue offers unlimited) and also only 150 actions of Asana Intelligence (again, Blue offers unlimited AI use). 

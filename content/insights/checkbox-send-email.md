@@ -39,7 +39,7 @@ Make sure that you name this field something obvious that you’ll remember such
 On the records view in your project, click on the small robot on the top right to open the automation settings:
 
 <video autoplay loop muted playsinline>
-  <source src="/resources/notify-stakeholders-automation-setup.mp4" type="video/mp4">
+  <source src="/public/videos/notify-stakeholders-automation-setup.mp4" type="video/mp4">
 </video>
 
 ## 3. Create your project management automation action.

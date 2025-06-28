@@ -105,7 +105,7 @@ We understand that sometimes users might need additional support or more in-dept
 The user experience is further enhanced by tasteful fade-in and fade-up animations when opening the chatbot window. These subtle animations add a touch of sophistication to the interface, making the interaction feel more dynamic and engaging. We've also implemented a typing indicator, a small but crucial feature that lets users know the chatbot is processing their query and crafting a response. This visual cue helps manage user expectations and maintains a sense of active communication.
 
 <video autoplay loop muted playsinline>
-  <source src="/resources/ai-chatbot-animation.mp4" type="video/mp4">
+  <source src="/public/videos/ai-chatbot-animation.mp4" type="video/mp4">
 </video>
 
 

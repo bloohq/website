@@ -107,7 +107,7 @@ This evolution ensures that your board remains a helpful tool rather than a conf
 One of the most crucial aspects of an effective kanban board is finding the right level of granularity in your workflow representation, and knowing when to split thing into projects that you can move between.
 
 <video autoplay loop muted playsinline>
-  <source src="/resources/blue-project-navigation.mp4" type="video/mp4">
+  <source src="/public/videos/blue-project-navigation.mp4" type="video/mp4">
 </video>
 
 Too few columns can oversimplify complex processes, leaving your team without clear guidance on the stages of work. On the other hand, too many columns can overwhelm users, slowing down progress and making it difficult to get a quick overview of the project status. Strive for a balance - aim for a number of columns that provides clarity on your workflow without creating confusion. 
@@ -123,7 +123,7 @@ Instead, consider whether certain stages or categories might be better represent
 In some [advanced Kanban software platform](/platform/kanban-boards), you can even use AI to auto-tag your cards!
 
 <video autoplay loop muted playsinline>
-  <source src="/resources/ai-tagging.mp4" type="video/mp4">
+  <source src="/public/videos/ai-tagging.mp4" type="video/mp4">
 </video>
 
 For example, rather than having separate columns for "High Priority," "Medium Priority," and "Low Priority," use a priority tag or custom field on your cards. 
