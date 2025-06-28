@@ -46,16 +46,16 @@ type PageData struct {
 
 // Router handles file-based routing for HTML pages
 type Router struct {
-	pagesDir           string
-	layoutsDir         string
-	componentsDir      string
-	contentDir         string
-	navigationService  *NavigationService
-	contentService     *ContentService
-	markdownService    *MarkdownService
-	seoService         *SEOService
-	changelogService   *ChangelogService
-	tocExcludedPaths   []string
+	pagesDir          string
+	layoutsDir        string
+	componentsDir     string
+	contentDir        string
+	navigationService *NavigationService
+	contentService    *ContentService
+	markdownService   *MarkdownService
+	seoService        *SEOService
+	changelogService  *ChangelogService
+	tocExcludedPaths  []string
 }
 
 // loadComponentTemplates loads all component template files
@@ -79,7 +79,7 @@ func NewRouter(pagesDir string) *Router {
 	markdownService := NewMarkdownService()
 	contentService := NewContentService("content")
 	navigationService := NewNavigationService(seoService)
-	
+
 	// Initialize changelog service
 	changelogService := NewChangelogService()
 	if err := changelogService.LoadChangelog(); err != nil {
@@ -99,6 +99,7 @@ func NewRouter(pagesDir string) *Router {
 		tocExcludedPaths: []string{ // These pages will not show toc
 			"/changelog",
 			"/roadmap",
+			"/platform/status",
 		},
 	}
 
