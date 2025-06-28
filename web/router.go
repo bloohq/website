@@ -103,6 +103,22 @@ func NewRouter(pagesDir string) *Router {
 		},
 	}
 
+	// Pre-render all markdown content at startup
+	log.Printf("Pre-rendering markdown content...")
+	if err := markdownService.PreRenderAllMarkdown(contentService, seoService); err != nil {
+		log.Printf("Warning: failed to pre-render markdown content: %v", err)
+	} else {
+		log.Printf("Markdown cache initialized with %d files", markdownService.GetCacheSize())
+	}
+
+	// Generate search index with pre-rendered content
+	log.Printf("Generating search index with cached content...")
+	if err := GenerateSearchIndexWithCache(markdownService); err != nil {
+		log.Printf("Warning: failed to generate search index: %v", err)
+	} else {
+		log.Printf("Search index generated successfully")
+	}
+
 	return router
 }
 
@@ -177,24 +193,34 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	// Check if HTML page file exists
 	if _, err := os.Stat(filePath); os.IsNotExist(err) {
-		// HTML page doesn't exist, try markdown
-		markdownPath, mdErr := r.contentService.FindMarkdownFile(path)
-		if mdErr != nil {
-			http.NotFound(w, req)
-			return
-		}
+		// HTML page doesn't exist, try cached markdown first
+		if cachedContent, found := r.markdownService.GetCachedContent(path); found {
+			// Found in cache - use pre-rendered content
+			contentBytes = []byte(cachedContent.HTML)
+			frontmatter = cachedContent.Frontmatter
+			isMarkdown = true
+			log.Printf("Served cached markdown for path: %s", path)
+		} else {
+			// Not in cache, try to find and process markdown file (fallback)
+			markdownPath, mdErr := r.contentService.FindMarkdownFile(path)
+			if mdErr != nil {
+				http.NotFound(w, req)
+				return
+			}
 
-		// Process markdown file
-		htmlContent, fm, err := r.markdownService.ProcessMarkdownFile(markdownPath, r.seoService)
-		if err != nil {
-			http.Error(w, "Error processing markdown file", http.StatusInternalServerError)
-			log.Printf("Markdown processing error: %v", err)
-			return
-		}
+			// Process markdown file on-demand
+			htmlContent, fm, err := r.markdownService.ProcessMarkdownFile(markdownPath, r.seoService)
+			if err != nil {
+				http.Error(w, "Error processing markdown file", http.StatusInternalServerError)
+				log.Printf("Markdown processing error: %v", err)
+				return
+			}
 
-		contentBytes = []byte(htmlContent)
-		frontmatter = fm
-		isMarkdown = true
+			contentBytes = []byte(htmlContent)
+			frontmatter = fm
+			isMarkdown = true
+			log.Printf("Served on-demand markdown for path: %s", path)
+		}
 	} else {
 		// Read HTML page content
 		var err error

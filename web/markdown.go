@@ -1,8 +1,12 @@
 package web
 
 import (
+	"fmt"
+	"log"
 	"os"
+	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
@@ -13,6 +17,7 @@ import (
 // MarkdownService handles markdown processing
 type MarkdownService struct {
 	markdown goldmark.Markdown
+	cache    *MarkdownCache
 }
 
 // NewMarkdownService creates a new markdown service
@@ -34,6 +39,7 @@ func NewMarkdownService() *MarkdownService {
 
 	return &MarkdownService{
 		markdown: md,
+		cache:    NewMarkdownCache(),
 	}
 }
 
@@ -69,4 +75,110 @@ func (ms *MarkdownService) ProcessMarkdownFile(filePath string, seoService *SEOS
 	}
 
 	return html, frontmatter, nil
+}
+
+// PreRenderAllMarkdown pre-renders all markdown files in the content directory
+func (ms *MarkdownService) PreRenderAllMarkdown(contentService *ContentService, seoService *SEOService) error {
+	startTime := time.Now()
+	count := 0
+
+	// Walk through all markdown files in content directory
+	err := filepath.WalkDir("content", func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+
+		// Skip non-markdown files
+		if !strings.HasSuffix(path, ".md") {
+			return nil
+		}
+
+		// Get file info for modification time
+		info, err := d.Info()
+		if err != nil {
+			log.Printf("Warning: could not get file info for %s: %v", path, err)
+			return nil // Continue processing other files
+		}
+
+		// Generate URL path for this file
+		urlPath := ms.generateURLPath(path)
+
+		// Process the markdown file
+		html, frontmatter, err := ms.ProcessMarkdownFile(path, seoService)
+		if err != nil {
+			log.Printf("Warning: failed to process %s: %v", path, err)
+			return nil // Continue processing other files
+		}
+
+		// Cache the pre-rendered content
+		cachedContent := &CachedContent{
+			HTML:        html,
+			Frontmatter: frontmatter,
+			ModTime:     info.ModTime(),
+			FilePath:    path,
+		}
+
+		ms.cache.Set(urlPath, cachedContent)
+		count++
+
+		if count%10 == 0 {
+			log.Printf("Pre-rendered %d markdown files...", count)
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		return fmt.Errorf("failed to walk content directory: %w", err)
+	}
+
+	duration := time.Since(startTime)
+	log.Printf("Pre-rendered %d markdown files in %v", count, duration)
+	return nil
+}
+
+// generateURLPath converts a file path to a clean URL path
+func (ms *MarkdownService) generateURLPath(filePath string) string {
+	// Remove content/ prefix and .md suffix
+	urlPath := strings.TrimPrefix(filePath, "content/")
+	urlPath = strings.TrimSuffix(urlPath, ".md")
+
+	// Handle index files
+	if strings.HasSuffix(urlPath, "/index") {
+		urlPath = strings.TrimSuffix(urlPath, "/index")
+	}
+
+	// Clean URL parts: remove number prefixes and normalize
+	urlParts := strings.Split(urlPath, "/")
+	for i, part := range urlParts {
+		if part != "" {
+			// Use the same cleaning logic as the utils
+			urlParts[i] = CleanID(part)
+		}
+	}
+
+	// Reconstruct URL with leading slash
+	cleanURL := "/" + strings.Join(urlParts, "/")
+	
+	// Handle root case
+	if cleanURL == "/" {
+		return "/"
+	}
+
+	return cleanURL
+}
+
+// GetCachedContent retrieves pre-rendered content from cache
+func (ms *MarkdownService) GetCachedContent(urlPath string) (*CachedContent, bool) {
+	return ms.cache.Get(urlPath)
+}
+
+// GetAllCachedContent returns all cached content (for search indexing)
+func (ms *MarkdownService) GetAllCachedContent() map[string]*CachedContent {
+	return ms.cache.GetAll()
+}
+
+// GetCacheSize returns the number of cached items
+func (ms *MarkdownService) GetCacheSize() int {
+	return ms.cache.Size()
 }

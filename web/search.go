@@ -52,6 +52,30 @@ func GenerateSearchIndex() error {
 	return writeSearchIndex(searchItems)
 }
 
+// GenerateSearchIndexWithCache creates a JSON search index using pre-rendered markdown cache
+func GenerateSearchIndexWithCache(markdownService *MarkdownService) error {
+	var searchItems []SearchItem
+
+	// Load metadata.json for title lookup
+	metadata, err := loadMetadata()
+	if err != nil {
+		fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
+	}
+
+	// Index HTML pages
+	if err := indexHTMLPages(&searchItems, metadata); err != nil {
+		return fmt.Errorf("failed to index HTML pages: %w", err)
+	}
+
+	// Index cached markdown content
+	if err := indexCachedMarkdownContent(&searchItems, markdownService); err != nil {
+		return fmt.Errorf("failed to index cached markdown content: %w", err)
+	}
+
+	// Write search index to public directory
+	return writeSearchIndex(searchItems)
+}
+
 // loadMetadata loads the metadata.json file
 func loadMetadata() (*Metadata, error) {
 	data, err := os.ReadFile("data/metadata.json")
@@ -321,6 +345,84 @@ func extractHTMLTitle(html string) string {
 	}
 
 	return html[start : start+end]
+}
+
+// indexCachedMarkdownContent indexes pre-rendered markdown content from cache
+func indexCachedMarkdownContent(items *[]SearchItem, markdownService *MarkdownService) error {
+	cachedContent := markdownService.GetAllCachedContent()
+
+	for urlPath, content := range cachedContent {
+		// Determine section from URL path
+		section := ""
+		if strings.HasPrefix(urlPath, "/docs") {
+			section = "docs"
+		} else if strings.HasPrefix(urlPath, "/api") {
+			section = "api-docs"
+		} else if strings.HasPrefix(urlPath, "/legal") {
+			section = "legal"
+		} else {
+			// Extract first part of URL as section
+			parts := strings.Split(strings.Trim(urlPath, "/"), "/")
+			if len(parts) > 0 && parts[0] != "" {
+				section = parts[0]
+			}
+		}
+
+		// Get title from frontmatter or generate from URL
+		title := ""
+		description := ""
+		if content.Frontmatter != nil {
+			title = content.Frontmatter.Title
+			description = content.Frontmatter.Description
+		}
+
+		if title == "" {
+			// Generate title from URL path
+			title = generateTitleFromURL(urlPath)
+		}
+
+		// Extract clean text from pre-rendered HTML
+		textContent := extractTextFromHTML(content.HTML)
+
+		*items = append(*items, SearchItem{
+			Title:       title,
+			Description: description,
+			Content:     textContent,
+			URL:         urlPath,
+			Type:        "content",
+			Section:     section,
+		})
+	}
+
+	return nil
+}
+
+// generateTitleFromURL creates a clean title from URL path
+func generateTitleFromURL(urlPath string) string {
+	// Remove leading slash and get last segment
+	cleanPath := strings.Trim(urlPath, "/")
+	parts := strings.Split(cleanPath, "/")
+	
+	if len(parts) == 0 {
+		return "Home"
+	}
+
+	// Use last segment as title
+	lastSegment := parts[len(parts)-1]
+	
+	// Clean up the segment
+	title := strings.ReplaceAll(lastSegment, "-", " ")
+	title = strings.ReplaceAll(title, "_", " ")
+	
+	// Capitalize each word
+	words := strings.Fields(title)
+	for i, word := range words {
+		if len(word) > 0 {
+			words[i] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+		}
+	}
+
+	return strings.Join(words, " ")
 }
 
 // extractTextFromHTML removes HTML tags to get plain text (basic implementation)
