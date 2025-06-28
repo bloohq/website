@@ -1,10 +1,10 @@
 ---
 title: Interview with Eran Bucai
 slug: eran-interview
-tags: ["insights"]
+category: "CEO Blog"
 description: Interview with Eran Bucai, founder of DotComTruths.com and a Blue power-user. He shares his journey, insights on getting started, and tips for solopreneur success.
 image: /customer-photos/eranbucai.jpeg
-date: 28/05/2024
+date: 2024-05-28
 showdate: true
 ---
 **Hey Eran! Thank you for agreeing to be interviewed. Before we discuss how you use Blue, why don’t you introduce yourself and your work?**

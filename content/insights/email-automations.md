@@ -1,7 +1,7 @@
 --- 
 title: How to create custom email automations
 slug: email-automations
-tags: ["tips-&-tricks"]
+category: "Product Updates"
 description: Custom email notifications are an incredibly powerful feature in Blue that can help keep work moving forwards and ensure communication is on auto-pilot.
 image: /resources/email-background.png
 ---
