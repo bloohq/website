@@ -1,10 +1,10 @@
 ---
 title:  AI Auto Categorization (Engineering Deep Dive)
 slug: ai-auto-categorization-engineering
-tags: ["engineering-blog"]
+category: "Engineering"
 description: Go behind the scenes with the Blue engineering team as they explain how to built an AI-powered auto-categorization and tagging feature.
 image: /resources/ai-tag-background.png
-date: 12/07/2024
+date: 2024-12-07
 showdate: true
 ---
 

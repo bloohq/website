@@ -1,10 +1,10 @@
 ---
 title: Overcoming Common Challenges in Implementing Kanban
 slug: kanban-boards-common-challenges
-tags: ["insights"]
+category: "Best Practices"
 description: Discover common challenges in implementing Kanban boards and learn effective strategies to overcome them.
 image: /resources/kanban-background.png
-date: 10/08/2024
+date: 2024-08-10
 showdate: true
 ---
 

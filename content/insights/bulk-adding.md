@@ -1,9 +1,10 @@
 ---
 title: Bulk adding with copy and paste
 slug: bulk-adding
-tags: ["tips-&-tricks"]
+category: "Product Updates"
 description: Easily create lists, records, checklist, and checklist items simply by copying and pasting from various sources including bullet point lists and Excel.
 image: /patterns/lines2.png
+date: 2024-01-01
 ---
 
 Blue is packed with features designed to streamline your project management workflow, and one of the most powerful tools at your disposal is the ability to bulk add checklists, checklist items, lists, and records. This time-saving feature allows you to quickly populate your projects with the information you need, reducing manual data entry and helping you stay focused on the tasks that matter most. In this article, we'll explore the benefits of bulk adding and how it can revolutionize the way you work in Blue.

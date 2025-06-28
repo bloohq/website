@@ -1,10 +1,10 @@
 ---
 title: Why We Built Our Own AI Documentation Chatbot
 slug: documentation-chatbot
-tags: ["product-updates", "engineering-blog"]
+category: "Product Updates"
 description: We built our own documentation AI Chatbot that is trained on the Blue platform documentation.
 image: /resources/chat-background.png
-date: 09/07/2024
+date: 2024-07-09
 showdate: true
 ---
 

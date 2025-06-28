@@ -1,10 +1,10 @@
 --- 
 title: Creating reusable checklists using automations
 slug: reusable-checklists-automation
-tags: ["tips-&-tricks"]
+category: "Best Practices"
 description: Learn how to create project management automations for reusable checklists.
 image: /resources/check-background.png
-date: 08/07/2024
+date: 2024-07-08
 showdate: true
 ---
 

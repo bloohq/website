@@ -1,10 +1,10 @@
 ---
 title:  Why Blue has an Open Beta
 slug: open-beta
-tags: ["engineering-blog"]
+category: "Engineering"
 description: Learn why our project management system has an ongoing open beta. 
 image: /resources/code-background.png
-date: 03/08/2024
+date: 2024-08-03
 showdate: true
 ---
 

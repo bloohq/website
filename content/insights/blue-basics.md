@@ -1,9 +1,10 @@
 ---
 title: The Blue basics in less than 3 minutes
 slug: blue-basics
-tags: ["tips-&-tricks"]
+category: "Best Practices"
 description: Learn all the main concepts of Blue in less time it takes to drink a cup of coffee. You'll be set for success after reading this guide.
 image: /patterns/circles4.png
+date: 2024-01-01
 ---
 
 ## Introduction

@@ -1,10 +1,10 @@
 ---
 title: Key benefits of using real estate project management software.
 slug: real-estate-agencies-pm-benefits
-tags: ["insights"]
+category: "Best Practices"
 description: Discover the key benefits to implementing project management software for real estate agencies, and why you should consider having a project management platform.
 image: /resources/real-estate-software-background.png
-date: 31/06/2024
+date: 2024-06-30
 showdate: false
 ---
 [We previously wrote about the key features required for real estate project management software](/resources/real-estate-pm-features), but today we want to cover the benefits of using these types of platform.

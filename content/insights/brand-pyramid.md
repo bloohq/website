@@ -1,10 +1,10 @@
 ---
 title: The Brand Pyramid
 slug: brand-pyramid
-tags: ["insights"]
+category: "CEO Blog"
 description: Discover why its important for brands to build their brands in a structured manner.
 image: /resources/brand-pyramids.jpeg
-date: 01/08/2024
+date: 2024-08-01
 showdate: false
 ---
 

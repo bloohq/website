@@ -1,10 +1,10 @@
 ---
 title: AI Auto Categorization
 slug: ai-auto-categorization
-tags: ["product-updates"]
+category: "Product Updates"
 description: Blue now uses AI to auto categorize your records, individually or in bulk. This can save you dozens of hours while improving accuracy.
 image: /resources/bolt-background.png
-date: 4/06/2024
+date: 2024-06-04
 showdate: true
 ---
 

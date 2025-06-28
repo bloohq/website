@@ -1,10 +1,10 @@
 ---
 title:  How we use Blue to build Blue. 
 slug: blue-to-build-blue
-tags: ["engineering-blog"]
+category: "CEO Blog"
 description: Learn how we use our own project management platform to build our project management platform! 
 image: /patterns/bluewhitecircle.png
-date: 07/08/2024
+date: 2024-08-07
 showdate: true
 ---
 

@@ -1,9 +1,10 @@
 --- 
 title: Cultivating Deep Work In The Modern Workplace
 slug: deep-work
-tags: ["insights", "modern-work-practices"]
+category: "Modern Work Practices"
 description: Cultivate a culture of deep work for enhanced productivity. Discover how to make deep work a priority in your organization.
 image: /patterns/lines2.png
+date: 2024-01-01
 ---
 
 Work has changed tremendously over the past decades. While the generations before us might have had one job their whole lives, the abundance of information in our generation allows us to shift between multiple professions without much difficulty. Because our ancestors had their whole lives to perfect their craft, they were able to perform at their peak level and produce high quality of work. Take a biology teacher for example, who has worked for more than 30 years before she retires; With time and intensity of focus put into her work, her teaching skill in biology could possibly outrank the others as she had had 30 years to perfect it.

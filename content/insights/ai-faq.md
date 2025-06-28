@@ -1,10 +1,10 @@
 ---
 title: How does Blue offer unlimited AI Access?
 slug: unlimited-ai-faq
-tags: ["frequently-asked-questions"]
+category: "FAQ"
 description: How does Blue offer unlimited file storage for project management? 
 image: /patterns/waves1.png
-date: 01/08/2024
+date: 2024-01-08
 showdate: false
 ---
 

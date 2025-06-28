@@ -1,10 +1,10 @@
 ---
 title: Custom domains
 slug: custom-domains
-tags: ["product-updates"]
+category: "Product Updates"
 description: Blue now has the ability for all customers to run Blue on their own domain. This is now generally available and free for all customers.
 image: /patterns/bluerectangle.png
-date: 15/03/2024
+date: 2024-03-15
 showdate: true
 ---
 
