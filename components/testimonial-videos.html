@@ -16,16 +16,25 @@
                         grid-template-columns: repeat(4, 1fr) !important;
                     }
                 }
+                /* Hide video loading spinner */
+                video::-webkit-media-controls-loading-panel {
+                    display: none !important;
+                }
+                video::-webkit-media-controls-start-playback-button {
+                    display: none !important;
+                }
             </style>
             <div class="testimonial-grid" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem;">
                 {{range .testimonials}}
                 <div style="display: flex; flex-direction: column;">
                     <div style="position: relative;">
                         <video 
+                            x-data="{ preloaded: false }"
+                            :preload="preloaded ? 'metadata' : 'none'"
+                            @mouseenter="preloaded = true"
                             style="width: 100%; height: 35rem; object-fit: cover; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);"
                             poster="{{.posterUrl}}"
                             controls
-                            preload="metadata"
                         >
                             <source src="{{.videoUrl}}" type="video/mp4">
                             Your browser does not support the video tag.
