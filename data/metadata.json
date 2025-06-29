@@ -69,7 +69,7 @@
     }
   },
   "defaults": {
-    "title_suffix": " - Blue",
+    "title_suffix": " | Blue",
     "description": "Blue - Powerful platform to create, manage, and scale processes for modern teams.",
     "keywords": ["blue", "process management", "team collaboration", "workflow"]
   }

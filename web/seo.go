@@ -206,7 +206,7 @@ func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatt
 			} else {
 				// Use defaults
 				if title == "" {
-					title = s.getFallbackTitle(path) + s.metadata.Defaults.TitleSuffix
+					title = s.getFallbackTitle(path)
 				}
 				if description == "" {
 					description = s.metadata.Defaults.Description
@@ -222,6 +222,13 @@ func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatt
 				description = "Blue - Powerful platform to create, manage, and scale processes for modern teams."
 			}
 			keywords = []string{"blue", "process management", "team collaboration"}
+		}
+	}
+	
+	// Apply title suffix if defined and not already present
+	if s.metadata != nil && s.metadata.Defaults.TitleSuffix != "" {
+		if !strings.HasSuffix(title, s.metadata.Defaults.TitleSuffix) {
+			title = title + s.metadata.Defaults.TitleSuffix
 		}
 	}
 	
