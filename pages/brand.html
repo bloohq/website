@@ -635,6 +635,145 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Testimonials</h2>
+        
+        <div class="space-y-12">
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Customer Video Testimonials</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">testimonial-videos component with 4x1 grid</code>
+                </div>
+                
+                {{$testimonialData := parseJSON `{
+                    "testimonials": [
+                        {
+                            "quote": "Blue just helps keep things completely organised — it's an absolutely wonderful tool.",
+                            "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
+                            "posterUrl": "/public/testimonials/davidsacks.jpeg"
+                        },
+                        {
+                            "quote": "The automation features of Blue help us run our operations seamlessly.",
+                            "videoUrl": "https://media.blue.cc/lady.mp4",
+                            "posterUrl": "/public/testimonials/lady.jpg"
+                        },
+                        {
+                            "quote": "My entire life is in Blue! I love how fantasticly responsive the team is.",
+                            "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
+                            "posterUrl": "/public/testimonials/ricklewis.jpg"
+                        },
+                        {
+                            "quote": "If you're wondering if you should buy Blue...the answer is YES.",
+                            "videoUrl": "https://media.blue.cc/ana.mov",
+                            "posterUrl": "/public/testimonials/ana-testimonial.jpg"
+                        }
+                    ]
+                }`}}
+                
+                {{template "testimonial-videos" $testimonialData}}
+            </div>
+            
+            <!-- Side-by-Side Written Testimonials -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Side-by-Side Written Testimonials</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Two-column layout with vertical divider</code>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <!-- Left Testimonial -->
+                    <div class="p-8 md:pr-12 md:border-r border-gray-200">
+                        <!-- Company Logo -->
+                        <img src="/public/customers/deloitte.svg" alt="Deloitte" class="h-8 mb-8">
+                        
+                        <!-- Quote -->
+                        <p class="text-gray-600 text-lg mb-8">"Blue has transformed how we manage our global consulting projects. The automation features have saved us countless hours and improved our client delivery significantly."</p>
+                        
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4">
+                            <img src="/public/testimonials/davidsacks.jpeg" alt="David Sacks" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-gray-900">David Sacks</div>
+                                <div class="text-sm text-gray-600">Partner at Deloitte</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Testimonial -->
+                    <div class="p-8 md:pl-12">
+                        <!-- Company Logo -->
+                        <img src="/public/customers/cisco.svg" alt="Cisco" class="h-8 mb-8">
+                        
+                        <!-- Quote -->
+                        <p class="text-gray-600 text-lg mb-8">"The flexibility and power of Blue's platform has enabled us to standardize processes across our entire organization while maintaining team autonomy."</p>
+                        
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4">
+                            <img src="/public/testimonials/lady.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-gray-900">Sarah Johnson</div>
+                                <div class="text-sm text-gray-600">VP of Operations at Cisco</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid Testimonials -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Grid Testimonials</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Three-column grid with light grey cards</code>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-100 rounded-2xl p-8">
+                        <p class="text-gray-600 mb-6">"Blue has completely transformed our project management workflow. The intuitive interface and powerful automation features have made our team 3x more productive."</p>
+                        
+                        <div class="flex items-center gap-4">
+                            <img src="/public/testimonials/ricklewis.jpg" alt="Rick Lewis" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-gray-900">Rick Lewis</div>
+                                <div class="text-sm text-gray-600">CEO at Digital Agency</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-100 rounded-2xl p-8">
+                        <p class="text-gray-600 mb-6">"The white-label capabilities of Blue have been instrumental in scaling our client services. We can now deliver enterprise-grade solutions with our own branding."</p>
+                        
+                        <div class="flex items-center gap-4">
+                            <img src="/public/testimonials/ana-testimonial.jpg" alt="Ana Martinez" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-gray-900">Ana Martinez</div>
+                                <div class="text-sm text-gray-600">COO at Scale Corp</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-gray-100 rounded-2xl p-8">
+                        <p class="text-gray-600 mb-6">"We've saved hours every week using Blue's automation tools. The ROI has been incredible - it paid for itself within the first month of implementation and it just keeps getting better."</p>
+                        
+                        <div class="flex items-center gap-4">
+                            <img src="/public/testimonials/pere.jpg" alt="Pere Rodriguez" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-gray-900">Pere Rodriguez</div>
+                                <div class="text-sm text-gray-600">Director at Enterprise Inc</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Actions Section -->
     <section id="Call to Actions" class="mb-16">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Call to Actions</h2>
