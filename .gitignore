@@ -58,7 +58,6 @@ tmp/
 
 # Tailwind CSS standalone CLI
 tailwindcss
-public/style.css
 
 # Other common files
 *.tmp
