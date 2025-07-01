@@ -91,6 +91,11 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 		return fmt.Errorf("failed to index cached HTML pages: %w", err)
 	}
 
+	// Index non-cached HTML pages (like status page)
+	if err := indexHTMLPages(&searchItems, metadata); err != nil {
+		return fmt.Errorf("failed to index non-cached HTML pages: %w", err)
+	}
+
 	// Index cached markdown content
 	if err := indexCachedMarkdownContent(&searchItems, markdownService); err != nil {
 		return fmt.Errorf("failed to index cached markdown content: %w", err)
@@ -158,14 +163,28 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata) error {
 		// Extract title using the new algorithm
 		title := extractPageTitle(string(content), url, path, metadata)
 
-		// Extract text content (remove HTML tags)
-		textContent := extractTextFromHTML(string(content))
+		// For non-cached HTML pages, use metadata description as content if available
+		var textContent string
+		var description string
+		if metadata != nil {
+			pageKey := getPageKey(url)
+			if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Description != "" {
+				textContent = pageMeta.Description
+				description = pageMeta.Description
+			}
+		}
+		
+		// Fallback to HTML extraction if no metadata description
+		if textContent == "" {
+			textContent = extractTextFromHTML(string(content))
+		}
 
 		*items = append(*items, SearchItem{
-			Title:   title,
-			Content: textContent,
-			URL:     url,
-			Type:    "page",
+			Title:       title,
+			Description: description,
+			Content:     textContent,
+			URL:         url,
+			Type:        "page",
 		})
 
 		return nil
