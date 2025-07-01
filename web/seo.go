@@ -2,9 +2,13 @@ package web
 
 import (
 	"encoding/json"
+	"encoding/xml"
+	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
+	"time"
 
 	"gopkg.in/yaml.v3"
 )
@@ -63,6 +67,22 @@ type Redirects struct {
 	Rules     RedirectRules     `json:"rules"`
 }
 
+
+// URLEntry represents a single URL in the sitemap
+type URLEntry struct {
+	XMLName    xml.Name `xml:"url"`
+	Loc        string   `xml:"loc"`
+	LastMod    string   `xml:"lastmod,omitempty"`
+	ChangeFreq string   `xml:"changefreq,omitempty"`
+	Priority   string   `xml:"priority,omitempty"`
+}
+
+// URLSet represents the root sitemap element
+type URLSet struct {
+	XMLName xml.Name   `xml:"urlset"`
+	Xmlns   string     `xml:"xmlns,attr"`
+	URLs    []URLEntry `xml:"url"`
+}
 
 // SEOService handles all SEO-related functionality
 type SEOService struct {
@@ -275,4 +295,261 @@ func (s *SEOService) getFallbackTitle(path string) string {
 	}
 	
 	return strings.Join(parts, " - ")
+}
+
+// GenerateSitemap creates a sitemap.xml file in the public directory
+func (s *SEOService) GenerateSitemap(baseURL string) error {
+	var urls []URLEntry
+	currentTime := time.Now().Format("2006-01-02")
+	
+	// Add static HTML pages
+	htmlUrls, err := s.scanHTMLPages("pages", baseURL, currentTime)
+	if err != nil {
+		log.Printf("Warning: failed to scan HTML pages: %v", err)
+	} else {
+		urls = append(urls, htmlUrls...)
+	}
+	
+	// Add markdown content pages
+	markdownUrls, err := s.scanMarkdownContent("content", baseURL, currentTime)
+	if err != nil {
+		log.Printf("Warning: failed to scan markdown content: %v", err)
+	} else {
+		urls = append(urls, markdownUrls...)
+	}
+	
+	// Create sitemap structure
+	sitemap := URLSet{
+		Xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9",
+		URLs:  urls,
+	}
+	
+	// Generate XML
+	xmlData, err := xml.MarshalIndent(sitemap, "", "  ")
+	if err != nil {
+		return fmt.Errorf("failed to marshal sitemap XML: %w", err)
+	}
+	
+	// Add XML declaration
+	xmlContent := xml.Header + string(xmlData)
+	
+	// Write to public/sitemap.xml
+	if err := os.WriteFile("public/sitemap.xml", []byte(xmlContent), 0644); err != nil {
+		return fmt.Errorf("failed to write sitemap.xml: %w", err)
+	}
+	
+	return nil
+}
+
+// scanHTMLPages scans the pages directory for HTML files
+func (s *SEOService) scanHTMLPages(pagesDir, baseURL, currentTime string) ([]URLEntry, error) {
+	var urls []URLEntry
+	
+	err := filepath.Walk(pagesDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		
+		if !info.IsDir() && strings.HasSuffix(path, ".html") {
+			// Convert file path to URL path
+			urlPath := s.filePathToURL(path, pagesDir)
+			if urlPath == "" {
+				return nil // Skip invalid paths
+			}
+			
+			// Determine priority and change frequency based on path
+			priority, changeFreq := s.getURLProperties(urlPath)
+			
+			urls = append(urls, URLEntry{
+				Loc:        baseURL + urlPath,
+				LastMod:    currentTime,
+				ChangeFreq: changeFreq,
+				Priority:   priority,
+			})
+		}
+		
+		return nil
+	})
+	
+	return urls, err
+}
+
+// scanMarkdownContent scans the content directory for markdown files
+func (s *SEOService) scanMarkdownContent(contentDir, baseURL, currentTime string) ([]URLEntry, error) {
+	var urls []URLEntry
+	
+	err := filepath.Walk(contentDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		
+		if !info.IsDir() && strings.HasSuffix(path, ".md") {
+			// Convert file path to URL path
+			urlPath := s.markdownFilePathToURL(path, contentDir)
+			if urlPath == "" {
+				return nil // Skip invalid paths
+			}
+			
+			// Determine priority and change frequency based on path
+			priority, changeFreq := s.getURLProperties(urlPath)
+			
+			// Try to get actual modification time from file
+			lastMod := currentTime
+			if stat, err := os.Stat(path); err == nil {
+				lastMod = stat.ModTime().Format("2006-01-02")
+			}
+			
+			urls = append(urls, URLEntry{
+				Loc:        baseURL + urlPath,
+				LastMod:    lastMod,
+				ChangeFreq: changeFreq,
+				Priority:   priority,
+			})
+		}
+		
+		return nil
+	})
+	
+	return urls, err
+}
+
+// filePathToURL converts a file path to a URL path
+func (s *SEOService) filePathToURL(filePath, baseDir string) string {
+	// Remove base directory prefix
+	urlPath := strings.TrimPrefix(filePath, baseDir)
+	urlPath = strings.TrimPrefix(urlPath, "/")
+	
+	// Skip certain files
+	if strings.Contains(filePath, "copy.html") {
+		return "" // Skip backup files
+	}
+	
+	// Convert index.html to directory URLs
+	if strings.HasSuffix(urlPath, "/index.html") {
+		urlPath = strings.TrimSuffix(urlPath, "/index.html")
+		if urlPath == "" {
+			return "/" // Root page
+		}
+		return "/" + urlPath + "/"
+	}
+	
+	// Convert regular HTML files
+	if strings.HasSuffix(urlPath, ".html") {
+		urlPath = strings.TrimSuffix(urlPath, ".html")
+		// Handle special case for index.html at root
+		if urlPath == "index" {
+			return "/"
+		}
+		return "/" + urlPath
+	}
+	
+	return ""
+}
+
+// markdownFilePathToURL converts a markdown file path to a clean URL path using the same logic as the router
+func (s *SEOService) markdownFilePathToURL(filePath, baseDir string) string {
+	// Remove base directory prefix and .md extension
+	urlPath := strings.TrimPrefix(filePath, baseDir)
+	urlPath = strings.TrimPrefix(urlPath, "/")
+	urlPath = strings.TrimSuffix(urlPath, ".md")
+	
+	if urlPath == "" {
+		return ""
+	}
+	
+	// Handle index files (remove /index suffix)
+	if strings.HasSuffix(urlPath, "/index") {
+		urlPath = strings.TrimSuffix(urlPath, "/index")
+		if urlPath == "" {
+			urlPath = baseDir // For content section root
+		}
+	}
+	
+	// Apply content type URL mapping
+	contentType, found := s.getContentTypeFromBaseDir(baseDir)
+	if found {
+		// Clean the path segments by removing numeric prefixes
+		cleanPath := s.cleanPathSegments(urlPath)
+		return contentType.URLPrefix + "/" + cleanPath
+	}
+	
+	// Default fallback - clean the path and use as-is
+	cleanPath := s.cleanPathSegments(urlPath)
+	return "/" + cleanPath
+}
+
+// getContentTypeFromBaseDir maps base directories to their content types
+func (s *SEOService) getContentTypeFromBaseDir(baseDir string) (ContentType, bool) {
+	for _, contentType := range ContentTypes {
+		if strings.HasSuffix(baseDir, contentType.BaseDir) {
+			return contentType, true
+		}
+	}
+	return ContentType{}, false
+}
+
+// cleanPathSegments removes numeric prefixes from URL path segments
+func (s *SEOService) cleanPathSegments(urlPath string) string {
+	if urlPath == "" {
+		return ""
+	}
+	
+	// Split path into segments and clean each one
+	segments := strings.Split(urlPath, "/")
+	cleanedSegments := make([]string, 0, len(segments))
+	
+	for _, segment := range segments {
+		if segment != "" {
+			// Use CleanID to remove numeric prefixes and normalize
+			cleaned := CleanID(segment)
+			if cleaned != "" {
+				cleanedSegments = append(cleanedSegments, cleaned)
+			}
+		}
+	}
+	
+	return strings.Join(cleanedSegments, "/")
+}
+
+// getURLProperties returns priority and change frequency based on URL path
+func (s *SEOService) getURLProperties(urlPath string) (priority, changeFreq string) {
+	// Default values
+	priority = "0.5"
+	changeFreq = "monthly"
+	
+	// High priority pages
+	switch urlPath {
+	case "/":
+		priority = "1.0"
+		changeFreq = "weekly"
+	case "/pricing", "/platform", "/features":
+		priority = "0.9"
+		changeFreq = "weekly"
+	case "/contact", "/about":
+		priority = "0.8"
+		changeFreq = "monthly"
+	}
+	
+	// Category-based priorities
+	if strings.HasPrefix(urlPath, "/platform/") {
+		priority = "0.8"
+		changeFreq = "weekly"
+	} else if strings.HasPrefix(urlPath, "/solutions/") {
+		priority = "0.7"
+		changeFreq = "monthly"
+	} else if strings.HasPrefix(urlPath, "/docs/") {
+		priority = "0.6"
+		changeFreq = "weekly"
+	} else if strings.HasPrefix(urlPath, "/api/") {
+		priority = "0.6"
+		changeFreq = "weekly"
+	} else if strings.HasPrefix(urlPath, "/insights/") {
+		priority = "0.5"
+		changeFreq = "monthly"
+	} else if strings.HasPrefix(urlPath, "/company-news/") || strings.HasPrefix(urlPath, "/product-updates/") {
+		priority = "0.4"
+		changeFreq = "weekly"
+	}
+	
+	return priority, changeFreq
 }

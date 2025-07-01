@@ -38,6 +38,18 @@ func main() {
 		fmt.Println("✅ Search index generated successfully")
 	}
 
+	// Generate sitemap at startup
+	fmt.Println("🗺️  Generating sitemap...")
+	seoService := web.NewSEOService()
+	if err := seoService.LoadData(); err != nil {
+		log.Printf("⚠️  Warning: Failed to load SEO data for sitemap: %v", err)
+	}
+	if err := seoService.GenerateSitemap("https://blue.cc"); err != nil {
+		log.Printf("⚠️  Warning: Failed to generate sitemap: %v", err)
+	} else {
+		fmt.Println("✅ Sitemap generated successfully")
+	}
+
 	// Serve static files from public directory
 	fs := http.FileServer(http.Dir("public/"))
 	http.Handle("/public/", http.StripPrefix("/public/", fs))
