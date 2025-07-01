@@ -287,10 +287,15 @@ func (h *HealthChecker) CheckService(service Service) CheckResult {
 	resp, err := client.Get(endpoint)
 
 	status := "up"
-	if err != nil || (resp != nil && resp.StatusCode >= 400) {
+	if err != nil {
 		status = "down"
-		if err != nil {
-			log.Printf("Health check failed for %s: %v", service.Name, err)
+		log.Printf("Health check failed for %s: %v", service.Name, err)
+	} else if resp != nil {
+		// Special case for White Label Files - 404 means server is alive
+		if service.Name == "White Label Files" && resp.StatusCode == 404 {
+			status = "up"
+		} else if resp.StatusCode >= 400 {
+			status = "down"
 		}
 	}
 	
