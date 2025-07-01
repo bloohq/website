@@ -169,10 +169,8 @@ body {
     display: block !important;
   }
   
-  /* Code Block Styling - Override syntax highlighting */
+  /* Code Block Styling - Work with Highlight.js */
   .prose pre {
-    background-color: #1e293b !important; /* Dark slate background */
-    color: #f1f5f9 !important; /* Off-white text */
     border-radius: 8px !important;
     padding: 1.5rem !important;
     overflow-x: auto !important;
@@ -217,20 +215,33 @@ body {
   
   .prose pre code {
     background-color: transparent !important;
-    color: inherit !important;
     padding: 0 !important;
     border-radius: 0 !important;
     font-size: inherit !important;
   }
   
-  /* Remove all syntax highlighting colors */
-  .prose pre code *,
-  .prose pre code .hljs-*,
-  .prose pre code [class*="token-"],
-  .prose pre code [class*="hljs-"] {
-    color: #f1f5f9 !important;
-    background-color: transparent !important;
+  /* Override Tailwind Typography to allow Highlight.js colors */
+  .prose pre code.hljs {
+    color: #c9d1d9 !important; /* Default text color from tomorrow-night theme */
   }
+  
+  /* Force Highlight.js syntax colors to work */
+  .prose .hljs-keyword { color: #ff7b72 !important; }
+  .prose .hljs-string { color: #a5d6ff !important; }
+  .prose .hljs-number { color: #79c0ff !important; }
+  .prose .hljs-comment { color: #8b949e !important; }
+  .prose .hljs-function { color: #d2a8ff !important; }
+  .prose .hljs-variable { color: #ffa657 !important; }
+  .prose .hljs-built_in { color: #ffa657 !important; }
+  .prose .hljs-title { color: #79c0ff !important; }
+  .prose .hljs-attr { color: #79c0ff !important; }
+  .prose .hljs-property { color: #79c0ff !important; }
+  .prose .hljs-literal { color: #79c0ff !important; }
+  .prose .hljs-meta { color: #8b949e !important; }
+  .prose .hljs-tag { color: #7ee787 !important; }
+  .prose .hljs-name { color: #7ee787 !important; }
+  .prose .hljs-selector-class { color: #79c0ff !important; }
+  .prose .hljs-selector-id { color: #79c0ff !important; }
   
   /* Inline code styling */
   .prose code:not(pre code) {

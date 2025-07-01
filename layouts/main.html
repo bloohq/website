@@ -51,6 +51,9 @@
     <script>       
         // Add hover prefetching for navigation links
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Highlight.js
+            hljs.highlightAll();
+            
             const navLinks = document.querySelectorAll('a[href^="/"]');
             navLinks.forEach(link => {
                 link.addEventListener('mouseenter', () => {
