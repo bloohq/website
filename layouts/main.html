@@ -23,10 +23,7 @@
                         {{if .IsMarkdown}}
                         <div class="py-20 prose prose-lg prose-slate max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
                             {{if .Frontmatter}}
-                            <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">{{.Frontmatter.Title}}</h1>
-                            {{if .Frontmatter.Description}}
-                            <p class="text-xl text-gray-600">{{.Frontmatter.Description}}</p>
-                            {{end}}
+                            {{template "page-heading" (dict "Title" .Frontmatter.Title "Subtitle" .Frontmatter.Description "MarginBottom" "mb-8")}}
                             <hr class="mt-1 mb-8 border-gray-200">
                             {{end}}
                             {{.Content}}
