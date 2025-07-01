@@ -29,19 +29,19 @@
                 </div>
             </div>
             
-            <div class="space-y-6" x-data="historyData()">
+            <div class="space-y-6" x-data="statusPageData()" x-init="loadData()">
                 <template x-for="service in services" :key="service.name">
                     <div>
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="text-lg font-medium text-gray-900" x-text="service.name"></h3>
-                            <span class="text-sm text-gray-500" x-text="service.uptime + '% uptime'"></span>
+                            <span class="text-sm text-gray-500" x-text="service.uptime.toFixed(1) + '% uptime'"></span>
                         </div>
                         <div class="flex space-x-1">
-                            <template x-for="day in generateDays(service.uptime)" :key="day.index">
+                            <template x-for="day in service.days" :key="day.date">
                                 <div 
                                     x-data="{
                                         tooltipVisible: false,
-                                        tooltipText: day.tooltip,
+                                        tooltipText: formatTooltip(day),
                                     }"
                                     @mouseenter="tooltipVisible = true"
                                     @mouseleave="tooltipVisible = false"
@@ -51,91 +51,94 @@
                                          x-transition
                                          class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50">
                                         <div class="relative px-2 py-1 text-white bg-gray-900 rounded text-xs whitespace-nowrap">
-                                            <span x-text="tooltipText"></span>
+                                            <span x-html="tooltipText"></span>
                                             <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
                                                 <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-gray-900"></div>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <div class="w-2 h-8 rounded-sm cursor-pointer hover:opacity-80" :class="day.status === 'up' ? 'bg-green-500' : day.status === 'degraded' ? 'bg-yellow-500' : 'bg-red-500'"></div>
+                                    <div class="w-2 h-8 rounded-sm cursor-pointer hover:opacity-80" :class="getStatusColor(day.status)"></div>
                                 </div>
                             </template>
                         </div>
                     </div>
                 </template>
+                
+                <!-- Loading state -->
+                <div x-show="loading" class="text-center py-8">
+                    <div class="text-gray-500">Loading status data...</div>
+                </div>
+                
+                <!-- Error state -->
+                <div x-show="error" class="text-center py-8">
+                    <div class="text-red-500" x-text="'Error loading status data: ' + error"></div>
+                </div>
             </div>
         </div>
 </div>
 
 <script>
-    function statusData() {
+    function statusPageData() {
         return {
-            // Mock data for demo purposes
-            services: [
-                { name: 'blue.cc', status: 'operational', uptime: 99.9 },
-                { name: 'api.blue.cc', status: 'operational', uptime: 99.8 },
-                { name: 'app.blue.cc', status: 'operational', uptime: 99.7 },
-                { name: 'beta.app.blue.cc', status: 'operational', uptime: 99.5 },
-                { name: 'Background Services', status: 'operational', uptime: 99.9 },
-                { name: 'Forms', status: 'operational', uptime: 99.6 },
-                { name: 'Public File Sharing', status: 'operational', uptime: 99.4 },
-                { name: 'White Label Frontend', status: 'operational', uptime: 99.3 },
-                { name: 'White Label File Sharing', status: 'operational', uptime: 99.2 },
-                { name: 'White Label Forms', status: 'operational', uptime: 99.1 }
-            ]
-        }
-    }
-
-    function historyData() {
-        return {
-            services: [
-                { name: 'Website', uptime: 99.9 },
-                { name: 'API', uptime: 99.8 },
-                { name: 'Web App', uptime: 99.7 },
-                { name: 'Beta Web App', uptime: 99.5 },
-                { name: 'Background Services', uptime: 99.9 },
-                { name: 'Forms', uptime: 99.6 },
-                { name: 'Public File Sharing', uptime: 99.4 },
-                { name: 'White Label Web App', uptime: 99.3 },
-                { name: 'White Label File Sharing', uptime: 99.2 },
-                { name: 'White Label Forms', uptime: 99.1 }
-            ],
-            generateDays(uptime) {
-                const days = [];
-                const downtimePercent = (100 - uptime) / 100;
-                
-                for (let i = 0; i < 90; i++) {
-                    const date = new Date();
-                    date.setDate(date.getDate() - (89 - i));
+            services: [],
+            loading: true,
+            error: null,
+            
+            async loadData() {
+                try {
+                    this.loading = true;
+                    this.error = null;
                     
-                    // Simulate some downtime based on uptime percentage
-                    let status = 'up';
-                    const random = Math.random();
+                    // Fetch historical data
+                    const response = await fetch('/api/status/history');
                     
-                    if (random < downtimePercent * 0.3) {
-                        status = 'down';
-                    } else if (random < downtimePercent * 0.7) {
-                        status = 'degraded';
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
                     
-                    const options = { 
-                        weekday: 'short', 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                    };
-                    const formattedDate = date.toLocaleDateString('en-US', options);
+                    const data = await response.json();
+                    this.services = data.services || [];
                     
-                    days.push({
-                        index: i,
-                        date: date.toISOString().split('T')[0],
-                        status: status,
-                        tooltip: `${formattedDate}: ${status === 'up' ? 'Operational' : status === 'degraded' ? 'Degraded Performance' : 'Major Outage'}`
-                    });
+                } catch (err) {
+                    this.error = err.message;
+                    console.error('Failed to load status data:', err);
+                } finally {
+                    this.loading = false;
+                }
+            },
+            
+            formatTooltip(day) {
+                const date = new Date(day.date);
+                const options = { 
+                    weekday: 'short', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                };
+                const formattedDate = date.toLocaleDateString('en-US', options);
+                
+                let statusText = 'Operational';
+                if (day.status === 'degraded') {
+                    statusText = 'Degraded Performance';
+                } else if (day.status === 'outage') {
+                    statusText = 'Major Outage';
                 }
                 
-                return days;
+                return `${formattedDate}<br>${statusText} (${day.uptime.toFixed(1)}%)`;
+            },
+            
+            getStatusColor(status) {
+                switch (status) {
+                    case 'operational':
+                        return 'bg-green-500';
+                    case 'degraded':
+                        return 'bg-yellow-500';
+                    case 'outage':
+                        return 'bg-red-500';
+                    default:
+                        return 'bg-gray-300';
+                }
             }
         }
     }

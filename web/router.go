@@ -66,6 +66,7 @@ type Router struct {
 	markdownService   *MarkdownService
 	htmlService       *HTMLService
 	seoService        *SEOService
+	statusChecker     *HealthChecker
 	tocExcludedPaths  []string
 }
 
@@ -103,6 +104,7 @@ func NewRouter(pagesDir string) *Router {
 		navigationService: navigationService,
 		htmlService:       htmlService,
 		seoService:        seoService,
+		statusChecker:     nil, // Will be set by SetStatusChecker
 		tocExcludedPaths: []string{ // These pages will not show toc
 			"/changelog",
 			"/roadmap",
@@ -142,8 +144,25 @@ func NewRouter(pagesDir string) *Router {
 	return router
 }
 
+// SetStatusChecker sets the status checker for the router
+func (r *Router) SetStatusChecker(checker *HealthChecker) {
+	r.statusChecker = checker
+}
+
 // ServeHTTP implements the http.Handler interface
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	// Handle status API routes
+	if r.statusChecker != nil {
+		switch req.URL.Path {
+		case "/api/status/current":
+			CurrentStatusAPIHandler(r.statusChecker)(w, req)
+			return
+		case "/api/status/history":
+			HistoricalDataAPIHandler(r.statusChecker)(w, req)
+			return
+		}
+	}
+	
 	// Skip public file requests
 	if strings.HasPrefix(req.URL.Path, "/public/") {
 		return
