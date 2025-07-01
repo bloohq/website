@@ -3,6 +3,7 @@
     "/docs": "/docs/welcome",
     "/api": "/api-docs/introduction",
     "/api-docs": "/api-docs/introduction",
+    "/about": "/company/about",
     "/releases": "/platform/changelog",
     "/platform/releases": "/platform/changelog",
     "/changelog": "/platform/changelog",
