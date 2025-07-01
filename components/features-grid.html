@@ -1,0 +1,28 @@
+{{define "features-grid"}}
+<div class="max-w-7xl mx-auto">
+    {{range .sections}}
+    <div class="border-t border-gray-200 pt-6 mb-12">
+        <div class="grid grid-cols-4 gap-8">
+            <div class="col-span-1">
+                <h2 class="text-lg font-semibold text-gray-900">{{.title}}</h2>
+            </div>
+            <div class="col-span-3 grid grid-cols-3 gap-8">
+                {{range .columns}}
+                <div>
+                    {{range .items}}
+                    <p class="text-gray-600 mb-6">
+                        {{if .link}}
+                        <a href="{{.link}}" class="hover:text-brand-blue hover:underline">{{.label}}</a>
+                        {{else}}
+                        {{.label}}
+                        {{end}}
+                    </p>
+                    {{end}}
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+    {{end}}
+</div>
+{{end}}

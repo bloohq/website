@@ -3,8 +3,159 @@
     {{template "page-heading" 
         dict 
             "Title" "All Features" 
-            "Subtitle" "All the features in the Blue platform." 
-            "MarginBottom" "mb-8"
+            "Subtitle" "Discover all the modules and features in Blue." 
+            "MarginBottom" "mb-16"
     }}
+
+    {{$featuresData := parseJSON `{
+        "sections": [
+            {
+                "title": "Product",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "Automations", "link": "/platform/features/automations" },
+                            { "label": "Dashboards", "link": "/platform/features/dashboards" },
+                            { "label": "Projects", "link": "/platform/features/projects" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Records", "link": "/platform/features/records" },
+                            { "label": "Templates", "link": "/platform/features/templates" },
+                            { "label": "Search", "link": "/platform/features/search" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Forms", "link": "/platform/features/forms" },
+                            { "label": "Chat", "link": "/platform/features/chat" },
+                            { "label": "Wiki", "link": "/platform/features/wiki" },
+                            { "label": "File Management", "link": "/platform/features/file-management" },
+                            { "label": "PDF Generation", "link": "/platform/features/pdf-generation" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Views",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "Kanban Board", "link": "/platform/features/views/board" },
+                            { "label": "Calendar", "link": "/platform/features/views/calendar" },
+                            { "label": "Timeline & Gantt Charts", "link": "/platform/features/views/timeline" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Database", "link": "/platform/features/views/database" },
+                            { "label": "Map", "link": "/platform/features/views/map" },
+                            { "label": "List", "link": "/platform/features/views/list" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Filters", "link": "/platform/features/views/filters" },
+                            { "label": "Audit Trails", "link": "/platform/features/views/audit-trails" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Custom Fields",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "Introduction", "link": "/platform/features/custom-fields/introduction" },
+                            { "label": "Single Line Text", "link": "/platform/features/custom-fields/single-line-text" },
+                            { "label": "Multiple Line Text", "link": "/platform/features/custom-fields/multiple-line-text" },
+                            { "label": "URL / Link", "link": "/platform/features/custom-fields/url-link" },
+                            { "label": "Currency", "link": "/platform/features/custom-fields/currency" },
+                            { "label": "Country", "link": "/platform/features/custom-fields/country" },
+                            { "label": "Date", "link": "/platform/features/custom-fields/date" },
+                            { "label": "Formula", "link": "/platform/features/custom-fields/formula" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "File", "link": "/platform/features/custom-fields/file" },
+                            { "label": "Single Select", "link": "/platform/features/custom-fields/single-select" },
+                            { "label": "Multiple Select", "link": "/platform/features/custom-fields/multiple-select" },
+                            { "label": "Location / Map", "link": "/platform/features/custom-fields/location-map" },
+                            { "label": "Phone Number", "link": "/platform/features/custom-fields/phone-number" },
+                            { "label": "Email", "link": "/platform/features/custom-fields/email" },
+                            { "label": "Star Rating", "link": "/platform/features/custom-fields/star-rating" },
+                            { "label": "Checkbox", "link": "/platform/features/custom-fields/checkbox" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Number", "link": "/platform/features/custom-fields/number" },
+                            { "label": "Percent", "link": "/platform/features/custom-fields/percent" },
+                            { "label": "Unique ID", "link": "/platform/features/custom-fields/unique-id" },
+                            { "label": "Reference", "link": "/platform/features/custom-fields/reference" },
+                            { "label": "Lookup", "link": "/platform/features/custom-fields/lookup" },
+                            { "label": "Duration", "link": "/platform/features/custom-fields/duration" },
+                            { "label": "Button", "link": "/platform/features/custom-fields/button" },
+                            { "label": "Time In List", "link": "/platform/features/custom-fields/time-in-list" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Integrations",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "Make.com", "link": "/platform/integrations/make" },
+                            { "label": "API", "link": "/platform/integrations/api" },
+                            { "label": "Webhooks", "link": "/platform/integrations/webhooks" },
+                            { "label": "Pabbly Connect", "link": "/platform/integrations/pabbly-connect" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Zapier", "link": "/platform/integrations/zapier" },
+                            { "label": "CSV Import", "link": "/platform/integrations/csv-import" },
+                            { "label": "CSV Export", "link": "/platform/integrations/csv-export" },
+                            { "label": "Calendar Sync", "link": "/platform/integrations/calendar-sync" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Google Maps", "link": "/platform/integrations/google-maps" },
+                            { "label": "Github", "link": "/platform/integrations/github" },
+                            { "label": "Albato", "link": "/platform/integrations/albato" },
+                            { "label": "Boost.space", "link": "/platform/integrations/boost-space" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Download",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "iOS & Android", "link": "/download/mobile" },
+                            { "label": "Web Clipper", "link": "/download/web-clipper" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Mac & Windows", "link": "/download/desktop" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Calendar", "link": "/download/calendar" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }`}}
+    
+    {{template "features-grid" $featuresData}}
 
 </div>
