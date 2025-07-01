@@ -26,15 +26,15 @@
           "name": "By Industry",
           "expanded": false,
           "children": [
-            {"id": "government", "name": "Government", "href": "/solutions/government"},
-            {"id": "non-profits", "name": "Non-Profits", "href": "/solutions/non-profits"},
-            {"id": "education", "name": "Education", "href": "/solutions/education"},
-            {"id": "logistics", "name": "Logistics", "href": "/solutions/logistics"},
-            {"id": "real-estate", "name": "Real Estate", "href": "/solutions/real-estate"},
-            {"id": "professional-services", "name": "Professional Services", "href": "/solutions/professional-services"},
-            {"id": "production", "name": "Production", "href": "/solutions/production"},
-            {"id": "agencies", "name": "Agencies", "href": "/solutions/agencies"},
-            {"id": "solopreneurs", "name": "Solopreneurs", "href": "/solutions/solopreneurs"}
+            {"id": "government", "name": "Government", "href": "/solutions/industry/government"},
+            {"id": "non-profits", "name": "Non-Profits", "href": "/solutions/industry/non-profits"},
+            {"id": "education", "name": "Education", "href": "/solutions/industry/education"},
+            {"id": "logistics", "name": "Logistics", "href": "/solutions/industry/logistics"},
+            {"id": "real-estate", "name": "Real Estate", "href": "/solutions/industry/real-estate"},
+            {"id": "professional-services", "name": "Professional Services", "href": "/solutions/industry/professional-services"},
+            {"id": "production", "name": "Production", "href": "/solutions/industry/production"},
+            {"id": "agencies", "name": "Agencies", "href": "/solutions/industry/agencies"},
+            {"id": "solopreneurs", "name": "Solopreneurs", "href": "/solutions/industry/solopreneurs"}
           ]
         },
         {
@@ -42,11 +42,11 @@
           "name": "By Use Case",
           "expanded": false,
           "children": [
-            {"id": "process-management", "name": "Process Management", "href": "/solutions/process-management"},
-            {"id": "project-management", "name": "Project Management", "href": "/solutions/project-management"},
-            {"id": "sales-crm", "name": "Sales CRM", "href": "/solutions/sales-crm"},
-            {"id": "service-tickets", "name": "Service Tickets", "href": "/solutions/service-tickets"},
-            {"id": "it", "name": "IT", "href": "/solutions/it"}
+            {"id": "process-management", "name": "Process Management", "href": "/solutions/use-case/process-management"},
+            {"id": "project-management", "name": "Project Management", "href": "/solutions/use-case/project-management"},
+            {"id": "sales-crm", "name": "Sales CRM", "href": "/solutions/use-case/sales-crm"},
+            {"id": "service-tickets", "name": "Service Tickets", "href": "/solutions/use-case/service-tickets"},
+            {"id": "it", "name": "IT", "href": "/solutions/use-case/it"}
           ]
         }
       ]
