@@ -69,9 +69,9 @@ func main() {
 				ticker := time.NewTicker(5 * time.Minute)
 				defer ticker.Stop()
 				
-				// Run initial check
-				log.Println("Running initial health checks...")
-				healthChecker.CheckAllServices()
+				// Run initial check only if needed
+				log.Println("Checking if initial health checks are needed...")
+				healthChecker.CheckAllServicesIfNeeded()
 				
 				// Run periodic checks
 				for range ticker.C {

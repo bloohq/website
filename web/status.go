@@ -337,6 +337,39 @@ func (h *HealthChecker) storeResult(result CheckResult) {
 	}
 }
 
+// hasRecentCheck checks if any service has been checked within the last 5 minutes
+func (h *HealthChecker) hasRecentCheck() bool {
+	sql := `SELECT COUNT(*) as count FROM service_checks 
+			WHERE checked_at >= datetime('now', '-5 minutes')`
+	
+	resp, err := h.d1Client.Query(sql)
+	if err != nil {
+		log.Printf("Failed to check for recent checks: %v", err)
+		return false // If we can't check, assume no recent checks and proceed
+	}
+	
+	for _, result := range resp.Result {
+		for _, row := range result.Results {
+			if count, ok := row["count"].(float64); ok {
+				return count > 0
+			}
+		}
+	}
+	
+	return false
+}
+
+// CheckAllServicesIfNeeded performs health checks only if none have been done in the last 5 minutes
+func (h *HealthChecker) CheckAllServicesIfNeeded() {
+	if h.hasRecentCheck() {
+		log.Println("Recent health checks found (within last 5 minutes), skipping new checks")
+		return
+	}
+	
+	log.Println("No recent health checks found, performing health checks on all services")
+	h.CheckAllServices()
+}
+
 // CheckAllServices performs health checks on all services
 func (h *HealthChecker) CheckAllServices() {
 	var wg sync.WaitGroup
