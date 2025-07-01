@@ -70,12 +70,12 @@ func main() {
 				defer ticker.Stop()
 				
 				// Run initial check only if needed
-				log.Println("Checking if initial health checks are needed...")
+				log.Println("🔍 Checking if initial health checks are needed...")
 				healthChecker.CheckAllServicesIfNeeded()
 				
 				// Run periodic checks
 				for range ticker.C {
-					log.Println("Running scheduled health checks...")
+					log.Println("⏰ Running scheduled health checks...")
 					healthChecker.CheckAllServices()
 				}
 			}()
