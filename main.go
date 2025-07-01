@@ -86,8 +86,14 @@ func main() {
 	
 	http.Handle("/", router)
 
-	fmt.Println("🚀 Blue Website server starting on :8080...")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	// Get port from environment variable, default to 8080 for local development
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	
+	fmt.Printf("🚀 Blue Website server starting on :%s...\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
  

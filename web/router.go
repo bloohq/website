@@ -151,6 +151,12 @@ func (r *Router) SetStatusChecker(checker *HealthChecker) {
 
 // ServeHTTP implements the http.Handler interface
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	// Handle health check endpoint
+	if req.URL.Path == "/health" {
+		HealthHandler(w, req)
+		return
+	}
+	
 	// Handle status API routes
 	if r.statusChecker != nil {
 		switch req.URL.Path {
