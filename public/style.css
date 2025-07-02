@@ -2626,6 +2626,15 @@
       }
     }
   }
+  .dark\:hover\:text-gray-100 {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-gray-100);
+        }
+      }
+    }
+  }
   .dark\:hover\:text-gray-200 {
     &:where(.dark, .dark *) {
       &:hover {
