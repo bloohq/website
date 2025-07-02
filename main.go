@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sync"
 	"time"
 
 	"blue-website/web"
@@ -12,6 +13,9 @@ import (
 )
 
 func main() {
+	startTime := time.Now()
+	fmt.Printf("🚀 Starting Blue Website server at %s...\n", startTime.Format("15:04:05.000"))
+	
 	// Load environment variables
 	if err := godotenv.Load(); err != nil {
 		log.Printf("Warning: .env file not found, using system environment variables")
@@ -30,68 +34,124 @@ func main() {
 		}
 	}
 
-	// Generate search index at startup
-	fmt.Println("🔍 Generating search index...")
-	if err := web.GenerateSearchIndex(); err != nil {
-		log.Printf("⚠️  Warning: Failed to generate search index: %v", err)
-	} else {
-		fmt.Println("✅ Search index generated successfully")
-	}
+	// Parallelize independent startup tasks
+	var wg sync.WaitGroup
+	
+	// Generate search index concurrently
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		searchStart := time.Now()
+		fmt.Println("🔍 Generating search index...")
+		if err := web.GenerateSearchIndex(); err != nil {
+			log.Printf("⚠️  Warning: Failed to generate search index: %v", err)
+		} else {
+			fmt.Printf("✅ Search index generated successfully (took %v)\n", time.Since(searchStart))
+		}
+	}()
 
-	// Generate sitemap at startup
-	fmt.Println("🗺️  Generating sitemap...")
-	seoService := web.NewSEOService()
-	if err := seoService.LoadData(); err != nil {
-		log.Printf("⚠️  Warning: Failed to load SEO data for sitemap: %v", err)
-	}
-	if err := seoService.GenerateSitemap("https://blue.cc"); err != nil {
-		log.Printf("⚠️  Warning: Failed to generate sitemap: %v", err)
-	} else {
-		fmt.Println("✅ Sitemap generated successfully")
-	}
+	// Generate sitemap concurrently
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		sitemapStart := time.Now()
+		fmt.Println("🗺️  Generating sitemap...")
+		seoService := web.NewSEOService()
+		if err := seoService.LoadData(); err != nil {
+			log.Printf("⚠️  Warning: Failed to load SEO data for sitemap: %v", err)
+			return
+		}
+		if err := seoService.GenerateSitemap("https://blue.cc"); err != nil {
+			log.Printf("⚠️  Warning: Failed to generate sitemap: %v", err)
+		} else {
+			fmt.Printf("✅ Sitemap generated successfully (took %v)\n", time.Since(sitemapStart))
+		}
+	}()
+
+	// Wait for both tasks to complete before proceeding
+	wg.Wait()
 
 	// Serve static files from public directory
 	fs := http.FileServer(http.Dir("public/"))
 	http.Handle("/public/", http.StripPrefix("/public/", fs))
 
 	// File-based routing handler
+	routerStart := time.Now()
+	fmt.Println("🛣️  Initializing router...")
 	router := web.NewRouter("pages")
+	fmt.Printf("✅ Router initialized (took %v)\n", time.Since(routerStart))
 	
-	// Initialize status monitoring if environment variables are set
-	if os.Getenv("CLOUDFLARE_API_KEY") != "" {
-		fmt.Println("🏥 Initializing status monitoring...")
+	// Run link checker in background after router is ready
+	go func() {
+		linkCheckerStart := time.Now()
+		fmt.Println("🔗 Starting link checker...")
 		
-		// Create D1 client
-		d1Client := web.NewD1Client()
-		
-		// Create health checker
-		healthChecker := web.NewHealthChecker(d1Client)
-		
-		// Initialize database and load historical data
-		if err := healthChecker.Initialize(); err != nil {
-			log.Printf("⚠️  Warning: Failed to initialize status monitoring: %v", err)
-		} else {
-			fmt.Println("✅ Status monitoring initialized")
-			
-			// Set the health checker in the router
-			router.SetStatusChecker(healthChecker)
-			
-			// Start background health checks
-			go func() {
-				ticker := time.NewTicker(5 * time.Minute)
-				defer ticker.Stop()
-				
-				// Run initial check only if needed
-				log.Println("🔍 Checking if initial health checks are needed...")
-				healthChecker.CheckAllServicesIfNeeded()
-				
-				// Run periodic checks
-				for range ticker.C {
-					log.Println("⏰ Running scheduled health checks...")
-					healthChecker.CheckAllServices()
-				}
-			}()
+		// Create fresh services for link checker (they cache content internally)
+		markdownService := web.NewMarkdownService()
+		contentService := web.NewContentService("content")
+		linkSeoService := web.NewSEOService()
+		if err := linkSeoService.LoadData(); err != nil {
+			log.Printf("⚠️  Warning: Failed to load SEO data for link checker: %v", err)
+			return
 		}
+		htmlService := web.NewHTMLService("pages", "layouts", "components", markdownService)
+		
+		// Pre-render content for link checker
+		if err := markdownService.PreRenderAllMarkdown(contentService, linkSeoService); err != nil {
+			log.Printf("⚠️  Warning: Failed to pre-render markdown for link checker: %v", err)
+			return
+		}
+		if err := htmlService.PreRenderAllHTMLPages(web.NewNavigationService(linkSeoService), linkSeoService); err != nil {
+			log.Printf("⚠️  Warning: Failed to pre-render HTML for link checker: %v", err)
+			return
+		}
+		
+		// Run the link checker
+		if err := web.RunLinkChecker(markdownService, htmlService, linkSeoService); err != nil {
+			log.Printf("⚠️  Warning: link checker failed: %v", err)
+		} else {
+			fmt.Printf("✅ Link checker completed (took %v)\n", time.Since(linkCheckerStart))
+		}
+	}()
+	
+	// Initialize status monitoring in background if environment variables are set
+	if os.Getenv("CLOUDFLARE_API_KEY") != "" {
+		go func() {
+			statusStart := time.Now()
+			fmt.Println("🏥 Initializing status monitoring...")
+			
+			// Create D1 client
+			d1Client := web.NewD1Client()
+			
+			// Create health checker
+			healthChecker := web.NewHealthChecker(d1Client)
+			
+			// Initialize database and load historical data
+			if err := healthChecker.Initialize(); err != nil {
+				log.Printf("⚠️  Warning: Failed to initialize status monitoring: %v", err)
+			} else {
+				fmt.Printf("✅ Status monitoring initialized (took %v)\n", time.Since(statusStart))
+				
+				// Set the health checker in the router
+				router.SetStatusChecker(healthChecker)
+				
+				// Start background health checks
+				go func() {
+					ticker := time.NewTicker(5 * time.Minute)
+					defer ticker.Stop()
+					
+					// Run initial check only if needed
+					log.Println("🔍 Checking if initial health checks are needed...")
+					healthChecker.CheckAllServicesIfNeeded()
+					
+					// Run periodic checks
+					for range ticker.C {
+						log.Println("⏰ Running scheduled health checks...")
+						healthChecker.CheckAllServices()
+					}
+				}()
+			}
+		}()
 	} else {
 		log.Println("⚠️  Status monitoring disabled (missing environment variables)")
 	}
@@ -104,7 +164,8 @@ func main() {
 		port = "8080"
 	}
 	
-	fmt.Printf("🚀 Blue Website server starting on :%s...\n", port)
+	totalStartupTime := time.Since(startTime)
+	fmt.Printf("🚀 Blue Website server ready on :%s (total startup: %v)\n", port, totalStartupTime)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
