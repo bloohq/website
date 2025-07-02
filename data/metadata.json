@@ -57,6 +57,11 @@
       "description": "Watch real customer testimonials and success stories.",
       "keywords": ["customers", "testimonials", "case studies", "success stories", "client reviews", "enterprise customers", "customer stories", "blue"]
     },
+    "enterprise": {
+      "title": "Enterprise",
+      "description": "Blue is designed to scale with your business. We've built a platform that can handle the most complex workflows and processes.",
+      "keywords": ["enterprise", "scale", "workflows", "processes", "automation", "blue"]
+    },
     "brand": {
       "title": "Brand Guidelines",
       "description": "Explore Blue's brand guidelines including typography, visual identity, and brand assets. Learn how to properly use Blue's brand elements.",
