@@ -1,0 +1,22 @@
+{{define "value-propositions"}}
+<!-- Value Propositions Component -->
+<section class="max-w-7xl mx-auto py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+        <!-- Left Side: Title and Description -->
+        <div class="space-y-6 p-8 md:pr-12 md:border-r border-gray-200 dark:border-gray-700">
+            <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">{{html .Title}}</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-lg">{{.Description}}</p>
+        </div>
+
+        <!-- Right Side: Value Props Stacked -->
+        <div class="space-y-8 p-8 md:pl-12">
+            {{range .ValueProps}}
+            <div class="space-y-3">
+                <h4 class="text-xl font-medium text-gray-900 dark:text-gray-100">{{.Title}}</h4>
+                <p class="text-gray-600 dark:text-gray-400">{{.Description}}</p>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</section>
+{{end}}
