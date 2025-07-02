@@ -11,7 +11,7 @@
     <div class="mb-16">
         {{$testimonialData := parseJSON `{
             "ImageUrl": "/public/testimonials/eran-bucai.jpg",
-            "Quote": "Blue is my go-to project management tool to run my virtual assistant team, my video production workflow, and even act as my sales pipeline.",
+            "Quote": "Blue is my go-to process management tool for managing virtual assistants, video production workflows, and even for my sales CRM.",
             "Name": "Eran Bucai",
             "Title": "Founder of DotComTruths.com"
         }`}}
@@ -22,13 +22,41 @@
     <!-- Reminders Feature -->
     <div class="mb-16">
         {{$remindersData := parseJSON `{
-            "Title": "Reminders help you remember what to do — and when to do it.",
-            "Description": "We get it, there's always too much to do. Blue helps you remember when you need to get things done.",
-            "VideoUrl": "/public/testvideo2.mp4",
+            "Title": "Reminder yourself what to do and when to do it.",
+            "Description": "Never let a task slip through the cracks. Blue helps you remember when you need to get things done.",
+            "VideoUrl": "/public/product/reminders.mp4",
             "VideoPosition": "left"
         }`}}
         
         {{template "feature-video" $remindersData}}
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mb-16">
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "id": "FAQ",
+                    "name": "Frequently Asked Questions",
+                    "questions": [
+                        {
+                            "question": "Is Blue suitable for solo entrepreneurs?",
+                            "answer": "Absolutely! Blue is designed to scale with your business. Whether you're managing projects alone or planning to grow your team, our platform adapts to your needs with flexible pricing and features that grow with you."
+                        },
+                        {
+                            "question": "How quickly can I set up Blue for my business?",
+                            "answer": "Most solopreneurs are up and running within 15 minutes. Our intuitive interface and pre-built templates for common workflows mean you can start managing your projects immediately without a steep learning curve."
+                        },
+                        {
+                            "question": "Can I use Blue for multiple types of projects?",
+                            "answer": "Yes! Blue is versatile enough to handle everything from client projects and content calendars to sales pipelines and personal productivity. One platform for all your business needs."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
     </div>
 
 </div>

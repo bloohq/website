@@ -66,6 +66,11 @@
       "title": "Company",
       "description": "Learn about Blue's company, our team, and our mission to revolutionize process management for modern teams.",
       "keywords": ["company", "about us", "team", "mission", "leadership", "blue"]
+    },
+    "solutions/industry/solopreneurs": {
+      "title": "Project Management for Solopreneurs",
+      "description": "Streamline your solo business with Blue's powerful project management platform. Manage clients, projects, tasks, and workflows in one simple solution designed for solopreneurs.",
+      "keywords": ["solopreneurs", "solo entrepreneurs", "freelancers", "independent business", "project management", "client management", "workflow automation", "business productivity", "blue"]
     }
   },
   "defaults": {
