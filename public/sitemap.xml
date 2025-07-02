@@ -679,7 +679,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blue.cc/docs/records/index</loc>
+    <loc>https://blue.cc/docs/records/introduction</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -805,7 +805,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blue.cc/docs/custom-fields/index</loc>
+    <loc>https://blue.cc/docs/custom-fields/introduction</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
