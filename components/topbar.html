@@ -1,5 +1,29 @@
 {{define "topbar"}}
-<div x-data="{ mobileMenuOpen: false }">
+<div x-data="{ 
+    mobileMenuOpen: false,
+    darkMode: false,
+    init() {
+        // Initialize dark mode from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            this.darkMode = true;
+            document.documentElement.classList.add('dark');
+        } else {
+            this.darkMode = false;
+            document.documentElement.classList.remove('dark');
+        }
+    },
+    toggleDarkMode() {
+        this.darkMode = !this.darkMode;
+        if (this.darkMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+}">
 <!-- Scroll Indicator -->
 <div class="fixed top-0 left-0 w-full h-1 z-[60]">
     <div class="h-1 bg-gradient-to-r from-blue-100 transition-all duration-300 ease-out"
@@ -7,7 +31,7 @@
 </div>
 
 <!-- Top Navigation Bar -->
-<header class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-70 fixed top-0 left-0 right-0 z-50 h-16"
+<header class="bg-white dark:bg-gray-900 backdrop-filter backdrop-blur-lg bg-opacity-70 dark:bg-opacity-70 fixed top-0 left-0 right-0 z-50 h-16 transition-colors duration-300"
         @keydown.escape="mobileMenuOpen = false">
     <div class="relative flex items-center justify-between px-4 h-full">
         <!-- Logo and Toggle -->
@@ -16,7 +40,7 @@
                 <img src="/public/logo/logo.svg" alt="Blue" class="h-8 w-auto ml-3">
             </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 
-                    class="hidden md:block p-2 ml-4 rounded-md hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700 cursor-pointer focus:outline-none">
+                    class="hidden md:block p-2 ml-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none">
                 <svg class="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 16 24">
                     <rect x="1" y="4" width="14" height="16" stroke-width="1.5" rx="1"></rect>
                     <rect :class="sidebarsOpen ? 'fill-current' : 'fill-transparent'" 
@@ -115,7 +139,7 @@
                     @input.debounce.50ms="search()"
                     @keydown="handleKeydown($event)"
                     @focus="query && search()"
-                    class="block w-full pl-10 pr-16 py-2 border border-transparent bg-gray-100 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:bg-white focus:border-gray-300 transition-all duration-200"
+                    class="block w-full pl-10 pr-16 py-2 border border-transparent bg-gray-100 dark:bg-gray-800 rounded-lg text-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100 focus:outline-none focus:bg-white dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition-all duration-200"
                     placeholder="Search anything..."
                     autocomplete="off"
                     id="searchInput"
@@ -137,7 +161,7 @@
                      x-transition:leave="transition ease-in duration-150"
                      x-transition:leave-start="opacity-100 translate-y-0"
                      x-transition:leave-end="opacity-0 translate-y-1"
-                     class="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 max-h-96 overflow-y-auto z-50 custom-scrollbar">
+                     class="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 max-h-96 overflow-y-auto z-50 custom-scrollbar">
                     
                     <template x-if="loading">
                         <div class="p-4 text-center text-gray-500 text-sm">
@@ -155,12 +179,12 @@
                         <div class="py-2">
                             <template x-for="(result, index) in results" :key="index">
                                 <div @click="selectResult(result)"
-                                     :class="selectedIndex === index ? 'bg-blue-50' : 'hover:bg-gray-50'"
-                                     class="px-4 py-3 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors">
+                                     :class="selectedIndex === index ? 'bg-blue-50 dark:bg-blue-900/30' : 'hover:bg-gray-50 dark:hover:bg-gray-700'"
+                                     class="px-4 py-3 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0 transition-colors">
                                     <div class="flex items-start">
                                         <div class="flex-1">
-                                            <h4 class="font-semibold text-gray-900 text-sm" x-text="result.item.title"></h4>
-                                            <p class="text-sm text-gray-600 mt-1 line-clamp-2" x-text="getSnippet(result)"></p>
+                                            <h4 class="font-semibold text-gray-900 dark:text-gray-100 text-sm" x-text="result.item.title"></h4>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2" x-text="getSnippet(result)"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -174,8 +198,9 @@
         <!-- Right side controls -->
         <div class="hidden md:flex items-center space-x-4">
             <!-- Light/Dark mode toggle -->
-            <button class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none">
-                <i class="fas fa-moon text-lg"></i>
+            <button @click="toggleDarkMode()" 
+                    class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-colors duration-200">
+                <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'" class="text-lg transition-transform duration-200"></i>
             </button>
             
             <!-- Login -->
@@ -199,7 +224,7 @@
         
         <!-- Mobile Menu Button -->
         <button @click="mobileMenuOpen = !mobileMenuOpen" 
-                class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700 cursor-pointer focus:outline-none">
+                class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none">
             <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -281,7 +306,7 @@
          x-transition:leave-start="translate-x-0"
          x-transition:leave-end="translate-x-full"
          @click.stop
-         class="absolute right-0 top-0 h-full w-80 bg-white shadow-xl overflow-y-auto"
+         class="absolute right-0 top-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl overflow-y-auto"
          x-data="{ 
              sections: {{.Navigation.Sections | toJSON}},
              currentPath: window.location.pathname,

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-brand-blue: #00a0d2;
@@ -11,6 +12,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 8rem; /* Account for fixed header height */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Alpine.js cloak to prevent flashing */
@@ -20,12 +22,19 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Custom styles */
 :root {
     --gray-hover: rgba(0, 0, 0, 0.04);
     --gray-arrow: #9ca3af;
+}
+
+/* Dark mode custom properties */
+.dark {
+    --gray-hover: rgba(255, 255, 255, 0.08);
+    --gray-arrow: #6b7280;
 }
 
 .hover-gray:hover {
@@ -101,6 +110,10 @@ body {
     scrollbar-color: #00a0d2 #f3f4f6;
 }
 
+.dark * {
+    scrollbar-color: #00a0d2 #374151;
+}
+
 *::-webkit-scrollbar {
     width: 6px;
 }
@@ -108,6 +121,10 @@ body {
 *::-webkit-scrollbar-track {
     background: #f3f4f6;
     border-radius: 3px;
+}
+
+.dark *::-webkit-scrollbar-track {
+    background: #374151;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -201,10 +218,22 @@ body {
     z-index: 10;
   }
   
+  .dark .code-copy-btn {
+    background-color: rgba(31, 41, 55, 0.8);
+    color: #9ca3af;
+    border-color: rgba(55, 65, 81, 0.3);
+  }
+  
   .code-copy-btn:hover {
     background-color: rgba(71, 85, 105, 0.9);
     color: #f1f5f9;
     border-color: rgba(100, 116, 139, 0.5);
+  }
+  
+  .dark .code-copy-btn:hover {
+    background-color: rgba(55, 65, 81, 0.9);
+    color: #f9fafb;
+    border-color: rgba(75, 85, 99, 0.5);
   }
   
   .code-copy-btn.copied {
@@ -251,6 +280,11 @@ body {
     border-radius: 0.25rem !important;
     font-size: 0.875em !important;
     font-weight: 500 !important;
+  }
+  
+  .dark .prose code:not(pre code) {
+    background-color: #1f2937 !important;
+    color: #e5e7eb !important;
   }
 }
 

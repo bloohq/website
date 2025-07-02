@@ -7,7 +7,7 @@
         scrollProgress: 0
     }" 
     @scroll.window="scrollProgress = Math.round((window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100)"
-    class="bg-white overflow-x-hidden">
+    class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300">
     {{template "topbar" .}}
     
     <!-- Main Layout -->
@@ -15,16 +15,16 @@
         {{template "left-sidebar" .}}
         
         <!-- Main Content Area -->
-        <main class="flex-1 bg-white">
+        <main class="flex-1 bg-white dark:bg-gray-900 transition-colors duration-300">
             <div class="flex">
                 <!-- Content Area -->
                 <div class="flex-1 px-8 pt-16 pb-4">
                     <div class="max-w-6xl mx-auto">
                         {{if .IsMarkdown}}
-                        <div class="py-20 prose prose-lg prose-slate max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
+                        <div class="py-20 prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:text-gray-900 dark:prose-headings:text-gray-100 prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-code:text-blue-600 dark:prose-code:text-blue-400 prose-code:bg-blue-50 dark:prose-code:bg-blue-950/30 prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
                             {{if .Frontmatter}}
                             {{template "page-heading" (dict "Title" .Frontmatter.Title "Subtitle" .Frontmatter.Description "MarginBottom" "mb-8")}}
-                            <hr class="mt-1 mb-8 border-gray-200">
+                            <hr class="mt-1 mb-8 border-gray-200 dark:border-gray-700">
                             {{end}}
                             {{.Content}}
                         </div>
@@ -33,8 +33,8 @@
                         {{end}}
                         
                         <!-- Copyright Notice -->
-                        <div class="text-center mt-8 pt-4 border-t border-gray-200">
-                            <span class="text-sm leading-6 text-gray-600">© Blue <span x-text="new Date().getFullYear()"></span> — Designed with <span class="text-red-500 animate-pulse">❤</span> across the 🌏</span>
+                        <div class="text-center mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <span class="text-sm leading-6 text-gray-600 dark:text-gray-400">© Blue <span x-text="new Date().getFullYear()"></span> — Designed with <span class="text-red-500 animate-pulse">❤</span> across the 🌏</span>
                         </div>
                     </div>
                 </div>
