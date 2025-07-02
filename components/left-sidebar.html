@@ -38,7 +38,7 @@
          }
      }" 
      :class="sidebarsOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'"
-     class="hidden md:flex w-80 bg-white overflow-y-auto transition-all duration-300 sticky top-16 h-[calc(100vh-4rem)] flex-col transform custom-scrollbar">
+     class="hidden md:flex w-80 bg-white dark:bg-gray-900 overflow-y-auto transition-all duration-300 sticky top-16 h-[calc(100vh-4rem)] flex-col transform custom-scrollbar">
     <div class="p-4 pt-32 w-full flex-1">                
         <!-- Folder Structure -->
         <div class="space-y-1">
@@ -49,9 +49,9 @@
                     <template x-if="section.children && section.children.length > 0">
                         <div>
                             <button @click="sections.forEach(s => { if(s.id !== section.id) s.expanded = false; }); section.expanded = !section.expanded" 
-                                    class="relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 cursor-pointer hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150">
+                                    class="relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 dark:text-gray-100 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150">
                                 <svg :class="section.expanded ? 'rotate-90' : 'rotate-0'" 
-                                     class="folder-icon mr-3 text-gray-400 transition-transform duration-200" 
+                                     class="folder-icon mr-3 text-gray-400 dark:text-gray-500 transition-transform duration-200" 
                                      fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                                 </svg>
@@ -64,9 +64,9 @@
                                         <template x-if="child.children && child.children.length > 0">
                                             <div>
                                                 <button @click="child.expanded = !child.expanded" 
-                                                        class="relative flex items-center w-full text-left px-3 py-1.5 rounded-md text-gray-700 cursor-pointer hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150">
+                                                        class="relative flex items-center w-full text-left px-3 py-1.5 rounded-md text-gray-700 dark:text-gray-300 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150">
                                                     <svg :class="child.expanded ? 'rotate-90' : 'rotate-0'" 
-                                                         class="folder-icon mr-2 text-gray-400 w-4 h-4 transition-transform duration-200" 
+                                                         class="folder-icon mr-2 text-gray-400 dark:text-gray-500 w-4 h-4 transition-transform duration-200" 
                                                          fill="currentColor" viewBox="0 0 20 20">
                                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                                                     </svg>
@@ -77,7 +77,7 @@
                                                         <a :href="subchild.href || '#'" 
                                                            :target="subchild.external ? '_blank' : '_self'"
                                                            :rel="subchild.external ? 'noopener noreferrer' : ''"
-                                                           :class="isActive(subchild.href) ? 'nav-link relative block px-3 py-1 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
+                                                           :class="isActive(subchild.href) ? 'nav-link relative block px-3 py-1 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
                                                             <span x-text="subchild.name"></span>
                                                             <span :class="subchild.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="subchild.external ? '↗' : '→'"></span>
                                                         </a>
@@ -90,7 +90,7 @@
                                             <a :href="child.href || '#'" 
                                                :target="child.external ? '_blank' : '_self'"
                                                :rel="child.external ? 'noopener noreferrer' : ''"
-                                               :class="isActive(child.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
+                                               :class="isActive(child.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
                                                 <span x-text="child.name"></span>
                                                 <span :class="child.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="child.external ? '↗' : '→'"></span>
                                             </a>
@@ -105,8 +105,8 @@
                         <a :href="section.href || '#'" 
                            :target="section.external ? '_blank' : '_self'"
                            :rel="section.external ? 'noopener noreferrer' : ''"
-                           :class="isActive(section.href) ? 'nav-link relative flex items-center w-full text-left px-3 py-2 rounded-lg bg-gray-100 text-brand-blue font-semibold' : 'nav-link relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
-                            <svg class="folder-icon mr-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                           :class="isActive(section.href) ? 'nav-link relative flex items-center w-full text-left px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-brand-blue font-semibold' : 'nav-link relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
+                            <svg class="folder-icon mr-3 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="font-medium text-sm" x-text="section.name"></span>
@@ -126,16 +126,16 @@
                     <a :href="item.href" 
                        :target="item.external ? '_blank' : '_self'"
                        :rel="item.external ? 'noopener noreferrer' : ''"
-                       :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
+                       :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
                         <span x-text="item.name"></span>
                         <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
                     </a>
                 </template>
             </div>
             <button @click="expanded = !expanded" 
-                    class="relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 cursor-pointer hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150">
+                    class="relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 dark:text-gray-100 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150">
                 <svg :class="expanded ? '-rotate-90' : 'rotate-0'" 
-                     class="folder-icon mr-3 text-gray-400 transition-transform duration-200" 
+                     class="folder-icon mr-3 text-gray-400 dark:text-gray-500 transition-transform duration-200" 
                      fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                 </svg>
