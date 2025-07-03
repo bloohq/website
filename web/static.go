@@ -41,8 +41,8 @@ func NewCacheFileServer(root string) *CacheFileServer {
 		".ttf":   {MaxAge: 31536000, Public: true, Immutable: true},
 		".eot":   {MaxAge: 31536000, Public: true, Immutable: true},
 
-		// JavaScript - medium cache (1 week) since you're actively developing
-		".js": {MaxAge: 604800, Public: true},
+		// JavaScript - medium cache (1 month) since you're actively developing
+		".js": {MaxAge: 2592000, Public: true},
 
 		// CSS - shorter cache (1 day) since you're actively updating the site
 		".css": {MaxAge: 86400, Public: true},
