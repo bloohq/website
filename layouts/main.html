@@ -8,6 +8,7 @@
     }" 
     @scroll.window="scrollProgress = Math.round((window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100)"
     class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300">
+    
     {{template "topbar" .}}
     
     <!-- Main Layout -->
@@ -58,7 +59,7 @@
                     
                     const copyBtn = document.createElement('button');
                     copyBtn.className = 'code-copy-btn';
-                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#copy"></use></svg>';
                     copyBtn.title = 'Copy code';
                     
                     copyBtn.addEventListener('click', async () => {
@@ -67,12 +68,12 @@
                         
                         try {
                             await navigator.clipboard.writeText(text);
-                            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                            copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#check"></use></svg>';
                             copyBtn.classList.add('copied');
                             copyBtn.title = 'Copied!';
                             
                             setTimeout(() => {
-                                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                                copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#copy"></use></svg>';
                                 copyBtn.classList.remove('copied');
                                 copyBtn.title = 'Copy code';
                             }, 2000);
