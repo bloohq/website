@@ -144,52 +144,24 @@
     
     <!-- See Everything, Miss Nothing -->
     <div class="mb-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <!-- Text Content -->
-            <div class="space-y-4">
-                <h4 class="text-xl font-medium text-gray-900">See Everything, Miss Nothing</h4>
-                <p class="text-gray-600">Get a complete view of your entire operation from a single dashboard. No more switching between multiple tools or losing track of important tasks. Blue brings all your processes, projects, and team activities into one unified view so you can spot bottlenecks, track progress, and make informed decisions instantly.</p>
-            </div>
-            
-            <!-- Video -->
-            <div>
-                <video 
-                    class="w-full h-auto rounded-2xl" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                >
-                    <source src="/public/testvideo2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
+        {{$seeEverythingData := parseJSON `{
+            "Title": "See Everything, Miss Nothing",
+            "Description": "Get a complete view of your entire operation from a single dashboard. No more switching between multiple tools or losing track of important tasks. Blue brings all your processes, projects, and team activities into one unified view so you can spot bottlenecks, track progress, and make informed decisions instantly.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "right"
+        }`}}
+        {{template "feature-video" $seeEverythingData}}
     </div>
 
     <!-- Automate the Repetitive -->
     <div class="mb-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <!-- Video -->
-            <div>
-                <video 
-                    class="w-full h-auto rounded-2xl" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                >
-                    <source src="/public/testvideo2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <!-- Text Content -->
-            <div class="space-y-4">
-                <h4 class="text-xl font-medium text-gray-900">Automate the Repetitive</h4>
-                <p class="text-gray-600">Say goodbye to manual, repetitive tasks that drain your team's energy and time. Blue's powerful automation engine handles everything from status updates and notifications to complex multi-step workflows. Set up unlimited automations that trigger based on your custom conditions and watch your team focus on what truly matters.</p>
-            </div>
-        </div>
+        {{$automateData := parseJSON `{
+            "Title": "Automate the Repetitive",
+            "Description": "Say goodbye to manual, repetitive tasks that drain your team's energy and time. Blue's powerful automation engine handles everything from status updates and notifications to complex multi-step workflows. Set up unlimited automations that trigger based on your custom conditions and watch your team focus on what truly matters.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "left"
+        }`}}
+        {{template "feature-video" $automateData}}
     </div>
 
     <section class="mb-16">
@@ -276,52 +248,24 @@
 
     <!-- Your Data, Your Way -->
     <div class="mb-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <!-- Text Content -->
-            <div class="space-y-4">
-                <h4 class="text-xl font-medium text-gray-900">Your Data, Your Way</h4>
-                <p class="text-gray-600">Every business is unique, and your data structure should reflect that. Create custom fields, design your own record types, and build the perfect database that fits your exact workflow. Whether you're tracking sales leads, managing projects, or organizing inventory, Blue adapts to your business model instead of forcing you to adapt to rigid templates.</p>
-            </div>
-            
-            <!-- Video -->
-            <div>
-                <video 
-                    class="w-full h-auto rounded-2xl" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                >
-                    <source src="/public/testvideo2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
+        {{$yourDataData := parseJSON `{
+            "Title": "Your Data, Your Way",
+            "Description": "Every business is unique, and your data structure should reflect that. Create custom fields, design your own record types, and build the perfect database that fits your exact workflow. Whether you're tracking sales leads, managing projects, or organizing inventory, Blue adapts to your business model instead of forcing you to adapt to rigid templates.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "right"
+        }`}}
+        {{template "feature-video" $yourDataData}}
     </div>
 
     <!-- Insights That Drive Action -->
     <div class="mb-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <!-- Video -->
-            <div>
-                <video 
-                    class="w-full h-auto rounded-2xl" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                >
-                    <source src="/public/testvideo2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <!-- Text Content -->
-            <div class="space-y-4">
-                <h4 class="text-xl font-medium text-gray-900">Insights That Drive Action</h4>
-                <p class="text-gray-600">Transform your data into actionable insights with real-time analytics and customizable dashboards. Track key performance indicators, identify trends, and spot opportunities before your competitors do. Blue's intelligent reporting helps you understand what's working, what isn't, and exactly where to focus your efforts for maximum impact.</p>
-            </div>
-        </div>
+        {{$insightsData := parseJSON `{
+            "Title": "Insights That Drive Action",
+            "Description": "Transform your data into actionable insights with real-time analytics and customizable dashboards. Track key performance indicators, identify trends, and spot opportunities before your competitors do. Blue's intelligent reporting helps you understand what's working, what isn't, and exactly where to focus your efforts for maximum impact.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "left"
+        }`}}
+        {{template "feature-video" $insightsData}}
     </div>
 </section>
 
