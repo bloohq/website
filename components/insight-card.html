@@ -17,7 +17,7 @@
     <div class="flex items-center gap-4 text-sm">
         <span class="font-medium text-gray-600">{{.Category}}</span>
         {{if .Date}}
-        <span class="text-gray-400">{{.Date}}</span>
+        <span class="text-gray-400">{{.Date | formatDate}}</span>
         {{end}}
     </div>
 </a>

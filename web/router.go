@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 // templateFuncs defines template functions used across all templates
@@ -28,6 +29,22 @@ var templateFuncs = template.FuncMap{
 	},
 	"safeURL": func(s string) template.URL {
 		return template.URL(s)
+	},
+	"formatDate": func(dateStr string) string {
+		// Handle empty or invalid dates
+		if dateStr == "" {
+			return ""
+		}
+		
+		// Parse ISO date format (YYYY-MM-DD)
+		parsedDate, err := time.Parse("2006-01-02", dateStr)
+		if err != nil {
+			// If parsing fails, return original string
+			return dateStr
+		}
+		
+		// Format as "Month Day, Year" (e.g., "July 12, 2024")
+		return parsedDate.Format("January 2, 2006")
 	},
 }
 
