@@ -3,6 +3,7 @@ package web
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -25,6 +26,9 @@ var templateFuncs = template.FuncMap{
 		var data interface{}
 		err := json.Unmarshal([]byte(s), &data)
 		return data, err
+	},
+	"safeURL": func(s string) template.URL {
+		return template.URL(s)
 	},
 }
 
@@ -470,12 +474,13 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		// Get all cached insights from MarkdownService
 		cachedInsights := r.markdownService.GetAllCachedContent()
 		
+		
 		// Initialize SVG generator
 		svgGen := NewSVGGenerator()
 		
 		for urlPath, content := range cachedInsights {
 			if strings.HasPrefix(urlPath, "/insights/") && content.Frontmatter != nil {
-				// Extract category from tags or category field
+					// Extract category from tags or category field
 				category := content.Frontmatter.Category
 				if category == "" && len(content.Frontmatter.Tags) > 0 {
 					// Fallback to first tag if category is not set
@@ -496,7 +501,6 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 				})
 			}
 		}
-		// Insights loaded
 	}
 
 	// Extract table of contents (skip if path is excluded)

@@ -10,49 +10,10 @@
     <!-- Insights Section -->
     <div x-data="{ 
         activeCategory: 'all',
-        insights: {{if .Insights}}{{.Insights | toJSON}}{{else}}[]{{end}},
-        get filteredInsights() {
-            let filtered = this.insights || [];
-            
-            // Filter by category
-            if (this.activeCategory !== 'all') {
-                filtered = filtered.filter(insight => {
-                    const category = insight.category.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-                    return category === this.activeCategory;
-                });
-            }
-            
-            // Sort by date (latest first, no date goes to bottom)
-            return filtered.sort((a, b) => {
-                const dateA = a.date;
-                const dateB = b.date;
-                
-                // If both have no date, maintain original order
-                if (!dateA && !dateB) return 0;
-                
-                // If only a has no date, put it after b
-                if (!dateA) return 1;
-                
-                // If only b has no date, put it after a
-                if (!dateB) return -1;
-                
-                // Both have dates, sort latest first
-                return new Date(dateB) - new Date(dateA);
-            });
-        },
-        formatDate(dateStr) {
-            if (!dateStr) return '';
-            try {
-                // Parse YYYY-MM-DD format
-                const date = new Date(dateStr);
-                return date.toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                });
-            } catch (e) {
-                return dateStr; // fallback to original string
-            }
+        filterCategory(activeCategory, insightCategory) {
+            if (activeCategory === 'all') return true;
+            const category = insightCategory.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            return category === activeCategory;
         }
     }">
         <!-- Category Navigation -->
@@ -101,43 +62,20 @@
             </nav>
         </div>
 
-        <!-- Debug info -->
-        <div class="mb-4 text-sm text-gray-500" x-show="!insights || insights.length === 0">
-            No insights data loaded. Total insights: <span x-text="insights ? insights.length : 0"></span>
-        </div>
-
         <!-- Insights Content Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <template x-for="insight in filteredInsights" :key="insight.url">
-                <a :href="insight.url" class="cursor-pointer group block">
-                    <!-- Insight Image -->
-                    <div class="h-64 rounded-lg mb-6 overflow-hidden bg-gray-200">
-                        <img :src="insight.svg_data" 
-                             :alt="insight.title"
-                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                             loading="lazy">
-                    </div>
-                    
-                    <!-- Insight Content -->
-                    <h3 x-text="insight.title" 
-                        class="text font-medium mb-3 text-gray-900 dark:text-white group-hover:text-brand-blue transition-colors"></h3>
-                    
-                    <div class="flex items-center gap-4 text-sm">
-                        <span x-text="insight.category" class="font-medium text-gray-600"></span>
-                        <span x-text="formatDate(insight.date)" class="text-gray-400"></span>
-                    </div>
-                </a>
-            </template>
-            
-            <!-- No results message -->
-            <div x-show="insights && filteredInsights.length === 0 && insights.length > 0" class="col-span-full text-center py-12">
-                <p class="text-gray-500 text-lg">No insights found for this category.</p>
-            </div>
-
-            <!-- No insights at all -->
-            <div x-show="!insights || insights.length === 0" class="col-span-full text-center py-12">
+            {{if .Insights}}
+            {{range .Insights}}
+            {{template "insight-card" .}}
+            {{end}}
+            {{else}}
+            <!-- No insights available -->
+            <div class="col-span-full text-center py-12">
                 <p class="text-gray-500 text-lg">No insights available.</p>
             </div>
+            {{end}}
+            
+
         </div>
     </div>
 </div>
