@@ -39,7 +39,7 @@ func GenerateSearchIndex() error {
 	}
 
 	// Index HTML pages
-	if err := indexHTMLPages(&searchItems, metadata); err != nil {
+	if err := indexHTMLPages(&searchItems, metadata, nil); err != nil {
 		return fmt.Errorf("failed to index HTML pages: %w", err)
 	}
 
@@ -63,7 +63,7 @@ func GenerateSearchIndexWithCache(markdownService *MarkdownService) error {
 	}
 
 	// Index HTML pages
-	if err := indexHTMLPages(&searchItems, metadata); err != nil {
+	if err := indexHTMLPages(&searchItems, metadata, nil); err != nil {
 		return fmt.Errorf("failed to index HTML pages: %w", err)
 	}
 
@@ -91,8 +91,16 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 		return fmt.Errorf("failed to index cached HTML pages: %w", err)
 	}
 
+	// Build a map of indexed URLs from cached pages
+	indexedURLs := make(map[string]bool)
+	for _, item := range searchItems {
+		if item.Type == "page" {
+			indexedURLs[item.URL] = true
+		}
+	}
+
 	// Index non-cached HTML pages (like status page)
-	if err := indexHTMLPages(&searchItems, metadata); err != nil {
+	if err := indexHTMLPages(&searchItems, metadata, indexedURLs); err != nil {
 		return fmt.Errorf("failed to index non-cached HTML pages: %w", err)
 	}
 
@@ -132,7 +140,7 @@ func getPageKey(path string) string {
 }
 
 // indexHTMLPages indexes all HTML pages in the pages directory
-func indexHTMLPages(items *[]SearchItem, metadata *Metadata) error {
+func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[string]bool) error {
 	return filepath.WalkDir("pages", func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
@@ -177,6 +185,11 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata) error {
 		// Fallback to HTML extraction if no metadata description
 		if textContent == "" {
 			textContent = extractTextFromHTML(string(content))
+		}
+
+		// Skip if this URL was already indexed from cache
+		if indexedURLs != nil && indexedURLs[url] {
+			return nil
 		}
 
 		*items = append(*items, SearchItem{
