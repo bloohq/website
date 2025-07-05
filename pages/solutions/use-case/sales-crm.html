@@ -48,8 +48,8 @@
         <!-- Automations Feature Video -->
         <div class="mb-16">
             {{$automationsData := parseJSON `{
-                "Title": "Automations keep the admin work away",
-                "Description": "Nobody likes to do work for work's sake. Blue's powerful automations means that your team can stay focused on selling instead of low-value administration work. Spend more time with leads and less time on admin tasks. Move deals through your pipeline faster with automated stage transitions and get notified any time something important happens with customized alerts that keep your team informed without overwhelming them.",
+                "Title": "Save hours per week.",
+                "Description": "Powerful automations means that your team can stay focused on selling instead of low-value administration work. Spend more time with leads and less time on admin tasks.",
                 "VideoUrl": "/public/testvideo2.mp4",
                 "VideoPosition": "right",
                 "Button": {
@@ -57,22 +57,17 @@
                     "Url": "/docs/automations/introduction"
                 },
                 "SeeAlso": {
-                    "Heading": "See also",
+                    "Heading": "See also:",
                     "Links": [
                         {
                             "Text": "Automation triggers",
                             "Url": "/docs/automations/triggers",
-                            "Description": "— Set up conditions that trigger your automations"
+                            "Description": "based on any changes in your CRM."
                         },
                         {
                             "Text": "Email automations",
                             "Url": "/docs/automations/actions/email-automations",
-                            "Description": "— Automatically send emails based on sales activities"
-                        },
-                        {
-                            "Text": "User notifications",
-                            "Url": "/docs/user-management/notifications",
-                            "Description": "— Configure how your team gets notified"
+                            "Description": "can send customizable emails."
                         }
                     ]
                 }
@@ -84,33 +79,13 @@
         <!-- Dashboards Feature Video -->
         <div class="mb-16">
             {{$dashboardsData := parseJSON `{
-                "Title": "Dashboards give you full visibility into your pipeline",
-                "Description": "What gets measured gets improved. Blue gives you real-time dashboards for all your critical sales metrics. Get instant insights into your sales pipeline performance with live data updates. Save costs by eliminating the need for additional business intelligence software. Create super customizable dashboards that adapt to your unique sales data needs and reporting requirements.",
+                "Title": "Simple, real-time sales dashboards.",
+                "Description": "What gets measured gets improved. Blue gives you real-time dashboards for all your critical sales metrics. Get instant insights into your sales pipeline performance with live data updates.",
                 "VideoUrl": "/public/testvideo2.mp4",
                 "VideoPosition": "left",
                 "Button": {
                     "Text": "Learn more",
                     "Url": "/docs/dashboards/introduction"
-                },
-                "SeeAlso": {
-                    "Heading": "See also",
-                    "Links": [
-                        {
-                            "Text": "Stat cards",
-                            "Url": "/docs/dashboards/stat-cards",
-                            "Description": "— Display key metrics at a glance"
-                        },
-                        {
-                            "Text": "Bar graphs",
-                            "Url": "/docs/dashboards/bar-graphs", 
-                            "Description": "— Visualize sales data with charts"
-                        },
-                        {
-                            "Text": "Pie charts",
-                            "Url": "/docs/dashboards/pie-charts",
-                            "Description": "— Show data distribution and proportions"
-                        }
-                    ]
                 }
             }`}}
             
@@ -120,31 +95,27 @@
         <!-- Custom Fields Feature Video -->
         <div class="mb-16">
             {{$customFieldsData := parseJSON `{
-                "Title": "Custom Fields that adapt to your unique data structure",
-                "Description": "Blue's custom fields allow you to capture the precise data points needed to manage your sales process effectively. Blue adapts to your data structure, not the other way around. Create your dream sales database by visually designing the fields you need. Combine custom fields for advanced use cases such as cross-references and automatic calculations. Set permissions on a per-field basis to only show your team what you want them to see.",
+                "Title": "Your dream sales database.",
+                "Description": "Blue adapts to your data structure, not the other way around. Visually design the fields you need. Combine custom fields for advanced use cases such as cross-references and automatic calculations. Set permissions on a per-field basis to only show your team what you want them to see.",
                 "VideoUrl": "/public/testvideo2.mp4",
                 "VideoPosition": "right",
-                "Button": {
-                    "Text": "Learn more",
-                    "Url": "/docs/custom-fields/introduction"
-                },
                 "SeeAlso": {
-                    "Heading": "See also",
+                    "Heading": "Learn more",
                     "Links": [
                         {
                             "Text": "Formula fields",
                             "Url": "/docs/custom-fields/formula",
-                            "Description": "— Automate calculations and data transformations"
+                            "Description": "to automatically calculate margins and P/L"
                         },
                         {
                             "Text": "Reference fields",
                             "Url": "/docs/custom-fields/reference",
-                            "Description": "— Link records across different projects"
+                            "Description": "to link contact, customers, and opportunities."
                         },
                         {
                             "Text": "Currency fields",
                             "Url": "/docs/custom-fields/currency",
-                            "Description": "— Track deal values and revenue"
+                            "Description": "easily support multiple currencies."
                         }
                     ]
                 }
@@ -189,6 +160,9 @@
             {{template "feature-video" $notificationsData}}
         </div>
     </section>
+
+
+       <!-- TODO: Add Integrations area. -->
 
     <!-- First CTA -->
     <section class="mb-16">
