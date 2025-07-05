@@ -12,7 +12,8 @@
         {"id": "integrations", "name": "Integrations", "href": "/platform/integrations"},
         {"id": "roadmap", "name": "Roadmap", "href": "/platform/roadmap"},
         {"id": "changelog", "name": "Changelog", "href": "/platform/changelog"},
-        {"id": "security", "name": "Security", "href": "/platform/security"}
+        {"id": "security", "name": "Security", "href": "/platform/security"},
+        {"id": "download-app", "name": "Download Apps", "href": "/platform/download"}
 
       ]
     },
