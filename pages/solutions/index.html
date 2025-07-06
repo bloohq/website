@@ -1,0 +1,66 @@
+<!-- Main content -->
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "Solutions Index" 
+            "Subtitle" "Discover how Blue adapts to your industry and use case." 
+            "MarginBottom" "mb-16"
+    }}
+
+    {{$solutionsData := parseJSON `{
+        "sections": [
+            {
+                "title": "Industries",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "Government", "link": "/solutions/industry/government" },
+                            { "label": "Non-Profits", "link": "/solutions/industry/non-profits" },
+                            { "label": "Education", "link": "/solutions/industry/education" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Logistics", "link": "/solutions/industry/logistics" },
+                            { "label": "Real Estate", "link": "/solutions/industry/real-estate" },
+                            { "label": "Professional Services", "link": "/solutions/industry/professional-services" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Production", "link": "/solutions/industry/production" },
+                            { "label": "Agencies", "link": "/solutions/industry/agencies" },
+                            { "label": "Solopreneurs", "link": "/solutions/industry/solopreneurs" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Use Cases",
+                "columns": [
+                    {
+                        "items": [
+                            { "label": "Process Management", "link": "/solutions/use-case/process-management" },
+                            { "label": "Project Management", "link": "/solutions/use-case/project-management" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "Sales CRM", "link": "/solutions/use-case/sales-crm" },
+                            { "label": "Service Tickets", "link": "/solutions/use-case/service-tickets" }
+                        ]
+                    },
+                    {
+                        "items": [
+                            { "label": "IT", "link": "/solutions/use-case/it" },
+                            { "label": "Asset Management", "link": "/solutions/use-case/asset-management" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }`}}
+    
+    {{template "features-grid" $solutionsData}}
+
+</div>
