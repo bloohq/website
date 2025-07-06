@@ -211,6 +211,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://blue.cc/solutions/use-case/customer-portal</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://blue.cc/solutions/use-case/it</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>monthly</changefreq>
