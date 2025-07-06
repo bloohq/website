@@ -331,7 +331,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blue.cc/api-docs/introduction</loc>
+    <loc>https://blue.cc/api-docs/start-guide/introduction</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -361,14 +361,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blue.cc/api-docs/start-guide/limitations</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://blue.cc/api-docs/start-guide/rate-limits</loc>
-    <lastmod>2025-07-02</lastmod>
+    <lastmod>2025-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -579,12 +573,6 @@
   <url>
     <loc>https://blue.cc/docs/start-guide/concepts</loc>
     <lastmod>2025-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/docs/start-guide/faqs</loc>
-    <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
