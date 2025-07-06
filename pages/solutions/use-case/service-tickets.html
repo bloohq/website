@@ -23,7 +23,8 @@
                 { "name": "FedEx", "src": "/public/customers/fedex.svg" },
                 { "name": "Cisco", "src": "/public/customers/cisco.svg" },
                 { "name": "Red Hat", "src": "/public/customers/redhat.svg" },
-                { "name": "Manulife", "src": "/public/customers/manulife.svg" }
+                { "name": "Manulife", "src": "/public/customers/manulife.svg" },
+                { "name": "CBRE", "src": "/public/customers/cbre.svg" }
             ]
         }`}}
         
@@ -52,9 +53,9 @@
                             "Description": "for equipment and location-based tickets"
                         },
                         {
-                            "Text": "Email integrations",
-                            "Url": "/docs/integrations/email",
-                            "Description": "to create tickets from customer emails"
+                            "Text": "API integration",
+                            "Url": "/docs/api/introduction",
+                            "Description": "to create tickets programmatically"
                         }
                     ]
                 }
@@ -139,45 +140,45 @@
         </div>
     </section>
 
-    <!-- Use Case Grid -->
+    <!-- Interactive Feature Showcase -->
     <section class="mb-16">
-        {{$useCasesData := parseJSON `{
+        {{$showcaseData := parseJSON `{
             "Title": "Built for every support scenario",
             "Features": [
                 {
-                    "Icon": "desktop",
+                    "Id": "it-helpdesk",
                     "Title": "IT Help Desk",
-                    "Description": "Track hardware issues, software requests, and system access tickets with full audit trails."
+                    "VideoUrl": "/public/testvideo2.mp4"
                 },
                 {
-                    "Icon": "building",
+                    "Id": "property-management",
                     "Title": "Property Management",
-                    "Description": "Handle maintenance requests, tenant issues, and facility problems across multiple locations."
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
                 },
                 {
-                    "Icon": "globe",
-                    "Title": "Multi-location Operations",
-                    "Description": "Centralize support for distributed teams with location-based routing and reporting."
-                },
-                {
-                    "Icon": "wrench",
+                    "Id": "equipment-maintenance",
                     "Title": "Equipment Maintenance",
-                    "Description": "QR codes on equipment enable instant ticket creation with automatic asset linking."
+                    "VideoUrl": "/public/testvideo2.mp4"
                 },
                 {
-                    "Icon": "users",
+                    "Id": "customer-support",
                     "Title": "Customer Support",
-                    "Description": "Manage external customer inquiries with SLA tracking and automated responses."
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
                 },
                 {
-                    "Icon": "briefcase",
+                    "Id": "multi-location",
+                    "Title": "Multi-location Operations",
+                    "VideoUrl": "/public/testvideo2.mp4"
+                },
+                {
+                    "Id": "business-services",
                     "Title": "Business Services",
-                    "Description": "Coordinate service requests across departments with clear ownership and timelines."
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
                 }
             ]
         }`}}
-
-        {{template "features-grid-simple" $useCasesData}}
+        
+        {{template "interactive-feature-showcase" $showcaseData}}
     </section>
 
     <!-- Testimonial -->
@@ -212,7 +213,6 @@
         {{$faqData := parseJSON `{
             "categories": [
                 {
-                    "id": "FAQ",
                     "name": "Frequently asked questions",
                     "questions": [
                         {
