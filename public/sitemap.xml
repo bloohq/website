@@ -145,6 +145,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://blue.cc/solutions/</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://blue.cc/solutions/industry/agencies</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -194,6 +200,12 @@
   </url>
   <url>
     <loc>https://blue.cc/solutions/industry/solopreneurs</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/solutions/use-case/asset-management</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
