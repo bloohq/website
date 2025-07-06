@@ -1,13 +1,21 @@
-<!-- Customers Page -->
+<!-- Enterprise Page -->
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Blue for Enterprise" 
-            "Subtitle" "Blue is trusted by more than 17,000 teams, from ambitious startups to established enterprises."
+            "Title" "Enterprise-grade process management without the complexity." 
+            "Subtitle" "Dedicated infrastructure, custom development, and white-label solutions for organizations that need serious scale with refreshing simplicity." 
             "MarginBottom" "mb-16"
     }}
-    <!-- Customer Testimonial Section -->
-    <div class="py-16">        
+
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/public/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "enterprise"
+    }}
+
+    <!-- Enterprise Customer Testimonial -->
+    <section class="mb-16">        
         {{template "testimonial-single" 
             dict 
                 "Quote" "We are saving each sales rep in our team 9 hours a week with Blue."
@@ -16,6 +24,266 @@
                 "Name" "Dan Deigan"
                 "Title" "Sales Director at Pinnacle Logistics"
         }}
-    </div>
+    </section>
 
+    <!-- Enterprise Stats -->
+    <section class="mb-16">
+        {{$statsData := parseJSON `{
+            "Title": "Trusted at enterprise scale",
+            "Stats": [
+                {
+                    "Number": "1,000,000,000+",
+                    "Description": "API calls per year"
+                },
+                {
+                    "Number": "17,000+",
+                    "Description": "teams worldwide"
+                },
+                {
+                    "Number": "<30 days",
+                    "Description": "average deployment time"
+                }
+            ]
+        }`}}
+        
+        {{template "stats-section" $statsData}}
+    </section>
+
+    <!-- Enterprise Features Section -->
+    <section class="mb-16">
+        <!-- Dedicated Infrastructure -->
+        <div class="mb-16">
+            {{$infrastructureData := parseJSON `{
+                "Title": "Your own dedicated Blue infrastructure.",
+                "Description": "Isolated deployment with dedicated database, backend services, frontend servers, and background processing. Get ultimate performance with complete data residency—even we can't access your database unless you specifically authorize it.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "SeeAlso": {
+                    "Heading": "Enterprise security",
+                    "Links": [
+                        {
+                            "Text": "End-to-end encryption",
+                            "Url": "/platform/security",
+                            "Description": "for complete data protection"
+                        },
+                        {
+                            "Text": "GDPR & HIPAA compliance",
+                            "Url": "/platform/compliance",
+                            "Description": "for regulated industries"
+                        },
+                        {
+                            "Text": "Complete audit trails",
+                            "Url": "/platform/audit",
+                            "Description": "for compliance and accountability"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $infrastructureData}}
+        </div>
+        
+        <!-- Custom Development -->
+        <div class="mb-16">
+            {{$customDevData := parseJSON `{
+                "Title": "Custom features built specifically for you.",
+                "Description": "Do you see Blue as 90% perfect, but need a specific feature for your organization that would be a game changer? We estimate development costs and assign dedicated engineers to build exactly what you need. No upfront costs—everything is included in your monthly payments.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left"
+            }`}}
+            
+            {{template "feature-video" $customDevData}}
+        </div>
+        
+        <!-- Enterprise Support -->
+        <div class="mb-16">
+            {{$supportData := parseJSON `{
+                "Title": "Support that matches your scale.",
+                "Description": "Dedicated success manager, technical live chat, user support chat, and regular custom training for new features. We handle migration assistance including data cleanup and import—because you're not just another account.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right"
+            }`}}
+            
+            {{template "feature-video" $supportData}}
+        </div>
+        
+        <!-- White Label & Battle-Tested -->
+        <div>
+            {{$whitelabelData := parseJSON `{
+                "Title": "Battle-tested platform, your brand.",
+                "Description": "Complete white-label solution included with enterprise plans. Our API handles over 1 billion calls annually, and every feature is used by thousands of companies. You get enterprise reliability with startup agility.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Learn about white-label",
+                    "Url": "/platform/white-label"
+                }
+            }`}}
+            
+            {{template "feature-video" $whitelabelData}}
+        </div>
+    </section>
+
+    <!-- Enterprise Value Proposition -->
+    <section class="mb-16">
+        {{$valuePropsData := parseJSON `{
+            "Title": "Why enterprises choose Blue over the giants",
+            "Description": "Replace complex, expensive enterprise software with a platform that's powerful but refreshingly simple.",
+            "ValueProps": [
+                {
+                    "Title": "Lightning-fast deployment",
+                    "Description": "Live in less than 30 days vs. months of implementation. Fraction of the cost with better usability."
+                },
+                {
+                    "Title": "Enterprise power, startup simplicity",
+                    "Description": "Get enterprise capabilities without the complexity. Your team will actually want to use it."
+                },
+                {
+                    "Title": "Built for your unique processes",
+                    "Description": "Configure for your specific workflows instead of being forced into generic 'best practices.'"
+                }
+            ]
+        }`}}
+        
+        {{template "value-propositions" $valuePropsData}}
+    </section>
+
+
+    <!-- Customer Success Story -->
+    <section class="mb-16">
+        <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 md:p-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+                    "Instead of spending $100K upfront on Salesforce with months of implementation, we chose Blue."
+                </h3>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                    "We were live in less than a month at a fraction of the cost. Now we're tracking hundreds of millions of dollars in our CRM pipeline with a system that actually works the way we think."
+                </p>
+                <div class="flex items-center justify-center space-x-4">
+                    <div class="text-sm font-medium text-gray-900 dark:text-gray-100">Enterprise Manufacturing Customer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Features Grid -->
+    <section class="mb-16">
+        {{$featuresData := parseJSON `{
+            "Title": "Enterprise features that actually matter",
+            "Features": [
+                {
+                    "Icon": "server",
+                    "Title": "Dedicated Infrastructure",
+                    "Description": "Isolated deployment with dedicated servers and database for ultimate performance and security."
+                },
+                {
+                    "Icon": "code",
+                    "Title": "Custom Development",
+                    "Description": "Engineers assigned to build the exact features you need, amortized into your monthly license."
+                },
+                {
+                    "Icon": "shield",
+                    "Title": "Enterprise Security",
+                    "Description": "End-to-end encryption, GDPR/HIPAA compliance, and complete data residency control."
+                },
+                {
+                    "Icon": "headset",
+                    "Title": "Dedicated Support",
+                    "Description": "Success manager, technical chat, user support, and custom training programs."
+                },
+                {
+                    "Icon": "palette",
+                    "Title": "White Label Included",
+                    "Description": "Complete branding customization included with enterprise plans at no extra cost."
+                },
+                {
+                    "Icon": "trending-up",
+                    "Title": "Battle-Tested Scale",
+                    "Description": "Over 1 billion API calls annually with features used by thousands of companies."
+                },
+                {
+                    "Icon": "database",
+                    "Title": "Migration Assistance",
+                    "Description": "We handle data cleanup, import, and migration from any existing system."
+                },
+                {
+                    "Icon": "infinity",
+                    "Title": "Unlimited Users",
+                    "Description": "Fixed pricing regardless of user count—scale your team without scaling your costs."
+                },
+                {
+                    "Icon": "clock",
+                    "Title": "Rapid Deployment",
+                    "Description": "Live in less than 30 days vs. months with traditional enterprise solutions."
+                }
+            ]
+        }`}}
+
+        {{template "features-grid-simple" $featuresData}}
+    </section>
+
+    <!-- Enterprise CTA -->
+    <section class="mb-16">
+        {{$enterpriseCTA := parseJSON `{
+            "Title": "Ready to transform your operations?",
+            "SecondaryText": "Schedule demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Contact sales",
+            "PrimaryUrl": "/contact"
+        }`}}
+        
+        {{template "dual-button-cta" $enterpriseCTA}}
+    </section>
+
+    <!-- Enterprise FAQ -->
+    <section class="mb-16">
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "How does Blue's enterprise infrastructure work?",
+                            "answer": "Enterprise customers get isolated deployments with dedicated database, backend services, frontend servers, and background processing. Everything runs on our infrastructure but is completely dedicated to you. Optionally, the database can run on your own servers for ultimate data control."
+                        },
+                        {
+                            "question": "What custom features can you build for our organization?",
+                            "answer": "We can customize dashboards, extend the API, build multi-homing record capabilities, create custom forms, and develop any features needed for your specific workflows. Development ranges from weeks for smaller features to 1-2 months for major capabilities."
+                        },
+                        {
+                            "question": "How much does enterprise custom development cost?",
+                            "answer": "We estimate development costs and amortize them into your multi-year license (3-5 years). No upfront costs—you pay monthly while we assign dedicated engineers to build exactly what you need."
+                        },
+                        {
+                            "question": "How long does enterprise migration and deployment take?",
+                            "answer": "Most enterprise deployments are live in less than 30 days. We handle data cleanup, migration from existing systems, and training. This is dramatically faster than traditional enterprise solutions that take months to implement."
+                        },
+                        {
+                            "question": "What level of support do enterprise customers receive?",
+                            "answer": "Enterprise customers get a dedicated success manager, technical live chat, user support chat, regular custom training for new features, and migration assistance. You're not just another account—you get the personal attention your organization deserves."
+                        },
+                        {
+                            "question": "Can Blue handle our compliance requirements?",
+                            "answer": "Yes, Blue is GDPR and HIPAA compliant with complete audit trails, end-to-end encryption, and enterprise-grade security. With dedicated infrastructure and optional on-premises database, you maintain complete control over your data."
+                        },
+                        {
+                            "question": "Is white-label branding included with enterprise plans?",
+                            "answer": "Yes, complete white-label customization is included with enterprise plans at no additional cost. Make Blue look and feel like your own internal platform."
+                        },
+                        {
+                            "question": "How does enterprise pricing work?",
+                            "answer": "Enterprise pricing is fixed regardless of user count, based on support levels and customizations required. This lets you scale your team without worrying about per-user costs escalating."
+                        },
+                        {
+                            "question": "Can you migrate us from our current enterprise system?",
+                            "answer": "Absolutely. We handle migrations from Salesforce, ServiceNow, Monday.com, Asana, Trello, and industry-specific tools. We'll clean up your data, import it properly, and ensure a smooth transition with minimal disruption."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 </div>
