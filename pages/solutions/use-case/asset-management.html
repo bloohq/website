@@ -2,8 +2,388 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Asset Management" 
-            "Subtitle" "Track, manage, and optimize your organization's assets with Blue's comprehensive asset management solution." 
+            "Title" "Asset management that adapts." 
+            "Subtitle" "Track, manage, and optimize any type of asset with Blue's flexible database and powerful automation—from IT equipment to heavy machinery." 
             "MarginBottom" "mb-16"
     }}
+
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/public/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "asset-management"
+    }}
+
+    <!-- Customer Logos -->
+    <section class="mb-16">
+        {{$logoData := parseJSON `{
+            "title": "500,000+ assets managed in Blue",
+            "logos": [
+                { "name": "Heineken", "src": "/public/customers/heineken.svg" },
+                { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
+                { "name": "Save the Children", "src": "/public/customers/savethechildren.svg" },
+                { "name": "FedEx", "src": "/public/customers/fedex.svg" },
+                { "name": "World Food Programme", "src": "/public/customers/wfp.svg" },
+                { "name": "ILO", "src": "/public/customers/ilo.webp" }
+            ]
+        }`}}
+        
+        {{template "logo-grid" $logoData}}
+    </section>
+
+    <!-- Stats Section -->
+    <section class="mb-16">
+        {{$statsData := parseJSON `{
+            "Title": "Asset management that delivers results",
+            "Stats": [
+                {
+                    "Number": "30%",
+                    "Description": "reduction in asset downtime"
+                },
+                {
+                    "Number": "25%",
+                    "Description": "increase in asset utilization"
+                },
+                {
+                    "Number": "40%",
+                    "Description": "faster asset requests"
+                }
+            ]
+        }`}}
+        
+        {{template "stats-section" $statsData}}
+    </section>
+
+    <!-- Feature Videos Section -->
+    <section class="mb-16">
+        <!-- Flexible Asset Database -->
+        <div class="mb-16">
+            {{$assetDatabaseData := parseJSON `{
+                "Title": "Build the perfect asset database for your needs.",
+                "Description": "Create custom fields for serial numbers, purchase dates, locations, and any data you need. Track IT equipment, vehicles, machinery, or furniture with the same flexible system. Blue generates serial numbers automatically or import your existing ones.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn about custom fields",
+                    "Url": "/docs/custom-fields/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Asset data features",
+                    "Links": [
+                        {
+                            "Text": "Unique ID generation",
+                            "Url": "/docs/custom-fields/unique-id",
+                            "Description": "automatic or imported"
+                        },
+                        {
+                            "Text": "Reference fields",
+                            "Url": "/docs/custom-fields/reference",
+                            "Description": "link assets to employees and departments"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $assetDatabaseData}}
+        </div>
+        
+        <!-- Automated Maintenance -->
+        <div class="mb-16">
+            {{$maintenanceData := parseJSON `{
+                "Title": "Never miss maintenance again.",
+                "Description": "Set up recurring maintenance schedules that automatically create tasks and assign them to the right team members. Track maintenance history, costs, and compliance requirements with complete audit trails.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Heading": "Maintenance features",
+                    "Links": [
+                        {
+                            "Text": "Recurring records",
+                            "Url": "/docs/records/repeat",
+                            "Description": "for scheduled maintenance"
+                        },
+                        {
+                            "Text": "Maintenance automations",
+                            "Url": "/docs/automations/introduction",
+                            "Description": "automatic task creation"
+                        },
+                        {
+                            "Text": "Due date tracking",
+                            "Url": "/docs/custom-fields/date",
+                            "Description": "with automatic reminders"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $maintenanceData}}
+        </div>
+        
+        <!-- Asset Assignment & Approval -->
+        <div class="mb-16">
+            {{$assignmentData := parseJSON `{
+                "Title": "Smart asset allocation with approval workflows.",
+                "Description": "Assign assets to employees or departments with built-in approval processes. Use button fields for manager confirmation or checkbox workflows for equipment requests. Track who has what, when, and why.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "SeeAlso": {
+                    "Heading": "Assignment tools",
+                    "Links": [
+                        {
+                            "Text": "Button fields",
+                            "Url": "/docs/custom-fields/button",
+                            "Description": "for manager approvals"
+                        },
+                        {
+                            "Text": "Checkbox workflows",
+                            "Url": "/docs/custom-fields/checkbox",
+                            "Description": "for request tracking"
+                        },
+                        {
+                            "Text": "User assignment",
+                            "Url": "/docs/user-management/introduction",
+                            "Description": "track asset ownership"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $assignmentData}}
+        </div>
+        
+        <!-- API Integration & Analytics -->
+        <div>
+            {{$apiData := parseJSON `{
+                "Title": "Your asset data, available everywhere.",
+                "Description": "Blue's API instantly exposes your asset inventory to any other software—no developer setup required. Build real-time dashboards to track utilization, costs, and performance metrics that matter to your business.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Explore the API",
+                    "Url": "/docs/api/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Integration options",
+                    "Links": [
+                        {
+                            "Text": "Real-time API access",
+                            "Url": "/platform/api",
+                            "Description": "instant data synchronization"
+                        },
+                        {
+                            "Text": "Asset dashboards",
+                            "Url": "/docs/dashboards/introduction",
+                            "Description": "for performance tracking"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $apiData}}
+        </div>
+    </section>
+
+    <!-- Interactive Feature Showcase -->
+    <section class="mb-16">
+        {{$showcaseData := parseJSON `{
+            "Title": "Perfect for every type of asset",
+            "Features": [
+                {
+                    "Id": "it-equipment",
+                    "Title": "IT Equipment",
+                    "VideoUrl": "/public/testvideo2.mp4"
+                },
+                {
+                    "Id": "vehicles",
+                    "Title": "Vehicle Fleet",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "machinery",
+                    "Title": "Heavy Machinery",
+                    "VideoUrl": "/public/testvideo2.mp4"
+                },
+                {
+                    "Id": "office-furniture",
+                    "Title": "Office Furniture",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "medical-equipment",
+                    "Title": "Medical Equipment",
+                    "VideoUrl": "/public/testvideo2.mp4"
+                },
+                {
+                    "Id": "tools-equipment",
+                    "Title": "Tools & Equipment",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                }
+            ]
+        }`}}
+        
+        {{template "interactive-feature-showcase" $showcaseData}}
+    </section>
+
+    <!-- Testimonial -->
+    <section class="mb-16">        
+        {{template "testimonial-single" 
+            dict 
+                "Quote" "Blue transformed our asset management from spreadsheets to a sophisticated system. We reduced equipment downtime by 30% and our audit preparation time by hours."
+                "VideoUrl" "/public/testvideo2.mp4"
+                "PosterUrl" "/public/testimonials/june.jpg"
+                "Name" "David Kim"
+                "Title" "Facilities Manager"
+        }}
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="mb-16">
+        {{$valuePropsData := parseJSON `{
+            "Title": "Why Blue beats traditional asset management software",
+            "Description": "Rigid asset management systems force you into their way of thinking. Blue adapts to yours.",
+            "ValueProps": [
+                {
+                    "Title": "Unlimited flexibility",
+                    "Description": "Track any asset type with custom fields designed for your exact needs."
+                },
+                {
+                    "Title": "Complete audit trail",
+                    "Description": "Every change is automatically logged for compliance and accountability."
+                },
+                {
+                    "Title": "API-first design",
+                    "Description": "Your asset data is instantly available to any other system you use."
+                }
+            ]
+        }`}}
+        
+        {{template "value-propositions" $valuePropsData}}
+    </section>
+
+    <!-- Asset Management Features Grid -->
+    <section class="mb-16">
+        {{$featuresData := parseJSON `{
+            "Title": "Everything you need for comprehensive asset management",
+            "Features": [
+                {
+                    "Icon": "database",
+                    "Title": "Centralized Database",
+                    "Description": "All asset information in one place with custom fields for any data you need to track."
+                },
+                {
+                    "Icon": "calendar",
+                    "Title": "Maintenance Scheduling",
+                    "Description": "Automated recurring maintenance with reminders, assignments, and compliance tracking."
+                },
+                {
+                    "Icon": "map-pin",
+                    "Title": "Location Tracking",
+                    "Description": "Track asset locations and movements with location fields and API integration."
+                },
+                {
+                    "Icon": "users",
+                    "Title": "Asset Assignment",
+                    "Description": "Assign assets to employees or departments with approval workflows and ownership tracking."
+                },
+                {
+                    "Icon": "chart-bar",
+                    "Title": "Utilization Analytics",
+                    "Description": "Track usage patterns, costs, and performance with real-time dashboards and reports."
+                },
+                {
+                    "Icon": "shield-check",
+                    "Title": "Compliance Management",
+                    "Description": "Complete audit trails and regulatory reporting for any compliance requirements."
+                },
+                {
+                    "Icon": "code",
+                    "Title": "API Integration",
+                    "Description": "Instant API access to your asset data without any developer setup required."
+                },
+                {
+                    "Icon": "clock",
+                    "Title": "Lifecycle Management",
+                    "Description": "Track assets from acquisition to disposal with complete history and documentation."
+                },
+                {
+                    "Icon": "bell",
+                    "Title": "Smart Notifications",
+                    "Description": "Automated alerts for maintenance, compliance deadlines, and lifecycle milestones."
+                }
+            ]
+        }`}}
+
+        {{template "features-grid-simple" $featuresData}}
+    </section>
+
+    <!-- First CTA -->
+    <section class="mb-16">
+        {{$firstCTA := parseJSON `{
+            "Title": "Take control of your assets today.",
+            "Subtitle": "Join thousands of organizations using Blue to optimize their asset management.",
+            "SecondaryText": "See a demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Start free trial",
+            "PrimaryUrl": "https://app.blue.cc"
+        }`}}
+        
+        {{template "dual-button-cta" $firstCTA}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "id": "FAQ",
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "How does Blue help track different types of assets?",
+                            "answer": "Blue's flexible custom field system adapts to any asset type. Whether you're tracking IT equipment with serial numbers and warranties, vehicles with mileage and maintenance schedules, or office furniture with purchase dates and locations—Blue handles it all in one unified system."
+                        },
+                        {
+                            "question": "Can Blue integrate with my existing asset management systems?",
+                            "answer": "Yes, Blue's API provides instant access to your asset data without any developer setup. You can sync data between Blue and other systems, or use Blue as your central asset database while keeping other tools connected."
+                        },
+                        {
+                            "question": "How does Blue handle asset maintenance scheduling?",
+                            "answer": "Create recurring maintenance schedules that automatically generate tasks and assign them to the right team members. Set up reminders based on time intervals, usage hours, or custom triggers. All maintenance history is automatically tracked with complete audit trails."
+                        },
+                        {
+                            "question": "Can Blue help reduce asset downtime?",
+                            "answer": "Absolutely. Blue's proactive maintenance scheduling, automated reminders, and real-time tracking help you stay ahead of issues. Monitor asset performance, track maintenance history, and identify patterns that could lead to downtime before they become problems."
+                        },
+                        {
+                            "question": "How does Blue track asset locations and movements?",
+                            "answer": "Use location fields to track where assets are located, and reference fields to link them to specific employees or departments. For mobile assets, integrate with tracking systems via Blue's API to automatically update locations when assets move."
+                        },
+                        {
+                            "question": "Can Blue handle asset approval workflows?",
+                            "answer": "Yes, create sophisticated approval workflows using button fields for manager confirmations, checkbox workflows for request tracking, and automated assignments. Set up multi-level approvals and ensure proper authorization for asset allocation."
+                        },
+                        {
+                            "question": "How does Blue support compliance and auditing?",
+                            "answer": "Every change in Blue is automatically logged with complete audit trails. Generate compliance reports, track regulatory requirements, and maintain detailed records of all asset activities. Perfect for industries with strict compliance requirements."
+                        },
+                        {
+                            "question": "Can Blue generate custom reports for asset management?",
+                            "answer": "Yes, Blue's dashboard system lets you create custom reports and real-time analytics. Track utilization rates, maintenance costs, asset performance, and any other metrics important to your business. All data is also available via API for external reporting tools."
+                        },
+                        {
+                            "question": "How secure is asset data in Blue?",
+                            "answer": "Blue provides enterprise-grade security with field-level permissions, complete audit trails, and secure data handling. Control exactly who can see and edit which asset information, and maintain full visibility into all data access and changes."
+                        },
+                        {
+                            "question": "Can Blue scale as our asset inventory grows?",
+                            "answer": "Absolutely. Blue handles everything from small inventories to hundreds of thousands of assets without performance degradation. Add new asset types, custom fields, and workflows as your needs evolve—all without rebuilding your system."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 </div>
