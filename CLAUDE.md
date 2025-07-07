@@ -1,11 +1,23 @@
 # CLAUDE.md
 
-## Information 
+## General
 - This is a new website for Blue, a b2b saas process management system 
 - The idea is to make a site with a high degree of polish to be on a world class level like Stripe, OpenAI, and Linear. People should really be amazed by the website.
 - I am a single developer, so this has to be simple and easy maintanble. 
-- Tailwind watch mode: ./tailwindcss -i public/input.css -o public/style.css --watch --minify
 
+## Key Information
+
+### Performance & Architecture
+- **All pages are pre-rendered** at startup for maximum performance - HTML pages cached via `HTMLService`, markdown content cached via `MarkdownService`
+- **SPA-like experience** implemented in `layouts/main.html` using client-side routing:
+  - Intercepts internal link clicks and fetches content via AJAX
+  - Smoothly transitions between pages with fade effects (150ms)
+  - Updates browser history and sidebar state
+  - Re-initializes JavaScript (syntax highlighting, copy buttons, Alpine.js)
+  - Prefetches pages on hover for instant navigation
+  - Falls back to full page loads for dynamic pages like `/platform/status`
+- **File-based routing** from `/pages` directory with automatic URL mapping
+- **Component-based architecture** with reusable HTML components
 
 ## Rules
 
@@ -23,7 +35,6 @@
 - platform/white-label
 - platform/api
 - platform/overview
-- platform/features/index
 - solutions/industry/government
 - solutions/industry/non-profits
 - solutions/industry/education
@@ -43,13 +54,13 @@
 - solutions/use-case/personal-productivity
 
 ## To Go Live
+- Add reeating records to feature index
+- Also images/videos on documentation page require completely redoing, they are quite amatuer. 
 - I need some more components for features I think
 - Consider alignign titles tot he stat card components for other components, looks very elegant.
 - Make all components mobile responive
-- create a /solutions page with the all features setup.
 - Clear all 404 issues.
 - handle /docs/automations/actions/send-email in left sidebr etc
-- handle case where users go direct to docs/automations for instance
 - Sort out card inconsistencies in brand page
 - Align CTA in brand guidelines to backgroud color of FAQ backgrounds
 - Preview image for all pages of the website
@@ -57,15 +68,12 @@
 - Make testimonial components from the testimonials parts in the brand page.
 - Check if these is a more specific javascript focus for the layout switch I am doing on main.
 - Consider thin grey line (like in hero video) for FAQ and CTAs that are light grey?
-- Remove duplicate FAQ in documentation?
-- mute button does not work when navigate to Sales CRM, only on direct load.
-- Redo client grid in tailwind with proper borders and dark mode etc. 
-- Insights to be ordered in reverse chronolgocal order.
 
 
 
 ##  Main Plan
 
+- **Refactor web/router.go** - Extract template functions, page data logic, and service orchestration into separate services (currently 586 lines doing too much)
 - Add 404 component to brand guidelines, looks quite ncie actually! 
 - Improve experts page (later on)
 - redirect bug: /docs redirects but /docs/ does not, this should work seamlessly
@@ -80,6 +88,7 @@
 - Make an awards component with crozdesk awards.
 - Figure out a scalable way to hande the mute button on the hero video
 - for /features ensure that there is no extra spacing on mobile for the column
+- I saw that for the dynamic api claude recommende **File:** `/public/js/api-credentials.js` (new file), I wonder if I should centralize some other JS logic as well?
 - Review what components to "borrow" from other sites.
 - Add savings calculator to blue page (or not mentioned competitors at all?)
 - Make the website multi linguagal?  Really like that to be honest.
@@ -126,84 +135,84 @@
 
 ## Tech Stack
 
-- Golang
-- AlpineJS
-- @alpinejs/collapse@3 plugin
-- TailwindCSS v4
+### Backend (Go)
+- **Go 1.24.4** - Main server language
+- **github.com/yuin/goldmark** - Markdown processing with CommonMark compliance
+- **gopkg.in/yaml.v3** - YAML parsing for frontmatter and configuration
+- **github.com/joho/godotenv** - Environment variable loading from .env files
+- **golang.org/x/net** - Extended networking libraries
+- **net/http** (stdlib) - HTTP server and routing
+- **html/template** (stdlib) - Template engine for server-side rendering
+- **encoding/json** (stdlib) - JSON processing for APIs and data
+- **path/filepath** (stdlib) - File path manipulation
+
+### Frontend
+- **AlpineJS 3.x** - Lightweight JavaScript framework for interactivity
+- **@alpinejs/collapse@3** - Collapse/expand animations
+- **@alpinejs/intersect@3** - Intersection observer utilities
+- **TailwindCSS v4** - Utility-first CSS framework (no config file)
+- **Highlight.js 11.9.0** - Syntax highlighting for code blocks
+- **Fuse.js 7.0.0** - Fuzzy search for site search functionality
+
+### Development Tools
+- **Air** - Hot reload for Go development
+- **Tailwind CLI** - CSS compilation and watch mode
 
 
 ## Full Website Structure
 
 ```
 .
-├── components/
-│   ├── client-logos.html
-│   ├── head.html
-│   ├── left-sidebar.html
-│   ├── page-heading.html
-│   ├── right-sidebar.html
-│   ├── testimonial-videos.html
-│   └── topbar.html
-├── content/
-│   ├── agency-success-guide/
-│   ├── alternatives/
-│   ├── api-docs/
-│   │   ├── 1.start-guide/
-│   │   ├── 11.libraries/
-│   │   ├── 2.projects/
-│   │   ├── 3.records/
-│   │   ├── 5.custom fields/
-│   │   ├── 6.automations/
-│   │   ├── 7.user management/
-│   │   ├── 8.company-management/
-│   │   └── 9.dashboards/
-│   ├── company-news/
-│   ├── docs/
-│   │   ├── 1.start-guide/
-│   │   ├── 10.use cases/
-│   │   ├── 2.projects/
-│   │   ├── 3.records/
-│   │   ├── 4.views/
-│   │   ├── 5.custom fields/
-│   │   ├── 6.automations/
-│   │   │   └── 4.actions/
-│   │   ├── 7.user management/
-│   │   │   └── 8.roles/
-│   │   ├── 8.dashboards/
-│   │   └── 9.integrations/
-│   ├── engineering-blog/
-│   ├── frequently-asked-questions/
-│   ├── insights/
-│   ├── legal/
-│   ├── modern-work-practices/
-│   ├── product-updates/
-│   ├── project-management-dictionary/
-│   └── tips-&-tricks/
-├── data/
-│   ├── nav.json
-│   ├── metadata.json
-│   └── (other data files)
+├── components/                 # Reusable HTML components (25 components)
+│   ├── head.html              # HTML head with meta tags and assets
+│   ├── left-sidebar.html      # Documentation navigation
+│   ├── right-sidebar.html     # Table of contents
+│   ├── topbar.html           # Main navigation bar
+│   ├── page-heading.html     # Page title and subtitle component
+│   └── ...                   # Other UI components
+├── content/                   # Markdown content (auto-rendered)
+│   ├── api/                  # API documentation
+│   ├── docs/                 # User documentation
+│   ├── insights/             # Blog posts and insights (80+ articles)
+│   ├── legal/                # Legal pages (terms, privacy, etc.)
+│   └── project-management-dictionary/  # Glossary terms
+├── data/                     # Configuration and metadata
+│   ├── nav.json             # Navigation structure for all menus
+│   ├── metadata.json        # Page titles, descriptions, SEO data
+│   └── redirects.json       # URL redirect mappings
 ├── layouts/
-│   └── main.html
-├── pages/
-│   ├── company/
-│   ├── platform/
-│   └── (main page HTML files)
-├── public/
-│   ├── customers/
-│   ├── logo/
-│   ├── testimonials/
-│   └── (static assets)
+│   └── main.html            # Main layout with SPA routing logic
+├── pages/                    # Static HTML pages (file-based routing)
+│   ├── index.html           # Homepage
+│   ├── platform/            # Platform pages (features, changelog, etc.)
+│   ├── solutions/           # Use case and industry solutions
+│   ├── company/             # About, values, charter
+│   └── ...                  # Other static pages
+├── public/                   # Static assets served directly
+│   ├── style.css            # Compiled Tailwind CSS
+│   ├── og.png              # Open Graph social media image
+│   ├── sitemap.xml         # Generated sitemap
+│   ├── robots.txt          # Search engine directives
+│   ├── font/               # Inter font files (variable weight)
+│   ├── logo/               # Brand assets
+│   ├── product/            # Product screenshots and videos
+│   └── ...                 # Other static assets
 ├── seo/
-│   ├── redirects.json
-│   └── (SEO-related files)
-├── web/
-│   └── (Go web package files)
-├── go.mod
-├── go.sum
-├── main.go
-├── tailwind.config.js
-└── CLAUDE.md
+│   └── schema.json         # Structured data for search engines
+├── web/                     # Go backend services (17 files)
+│   ├── router.go           # HTTP routing and request handling
+│   ├── html.go             # HTML page pre-rendering service
+│   ├── markdown.go         # Markdown processing and caching
+│   ├── seo.go              # SEO metadata and sitemap generation
+│   ├── navigation.go       # Navigation structure management
+│   ├── search.go           # Site search index generation
+│   ├── status.go           # System status monitoring
+│   └── ...                 # Other services
+├── .air.toml               # Hot reload configuration
+├── go.mod                  # Go module dependencies
+├── main.go                 # Server entry point
+├── tailwindcss             # Tailwind CLI binary
+└── CLAUDE.md              # Project documentation (this file)
 ```
 
 ## Development Workflow
@@ -221,6 +230,9 @@ air
 ```bash
 # Run Go server
 go run main.go
+
+# Tailwind Watch
+./tailwindcss -i public/input.css -o public/style.css --watch --minify
 
 # Build for production
 go build -o blue-website
