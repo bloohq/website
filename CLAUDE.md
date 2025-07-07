@@ -2,13 +2,17 @@
 
 ## General
 - This is a new website for Blue, a b2b saas process management system 
-- The idea is to make a site with a high degree of polish to be on a world class level like Stripe, OpenAI, and Linear. People should really be amazed by the website.
+- The idea is to make a site with a high degree of polish to be on a world class level like Stripe, OpenAI, and Linear. People should really be amazed by the website. This should blow Asana, Clickup, Monday, and Trello out of the water.
 - I am a single developer, so this has to be simple and easy maintanble. 
 
 ## Key Information
 
 ### Performance & Architecture
-- **All pages are pre-rendered** at startup for maximum performance - HTML pages cached via `HTMLService`, markdown content cached via `MarkdownService`
+- **All pages are pre-rendered** at startup for maximum performance:
+  - **HTML pages** (e.g., `/pages/index.html`) cached via `HTMLService` with full template processing
+  - **Markdown content** (e.g., `/content/docs/`, `/content/insights/`) processed by Goldmark and cached via `MarkdownService`
+  - **Automatic routing** - `/content/docs/introduction.md` becomes `/docs/introduction`, `/pages/pricing.html` becomes `/pricing`
+  - **YAML frontmatter** in markdown files provides metadata (title, description, category, tags)
 - **SPA-like experience** implemented in `layouts/main.html` using client-side routing:
   - Intercepts internal link clicks and fetches content via AJAX
   - Smoothly transitions between pages with fade effects (150ms)
@@ -16,7 +20,11 @@
   - Re-initializes JavaScript (syntax highlighting, copy buttons, Alpine.js)
   - Prefetches pages on hover for instant navigation
   - Falls back to full page loads for dynamic pages like `/platform/status`
-- **File-based routing** from `/pages` directory with automatic URL mapping
+- **Hybrid content system**:
+  - **Static HTML pages** for marketing/product pages with Go template variables
+  - **Markdown pages** for documentation, blog posts, and content-heavy pages
+  - **Automatic table of contents** generation for markdown content
+  - **Component reuse** across both HTML and markdown pages
 - **Component-based architecture** with reusable HTML components
 
 ## Rules
@@ -111,9 +119,7 @@
 - Create a api endpoint on blue to count companies, and then use that to power website customer count.
 - dual button CTA has far too much padding, but there seems to be a bug with p-16 that makes it looks super squashed.
 - Improve insight SVG pattern generation (similar to openai patterns) or consider PNG generation instead because of guassian blur support?
-- Consider centralizing markdown content like the about page.
 - Review buffer about page for inspiration
-- Highlighting text should be brand-blue 
 - Add AI Chatbot 
 - Confirm the paragraph text styles in the brand page.
 - Consider back to top button like old site, but may get too busy?
