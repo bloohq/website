@@ -3,8 +3,470 @@
     {{template "page-heading" 
         dict 
             "Title" "Platform Overview" 
-            "Subtitle" "Learn more about the Blue platform and how it works." 
-            "MarginBottom" "mb-8"
+            "Subtitle" "Understand Blue's technical architecture, core capabilities, and integration options." 
+            "MarginBottom" "mb-16"
     }}
+
+    <!-- White Label News Bar -->
+    <div class="mb-16">
+        {{$newsBarData := parseJSON `{
+            "MainText": "New: White Label module now available - create your own branded version of Blue.",
+            "ButtonText": "Learn about White Label",
+            "ButtonUrl": "/platform/white-label"
+        }`}}
+        {{template "news-bar" $newsBarData}}
+    </div>
+
+    <!-- Platform Architecture Section -->
+    <section id="architecture" class="max-w-7xl mx-auto mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Platform Architecture</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="space-y-6">
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Blue is organized around a clear, logical hierarchy that scales from individual tasks to enterprise operations.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Organizations</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Top-level containers that hold all workspaces, users, and company data</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Workspaces</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Projects with defined timelines or ongoing processes that never end</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Records</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Individual items representing tasks, customers, deals, or any business entity</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Custom Fields</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Granular data points and metadata that define your record structure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Architecture Diagram Placeholder -->
+            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg h-80 flex items-center justify-center">
+                <span class="text-gray-500 dark:text-gray-400 text-lg">Architecture Diagram</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Showcase Section -->
+    <section id="core-features" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Core Platform Features</h2>
+        
+        <!-- Multiple Views -->
+        <div class="mb-20">
+            {{$viewsData := parseJSON `{
+                "Title": "6 Powerful Views",
+                "Description": "See your work exactly how you want it. Switch seamlessly between Board, Calendar, Database, Timeline, Map, and List views to match your workflow and preferences.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "SeeAlso": {
+                    "Links": [
+                        {
+                            "Text": "Board view",
+                            "Description": "for visual project management",
+                            "Url": "/docs/kanban-board"
+                        },
+                        {
+                            "Text": "Timeline & Gantt Charts",
+                            "Description": "for project scheduling",
+                            "Url": "/docs/timeline-gantt-charts"
+                        }
+                    ]
+                }
+            }`}}
+            {{template "feature-video" $viewsData}}
+        </div>
+
+        <!-- Custom Fields -->
+        <div class="mb-20">
+            {{$customFieldsData := parseJSON `{
+                "Title": "24 Custom Field Types",
+                "Description": "Build the perfect database for your needs. From simple text and numbers to complex formulas, locations, and file uploads - structure your data exactly how your business works.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Links": [
+                        {
+                            "Text": "Formula fields",
+                            "Description": "for calculations and data processing",
+                            "Url": "/docs/custom-fields/formula"
+                        },
+                        {
+                            "Text": "Reference fields",
+                            "Description": "to link records across projects",
+                            "Url": "/docs/custom-fields/reference"
+                        }
+                    ]
+                }
+            }`}}
+            {{template "feature-video" $customFieldsData}}
+        </div>
+
+        <!-- Automation Engine -->
+        <div class="mb-20">
+            {{$automationData := parseJSON `{
+                "Title": "Unlimited Automation Engine",
+                "Description": "Create sophisticated workflows without writing code. Set up triggers, conditions, and actions to automate everything from status updates to complex multi-step business processes.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "SeeAlso": {
+                    "Links": [
+                        {
+                            "Text": "Email automations",
+                            "Description": "to send custom notifications",
+                            "Url": "/docs/automations/actions/email-automations"
+                        },
+                        {
+                            "Text": "Automation triggers",
+                            "Description": "for workflow events",
+                            "Url": "/docs/automations/triggers"
+                        }
+                    ]
+                }
+            }`}}
+            {{template "feature-video" $automationData}}
+        </div>
+
+        <!-- User Permission Engine -->
+        <div class="mb-20">
+            {{$permissionsData := parseJSON `{
+                "Title": "User Permission Engine",
+                "Description": "Granular control over who can see and do what. Create custom roles, set project-specific permissions, and invite external users without counting against your billing.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Links": [
+                        {
+                            "Text": "Custom user roles",
+                            "Description": "for granular access control",
+                            "Url": "/docs/user-management/roles/custom-user-roles"
+                        },
+                        {
+                            "Text": "Client role",
+                            "Description": "for external stakeholder access",
+                            "Url": "/docs/user-management/roles/client"
+                        }
+                    ]
+                }
+            }`}}
+            {{template "feature-video" $permissionsData}}
+        </div>
+
+        <!-- Real-time Dashboards -->
+        <div class="mb-20">
+            {{$dashboardsData := parseJSON `{
+                "Title": "Real-time Dashboards",
+                "Description": "Get instant insights with cross-project dashboards that update automatically. Create stat cards, charts, and reports that give you a complete view of your operations.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "SeeAlso": {
+                    "Links": [
+                        {
+                            "Text": "Stat cards",
+                            "Description": "for key performance metrics",
+                            "Url": "/docs/dashboards/stat-cards"
+                        },
+                        {
+                            "Text": "Bar graphs",
+                            "Description": "for data visualization",
+                            "Url": "/docs/dashboards/bar-graphs"
+                        }
+                    ]
+                }
+            }`}}
+            {{template "feature-video" $dashboardsData}}
+        </div>
+
+        <!-- Granular Audit Trails -->
+        <div class="mb-20">
+            {{$auditData := parseJSON `{
+                "Title": "Granular Audit Trails",
+                "Description": "Complete visibility into every action taken in your workspace. Track who changed what and when with detailed audit logs that ensure accountability and compliance.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Links": [
+                        {
+                            "Text": "Security features",
+                            "Description": "and compliance standards",
+                            "Url": "/docs/security"
+                        },
+                        {
+                            "Text": "Activity tracking",
+                            "Description": "for record changes",
+                            "Url": "/docs/records/activity"
+                        }
+                    ]
+                }
+            }`}}
+            {{template "feature-video" $auditData}}
+        </div>
+
+        <!-- Features Grid Section -->
+        <div class="mb-20">
+            {{$featuresGridData := parseJSON `{
+                "Title": "Dive Deeper into Specific Features",
+                "Features": [
+                    {
+                        "Icon": "eye",
+                        "Title": "Views",
+                        "Description": "Board, Calendar, Database, Timeline, Map, and List views for every workflow.",
+                        "Url": "/platform/features/views"
+                    },
+                    {
+                        "Icon": "magic",
+                        "Title": "Automations",
+                        "Description": "Unlimited workflow automation with triggers, conditions, and actions.",
+                        "Url": "/platform/features/automations"
+                    },
+                    {
+                        "Icon": "cogs",
+                        "Title": "Custom Fields",
+                        "Description": "24+ field types including formulas, locations, files, and references.",
+                        "Url": "/platform/features/custom-fields"
+                    },
+                    {
+                        "Icon": "chart",
+                        "Title": "Dashboards",
+                        "Description": "Cross-project reporting and real-time analytics visualization.",
+                        "Url": "/platform/features/dashboards"
+                    },
+                    {
+                        "Icon": "users",
+                        "Title": "User Management",
+                        "Description": "Granular permissions, custom roles, and external user access.",
+                        "Url": "/platform/features/user-management"
+                    },
+                    {
+                        "Icon": "document",
+                        "Title": "Forms",
+                        "Description": "Public intake forms that create records automatically.",
+                        "Url": "/platform/features/forms"
+                    },
+                    {
+                        "Icon": "plug",
+                        "Title": "API & Integrations",
+                        "Description": "GraphQL API with 100% feature coverage and webhook support.",
+                        "Url": "/platform/features/api"
+                    },
+                    {
+                        "Icon": "shield",
+                        "Title": "Security",
+                        "Description": "Enterprise-grade security with SOC 2 Type II compliance.",
+                        "Url": "/platform/security"
+                    },
+                    {
+                        "Icon": "palette",
+                        "Title": "White Label",
+                        "Description": "Complete branding customization with custom domains and logos.",
+                        "Url": "/platform/white-label"
+                    }
+                ]
+            }`}}
+            {{template "features-grid-simple" $featuresGridData}}
+        </div>
+    </section>
+
+    <!-- Platform Integrations Section -->
+    <section id="integrations" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Platform Integrations</h2>
+        
+        <!-- API-First Architecture -->
+        <div class="max-w-4xl mx-auto mb-16">
+            {{$apiData := parseJSON `{
+                "Title": "API-First Architecture",
+                "Description": "Blue provides 100% API coverage through GraphQL, giving you complete programmatic access to all platform features.",
+                "Examples": [
+                    {
+                        "Type": "query",
+                        "Label": "Query Data",
+                        "Language": "graphql",
+                        "Code": "query GetProjects {\n  projectList(filter: { companyIds: [\"your-company-id\"] }) {\n    items {\n      id\n      name\n      updatedAt\n      recordCount\n    }\n  }\n}"
+                    },
+                    {
+                        "Type": "mutation",
+                        "Label": "Write Data",
+                        "Language": "graphql", 
+                        "Code": "mutation CreateRecord {\n  createTodo(input: {\n    todoListId: \"list-id\"\n    title: \"New Task\"\n    position: 65535\n  }) {\n    id\n    title\n    position\n  }\n}"
+                    },
+                    {
+                        "Type": "subscription",
+                        "Label": "Real-time Updates",
+                        "Language": "graphql",
+                        "Code": "subscription ProjectUpdates {\n  projectUpdated {\n    id\n    name\n    updatedAt\n    lastActivity\n  }\n}"
+                    }
+                ],
+                "Link": {
+                    "Text": "Explore API Documentation",
+                    "Url": "/api/"
+                }
+            }`}}
+            {{template "technical-capability-card" $apiData}}
+        </div>
+
+        <!-- Integration Partners -->
+        <div class="mb-16">
+            {{$integrationData := parseJSON `{
+                "title": "Connect with 1,000+ tools through our integration partners",
+                "logos": [
+                    { "name": "Zapier", "src": "/public/images/zapier.svg" },
+                    { "name": "Make.com", "src": "/public/images/make.svg" },
+                    { "name": "Pabbly Connect", "src": "/public/images/pabbly-connect.png" },
+                    { "name": "Albato", "src": "/public/images/albato.svg" },
+                    { "name": "Boost.space", "src": "/public/images/boost-space.svg" }
+                ]
+            }`}}
+            {{template "logo-grid-fiber-cross" $integrationData}}
+        </div>
+
+        <!-- Platform Apps Grid Placeholder -->
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8 text-center">Available on All Platforms</h3>
+            <div class="bg-gray-200 dark:bg-gray-800 rounded-lg h-40 flex items-center justify-center">
+                <span class="text-gray-500 dark:text-gray-400 text-lg">Web • Desktop • Mobile Apps</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- White Label Capabilities Section -->
+    <section id="white-label" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">White Label Capabilities</h2>
+        
+        <div class="max-w-7xl mx-auto mb-8">
+            <div class="mb-8">
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">Create a completely branded version of Blue with custom logos, colors, and domain. Remove all Blue branding and make the platform truly yours with our White Label module.</p>
+            </div>
+            
+            {{template "hero-video" 
+                dict 
+                    "VideoUrl" "/public/testvideo2.mp4"
+                    "ShowUnmuteButton" true
+                    "Id" "whitelabel"
+            }}
+            
+            <div class="text-center mt-8">
+                <a href="/platform/white-label" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
+                    Learn about White Label pricing
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Platform Strengths Section -->
+    <section class="mb-20">
+        {{$platformStatsData := parseJSON `{
+            "Title": "Crafted to operate at scale.",
+            "Stats": [
+                {
+                    "Number": "17000+",
+                    "Description": "teams worldwide"
+                },
+                {
+                    "Number": "5M+",
+                    "Description": "processes automated"
+                },
+                {
+                    "Number": "500M+",
+                    "Description": "records managed"
+                }
+            ]
+        }`}}
+        {{template "stats-section" $platformStatsData}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="FAQ" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Platform FAQ</h2>
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "name": "Platform Architecture",
+                    "questions": [
+                        {
+                            "question": "How does Blue's platform architecture work?",
+                            "answer": "Blue uses a hierarchical structure: Organizations contain Workspaces, which contain Records with Custom Fields. This allows for flexible organization from individual tasks to enterprise-wide operations."
+                        },
+                        {
+                            "question": "What are the differences between Workspaces and Records?",
+                            "answer": "Workspaces are projects or ongoing processes that contain multiple Records. Records are individual items like tasks, customers, or deals. Each Record can have multiple Custom Fields to capture specific data."
+                        },
+                        {
+                            "question": "Can I customize the platform for my specific needs?",
+                            "answer": "Yes, Blue offers extensive customization through 24 Custom Field types, unlimited automation rules, multiple view options, and custom user permissions. You can structure your data exactly how your business works."
+                        }
+                    ]
+                },
+                {
+                    "name": "Technical Capabilities",
+                    "questions": [
+                        {
+                            "question": "What API access does Blue provide?",
+                            "answer": "Blue provides 100% API coverage through GraphQL, including queries, mutations, and real-time subscriptions. This gives you complete programmatic access to all platform features."
+                        },
+                        {
+                            "question": "How many integrations does Blue support?",
+                            "answer": "Blue connects with 1,000+ tools through integration partners like Zapier, Make.com, Pabbly Connect, Albato, and Boost.space. We also provide webhooks and a full API for custom integrations."
+                        },
+                        {
+                            "question": "What kind of automation can I create?",
+                            "answer": "Blue's automation engine supports unlimited workflows with triggers, conditions, and actions. You can automate everything from simple status updates to complex multi-step business processes without coding."
+                        }
+                    ]
+                },
+                {
+                    "name": "Enterprise Features",
+                    "questions": [
+                        {
+                            "question": "What is White Label and how does it work?",
+                            "answer": "White Label allows you to completely rebrand Blue with your own logo, colors, and domain. Remove all Blue branding and make the platform appear as your own internal system."
+                        },
+                        {
+                            "question": "How do user permissions work?",
+                            "answer": "Blue offers granular, project-level permissions with custom roles. You can control exactly who can see and do what across different projects, and invite external users without affecting your billing."
+                        },
+                        {
+                            "question": "What kind of audit trails does Blue provide?",
+                            "answer": "Blue provides comprehensive audit logs that track every action taken in your workspace, including who made changes, what was changed, and when. This ensures complete accountability and compliance."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
+
+    <!-- Call to Action -->
+    {{$ctaData := parseJSON `{
+        "Title": "Ready to explore Blue?",
+        "SecondaryText": "View all features",
+        "SecondaryUrl": "/platform/features/",
+        "PrimaryText": "Start free trial",
+        "PrimaryUrl": "https://app.blue.cc"
+    }`}}
+    {{template "dual-button-cta" $ctaData}}
 
 </div>
