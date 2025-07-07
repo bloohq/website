@@ -163,8 +163,30 @@ func (r *CalloutRenderer) renderCallout(w util.BufWriter, source []byte, node as
 	// Use icon name directly
 	iconName := callout.Icon
 	
-	// Convert markdown content to HTML using a simple approach
-	contentHTML := strings.ReplaceAll(callout.Content, "<br/>", "<br>")
+	// Convert markdown content to HTML using basic regex replacements
+	contentHTML := callout.Content
+	
+	// Handle bold text **text**
+	contentHTML = strings.ReplaceAll(contentHTML, "**", "</strong>")
+	contentHTML = strings.ReplaceAll(contentHTML, "</strong>", "<strong>")
+	// Fix the pattern for proper bold formatting
+	contentHTML = strings.ReplaceAll(contentHTML, "<strong>", "**")
+	
+	// Use a more precise approach for bold formatting
+	parts := strings.Split(contentHTML, "**")
+	if len(parts) > 1 {
+		contentHTML = ""
+		for i, part := range parts {
+			if i%2 == 0 {
+				contentHTML += part
+			} else {
+				contentHTML += "<strong>" + part + "</strong>"
+			}
+		}
+	}
+	
+	// Handle line breaks
+	contentHTML = strings.ReplaceAll(contentHTML, "<br/>", "<br>")
 	contentHTML = strings.ReplaceAll(contentHTML, "\n", "<br>")
 	
 	if callout.To != "" {
