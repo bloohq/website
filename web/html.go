@@ -227,8 +227,8 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 		// Get all cached insights from MarkdownService
 		cachedInsights := hs.markdownService.GetAllCachedContent()
 
-		// Initialize SVG generator
-		svgGen := NewSVGGenerator()
+		// Initialize PNG generator
+		pngGen := NewPNGGenerator()
 
 		for urlPath, content := range cachedInsights {
 			if strings.HasPrefix(urlPath, "/insights/") && content.Frontmatter != nil {
@@ -239,15 +239,19 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 					category = content.Frontmatter.Tags[0]
 				}
 
-				// Generate unique SVG for this insight based on title
-				svgDataURL := svgGen.GenerateSVGDataURL(content.Frontmatter.Title)
+				// Generate unique PNG for this insight based on title
+				pngPath, err := pngGen.GenerateOrGetPNG(content.Frontmatter.Title, content.Frontmatter.Slug)
+				if err != nil {
+					log.Printf("Error generating PNG for insight %s: %v", content.Frontmatter.Title, err)
+					continue
+				}
 
 				insights = append(insights, InsightData{
 					Title:       content.Frontmatter.Title,
 					Description: content.Frontmatter.Description,
 					Category:    category,
 					Slug:        content.Frontmatter.Slug,
-					SVGData:     svgDataURL,
+					PNGPath:     pngPath,
 					Date:        content.Frontmatter.Date,
 					URL:         urlPath,
 				})
