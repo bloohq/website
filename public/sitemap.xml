@@ -85,6 +85,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://blue.cc/platform/features/ai</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://blue.cc/platform/features/audit-trails</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -97,19 +103,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://blue.cc/platform/features/chat</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://blue.cc/platform/features/custom-fields</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blue.cc/platform/features/dashboard</loc>
+    <loc>https://blue.cc/platform/features/dashboards</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blue.cc/platform/features/database</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/platform/features/file-management</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/platform/features/forms</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -134,6 +158,12 @@
   </url>
   <url>
     <loc>https://blue.cc/platform/features/timeline-gantt-charts</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/platform/features/user-permissions</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1634,108 +1664,6 @@
   </url>
   <url>
     <loc>https://blue.cc/legal/baa</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/cpm</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/wbs</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/bottleneck</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/business-case</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/change-request</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/deliverable</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/fast-tracking</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/kanban</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/milestone</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/project-manager</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/raci</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/risk-register</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/scope-creep</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/scope</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/stakeholder</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/task-dependencies</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blue.cc/project-management-dictionary/waterfall-model</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

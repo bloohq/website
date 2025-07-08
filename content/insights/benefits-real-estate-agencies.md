@@ -69,9 +69,9 @@ Blue, a powerful platform designed from the ground up as a horizontal software s
 Check out the key features:
 
 - [Flexible custom fields](/platform/features/custom-fields)
-- [Powerful cross-process dashboard](/platform/features/dashboard)
-- [Configurable user roles](/platform/user-permissions)
-- [Records as a single source of truth](/platform/records)
+- [Powerful cross-process dashboard](/platform/features/dashboards)
+- [Configurable user roles](/platform/features/user-permissions)
+- [Records as a single source of truth](/platform/features/records)
 
 These are just a few of the features available in Blue, and each month Blue brings out new features to further improvement the platform.
 

@@ -118,7 +118,7 @@ Typical ones that we see used are:
 
 Again, it is really **up to you** to decide precisely which fields you want to have. One word of warning: it is easy when setting up to add lots and lots of fields to your Sales CRM of data you would like to capture. However, you must be realistic in terms of the discipline and time commitment. There's no point having 30 fields in your Sales CRM if 90% of records will not have any data in them. 
 
-The great thing about custom fields is that they integrate well into [Custom Permissions](/platform/user-permissions). This means you can decide exactly which fields team members in your team can view or edit. For instance, you may want to hide cost and profit information from junior staff. 
+The great thing about custom fields is that they integrate well into [Custom Permissions](/platform/features/user-permissions). This means you can decide exactly which fields team members in your team can view or edit. For instance, you may want to hide cost and profit information from junior staff. 
 
 ### Automations 
 

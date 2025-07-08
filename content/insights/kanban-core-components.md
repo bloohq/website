@@ -79,7 +79,7 @@ They not only save time when initiating new projects but also promote consistenc
 
 This feature allows you to set custom user permissions, restricting access to specific cards or columns. It's particularly useful when [working with external stakeholders](/insights/project-management-automations-checkbox-email), managing sensitive information, or when you need to limit certain team members' view of the overall project for focus or security reasons.
 
-Board-level metrics unlock valuable insights into your team's performance. By creating [standalone dashboards based on your kanban board data](/platform/features/dashboard), you can easily identify bottlenecks, track velocity, and gauge your team's workload. These metrics help you make data-driven decisions to optimize your workflow and improve overall productivity.
+Board-level metrics unlock valuable insights into your team's performance. By creating [standalone dashboards based on your kanban board data](/platform/features/dashboards), you can easily identify bottlenecks, track velocity, and gauge your team's workload. These metrics help you make data-driven decisions to optimize your workflow and improve overall productivity.
 
 The ability to link related boards is crucial for managing complex projects. 
 

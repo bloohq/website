@@ -235,7 +235,7 @@ By integrating approval process automation into your project management practice
 
 ## 5. Bug Tracking Automation (via Forms)
 
-In any software development project, tracking and resolving bugs efficiently is crucial for delivering a high-quality product. However, manually managing bug reports can be a cumbersome and error-prone process. Bug tracking automation, particularly via [dynamic forms](/platform/forms), offers a streamlined solution that ensures bugs are addressed promptly and systematically.
+In any software development project, tracking and resolving bugs efficiently is crucial for delivering a high-quality product. However, manually managing bug reports can be a cumbersome and error-prone process. Bug tracking automation, particularly via [dynamic forms](/platform/features/forms), offers a streamlined solution that ensures bugs are addressed promptly and systematically.
 
 ### How It Works
 
@@ -262,7 +262,7 @@ Bug tracking automation can be tailored to fit various project needs and workflo
 
 - **Custom Triggers**: Define specific conditions that initiate the bug tracking process, such as the type of bug or the severity level.
 - **Flexible Actions**: Customize actions based on the bug report details, such as assigning different team members or sending additional follow-up emails.
-- **Stakeholder Dashboards**: Create [dashboards for stakeholders](/platform/features/dashboard) to monitor the overall status of bugs across the platform, including metrics like the number of bugs, percentage fixed, and average time to fix.
+- **Stakeholder Dashboards**: Create [dashboards for stakeholders](/platform/features/dashboards) to monitor the overall status of bugs across the platform, including metrics like the number of bugs, percentage fixed, and average time to fix.
 
 ### Implementation Example
 

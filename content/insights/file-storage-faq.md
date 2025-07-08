@@ -10,7 +10,7 @@ showdate: false
 
 This is perhaps one of the most frequently asked questions that we receive here at Blue, typically from brand new or prospective customers. 
 
-At Blue, we've taken a bold step: offering [unlimited file storage](/platform/file-management) to all our customers.
+At Blue, we've taken a bold step: offering [unlimited file storage](/platform/features/file-management) to all our customers.
 
 It's a feature that often raises eyebrows and prompts the question:
  

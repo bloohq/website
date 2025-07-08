@@ -18,7 +18,7 @@ When we think about security, we consider a holistic approach that focusses on t
 
 1.  **Infrastructure & Network Security**: Ensures that our physical and virtual systems are protected from external threats and unauthorized access.
 2.  **Software Security**: Focuses on the security of the code itself, including secure coding practices, regular code reviews, and vulnerability management.
-3.  **Platform Security**: Includes the features within Blue, such as [sophisticated access controls](/platform/user-permissions), ensuring that projects are private by default, and other measures to protect user data and privacy.
+3.  **Platform Security**: Includes the features within Blue, such as [sophisticated access controls](/platform/features/user-permissions), ensuring that projects are private by default, and other measures to protect user data and privacy.
 
 
 ## How scalable is Blue?
@@ -46,7 +46,7 @@ Availability refers to the amount of time that the data is operational and acces
 
 Durability refers to the likelihood that data remains intact and uncorrupted over time. This level of durability means we can expect to lose no more than one file out of 10 billion files uploaded, thanks to extensive redundancy and data replication across multiple data centers.
 
-We use [S3 Intelligent-Tiering](https://aws.amazon.com/s3/storage-classes/intelligent-tiering/) to automatically move files to different storage classes based on the frequency of access. Based on the activity patterns of hundreds of thousands of projects, we notice that most files are access in a pattern that resembles an exponential backoff curve. This means that most files are accessed very frequently in the first few days, and then are quickly access less and less frequently. This allows us to move older files to slower, but significantly cheaper, storage without impacting the user experience in a meaningful way. This is how we are able to offer [unlimited file storage for all accounts.](/platform/file-management)
+We use [S3 Intelligent-Tiering](https://aws.amazon.com/s3/storage-classes/intelligent-tiering/) to automatically move files to different storage classes based on the frequency of access. Based on the activity patterns of hundreds of thousands of projects, we notice that most files are access in a pattern that resembles an exponential backoff curve. This means that most files are accessed very frequently in the first few days, and then are quickly access less and less frequently. This allows us to move older files to slower, but significantly cheaper, storage without impacting the user experience in a meaningful way. This is how we are able to offer [unlimited file storage for all accounts.](/platform/features/file-management)
 
 The cost savings for this are significant. S3 Standard-Infrequent Access (S3 Standard-IA) is approximately 1.84 times cheaper than S3 Standard. This means that for every dollar we would have spent on S3 Standard, we only spend about 54 cents on S3 Standard-IA for the same amount of data stored.
 

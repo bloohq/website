@@ -16,7 +16,7 @@ Something is broken? Oh well, it is just a beta.
 
 The system is slow? Oh well, it is just a beta. 
 
-[The documentation](https://documentation.blue.cc) is non-existent? Oh well…you get the point.
+[The documentation](https://blue.cc/docs) is non-existent? Oh well…you get the point.
 
 And this is *actually* a good thing.  Reid Hoffman, the founder of LinkedIN, famously said:
 
@@ -111,7 +111,7 @@ And it means that this smooths out our release schedule, which is what has enabl
 
 However, like any choice, there are some tradeoffs.
 
-Custom supports is slightly more complex, as we have to support customers across two versions of our platform. Sometimes this can cause confusion to customers that have team members using two different versions.
+Customer supports is slightly more complex, as we have to support customers across two versions of our platform. Sometimes this can cause confusion to customers that have team members using two different versions.
 
 Another pain point is that this approach can sometimes slow down the overall release schedule to production. This is especially true for larger features that can get '"stuck” in Beta if there is another related feature that is having problems and need some further work.
 

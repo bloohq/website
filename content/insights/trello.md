@@ -109,7 +109,7 @@ Blue's [pricing](/pricing) is very clear. There is one plan with two billing opt
 - **Monthly plan:** $7/month/user. 
 - **Yearly plan:** $70/year/user (so you get two months free)
 
-Not all user types in Blue count towards your subscription cost. The table below gives an overview of the [different roles](https://www.blue.cc/platform/user-permissions):
+Not all user types in Blue count towards your subscription cost. The table below gives an overview of the [different roles](https://www.blue.cc/platform/features/user-permissions):
 
 | User Type             |   Paid/Free   |
 |-----------------------|:-------------:|
@@ -325,7 +325,7 @@ Trello varies this across their plans:
 | Premium         | 250 MB                    |
 | Enterprise      | 250 MB                    |
 
-[Blue offers 20x the per file attachment limit of Trello](/platform/file-management), with a 5GB per file attachment.  
+[Blue offers 20x the per file attachment limit of Trello](/platform/features/file-management), with a 5GB per file attachment.  
 
 This makes Blue a great alternative for tasks such as uploading videos, large photo backups, and other large files.
 

@@ -67,7 +67,7 @@ Blue's [pricing](/pricing) is very clear. There is one plan with two billing opt
 - **Monthly plan:** $7/month/user. 
 - **Yearly plan:** $70/year/user (so you get two months free)
 
-Not all user types in Blue count towards your subscription cost. The table below gives an overview of the [different roles](https://www.blue.cc/platform/user-permissions):
+Not all user types in Blue count towards your subscription cost. The table below gives an overview of the [different roles](https://www.blue.cc/platform/features/user-permissions):
 
 | User Type             |   Paid/Free   |
 |-----------------------|:-------------:|

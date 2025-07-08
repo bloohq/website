@@ -55,7 +55,7 @@ Blue's [pricing](/pricing) is very clear. There is one plan with two billing opt
 
 Not all user types in Blue count towards your subscription cost. 
 
-The table below gives an overview of the [different roles](https://www.blue.cc/platform/user-permissions):
+The table below gives an overview of the [different roles](https://www.blue.cc/platform/features/user-permissions):
 
 | User Type             |   Paid/Free   |
 |-----------------------|:-------------:|

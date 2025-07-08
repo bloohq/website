@@ -55,7 +55,7 @@ Blue's [pricing](/pricing) is very clear. There is one plan with two billing opt
 
 Not all user types in Blue count towards your subscription cost. 
 
-The table below gives an overview of the [different roles](https://www.blue.cc/platform/user-permissions):
+The table below gives an overview of the [different roles](https://www.blue.cc/platform/features/user-permissions):
 
 | User Type             |   Paid/Free   |
 |-----------------------|:-------------:|
@@ -195,7 +195,7 @@ This feature is particularly useful for tasks that span multiple teams or initia
 
 ## File Storage
 
-[When it comes to managing project files](/platform/file-management), Asana has several limitations that might hinder your workflow. 
+[When it comes to managing project files](/platform/features/file-management), Asana has several limitations that might hinder your workflow. 
 
 Each file uploaded to Asana is restricted to a maximum size of 100MB, which can be problematic for teams working with large documents, high-resolution images, or multimedia files. 
 

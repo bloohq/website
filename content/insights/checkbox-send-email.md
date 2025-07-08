@@ -54,7 +54,7 @@ Your final result should look something like this:
 
 ## 4. Bonus: Restrict access to the checkbox.
 
-You can use [custom user roles in Blue](/platform/user-permissions) to restrict access to the checkbox custom fields, ensuring that only authorized team members can trigger email notifications.
+You can use [custom user roles in Blue](/platform/features/user-permissions) to restrict access to the checkbox custom fields, ensuring that only authorized team members can trigger email notifications.
 
 Blue allows Project Administrators to define roles and assign permissions to user groups. This system is crucial for maintaining control over who can interact with specific elements of your project, including custom fields like the notification checkbox.
 

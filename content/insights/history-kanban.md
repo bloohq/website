@@ -18,7 +18,7 @@ But let's take a step back — what exactly *is* a Kanban board?
 It's simple, it's a board (digital or physical!) that has two key elements:
 
 1. **[Lists (or Columns)](https://documentation.blue.cc/records/lists)**: These represent the different stages in your workflow. For example, a basic Kanban board might have lists labeled "To Do," "In Progress," and "Done."
-2. **[Cards](/platform/records)**: These represent individual tasks or work items. Each card typically contains information about the task, such as its description, who's responsible for it, and its due date.
+2. **[Cards](/platform/features/records)**: These represent individual tasks or work items. Each card typically contains information about the task, such as its description, who's responsible for it, and its due date.
 
 Optionally, Kanban boards can have Work-in-Progress (WIP) Limits, so each list may have a limit on how many cards it can contain at one time. This helps prevent overload and keeps work flowing smoothly.
 

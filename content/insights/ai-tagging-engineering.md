@@ -15,7 +15,7 @@ At Blue, our approach to feature development is rooted in a deep understanding o
 
 The introduction of AI-powered auto-tagging to Blue is a perfect example of this philosophy in action. Before we dive into the technical details of how we built this feature, it's crucial to understand the problem we were solving and the careful consideration that went into its development.
 
-The project management landscape is rapidly evolving, with AI capabilities becoming increasingly central to user expectations. Our customers, particularly those managing large-scale [projects](/platform) with millions of [records](/platform/records), had been vocal about their desire for smarter, more efficient ways to organize and categorize their data. 
+The project management landscape is rapidly evolving, with AI capabilities becoming increasingly central to user expectations. Our customers, particularly those managing large-scale [projects](/platform) with millions of [records](/platform/features/records), had been vocal about their desire for smarter, more efficient ways to organize and categorize their data. 
 
 However, at Blue, we don't simply add features because they're trendy or requested. Our philosophy is that every new addition must prove its worth, with the default answer being a firm *"no"* until a feature demonstrates strong demand and clear utility.
 
