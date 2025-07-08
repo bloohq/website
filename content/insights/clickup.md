@@ -208,7 +208,7 @@ For professional service agencies and businesses that collaborate with clients, 
 
 They want to log in, quickly find what they need, and log out. Businesses often find themselves constantly explaining ClickUp's complex interface to their clients, which is inefficient and frustrating. The complexity of the platform can lead to miscommunication or missed updates if clients struggle to navigate the system.
 
-At Blue, we have 10 years of agency experience, and we created our own platform because we were tired of constantly explaining ClickUp and similar tools like [Asana](/alternatives/asana-alternative) to our clients. Occasional users find it frustrating and time-consuming to navigate through the complex interface.
+At Blue, we have 10 years of agency experience, and we created our own platform because we were tired of constantly explaining ClickUp and similar tools like [Asana](/insights/asana) to our clients. Occasional users find it frustrating and time-consuming to navigate through the complex interface.
 
 Despite its numerous features, ClickUp may not always fit specific industry or company workflows. The attempt to cater to all industries can result in a lack of depth for specific use cases. Some users find that ClickUp's structure doesn't align well with their established processes, forcing them to adapt their workflows to the tool rather than vice versa.
 

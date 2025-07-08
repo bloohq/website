@@ -258,7 +258,7 @@ While the core principles remained the same, Software Kanban had to be adapted t
 ## Kanban in Project Management
 
 
-A significant milestone in the spread of Kanban in software development and beyond was the launch of [Trello](/alternatives/trello) in 2011. Trello, a [web-based project management platform](/solutions/project-management), popularized the concept of [digital Kanban boards](/platform/kanban-boards) for a wide audience.
+A significant milestone in the spread of Kanban in software development and beyond was the launch of [Trello](/insights/trello) in 2011. Trello, a [web-based project management platform](/solutions/project-management), popularized the concept of [digital Kanban boards](/platform/kanban-boards) for a wide audience.
 
 Trello's simple interface made Kanban accessible to non-technical users. It allowed anyone to create boards with columns representing workflow stages, and cards representing tasks that could be moved between these columns. This intuitive representation of Kanban principles helped spread the methodology beyond software development into general project management, marketing, education, and personal productivity.
 

@@ -23,7 +23,7 @@ plans:
 
 ## Introduction to Asana
 
-Asana, like [Trello](/alternatives/trello-alternative) and [Basecamp](/alternatives/basecamp-alternative), is one of the early birds in the project management space. Founded in 2008 by Facebook co-founder [Dustin Moskowitz](https://www.linkedin.com/in/dmoskov/) and former Facebook CTO (Chief Technology Officer and VP of Engineering) [Justin Rosenstein](https://www.linkedin.com/in/justinrosenstein/).
+Asana, like [Trello](/insights/trello) and [Basecamp](/insights/basecamp), is one of the early birds in the project management space. Founded in 2008 by Facebook co-founder [Dustin Moskowitz](https://www.linkedin.com/in/dmoskov/) and former Facebook CTO (Chief Technology Officer and VP of Engineering) [Justin Rosenstein](https://www.linkedin.com/in/justinrosenstein/).
 
 Interestingly, Dustin was Mark Zuckerberg's roommate at Harvard and helped code the social network in its early days! 
 
@@ -124,7 +124,7 @@ On the other hand,  Blue was created *specifically* because the founder of Blue 
 
 The team at Asana have built a very successful and powerful project management system. However, they have focussed too much on the *powerful* aspect of things, that they have forgotten that people *also* need something that is easy-to-use. People are too busy to read complex manuals. 
 
-Interestingly, this is the opposite criticism that we have of [Basecamp](/alternatives/basecamp-alternative). 
+Interestingly, this is the opposite criticism that we have of [Basecamp](/insights/basecamp). 
 
 ### Views
 

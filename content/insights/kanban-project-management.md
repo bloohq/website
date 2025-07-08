@@ -12,7 +12,7 @@ At Blue, it's no secret that we love [Kanban boards for project management.](/pl
 
 We think that they are a fantastic way to manage the workflow of any project, and they help keep project managers and team members alike sane! 
 
-For too long, we've all been using excel spreadsheets and todo lists to manage work. In fact, this is one of our [major criticisms of Basecamp](/alternatives/basecamp-alternative), another project management platform. Even they eventually added their own take on Kanban for their platform (warning: unfortunately they didn't do a great job, check our write up which includes a breakdown video!).
+For too long, we've all been using excel spreadsheets and todo lists to manage work. In fact, this is one of our [major criticisms of Basecamp](/insights/basecamp), another project management platform. Even they eventually added their own take on Kanban for their platform (warning: unfortunately they didn't do a great job, check our write up which includes a breakdown video!).
 
 
 
@@ -20,7 +20,7 @@ For too long, we've all been using excel spreadsheets and todo lists to manage w
 
 ![The original Japanese Kanban Boards](/public/resources/japan-kanban-boards.jpg)
 
-[Trello](/alternatives/trello-alternative) was the software that first popularized kanban boards for project management. 
+[Trello](/insights/trello) was the software that first popularized kanban boards for project management. 
 
 That said, you [can still buy physical kanban boards for your home or office!](https://www.patboard.com/)
 

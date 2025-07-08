@@ -21,8 +21,11 @@
     "/resources/key-features-real-estate-project-management-software": "/resources/real-estate-pm-features",
     "/resources/tips-&-tricks": "/resources/tips-tricks",
     "/resources/frequently-asked-questions": "/resources/faqs",
-    "/alternatives/trello": "/alternatives/trello-alternative",
-    "/alternatives/basecamp": "/alternatives/basecamp-alternative",
+    "/alternatives/trello": "/insights/trello",
+    "/alternatives/trello-alternative": "/insights/trello",
+    "/alternatives/basecamp": "/insights/basecamp",
+    "/alternatives/basecamp-alternative": "/insights/basecamp",
+    "/alternatives/asana-alternative": "/insights/asana",
     "/resources/agency-success-guide": "/resources/agency-success-playbook",
     "/eran": "https://eran.link/blue",
     "/docs/start-guide/custom-domains": "/docs/start-guide/white-label"
