@@ -1,6 +1,9 @@
 {
   "redirects": {
     "/api-docs": "/api/start-guide/introduction",
+    "/api": "/api/start-guide/introduction",
+    "/api/": "/api/start-guide/introduction",
+    "/compare": "/resources/compare",
     "/about": "/company/about",
     "/releases": "/platform/changelog",
     "/platform/releases": "/platform/changelog",
