@@ -3,15 +3,15 @@ title: What Comes Next?
 slug: what-comes-next
 tags: ["agency-success-guide"]
 description: Now that you have the information, it is time to take action! 
-image: /resources/angelique.jpg
+image: /insights/angelique.jpg
 date: 15/06/2024
 showdate: false
 sitemap:
-  loc: /resources/what-comes-next
+  loc: /insights/what-comes-next
   lastmod: 2024/06/15
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
@@ -45,7 +45,7 @@ Remember: your priority is the *point of constraint.*
 
 **Make your own way — come back and use this book as a reference, but try your own experiments and see what works for you.**
 
-Finally, I’d like to refer back to the very beginning of the book and remind you that [these are not rules.](/resources/no-rules-here)
+Finally, I’d like to refer back to the very beginning of the book and remind you that [these are not rules.](/insights/no-rules-here)
 
 Everything in this book is based on my own experience and I encourage you to venture beyond that. Don’t view this book as an instruction manual — rather, see it as a general guide as you embark on your own business journey.
 

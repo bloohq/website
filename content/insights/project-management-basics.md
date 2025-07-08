@@ -3,7 +3,7 @@ title: The Non-Project Manager's Guide to Project Management
 slug: project-management-basics-guide
 category: "Best Practices"
 description: This guide offers practical and straightforward rules to help non-project managers effectively plan, execute, and complete projects successfully.
-image: /resources/project-management-guide-background.png
+image: /insights/project-management-guide-background.png
 date: 2024-05-27
 showdate: false
 ---
@@ -14,7 +14,7 @@ This guide is designed to demystify the core concepts and help those who are new
 
 Effective project management is crucial for career advancement and helping your business grow. Regardless of your industry, whether you are building software, a car, or a hotel, the basics of project management remain the same. 
 
-At Blue, we believe that [everything is either a project or a process](/resources/projects-processes), and today we are focusing on the project side of things. 
+At Blue, we believe that [everything is either a project or a process](/insights/projects-processes), and today we are focusing on the project side of things. 
 
 
 ## Everyone is a project manager

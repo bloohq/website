@@ -3,14 +3,14 @@ title: FAQ on Project Management Automation
 slug: project-management-automation-faq
 category: "FAQ"
 description: This is a list of the most frequently asked questions on project management automation.
-image: /resources/real-estate-software-background.png
+image: /insights/real-estate-software-background.png
 date: 2024-06-30
 showdate: false
 ---
 
-Welcome to this comprehensive FAQ (Frequently Asked Questions) on [Project Management Automation.](/platform/project-management-automation) In this FAQ, our aim is to bring a spotlight on the most frequently asked questions, clarify common misconceptions, and generally be as helpful as possible! At Blue, we [released out first Project Management Automation feature](/resources/project-management-automation) years ago, and so we have been thinking about this topic for a very long time. This is your chance to absorb a condensed version of this knowledge in just a few minutes! 
+Welcome to this comprehensive FAQ (Frequently Asked Questions) on [Project Management Automation.](/platform/project-management-automation) In this FAQ, our aim is to bring a spotlight on the most frequently asked questions, clarify common misconceptions, and generally be as helpful as possible! At Blue, we [released out first Project Management Automation feature](/insights/project-management-automation) years ago, and so we have been thinking about this topic for a very long time. This is your chance to absorb a condensed version of this knowledge in just a few minutes! 
 
-This FAQ assumes zero prior knowledge, making it accessible to everyone! And if you are just getting started in the world of project management, we recommend also reading [The Non-Project Manager's Guide to Project Management](/resources/project-management-basics-guide)
+This FAQ assumes zero prior knowledge, making it accessible to everyone! And if you are just getting started in the world of project management, we recommend also reading [The Non-Project Manager's Guide to Project Management](/insights/project-management-basics-guide)
 
 Before we dive into questions related to project management automation, it is worth taking the time to define each of the three words that make up this concept.
 
@@ -18,7 +18,7 @@ Let's start with the basics.
 
 ## What’ a project?
 
- We defined this in our [Project Management First Principles](/resources/project-management-first-principles), but it is worth reiterating this here. 
+ We defined this in our [Project Management First Principles](/insights/project-management-first-principles), but it is worth reiterating this here. 
 
 > A project is a temporary endeavor with a defined start and end to produce a unique product, service, or result. This is how most people think of projects. But there are also some other, more formal properties of projects that are important to consider.
 
@@ -61,7 +61,7 @@ The project management process typically follows these five phases:
 4. **Monitoring and Controlling**: Tracking, reviewing, and regulating the project’s progress and performance. This phase ensures that the project stays on track by measuring performance, identifying any variances from the plan, and implementing corrective actions as needed.
 5. **Closure**: Completing the project and formally closing it. This involves finalizing all activities, handing over deliverables, releasing project resources, and conducting a post-project review to identify lessons learned and ensure that all project documentation is completed.
 
-So that’s it, in a nutshell: [Project management](/resources/project-management-basics-guide) is a structured approach to ensuring that projects are successful! 
+So that’s it, in a nutshell: [Project management](/insights/project-management-basics-guide) is a structured approach to ensuring that projects are successful! 
 
 When it’s put this way, it seems deceptively simple, but in practice it can be quite difficult without the [right project management tools.](/solutions/use-case/project-management)
 
@@ -119,14 +119,14 @@ This would of course be the next natural question. Everyone wants to “improve 
 4. Resource Management: Automate the allocation and tracking of resources such as personnel, equipment, and budgets.
 5. Communication: Set up automated notifications, [reminders](https://documentation.blue.cc/records/reminders), and updates to keep stakeholders informed.
 6. Risk Management: Identify potential risks through automated analysis and trigger alerts for preventive actions.
-7.  Categorization of Tasks: [Automated categorization of tasks](/resources/ai-auto-categorization) can assist in categorizing tasks based on their nature, priority, and other relevant factors. This can help in better organizing and prioritizing tasks, enabling project managers to focus on the most critical tasks and allocate resources efficiently.
+7.  Categorization of Tasks: [Automated categorization of tasks](/insights/ai-auto-categorization) can assist in categorizing tasks based on their nature, priority, and other relevant factors. This can help in better organizing and prioritizing tasks, enabling project managers to focus on the most critical tasks and allocate resources efficiently.
 
 A popular type of automation that many [project management systems](/solutions/use-case/project-management) have is that of [if-this-then-that automations](/platform/project-management-automation) (IFTTT) where end users can decide on triggers that will automatically excute actions based on pre-determined states. 
 
 ### Urgent Task Notifications
 
 - **Trigger:** A task is marked as "urgent".
-- **Action:** [automatically trigger an email notification to key stakeholders](/resources/project-management-automations-checkbox-email)
+- **Action:** [automatically trigger an email notification to key stakeholders](/insights/project-management-automations-checkbox-email)
 - **Benefit:** Ensures that critical tasks receive immediate attention, enhancing communication and response time.
 
 ### Automatic Checklists for QA Stage

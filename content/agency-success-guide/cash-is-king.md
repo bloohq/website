@@ -3,15 +3,15 @@ title: Cash Is King
 slug: cash-is-king
 tags: ["agency-success-guide"]
 description: Cash flow is the most critical component of running an agency, learn how to manage it so you always have a good operating buffer.
-image: /resources/madcouchbar.jpg
+image: /insights/madcouchbar.jpg
 date: 13/06/2024
 showdate: false
 sitemap:
-  loc: /resources/cash-is-king
+  loc: /insights/cash-is-king
   lastmod: 2024/06/13
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

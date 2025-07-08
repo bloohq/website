@@ -3,7 +3,7 @@ title:  Scaling CSV Imports & Export to 250,000+ Records
 slug: scaling-csv-import-export
 category: "Engineering"
 description: Discover how Blue scaled CSV imports and exports 10x using Rust and scalable architecture and strategic tech choices in B2B SaaS.
-image: /resources/import-export-background.png
+image: /insights/import-export-background.png
 date: 2024-07-18
 showdate: true
 ---
@@ -80,7 +80,7 @@ The learning curve for Rust was steep but manageable. Our team dedicated about t
 
 The improvements were impressive:
 
-![](/public/resources/import-export.png)
+![](/public/insights/import-export.png)
 
 
 Our new system can process the same amount of records that our old system could process in 15 minutes in around 30 seconds. 
@@ -162,4 +162,4 @@ By reimagining our CSV import and export process, we've not only solved a pressi
 
 As we continue to push the boundaries of what's possible in [project management software](/solutions/use-case/project-management), we're excited to tackle more challenges like this. 
 
-Stay tuned for more [deep dives into the engineering that powers Blue!](/resources/engineering-blog)
+Stay tuned for more [deep dives into the engineering that powers Blue!](/insights/engineering-blog)

@@ -3,10 +3,10 @@ title: How to create custom email automations
 slug: email-automations
 category: "Product Updates"
 description: Custom email notifications are an incredibly powerful feature in Blue that can help keep work moving forwards and ensure communication is on auto-pilot.
-image: /resources/email-background.png
+image: /insights/email-background.png
 ---
 
-Email automations in Blue are a [powerful project management automation](/platform/project-management-automation) for streamlining communication, ensuring [great teamwork](/resources/great-teamwork) and keeping projects moving forward. By leveraging data stored within your records, you can automatically send personalized emails when certain triggers occur, such as a new record being created or a task becoming overdue. 
+Email automations in Blue are a [powerful project management automation](/platform/project-management-automation) for streamlining communication, ensuring [great teamwork](/insights/great-teamwork) and keeping projects moving forward. By leveraging data stored within your records, you can automatically send personalized emails when certain triggers occur, such as a new record being created or a task becoming overdue. 
 
 In this article, we’ll explore how to set up and use email automations in Blue.
 
@@ -25,7 +25,7 @@ Next, configure the email details, including:
 - To address (can be static or dynamically pulled from an email custom field)
 - CC or BCC addresses (optional)
 
-![](/public/resources/email-automations-image.webp)
+![](/public/insights/email-automations-image.webp)
 
 One of the key benefits of email automations in Blue is the ability to personalize the content using merge tags. When customizing the email subject and body, you can insert merge tags that reference specific record data, such as the record name or custom field values. Simply use the {curly bracket} syntax to insert merge tags.
 

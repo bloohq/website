@@ -3,15 +3,15 @@ title: Introduction
 slug: introduction
 tags: ["agency-success-guide"]
 description: Learn why we wrote the definitive guide on how to run an agency effectively, and how we got started.
-image: /resources/madoffice1.jpeg
+image: /insights/madoffice1.jpeg
 date: 01/06/2024
 showdate: false
 sitemap:
-  loc: /resources/introduction
+  loc: /insights/introduction
   lastmod: 2024/06/01
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
@@ -22,7 +22,7 @@ In this book, you'll learn everything you need to know on how to run a radically
 
 Starting a business has been one of the most challenging things that I have accomplished. In hindsight, this could have been much easier if I had made better choices.
 
-The only way to make better choices is to have the proper framework for decision-making. This should have foundations in both experiences (often known as mistakes!) and [insights](/resources/insights).
+The only way to make better choices is to have the proper framework for decision-making. This should have foundations in both experiences (often known as mistakes!) and [insights](/insights/insights).
 
 If you can learn from other people’s mistakes, that’s often better than making your own — hence this book.
 
@@ -47,7 +47,7 @@ If you already have a business, you will gain value by discovering new ways of d
 This book is structured in three parts:
 
 1. **Start Building Momentum** — How to drum up business and set a strategy to ensure that you are consistently approached by new potential clients.
-2. **Working With Humans** — How to deal with both team members and clients. How to treat people like human beings with [great teamwork](/resources/great-teamwork), not cogs in a machine.
+2. **Working With Humans** — How to deal with both team members and clients. How to treat people like human beings with [great teamwork](/insights/great-teamwork), not cogs in a machine.
 3. **Run Things Effectively** — Once you have clients and team members, how to keep everything humming along nicely and ensure that the business is stable.
 
 
@@ -93,13 +93,13 @@ Within six months, we moved to a new office, and things seemed to be going well.
 
 At the time, I blamed various individuals for not doing their job. In reality, it was my fault for not building a resilient organization with high-quality standards.
 
-And so, after this second large failure, I decided that I would try to do everything. I took on each functional role to understand what needed to be done — and how to do it. I wanted to understand everything from finance to [project management](/resources/project-management-basics-guide) to sales and marketing. My idea was that as soon as I could understand a functional area well, I could start to delegate it or automate it.
+And so, after this second large failure, I decided that I would try to do everything. I took on each functional role to understand what needed to be done — and how to do it. I wanted to understand everything from finance to [project management](/insights/project-management-basics-guide) to sales and marketing. My idea was that as soon as I could understand a functional area well, I could start to delegate it or automate it.
 
-While somewhat stressful, this was educational. I started to question why certain things are done in specific ways. I asked myself, how can I radically simplify and even [automate critical processes](/resources/applying-critical-thinking-to-process-design)?
+While somewhat stressful, this was educational. I started to question why certain things are done in specific ways. I asked myself, how can I radically simplify and even [automate critical processes](/insights/applying-critical-thinking-to-process-design)?
 
 At the same time, I also decided to build my own project management system, called [Blue](/). The core idea was to create a system that was easy to use, affordable, and powerful. Something that could run complex and nuanced projects.
 
-As Blue started to [gain features](/platform/changelog), these were battle-tested by Mäd. This kickstarted a virtuous circle where more usage meant more feedback. This, in turn, made us more thoughtful and organized. Blue now has thousands of organizations using the platform across the world. I’ll speak more about Blue when we discuss [effective project management](/resources/effective-project-management).
+As Blue started to [gain features](/platform/changelog), these were battle-tested by Mäd. This kickstarted a virtuous circle where more usage meant more feedback. This, in turn, made us more thoughtful and organized. Blue now has thousands of organizations using the platform across the world. I’ll speak more about Blue when we discuss [effective project management](/insights/effective-project-management).
 
 I do not consider Mäd a startup any longer. We’ve had a significant amount of time to work out how to do things right.
 

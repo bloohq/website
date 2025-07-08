@@ -3,7 +3,7 @@ title: Project Management First Principles.
 slug: project-management-first-principles
 category: "Best Practices"
 description: Starting with first principles, we provide a comprehensive understanding of what is a project, and how to effectively manage projects. 
-image: /resources/project-management-first-principles.jpeg
+image: /insights/project-management-first-principles.jpeg
 date: 2024-07-07
 showdate: true
 ---
@@ -40,7 +40,7 @@ We’ve found that these things typically apply to all projects and, if done wel
 
 The first thing that a project needs is someone in charge of successfully completing it. This might seem like an obvious statement, but it is worth emphasizing.
 
-This person *is* the project manager. They are responsible for ensuring that the project’s objectives are met and that the project is completed on time, within budget, and to the required quality standards. Often, many of us become de-facto project managers without being a trained project manager. If that's you, then you're in luck, [we wrote a guide for that!](/resources/project-management-basics-guide)
+This person *is* the project manager. They are responsible for ensuring that the project’s objectives are met and that the project is completed on time, within budget, and to the required quality standards. Often, many of us become de-facto project managers without being a trained project manager. If that's you, then you're in luck, [we wrote a guide for that!](/insights/project-management-basics-guide)
 
 It is worth considering what a project manager should and shouldn’t do. After all, they have a lot of responsibility, and they must take this responsibility seriously.
 
@@ -50,7 +50,7 @@ Because they are a manager, the project manager should be focused on how to achi
 
 The project manager is also responsible for communicating with the project’s stakeholders and keeping them updated on its progress.
 
-Much like we discussed in [Prioritization for Leaders](/resources/prioritization-for-leaders), project managers should constantly be focused on the point of constraint. If getting stakeholders to approve something takes too much time, then they need to be hyper-focused on getting that commitment. They need to be constantly asking themselves, “What is holding us up from completing the project objectives, and how do I unblock the problem as quickly as possible?”
+Much like we discussed in [Prioritization for Leaders](/insights/prioritization-for-leaders), project managers should constantly be focused on the point of constraint. If getting stakeholders to approve something takes too much time, then they need to be hyper-focused on getting that commitment. They need to be constantly asking themselves, “What is holding us up from completing the project objectives, and how do I unblock the problem as quickly as possible?”
 
 In some ways, project management is synonymous with communication. Writing detailed ideas down is a valuable skill for a project manager, as it drastically reduces the number of meetings required — team members can self-serve the information required.
 

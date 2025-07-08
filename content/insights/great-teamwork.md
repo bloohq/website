@@ -307,5 +307,5 @@ Intentional speed complements agile methodologies by emphasizing the importance 
 - [The importance of teamwork (as proven by science) ](https://www.atlassian.com/blog/teamwork/the-importance-of-teamwork)— Tracy Middleton / Atlassian
 - [Effective Teamwork: 8 Simple Characteristics of a Great Team](https://skillpath.com/blog/effective-teamwork) — Skillpath
 - [10 teamwork skills everyone should have](https://www.notion.so/blog/teamwork-skills) — Maggie Gowland / Notion
-- [11 Benefits of teamwork in the workplace (with examples)](https://asana.com/resources/teamwork-in-the-workplace) — Asana
+- [11 Benefits of teamwork in the workplace (with examples)](https://asana.com/insights/teamwork-in-the-workplace) — Asana
 - [41 Teamwork quotes to promote effective collaboration ](https://www.proofhub.com/articles/teamwork-quotes)— Vartika Kashyap

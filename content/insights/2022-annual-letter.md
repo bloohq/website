@@ -18,7 +18,7 @@ And what a year it has been! Our MRR (Monthly Recurring Revenue) grew 4x from la
 
 Before I get into the details, I’d like to reiterate our core purpose. 
 
-Our mission is to organise the world’s work. This means building a powerful yet easy-to-use platform to handle any process or project and enables [great teamwork](/resources/great-teamwork). A product that we would proudly recommend to our friends, family, and colleagues. 
+Our mission is to organise the world’s work. This means building a powerful yet easy-to-use platform to handle any process or project and enables [great teamwork](/insights/great-teamwork). A product that we would proudly recommend to our friends, family, and colleagues. 
 
 To be candid, this year marks a significant milestone for me personally — it's the first time I can wholeheartedly recommend Blue without any reservations. 
 

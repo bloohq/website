@@ -3,15 +3,15 @@ title: Delegation is Entrepreneurship
 slug: delegation-entrepreneurship
 tags: ["agency-success-guide"]
 description: Learn how to delegate effectively so you can scale your agency to new heights.
-image: /resources/delegation.jpg
+image: /insights/delegation.jpg
 date: 09/06/2024
 showdate: false
 sitemap:
-  loc: /resources/delegation-entrepreneurship
+  loc: /insights/delegation-entrepreneurship
   lastmod: 2024/06/09
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
@@ -217,7 +217,7 @@ An SOP system sounds complex, but it can really just be a simple Word doc. I str
 
 ## The Coach Hat
 
-[In Chapter 4](/resources/nurturing-top-talent), I discussed the analogy of a business as a professional sports team (versus a family). Here, the leader is the head coach, with the key responsibility of finding and developing the best talent while keeping track of the non-performers.
+[In Chapter 4](/insights/nurturing-top-talent), I discussed the analogy of a business as a professional sports team (versus a family). Here, the leader is the head coach, with the key responsibility of finding and developing the best talent while keeping track of the non-performers.
 
 In this kind of culture, the most important thing is not always what you are doing, but what the team working on your business is doing. There will never be a totally perfect team member, and when you wear the Coach hat, your job is to build up their strengths and cover their weaknesses.
 

@@ -3,12 +3,12 @@ title:  AI Auto Categorization (Engineering Deep Dive)
 slug: ai-auto-categorization-engineering
 category: "Engineering"
 description: Go behind the scenes with the Blue engineering team as they explain how to built an AI-powered auto-categorization and tagging feature.
-image: /resources/ai-tag-background.png
+image: /insights/ai-tag-background.png
 date: 2024-12-07
 showdate: true
 ---
 
-We recently released [AI Auto Categorization](/resources/ai-auto-categorization) to all Blue users. This is an AI feature that is bundled in to the core subscription of Blue, without additional costs. In this post, we dig into the engineering behind making this feature happen.
+We recently released [AI Auto Categorization](/insights/ai-auto-categorization) to all Blue users. This is an AI feature that is bundled in to the core subscription of Blue, without additional costs. In this post, we dig into the engineering behind making this feature happen.
 
 ---
 At Blue, our approach to feature development is rooted in a deep understanding of user needs and market trends, coupled with a commitment to maintaining the simplicity and ease of use that defines our platform. This is what drives our [roadmap](/platform/roadmap), and what has [allowed us to consistently ship features each month for years](/platform/changelog). 
@@ -246,8 +246,8 @@ By continuously exploring the frontiers of AI in project management, we aim to p
 
 So that's it!  
 
-This was a fun feature to implement, and one our first steps into AI, alongside the [AI Content Summarization](/resources/ai-content-summarization) we've previously launched. We know that AI is going to be a bigger and bigger role in project management in the future, and we can't wait to roll out more innovative features leveraging advanced LLMs (Large Language Models). 
+This was a fun feature to implement, and one our first steps into AI, alongside the [AI Content Summarization](/insights/ai-content-summarization) we've previously launched. We know that AI is going to be a bigger and bigger role in project management in the future, and we can't wait to roll out more innovative features leveraging advanced LLMs (Large Language Models). 
 
-There was quite a bit to think about while implementing this, and we're especially excited about how we can leverage this feature in the future with Blue's existing [project management automation engine](/resources/benefits-project-management-automation). 
+There was quite a bit to think about while implementing this, and we're especially excited about how we can leverage this feature in the future with Blue's existing [project management automation engine](/insights/benefits-project-management-automation). 
 
 We also hope it's been an interesting read, and that it gives you a glimpse into how we think about engineering the features that you use everyday. 

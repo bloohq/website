@@ -3,11 +3,11 @@ title:  Blue as a Basecamp Alternative
 slug: basecamp-alternative
 category: "Alternatives"
 description: Learn why thousands of users are using Blue as a Basecamp alternative for a more powerful, flexible project management software.
-image: /resources/ai-tag-background.png
+image: /insights/ai-tag-background.png
 date: 2024-07-12
 showdate: true
 #Logo Fields
-rightLogoSrc: "/resources/basecamp-icon.svg"
+rightLogoSrc: "/insights/basecamp-icon.svg"
 rightLogoAlt: "Basecamp Icon"
 # CTA Fields
 CtaHeader: Simplicity & Power
@@ -27,7 +27,7 @@ The platform started life as an internal project management tool created by the 
 
 David is also the creator of the [open source web framework Ruby on Rails](https://rubyonrails.org/) that is used by companies such as [GitHub](https://github.com/), [Shopify](https://www.shopify.com/), [Airbnb](https://www.airbnb.com/), [Square](https://squareup.com/), [Coinbase](https://www.coinbase.com/), and [Zendesk](https://www.zendesk.com/).
 
-![](/public/resources/basecamp-home.png)
+![](/public/insights/basecamp-home.png)
 <p class="text-sm text-gray-500 text-center -mt-8">Image description goes here</p>
 
 
@@ -50,7 +50,7 @@ Blue was founded in 2018 by [Emanuele "Manny" Faja](https://www.linkedin.com/in/
 
 > To organize the world's work by building the best project management platform on the planet—simple, powerful, flexible, and affordable for all.
 
-Interestingly, Manny's journey into the project management world started out by using Basecamp to manage his [product design firm](/resources/agency-success-guide). He loved the simplicity of Basecamp (You can find his [Basecamp review over on the Basecamp website!](https://basecamp.com/customers)), but as his agency grew he needed something more powerful, and so he moved to [Asana](https://asana.com). 
+Interestingly, Manny's journey into the project management world started out by using Basecamp to manage his [product design firm](/insights/agency-success-guide). He loved the simplicity of Basecamp (You can find his [Basecamp review over on the Basecamp website!](https://basecamp.com/customers)), but as his agency grew he needed something more powerful, and so he moved to [Asana](https://asana.com). 
 
 However, gone was the simplicity, and it was too complex for most of his customers to use!
 
@@ -141,7 +141,7 @@ View                     | Basecamp                            | Blue |
 
 > It's like Kanban, only better.
 
-![](/public/resources/basecamp-kanban.png)
+![](/public/insights/basecamp-kanban.png)
 
 Well, we *actually* tried it out and did a head to head comparison with the Blue Kanban board — the feature that we are *most* proud of in Blue. 
 
@@ -278,7 +278,7 @@ That said, Basecamp still has its loyal users, especially those who value its si
 
 In the end, for teams that want a flexible, feature-rich, and cost-effective solution without sacrificing ease of use, [Blue is an excellent project management alternative to Basecamp](/solutions/use-case/project-management). 
 
-Blue combines the simplicity that made Basecamp popular with the power and adaptability needed for [today’s varied work environments](/resources/great-teamwork).
+Blue combines the simplicity that made Basecamp popular with the power and adaptability needed for [today’s varied work environments](/insights/great-teamwork).
 
 As with any software decision, it’s a good idea for teams to take advantage of free trials ([try Blue here!](https://app.blue.cc)) and carefully assess both platforms against their specific needs before making a final choice. 
 

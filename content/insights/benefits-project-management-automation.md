@@ -3,7 +3,7 @@ title: The Benefits of Project Management Automations
 slug: benefits-project-management-automation
 category: "Best Practices"
 description: Discover Blue's new automation features designed to streamline project management workflows, enhance efficiency, and improve productivity for all.
-image: /resources/automation-background.png
+image: /insights/automation-background.png
 date: 2024-07-09
 showdate: true
 ---
@@ -23,7 +23,7 @@ Modern professionals find themselves caught in a cycle of manual reporting, endl
 
 Despite our best efforts, the outcomes frequently fall short of our true capabilities.
 
-The root cause of this problem lies in the increasing complexity of modern projects, and the fact that most project managers are [de-facto project managers](/resources/project-management-basics-guide). 
+The root cause of this problem lies in the increasing complexity of modern projects, and the fact that most project managers are [de-facto project managers](/insights/project-management-basics-guide). 
 
 They have become project managers *without ever having been trained as project managers.* 
 

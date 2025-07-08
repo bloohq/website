@@ -3,7 +3,7 @@ title: "The Simple Guide to WBS: Work Breakdown Structures Made Easy"
 slug: simple-work-breakdown-structure
 category: "Best Practices"
 description: Simplify project management with a Work Breakdown Structure (WBS). Discover key steps, common mistakes, and practical examples for better clarity and efficiency.
-image: /resources/pm-background.png
+image: /insights/pm-background.png
 date: 2024-08-10
 showdate: true
 ---
@@ -14,7 +14,7 @@ Essentially, step-by-step instructions of the project.
 
 That's it. 
 
-![](/public/resources/minimalist-steps.jpg)
+![](/public/insights/minimalist-steps.jpg)
 
 Many new project managers find WBS intimidating because they typically resemble massive, clunky Excel sheets. 
 
@@ -30,7 +30,7 @@ In this article, we'll explore how to demystify WBS, making them an accessible a
 
 Simplicity in project management cannot be overstated. Blue's motto is "Teamwork, Made Simple" for a reason. 
 
-![Minimalist Working Chair](/public/resources/minimalist-chair.jpg)
+![Minimalist Working Chair](/public/insights/minimalist-chair.jpg)
 
 We believe that complexity is the enemy of done. 
 
@@ -42,7 +42,7 @@ This clarity reduces the likelihood of misunderstandings and errors. With clear 
 
 This shared understanding facilitates smoother coordination and [more effective teamwork.](/insights/great-teamwork)
 
-![](/public/resources/happy-project-manager.jpg)
+![](/public/insights/happy-project-manager.jpg)
 
 A simplified WBS directly impacts project efficiency and success. By clearly defining tasks and timelines, project managers can more easily identify bottlenecks and allocate resources effectively. 
 
@@ -93,7 +93,7 @@ By following these steps, you can create a simplified WBS that enhances project 
 
 Let's work through a practical example — opening a coffee shop.
 
-![](/public/resources/coffee-shop.jpg)
+![](/public/insights/coffee-shop.jpg)
 
 What's the primary objective? Well, to establish a fully operational coffee shop that attracts customers and generates revenue. 
 

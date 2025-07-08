@@ -3,15 +3,15 @@ title: Keep It Simple
 slug: keep-it-simple
 tags: ["agency-success-guide"]
 description: In this chapter, we explain why simple processes are often much better than more academic, complex business processes.
-image: /resources/madentrance.jpg
+image: /insights/madentrance.jpg
 date: 12/06/2024
 showdate: false
 sitemap:
-  loc: /resources/keep-it-simple
+  loc: /insights/keep-it-simple
   lastmod: 2024/06/12
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

@@ -3,15 +3,15 @@ title: Concise Reference Guide
 slug: concise-reference-guide
 tags: ["agency-success-guide"]
 description: This is a one-pager reference guide for all the content in the Agency Success Guide.
-image: /resources/firststeps.jpg
+image: /insights/firststeps.jpg
 date: 17/06/2024
 showdate: false
 sitemap:
-  loc: /resources/concise-reference-guide
+  loc: /insights/concise-reference-guide
   lastmod: 2024/06/17
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

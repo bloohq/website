@@ -73,7 +73,7 @@ Interesting 2021 Stats & Year on Year Growth
 
 ## 31 Things We Want To Achieve.
 
-As I am 31 today, here’s 31 things that we want to focus on building next to enable [great teamwork](/resources/great-teamwork). This is going to be a lot of work, and it is unlikely that we will complete everything within 2022. That said, I hope this helps you understand our vision for the platform.
+As I am 31 today, here’s 31 things that we want to focus on building next to enable [great teamwork](/insights/great-teamwork). This is going to be a lot of work, and it is unlikely that we will complete everything within 2022. That said, I hope this helps you understand our vision for the platform.
 
 * File Folders
 * Make Blue 300% faster: I’ve been testing an internal version with some core changes that makes Blue ridiculously snappy. When things happen instantly, it really changes the entire experience.

@@ -3,15 +3,15 @@ title: No Rules Here
 slug: no-rules-here
 tags: ["agency-success-guide"]
 description: There are no hard rules in this guide, only reflections and guidance that you can adapt to your situation.  
-image: /resources/madoffice2.jpg
+image: /insights/madoffice2.jpg
 date: 02/06/2024
 showdate: false
 sitemap:
-  loc: /resources/no-rules-here
+  loc: /insights/no-rules-here
   lastmod: 2024/06/02
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
@@ -36,7 +36,7 @@ This comes down to the fact that your clients are hiring you because of **you** 
 
 **This is a crucial point to remember.**
 
-While you should take important things seriously, ensuring that you and your colleagues are having fun is essential — that's a [core component of great teamwork](/resources/great-teamwork). We’re all going to spend quite a bit of time at work, so it’s worth making that time both meaningful and enjoyable.
+While you should take important things seriously, ensuring that you and your colleagues are having fun is essential — that's a [core component of great teamwork](/insights/great-teamwork). We’re all going to spend quite a bit of time at work, so it’s worth making that time both meaningful and enjoyable.
 
 Remember, we’re not running a hospital or operating in a war zone, where decisions are life or death. The worst possible thing that can happen is that you waste some money or a project is late. It’s not the end of the world — even if it might appear that way in the heat of the moment.
 

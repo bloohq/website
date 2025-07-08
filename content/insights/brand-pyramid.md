@@ -3,14 +3,14 @@ title: The Brand Pyramid
 slug: brand-pyramid
 category: "CEO Blog"
 description: Discover why its important for brands to build their brands in a structured manner.
-image: /resources/brand-pyramids.jpeg
+image: /insights/brand-pyramids.jpeg
 date: 2024-08-01
 showdate: false
 ---
 
 This article comes from our previous experience in running a successful design agency. 
 
-If you're an agency owner, you owe it to yourself to read our [Agency Success Playbook](/resources/agency-success-playbook). 
+If you're an agency owner, you owe it to yourself to read our [Agency Success Playbook](/insights/agency-success-playbook). 
 
 It distills a decade of agency leadership experience to help you grow your agency and learn to master cash-flow, project management, client relationships, proposal writing and more.
 
@@ -29,13 +29,13 @@ The primary function of a brand pyramid is to give the brand direction, allowing
 - **Rational Benefits**: The benefits that distinguish the brand from its competitors
 - **Functional Attributes**: The features, services, or goods that the brand provide
 
-![](/public/resources/brand-pyramid-structure.png)
+![](/public/insights/brand-pyramid-structure.png)
 
 ## The Blue Approach
 
 When we consider brand pyramids, we take a slightly different approach with our brand. Due to similarities and overlaps of the rational and functional benefits, we have streamlined them into a single tier. This has helped us avoid confusion and focus on what really matters - HOW our brand is different to that of our competitors. To achieve this, it is important that at least one of the functional benefits stipulates the brand's differentiating feature.
 
-![](/public/resources/blue-brand-pyramid.png)
+![](/public/insights/blue-brand-pyramid.png)
 
 ## Brand Essence
 
@@ -73,7 +73,7 @@ The second section of the brand pyramid is the brand's personality. This is the 
 
 Examples of popular brand personality traits:
 
-![](/public/resources/personality-traits.png)
+![](/public/insights/personality-traits.png)
 
 Think about it like this: 
 

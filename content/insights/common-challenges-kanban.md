@@ -3,7 +3,7 @@ title: Overcoming Common Challenges in Implementing Kanban
 slug: kanban-boards-common-challenges
 category: "Best Practices"
 description: Discover common challenges in implementing Kanban boards and learn effective strategies to overcome them.
-image: /resources/kanban-background.png
+image: /insights/kanban-background.png
 date: 2024-08-10
 showdate: true
 ---
@@ -26,7 +26,7 @@ The most common problem when implementing Kanban is that board is overloaded wit
 
 Simplicity looks simple, but it's actually difficult to achieve! 
 
-This over-complexity typically happens for because of a misunderstanding on how to apply  [the core principles of Kanban boards](/resources/kanban-board-software-core-components) to project management: 
+This over-complexity typically happens for because of a misunderstanding on how to apply  [the core principles of Kanban boards](/insights/kanban-board-software-core-components) to project management: 
 
 1. An excessive number of cards
 2. Mixing work granularity (and that's a common challenge by itself!)
@@ -59,7 +59,7 @@ Aim for a streamlined board that accurately reflects your core process.
 
 Don't create a crazy amount of [tags](https://documentation.blue.cc/records/tags), but do be religious about ensuring that every card *is* tagged appropriately. This ensures that when you do filter by tag, you actually get the results that you are looking for! 
 
-At Blue, [we've also implemented an AI tagging system for this very reason](/resources/ai-auto-categorization-engineering). It can go through all your cards and automatically tag them based on the contents. 
+At Blue, [we've also implemented an AI tagging system for this very reason](/insights/ai-auto-categorization-engineering). It can go through all your cards and automatically tag them based on the contents. 
 
 <video autoplay loop muted playsinline>
   <source src="/public/videos/ai-tagging.mp4" type="video/mp4">
@@ -329,7 +329,7 @@ Finding a balance between power and user-friendliness has been an ongoing challe
 
 This is where Blue enters the picture. 
 
-Born out of a real need for a [Kanban tool that's both powerful and accessible](/platform/kanban-boards), Blue was created to address the shortcomings of other project management systems and helps teams ensure that the [first principles of project management](/resources/project-management-first-principles) are in place. 
+Born out of a real need for a [Kanban tool that's both powerful and accessible](/platform/kanban-boards), Blue was created to address the shortcomings of other project management systems and helps teams ensure that the [first principles of project management](/insights/project-management-first-principles) are in place. 
 
 Our design philosophy is simple yet ambitious: to provide a platform that offers robust capabilities *without* sacrificing ease of use.
 

@@ -3,7 +3,7 @@ title: The History of Kanban Boards
 slug: kanban-board-history
 category: "Best Practices"
 description: Learn the history of Kanban Boards, and how they evolved from factory floors into flexible digital tools. 
-image: /resources/japan-kanban-boards.jpg
+image: /insights/japan-kanban-boards.jpg
 date: 2024-07-23
 showdate: true
 ---
@@ -58,7 +58,7 @@ As we delve into the rich history of Kanban, we'll explore its journey from Toyo
 
 The story of Kanban begins in the bustling factories of post-World War II Japan, specifically at Toyota Motor Corporation. In the late 1940s, a young industrial engineer named [Taiichi Ohno](https://en.wikipedia.org/wiki/Taiichi_Ohno) was tasked with improving Toyota's manufacturing efficiency. 
 
-![](/public/resources/taiichi-ohno.jpg)
+![](/public/insights/taiichi-ohno.jpg)
 
 Ohno identified seven sources of waste in production, which are now recognized as crucial in [lean manufacturing](https://en.wikipedia.org/wiki/Lean_manufacturing):
 
@@ -93,7 +93,7 @@ Ohno is also known for his "Ten Precepts" to think and act to win:
 
 Little did he know that his innovations would not only revolutionize Toyota but also transform production systems worldwide.
 
-![](/public/resources/japan-kanban-boards.jpg)
+![](/public/insights/japan-kanban-boards.jpg)
 
 Ohno's inspiration came from an unlikely source: **American supermarkets.**
 
@@ -244,7 +244,7 @@ While Kanban had proven its worth in manufacturing, its journey was far from ove
 
 The pivotal moment in Kanban's transition to software development came in 2004 when David J. Anderson, a software developer and management consultant, applied Kanban principles to an IT work team at Microsoft. Anderson was faced with a struggling software team that was overwhelmed with work and failing to meet deadlines. Drawing inspiration from manufacturing Kanban, he developed a system to visualize the team's workflow, limit work in progress, and improve the flow of tasks.
 
-Anderson's experiment was a success. The team saw dramatic [improvements in productivity and morale](/resources/great-teamwork). This marked the birth of what would come to be known as "Kanban for knowledge work" or "Software Kanban."
+Anderson's experiment was a success. The team saw dramatic [improvements in productivity and morale](/insights/great-teamwork). This marked the birth of what would come to be known as "Kanban for knowledge work" or "Software Kanban."
 
 ###  Key Differences from Manufacturing Kanban
 While the core principles remained the same, Software Kanban had to be adapted to suit the unique characteristics of knowledge work:
@@ -262,15 +262,15 @@ A significant milestone in the spread of Kanban in software development and beyo
 
 Trello's simple interface made Kanban accessible to non-technical users. It allowed anyone to create boards with columns representing workflow stages, and cards representing tasks that could be moved between these columns. This intuitive representation of Kanban principles helped spread the methodology beyond software development into general project management, marketing, education, and personal productivity.
 
-![](/public/resources/trello-card.png)
+![](/public/insights/trello-card.png)
 
 The success of Trello sparked a wave of similar tools, such as [Blue](/),  and soon, Kanban board features became a standard offering in many [project management software solutions](/solutions/use-case/project-management):
 
-![](/public/resources/blue-card.png)
+![](/public/insights/blue-card.png)
 
 This digital adaptation made it easier than ever for teams of all sizes and industries to implement Kanban principles in their work.
 
-As Kanban continued to evolve in the software world, it began to influence project management practices across various industries. [Even non-project managers started to become project managers!](/resources/project-management-basics-guide)
+As Kanban continued to evolve in the software world, it began to influence project management practices across various industries. [Even non-project managers started to become project managers!](/insights/project-management-basics-guide)
 
 The visual nature of Kanban boards, whether physical or digital, proved to be a powerful tool for managing workflow and improving productivity in almost any context where work needs to be organized and tracked.
 

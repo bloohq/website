@@ -3,20 +3,20 @@ title: Effective Project Management
 slug: effective-project-management
 tags: ["agency-success-guide"]
 description: Learn how to manage projects so that you get great results on time, and within budget.
-image: /resources/madbrainstorming.jpg
+image: /insights/madbrainstorming.jpg
 date: 14/06/2024
 showdate: false
 sitemap:
-  loc: /resources/effective-project-management
+  loc: /insights/effective-project-management
   lastmod: 2024/06/14
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
 ---
-As an aisde, one of main [reasons I started Blue](/resources/why-i-started-blue) was because I had a strong desire to get better at managing my projects. I tried using various other tools, but they just didn't work for me, and that's why I started [Blue](/). 
+As an aisde, one of main [reasons I started Blue](/insights/why-i-started-blue) was because I had a strong desire to get better at managing my projects. I tried using various other tools, but they just didn't work for me, and that's why I started [Blue](/). 
 
 Anyway, let's start this chapter! 
 

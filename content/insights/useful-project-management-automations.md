@@ -55,7 +55,7 @@ Automation details:
 - **Trigger:** Due Date has Expired
 - **Action:** Send Email
 
-We recommend you check out of guide on [how to set up custom email automations](/resources/email-automations), where you will learn how you can leverage any of the data in the [various custom fields](/platform/custom-fields) that you setup in your project. 
+We recommend you check out of guide on [how to set up custom email automations](/insights/email-automations), where you will learn how you can leverage any of the data in the [various custom fields](/platform/custom-fields) that you setup in your project. 
 
 ## Automatic SOPs Project Management Automation
 
@@ -101,7 +101,7 @@ This automation enhances cross-department collaboration by ensuring that relevan
 
 ## High-Priority Task Escalation Automation
 
-In any project, there are always tasks that demand immediate attention and swift action. These high-priority tasks can significantly impact the overall progress and success of a project, because they are in the [critical path of the project](/resources/project-management-basics-guide#understanding-critical-paths). Ensuring that these critical tasks are promptly addressed is essential, and this is where the High-Priority Task Escalation automation comes into play.
+In any project, there are always tasks that demand immediate attention and swift action. These high-priority tasks can significantly impact the overall progress and success of a project, because they are in the [critical path of the project](/insights/project-management-basics-guide#understanding-critical-paths). Ensuring that these critical tasks are promptly addressed is essential, and this is where the High-Priority Task Escalation automation comes into play.
 
 Automation details:
 
@@ -129,8 +129,8 @@ To further your understanding and make the most out of project management automa
 
 - [Feature overview of project management automations in Blue](/platform/project-management-automation)
 - [Official Blue Documentation on project management automation](https://documentation.blue.cc/automations/introduction)
-- [Frequently Asked Questions on project management automations](/resources/project-management-automation-faq)
-- [Project management automation to send custom emails to stakeholders](/resources/project-management-automations-checkbox-email)
+- [Frequently Asked Questions on project management automations](/insights/project-management-automation-faq)
+- [Project management automation to send custom emails to stakeholders](/insights/project-management-automations-checkbox-email)
 
 By exploring these resources, you can gain a deeper understanding of how to effectively use automations in Blue to optimize your project management processes. Whether it's through automating task assignments, sending notifications, or integrating cross-departmental workflows, the possibilities are endless.
 

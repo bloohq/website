@@ -3,15 +3,15 @@ title: Nurturing Top Talent
 slug: nurturing-top-talent
 tags: ["agency-success-guide"]
 description: Attracting, developing, and keeping top talent means better results and fewer headaches. 
-image: /resources/top-talent.jpg
+image: /insights/top-talent.jpg
 date: 08/06/2024
 showdate: false
 sitemap:
-  loc: /resources/nurturing-top-talent
+  loc: /insights/nurturing-top-talent
   lastmod: 2024/06/08
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
@@ -36,7 +36,7 @@ If they aren’t, then perhaps your team is not as enthusiastic about work as yo
 
 However, these two traits of being energetic and enthusiastic can actually be damaging if they are not tempered by both organization and conscientiousness. Being able to delegate effectively is such a vital part of leading an organization that you need people who can handle the work themselves without constant supervision, including managing their own timelines and striving to reach the standards that are set by the organizational culture.
 
-With all that said, you do also want to have team members that are somewhat different from each other. The reason [cross-functional teams](/resources/great-teamwork) work so well at finding creative and innovative solutions is that people who have chosen different disciplines tend to think very differently, and when you bring these different types of thinking together, that’s when the magic happens.
+With all that said, you do also want to have team members that are somewhat different from each other. The reason [cross-functional teams](/insights/great-teamwork) work so well at finding creative and innovative solutions is that people who have chosen different disciplines tend to think very differently, and when you bring these different types of thinking together, that’s when the magic happens.
 
 Differences between people are good as long as they are channeled into constructive debate with a solid framework for both decision- making and disagreements. Knowing when to disagree and yet to commit to a decision regardless is an important skill.
 

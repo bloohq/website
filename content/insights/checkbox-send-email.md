@@ -3,12 +3,12 @@ title: Project management automation — emails to stakeholders.
 slug: project-management-automations-checkbox-email
 category: "Product Updates"
 description: Often, you want to be in control of your project management automations 
-image: /resources/email-background.png
+image: /insights/email-background.png
 date: 2024-07-08
 showdate: true
 ---
 
-We’ve covered how to [create email automations before.](/resources/email-automations)
+We’ve covered how to [create email automations before.](/insights/email-automations)
 
 However, often there are stakeholders in projects that only need to be alerted when there is something *really* important. 
 
@@ -22,7 +22,7 @@ A checkbox that automatically notifies one or more key stakeholders, giving them
 
 This will look something like this once you’re done:
 
-![](/public/resources/checkbox-email-automation.png)
+![](/public/insights/checkbox-email-automation.png)
 
 And just by checking this checkbox, you will be able to trigger a project management automation to send a custom notification email to stakeholders. 
 
@@ -50,7 +50,7 @@ You can learn more in our [detailed documentation guide on how to setup email au
 
 Your final result should look something like this:
 
-![](/public/resources/email-automation-example.png)
+![](/public/insights/email-automation-example.png)
 
 ## 4. Bonus: Restrict access to the checkbox.
 

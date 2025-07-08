@@ -3,7 +3,7 @@ title: Understanding Value Propositions
 slug: understanding-value-propositions
 category: "CEO Blog"
 description: 
-image: /resources/value-proposition.jpeg
+image: /insights/value-proposition.jpeg
 date: 2024-08-07
 showdate: false
 ---

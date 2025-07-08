@@ -3,7 +3,7 @@ title: How to use Kanban boards for project management
 slug: kanban-boards-project-management
 category: "Best Practices"
 description: 
-image: /resources/kanban-background.png
+image: /insights/kanban-background.png
 date: 2024-08-10
 showdate: true
 ---
@@ -16,9 +16,9 @@ For too long, we've all been using excel spreadsheets and todo lists to manage w
 
 
 
-[Kanban boards have an interesting history](/resources/kanban-board-history). They originated in Japan on the factory floor, but now have become an indispensible tool that should be in every project manager's back pocket. 
+[Kanban boards have an interesting history](/insights/kanban-board-history). They originated in Japan on the factory floor, but now have become an indispensible tool that should be in every project manager's back pocket. 
 
-![The original Japanese Kanban Boards](/public/resources/japan-kanban-boards.jpg)
+![The original Japanese Kanban Boards](/public/insights/japan-kanban-boards.jpg)
 
 [Trello](/insights/trello) was the software that first popularized kanban boards for project management. 
 
@@ -38,7 +38,7 @@ Kanban boards help team members spot bottlenecks, prioritize tasks, and allocate
 
 Their visual nature provides an intuitive way for non-technical stakeholders to track project progress, clarifying task status and deadlines, reducing the need for frequent updates and meetings, and promoting involvement, accountability, transparency, and continuous improvement.
 
-[We've covered the core components of Kanban in our in-depth review](/resources/kanban-board-software-core-components), but it is worth refreshing our memories here as well. 
+[We've covered the core components of Kanban in our in-depth review](/insights/kanban-board-software-core-components), but it is worth refreshing our memories here as well. 
 
 Let's go — the core components are: 
 
@@ -73,7 +73,7 @@ Kanban boards are also incredibly effective at managing workflows. By breaking d
 
 ### Kanban Boards Benefit 3: Enhanced Collaboration
 
-Collaboration is the cornerstone of successful [project management](/solutions/use-case/project-management) and [great teamwork](/resources/great-teamwork), and Kanban boards facilitate this by providing *the* space to collaborate.
+Collaboration is the cornerstone of successful [project management](/solutions/use-case/project-management) and [great teamwork](/insights/great-teamwork), and Kanban boards facilitate this by providing *the* space to collaborate.
 
 Sure, there will still be team chat, some 1-2-1s, sticky notes on people's desk. But, the kanban board is where the *meaningful* updates go, and where you can expect to find shared information. 
 

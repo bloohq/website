@@ -3,7 +3,7 @@ title: Push vs Pull Workflows in Kanban
 slug: push-vs-pull-kanban
 category: "Best Practices"
 description: Learn the difference between push workflows and pull workflows.
-image: /resources/custom-permissons-background.png
+image: /insights/custom-permissons-background.png
 date: 2024-08-05
 showdate: true
 ---
@@ -40,6 +40,6 @@ After all, if you are trusting them with *doing* the work, you should also trust
 
 That's it.
 
-We often see organizations implementing a kanban board, but not the cultural shift required to work in the Kanban way. [There are various common problems in implementing Kanban](/resources/kanban-boards-common-challenges), but in this case, all that these organizations have done is simply create a good-looking todo list.
+We often see organizations implementing a kanban board, but not the cultural shift required to work in the Kanban way. [There are various common problems in implementing Kanban](/insights/kanban-boards-common-challenges), but in this case, all that these organizations have done is simply create a good-looking todo list.
 
 Organizational change goes much further than simply implementing better software, although it's a good start.

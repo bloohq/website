@@ -3,7 +3,7 @@ title: Core Components of Kanban Board Software
 slug: kanban-board-software-core-components
 category: "Best Practices"
 description: Discover the essential components of kanban software such as boards, columns, cards, WIP limits, and swimlanes.
-image: /resources/kanban-background.png
+image: /insights/kanban-background.png
 date: 2024-07-27
 showdate: true
 ---
@@ -12,7 +12,7 @@ Picture this: It's the late 1940s in post-war Japan. Toyota is looking for a way
 
 Their solution? Kanban - a visual system that would revolutionize workflow management.
 
-![](/public/resources/japan-kanban-boards.jpg)
+![](/public/insights/japan-kanban-boards.jpg)
 
 Fast forward to today. 
 
@@ -24,7 +24,7 @@ Kanban has evolved from factory floors to [digital platforms](/platform), helpin
 
 Curious about its journey?
 
-[Our history of Kanban boards](/resources/kanban-board-history) traces its fascinating evolution.
+[Our history of Kanban boards](/insights/kanban-board-history) traces its fascinating evolution.
 
 So why has this 70-year-old concept stood the test of time?
 
@@ -77,7 +77,7 @@ They not only save time when initiating new projects but also promote consistenc
 
 [Granular sharing and permission settings](https://documentation.blue.cc/user-management/roles/custom-user-roles) offer enhanced control over who sees what on your board. 
 
-This feature allows you to set custom user permissions, restricting access to specific cards or columns. It's particularly useful when [working with external stakeholders](/resources/project-management-automations-checkbox-email), managing sensitive information, or when you need to limit certain team members' view of the overall project for focus or security reasons.
+This feature allows you to set custom user permissions, restricting access to specific cards or columns. It's particularly useful when [working with external stakeholders](/insights/project-management-automations-checkbox-email), managing sensitive information, or when you need to limit certain team members' view of the overall project for focus or security reasons.
 
 Board-level metrics unlock valuable insights into your team's performance. By creating [standalone dashboards based on your kanban board data](/platform/dashboards), you can easily identify bottlenecks, track velocity, and gauge your team's workload. These metrics help you make data-driven decisions to optimize your workflow and improve overall productivity.
 
@@ -141,7 +141,7 @@ Modern kanban software offers a range of features to make columns more flexible 
 
 Within columns, sorting capabilities allow you to organize tasks by creation date, last update, or other criteria, giving you flexibility in how you view and manage your work. Bulk actions enable efficient task management, allowing you to complete or uncomplete multiple items, apply tags, assign tasks, or move them between columns in one go. 
 
-![](/public/resources/right-click-record.png)
+![](/public/insights/right-click-record.png)
 
 For added control, you can lock columns to prevent unintended additions or removals. Color coding provides visual organization, allowing for quick status identification at a glance.
 
@@ -181,7 +181,7 @@ Kanban software typically offers two primary ways to interact with cards:
 - **Board View**: This provides a quick overview of essential information for each card. From the board, you can usually see key details like the card title, assignee, due date, and any vital tags or indicators. This view is crucial for understanding the overall state of your workflow at a glance.
 - **Single Card View**: Clicking on a card usually opens a more detailed view. Here, you can see and edit all information related to the card, including descriptions, comments, attachments, and more. This view is essential for in-depth work on individual tasks.
 
-![](/public/resources/blue-card.png)
+![](/public/insights/blue-card.png)
 
 The ability to switch between these views allows team members to balance between high-level project management and detailed task work effortlessly.
 

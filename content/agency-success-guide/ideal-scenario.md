@@ -3,15 +3,15 @@ title: The Ideal Scenario
 slug: ideal-scenario
 tags: ["agency-success-guide"]
 description: What does an ideal agency look like? This is the question we answer in this chapter.
-image: /resources/madoffice4.jpg
+image: /insights/madoffice4.jpg
 date: 04/06/2024
 showdate: false
 sitemap:
-  loc: /resources/ideal-scenario
+  loc: /insights/ideal-scenario
   lastmod: 2024/06/04
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 
@@ -94,7 +94,7 @@ Revenue from long-term contracts can help to offset the fluctuations that are co
 
 The ideal scenario is that you have plenty of recurring revenue, so you never really need to consider cash flow as more than a passing problem, not something you battle with every month. This means not having to chase every invoice and worry if a slippage in a project deliverable will result in late payment.
 
-I’ll discuss some tricks in [Chapter 7](/resources/cash-is-king) about structuring the payment terms in your contracts, even for fixed-price projects, so that all your income “feels” like recurring monthly revenue. This is perhaps one of the most significant yet simple changes you can make to your professional service firm.
+I’ll discuss some tricks in [Chapter 7](/insights/cash-is-king) about structuring the payment terms in your contracts, even for fixed-price projects, so that all your income “feels” like recurring monthly revenue. This is perhaps one of the most significant yet simple changes you can make to your professional service firm.
 
 ## Plenty of Cash in the Bank
 

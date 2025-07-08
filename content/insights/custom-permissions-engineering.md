@@ -3,7 +3,7 @@ title:  Creating Blue's Custom Permissions Engine
 slug: engineering-custom-permissions-project-management
 category: "Engineering"
 description: Go behind the scenes with the Blue engineering team as they explain how to built an AI-powered auto-categorization and tagging feature.
-image: /resources/custom-permissons-background.png
+image: /insights/custom-permissons-background.png
 date: 2024-07-25
 showdate: true
 ---
@@ -53,7 +53,7 @@ The importance of custom permissions in project management cannot be overstated:
 
 ## Getting to YES
 
-[We've written before](/resources/value-proposition-blue), that every feature in Blue has to be a **hard** YES before we decide to build it. We don't have the luxury of hundreds of engineers and to waste time and money building things that customers don't need.
+[We've written before](/insights/value-proposition-blue), that every feature in Blue has to be a **hard** YES before we decide to build it. We don't have the luxury of hundreds of engineers and to waste time and money building things that customers don't need.
 
 And so, the path to implementing custom permissions in Blue wasn't a straight line. Like many powerful features, it began with a clear need from our users and evolved through careful consideration and planning.
 

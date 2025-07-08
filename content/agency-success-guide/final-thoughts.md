@@ -3,15 +3,15 @@ title: Final Thoughts
 slug: final-thoughts
 tags: ["agency-success-guide"]
 description: Wrapping up everything that we have covered in the Agency Success Guide.
-image: /resources/blueceo.jpg
+image: /insights/blueceo.jpg
 date: 16/06/2024
 showdate: false
 sitemap:
-  loc: /resources/final-thoughts
+  loc: /insights/final-thoughts
   lastmod: 2024/06/16
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

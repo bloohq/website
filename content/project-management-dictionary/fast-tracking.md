@@ -19,7 +19,7 @@ The primary goal of fast tracking is to complete the project more quickly than w
 
 Fast tracking can also involve modifying typical approval processes. Project managers might implement expedited review procedures, use concurrent reviews instead of sequential ones, or empower team members to make certain decisions without going through lengthy approval chains. This streamlining of processes is a key aspect of fast tracking and contributes significantly to time savings.
 
-We've covered a practical example fast-tracking in our overview of [how Blue uses Blue to build Blue.](/resources/blue-to-build-blue)
+We've covered a practical example fast-tracking in our overview of [how Blue uses Blue to build Blue.](/insights/blue-to-build-blue)
 
 One of the main advantages of fast tracking is the potential for earlier project completion, which can lead to cost savings, quicker realization of project benefits, and improved competitiveness in time-sensitive markets. It can help meet tight deadlines or recover lost time in projects that have fallen behind schedule. Fast tracking is particularly beneficial in industries where time-to-market is critical, such as technology or product development.
 

@@ -3,15 +3,15 @@ title: Be Wildly Different
 slug: wildly-different
 tags: ["agency-success-guide"]
 description: Differentiation is key in the agency space. Learn how to make small changes that pay off in the long-term.
-image: /resources/madcomputercode.jpg
+image: /insights/madcomputercode.jpg
 date: 05/06/2024
 showdate: false
 sitemap:
-  loc: /resources/wildly-different
+  loc: /insights/wildly-different
   lastmod: 2024/06/05
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

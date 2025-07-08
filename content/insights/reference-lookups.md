@@ -3,7 +3,7 @@ title: Reference & lookup custom fields
 slug: reference-lookups-custom-fields
 category: "Product Updates"
 description: Effortlessly create interconnected projects in Blue, transforming it into a single source of truth for your business with the new Reference and Lookup Fields.
-image: /resources/link-background.png
+image: /insights/link-background.png
 date: 2023-11-01
 showdate: true
 ---

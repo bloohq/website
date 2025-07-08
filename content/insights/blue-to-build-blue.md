@@ -27,7 +27,7 @@ The idea of using your own tools to build your tools leads to a positive feedbac
 - **It fosters innovation.** Regular use often sparks ideas for new features or improvements, keeping Blue at the cutting edge.
 
 
-[We've spoken before about why we have no dedicated testing team](/resources/open-beta) and this is yet another reason. 
+[We've spoken before about why we have no dedicated testing team](/insights/open-beta) and this is yet another reason. 
 
 If there are bugs in our system, we almost always find them in our constant daily use of the platform. And this also creates a forcing function to fix them, as we will obviously find them very annoying as we are probably one of the top users of Blue! 
 
@@ -37,7 +37,7 @@ This approach demonstrates our commitment to the product. By relying on Blue our
 
 We have one project in Blue, aptly named "Product". 
 
-**Everything** related to our product development is tracked here. Customer feedback, bugs, feature ideas, ongoing work, and so on. The idea of having one project where we track everything is that it [promotes better teamwork.](/resources/great-teamwork) 
+**Everything** related to our product development is tracked here. Customer feedback, bugs, feature ideas, ongoing work, and so on. The idea of having one project where we track everything is that it [promotes better teamwork.](/insights/great-teamwork) 
 
 Each records is a feature or part of a features.   This is how  move from "wouldn't it be cool if..." to "check out this awesome new feature!" 
 
@@ -51,7 +51,7 @@ The project has the following lists:
 - **Design Backlog**: This is the backlog for the designers, any time they have finished something that is in progress they can pick any item from this list. 
 - **In Progress Design**: This is the current features that the designers are designing.
 - **Design Review**: This is where the features whose. designs are currently being reviewed. 
-- **Backlog (Short Term)**: This is a list of features we will likely start working on in the next few weeks. This is where assignments take place. The CEO and Head of Engineering decide which features are assigned to which engineer based on previous experience and workload.  [Team members can then pull these into the In Progress](/resources/push-vs-pull-kanban) once they have completed their current work. 
+- **Backlog (Short Term)**: This is a list of features we will likely start working on in the next few weeks. This is where assignments take place. The CEO and Head of Engineering decide which features are assigned to which engineer based on previous experience and workload.  [Team members can then pull these into the In Progress](/insights/push-vs-pull-kanban) once they have completed their current work. 
 - **In Progress**: These are features that are currently being developed.
 - **Code Review**: Once a feature has finished development, it undergoes a code review. Then it will either be moved back to "In Progress" if adjustments are needed or deployed to the Development environment.
 - **Dev**: These are all the features currently in the Development environment.  Other team members and certain customers can review these. 
@@ -90,7 +90,7 @@ We don't have many custom fields in our Product project.
 
 ## Checklists
 
-During our weekly demos, we will drop the discussed feedback in a checklist called "feedback" and there will also be another checklist that contains the main [WBS (Work Breakdown Scope)](/resources/simple-work-breakdown-structure) of the feature, so we can easily tell what's done and what's yet to do. 
+During our weekly demos, we will drop the discussed feedback in a checklist called "feedback" and there will also be another checklist that contains the main [WBS (Work Breakdown Scope)](/insights/simple-work-breakdown-structure) of the feature, so we can easily tell what's done and what's yet to do. 
 
 ## Conclusion
 

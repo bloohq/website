@@ -3,17 +3,17 @@ title: Start Building Momentum
 slug: start-building-momentum
 tags: ["agency-success-guide"]
 description: Understand the concept of momentum and why it is crucial to build momentum in your agency. 
-image: /resources/madoffice3.jpeg
+image: /insights/madoffice3.jpeg
 date: 03/06/2024
 showdate: false
 sitemap:
-  loc: /resources/start-building-momentum
+  loc: /insights/start-building-momentum
   lastmod: 2024/06/03
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
-In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, to [great teamwork](/resources/great-teamwork) and client relationship building to writing winning proposals — it's all here.  
+In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, to [great teamwork](/insights/great-teamwork) and client relationship building to writing winning proposals — it's all here.  
 
 ---
 You might be asking yourself: why is this first part of the book called *Start Building Momentum?*

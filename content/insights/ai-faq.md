@@ -18,7 +18,7 @@ A lot of companies are currently charging significant amounts for AI features. B
 
  We believe AI will become a standard feature, not a separate category, much like the internet itself.
 
-However, we understand that customers can be skeptical of "unlimited" claims, and this is why we are writing this article — so show the economics behind giving all of our customers complimentary AI usage. We did a [similar write up for our policy of unlimited file storage.](/resources/unlimited-file-storage-faq)
+However, we understand that customers can be skeptical of "unlimited" claims, and this is why we are writing this article — so show the economics behind giving all of our customers complimentary AI usage. We did a [similar write up for our policy of unlimited file storage.](/insights/unlimited-file-storage-faq)
 
 Blue provides a range of AI tools, including free AI chat on our website trained on our documents, various public AI tools such as project risk analysis and email creators, AI categorization for records inside projects, and AI summaries for comments within records—with many more features planned for the future.
 
@@ -32,7 +32,7 @@ This is due to the rapid advancements in AI technology and the commoditization o
 
 To illustrate the dramatic price drops in AI processing, consider the difference between GPT-4 and GPT-4-turbo. GPT-4 costs $30.00 per 1 million tokens, while GPT-4-turbo costs just $0.15 per 1 million tokens—a 99.5% reduction in price over just 15 months. This translates to a monthly price reduction of approximately 32.7%, meaning each month, the price reduces to about 67.3% of the previous month's price.
 
-![](/public/resources/openaihistoricalprices.png)
+![](/public/insights/openaihistoricalprices.png)
 
 
 Extrapolating this trend to 2030, we can predict that AI processing costs will continue to plummet. This rapid decrease in costs allows us to confidently offer unlimited AI access to our customers without compromising our business model or the quality of our service. As AI technology becomes more efficient and widespread, we anticipate being able to offer even more advanced AI features to our users at no additional cost.

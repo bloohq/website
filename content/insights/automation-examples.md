@@ -3,7 +3,7 @@ title: Top 10 Practical Automation Examples
 slug: top-10-automation-examples
 category: "Best Practices"
 description: Discover the top 10 practical project management automation examples that you can use to make your projects more effective.
-image: /resources/wrench-background.png
+image: /insights/wrench-background.png
 date: 2024-07-19
 showdate: true
 # CTA Fields
@@ -15,7 +15,7 @@ In today's fast-paced business environment, [project management](/solutions/use-
 
 Automation in project management isn't just a luxury—it's becoming a necessity. By automating repetitive tasks, project managers can save valuable time, reduce human error, and allow their teams to focus on high-value work that truly moves the needle. From automatic task assignments to triggered notifications, automation tools are transforming how projects are managed and executed.
 
-The benefits of project management automation are far-reaching. It enhances visibility into project progress, provides real-time updates, and ensures consistency in processes across different projects and teams. For a deeper dive into these advantages, check out our [comprehensive article on the benefits of project management automation.](/resources/benefits-project-management-automation)
+The benefits of project management automation are far-reaching. It enhances visibility into project progress, provides real-time updates, and ensures consistency in processes across different projects and teams. For a deeper dive into these advantages, check out our [comprehensive article on the benefits of project management automation.](/insights/benefits-project-management-automation)
 
 In this article, we'll explore 10 practical automation examples that can revolutionize your project management approach. 
 
@@ -27,7 +27,7 @@ Let's dive into these automation examples and discover how they can transform yo
 
 In the world of project management, deadlines are more than just dates on a calendar—they're commitments. Yet, we've all experienced the frustration of projects slipping behind schedule.
 
-[New project managers](/resources/project-management-basics-guide) are often surpirsed: project delays are rarely a sudden, dramatic event. Instead, as the saying goes, it's death by a thousand cuts. Each small task delayed by a day or two, eventually adding up to *weeks or even months of delay.*
+[New project managers](/insights/project-management-basics-guide) are often surpirsed: project delays are rarely a sudden, dramatic event. Instead, as the saying goes, it's death by a thousand cuts. Each small task delayed by a day or two, eventually adding up to *weeks or even months of delay.*
 
 This is where deadline reminder automation becomes a game-changer.
 
@@ -298,7 +298,7 @@ Onboarding automation simplifies the process by triggering specific actions when
   - When a record is moved to the "New Hires" list, it triggers the onboarding workflow. This record typically includes essential information about the new hire, such as their name, role, start date, and department. This information is managed automatically within the project management system.
 
 - **Action: Create Checklists (for Onboarding Tasks)**
-  - The system [automatically creates detailed checklists](/resources/reusable-checklists-automation) tailored to the new hire's role and department. Each checklist item can be assigned to different stakeholders and have various relative due dates from when the trigger happened.
+  - The system [automatically creates detailed checklists](/insights/reusable-checklists-automation) tailored to the new hire's role and department. Each checklist item can be assigned to different stakeholders and have various relative due dates from when the trigger happened.
 
 ### Example Onboarding Checklist
 
@@ -362,7 +362,7 @@ Project phase transition automation streamlines the workflow by automatically tr
 
 - **Action: Move Record to Another List and Send Email**
   - **Move Record to Another List**: The system automatically moves the project record to the next phase's list, ensuring seamless progression.
-  - **Send Email**: [An automated email is sent to relevant stakeholders](/resources/project-management-automations-checkbox-email), notifying them of the phase completion and the transition to the next phase.
+  - **Send Email**: [An automated email is sent to relevant stakeholders](/insights/project-management-automations-checkbox-email), notifying them of the phase completion and the transition to the next phase.
 
 ### Why It Matters
 
@@ -499,7 +499,7 @@ By integrating color coding automation into your project management practices, y
 
 ## 10. Automatic Backup and Archiving
 
-Maintaining an organized and accessible archive of completed projects is crucial for future reference, [security](/resources/faq-security), compliance, and performance reviews. Automatic backup and archiving automation ensures that all project data is preserved securely and efficiently, providing point-in-time snapshots of project states.
+Maintaining an organized and accessible archive of completed projects is crucial for future reference, [security](/insights/faq-security), compliance, and performance reviews. Automatic backup and archiving automation ensures that all project data is preserved securely and efficiently, providing point-in-time snapshots of project states.
 
 ### How It Works
 
@@ -559,7 +559,7 @@ Key Takeaways
 - **Better Resource Management**: Automation helps you allocate resources more effectively by ensuring tasks are assigned and completed promptly, optimizing your team's skills.
 - **Increased Accountability**: Automated reminders and status updates encourage team members to take responsibility for their tasks, promoting timely completion and proactive problem-solving.
 
-If you're thinking about [incorporating automation into your project management](/platform/project-management-automation), start by pinpointing the areas where your team struggles the most or spends too much time on repetitive tasks and [sell your team on the benefits of project management automations.](/resources/benefits-project-management-automation)
+If you're thinking about [incorporating automation into your project management](/platform/project-management-automation), start by pinpointing the areas where your team struggles the most or spends too much time on repetitive tasks and [sell your team on the benefits of project management automations.](/insights/benefits-project-management-automation)
 
 Focus on automations that tackle these issues first, and as your team gets more comfortable with the technology, you can gradually explore more options.
 

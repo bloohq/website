@@ -3,15 +3,15 @@ title: Write Winning Proposals
 slug: write-winning-proposals
 tags: ["agency-success-guide"]
 description: Writing winning proposals is the most important part of running an agency. Learn how to do it right. 
-image: /resources/madlaptopwork.jpg
+image: /insights/madlaptopwork.jpg
 date: 06/06/2024
 showdate: false
 sitemap:
-  loc: /resources/write-winning-proposals
+  loc: /insights/write-winning-proposals
   lastmod: 2024/06/06
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

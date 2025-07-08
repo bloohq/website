@@ -3,11 +3,11 @@ title:  Blue as an Asana Alternative
 slug: asana-alternative
 category: "Alternatives"
 description: Why smart companies are saving thousands a year by switching to Blue, a better Asana alternative. 
-image: /resources/ai-tag-background.png
+image: /insights/ai-tag-background.png
 date: 2024-07-12
 showdate: true
 #Logo Fields
-rightLogoSrc: "/resources/asana-icon.svg"
+rightLogoSrc: "/insights/asana-icon.svg"
 rightLogoAlt: "Asana Icon"
 # CTA Fields
 CtaHeader: Simplicity & Power
@@ -69,7 +69,7 @@ The table below gives an overview of the [different roles](https://www.blue.cc/p
 
 Once you are a Blue customer, there are *no upsells within the platform.* So you will never see this while you are trying to do your work:
 
-![](/public/resources/asana-upsell.png)
+![](/public/insights/asana-upsell.png)
 
 We have zero incentives to try and disturb you while you are working to try and get you to upgrade your account to a more expensive plan or to cross-sell you another product.
 
@@ -182,7 +182,7 @@ These additional field types allow for more specific and varied data capture, en
 
 Blue's advanced custom fields enable better handling of formatted data, improved geospatial information management, and more complex data relationships. For instance, the Phone Number and Email fields suggest better formatting and validation, while the Country and Location/Map fields offer superior capabilities for managing geographical information. T
 
-[The Reference and Lookup fields](/resources/reference-lookups-custom-fields) allow for more intricate data connections, reducing redundancy and improving data integrity. Additionally, Blue's Unique ID field helps in creating distinct identifiers for each entry, which is crucial for data tracking and management.
+[The Reference and Lookup fields](/insights/reference-lookups-custom-fields) allow for more intricate data connections, reducing redundancy and improving data integrity. Additionally, Blue's Unique ID field helps in creating distinct identifiers for each entry, which is crucial for data tracking and management.
 
 This difference in custom field capabilities means that Blue is a better choice for those that require more nuanced daa capture and organization. 
 
@@ -425,7 +425,7 @@ Finally, Blue is a software company, Asana is a marketing company *disguised* as
 
 In the end, for teams that want a flexible, feature-rich, and cost-effective solution without sacrificing ease of use, [Blue is an excellent project management alternative to Asana](/solutions/use-case/project-management). 
 
-Blue combines the power that made Asana popular with the simplicity and adaptability needed for [today’s varied work environments](/resources/great-teamwork).
+Blue combines the power that made Asana popular with the simplicity and adaptability needed for [today’s varied work environments](/insights/great-teamwork).
 
 As with any software decision, it’s a good idea for teams to take advantage of free trials ([try Blue here!](https://app.blue.cc)) and carefully assess both platforms against their specific needs before making a final choice. 
 

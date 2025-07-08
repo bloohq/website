@@ -3,11 +3,11 @@ title:  Blue as a Trello Alternative
 slug: trello-alternative
 category: "Alternatives"
 description: Learn why thousands of users are using Blue as a Trello alternative for larger file storage, no limits, and a more scalable solution.
-image: /resources/ai-tag-background.png
+image: /insights/ai-tag-background.png
 date: 2024-07-12
 showdate: true
 #Logo Fields
-rightLogoSrc: "/resources/trello-icon.svg"
+rightLogoSrc: "/insights/trello-icon.svg"
 rightLogoAlt: "Trello Icon"
 # CTA Fields
 CtaHeader: Move to Blue
@@ -73,13 +73,13 @@ Trello grew quickly, and raised $10.3 million in a Series A funding round led by
 
 Trello is now firmly part of the Atlassian suite of products:
 
-![](/public/resources/jira-trello-product-upsell.png)
+![](/public/insights/jira-trello-product-upsell.png)
 
 This can be an upside, especially if you *already* use other Atlassian products such as Jira and Confluences. 
 
 But it can also be a downside — as you'll often have to switch across to an Atlassian account that you do not really want/need to edit settings:
 
-![](/public/resources/trello-atlassian-settings.png)
+![](/public/insights/trello-atlassian-settings.png)
 
 There may also be a tendency for Atlassian to try and upsell you their products as you're working on your projects — more on that later.
 
@@ -204,15 +204,15 @@ However, Trello does have some tricks up its sleeve that Blue does not yet have:
 - **Conditional Automations:** Trello's Butler automation engine supports creating rules that perform actions based on specific conditions. For example, you can set up a rule that triggers only if a card has a certain label, is in a particular list, or meets other criteria you define. These conditional automations allow for more customized and targeted workflows within Trello.
 - **Automations with Third Party Apps:** Trello allows integrations with various third-party apps through its Butler automation engine. This means you can automate actions not just within Trello but also across other tools and services that your team might be using, enhancing the overall workflow and connectivity of your project management system. Blue only supports this via [Webhooks](https://documentation.blue.cc/integrations/webhooks) and third-party integrators such as [Pabbly](https://documentation.blue.cc/integrations/pabbly-connect) and [Zapier](https://documentation.blue.cc/integrations/zapier). 
 
-Blue does has the [powerful email automation feature](/resources/email-automations) which is not available in Trello, which allows you to send custom email notifications to any email address, leveraging the data in your [custom fields](https://www.blue.cc/platform/custom-fields) using dynamic tags. This is great for workflows such as [managing service tickets](/solutions/use-case/service-tickets). 
+Blue does has the [powerful email automation feature](/insights/email-automations) which is not available in Trello, which allows you to send custom email notifications to any email address, leveraging the data in your [custom fields](https://www.blue.cc/platform/custom-fields) using dynamic tags. This is great for workflows such as [managing service tickets](/solutions/use-case/service-tickets). 
 
-![](/public/resources/email-automations-image.webp)
+![](/public/insights/email-automations-image.webp)
 
 ## Scalability
 
 The [Trello documentation](https://developer.atlassian.com/cloud/trello/guides/rest-api/limits/#board-level-limits) states that the maximum allowed cards per board in 5,000 and the total across a workspace, including archives, is 2,000,000.
 
-Blue is significantly more scalable, allowing a maximum of 100,000 records (equivalent to Trello cards) *per list*. Our CSV import allows you to import up to 250,000 records at a time — [you can read on our engineering blog how we made this possible.](/resources/scaling-csv-import-export) 
+Blue is significantly more scalable, allowing a maximum of 100,000 records (equivalent to Trello cards) *per list*. Our CSV import allows you to import up to 250,000 records at a time — [you can read on our engineering blog how we made this possible.](/insights/scaling-csv-import-export) 
 
 So this makes Blue a great Trello alternative if you're looking to handle large amounts of data within your projects. 
 
@@ -368,7 +368,7 @@ We find Trello's UI somewhat old-fashioned. The one column layout for their indi
 
 Check it out yourself. You can click on the image to zoom in.
 
-![](/public/resources/trello-card.png)
+![](/public/insights/trello-card.png)
 
 Blue is based on a customized style of [Google Material Design](https://m3.material.io/). We use a great open-source front-end library called [Vuetify](https://vuetifyjs.com/) for this. This was an intentional choice, because Google Material Design is used in many products around the world, Blue will feel familiar to users right away. We're not trying to reinvent the wheel, but rather hook into existing patterns.
 
@@ -376,7 +376,7 @@ The result? Compared to Trello, Blue gives you a much nice structure for viewing
 
 We fully utilize your screen's real-estate.
 
-![](/public/resources/blue-card.png)
+![](/public/insights/blue-card.png)
 
 This is an *unsolicited* quote from an [AppSumo](https://appsumo.com) customer, The Writer, that has used both Trello and Blue:
 
@@ -434,7 +434,7 @@ If you want advanced features, better scalability, or just a more cost-effective
 ### Trello
 
 - [Trello Pricing Page](https://trello.com/pricing)
-- [Trello Documentation](https://support.atlassian.com/trello/resources/)
+- [Trello Documentation](https://support.atlassian.com/trello/insights/)
 - [Trello G2 Reviews](https://www.g2.com/products/trello/reviews)
 - [Trello Capterra Reviews](https://www.capterra.com/p/211559/Trello/reviews/)
 - [Trello Community](https://community.atlassian.com/t5/Trello/ct-p/trello)

@@ -3,7 +3,7 @@ title:  Why Blue has an Open Beta
 slug: open-beta
 category: "Engineering"
 description: Learn why our project management system has an ongoing open beta. 
-image: /resources/code-background.png
+image: /insights/code-background.png
 date: 2024-08-03
 showdate: true
 ---
@@ -34,7 +34,7 @@ The Technology Adoption Lifecycle is typically divided into five main segments:
 4. Late Majority
 5. Laggards
 
-![](/public/resources/technology-adoption-lifecycle-graph.png)
+![](/public/insights/technology-adoption-lifecycle-graph.png)
 
 
 However, eventually the product has to mature, and customers expect a stable, working product. They don’t want access to a “beta” environment where things break.
@@ -43,7 +43,7 @@ Or do they?
 
 *This* is the question we asked ourselves.
 
-We believe we asked ourselves this question due to the nature of how Blue was initially built. [Blue started as an off-shoot of a busy design agency](/resources/agency-success-playbook), and so we worked *inside* the office of a business that was actively using Blue to run all their projects.
+We believe we asked ourselves this question due to the nature of how Blue was initially built. [Blue started as an off-shoot of a busy design agency](/insights/agency-success-playbook), and so we worked *inside* the office of a business that was actively using Blue to run all their projects.
 
 This means that for years, we were able to observe how *real* human beings — sitting right next to us! — used Blue in their daily lives. 
 

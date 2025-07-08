@@ -3,15 +3,15 @@ title: Working With Humans
 slug: working-with-humans
 tags: ["agency-success-guide"]
 description: Working with clients and team members is key to growing a successful agency.
-image: /resources/workwithhumans.jpeg
+image: /insights/workwithhumans.jpeg
 date: 07/06/2024
 showdate: false
 sitemap:
-  loc: /resources/working-with-humans
+  loc: /insights/working-with-humans
   lastmod: 2024/06/07
   changefreq: monthly
 ---
-This is part of the [Agency Success Guide](/resources/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
+This is part of the [Agency Success Guide](/insights/agency-success-guide), a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 
 In this book, you'll learn everything you need to know on how to run a radically successful agency. From cash-flow to project management, and client relationship building to writing winning proposals — it's all here.  
 

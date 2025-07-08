@@ -3,7 +3,7 @@ title: Creating reusable checklists using automations
 slug: reusable-checklists-automation
 category: "Best Practices"
 description: Learn how to create project management automations for reusable checklists.
-image: /resources/check-background.png
+image: /insights/check-background.png
 date: 2024-07-08
 showdate: true
 ---
@@ -23,7 +23,7 @@ Let's start with the action first, then discuss the possible triggers that you c
 
 You can create a new automation, and you can setup one or more checklists to be created, as per the example below:
 
-![](/public/resources/checklist-automation.png)
+![](/public/insights/checklist-automation.png)
 
 These would be the checklist(s) that you want to be created each time you take the action.
 
