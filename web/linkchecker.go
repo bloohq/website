@@ -86,6 +86,14 @@ func (lc *LinkChecker) buildValidRoutes() {
 			lc.validRoutes[path+"/"] = true
 		}
 	}
+	
+	// Explicitly add common routes that might be handled specially by router
+	lc.validRoutes["/"] = true
+	
+	// Add common API and special routes
+	lc.validRoutes["/health"] = true
+	lc.validRoutes["/api/status/current"] = true
+	lc.validRoutes["/api/status/history"] = true
 
 	// Scan public directory for static files
 	lc.scanPublicFiles()
@@ -193,6 +201,12 @@ func (lc *LinkChecker) validateLinks(sourcePath string, links []string) {
 
 		// Skip mailto and other protocols
 		if strings.HasPrefix(link, "mailto:") || strings.HasPrefix(link, "tel:") || strings.HasPrefix(link, "javascript:") {
+			lc.validLinks++
+			continue
+		}
+
+		// Skip plain email addresses (without mailto: prefix)
+		if strings.Contains(link, "@") && !strings.Contains(link, "/") {
 			lc.validLinks++
 			continue
 		}
