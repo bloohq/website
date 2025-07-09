@@ -189,12 +189,14 @@ body {
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
+    border-radius: var(--radius-2xl) !important;
   }
   
   .prose-lg img {
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
+    border-radius: var(--radius-2xl) !important;
   }
   
   /* Center and style videos in markdown prose content with same curves as hero videos */
