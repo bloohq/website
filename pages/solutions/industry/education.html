@@ -7,6 +7,29 @@
             "MarginBottom" "mb-16"
     }}
 
+    <!-- Problem Agitation Section -->
+    <div class="mb-20">
+        {{$educationProblems := parseJSON `{
+            "Title": "Stop struggling with outdated<br>education administration.",
+            "Description": "Educational institutions waste countless hours on manual processes that modern tools can handle automatically.",
+            "ValueProps": [
+                {
+                    "Title": "Information scattered across multiple systems",
+                    "Description": "Student data trapped in spreadsheets, emails, and separate databases makes it impossible to get a complete picture or respond quickly to requests."
+                },
+                {
+                    "Title": "Compliance deadlines that keep you up at night",
+                    "Description": "Scrambling to gather required documentation for state reports and accreditation because information isn't organized or easily accessible."
+                },
+                {
+                    "Title": "Manual processes eating your time",
+                    "Description": "Hours spent on tasks like enrollment tracking, schedule coordination, and report generation that should take minutes with the right system."
+                }
+            ]
+        }`}}
+        {{template "value-propositions" $educationProblems}}
+    </div>
+    
     <!-- Educational Institutions List -->
     <div class="mb-20">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-12">Trusted by educational institutions worldwide.</h2>
@@ -208,28 +231,7 @@
         {{template "customer-list" $educationCustomers}}
     </div>
 
-    <!-- Problem Agitation Section -->
-    <div class="mb-20">
-        {{$educationProblems := parseJSON `{
-            "Title": "Stop struggling with outdated<br>education administration.",
-            "Description": "Educational institutions waste countless hours on manual processes that modern tools can handle automatically.",
-            "ValueProps": [
-                {
-                    "Title": "Information scattered across multiple systems",
-                    "Description": "Student data trapped in spreadsheets, emails, and separate databases makes it impossible to get a complete picture or respond quickly to requests."
-                },
-                {
-                    "Title": "Compliance deadlines that keep you up at night",
-                    "Description": "Scrambling to gather required documentation for state reports and accreditation because information isn't organized or easily accessible."
-                },
-                {
-                    "Title": "Manual processes eating your time",
-                    "Description": "Hours spent on tasks like enrollment tracking, schedule coordination, and report generation that should take minutes with the right system."
-                }
-            ]
-        }`}}
-        {{template "value-propositions" $educationProblems}}
-    </div>
+    
 
     <!-- Key Reasons Section -->
     <div class="mb-20">
