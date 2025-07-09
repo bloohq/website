@@ -96,7 +96,152 @@
     </div>
 </section>
 
-<section id="our-story" class="mb-16">
+<!-- Why We're Different Section -->
+<section id="why-different" class="mb-20">
+    {{$whyDifferentData := parseJSON `{
+        "Title": "Why Blue is different<br>from other platforms.",
+        "Description": "We've built Blue from the ground up with a different philosophy. One that puts simplicity, flexibility, and customer success at the core of everything we do.",
+        "ValueProps": [
+            {
+                "Title": "Built by operators, for operators",
+                "Description": "We've felt your pain. Blue was born from real-world experience scaling businesses, not venture capital boardrooms pushing growth at any cost."
+            },
+            {
+                "Title": "Simple enough for everyone, powerful enough for enterprises",
+                "Description": "Your team will actually use Blue because it's intuitive. Yet it scales effortlessly from 5 to 5,000 users without architectural changes."
+            },
+            {
+                "Title": "Adapts to you, not the other way around",
+                "Description": "We don't force you into rigid workflows. Blue molds to your existing processes while giving you the tools to improve them over time."
+            }
+        ],
+        "Animation": true
+    }`}}
+    {{template "value-propositions" $whyDifferentData}}
 </section>
+
+<!-- Awards & Recognition Section -->
+<section id="awards" class="mb-20">
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8 text-center">Awards & Recognition</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-center mb-12">Trusted by thousands of teams worldwide and recognized by industry leaders.</p>
+    
+    {{$awardsData := parseJSON `{
+        "awards": [
+            {
+                "name": "High Performer G2 Winter 2025",
+                "src": "/awards/high-performer-g2-winter-2025.png"
+            },
+            {
+                "name": "Momentum Leader G2 Winter 2025",
+                "src": "/awards/momentum-leader-g2-winter-2025.png"
+            },
+            {
+                "name": "Crozdesk Happiest Users",
+                "src": "/awards/crozdesk-happiest-users-badge.webp"
+            },
+            {
+                "name": "Crozdesk Quality Choice",
+                "src": "/awards/crozdesk-quality-choice-badge.webp"
+            },
+            {
+                "name": "Crozdesk Trusted Vendor",
+                "src": "/awards/crozdesk-trusted-vendor-badge.webp"
+            }
+        ]
+    }`}}
+    {{template "awards-grid" $awardsData}}
+</section>
+
+<!-- Company Timeline Section -->
+<section id="timeline" class="mb-20">
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-12 text-center">Our Journey</h2>
+    
+    <div class="max-w-3xl mx-auto">
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-700"></div>
+            
+            <!-- Timeline items -->
+            <div class="space-y-12">
+                <!-- 2020 -->
+                <div class="flex items-start gap-6">
+                    <div class="relative z-10 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-semibold">
+                        2020
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Blue is born</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Founded in response to the challenges of scaling a consultancy. The vision: make process management delightful.</p>
+                    </div>
+                </div>
+                
+                <!-- 2021 -->
+                <div class="flex items-start gap-6">
+                    <div class="relative z-10 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-semibold">
+                        2021
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">First 1,000 customers</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Word spreads about Blue's unique approach. Teams love the simplicity and power combination.</p>
+                    </div>
+                </div>
+                
+                <!-- 2022 -->
+                <div class="flex items-start gap-6">
+                    <div class="relative z-10 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-semibold">
+                        2022
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">10,000 customers milestone</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Rapid growth as more teams discover Blue. Launch of advanced features like automations and custom fields.</p>
+                    </div>
+                </div>
+                
+                <!-- 2023 -->
+                <div class="flex items-start gap-6">
+                    <div class="relative z-10 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-semibold">
+                        2023
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Enterprise features launch</h3>
+                        <p class="text-gray-600 dark:text-gray-400">White Label, advanced permissions, and API v2 help Blue scale to enterprise customers.</p>
+                    </div>
+                </div>
+                
+                <!-- 2024 -->
+                <div class="flex items-start gap-6">
+                    <div class="relative z-10 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-semibold">
+                        2024
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">17,000+ happy customers</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Serving teams in 120+ countries. Recognized by G2 and Crozdesk for customer satisfaction.</p>
+                    </div>
+                </div>
+                
+                <!-- 2025 -->
+                <div class="flex items-start gap-6">
+                    <div class="relative z-10 w-16 h-16 bg-white dark:bg-gray-900 border-2 border-brand-blue rounded-full flex items-center justify-center text-brand-blue font-semibold">
+                        2025
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">The journey continues</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Committed to our mission: organize the world's work by building the best process management platform on the planet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Call to Action -->
+{{$ctaData := parseJSON `{
+    "Title": "Ready to see Blue in action?",
+    "SecondaryText": "Watch a demo",
+    "SecondaryUrl": "/demo",
+    "PrimaryText": "Start free trial",
+    "PrimaryUrl": "https://app.blue.cc"
+}`}}
+{{template "dual-button-cta" $ctaData}}
 
 </div>
