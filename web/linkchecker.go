@@ -8,8 +8,11 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"sort"
 	"strings"
+	"sync"
+	"sync/atomic"
 
 	"golang.org/x/net/html"
 )
@@ -22,8 +25,10 @@ type LinkChecker struct {
 	validRoutes     map[string]bool
 	publicFiles     map[string]bool
 	brokenLinks     map[string][]BrokenLink
-	totalLinks      int
-	validLinks      int
+	brokenLinksMutex sync.Mutex
+	totalLinks      int64
+	validLinks      int64
+	concurrency     int
 }
 
 // BrokenLink represents a broken link found in the site
@@ -35,6 +40,14 @@ type BrokenLink struct {
 
 // NewLinkChecker creates a new link checker instance
 func NewLinkChecker(markdownService *MarkdownService, htmlService *HTMLService, seoService *SEOService) *LinkChecker {
+	concurrency := runtime.NumCPU()
+	if concurrency < 2 {
+		concurrency = 2
+	}
+	if concurrency > 8 {
+		concurrency = 8 // Cap at 8 to avoid overwhelming the system
+	}
+	
 	return &LinkChecker{
 		markdownService: markdownService,
 		htmlService:     htmlService,
@@ -42,31 +55,105 @@ func NewLinkChecker(markdownService *MarkdownService, htmlService *HTMLService, 
 		validRoutes:     make(map[string]bool),
 		publicFiles:     make(map[string]bool),
 		brokenLinks:     make(map[string][]BrokenLink),
+		concurrency:     concurrency,
 	}
 }
 
-// CheckAllLinks checks all internal links in the site
+// FileContent represents content to be processed
+type FileContent struct {
+	Path    string
+	Content string
+}
+
+// LinkJob represents a link validation job
+type LinkJob struct {
+	SourcePath string
+	Link       string
+}
+
+// CheckAllLinks checks all internal links in the site using concurrent processing
 func (lc *LinkChecker) CheckAllLinks() error {
 	// Build valid routes from cached content
 	lc.buildValidRoutes()
 
-	// Check links in all cached markdown content
-	for path, content := range lc.markdownService.GetAllCachedContent() {
-		links := lc.extractLinksFromHTML(content.HTML)
-		links = append(links, lc.extractLinksFromMarkdown(content.HTML)...)
-		lc.validateLinks(path, links)
+	// Create channels for file processing
+	fileJobs := make(chan FileContent, 100)
+	linkJobs := make(chan LinkJob, 1000)
+	
+	var wg sync.WaitGroup
+	
+	// Start link extraction workers
+	for i := 0; i < lc.concurrency; i++ {
+		wg.Add(1)
+		go lc.linkExtractionWorker(fileJobs, linkJobs, &wg)
+	}
+	
+	// Start link validation workers
+	var validationWg sync.WaitGroup
+	for i := 0; i < lc.concurrency; i++ {
+		validationWg.Add(1)
+		go lc.linkValidationWorker(linkJobs, &validationWg)
 	}
 
-	// Check links in all cached HTML content
-	for path, content := range lc.htmlService.GetAllCachedContent() {
-		links := lc.extractLinksFromHTML(content.HTML)
-		lc.validateLinks(path, links)
-	}
+	// Send all markdown content for processing
+	go func() {
+		defer close(fileJobs)
+		
+		// Process markdown content
+		for path, content := range lc.markdownService.GetAllCachedContent() {
+			fileJobs <- FileContent{Path: path, Content: content.HTML}
+		}
+		
+		// Process HTML content
+		for path, content := range lc.htmlService.GetAllCachedContent() {
+			fileJobs <- FileContent{Path: path, Content: content.HTML}
+		}
+	}()
+	
+	// Wait for link extraction to complete
+	wg.Wait()
+	close(linkJobs)
+	
+	// Wait for link validation to complete
+	validationWg.Wait()
 
 	// Print results
 	lc.printResults()
 
 	return nil
+}
+
+// linkExtractionWorker extracts links from file content concurrently
+func (lc *LinkChecker) linkExtractionWorker(fileJobs <-chan FileContent, linkJobs chan<- LinkJob, wg *sync.WaitGroup) {
+	defer wg.Done()
+	
+	for fileContent := range fileJobs {
+		// Extract HTML links
+		htmlLinks := lc.extractLinksFromHTML(fileContent.Content)
+		
+		// Extract markdown links
+		mdLinks := lc.extractLinksFromMarkdown(fileContent.Content)
+		
+		// Combine all links
+		allLinks := append(htmlLinks, mdLinks...)
+		
+		// Send each link for validation
+		for _, link := range allLinks {
+			linkJobs <- LinkJob{
+				SourcePath: fileContent.Path,
+				Link:       link,
+			}
+		}
+	}
+}
+
+// linkValidationWorker validates links concurrently
+func (lc *LinkChecker) linkValidationWorker(linkJobs <-chan LinkJob, wg *sync.WaitGroup) {
+	defer wg.Done()
+	
+	for job := range linkJobs {
+		lc.validateSingleLink(job.SourcePath, job.Link)
+	}
 }
 
 // buildValidRoutes builds a map of all valid routes
@@ -191,82 +278,81 @@ func (lc *LinkChecker) extractLinksFromMarkdown(content string) []string {
 	return links
 }
 
-// validateLinks validates a list of links for a given source path
-func (lc *LinkChecker) validateLinks(sourcePath string, links []string) {
-	for _, link := range links {
-		lc.totalLinks++
+// validateSingleLink validates a single link (thread-safe version)
+func (lc *LinkChecker) validateSingleLink(sourcePath, link string) {
+	// Increment total links counter
+	atomic.AddInt64(&lc.totalLinks, 1)
 
-		// Skip external links
-		if strings.HasPrefix(link, "http://") || strings.HasPrefix(link, "https://") || strings.HasPrefix(link, "//") {
-			lc.validLinks++
-			continue
-		}
-
-		// Skip mailto and other protocols
-		if strings.HasPrefix(link, "mailto:") || strings.HasPrefix(link, "tel:") || strings.HasPrefix(link, "javascript:") {
-			lc.validLinks++
-			continue
-		}
-
-		// Skip plain email addresses (without mailto: prefix)
-		if strings.Contains(link, "@") && !strings.Contains(link, "/") {
-			lc.validLinks++
-			continue
-		}
-
-		// Skip empty links and anchors on same page
-		if link == "" || link == "#" {
-			lc.validLinks++
-			continue
-		}
-
-		// Parse the link
-		u, err := url.Parse(link)
-		if err != nil {
-			lc.addBrokenLink(sourcePath, link, "Invalid URL format")
-			continue
-		}
-
-		// Handle anchor-only links
-		if strings.HasPrefix(link, "#") {
-			// TODO: Validate anchor exists in current page
-			lc.validLinks++
-			continue
-		}
-
-		// Get the path without fragment and query
-		checkPath := u.Path
-		if checkPath == "" {
-			checkPath = "/"
-		}
-
-		// Check if it's a valid route
-		if lc.validRoutes[checkPath] {
-			lc.validLinks++
-			continue
-		}
-
-		// Check if it's a public file
-		if strings.HasPrefix(checkPath, "/") || lc.publicFiles[checkPath] {
-			lc.validLinks++
-			continue
-		}
-
-		// Check for redirects
-		if redirectTo, _, shouldRedirect := lc.seoService.CheckRedirect(checkPath); shouldRedirect {
-			// Link redirects to valid location
-			if lc.validRoutes[redirectTo] {
-				lc.validLinks++
-				continue
-			}
-		}
-
-		// Link is broken
-		lc.addBrokenLink(sourcePath, link, "Page not found")
+	// Skip external links
+	if strings.HasPrefix(link, "http://") || strings.HasPrefix(link, "https://") || strings.HasPrefix(link, "//") {
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
 	}
+
+	// Skip mailto and other protocols
+	if strings.HasPrefix(link, "mailto:") || strings.HasPrefix(link, "tel:") || strings.HasPrefix(link, "javascript:") {
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
+	}
+
+	// Skip plain email addresses (without mailto: prefix)
+	if strings.Contains(link, "@") && !strings.Contains(link, "/") {
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
+	}
+
+	// Skip empty links and anchors on same page
+	if link == "" || link == "#" {
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
+	}
+
+	// Parse the link
+	u, err := url.Parse(link)
+	if err != nil {
+		lc.addBrokenLink(sourcePath, link, "Invalid URL format")
+		return
+	}
+
+	// Handle anchor-only links
+	if strings.HasPrefix(link, "#") {
+		// TODO: Validate anchor exists in current page
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
+	}
+
+	// Get the path without fragment and query
+	checkPath := u.Path
+	if checkPath == "" {
+		checkPath = "/"
+	}
+
+	// Check if it's a valid route
+	if lc.validRoutes[checkPath] {
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
+	}
+
+	// Check if it's a public file
+	if strings.HasPrefix(checkPath, "/") || lc.publicFiles[checkPath] {
+		atomic.AddInt64(&lc.validLinks, 1)
+		return
+	}
+
+	// Check for redirects
+	if redirectTo, _, shouldRedirect := lc.seoService.CheckRedirect(checkPath); shouldRedirect {
+		// Link redirects to valid location
+		if lc.validRoutes[redirectTo] {
+			atomic.AddInt64(&lc.validLinks, 1)
+			return
+		}
+	}
+
+	// Link is broken
+	lc.addBrokenLink(sourcePath, link, "Page not found")
 }
 
-// addBrokenLink adds a broken link to the results
+// addBrokenLink adds a broken link to the results (thread-safe)
 func (lc *LinkChecker) addBrokenLink(sourcePath, link, context string) {
 	brokenLink := BrokenLink{
 		URL:         link,
@@ -274,6 +360,9 @@ func (lc *LinkChecker) addBrokenLink(sourcePath, link, context string) {
 		LineContext: context,
 	}
 
+	lc.brokenLinksMutex.Lock()
+	defer lc.brokenLinksMutex.Unlock()
+	
 	if _, exists := lc.brokenLinks[link]; !exists {
 		lc.brokenLinks[link] = []BrokenLink{}
 	}
@@ -282,12 +371,15 @@ func (lc *LinkChecker) addBrokenLink(sourcePath, link, context string) {
 
 // printResults prints the link checking results and generates CSV
 func (lc *LinkChecker) printResults() {
-	brokenCount := lc.totalLinks - lc.validLinks
+	// Get counters from atomic variables
+	total := atomic.LoadInt64(&lc.totalLinks)
+	valid := atomic.LoadInt64(&lc.validLinks)
+	brokenCount := total - valid
 
 	if brokenCount == 0 {
-		log.Printf("✅ %d/%d links valid", lc.validLinks, lc.totalLinks)
+		log.Printf("✅ %d/%d links valid", valid, total)
 	} else {
-		log.Printf("🔗 %d/%d links valid", lc.validLinks, lc.totalLinks)
+		log.Printf("🔗 %d/%d links valid", valid, total)
 		log.Printf("❌ %d broken links found", brokenCount)
 
 		// Generate CSV file
@@ -314,16 +406,24 @@ func (lc *LinkChecker) generateCSV() {
 		return
 	}
 
+	// Thread-safe access to broken links
+	lc.brokenLinksMutex.Lock()
+	brokenLinksMap := make(map[string][]BrokenLink)
+	for url, links := range lc.brokenLinks {
+		brokenLinksMap[url] = links
+	}
+	lc.brokenLinksMutex.Unlock()
+
 	// Sort broken links by URL for consistent output
 	var brokenURLs []string
-	for url := range lc.brokenLinks {
+	for url := range brokenLinksMap {
 		brokenURLs = append(brokenURLs, url)
 	}
 	sort.Strings(brokenURLs)
 
 	// Write each broken link with its sources
 	for _, url := range brokenURLs {
-		sources := lc.brokenLinks[url]
+		sources := brokenLinksMap[url]
 
 		// Group sources and count references
 		sourceCount := make(map[string]int)
