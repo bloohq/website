@@ -24,8 +24,8 @@
                 init() {
                     this.stats.forEach(stat => {
                         const text = stat.originalText;
-                        // Extract number and suffix
-                        const match = text.match(/^(\d+(?:\.\d+)?)\s*([KMB+]*)/i);
+                        // Extract number and suffix (including %)
+                        const match = text.match(/^(\d+(?:\.\d+)?)\s*([KMB+%]*)/i);
                         if (match) {
                             let num = parseFloat(match[1]);
                             const suffix = match[2] || '';
@@ -37,10 +37,12 @@
                             
                             stat.target = num;
                             stat.suffix = suffix;
+                            stat.isPercentage = suffix.includes('%');
                         } else {
                             // Fallback for plain numbers
                             stat.target = parseInt(text) || 0;
                             stat.suffix = '';
+                            stat.isPercentage = false;
                         }
                     });
                 },
@@ -52,10 +54,20 @@
                     this.stats.forEach(stat => {
                         // Easing function (ease-out)
                         const easedProgress = 1 - Math.pow(1 - this.progress, 3);
-                        stat.current = Math.floor(stat.target * easedProgress);
+                        if (stat.isPercentage) {
+                            // For percentages, preserve decimal places
+                            const decimals = stat.originalText.match(/\.(\d+)/) ? stat.originalText.match(/\.(\d+)/)[1].length : 0;
+                            stat.current = parseFloat((stat.target * easedProgress).toFixed(decimals));
+                        } else {
+                            stat.current = Math.floor(stat.target * easedProgress);
+                        }
                     });
                 },
                 formatNumber(num, suffix) {
+                    if (suffix.includes('%')) {
+                        // For percentages, show the number as-is with %
+                        return num + '%';
+                    }
                     if (suffix.includes('K')) return Math.floor(num / 1000) + 'K+';
                     if (suffix.includes('M')) return Math.floor(num / 1000000) + 'M+';
                     if (suffix.includes('B')) return Math.floor(num / 1000000000) + 'B+';
