@@ -112,9 +112,11 @@ USE CASES:
                     this.stats.forEach(stat => {
                         const text = stat.originalText;
                         // Extract number and suffix (including %)
-                        const match = text.match(/^(\d+(?:\.\d+)?)\s*([KMB+%]*)/i);
+                        // Updated regex to handle numbers with commas
+                        const match = text.match(/^([\d,]+(?:\.\d+)?)\s*([KMB+%]*)/i);
                         if (match) {
-                            let num = parseFloat(match[1]);
+                            // Remove commas before parsing
+                            let num = parseFloat(match[1].replace(/,/g, ''));
                             const suffix = match[2] || '';
                             
                             // Convert K, M, B to actual numbers
@@ -127,7 +129,7 @@ USE CASES:
                             stat.isPercentage = suffix.includes('%');
                         } else {
                             // Fallback for plain numbers
-                            stat.target = parseInt(text) || 0;
+                            stat.target = parseInt(text.replace(/,/g, '')) || 0;
                             stat.suffix = '';
                             stat.isPercentage = false;
                         }
