@@ -187,13 +187,14 @@
     <script src="/js/spa.js"></script>
     <script src="/js/status.js"></script>
     <script src="/js/image-zoom.js"></script>
+    <script src="/js/blue-init.js"></script>
     
     <!-- Then initialize with error handling -->
     <script>       
         // ASCII Art Console Message
         console.log(`
 ██████╗ ██╗      ██████╗  ██████╗      ██╗███╗   ██╗ ██████╗
-██╔══██╗██║     ██╔═══██╗██╔═══██╗     ██║████╗  ██║██╔════╝   
+██╔══██╗██║     ██╔═══██╗██╔═══██╗     ██║████╗  ██║██╔════╗   
 ██████╔╝██║     ██║   ██║██║   ██║     ██║██╔██╗ ██║██║        
 ██╔══██╗██║     ██║   ██║██║   ██║     ██║██║╚██╗██║██║        
 ██████╔╝███████╗╚██████╔╝╚██████╔╝ ██╗ ██║██║ ╚████║╚██████╗██╗
@@ -204,44 +205,7 @@
         
         // Initialize all utilities when DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Highlight.js with async loading handling
-            function initializeHighlightJS() {
-                if (typeof hljs !== 'undefined') {
-                    hljs.highlightAll();
-                } else {
-                    // Retry if hljs is still loading
-                    setTimeout(initializeHighlightJS, 100);
-                }
-            }
-            initializeHighlightJS();
-            
-            // Initialize copy buttons with error handling
-            if (typeof CopyCodeUtils !== 'undefined') {
-                CopyCodeUtils.init();
-            } else {
-                console.warn('CopyCodeUtils not loaded - copy buttons will not work');
-            }
-            
-            // Initialize heading anchors with error handling
-            if (typeof HeadingAnchors !== 'undefined') {
-                HeadingAnchors.init();
-            } else {
-                console.warn('HeadingAnchors not loaded - heading anchor links will not work');
-            }
-            
-            // Initialize SPA routing with error handling
-            if (typeof SPAUtils !== 'undefined') {
-                SPAUtils.init();
-            } else {
-                console.warn('SPAUtils not loaded - SPA navigation will not work');
-            }
-            
-            // Initialize image zoom with error handling
-            if (typeof ImageZoomUtils !== 'undefined') {
-                ImageZoomUtils.init();
-            } else {
-                console.warn('ImageZoomUtils not loaded - image zoom will not work');
-            }
+            BlueInit.initAll();
         });
     </script>
 </body>

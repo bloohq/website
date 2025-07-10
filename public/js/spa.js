@@ -161,48 +161,12 @@ window.SPAUtils = {
      * Re-initialize content after navigation
      */
     reinitializeContent() {
-        // Re-initialize syntax highlighting with retry logic
-        function initializeHighlightJS() {
-            if (typeof hljs !== 'undefined') {
-                hljs.highlightAll();
-            } else {
-                // Retry if hljs is still loading
-                setTimeout(initializeHighlightJS, 100);
-            }
-        }
-        initializeHighlightJS();
-        
-        // Re-initialize copy buttons with error handling
-        if (typeof CopyCodeUtils !== 'undefined') {
-            CopyCodeUtils.init();
+        // Use centralized initialization
+        if (typeof BlueInit !== 'undefined') {
+            BlueInit.reinitAfterNavigation();
         } else {
-            console.warn('CopyCodeUtils not available during navigation - copy buttons may not work');
+            console.error('BlueInit not available - initialization may fail');
         }
-        
-        // Re-initialize heading anchors with error handling
-        if (typeof HeadingAnchors !== 'undefined') {
-            HeadingAnchors.init();
-        } else {
-            console.warn('HeadingAnchors not available during navigation - heading anchors may not work');
-        }
-        
-        // Re-initialize image zoom with error handling
-        if (typeof ImageZoomUtils !== 'undefined') {
-            ImageZoomUtils.init();
-        } else {
-            console.warn('ImageZoomUtils not available during navigation - image zoom may not work');
-        }
-        
-        // Re-initialize lazy loaded videos
-        const lazyVideos = document.querySelectorAll('[x-data*="loaded"]');
-        lazyVideos.forEach(el => {
-            if (el._x_dataStack) {
-                el._x_dataStack[0].loaded = false;
-            }
-        });
-        
-        // Re-setup client routing
-        this.setupClientRouting();
     },
 
     /**
