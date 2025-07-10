@@ -223,6 +223,6 @@ It’s designed to help you get the most out of the platform and see tangible re
 
 I am happy to share this free of charge to existing Blue customers!
 
-**That’s awesome! If you’re reading this and you’re an existing Blue customer, feel free to email help@blue.cc to request access free of charge. Thank you for your time, Eran!**
+**That’s awesome! If you’re reading this and you’re an existing Blue customer, feel free to email support@blue.cc to request access free of charge. Thank you for your time, Eran!**
 
 It was a pleasure!

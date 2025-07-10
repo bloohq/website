@@ -20,4 +20,4 @@ White-labeling is a top requested feature, especially from Blue's enterprise cus
 
 To get started with custom domains or learn more, [visit our documentation.](https://documentation.blue.cc/start-guide/custom-domains) 
 
-Let us know at help@blue.cc if you have any other questions!
+Let us know at support@blue.cc if you have any other questions!

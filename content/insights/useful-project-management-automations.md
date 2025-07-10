@@ -134,4 +134,4 @@ To further your understanding and make the most out of project management automa
 
 By exploring these resources, you can gain a deeper understanding of how to effectively use automations in Blue to optimize your project management processes. Whether it's through automating task assignments, sending notifications, or integrating cross-departmental workflows, the possibilities are endless.
 
-Thank you for reading, and we look forward to seeing how you leverage these powerful tools to take your project management to the next level. Remember, if you have any questions, ideas, or feedback, you can always reach out to Team Blue at [help@blue.cc](mailto:help@blue.cc)
+Thank you for reading, and we look forward to seeing how you leverage these powerful tools to take your project management to the next level. Remember, if you have any questions, ideas, or feedback, you can always reach out to Team Blue at [support@blue.cc](mailto:support@blue.cc)

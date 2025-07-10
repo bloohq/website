@@ -464,7 +464,7 @@
   </url>
   <url>
     <loc>https://blue.cc/api/start-guide/introduction</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -494,7 +494,7 @@
   </url>
   <url>
     <loc>https://blue.cc/api/start-guide/rate-limits</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -698,19 +698,19 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/welcome</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blue.cc/docs/start-guide/welcome</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blue.cc/docs/start-guide/concepts</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -722,13 +722,13 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/start-guide/white-label</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blue.cc/docs/billing</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1064,7 +1064,7 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/custom-fields/currency</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1148,7 +1148,7 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/user-management/organisation-administrator</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1190,7 +1190,7 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/dashboards/introduction</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1220,7 +1220,7 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/integrations/webhooks</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1238,13 +1238,13 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/integrations/make</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blue.cc/docs/integrations/csv-import</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1406,7 +1406,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/custom-domains</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1436,7 +1436,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/eran-interview</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1508,7 +1508,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/loudegg1</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1628,7 +1628,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/useful-project-management-automations</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1652,19 +1652,19 @@
   </url>
   <url>
     <loc>https://blue.cc/legal/index</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blue.cc/legal/terms</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blue.cc/legal/privacy</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1676,13 +1676,13 @@
   </url>
   <url>
     <loc>https://blue.cc/legal/gdpr</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blue.cc/legal/hipaa</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

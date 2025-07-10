@@ -246,7 +246,7 @@ The other nice thing to mention is that with Blue, the users that count against 
 
 **Manny:** Thank you, guys.
 
-**Joe:** So it's coming back to AppSumo tomorrow for Plus members only, then it'll be on for us non-plus regular folks, us peasants. And you can contact help@blue.cc, correct? That's your email?
+**Joe:** So it's coming back to AppSumo tomorrow for Plus members only, then it'll be on for us non-plus regular folks, us peasants. And you can contact support@blue.cc, correct? That's your email?
 
 **Manny:** Correct, and blue.cc is the website.
 
