@@ -43,6 +43,11 @@ window.SPAUtils = {
             
             // Handle click
             link.addEventListener('click', async (e) => {
+                // Allow modifier keys to work normally (Cmd/Ctrl + Click for new tab)
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) {
+                    return; // Let browser handle it normally
+                }
+                
                 e.preventDefault();
                 await this.handleNavigation(link);
             });
