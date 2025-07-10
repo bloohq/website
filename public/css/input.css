@@ -302,6 +302,57 @@ body {
   }
 }
 
+/* Heading anchor links */
+.prose h2 {
+  position: relative;
+}
+
+.heading-anchor {
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-brand-blue);
+  opacity: 0;
+  text-decoration: none !important;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.25rem;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.prose h2:hover .heading-anchor,
+.heading-anchor:hover {
+  opacity: 1;
+}
+
+.heading-anchor:hover {
+  color: var(--color-brand-blue-hover);
+}
+
+.heading-anchor.copied {
+  opacity: 1;
+  color: #22c55e;
+}
+
+/* Ensure heading doesn't shift when anchor appears */
+@media (max-width: 768px) {
+  .heading-anchor {
+    /* On mobile, position the anchor inside the heading */
+    position: relative;
+    left: auto;
+    margin-right: 0.5rem;
+    opacity: 0;
+    font-size: 1rem;
+  }
+  
+  /* Show on hover/touch on mobile too */
+  .prose h2:hover .heading-anchor {
+    opacity: 1;
+  }
+}
+
 /* YouTube Embed Styling */
 .youtube-embed {
   position: relative;

@@ -183,6 +183,7 @@
 
     <!-- Load utility scripts first -->
     <script src="/js/copy-code.js"></script>
+    <script src="/js/heading-anchors.js"></script>
     <script src="/js/spa.js"></script>
     <script src="/js/status.js"></script>
     <script src="/js/image-zoom.js"></script>
@@ -219,6 +220,13 @@
                 CopyCodeUtils.init();
             } else {
                 console.warn('CopyCodeUtils not loaded - copy buttons will not work');
+            }
+            
+            // Initialize heading anchors with error handling
+            if (typeof HeadingAnchors !== 'undefined') {
+                HeadingAnchors.init();
+            } else {
+                console.warn('HeadingAnchors not loaded - heading anchor links will not work');
             }
             
             // Initialize SPA routing with error handling

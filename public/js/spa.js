@@ -179,6 +179,13 @@ window.SPAUtils = {
             console.warn('CopyCodeUtils not available during navigation - copy buttons may not work');
         }
         
+        // Re-initialize heading anchors with error handling
+        if (typeof HeadingAnchors !== 'undefined') {
+            HeadingAnchors.init();
+        } else {
+            console.warn('HeadingAnchors not available during navigation - heading anchors may not work');
+        }
+        
         // Re-initialize image zoom with error handling
         if (typeof ImageZoomUtils !== 'undefined') {
             ImageZoomUtils.init();
