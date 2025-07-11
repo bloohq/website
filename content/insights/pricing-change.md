@@ -2,7 +2,6 @@
 title: Behind the scenes on changing price
 category: "News"
 description: This is our thinking behind changing the price from per-company to per-user — it aligns our business model and our customer's growth in the same direction.
-image: /patterns/dollar.png
 date: 2024-04-01
 ---
 

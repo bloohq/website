@@ -2,7 +2,6 @@
 title: The Non-Project Manager's Guide to Project Management
 category: "Best Practices"
 description: This guide offers practical and straightforward rules to help non-project managers effectively plan, execute, and complete projects successfully.
-image: /insights/project-management-guide-background.png
 date: 2024-05-27
 ---
 

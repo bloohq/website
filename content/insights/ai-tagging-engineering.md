@@ -2,7 +2,6 @@
 title:  AI Auto Categorization (Engineering Deep Dive)
 category: "Engineering"
 description: Go behind the scenes with the Blue engineering team as they explain how to built an AI-powered auto-categorization and tagging feature.
-image: /insights/ai-tag-background.png
 date: 2024-12-07
 ---
 

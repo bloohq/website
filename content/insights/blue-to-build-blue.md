@@ -2,7 +2,6 @@
 title:  How we use Blue to build Blue. 
 category: "CEO Blog"
 description: Learn how we use our own project management platform to build our project management platform! 
-image: /patterns/bluewhitecircle.png
 date: 2024-08-07
 ---
 

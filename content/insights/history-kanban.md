@@ -2,7 +2,6 @@
 title: The History of Kanban Boards
 category: "Best Practices"
 description: Learn the history of Kanban Boards, and how they evolved from factory floors into flexible digital tools. 
-image: /insights/japan-kanban-boards.jpg
 date: 2024-07-23
 ---
 At Blue, we love [Kanban boards](/platform/features/kanban-board). 

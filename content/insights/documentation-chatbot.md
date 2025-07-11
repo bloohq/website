@@ -2,7 +2,6 @@
 title: Why We Built Our Own AI Documentation Chatbot
 category: "Product Updates"
 description: We built our own documentation AI Chatbot that is trained on the Blue platform documentation.
-image: /insights/chat-background.png
 date: 2024-07-09
 ---
 

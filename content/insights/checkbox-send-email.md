@@ -2,7 +2,6 @@
 title: Project management automation — emails to stakeholders.
 category: "Product Updates"
 description: Often, you want to be in control of your project management automations 
-image: /insights/email-background.png
 date: 2024-07-08
 ---
 

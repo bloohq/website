@@ -2,7 +2,6 @@
 title: What is Great Teamwork?
 category: "Modern Work Practices"
 description: 'Great teamwork is the foundation of any organization. In this comprehensive writeup, we dive into the key elements and principles that define exceptional teamwork.' 
-image: /patterns/diamonds1.png
 ---
 Unlock the secrets to great teamwork: Learn how structured collaboration and the right balance can boost your team's performance. Start transforming your team today!
 

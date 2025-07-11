@@ -2,7 +2,6 @@
 title: Core Components of Kanban Board Software
 category: "Best Practices"
 description: Discover the essential components of kanban software such as boards, columns, cards, WIP limits, and swimlanes.
-image: /insights/kanban-background.png
 date: 2024-07-27
 ---
 

@@ -2,7 +2,6 @@
 title:  Blue as a Basecamp Alternative
 category: "Alternatives"
 description: Learn why thousands of users are using Blue as a Basecamp alternative for a more powerful, flexible project management software.
-image: /insights/ai-tag-background.png
 date: 2024-07-12
 #Logo Fields
 rightLogoSrc: "/insights/basecamp-icon.svg"

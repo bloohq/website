@@ -2,7 +2,6 @@
 title: Applying Critical Thinking to Process Design.
 category: "Modern Work Practices"
 description: A business is the sum of multiple processes happening simultaneously, non-stop in order to achieve the business objectives. 
-image: /insights/critical-thinking-whiteboard-flowchart.jpeg
 date: 2024-07-06
 ---
 

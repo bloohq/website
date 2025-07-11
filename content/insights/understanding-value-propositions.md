@@ -2,7 +2,6 @@
 title: Understanding Value Propositions
 category: "CEO Blog"
 description: 
-image: /insights/value-proposition.jpeg
 date: 2024-08-07
 ---
 ## Understanding Value Propositions

@@ -2,7 +2,6 @@
 title:  Blue as an Asana Alternative
 category: "Alternatives"
 description: Why smart companies are saving thousands a year by switching to Blue, a better Asana alternative. 
-image: /insights/ai-tag-background.png
 date: 2024-07-12
 #Logo Fields
 rightLogoSrc: "/insights/asana-icon.svg"

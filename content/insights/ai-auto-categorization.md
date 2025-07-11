@@ -2,7 +2,6 @@
 title: AI Auto Categorization
 category: "Product Updates"
 description: Blue now uses AI to auto categorize your records, individually or in bulk. This can save you dozens of hours while improving accuracy.
-image: /insights/bolt-background.png
 date: 2024-06-04
 ---
 

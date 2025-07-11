@@ -2,7 +2,6 @@
 title: Interview with Lorenzo Hickey
 category: "CEO Blog"
 description: An interview with Lorenzo Hickey, founder of ShapeShift World and Blue early adopted. He discusses his entrepreneurial journey and the impact of of Blue on business.
-image: /customer-photos/lorenzohickey2.jpeg
 date: 2024-07-05
 ---
 **Where are you from and what is your background?**

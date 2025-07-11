@@ -2,7 +2,6 @@
 title: How To Make Daily Stand-Ups Meetings More Fun
 category: "Best Practices"
 description: Discover the top 10 practical project management automation examples that you can use to make your projects more effective.
-image: /insights/user-background.png
 date: 2024-08-12
 # CTA Fields
 CtaHeader: Automate Everything

@@ -2,7 +2,6 @@
 title: LoudEgg Webinar 2 with Blue CEO & Joe Maracic 
 category: "CEO Blog"
 description: Manny (Blue CEO) & Joe Maracic discuss finance, and B2B SaaS Strategy
-image: /insights/loud-egg-webinar-2.jpg
 date: 2024-09-07
 ---
 The CEO of Blue did a second sessino with Joe Maracic from LoudEgg to discuss financial sustainability, B2B Saas, and advice for new founders. 

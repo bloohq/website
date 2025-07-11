@@ -2,7 +2,6 @@
 title: FAQ on Project Management Automation
 category: "FAQ"
 description: This is a list of the most frequently asked questions on project management automation.
-image: /insights/real-estate-software-background.png
 date: 2024-06-30
 ---
 

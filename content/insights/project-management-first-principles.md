@@ -2,7 +2,6 @@
 title: Project Management First Principles.
 category: "Best Practices"
 description: Starting with first principles, we provide a comprehensive understanding of what is a project, and how to effectively manage projects. 
-image: /insights/project-management-first-principles.jpeg
 date: 2024-07-07
 ---
 
