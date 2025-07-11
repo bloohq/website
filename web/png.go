@@ -11,6 +11,8 @@ import (
 	"math/rand"
 	"os"
 	"path/filepath"
+	"regexp"
+	"strings"
 )
 
 const (
@@ -53,8 +55,11 @@ func (pg *PNGGenerator) GenerateOrGetPNG(title, slug string) (string, error) {
 		return "", fmt.Errorf("failed to create output directory: %v", err)
 	}
 
-	pngPath := filepath.Join(pg.outputDir, slug+".png")
-	publicURL := pg.publicPath + "/" + slug + ".png"
+	// Create a safe filename from the title
+	safeFilename := pg.titleToFilename(title)
+	
+	pngPath := filepath.Join(pg.outputDir, safeFilename+".png")
+	publicURL := pg.publicPath + "/" + safeFilename + ".png"
 
 	// Check if PNG already exists
 	if _, err := os.Stat(pngPath); err == nil {
@@ -62,11 +67,11 @@ func (pg *PNGGenerator) GenerateOrGetPNG(title, slug string) (string, error) {
 	}
 
 	// Generate new PNG
-	return pg.generateAndSavePNG(title, slug)
+	return pg.generateAndSavePNG(title, safeFilename)
 }
 
 // generateAndSavePNG creates and saves a new PNG
-func (pg *PNGGenerator) generateAndSavePNG(title, slug string) (string, error) {
+func (pg *PNGGenerator) generateAndSavePNG(title, filename string) (string, error) {
 	// Create deterministic seed from title
 	hash := sha256.Sum256([]byte(title))
 	seed := int64(binary.BigEndian.Uint64(hash[:8]))
@@ -84,7 +89,7 @@ func (pg *PNGGenerator) generateAndSavePNG(title, slug string) (string, error) {
 	blurredImg := pg.gaussianBlur(img, blurRadius)
 
 	// Save PNG file
-	pngPath := filepath.Join(pg.outputDir, slug+".png")
+	pngPath := filepath.Join(pg.outputDir, filename+".png")
 	file, err := os.Create(pngPath)
 	if err != nil {
 		return "", fmt.Errorf("failed to create PNG file: %v", err)
@@ -95,7 +100,7 @@ func (pg *PNGGenerator) generateAndSavePNG(title, slug string) (string, error) {
 		return "", fmt.Errorf("failed to encode PNG: %v", err)
 	}
 
-	publicURL := pg.publicPath + "/" + slug + ".png"
+	publicURL := pg.publicPath + "/" + filename + ".png"
 	return publicURL, nil
 }
 
@@ -310,4 +315,39 @@ func (pg *PNGGenerator) gaussianBlur(src *image.RGBA, radius int) *image.RGBA {
 	}
 
 	return dst
+}
+
+// titleToFilename converts a title to a safe filename
+func (pg *PNGGenerator) titleToFilename(title string) string {
+	// Convert to lowercase
+	filename := strings.ToLower(title)
+	
+	// Replace spaces with hyphens
+	filename = strings.ReplaceAll(filename, " ", "-")
+	
+	// Remove any characters that aren't alphanumeric or hyphens
+	reg := regexp.MustCompile(`[^a-z0-9\-]+`)
+	filename = reg.ReplaceAllString(filename, "")
+	
+	// Remove multiple consecutive hyphens
+	reg = regexp.MustCompile(`-+`)
+	filename = reg.ReplaceAllString(filename, "-")
+	
+	// Trim hyphens from start and end
+	filename = strings.Trim(filename, "-")
+	
+	// If filename is empty after cleaning, use a hash of the title
+	if filename == "" {
+		hash := sha256.Sum256([]byte(title))
+		filename = fmt.Sprintf("image-%x", hash[:8])
+	}
+	
+	// Limit length to prevent filesystem issues
+	if len(filename) > 100 {
+		filename = filename[:100]
+		// Trim any trailing hyphen from truncation
+		filename = strings.TrimRight(filename, "-")
+	}
+	
+	return filename
 }
