@@ -1,0 +1,213 @@
+{{- /* 
+================================================================================
+FEATURE IMAGE COMPONENT
+================================================================================
+Displays a feature showcase with image and text content side-by-side.
+
+USAGE:
+{{template "feature-image" $featureData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$automateData := parseJSON `{
+    "id": "automation-saves-time",
+    "Title": "Automate everything.",
+    "Description": "Set up custom workflows that save 10+ hours per week. From simple reminders to complex multi-step processes.",
+    "ImageUrl": "/product/automations/automations-hero.png",
+    "ImagePosition": "right",  // "left" or "right" (default: "right")
+    "Button": {
+        "Text": "Learn more",
+        "Url": "/platform/features/automations"
+    },
+    "SeeAlso": {
+        "Heading": "Related features",  // Optional custom heading
+        "Links": [
+            {
+                "Text": "Workflow Templates",
+                "Url": "/templates",
+                "Description": "- Pre-built automation templates"
+            },
+            {
+                "Text": "API Documentation",
+                "Url": "/api"
+            }
+        ]
+    }
+}`}}
+{{template "feature-image" $automateData}}
+
+DATA STRUCTURE:
+{
+    "id": "unique-id",                    // Unique identifier (optional)
+    "Title": "Feature Title",             // Main headline (required)
+    "Description": "Feature description",  // Description text (required)
+    "ImageUrl": "/path/to/image.png",     // Image file path (required)
+    "ImagePosition": "right",             // "left" or "right" (optional, default: "right")
+    "Button": {                           // Optional CTA button
+        "Text": "Button text",
+        "Url": "/button-link"
+    },
+    "SeeAlso": {                          // Optional related links section
+        "Heading": "Custom heading",       // Optional heading (default: "See also")
+        "Links": [
+            {
+                "Text": "Link text",
+                "Url": "/link-url",
+                "Description": "Optional description"
+            }
+        ]
+    },
+    "MarginBottom": "mb-20"                // Bottom margin class (optional, default: "mb-16")
+}
+
+FEATURES:
+- Responsive layout with image/text side-by-side
+- Lazy loading image with intersection observer
+- Optional CTA button with arrow icon
+- Optional "See also" links section
+- Configurable image position (left/right)
+- Placeholder shown while image loads
+- Dark mode support
+
+LAYOUT:
+- Grid: 2 columns on desktop, stacked on mobile
+- Gap: 8 units (2rem) between columns
+- Image border radius: 2xl (1rem)
+- Vertical spacing in text: 4 units (1rem)
+
+STYLING:
+- Title: 2xl font size, medium weight
+- Description: Regular text, gray-600
+- Button: Brand blue with arrow icon
+- See also links: Brand blue, hover effect
+- Image placeholder: Gray-100 background
+
+INTERACTIVITY:
+- Image loads when scrolled into view
+- Hover states on interactive elements
+
+USE CASES:
+- Feature demonstrations
+- Product showcases
+- How-it-works sections
+- Visual feature explanations
+*/ -}}
+{{define "feature-image"}}
+<!-- Feature Image Component -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}"
+     x-data="{ 
+         loaded: false
+     }"
+     x-intersect.once="loaded = true">
+    {{if eq .ImagePosition "left"}}
+        <!-- Image (Left) -->
+        <div>
+            <template x-if="loaded">
+                <img 
+                    src="{{.ImageUrl}}" 
+                    alt="{{.Title}}"
+                    class="w-full h-auto rounded-2xl border border-gray-200" 
+                    loading="lazy"
+                >
+            </template>
+            <div 
+                x-show="!loaded" 
+                class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
+            ></div>
+        </div>
+        
+        <!-- Text Content (Right) -->
+        <div class="space-y-4">
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">{{.Title}}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{{.Description}}</p>
+            
+            {{if .Button}}
+            <!-- Primary Button -->
+            <div class="pt-2">
+                <a href="{{.Button.Url}}" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                    {{.Button.Text}}
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+            {{end}}
+            
+            {{if .SeeAlso}}
+            <!-- See Also Section -->
+            <div class="pt-4">
+                <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
+                    {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
+                </h5>
+                <ul class="space-y-2">
+                    {{range .SeeAlso.Links}}
+                    <li>
+                        <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                            {{.Text}}
+                        </a>
+                        {{if .Description}}
+                        <span class="text-sm text-gray-500 dark:text-gray-400"> {{.Description}}</span>
+                        {{end}}
+                    </li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+    {{else}}
+        <!-- Text Content (Left) -->
+        <div class="space-y-4">
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">{{.Title}}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{{.Description}}</p>
+            
+            {{if .Button}}
+            <!-- Primary Button -->
+            <div class="pt-2">
+                <a href="{{.Button.Url}}" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                    {{.Button.Text}}
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+            {{end}}
+            
+            {{if .SeeAlso}}
+            <!-- See Also Section -->
+            <div class="pt-4">
+                <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
+                    {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
+                </h5>
+                <ul class="space-y-2">
+                    {{range .SeeAlso.Links}}
+                    <li>
+                        <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                            {{.Text}}
+                        </a>
+                        {{if .Description}}
+                        <span class="text-sm text-gray-500 dark:text-gray-400"> {{.Description}}</span>
+                        {{end}}
+                    </li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+        
+        <!-- Image (Right) -->
+        <div>
+            <template x-if="loaded">
+                <img 
+                    src="{{.ImageUrl}}" 
+                    alt="{{.Title}}"
+                    class="w-full h-auto rounded-2xl border border-gray-200" 
+                    loading="lazy"
+                >
+            </template>
+            <div 
+                x-show="!loaded" 
+                class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
+            ></div>
+        </div>
+    {{end}}
+</div>
+{{end}} 
