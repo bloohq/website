@@ -1,7 +1,7 @@
   {{template "page-heading" 
     dict 
       "Title" "Streamline data collection." 
-      "Subtitle" "Effortlessly gather information from clients, employees, or the public with Blue's intuitive form builder. Design branded forms tailored to your needs in minutes." 
+      "Subtitle" "Effortlessly gather information from clients, employees, or the public with Blue forms." 
       "MarginBottom" "mb-16"
   }}
 
@@ -12,24 +12,6 @@
   }`}}
   {{template "hero-video" $heroData}}
 
-  <!-- Form Sharing Options -->
-  {{$sharingOptions := parseJSON `{
-    "Benefits": [
-      {
-        "Title": "Links.",
-        "Description": "Generate shareable links to deploy forms anywhere."
-      },
-      {
-        "Title": "QR Codes.",
-        "Description": "Download QR codes to print and post up."
-      },
-      {
-        "Title": "Website Embedding.",
-        "Description": "Embed forms directly onto your website using a simple code snippet."
-      }
-    ]
-  }`}}
-  {{template "feature-benefits-grid" $sharingOptions}}
 
   <!-- Form Builder Feature Section -->
   {{$formBuilderVideo := parseJSON `{
@@ -40,19 +22,20 @@
   }`}}
   {{template "feature-video" $formBuilderVideo}}
 
+  <!-- Form Builder Benefits -->
   {{$formBuilderBenefits := parseJSON `{
-    "benefits": [
+    "Benefits": [
       {
-        "title": "Powerful Options.",
-        "description": "Drag-and-drop any form fields - text, dropdowns, file uploads, and more."
+        "Title": "Powerful Options",
+        "Description": "Drag-and-drop any form fields – text, dropdowns, file uploads, and more."
       },
       {
-        "title": "Branded Experience.",
-        "description": "Customize colors, logos, and styling to make forms your own."
+        "Title": "Branded Experience",
+        "Description": "Customize colors, logos, and styling to make forms your own."
       },
       {
-        "title": "No Coding Required.",
-        "description": "Our intuitive interface makes form building accessible to anyone."
+        "Title": "No Coding Required",
+        "Description": "Our intuitive interface makes form building accessible to anyone."
       }
     ]
   }`}}
@@ -67,23 +50,25 @@
   }`}}
   {{template "feature-video" $formSharingVideo}}
 
-  {{$formSharingBenefits := parseJSON `{
-    "benefits": [
+  <!-- Form Sharing Options -->
+  {{$sharingOptions := parseJSON `{
+    "Benefits": [
       {
-        "title": "Links.",
-        "description": "Generate shareable links to deploy forms anywhere."
+        "Title": "Links",
+        "Description": "Generate shareable links to deploy forms anywhere."
       },
       {
-        "title": "QR Codes.",
-        "description": "Download QR codes to print and post up."
+        "Title": "QR Codes",
+        "Description": "Download QR codes to print and post up."
       },
       {
-        "title": "Website Embedding.",
-        "description": "Embed forms directly onto your website using a simple code snippet."
+        "Title": "Website Embedding",
+        "Description": "Embed forms directly onto your website."
       }
     ]
   }`}}
-  {{template "feature-benefits-grid" $formSharingBenefits}}
+  {{template "feature-benefits-grid" $sharingOptions}}
+
 
   <!-- Data Integration Feature Section -->
   {{$dataIntegrationVideo := parseJSON `{
@@ -94,23 +79,23 @@
   }`}}
   {{template "feature-video" $dataIntegrationVideo}}
 
-  {{$dataIntegrationBenefits := parseJSON `{
-    "benefits": [
+  {{$formIntegrationBenefits := parseJSON `{
+    "Benefits": [
       {
-        "title": "Direct Integration.",
-        "description": "Submissions pipe seamlessly into any project list or view."
-      },
-      {
-        "title": "Smart Mapping.",
-        "description": "Map form fields to project data fields for organized information flow."
-      },
-      {
-        "title": "Real-Time Updates.",
-        "description": "New entries instantly appear in your project for maximum efficiency."
-      }
+          "Title": "Direct Integration",
+          "Description": "Submissions pipe seamlessly into any project list or view."
+        },
+        {
+          "Title": "Smart Mapping",
+          "Description": "Map form fields to project data fields for organized information flow."
+        },
+        {
+          "Title": "Real-Time Updates",
+          "Description": "New entries instantly appear in your project for maximum efficiency."
+        }
     ]
   }`}}
-  {{template "feature-benefits-grid" $dataIntegrationBenefits}}
+  {{template "feature-benefits-grid" $formIntegrationBenefits}}
 
 
 
@@ -203,8 +188,7 @@
 
   <!-- Call to Action -->
   {{$ctaData := parseJSON `{
-    "Title": "Boost your productivity. Start using Blue today.",
-    "Description": "Blue organizes work, ensuring teams know what to do, how to do it — and why it matters.",
+    "Title": "Start using Blue today.",
     "SecondaryText": "Request a demo",
     "SecondaryUrl": "/contact",
     "PrimaryText": "Get started",
