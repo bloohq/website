@@ -7,10 +7,41 @@
 
   <!-- Hero Video -->
   {{$heroData := parseJSON `{
-    "src": "/product/forms-hero.mp4",
-    "poster": "/product/forms-hero-poster.jpg"
+    "Youtube": "https://www.youtube.com/embed/lbFvQ-0ENTY"
   }`}}
   {{template "hero-video" $heroData}}
+
+  <!-- News Bar - White Label Forms Support -->
+  {{$newsBarData := parseJSON `{
+    "MainText": "Forms are now supported in White Label! Transform Blue into your own branded platform.",
+    "ButtonText": "Learn more",
+    "ButtonUrl": "/platform/white-label",
+    "MarginBottom": "mb-16"
+  }`}}
+  {{template "news-bar" $newsBarData}}
+
+  <!-- Value Propositions Section -->
+  {{$valuePropsData := parseJSON `{
+    "Title": "Collect data seamlessly.<br>From anyone, anywhere.",
+    "Description": "Blue forms integrate directly with your projects, automatically creating records and triggering workflows when submissions come in.",
+    "Animation": false,
+    "ValueProps": [
+        {
+          "Title": "Public access, private data",
+          "Description": "Share forms with anyone via links, QR codes, or embeds. No Blue accounts needed, but data flows securely into your projects."
+        },
+        {
+          "Title": "23 field types available",
+          "Description": "From text inputs to file uploads, star ratings, and location mapping. Capture exactly the data you need with drag-and-drop ease."
+        },
+        {
+          "Title": "Automatic record creation",
+          "Description": "Every submission instantly becomes a record in your project. Route to lists, assign to team members, and trigger automations."
+        }
+      ],
+    "MarginBottom": "mb-20"
+  }`}}
+  {{template "value-propositions" $valuePropsData}}
 
 
   <!-- Form Builder Feature Section -->
