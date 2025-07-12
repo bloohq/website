@@ -106,124 +106,64 @@ USE CASES:
          loaded: false
      }"
      x-intersect.once="loaded = true">
-    {{if eq .VideoPosition "left"}}
-        <!-- Video (Left) -->
-        <div>
-            <template x-if="loaded">
-                <video 
-                    class="w-full h-auto rounded-2xl border border-gray-200" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                >
-                    <source src="{{.VideoUrl}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </template>
-            <div 
-                x-show="!loaded" 
-                class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
-            ></div>
-        </div>
+    
+    <!-- Text Content -->
+    <div class="space-y-4 order-1 {{if eq .VideoPosition "left"}}lg:order-2{{else}}lg:order-1{{end}}">
+        <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">{{.Title}}</h3>
+        <p class="text-gray-600 dark:text-gray-300">{{.Description}}</p>
         
-        <!-- Text Content (Right) -->
-        <div class="space-y-4">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">{{.Title}}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{{.Description}}</p>
-            
-            {{if .Button}}
-            <!-- Primary Button -->
-            <div class="pt-2">
-                <a href="{{.Button.Url}}" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
-                    {{.Button.Text}}
-                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-            </div>
-            {{end}}
-            
-            {{if .SeeAlso}}
-            <!-- See Also Section -->
-            <div class="pt-4">
-                <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
-                    {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
-                </h5>
-                <ul class="space-y-2">
-                    {{range .SeeAlso.Links}}
-                    <li>
-                        <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
-                            {{.Text}}
-                        </a>
-                        {{if .Description}}
-                        <span class="text-sm text-gray-500 dark:text-gray-400"> {{.Description}}</span>
-                        {{end}}
-                    </li>
-                    {{end}}
-                </ul>
-            </div>
-            {{end}}
+        {{if .Button}}
+        <!-- Primary Button -->
+        <div class="pt-2">
+            <a href="{{.Button.Url}}" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                {{.Button.Text}}
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
         </div>
-    {{else}}
-        <!-- Text Content (Left) -->
-        <div class="space-y-4">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">{{.Title}}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{{.Description}}</p>
-            
-            {{if .Button}}
-            <!-- Primary Button -->
-            <div class="pt-2">
-                <a href="{{.Button.Url}}" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
-                    {{.Button.Text}}
-                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-            </div>
-            {{end}}
-            
-            {{if .SeeAlso}}
-            <!-- See Also Section -->
-            <div class="pt-4">
-                <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
-                    {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
-                </h5>
-                <ul class="space-y-2">
-                    {{range .SeeAlso.Links}}
-                    <li>
-                        <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
-                            {{.Text}}
-                        </a>
-                        {{if .Description}}
-                        <span class="text-sm text-gray-500 dark:text-gray-400"> {{.Description}}</span>
-                        {{end}}
-                    </li>
-                    {{end}}
-                </ul>
-            </div>
-            {{end}}
-        </div>
+        {{end}}
         
-        <!-- Video (Right) -->
-        <div>
-            <template x-if="loaded">
-                <video 
-                    class="w-full h-auto rounded-2xl border border-gray-200" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                >
-                    <source src="{{.VideoUrl}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </template>
-            <div 
-                x-show="!loaded" 
-                class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
-            ></div>
+        {{if .SeeAlso}}
+        <!-- See Also Section -->
+        <div class="pt-4">
+            <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
+                {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
+            </h5>
+            <ul class="space-y-2">
+                {{range .SeeAlso.Links}}
+                <li>
+                    <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                        {{.Text}}
+                    </a>
+                    {{if .Description}}
+                    <span class="text-sm text-gray-500 dark:text-gray-400"> {{.Description}}</span>
+                    {{end}}
+                </li>
+                {{end}}
+            </ul>
         </div>
-    {{end}}
+        {{end}}
+    </div>
+    
+    <!-- Video -->
+    <div class="order-2 {{if eq .VideoPosition "left"}}lg:order-1{{else}}lg:order-2{{end}}">
+        <template x-if="loaded">
+            <video 
+                class="w-full h-auto rounded-2xl border border-gray-200" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+            >
+                <source src="{{.VideoUrl}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </template>
+        <div 
+            x-show="!loaded" 
+            class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
+        ></div>
+    </div>
 </div>
 {{end}}
