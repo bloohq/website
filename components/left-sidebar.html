@@ -135,7 +135,7 @@
              @collapse-sidebar-menus.window="expanded = false"
              class="folder-group">
             <div x-show="expanded" x-collapse class="ml-7 space-y-0.5 order-first">
-                <template x-for="item in legalSection?.children || []" :key="item.id">
+                <template x-for="item in (legalSection?.children || []).filter(child => child.href !== '/legal' && child.href !== '/legal/' && child.href !== '/legal/index')" :key="item.id">
                     <a :href="item.href" 
                        :target="item.external ? '_blank' : '_self'"
                        :rel="item.external ? 'noopener noreferrer' : ''"
