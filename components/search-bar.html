@@ -117,7 +117,22 @@ DEPENDENCIES:
              }
              
              this.loading = true;
-             this.results = this.fuse.search(this.query).slice(0, 8);
+             let results = this.fuse.search(this.query);
+             
+             // Sort by category preference when scores are similar
+             const categoryOrder = { 'Feature': 1, 'Docs': 2, 'API': 3 };
+             results.sort((a, b) => {
+                 // If scores are very close (within 0.05), sort by category preference
+                 if (Math.abs(a.score - b.score) < 0.05) {
+                     const orderA = categoryOrder[a.item.category] || 999;
+                     const orderB = categoryOrder[b.item.category] || 999;
+                     return orderA - orderB;
+                 }
+                 // Otherwise sort by score (lower is better in Fuse.js)
+                 return a.score - b.score;
+             });
+             
+             this.results = results.slice(0, 8);
              this.showResults = true;
              this.selectedIndex = -1;
              this.loading = false;
