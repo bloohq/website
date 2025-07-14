@@ -99,65 +99,49 @@
 
 
     <!-- FAQ Section -->
-    {{template "faq-sections" parseJSON `{
-        "categories": [
-            {
-                "name": "Chat Features",
-                "questions": [
-                    {
-                        "question": "What is the chat feature in Blue, and what is it used for?",
-                        "answer": "Blue's chat feature provides topic-based communication channels within your projects. It's designed to keep discussions organized, searchable, and directly connected to your work context. Unlike general messaging apps, each chat in Blue is tied to specific projects or topics, ensuring conversations stay relevant and easy to find."
-                    },
-                    {
-                        "question": "Who can see the chats in a project?",
-                        "answer": "Chat visibility follows your project permissions. All project members can see and participate in project chats by default. You can also create private chats with specific team members for sensitive discussions. Project admins can manage chat access and permissions."
-                    },
-                    {
-                        "question": "Is there a limit to the number of people who can participate in a chat?",
-                        "answer": "No, there's no limit to the number of participants in a chat. All project members can join and contribute to project chats. For larger teams, we recommend creating topic-specific chats to keep discussions focused and manageable."
-                    },
-                    {
-                        "question": "Can we share files in the chat?",
-                        "answer": "Yes! You can share various file types directly in chat including images, documents, PDFs, and more. Files are stored securely in Blue and can be previewed inline. There's also support for embedding YouTube videos and other rich media content."
-                    },
-                    {
-                        "question": "Is the chat feature available on mobile devices?",
-                        "answer": "Absolutely. Blue's chat feature is fully available on our iOS and Android apps, as well as our Progressive Web App (PWA). You can send messages, share files, and receive notifications on any device."
-                    }
-                ]
-            },
-            {
-                "name": "Search and Storage",
-                "questions": [
-                    {
-                        "question": "Are chats searchable within Blue?",
-                        "answer": "Yes, all chat messages are fully searchable. You can search across all your chats or within specific conversations. Search includes message content, file names, and even text within shared documents. This makes it easy to find past decisions, shared resources, or important discussions."
-                    },
-                    {
-                        "question": "How long are chat messages stored?",
-                        "answer": "Chat messages are stored indefinitely as part of your project history. This creates a valuable knowledge base for your team. You can always go back to find important conversations, decisions, or shared resources. Chat data is included in your regular Blue backups."
-                    }
-                ]
-            },
-            {
-                "name": "Notifications and Integrations",
-                "questions": [
-                    {
-                        "question": "Can I customize my chat notifications?",
-                        "answer": "Yes, Blue offers flexible notification settings. You can choose to be notified for all messages, only when mentioned (@username), or turn off notifications for specific chats. You can also set different notification preferences for desktop and mobile."
-                    },
-                    {
-                        "question": "Does the chat feature integrate with other tools?",
-                        "answer": "Blue's chat is deeply integrated with all other Blue features. You can reference tasks, share files, link to wiki pages, and more directly in chat. For external integrations, you can use our API to send chat notifications from other tools or export chat data."
-                    },
-                    {
-                        "question": "Are there any special features in the chat?",
-                        "answer": "Yes! Beyond standard messaging, Blue chat includes: @mentions for notifications, message editing and deletion, rich text formatting, read receipts, and typing indicators. You can also create chat templates for recurring discussion topics."
-                    }
-                ]
-            }
-        ]
-    }`}}
+    <section class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Frequently asked questions</h2>
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "name": "About Chat",
+                    "questions": [
+                        {
+                            "question": "What is the chat feature in Blue, and what is it used for?",
+                            "answer": "Blue's chat feature provides topic-based communication channels within your projects. It's designed to keep discussions organized, searchable, and directly connected to your work context. Unlike general messaging apps, each chat in Blue is tied to specific projects or topics, ensuring conversations stay relevant and easy to find."
+                        },
+                        {
+                            "question": "Who can see the chats in a project?",
+                            "answer": "Chat visibility follows your project permissions. All project members can see and participate in project chats by default. Project admins can manage chat access and permissions."
+                        },
+                        {
+                            "question": "Is there a limit to the number of people who can participate in a chat?",
+                            "answer": "No, there's no limit to the number of participants in a chat. All project members can join and contribute to project chats. For larger teams, we recommend creating topic-specific chats to keep discussions focused and manageable."
+                        },
+                        {
+                            "question": "Can we share files in the chat?",
+                            "answer": "Yes! You can share various file types directly in chat including images, documents, PDFs, and more. Files are stored securely in Blue and can be previewed inline. There's also support for embedding YouTube videos and other rich media content."
+                        },
+                        {
+                            "question": "Is the chat feature available on mobile devices?",
+                            "answer": "Absolutely. Blue's chat feature is fully available on our iOS and Android apps, as well as our Progressive Web App (PWA). You can send messages, share files, and receive notifications on any device."
+                        },
+                        {
+                            "question": "Are chats searchable within Blue?",
+                            "answer": "Yes, all chat messages are fully searchable. You can search across all your chats or within specific conversations. Search includes message content, file names, and even text within shared documents. This makes it easy to find past decisions, shared resources, or important discussions."
+                        },
+                        {
+                            "question": "How long are chat messages stored?",
+                            "answer": "Chat messages are stored indefinitely as part of your project history. This creates a valuable knowledge base for your team. You can always go back to find important conversations, decisions, or shared resources. Chat data is included in your regular Blue backups."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 
     <!-- Call to Action -->
     {{template "dual-button-cta" dict

@@ -1,7 +1,446 @@
+<!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Custom Fields" 
-            "Subtitle" "Add custom fields to your records to store additional information." 
+            "Title" "Build your perfect data structure — no code required." 
+            "Subtitle" "Create custom fields that map exactly to your business needs. From simple text to advanced formulas, Blue's 24 field types let you capture any information your organization requires." 
             "MarginBottom" "mb-16"
     }}
 
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "custom-fields-hero"
+    }}
+
+    <!-- Value Proposition Section -->
+    <section class="mt-20 mb-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Your business is unique. Your data structure should be too.</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">Stop forcing your processes into rigid templates. With Blue's custom fields, you design the exact data structure your organization needs — all without writing a single line of code.</p>
+            
+            <!-- Key Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">24 Field Types</h3>
+                    <p class="text-gray-600 dark:text-gray-400">From text and numbers to formulas and buttons — capture any type of data your business needs.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">No Code Required</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Create sophisticated data structures with simple point-and-click configuration. No technical expertise needed.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Scales With You</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add fields as your needs grow. No rigid limits — your data structure evolves with your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Custom Fields Grid -->
+    <section class="mb-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Every field type you need to run your business.</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">Choose from 24 purpose-built field types to capture, calculate, and connect your data.</p>
+            
+            <!-- Custom Fields Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Text Fields -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Text & Content</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Single Line Text</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Capture names, titles, and short text</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Multiple Line Text</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Add descriptions and detailed notes</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">URL Link</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Store clickable web links</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Star Rating</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Collect ratings and feedback</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Number & Money -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Numbers & Money</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Number</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Track quantities and metrics</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Currency</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Handle money in any currency</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Percent</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Display progress and ratios</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Formula</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Calculate values automatically</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date & Time</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Date</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Schedule with dates and times</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Duration</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Track time between events</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 ring-2 ring-brand-blue">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Time in List ✨</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Auto-track stage duration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selection Fields -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Selections</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Single Select</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Choose one option from a list</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Multiple Select</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Select multiple options</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Checkbox</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Simple yes/no choices</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Country</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Select from all countries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact & Location -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Contact & Location</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Email</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Store validated email addresses</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Phone Number</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Click-to-call phone numbers</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Location Map</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Pin locations on maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Fields -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Advanced</h3>
+                    <div class="space-y-3">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 ring-2 ring-brand-blue">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Button ✨</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Trigger automations with a click</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Reference</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Link to other records</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Lookup</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Pull data from linked records</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">File</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Attach documents and images</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h4 class="font-medium text-gray-900 dark:text-gray-100">Unique ID</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Generate unique identifiers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-8 text-center">✨ = Unique to Blue</p>
+        </div>
+    </section>
+
+    <!-- Powerful Combinations Section -->
+    <section class="mb-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16 text-center">Powerful field combinations that work better together.</h2>
+            
+            <!-- Reference + Lookup -->
+            <div class="mb-16">
+                {{$referenceLookupData := parseJSON `{
+                    "Title": "Reference + Lookup: Connect your data intelligently",
+                    "Description": "Link records across projects with Reference fields, then use Lookup fields to automatically pull in related data. Perfect for customer information, product catalogs, or any connected data.",
+                    "VideoUrl": "/testvideo2.mp4",
+                    "VideoPosition": "right"
+                }`}}
+                {{template "feature-video" $referenceLookupData}}
+            </div>
+
+            <!-- Formulas + Numbers -->
+            <div class="mb-16">
+                {{$formulaNumberData := parseJSON `{
+                    "Title": "Formula + Number/Currency: Automate your calculations",
+                    "Description": "Combine Formula fields with Number and Currency fields to automatically calculate totals, margins, commissions, or any business metric. No more manual spreadsheet calculations.",
+                    "VideoUrl": "/testvideo2.mp4",
+                    "VideoPosition": "left"
+                }`}}
+                {{template "feature-video" $formulaNumberData}}
+            </div>
+
+            <!-- Button + Automations -->
+            <div class="mb-16">
+                {{$buttonAutomationData := parseJSON `{
+                    "Title": "Button + Automations: One-click workflows",
+                    "Description": "Add Button fields to trigger complex automations instantly. Send invoices, update statuses, notify teams, or run any workflow — all with a single click.",
+                    "VideoUrl": "/testvideo2.mp4",
+                    "VideoPosition": "right"
+                }`}}
+                {{template "feature-video" $buttonAutomationData}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="mb-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4 text-center">Built for how you work.</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center max-w-3xl mx-auto">Custom fields adapt to any industry or use case. Here's how different teams use them to build their perfect workflow.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sales Teams -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">Sales Teams</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Currency</strong> fields for deal values</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Formula</strong> fields for commission calculations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Single Select</strong> for pipeline stages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Time in List</strong> to track sales velocity</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- HR Teams -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">HR Teams</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>File</strong> fields for resumes and documents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Star Rating</strong> for interview feedback</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Date</strong> fields for start dates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Reference</strong> to link to departments</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Operations -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">Operations Teams</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Location Map</strong> for asset tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Duration</strong> for time tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Button</strong> fields to trigger workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Unique ID</strong> for inventory codes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Customer Support -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">Support Teams</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Single Select</strong> for ticket priority</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Email</strong> for customer contact</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Time in List</strong> for SLA tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Star Rating</strong> for satisfaction scores</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Marketing -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">Marketing Teams</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>URL Link</strong> for campaign links</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Multiple Select</strong> for channels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Percent</strong> for conversion rates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>File</strong> fields for creative assets</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Finance -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">Finance Teams</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Currency</strong> with multi-currency support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Formula</strong> for financial calculations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Checkbox</strong> for approval workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-blue mr-2">•</span>
+                            <span><strong>Reference</strong> to link transactions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Frequently asked questions</h2>
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "name": "About Custom Fields",
+                    "questions": [
+                        {
+                            "question": "What are custom fields in Blue?",
+                            "answer": "Custom fields allow you to build data structures that map exactly to your business needs — all without writing any code. With 24 different field types, you can capture any information your organization requires, from simple text to complex calculations and relationships between records."
+                        },
+                        {
+                            "question": "How many custom fields can I add?",
+                            "answer": "There are no hard limits on the number of custom fields you can add to your projects. While you can have several hundred fields, performance may gradually decrease as the number grows. Most organizations find that 20-50 fields per project covers all their needs effectively."
+                        },
+                        {
+                            "question": "Which field types are unique to Blue?",
+                            "answer": "Blue offers several unique field types that set us apart: the Button field lets you trigger automations with a single click, and the Time in List field automatically tracks how long records spend in each stage of your process. These fields enable powerful workflows that aren't possible in other tools."
+                        },
+                        {
+                            "question": "Can I change field types after creating them?",
+                            "answer": "To maintain data integrity, field types cannot be changed after creation. However, you can create a new field with the desired type and use automations or bulk editing to migrate your data. This approach ensures your existing data remains safe while you transition to the new field structure."
+                        },
+                        {
+                            "question": "How do custom fields work with other Blue features?",
+                            "answer": "Custom fields integrate seamlessly with all Blue features. They can trigger automations, appear in forms, display in dashboards, and be accessed via our API. Different field types work particularly well together — like using Reference fields with Lookups, or Formula fields with Numbers and Currency."
+                        },
+                        {
+                            "question": "Can I use formulas with custom fields?",
+                            "answer": "Yes! Formula fields can perform calculations using data from other Number, Currency, and Date fields. You can create everything from simple additions to complex business calculations. Formulas update automatically when the underlying data changes, keeping your calculations always current."
+                        },
+                        {
+                            "question": "Are custom fields available on all plans?",
+                            "answer": "All Blue plans include custom fields. Every plan gets access to all 24 field types with no restrictions. This ensures that businesses of any size can build the exact data structure they need without artificial limitations."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
+
+    <!-- Call to Action -->
+    {{$ctaData := parseJSON `{
+        "Title": "Build your perfect data structure today.",
+        "Description": "Create custom fields that map to your exact business needs — no coding required.",
+        "PrimaryText": "Get Started Free",
+        "PrimaryUrl": "https://app.blue.cc",
+        "SecondaryText": "View documentation",
+        "SecondaryUrl": "/docs/custom-fields"
+    }`}}
+    {{template "dual-button-cta" $ctaData}}
