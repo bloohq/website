@@ -74,6 +74,7 @@ type PageData struct {
 	CustomerNumber int
 	Insights       []InsightData
 	Path           string
+	SchemaData     template.JS
 }
 
 // Router handles file-based routing for HTML pages
@@ -87,6 +88,7 @@ type Router struct {
 	markdownService   *MarkdownService
 	htmlService       *HTMLService
 	seoService        *SEOService
+	schemaService     *SchemaService
 	statusChecker     *HealthChecker
 	tocExcludedPaths  []string
 }
@@ -113,6 +115,10 @@ func NewRouter(pagesDir string) *Router {
 	contentService := NewContentService("content")
 	navigationService := NewNavigationService(seoService)
 	htmlService := NewHTMLService(pagesDir, "layouts", "components", markdownService)
+	schemaService := NewSchemaService(seoService.metadata, "https://blue.cc")
+	
+	// Set schema service on HTML service
+	htmlService.SetSchemaService(schemaService)
 
 	router := &Router{
 		pagesDir:          pagesDir,
@@ -124,6 +130,7 @@ func NewRouter(pagesDir string) *Router {
 		navigationService: navigationService,
 		htmlService:       htmlService,
 		seoService:        seoService,
+		schemaService:     schemaService,
 		statusChecker:     nil, // Will be set by SetStatusChecker
 		tocExcludedPaths: []string{ // These pages will not show toc
 			"/changelog",
@@ -576,6 +583,13 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		// TOC generation skipped
 	}
 
+	// Generate schema data
+	schemaData := template.JS("[]")
+	if r.schemaService != nil {
+		pageType := r.schemaService.GetPageType(path)
+		schemaData = r.schemaService.GenerateSchema(pageType, path, frontmatter)
+	}
+	
 	// Return PageData with all components
 	return PageData{
 		Title:          title,
@@ -591,6 +605,7 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		CustomerNumber: 17000,
 		Insights:       insights,
 		Path:           path,
+		SchemaData:     schemaData,
 	}
 }
 

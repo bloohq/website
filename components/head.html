@@ -18,6 +18,13 @@
     <meta name="twitter:description" content="{{.Description}}">
     <meta name="twitter:image" content="https://www.blue.cc/og.png">
     
+    {{if .SchemaData}}
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {{.SchemaData}}
+    </script>
+    {{end}}
+    
     <!-- Styles -->
     <link rel="preload" href="/font/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/font/Inter-Italic-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>

@@ -18,6 +18,7 @@ type HTMLService struct {
 	layoutsDir      string
 	componentsDir   string
 	markdownService *MarkdownService
+	schemaService   *SchemaService
 }
 
 // NewHTMLService creates a new HTML service
@@ -28,7 +29,13 @@ func NewHTMLService(pagesDir, layoutsDir, componentsDir string, markdownService 
 		layoutsDir:      layoutsDir,
 		componentsDir:   componentsDir,
 		markdownService: markdownService,
+		schemaService:   nil,
 	}
+}
+
+// SetSchemaService sets the schema service for the HTML service
+func (hs *HTMLService) SetSchemaService(schemaService *SchemaService) {
+	hs.schemaService = schemaService
 }
 
 // PreRenderAllHTMLPages pre-renders all HTML pages in the pages directory
@@ -315,6 +322,13 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 		// TOC generation skipped
 	}
 
+	// Generate schema data
+	schemaData := template.JS("[]")
+	if hs.schemaService != nil {
+		pageType := hs.schemaService.GetPageType(path)
+		schemaData = hs.schemaService.GenerateSchema(pageType, path, frontmatter)
+	}
+	
 	// Return PageData with all components
 	return PageData{
 		Title:          title,
@@ -330,5 +344,6 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 		CustomerNumber: 17000,
 		Insights:       insights,
 		Path:           path,
+		SchemaData:     schemaData,
 	}
 }
