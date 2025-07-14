@@ -35,7 +35,7 @@ Fast forward 16 years, and Asana is a publicly listed company, trading on the Ne
 
 Blue was founded in 2018 by [Emanuele "Manny" Faja](https://www.linkedin.com/in/efaja/) with a clear mission: 
 
-> To organize the world's work by building the best project management platform on the planet—simple, powerful, flexible, and affordable for all.
+> To organize the world's work.
 
 Blue is proudly bootstrapped. 
 

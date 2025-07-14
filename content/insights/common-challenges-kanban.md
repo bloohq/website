@@ -153,7 +153,7 @@ It's not enough to introduce the system and hope for the best. You must actively
 
 Software vendors often paint a rosy picture in their marketing materials. They'll tell you that their Kanban tool is so intuitive, so user-friendly, that your team will adopt it seamlessly and effortlessly. Don't be fooled. The reality is starkly different. Even if the software is the easiest to use in the world - and let's face it, that's a big if - you still need to drive the behavior change. We're being brutally honest here, and simplicity is even in our mission statement:
 
-> Our mission is to organize the world's work by building the best project management platform on the planet—simple, powerful, flexible, and affordable for all.
+> Our mission is to organize the world's work.
 
 Changing habits is hard. 
 

@@ -110,7 +110,7 @@ The last section of the brand pyramid is functional benefits. This can be define
 
 Blue has focused on 4 simple functional benefits that are reflected in our mission:
 
-> Our mission is to organize the world's work by building the best project management platform on the planet—simple, powerful, flexible, and affordable for all.
+> Our mission is to organize the world's work.
 
 1. Simplicty
 2. Power

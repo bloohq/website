@@ -113,7 +113,7 @@ From a customer's perspective, this means:
 
 As we've explored throughout this article, Blue stands apart in the crowded field of project management solutions. Our unique combination of simplicity, affordability, and flexibility isn't just a set of features—it's a reflection of our core mission:
 
-> To organize the world's work by building the best project management platform on the planet—simple, powerful, flexible, and affordable for all.
+> To organize the world's work.
 
 And this mission drives everything we do.
 
