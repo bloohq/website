@@ -238,17 +238,14 @@
             "Title": "Why educational institutions choose Blue",
             "Features": [
                 {
-                    "Icon": "users",
                     "Title": "Streamlined Student Records",
                     "Description": "Centralize student information from application to graduation. Track enrollment, grades, and attendance with custom fields."
                 },
                 {
-                    "Icon": "calendar",
                     "Title": "Faculty & Resource Coordination",
                     "Description": "Schedule classes, manage faculty workloads, and allocate resources across departments with automated workflows."
                 },
                 {
-                    "Icon": "shield-check",
                     "Title": "Compliance & Reporting",
                     "Description": "Generate required state reports and maintain detailed audit trails. Never miss accreditation deadlines."
                 }
@@ -297,7 +294,7 @@
             },
             "SeeAlso": {
                 "Links": [
-                    { "Text": "Calendar View", "Description": "visualize course schedules and academic calendars", "Url": "/platform/features/views/calendar" },
+                    { "Text": "Calendar View", "Description": "visualize course schedules and academic calendars", "Url": "/platform/features/calendar" },
                     { "Text": "Workspaces", "Description": "organize departments into separate collaborative areas", "Url": "/platform/features/workspaces" },
                     { "Text": "Timeline & Gantt Charts", "Description": "plan semester schedules and resource allocation", "Url": "/platform/features/timeline-gantt-charts" }
                 ]
@@ -341,9 +338,9 @@
             },
             "SeeAlso": {
                 "Links": [
-                    { "Text": "Wiki & Docs", "Description": "create knowledge bases for student resources", "Url": "/platform/features/wiki" },
+                    { "Text": "Wiki & Docs", "Description": "create knowledge bases for student resources", "Url": "/platform/features/wiki-docs" },
                     { "Text": "Templates", "Description": "standardize common administrative processes", "Url": "/platform/features/templates" },
-                    { "Text": "Search", "Description": "quickly find student records and documents", "Url": "/platform/features/search" }
+                    { "Text": "Search", "Description": "quickly find student records and documents", "Url": "/docs/projects/search" }
                 ]
             }
         }`}}
@@ -449,11 +446,11 @@
     <!-- Final CTA -->
     <div class="px-6 lg:px-8">
         {{$ctaData := parseJSON `{
-            "Title": "Cut adminstration by 50%",
+            "Title": "Cut administration by 50%",
             "SecondaryText": "Schedule a Demo",
-            "SecondaryUrl": "/contact",
-            "PrimaryText": "Start Free Trial",
-            "PrimaryUrl": "/signup"
+            "SecondaryUrl": "/contact/sales",
+            "PrimaryText": "Get Started Free",
+            "PrimaryUrl": "https://app.blue.cc"
         }`}}
         {{template "dual-button-cta" $ctaData}}
     </div>
