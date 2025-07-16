@@ -54,9 +54,9 @@ mutation CreateDetailedCountryField {
 |-----------|------|----------|-------------|
 | `name` | String! | ✅ Yes | Display name of the country field |
 | `type` | CustomFieldType! | ✅ Yes | Must be `COUNTRY` |
-| `projectId` | String! | ✅ Yes | Project ID where the field will be created |
 | `description` | String | No | Help text shown to users |
-| `isActive` | Boolean | No | Whether the field is active (defaults to true) |
+
+**Note**: The `projectId` is not passed in the input but is determined by the GraphQL context (typically from request headers or authentication).
 
 ## Setting Country Values
 
