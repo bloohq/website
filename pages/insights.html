@@ -16,46 +16,46 @@
         }
     }">
         <!-- Category Navigation -->
-        <div class="mb-12">
-            <nav class="flex flex-wrap gap-8 text-lg">
+        <div class="mb-8 sm:mb-12">
+            <nav class="flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
                 <button @click="activeCategory = 'all'" 
                         :class="activeCategory === 'all' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     All
                 </button>
                 <button @click="activeCategory = 'product-updates'" 
                         :class="activeCategory === 'product-updates' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     Product Updates
                 </button>
                 <button @click="activeCategory = 'engineering'" 
                         :class="activeCategory === 'engineering' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     Engineering
                 </button>
                 <button @click="activeCategory = 'ceo-blog'" 
                         :class="activeCategory === 'ceo-blog' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     CEO Blog
                 </button>
                 <button @click="activeCategory = 'best-practices'" 
                         :class="activeCategory === 'best-practices' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     Best Practices
                 </button>
                 <button @click="activeCategory = 'modern-work-practices'" 
                         :class="activeCategory === 'modern-work-practices' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     Modern Work Practices
                 </button>
                 <button @click="activeCategory = 'news'" 
                         :class="activeCategory === 'news' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     News
                 </button>
                 <button @click="activeCategory = 'faq'" 
                         :class="activeCategory === 'faq' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                        class="pb-1 cursor-pointer">
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
                     FAQ
                 </button>
             </nav>
