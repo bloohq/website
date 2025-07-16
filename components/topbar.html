@@ -76,7 +76,7 @@
             <span class="font-medium">📚 New website and documentation! Everything you need to know about Blue in one place.</span>
             
             <!-- CTA link -->
-            <a href="/docs" class="text-brand-blue dark:text-blue-400 font-semibold hover:underline underline-offset-2 ml-1">
+            <a :href="'/docs'" class="text-brand-blue dark:text-blue-400 font-semibold hover:underline underline-offset-2 ml-1">
                 Explore docs →
             </a>
         </div>
@@ -109,7 +109,7 @@
     <div class="relative flex items-center justify-between px-4 h-full">
         <!-- Logo and Toggle -->
         <div class="flex items-center">
-            <a href="/" class="flex items-center" 
+            <a :href="'/'" class="flex items-center" 
                @click="window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'))">
                 <img src="/logo/logo.svg" alt="Blue" 
                      class="h-8 w-auto ml-3 transition-all duration-[400ms] hover:drop-shadow-[0_0_20px_rgba(0,160,210,0.3)] hover:brightness-110 hover:hue-rotate-[5deg]" 
@@ -158,7 +158,7 @@
             </a>
             
             <!-- Contact -->
-            <a href="/contact" 
+            <a :href="'/contact'" 
                @mousemove="handleMagnetic($event, 'contact')"
                @mouseleave="resetMagnetic('contact')"
                :style="getMagneticStyle('contact')"
@@ -371,7 +371,7 @@
             
             <!-- Mobile Menu Actions -->
             <div class="mt-8 pt-8 border-t border-gray-200 space-y-3">
-                <a href="/contact" 
+                <a :href="'/contact'" 
                    @click="mobileMenuOpen = false"
                    class="block w-full px-4 py-2 text-sm font-semibold text-center rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 transition duration-150 ease-in-out">
                     Contact
