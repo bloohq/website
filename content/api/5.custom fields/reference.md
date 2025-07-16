@@ -307,9 +307,9 @@ query GetDetailedReferences {
 ```json
 {
   "errors": [{
-    "message": "Referenced project not found or not accessible",
+    "message": "Project not found",
     "extensions": {
-      "code": "REFERENCE_PROJECT_NOT_FOUND"
+      "code": "PROJECT_NOT_FOUND"
     }
   }]
 }
@@ -320,22 +320,22 @@ query GetDetailedReferences {
 ```json
 {
   "errors": [{
-    "message": "Referenced record not found",
+    "message": "Custom field not found",
     "extensions": {
-      "code": "REFERENCED_TODO_NOT_FOUND"
+      "code": "CUSTOM_FIELD_NOT_FOUND"
     }
   }]
 }
 ```
 
-### Multiple References Not Allowed
+### Permission Denied
 
 ```json
 {
   "errors": [{
-    "message": "Multiple references not allowed for this field",
+    "message": "Forbidden",
     "extensions": {
-      "code": "MULTIPLE_REFERENCES_NOT_ALLOWED"
+      "code": "FORBIDDEN"
     }
   }]
 }

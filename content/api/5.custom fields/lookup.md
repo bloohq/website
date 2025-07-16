@@ -13,14 +13,13 @@ Create a simple lookup field:
 ```graphql
 mutation CreateLookupField {
   createCustomField(input: {
-    name: "Total Budget"
+    name: "Related Todo Tags"
     type: LOOKUP
     lookupOption: {
-      customFieldId: "related_projects_field_id"
-      targetField: "budget"
-      function: SUM
+      referenceId: "reference_field_id"
+      lookupType: TODO_TAG
     }
-    description: "Sum of budget from related projects"
+    description: "Tags from related todos"
   }) {
     id
     name
@@ -32,26 +31,19 @@ mutation CreateLookupField {
 
 ## Advanced Example
 
-Create a lookup field with filtering and formatting:
+Create a lookup field for custom field data:
 
 ```graphql
 mutation CreateAdvancedLookupField {
   createCustomField(input: {
-    name: "Completed Tasks Count"
+    name: "Referenced Budget Data"
     type: LOOKUP
     lookupOption: {
-      customFieldId: "dependencies_field_id"
-      targetField: "status"
-      function: COUNT
-      filter: {
-        status: COMPLETED
-      }
-      display: {
-        type: NUMBER
-        precision: 0
-      }
+      referenceId: "project_reference_field_id"
+      lookupId: "budget_custom_field_id"
+      lookupType: TODO_CUSTOM_FIELD
     }
-    description: "Count of completed dependency tasks"
+    description: "Budget data from referenced project todos"
   }) {
     id
     name
@@ -80,251 +72,182 @@ mutation CreateAdvancedLookupField {
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `customFieldId` | String! | ✅ Yes | ID of the reference field to pull data from |
-| `targetField` | String! | ✅ Yes | Field name to aggregate from referenced records |
-| `function` | LookupFunction! | ✅ Yes | Aggregation function to apply |
-| `filter` | TodoFilterInput | No | Filter criteria for referenced records |
-| `display` | LookupDisplayInput | No | Display formatting options |
+| `referenceId` | String! | ✅ Yes | ID of the reference field to pull data from |
+| `lookupId` | String | No | ID of the specific custom field to lookup (for TODO_CUSTOM_FIELD) |
+| `lookupType` | CustomFieldLookupType! | ✅ Yes | Type of data to extract from referenced records |
 
-## Aggregation Functions
+## Lookup Types
 
-### LookupFunction Types
+### CustomFieldLookupType Values
 
-| Function | Description | Use Cases | Returns |
-|----------|-------------|-----------|---------|
-| `SUM` | Sum of numeric values | Budgets, quantities, scores | Number |
-| `AVERAGE` | Average of numeric values | Ratings, performance metrics | Number |
-| `COUNT` | Count of records | Task counts, completion rates | Number |
-| `MIN` | Minimum value | Earliest dates, lowest scores | Number/Date |
-| `MAX` | Maximum value | Latest dates, highest scores | Number/Date |
-| `CONCAT` | Concatenate text values | Names, descriptions | String |
-| `FIRST` | First value found | Latest status, primary contact | Mixed |
-| `LAST` | Last value found | Most recent update | Mixed |
+| Type | Description | Returns | Use Cases |
+|------|-------------|---------|-----------|
+| `TODO_DUE_DATE` | Due dates from referenced todos | Date range | Project timelines, deadline tracking |
+| `TODO_CREATED_AT` | Creation dates from referenced todos | Date range | Creation time analysis |
+| `TODO_UPDATED_AT` | Last updated dates from referenced todos | Date range | Activity tracking |
+| `TODO_TAG` | Tags from referenced todos | Array of tags | Tag aggregation, categorization |
+| `TODO_ASSIGNEE` | Assignees from referenced todos | Array of users | Team member tracking |
+| `TODO_DESCRIPTION` | Descriptions from referenced todos | Array of text | Content aggregation |
+| `TODO_LIST` | Todo list names from referenced todos | Array of list names | List organization |
+| `TODO_CUSTOM_FIELD` | Custom field values from referenced todos | Varies by field type | Cross-project data aggregation |
 
-### Function Examples
+### Lookup Examples
 
 ```graphql
-# Sum all budget values from referenced records
+# Get tags from referenced todos
 {
-  function: SUM
-  targetField: "budget"
+  lookupType: TODO_TAG
+  referenceId: "reference_field_id"
 }
 
-# Count completed tasks
+# Get assignees from referenced todos
 {
-  function: COUNT
-  filter: { status: COMPLETED }
+  lookupType: TODO_ASSIGNEE
+  referenceId: "reference_field_id"
 }
 
-# Get average rating
+# Get due dates from referenced todos
 {
-  function: AVERAGE
-  targetField: "rating"
+  lookupType: TODO_DUE_DATE
+  referenceId: "reference_field_id"
 }
 
-# Find maximum due date
+# Get custom field data from referenced todos
 {
-  function: MAX
-  targetField: "dueDate"
-}
-
-# Concatenate all assignee names
-{
-  function: CONCAT
-  targetField: "assignees.name"
+  lookupType: TODO_CUSTOM_FIELD
+  referenceId: "reference_field_id"
+  lookupId: "budget_custom_field_id"
 }
 ```
 
-## Target Field Options
+## TODO_CUSTOM_FIELD Lookup
 
-### Built-in Todo Fields
+When using `TODO_CUSTOM_FIELD` type, the lookup extracts data from a specific custom field in the referenced todos. The `lookupId` parameter specifies which custom field to look up.
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `title` | String | Record title |
-| `description` | String | Record description |
-| `status` | TodoStatus | Record status |
-| `dueDate` | DateTime | Due date |
-| `createdAt` | DateTime | Creation date |
-| `updatedAt` | DateTime | Last update date |
-| `assignees.name` | String | Assignee names |
-| `assignees.email` | String | Assignee emails |
-| `tags.name` | String | Tag names |
+### Supported Custom Field Types
 
-### Custom Field Values
+| Field Type | Returns | Example |
+|------------|---------|---------|
+| `CURRENCY` | `{number, currency}` objects | Budget amounts with currency |
+| `NUMBER` | Numeric values | Scores, quantities |
+| `UNIQUE_ID` | Formatted ID strings | Ticket numbers |
+| `SELECT_SINGLE` | Option objects | Status values |
+| `SELECT_MULTI` | Arrays of option objects | Category selections |
+| `LOCATION` | Location data with grouped todos | Geographic data |
+| `LOOKUP` | Nested lookup results | Chained lookups |
 
-Reference custom fields from referenced records:
+### Example Usage
 
 ```graphql
+# Get budget amounts from referenced todos
 {
-  targetField: "customFields.budget"  # Custom field named "budget"
-  targetField: "customFields.priority"  # Custom field named "priority"
-  targetField: "customFields.score"  # Custom field named "score"
+  lookupType: TODO_CUSTOM_FIELD
+  referenceId: "project_reference_field"
+  lookupId: "budget_custom_field_id"
 }
 ```
 
-## Display Configuration
+## Lookup Results
 
-### LookupDisplayInput
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `type` | DisplayType | NUMBER, CURRENCY, PERCENTAGE, TEXT |
-| `precision` | Int | Decimal places for numbers |
-| `currency` | CurrencyInput | Currency configuration |
-| `format` | String | Custom format string |
-
-### Display Examples
-
-```graphql
-# Currency display
-{
-  display: {
-    type: CURRENCY
-    currency: {
-      code: "USD"
-      name: "US Dollar"
-    }
-    precision: 2
-  }
-}
-
-# Percentage display
-{
-  display: {
-    type: PERCENTAGE
-    precision: 1
-  }
-}
-
-# Number display
-{
-  display: {
-    type: NUMBER
-    precision: 0
-  }
-}
-```
-
-## Filtering Referenced Data
-
-Use the `filter` parameter to limit which referenced records are included:
-
-```graphql
-{
-  lookupOption: {
-    customFieldId: "tasks_field_id"
-    targetField: "customFields.effort"
-    function: SUM
-    filter: {
-      status: ACTIVE
-      assigneeIds: ["user_123"]
-      tags: ["high-priority"]
-      dueDateFrom: "2024-01-01"
-      dueDateTo: "2024-12-31"
-    }
-  }
-}
-```
+Lookup fields automatically calculate their values based on the referenced data. The results are accessible through the `CustomFieldLookupOption` type.
 
 ## Lookup Field Values
 
-Lookup fields are read-only and automatically calculated. Values are stored in the `lookupResult` field:
+Lookup fields are read-only and automatically calculated. Values are accessed through the `CustomFieldLookupOption` type:
 
 ```json
 {
-  "number": 15750.50,
-  "lookupResult": {
-    "value": 15750.50,
-    "display": {
-      "type": "CURRENCY",
-      "currency": {
-        "code": "USD",
-        "name": "US Dollar"
+  "customFieldLookupOption": {
+    "lookupType": "TODO_TAG",
+    "lookupResult": [
+      {
+        "id": "tag_123",
+        "name": "urgent",
+        "color": "#ff0000"
       },
-      "formatted": "$15,750.50"
-    },
-    "sourceCount": 12,
-    "lastCalculated": "2024-03-15T10:30:00Z"
+      {
+        "id": "tag_456", 
+        "name": "development",
+        "color": "#00ff00"
+      }
+    ]
   }
 }
 ```
 
 ## Response Fields
 
-### TodoCustomField Response
+### CustomField Response (for lookup fields)
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | String! | Unique identifier for the field value |
-| `customField` | CustomField! | The lookup field definition |
-| `number` | Float | Calculated numeric result |
-| `text` | String | Calculated text result |
-| `lookupResult` | JSON | Full result with metadata |
-| `todo` | Todo! | The record this value belongs to |
-| `createdAt` | DateTime! | When the value was created |
-| `updatedAt` | DateTime! | When the value was last calculated |
+| `id` | String! | Unique identifier for the field |
+| `name` | String! | Display name of the lookup field |
+| `type` | CustomFieldType! | Will be `LOOKUP` |
+| `customFieldLookupOption` | CustomFieldLookupOption | Lookup configuration and results |
+| `createdAt` | DateTime! | When the field was created |
+| `updatedAt` | DateTime! | When the field was last updated |
 
-### LookupResult Structure
+### CustomFieldLookupOption Structure
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `value` | Mixed | The calculated value |
-| `display` | DisplayInfo | Formatted display information |
-| `sourceCount` | Int | Number of records used in calculation |
-| `lastCalculated` | DateTime | When the calculation was performed |
-| `error` | String | Error message if calculation failed |
+| `lookupType` | CustomFieldLookupType! | Type of lookup (TODO_TAG, TODO_ASSIGNEE, etc.) |
+| `lookupResult` | JSON | The calculated lookup results |
+| `reference` | CustomField | The reference field being looked up |
+| `lookup` | CustomField | The specific field being looked up (for TODO_CUSTOM_FIELD) |
+| `parentCustomField` | CustomField | The parent lookup field |
 
 ## Querying Lookup Data
 
 ### Basic Query
 
 ```graphql
-query GetRecordsWithLookups {
-  todos(projectId: "project_123") {
+query GetLookupFields {
+  customFields(projectId: "project_123") {
     id
-    title
-    customFields {
-      id
-      customField {
-        name
-        type
-      }
-      number
-      text
+    name
+    type
+    customFieldLookupOption {
+      lookupType
       lookupResult
+      reference {
+        id
+        name
+      }
+      lookup {
+        id
+        name
+      }
     }
   }
 }
 ```
 
-### Advanced Query with Metadata
+### Advanced Query with Results
 
 ```graphql
 query GetDetailedLookups {
-  todos(projectId: "project_123") {
+  customFields(projectId: "project_123") {
     id
-    title
-    customFields {
-      id
-      customField {
+    name
+    type
+    customFieldLookupOption {
+      lookupType
+      lookupResult
+      reference {
+        id
+        name
+        referenceProjectId
+      }
+      lookup {
+        id
         name
         type
-        lookupOption {
-          customFieldId
-          targetField
-          function
-          filter
-        }
       }
-      lookupResult {
-        value
-        display {
-          formatted
-          type
-        }
-        sourceCount
-        lastCalculated
+      parentCustomField {
+        id
+        name
       }
     }
   }
@@ -368,35 +291,35 @@ Lookup fields automatically recalculate when:
 ```json
 {
   "errors": [{
-    "message": "Reference field not found",
+    "message": "Custom field not found",
     "extensions": {
-      "code": "REFERENCE_FIELD_NOT_FOUND"
+      "code": "CUSTOM_FIELD_NOT_FOUND"
     }
   }]
 }
 ```
 
-### Invalid Target Field
+### Invalid Lookup Configuration
 
 ```json
 {
   "errors": [{
-    "message": "Target field not found in referenced records",
+    "message": "Circular lookup detected",
     "extensions": {
-      "code": "TARGET_FIELD_NOT_FOUND"
+      "code": "VALIDATION_ERROR"
     }
   }]
 }
 ```
 
-### Calculation Error
+### Project Access Error
 
 ```json
 {
   "errors": [{
-    "message": "Lookup calculation failed",
+    "message": "Project not found",
     "extensions": {
-      "code": "LOOKUP_CALCULATION_ERROR"
+      "code": "PROJECT_NOT_FOUND"
     }
   }]
 }

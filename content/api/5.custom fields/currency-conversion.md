@@ -17,7 +17,6 @@ mutation CreateCurrencyConversionField {
   createCustomField(input: {
     name: "Price in EUR"
     type: CURRENCY_CONVERSION
-    projectId: "proj_123"
     currencyFieldId: "source_currency_field_id"
     conversionDateType: "currentDate"
   }) {
@@ -39,7 +38,6 @@ mutation CreateHistoricalConversionField {
   createCustomField(input: {
     name: "Q1 Budget in Local Currency"
     type: CURRENCY_CONVERSION
-    projectId: "proj_123"
     currencyFieldId: "budget_field_id"
     conversionDateType: "specificDate"
     conversionDate: "2024-01-01T00:00:00Z"
@@ -66,7 +64,6 @@ mutation CreateSourceCurrencyField {
   createCustomField(input: {
     name: "Contract Value"
     type: CURRENCY
-    projectId: "proj_123"
     currency: "USD"
   }) {
     id  # Save this ID for Step 2
@@ -83,7 +80,6 @@ mutation CreateConversionField {
   createCustomField(input: {
     name: "Contract Value (Local Currency)"
     type: CURRENCY_CONVERSION
-    projectId: "proj_123"
     currencyFieldId: "source_field_id_from_step_1"
     conversionDateType: "currentDate"
   }) {
@@ -100,7 +96,7 @@ mutation CreateConversionField {
 mutation CreateConversionOptions {
   createCustomFieldOptions(input: {
     customFieldId: "conversion_field_id_from_step_2"
-    options: [
+    customFieldOptions: [
       {
         title: "USD to EUR"
         currencyConversionFrom: "USD"
@@ -134,12 +130,12 @@ mutation CreateConversionOptions {
 |-----------|------|----------|-------------|
 | `name` | String! | ✅ Yes | Display name of the conversion field |
 | `type` | CustomFieldType! | ✅ Yes | Must be `CURRENCY_CONVERSION` |
-| `projectId` | String! | ✅ Yes | Project ID where the field will be created |
-| `currencyFieldId` | String! | ✅ Yes | ID of the source CURRENCY field to convert from |
-| `conversionDateType` | String! | ✅ Yes | Date strategy for exchange rates (see below) |
-| `conversionDate` | String | Conditional | Required based on conversionDateType |
+| `currencyFieldId` | String | No | ID of the source CURRENCY field to convert from |
+| `conversionDateType` | String | No | Date strategy for exchange rates (see below) |
+| `conversionDate` | String | No | Date string for conversion (based on conversionDateType) |
 | `description` | String | No | Help text shown to users |
-| `isActive` | Boolean | No | Whether the field is active (defaults to true) |
+
+**Note**: Custom fields are automatically associated with the project based on the user's current project context. No `projectId` parameter is required.
 
 ### Conversion Date Types
 
