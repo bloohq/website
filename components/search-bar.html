@@ -146,8 +146,15 @@ DEPENDENCIES:
                  this.query = '';
              }, 150);
              // Navigate after all animations complete (150ms dropdown + 300ms search bar = 450ms total)
-             setTimeout(() => {
-                 window.location.href = result.item.url;
+             setTimeout(async () => {
+                 // Create a temporary link element to use SPA navigation
+                 const link = document.createElement('a');
+                 link.href = result.item.url;
+                 if (window.SPAUtils) {
+                     await window.SPAUtils.handleNavigation(link);
+                 } else {
+                     window.location.href = result.item.url;
+                 }
              }, 450);
          },
          selectSuggestion(suggestion) {
@@ -159,8 +166,15 @@ DEPENDENCIES:
                  this.query = '';
              }, 150);
              // Navigate after all animations complete (150ms dropdown + 300ms search bar = 450ms total)
-             setTimeout(() => {
-                 window.location.href = suggestion.url;
+             setTimeout(async () => {
+                 // Create a temporary link element to use SPA navigation
+                 const link = document.createElement('a');
+                 link.href = suggestion.url;
+                 if (window.SPAUtils) {
+                     await window.SPAUtils.handleNavigation(link);
+                 } else {
+                     window.location.href = suggestion.url;
+                 }
              }, 450);
          },
          getCategoryClass(category) {
