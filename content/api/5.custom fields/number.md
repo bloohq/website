@@ -251,45 +251,6 @@ query FilterByRange {
 }
 ```
 
-## Aggregation and Analysis
-
-Number fields support aggregation functions:
-
-```graphql
-query AggregateNumbers {
-  todoCustomFields(where: {
-    customFieldId: { equals: "score_field_id" }
-    number: { not: null }
-  }) {
-    _sum {
-      number
-    }
-    _avg {
-      number
-    }
-    _min {
-      number
-    }
-    _max {
-      number
-    }
-    _count {
-      number
-    }
-  }
-}
-```
-
-### Supported Aggregations
-
-| Function | Description |
-|----------|-------------|
-| `_sum` | Total of all values |
-| `_avg` | Mean of all values |
-| `_min` | Smallest value |
-| `_max` | Largest value |
-| `_count` | Number of records with values |
-
 ## Display Formatting
 
 ### With Prefix

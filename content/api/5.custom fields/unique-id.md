@@ -15,7 +15,6 @@ mutation CreateUniqueIdField {
   createCustomField(input: {
     name: "Ticket Number"
     type: UNIQUE_ID
-    projectId: "proj_123"
     useSequenceUniqueId: true
   }) {
     id
@@ -35,7 +34,6 @@ mutation CreateFormattedUniqueIdField {
   createCustomField(input: {
     name: "Order ID"
     type: UNIQUE_ID
-    projectId: "proj_123"
     description: "Auto-generated order identifier"
     useSequenceUniqueId: true
     prefix: "ORD-"
@@ -72,7 +70,7 @@ mutation CreateFormattedUniqueIdField {
 
 ### Auto-Sequencing (`useSequenceUniqueId`)
 - **true**: Automatically generates sequential IDs when records are created
-- **false**: Manual entry required (functions like a text field)
+- **false** or **undefined**: Manual entry required (functions like a text field)
 
 ### Prefix (`prefix`)
 - Optional text prefix added to all generated IDs
@@ -87,7 +85,7 @@ mutation CreateFormattedUniqueIdField {
 ### Starting Number (`sequenceStartingNumber`)
 - The first number in the sequence
 - Example: `sequenceStartingNumber: 1000` starts at 1000, 1001, 1002...
-- If not specified, starts at 1
+- If not specified, starts at 1 (default behavior)
 
 ## Generated ID Format
 
@@ -113,7 +111,7 @@ The final ID format combines all configuration options:
 ### Query Records with Unique IDs
 ```graphql
 query GetRecordsWithUniqueIds {
-  todos(projectId: "proj_123") {
+  todos(filter: { projectIds: ["proj_123"] }) {
     id
     title
     customFields {
@@ -125,7 +123,7 @@ query GetRecordsWithUniqueIds {
         sequenceDigits
       }
       sequenceId    # The generated sequence number
-      value        # Same as sequenceId for UNIQUE_ID fields
+      text         # The text value for UNIQUE_ID fields
     }
   }
 }
@@ -149,7 +147,7 @@ query GetRecordsWithUniqueIds {
               "sequenceDigits": 3
             },
             "sequenceId": 42,
-            "value": 42
+            "text": "TASK-042"
           }
         ]
       }
@@ -162,8 +160,8 @@ query GetRecordsWithUniqueIds {
 
 ### When IDs Are Generated
 - **Record Creation**: IDs are automatically assigned when new records are created
-- **Field Addition**: When adding a UNIQUE_ID field to existing records, IDs are generated for all records
-- **Background Processing**: ID generation happens asynchronously via job queues
+- **Field Addition**: When adding a UNIQUE_ID field to existing records, a background job is queued (worker implementation pending)
+- **Background Processing**: ID generation for new records happens synchronously via database triggers
 
 ### Generation Process
 1. **Trigger**: New record is created or UNIQUE_ID field is added
@@ -181,14 +179,14 @@ query GetRecordsWithUniqueIds {
 ## Manual vs Automatic Mode
 
 ### Automatic Mode (`useSequenceUniqueId: true`)
-- IDs are automatically generated
-- Users cannot manually edit values
+- IDs are automatically generated via database triggers
 - Sequential numbering is guaranteed
-- Background processing handles ID assignment
+- Atomic sequence generation prevents duplicates
+- Formatted IDs combine prefix + padded sequence number
 
-### Manual Mode (`useSequenceUniqueId: false`)
+### Manual Mode (`useSequenceUniqueId: false` or `undefined`)
 - Functions like a regular text field
-- Users can input custom values
+- Users can input custom values via `setTodoCustomField` with `text` parameter
 - No automatic generation
 - No uniqueness enforcement beyond database constraints
 
@@ -214,9 +212,8 @@ mutation SetUniqueIdValue {
 |-------|------|-------------|
 | `id` | String! | Unique identifier for the field value |
 | `customField` | CustomField! | The custom field definition |
-| `sequenceId` | Int | The generated sequence number (auto mode) |
-| `text` | String | The stored text value (manual mode) |
-| `value` | Any | Returns sequenceId for auto mode, text for manual mode |
+| `sequenceId` | Int | The generated sequence number (populated for UNIQUE_ID fields) |
+| `text` | String | The formatted text value (combines prefix + padded sequence) |
 | `todo` | Todo! | The record this value belongs to |
 | `createdAt` | DateTime! | When the value was created |
 | `updatedAt` | DateTime! | When the value was last updated |
@@ -234,8 +231,8 @@ mutation SetUniqueIdValue {
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create unique ID field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update unique ID field | `CUSTOM_FIELDS_UPDATE` at company or project level |
+| Create unique ID field | `OWNER` or `ADMIN` role at project level |
+| Update unique ID field | `OWNER` or `ADMIN` role at project level |
 | Set manual value | Standard record edit permissions |
 | View unique ID value | Standard record view permissions |
 
@@ -247,19 +244,19 @@ mutation SetUniqueIdValue {
   "errors": [{
     "message": "Invalid sequence configuration",
     "extensions": {
-      "code": "VALIDATION_ERROR"
+      "code": "BAD_USER_INPUT"
     }
   }]
 }
 ```
 
-### Manual Edit in Auto Mode
+### Permission Error
 ```json
 {
   "errors": [{
-    "message": "Cannot manually set value for auto-sequence field",
+    "message": "CustomField not found",
     "extensions": {
-      "code": "FORBIDDEN"
+      "code": "CUSTOM_FIELD_NOT_FOUND"
     }
   }]
 }
@@ -274,9 +271,9 @@ mutation SetUniqueIdValue {
 - **Scoped**: Sequences are independent per project
 
 ### Performance Considerations
-- ID generation is asynchronous and may take a moment
-- Large batches of records are processed in background jobs
-- Sequence generation uses database locks (minimal performance impact)
+- ID generation for new records is synchronous via database triggers
+- Sequence generation uses `FOR UPDATE` locks for atomic operations
+- Background job system exists but worker implementation is pending
 - Consider sequence starting numbers for high-volume projects
 
 ### Migration and Updates
