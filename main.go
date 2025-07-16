@@ -14,7 +14,6 @@ import (
 	"github.com/joho/godotenv"
 )
 
-
 func main() {
 	startTime := time.Now()
 	fmt.Printf("🚀 Starting Blue Website server at %s...\n", startTime.Format("15:04:05.000"))
@@ -159,7 +158,7 @@ func main() {
 	cacheFS := web.NewCacheFileServer("public/")
 	mainHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		path := r.URL.Path
-		
+
 		// Check if static file exists first (excluding directories)
 		fullPath := filepath.Join("public", path)
 		if info, err := os.Stat(fullPath); err == nil && !info.IsDir() {
@@ -167,7 +166,7 @@ func main() {
 			cacheFS.ServeHTTP(w, r)
 			return
 		}
-		
+
 		// Not a static file, pass to router
 		router.ServeHTTP(w, r)
 	})
@@ -182,5 +181,21 @@ func main() {
 
 	totalStartupTime := time.Since(startTime)
 	fmt.Printf("🚀 Blue Website server ready on :%s (total startup: %v)\n", port, totalStartupTime)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+
+	// Bind to all network interfaces only in development
+	host := os.Getenv("HOST")
+	if host == "" {
+		// In production, bind to localhost only for security
+		if os.Getenv("ENV") == "production" {
+			host = "127.0.0.1"
+		} else {
+			// In development, allow network access for testing on devices
+			host = "0.0.0.0"
+			fmt.Printf("🌐 Development mode: Server accessible on network at http://[YOUR_IP]:%s\n", port)
+			fmt.Printf("📱 To find your IP: ifconfig | grep 'inet ' | grep -v 127.0.0.1\n")
+		}
+	}
+
+	fmt.Printf("🚀 Blue Website server ready on http://%s:%s (total startup: %v)\n", host, port, totalStartupTime)
+	log.Fatal(http.ListenAndServe(host+":"+port, nil))
 }
