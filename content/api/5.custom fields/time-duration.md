@@ -281,9 +281,9 @@ timeDurationEndInput: {
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create duration field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update duration field | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| View duration value | Standard record view permissions |
+| Create duration field | Project-level `OWNER` or `ADMIN` role |
+| Update duration field | Project-level `OWNER` or `ADMIN` role |
+| View duration value | Any project member role |
 
 ## Error Responses
 
