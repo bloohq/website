@@ -47,6 +47,17 @@
         {{template "value-propositions" $governmentProblems}}
     </div>
 
+       <!-- Testimonial Section -->
+       <div class="mb-20 px-6 lg:px-8">
+        {{template "testimonial-single" 
+            dict 
+                "ImageUrl" "/testimonials/kyriacos.jpeg"
+                "Quote" "Blue has massively helped us manage our data work, ensuring that our teams are clear on what they need to do, and why. It's a great tool for us."
+                "Name" "Kyriacos Koupparis, PhD"
+                "Title" "Head of Unit, Early Warning and Forecasting, World Food Programme."
+        }}
+    </div>
+
     <!-- Key Reasons Section -->
     <div class="mb-20">
         {{$governmentFeatures := parseJSON `{
@@ -162,16 +173,6 @@
         {{template "feature-video" $transparencyData}}
     </div>
 
-    <!-- Testimonial Section -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{template "testimonial-single" 
-            dict 
-                "ImageUrl" "/testimonials/government-administrator.png"
-                "Quote" "Blue transformed how we serve our citizens. We've reduced permit processing time by 60% and citizens can now track their requests online. The cost savings allowed us to reassign staff to more valuable work."
-                "Name" "Michael Thompson"
-                "Title" "Director of Operations, Metro City Government"
-        }}
-    </div>
 
     <!-- Government Stats Section -->
     <div class="mb-20">
