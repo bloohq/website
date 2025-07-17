@@ -501,3 +501,24 @@ body {
   66%  { content: "🌏"; }
   100% { content: "🌍"; }
 }
+
+/* Animation delays for pulsing effect */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animation-delay-1200 {
+  animation-delay: 1200ms;
+}
+
+.animation-delay-1600 {
+  animation-delay: 1600ms;
+}

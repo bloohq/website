@@ -5,6 +5,7 @@
     newsBarDismissed: false,
     magneticButtons: {},
     scrolled: false,
+    customLogoUrl: null,
     init() {
         // Initialize dark mode from localStorage
         const savedTheme = localStorage.getItem('theme');
@@ -18,6 +19,14 @@
         
         // Initialize news bar dismissal state
         this.newsBarDismissed = localStorage.getItem('topNewsBarDismissed') === 'true';
+        
+        // Initialize custom logo from localStorage
+        this.customLogoUrl = localStorage.getItem('customLogo');
+        
+        // Listen for logo change events
+        window.addEventListener('logoChanged', (event) => {
+            this.customLogoUrl = event.detail.logoUrl;
+        });
         
         // Initialize scroll detection
         this.handleScroll = () => {
@@ -112,9 +121,11 @@
         <div class="flex items-center">
             <a :href="'/'" class="flex items-center" 
                @click="window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'))">
-                <img src="/logo/logo.svg" alt="Blue" 
+                <img :src="customLogoUrl || '/logo/logo.svg'" 
+                     :alt="customLogoUrl ? 'Custom Logo' : 'Blue'" 
                      class="h-8 w-auto ml-3 transition-all duration-[400ms] hover:drop-shadow-[0_0_20px_rgba(0,160,210,0.3)] hover:brightness-110 hover:hue-rotate-[5deg]" 
                      style="transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
+                     @error="customLogoUrl = null"
                      width="120" height="32">
             </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 

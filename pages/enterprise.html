@@ -52,34 +52,50 @@
     <section class="mb-16">
         <!-- Dedicated Infrastructure -->
         <div class="mb-16">
-            {{$infrastructureData := parseJSON `{
-                "Title": "Your own dedicated Blue infrastructure.",
-                "Description": "Isolated deployment with dedicated database, backend services, frontend servers, and background processing. Get ultimate performance with complete data residency—even we can't access your database unless you specifically authorize it.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Heading": "Enterprise security",
-                    "Links": [
-                        {
-                            "Text": "End-to-end encryption",
-                            "Url": "/platform/security",
-                            "Description": "for complete data protection"
-                        },
-                        {
-                            "Text": "GDPR & HIPAA compliance",
-                            "Url": "/legal/gdpr",
-                            "Description": "for regulated industries"
-                        },
-                        {
-                            "Text": "Complete audit trails",
-                            "Url": "/platform/features/audit-trails",
-                            "Description": "for compliance and accountability"
-                        }
-                    ]
-                }
-            }`}}
-            
-            {{template "feature-video" $infrastructureData}}
+            <!-- Custom Feature with Pulsing Circle -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+                <!-- Text Content -->
+                <div class="space-y-4 order-1 lg:order-1">
+                    <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">Your own dedicated Blue infrastructure.</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Isolated deployment with dedicated database, backend services, frontend servers, and background processing. Get ultimate performance with complete data residency—even we can't access your database unless you specifically authorize it.</p>
+                    
+                    <!-- See Also Section -->
+                    <div class="pt-4">
+                        <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">Enterprise security</h5>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/platform/security" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                                    End-to-end encryption
+                                </a>
+                                <span class="text-sm text-gray-500 dark:text-gray-400"> for complete data protection</span>
+                            </li>
+                            <li>
+                                <a href="/legal/gdpr" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                                    GDPR & HIPAA compliance
+                                </a>
+                                <span class="text-sm text-gray-500 dark:text-gray-400"> for regulated industries</span>
+                            </li>
+                            <li>
+                                <a href="/platform/features/audit-trails" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                                    Complete audit trails
+                                </a>
+                                <span class="text-sm text-gray-500 dark:text-gray-400"> for compliance and accountability</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Pulsing Circle -->
+                <div class="order-2 lg:order-2 flex items-center justify-center">
+                    <div class="relative">
+                        <!-- Pulsing animation rings -->
+                        <div class="absolute inset-0 rounded-full bg-brand-blue opacity-20 animate-ping"></div>
+                        <div class="absolute inset-0 rounded-full bg-brand-blue opacity-10 animate-ping animation-delay-200"></div>
+                        <!-- Main circle -->
+                        <div class="relative w-48 h-48 rounded-full bg-brand-blue"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Custom Development -->

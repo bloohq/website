@@ -47,13 +47,164 @@
 
     <!-- Custom Branding Section -->
     <section class="mb-20">
-        {{$brandingData := parseJSON `{
-            "Title": "Your logo & colors everywhere",
-            "Description": "Upload your logo and set your brand colors once. They'll automatically appear across web, desktop, and mobile apps, creating a cohesive experience for your users.",
-            "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "right"
-        }`}}
-        {{template "feature-video" $brandingData}}
+        <div class="max-w-7xl mx-auto py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side: Text Content -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">
+                        Your logo & colors everywhere
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        Upload your logo and set your brand colors once. They'll automatically appear across web, desktop, and mobile apps, creating a cohesive experience for your users.
+                    </p>
+                </div>
+                
+                <!-- Right Side: Logo Upload Interface -->
+                <div x-data="logoUploader()" class="relative">
+                    <!-- Upload Zone -->
+                    <div @dragover.prevent="isDragging = true" 
+                         @dragleave.prevent="isDragging = false" 
+                         @drop.prevent="handleDrop($event)"
+                         :class="{ 'border-brand-blue bg-blue-50': isDragging, 'border-gray-300': !isDragging }"
+                         class="border-2 border-dashed rounded-lg p-8 text-center transition-all duration-200">
+                        
+                        <!-- Preview Area -->
+                        <div x-show="previewUrl" class="mb-6">
+                            <img :src="previewUrl" alt="Logo preview" class="mx-auto max-h-24 max-w-full">
+                        </div>
+                        
+                        <!-- Upload Instructions -->
+                        <div x-show="!previewUrl">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                <label for="logo-upload" class="font-medium text-brand-blue hover:text-brand-blue-hover cursor-pointer">
+                                    Upload a logo
+                                </label>
+                                <span> or drag and drop</span>
+                            </p>
+                            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">PNG, JPG, SVG up to 500KB</p>
+                        </div>
+                        
+                        <!-- Hidden File Input -->
+                        <input id="logo-upload" 
+                               type="file" 
+                               accept="image/png,image/jpeg,image/jpg,image/svg+xml" 
+                               @change="handleFileSelect($event)"
+                               class="hidden">
+                        
+                        <!-- Actions when logo is uploaded -->
+                        <div x-show="previewUrl" class="mt-4 space-y-2">
+                            <label for="logo-upload" class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition-colors">
+                                Change Logo
+                            </label>
+                            <button @click="resetLogo()" 
+                                    class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 ml-2 transition-colors">
+                                Reset to Default
+                            </button>
+                        </div>
+                        
+                        <!-- Status Messages -->
+                        <div x-show="message" 
+                             x-text="message" 
+                             :class="{ 'text-green-600': messageType === 'success', 'text-red-600': messageType === 'error' }"
+                             class="mt-3 text-sm font-medium"></div>
+                    </div>
+                    
+                    <!-- Info Box -->
+                    <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
+                        <p class="text-sm text-blue-900 dark:text-blue-200">
+                            <strong>Try it out!</strong> Upload your logo here to see how it looks in the navigation bar. This is a demo - your changes are saved locally in your browser.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JavaScript for Logo Upload -->
+        <script>
+            function logoUploader() {
+                return {
+                    isDragging: false,
+                    previewUrl: null,
+                    message: '',
+                    messageType: '',
+                    
+                    init() {
+                        // Load existing logo from localStorage
+                        const savedLogo = localStorage.getItem('customLogo');
+                        if (savedLogo) {
+                            this.previewUrl = savedLogo;
+                            this.showMessage('Custom logo loaded', 'success');
+                        }
+                    },
+                    
+                    handleDrop(event) {
+                        this.isDragging = false;
+                        const files = event.dataTransfer.files;
+                        if (files.length > 0) {
+                            this.processFile(files[0]);
+                        }
+                    },
+                    
+                    handleFileSelect(event) {
+                        const files = event.target.files;
+                        if (files.length > 0) {
+                            this.processFile(files[0]);
+                        }
+                    },
+                    
+                    processFile(file) {
+                        // Validate file type
+                        const validTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/svg+xml'];
+                        if (!validTypes.includes(file.type)) {
+                            this.showMessage('Please upload a PNG, JPG, or SVG file', 'error');
+                            return;
+                        }
+                        
+                        // Validate file size (500KB)
+                        if (file.size > 500 * 1024) {
+                            this.showMessage('File size must be less than 500KB', 'error');
+                            return;
+                        }
+                        
+                        // Read and display the file
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            this.previewUrl = e.target.result;
+                            localStorage.setItem('customLogo', e.target.result);
+                            this.showMessage('Logo uploaded successfully!', 'success');
+                            
+                            // Dispatch event to update topbar
+                            window.dispatchEvent(new CustomEvent('logoChanged', { 
+                                detail: { logoUrl: e.target.result } 
+                            }));
+                        };
+                        reader.readAsDataURL(file);
+                    },
+                    
+                    resetLogo() {
+                        this.previewUrl = null;
+                        localStorage.removeItem('customLogo');
+                        this.showMessage('Reset to default Blue logo', 'success');
+                        
+                        // Dispatch event to update topbar
+                        window.dispatchEvent(new CustomEvent('logoChanged', { 
+                            detail: { logoUrl: null } 
+                        }));
+                    },
+                    
+                    showMessage(text, type) {
+                        this.message = text;
+                        this.messageType = type;
+                        setTimeout(() => {
+                            this.message = '';
+                        }, 3000);
+                    }
+                }
+            }
+        </script>
     </section>
 
     <!-- Custom Domain Section -->
