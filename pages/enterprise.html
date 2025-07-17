@@ -577,18 +577,91 @@
         
         <!-- White Label & Battle-Tested -->
         <div>
-            {{$whitelabelData := parseJSON `{
-                "Title": "Battle-tested platform, your brand.",
-                "Description": "Complete white-label solution included with enterprise plans. Our infrastructure handles billions of API calls annually, and every feature is used by thousands of companies. You get enterprise reliability with startup agility.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
-                "Button": {
-                    "Text": "Learn about white-label",
-                    "Url": "/platform/white-label"
-                }
-            }`}}
-            
-            {{template "feature-video" $whitelabelData}}
+            <!-- Custom Feature with Accelerometer Animation -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+                <!-- Accelerometer Animation -->
+                <div class="order-1 lg:order-1 flex items-center justify-center">
+                    <div class="relative w-48 h-48"
+                         x-data="{
+                             intersecting: false,
+                             progress: 0,
+                             rotation: 0,
+                             animationFrame: null,
+                             lastTime: 0,
+                             updateProgress() {
+                                 const rect = $el.getBoundingClientRect();
+                                 const viewportHeight = window.innerHeight;
+                                 this.progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight * 0.7)));
+                             },
+                             startAnimation() {
+                                 const animate = (currentTime) => {
+                                     if (!this.lastTime) this.lastTime = currentTime;
+                                     const deltaTime = currentTime - this.lastTime;
+                                     this.lastTime = currentTime;
+                                     
+                                     // Speed based on progress: 0 = 5 deg/s, 1 = 1800 deg/s (5 rotations/second)
+                                     const speed = 5 + (this.progress * 1795);
+                                     this.rotation += (speed * deltaTime) / 1000;
+                                     
+                                     if (this.rotation >= 360) this.rotation -= 360;
+                                     
+                                     if (this.intersecting) {
+                                         this.animationFrame = requestAnimationFrame(animate);
+                                     }
+                                 };
+                                 this.animationFrame = requestAnimationFrame(animate);
+                             },
+                             stopAnimation() {
+                                 if (this.animationFrame) {
+                                     cancelAnimationFrame(this.animationFrame);
+                                     this.animationFrame = null;
+                                     this.lastTime = 0;
+                                 }
+                             }
+                         }"
+                         x-init="updateProgress()"
+                         x-intersect="intersecting = true; startAnimation()"
+                         x-intersect:leave="intersecting = false; stopAnimation()"
+                         x-on:scroll.window="if (intersecting) { updateProgress() }">
+                        
+                        <!-- Outer circle -->
+                        <div class="absolute inset-0 rounded-full border-4 border-gray-200 dark:border-gray-700"></div>
+                        
+                        <!-- Tick marks -->
+                        <div class="absolute inset-0">
+                            <!-- Left tick (9 o'clock) -->
+                            <div class="absolute w-4 h-1 bg-gray-300 dark:bg-gray-600" style="left: -2px; top: 50%; transform: translateY(-50%);"></div>
+                            <!-- Right tick (3 o'clock) -->
+                            <div class="absolute w-4 h-1 bg-gray-300 dark:bg-gray-600" style="right: -2px; top: 50%; transform: translateY(-50%);"></div>
+                        </div>
+                        
+                        <!-- Center dot -->
+                        <div class="absolute w-4 h-4 bg-brand-blue rounded-full" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+                        
+                        <!-- Needle -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-20 h-1 bg-brand-blue origin-right"
+                                 :style="`transform: rotate(${rotation}deg)`"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="space-y-4 order-2 lg:order-2">
+                    <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">Battle-tested platform, your brand.</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Complete white-label solution included with enterprise plans. Our infrastructure handles billions of API calls annually, and every feature is used by thousands of companies. You get enterprise reliability with startup agility.</p>
+                    
+                    <!-- Button -->
+                    <div class="pt-2">
+                        <a href="/platform/white-label" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                            Learn about white-label
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
