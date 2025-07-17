@@ -96,13 +96,38 @@ USE CASES:
 - Project status boards
 */ -}}
 {{define "roadmap-board"}}
-<div class="kanban-board grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}">
+<div class="kanban-board grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}"
+     x-data="{
+         magneticCards: {},
+         handleCardMagnetic(event, cardId) {
+             const element = event.currentTarget;
+             const rect = element.getBoundingClientRect();
+             const centerX = rect.left + rect.width / 2;
+             const centerY = rect.top + rect.height / 2;
+             
+             // Calculate distance from center (max 6px movement)
+             const x = Math.max(-6, Math.min(6, (event.clientX - centerX) * 0.15));
+             const y = Math.max(-6, Math.min(6, (event.clientY - centerY) * 0.15));
+             
+             this.magneticCards[cardId] = { x, y };
+         },
+         resetMagnetic(cardId) {
+             this.magneticCards[cardId] = { x: 0, y: 0 };
+         },
+         getMagneticStyle(cardId) {
+             const pos = this.magneticCards[cardId] || { x: 0, y: 0 };
+             return `transform: translate(${pos.x}px, ${pos.y}px) scale(${pos.x || pos.y ? 1.02 : 1}); transition: all 200ms ease-out;`;
+         }
+     }">
     <!-- Ideas Column -->
     <div class="kanban-column">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">Ideas</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
-            {{range .ideas}}
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            {{range $index, $item := .ideas}}
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 transition-shadow hover:shadow-lg"
+                 @mousemove="handleCardMagnetic($event, 'ideas-{{$index}}')"
+                 @mouseleave="resetMagnetic('ideas-{{$index}}')"
+                 :style="getMagneticStyle('ideas-{{$index}}')">
                 <h3 class="font-medium text-gray-900 dark:text-white">{{.title}}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{.description}}</p>
             </div>
@@ -114,8 +139,11 @@ USE CASES:
     <div class="kanban-column">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">Planned</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
-            {{range .planned}}
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            {{range $index, $item := .planned}}
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 transition-shadow hover:shadow-lg"
+                 @mousemove="handleCardMagnetic($event, 'planned-{{$index}}')"
+                 @mouseleave="resetMagnetic('planned-{{$index}}')"
+                 :style="getMagneticStyle('planned-{{$index}}')">
                 <h3 class="font-medium text-gray-900 dark:text-white">{{.title}}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{.description}}</p>
             </div>
@@ -127,8 +155,11 @@ USE CASES:
     <div class="kanban-column">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">In Progress</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
-            {{range .inProgress}}
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            {{range $index, $item := .inProgress}}
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 transition-shadow hover:shadow-lg"
+                 @mousemove="handleCardMagnetic($event, 'progress-{{$index}}')"
+                 @mouseleave="resetMagnetic('progress-{{$index}}')"
+                 :style="getMagneticStyle('progress-{{$index}}')">
                 <h3 class="font-medium text-gray-900 dark:text-white">{{.title}}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{.description}}</p>
             </div>
@@ -142,14 +173,20 @@ USE CASES:
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
             <!-- Changelog Link Card - Always visible -->
             <a href="/platform/changelog" class="block">
-                <div class="bg-blue-50 dark:bg-blue-50 rounded-lg p-4 border-2 border-brand-blue dark:border-brand-blue cursor-pointer">
+                <div class="bg-blue-50 dark:bg-blue-50 rounded-lg p-4 border-2 border-brand-blue dark:border-brand-blue cursor-pointer transition-shadow hover:shadow-lg"
+                     @mousemove="handleCardMagnetic($event, 'changelog')"
+                     @mouseleave="resetMagnetic('changelog')"
+                     :style="getMagneticStyle('changelog')">
                     <h3 class="font-medium text-gray-900 dark:text-gray-900">Check out our changelog</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-600 mt-1">See latest features and improvements.</p>
                 </div>
             </a>
             
-            {{range .testing}}
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            {{range $index, $item := .testing}}
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 transition-shadow hover:shadow-lg"
+                 @mousemove="handleCardMagnetic($event, 'testing-{{$index}}')"
+                 @mouseleave="resetMagnetic('testing-{{$index}}')"
+                 :style="getMagneticStyle('testing-{{$index}}')">
                 <h3 class="font-medium text-gray-900 dark:text-white">{{.title}}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{.description}}</p>
             </div>
