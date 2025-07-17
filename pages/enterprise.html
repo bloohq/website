@@ -92,6 +92,12 @@
                              intersecting: false,
                              progress: 0,
                              scale: 0.3,
+                             mouseX: 0,
+                             mouseY: 0,
+                             isHovering: false,
+                             magnetX: 0,
+                             magnetY: 0,
+                             magnetScale: 1,
                              updateProgress() {
                                  const rect = $el.getBoundingClientRect();
                                  const viewportHeight = window.innerHeight;
@@ -100,20 +106,60 @@
                                  this.progress = Math.max(0, Math.min(1, (viewportHeight - centerY) / (viewportHeight * 0.5)));
                                  // Scale from 0.3 to 1 based on progress
                                  this.scale = 0.3 + (this.progress * 0.7);
+                             },
+                             handleMouseMove(e) {
+                                 if (!this.isHovering) return;
+                                 
+                                 const rect = $el.getBoundingClientRect();
+                                 this.mouseX = e.clientX - rect.left;
+                                 this.mouseY = e.clientY - rect.top;
+                                 
+                                 // Circle center position (48px radius + relative positioning)
+                                 const circleCenterX = rect.width / 2;
+                                 const circleCenterY = rect.height / 2;
+                                 
+                                 // Distance from mouse to circle center
+                                 const distX = this.mouseX - circleCenterX;
+                                 const distY = this.mouseY - circleCenterY;
+                                 const distance = Math.sqrt(distX * distX + distY * distY);
+                                 
+                                 // Magnetic effect radius
+                                 const magnetRadius = 100;
+                                 
+                                 if (distance < magnetRadius) {
+                                     const strength = 1 - (distance / magnetRadius);
+                                     const maxMove = 10; // More movement for the circle
+                                     
+                                     this.magnetX = (distX / distance) * strength * maxMove;
+                                     this.magnetY = (distY / distance) * strength * maxMove;
+                                     this.magnetScale = 1 + (strength * 0.15); // Scale up to 1.15
+                                 } else {
+                                     this.magnetX = 0;
+                                     this.magnetY = 0;
+                                     this.magnetScale = 1;
+                                 }
+                             },
+                             resetMagnetic() {
+                                 this.magnetX = 0;
+                                 this.magnetY = 0;
+                                 this.magnetScale = 1;
                              }
                          }"
                          x-init="updateProgress()"
                          x-intersect="intersecting = true"
                          x-intersect:leave="intersecting = false"
-                         x-on:scroll.window="if (intersecting) { updateProgress() }">
+                         x-on:scroll.window="if (intersecting) { updateProgress() }"
+                         @mouseenter="isHovering = true"
+                         @mouseleave="isHovering = false; resetMagnetic()"
+                         @mousemove.throttle.16ms="handleMouseMove($event)">
                         <!-- Pulsing animation rings -->
                         <div class="absolute inset-0 rounded-full bg-brand-blue opacity-20 animate-ping"
-                             :style="`transform: scale(${scale})`"></div>
+                             :style="`transform: translate(${magnetX}px, ${magnetY}px) scale(${scale * magnetScale})`"></div>
                         <div class="absolute inset-0 rounded-full bg-brand-blue opacity-10 animate-ping animation-delay-200"
-                             :style="`transform: scale(${scale})`"></div>
+                             :style="`transform: translate(${magnetX}px, ${magnetY}px) scale(${scale * magnetScale})`"></div>
                         <!-- Main circle -->
                         <div class="relative w-24 h-24 rounded-full bg-brand-blue transition-transform duration-300 ease-out"
-                             :style="`transform: scale(${scale})`"></div>
+                             :style="`transform: translate(${magnetX}px, ${magnetY}px) scale(${scale * magnetScale})`"></div>
                     </div>
                 </div>
             </div>
