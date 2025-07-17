@@ -182,15 +182,12 @@ func main() {
 	totalStartupTime := time.Since(startTime)
 	fmt.Printf("🚀 Blue Website server ready on :%s (total startup: %v)\n", port, totalStartupTime)
 
-	// Bind to all network interfaces only in development
+	// Bind to all network interfaces for production environments like Render
 	host := os.Getenv("HOST")
 	if host == "" {
-		// In production, bind to localhost only for security
-		if os.Getenv("ENV") == "production" {
-			host = "127.0.0.1"
-		} else {
-			// In development, allow network access for testing on devices
-			host = "0.0.0.0"
+		// Default to 0.0.0.0 to work with cloud providers
+		host = "0.0.0.0"
+		if os.Getenv("ENV") != "production" {
 			fmt.Printf("🌐 Development mode: Server accessible on network at http://[YOUR_IP]:%s\n", port)
 			fmt.Printf("📱 To find your IP: ifconfig | grep 'inet ' | grep -v 127.0.0.1\n")
 		}
