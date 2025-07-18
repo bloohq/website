@@ -1,4 +1,26 @@
 {{define "left-sidebar"}}
+<!-- Flip char styles for security link effect -->
+<style>
+    .flip-char {
+        display: inline-block;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+    .flip-char:hover {
+        transform: scale(1.05);
+    }
+    .flip-char.glitching {
+        animation: glitch 0.1s infinite;
+    }
+    @keyframes glitch {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-1px); }
+        50% { transform: translateX(1px); }
+        75% { transform: translateX(-0.5px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+
 <!-- Left Sidebar - Folder Navigation -->
 <nav x-data="{ 
          sections: {{.Navigation.Sections | toJSON}}.filter(s => s.id !== 'legal'),
@@ -136,13 +158,45 @@
              class="folder-group">
             <div x-show="expanded" x-collapse class="ml-7 space-y-0.5 order-first">
                 <template x-for="item in (legalSection?.children || []).filter(child => child.href !== '/legal' && child.href !== '/legal/' && child.href !== '/legal/index')" :key="item.id">
-                    <a :href="item.href" 
-                       :target="item.external ? '_blank' : '_self'"
-                       :rel="item.external ? 'noopener noreferrer' : ''"
-                       :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
-                        <span x-text="item.name"></span>
-                        <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
-                    </a>
+                    <div>
+                        <!-- Special rendering for Security link -->
+                        <template x-if="item.href === '/legal/security'">
+                            <a :href="item.href" 
+                               :target="item.external ? '_blank' : '_self'"
+                               :rel="item.external ? 'noopener noreferrer' : ''"
+                               :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
+                                <template x-for="(char, charIndex) in 'Security'.split('')" :key="charIndex">
+                                    <span 
+                                        @mouseenter="window.flipChar($event)"
+                                        class="flip-char"
+                                        x-text="char">
+                                    </span>
+                                </template>
+                                <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
+                            </a>
+                        </template>
+                        <!-- Special rendering for GDPR Compliance link -->
+                        <template x-if="item.href === '/legal/gdpr'">
+                            <a :href="item.href" 
+                               :target="item.external ? '_blank' : '_self'"
+                               :rel="item.external ? 'noopener noreferrer' : ''"
+                               :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium group' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150 group'">
+                                <span x-text="item.name"></span>
+                                <span class="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">🇪🇺</span>
+                                <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
+                            </a>
+                        </template>
+                        <!-- Normal rendering for other links -->
+                        <template x-if="item.href !== '/legal/security' && item.href !== '/legal/gdpr'">
+                            <a :href="item.href" 
+                               :target="item.external ? '_blank' : '_self'"
+                               :rel="item.external ? 'noopener noreferrer' : ''"
+                               :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'">
+                                <span x-text="item.name"></span>
+                                <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
+                            </a>
+                        </template>
+                    </div>
                 </template>
             </div>
             <button @click="expanded = !expanded" 
