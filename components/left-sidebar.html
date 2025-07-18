@@ -197,8 +197,56 @@
                                 <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
                             </a>
                         </template>
+                        <!-- Special rendering for Privacy Policy link -->
+                        <template x-if="item.href === '/legal/privacy'">
+                            <a :href="item.href" 
+                               :target="item.external ? '_blank' : '_self'"
+                               :rel="item.external ? 'noopener noreferrer' : ''"
+                               :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors duration-150'"
+                               x-data="{ 
+                                   text: 'Privacy Policy',
+                                   masked: false,
+                                   chars: [],
+                                   init() {
+                                       this.chars = this.text.split('').map((char, index) => ({
+                                           char: char,
+                                           masked: false,
+                                           index: index
+                                       }));
+                                   },
+                                   maskText() {
+                                       this.masked = true;
+                                       this.chars.forEach((char, index) => {
+                                           setTimeout(() => {
+                                               char.masked = true;
+                                           }, index * 30);
+                                       });
+                                   },
+                                   unmaskText() {
+                                       this.masked = false;
+                                       const totalChars = this.chars.length;
+                                       this.chars.forEach((char, index) => {
+                                           setTimeout(() => {
+                                               this.chars[totalChars - 1 - index].masked = false;
+                                           }, index * 30);
+                                       });
+                                   }
+                               }"
+                               @mouseenter="maskText()"
+                               @mouseleave="unmaskText()">
+                                <span class="inline-flex">
+                                    <template x-for="char in chars" :key="char.index">
+                                        <span class="inline-block transition-all duration-200"
+                                              :style="char.char === ' ' ? 'width: 0.25rem;' : ''"
+                                              x-text="char.char === ' ' ? ' ' : (char.masked ? '•' : char.char)">
+                                        </span>
+                                    </template>
+                                </span>
+                                <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
+                            </a>
+                        </template>
                         <!-- Normal rendering for other links -->
-                        <template x-if="item.href !== '/legal/security' && item.href !== '/legal/gdpr' && item.href !== '/legal/hipaa'">
+                        <template x-if="item.href !== '/legal/security' && item.href !== '/legal/gdpr' && item.href !== '/legal/hipaa' && item.href !== '/legal/privacy'">
                             <a :href="item.href" 
                                :target="item.external ? '_blank' : '_self'"
                                :rel="item.external ? 'noopener noreferrer' : ''"
