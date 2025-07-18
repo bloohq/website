@@ -2,7 +2,7 @@
 {{template "page-heading" 
         dict 
             "Title" "Blue is a powerful platform to create, manage, and scale processes." 
-            "Subtitle" "Meet the system for modern operations. Gain visibility, speed up processes, and scale your organization." 
+            "Subtitle" "Meet the system for modern operations — gain visibility, speed up processes, and scale your organization." 
             "MarginBottom" "mb-16"
     }}
 
@@ -170,6 +170,32 @@
                     {{template "stats-section" $statsData}}
     </section>
 
+    {{$testimonialData := parseJSON `{
+        "testimonials": [
+            {
+                "quote": "Blue keeps things completely organised — it's an absolutely wonderful tool.",
+                "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
+                "posterUrl": "/testimonials/davidsacks.jpeg"
+            },
+            {
+                "quote": "The automation features of Blue help us run our operations seamlessly.",
+                "videoUrl": "https://media.blue.cc/lady.mp4",
+                "posterUrl": "/testimonials/lady.jpg"
+            },
+            {
+                "quote": "My entire life is in Blue! I love how fantasticly responsive the team is.",
+                "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
+                "posterUrl": "/testimonials/ricklewis.jpg"
+            },
+            {
+                "quote": "If you're wondering if you should buy Blue...the answer is YES.",
+                "videoUrl": "https://media.blue.cc/ana.mov",
+                "posterUrl": "/testimonials/ana-testimonial.jpg"
+            }
+        ]
+    }`}}
+
+    {{template "testimonial-videos" $testimonialData}}
 
 
     <!-- Your Data, Your Way -->
@@ -216,17 +242,17 @@
                 "Description": "Real-time insights and customizable dashboards to track what matters most."
             },
             {
-                "Title": "Integration",
-                "Description": "Connect with 5,000+ tools including Slack, Gmail, Zapier, and custom APIs.",
+                "Title": "Integrations",
+                "Description": "Connect with 7,000+ tools including Slack, Gmail, Zapier, and custom APIs.",
                 "Url": "/platform/integrations"
             },
             {
-                "Title": "Automation",
+                "Title": "Automations",
                 "Description": "Streamline workflows with intelligent automation that learns from your processes."
             },
             {
-                "Title": "Mobile",
-                "Description": "Full-featured mobile apps for iOS and Android with offline sync capabilities."
+                "Title": "Mobile Apps",
+                "Description": "Work on the go with apps for iPhone, iPad, and Android devices."
             },
             {
                 "Title": "Collaboration",
@@ -238,7 +264,7 @@
             },
             {
                 "Title": "Support",
-                "Description": "Free email support with optional for paid phone support.."
+                "Description": "Free email support with optional paid phone support."
             }
         ]
     }`}}
@@ -290,6 +316,17 @@ I wonder if process management is really needed, is that a "use case"? -->
     
     {{template "interactive-feature-showcase" $showcaseData}}
 </section>
+
+   <!-- Testimonial Section -->
+   <div class="mb-20 px-6 lg:px-8">
+    {{template "testimonial-single" 
+        dict 
+            "ImageUrl" "/testimonials/kyriacos.jpeg"
+            "Quote" "Blue has massively helped us manage our data work, ensuring that our teams are clear on what they need to do, and why. It's a great tool for us."
+            "Name" "Kyriacos Koupparis, PhD"
+            "Title" "Head of Unit, Early Warning and Forecasting, World Food Programme."
+    }}
+</div>
 
 <!-- Call to Action -->
 {{$ctaData := parseJSON `{
