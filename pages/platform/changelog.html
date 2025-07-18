@@ -3,11 +3,63 @@
         dict 
             "Title" "Changelog" 
             "Subtitle" "Everything we've ever shipped from day one." 
-            "MarginBottom" "mb-20"
+            "MarginBottom" "mb-8"
     }}
 
-    <!-- Changelog Entries -->
+    <!-- Changelog with Year Tabs -->
+    <div x-data="{ 
+        activeYear: '2025',
+        filterByYear(year, itemYear) {
+            return itemYear === year;
+        }
+    }">
+        <!-- Year Navigation Tabs -->
+        <div class="mb-12">
+            <nav class="flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
+                <button @click="activeYear = '2025'" 
+                        :class="activeYear === '2025' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2025
+                </button>
+                <button @click="activeYear = '2024'" 
+                        :class="activeYear === '2024' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2024
+                </button>
+                <button @click="activeYear = '2023'" 
+                        :class="activeYear === '2023' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2023
+                </button>
+                <button @click="activeYear = '2022'" 
+                        :class="activeYear === '2022' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2022
+                </button>
+                <button @click="activeYear = '2021'" 
+                        :class="activeYear === '2021' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2021
+                </button>
+                <button @click="activeYear = '2020'" 
+                        :class="activeYear === '2020' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2020
+                </button>
+                <button @click="activeYear = '2019'" 
+                        :class="activeYear === '2019' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2019
+                </button>
+                <button @click="activeYear = '2018'" 
+                        :class="activeYear === '2018' ? 'text-brand-blue font-medium border-b-2 border-brand-blue' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer">
+                    2018
+                </button>
+            </nav>
+        </div>
 
+        <!-- Changelog Entries -->
         {{$changelog := parseJSON `[
     {
         "month": "June",
@@ -1892,9 +1944,14 @@
 }
 ]`}}
         
-        {{range $changelog}}
-            {{template "changelog-month" .}}
-        {{end}}
+        <!-- Filtered Changelog Entries -->
+        <div>
+            {{range $changelog}}
+            <div x-show="filterByYear(activeYear, '{{.year}}')" x-transition>
+                {{template "changelog-month" .}}
+            </div>
+            {{end}}
+        </div>
         
         <!-- Empty State (rarely needed since data is embedded) -->
         {{if not $changelog}}
@@ -1902,4 +1959,5 @@
             <p class="text-gray-500 text-lg">No changelog entries found.</p>
         </div>
         {{end}}
+    </div>
     
