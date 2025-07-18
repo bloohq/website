@@ -65,51 +65,7 @@
     
     {{template "value-propositions" $valuePropsData}}
 
-    
 
-<!-- Interactive Feature Showcase Section 
-
-I wonder if process management is really needed, is that a "use case"? -->
-<section class="mb-8">
-        
-        {{$showcaseData := parseJSON `{
-            "Title": "Selected use cases.",
-            "Features": [
-                {
-                    "Id": "process-management",
-                    "Title": "Process Management", 
-                    "VideoUrl": "/video3.mp4"
-                },
-                {
-                    "Id": "project-management",
-                    "Title": "Project Management",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                },
-                {
-                    "Id": "sales-crm",
-                    "Title": "Sales CRM",
-                    "VideoUrl": "/video4.mp4"
-                },
-                {
-                    "Id": "service-tickets",
-                    "Title": "Service Tickets",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                },
-                {
-                    "Id": "asset-management",
-                    "Title": "Asset Management",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "content-calendar",
-                    "Title": "Content Calendar",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                }
-            ]
-        }`}}
-        
-        {{template "interactive-feature-showcase" $showcaseData}}
-</section>
 
 <!-- Features as Benefits Section -->
 <section class="max-w-7xl mx-auto">
@@ -121,7 +77,26 @@ I wonder if process management is really needed, is that a "use case"? -->
             "Title": "One source of truth.",
             "Description": "Create records for all your business data, so you finally have one place to keep everything.",
             "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "left"
+            "VideoPosition": "left",
+            "SeeAlso": {
+                "Links": [
+                    {
+                        "Text": "Records",
+                        "Url": "/platform/features/records",
+                        "Description": "map to your business entities"
+                    },
+                    {
+                        "Text": "Custom fields",
+                        "Url": "/platform/features/custom-fields",
+                        "Description": "model your data"
+                    },
+                    {
+                        "Text": "Workspaces",
+                        "Url": "/platform/features/workspaces",
+                        "Description": "keep everything private with the right links"
+                    }
+                ]
+            }
         }`}}
         {{template "feature-video" $automateData}}
     </div>
@@ -132,7 +107,26 @@ I wonder if process management is really needed, is that a "use case"? -->
             "Title": "Everything is a process.",
             "Description": "Blue helps you create clear, repeatable processes for everything you do.",
             "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "right"
+            "VideoPosition": "right",
+            "SeeAlso": {
+                "Links": [
+                    {
+                        "Text": "Lists",
+                        "Url": "/docs/records/lists",
+                        "Description": "create consistent process steps"
+                    },
+                    {
+                        "Text": "Checklists",
+                        "Url": "/insights/create-checklist-templates",
+                        "Description": "ensure everyone knows what to do"
+                    },
+                    {
+                        "Text": "Forms",
+                        "Url": "/platform/features/forms",
+                        "Description": "give you consistent data intake"
+                    }
+                ]
+            }
         }`}}
         {{template "feature-video" $seeEverythingData}}
     </div>
@@ -253,6 +247,49 @@ I wonder if process management is really needed, is that a "use case"? -->
        
 
 
+<!-- Interactive Feature Showcase Section 
+
+I wonder if process management is really needed, is that a "use case"? -->
+<section class="mb-8">
+        
+    {{$showcaseData := parseJSON `{
+        "Title": "Selected use cases.",
+        "Features": [
+            {
+                "Id": "process-management",
+                "Title": "Process Management", 
+                "VideoUrl": "/video3.mp4"
+            },
+            {
+                "Id": "project-management",
+                "Title": "Project Management",
+                "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+            },
+            {
+                "Id": "sales-crm",
+                "Title": "Sales CRM",
+                "VideoUrl": "/video4.mp4"
+            },
+            {
+                "Id": "service-tickets",
+                "Title": "Service Tickets",
+                "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+            },
+            {
+                "Id": "asset-management",
+                "Title": "Asset Management",
+                "VideoUrl": "/testvideo2.mp4"
+            },
+            {
+                "Id": "content-calendar",
+                "Title": "Content Calendar",
+                "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+            }
+        ]
+    }`}}
+    
+    {{template "interactive-feature-showcase" $showcaseData}}
+</section>
 
 <!-- Call to Action -->
 {{$ctaData := parseJSON `{
