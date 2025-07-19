@@ -63,13 +63,76 @@
     {{template "feature-video" $aiSummariesFeature}}
 
     <!-- Auto Categorization Feature -->
-    {{$autoCategorizeFeature := parseJSON `{
-        "Title": "Keep work organized with automatic categorization of work items",
-        "Description": "Blue can automatically choose which tags to apply to records based on the context.",
-        "VideoUrl": "/testvideo2.mp4",
-        "VideoPosition": "left"
-    }`}}
-    {{template "feature-video" $autoCategorizeFeature}}
+    <section class="mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Grid Animation -->
+            <div class="order-1 lg:order-1 flex items-center justify-center">
+                <div class="w-full"
+                     x-data="{
+                         intersecting: false,
+                         progress: 0,
+                         records: [
+                             { id: 1, tags: [{name: 'Priority 1', delay: 0.05}] },
+                             { id: 2, tags: [{name: 'Overdue', delay: 0.1}] },
+                             { id: 3, tags: [{name: 'Planned', delay: 0.15}] },
+                             { id: 4, tags: [{name: 'Priority 2', delay: 0.2}] },
+                             { id: 5, tags: [{name: 'Cancelled', delay: 0.25}] },
+                             { id: 6, tags: [{name: 'Priority 1', delay: 0.3}] },
+                             { id: 7, tags: [{name: 'Overdue', delay: 0.35}] },
+                             { id: 8, tags: [{name: 'Planned', delay: 0.4}] },
+                             { id: 9, tags: [{name: 'Priority 2', delay: 0.45}] },
+                             { id: 10, tags: [{name: 'Planned', delay: 0.5}] },
+                             { id: 11, tags: [{name: 'Priority 1', delay: 0.6}] },
+                             { id: 12, tags: [{name: 'Overdue', delay: 0.65}] }
+                         ],
+                         tagColors: {
+                             'Priority 1': 'bg-red-500',
+                             'Priority 2': 'bg-orange-500',
+                             'Overdue': 'bg-purple-500',
+                             'Planned': 'bg-blue-500',
+                             'Cancelled': 'bg-gray-500'
+                         },
+                         updateProgress() {
+                             const rect = $el.getBoundingClientRect();
+                             const viewportHeight = window.innerHeight;
+                             const centerY = rect.top + rect.height / 2;
+                             // Progress from 0 to 1 as element moves from bottom to center of viewport
+                             this.progress = Math.max(0, Math.min(1, (viewportHeight - centerY) / (viewportHeight * 0.7)));
+                         },
+                         shouldShowTag(delay) {
+                             return this.progress > delay;
+                         }
+                     }"
+                     x-init="updateProgress()"
+                     x-intersect="intersecting = true"
+                     x-intersect:leave="intersecting = false"
+                     x-on:scroll.window="if (intersecting) { updateProgress() }">
+                    
+                    <div class="grid grid-cols-4 gap-3">
+                        <template x-for="record in records" :key="record.id">
+                            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 relative overflow-hidden">
+                                <div class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2" x-text="'Record ' + record.id"></div>
+                                <div class="flex flex-wrap gap-1">
+                                    <template x-for="tag in record.tags" :key="tag.name">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium text-white transition-all duration-500 ease-out"
+                                              :class="[tagColors[tag.name], shouldShowTag(tag.delay) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2']"
+                                              x-text="tag.name">
+                                        </span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="order-2 lg:order-2 space-y-4">
+                <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">Keep work organized with automatic categorization of work items</h3>
+                <p class="text-lg text-gray-600 dark:text-gray-300">Blue can automatically choose which tags to apply to records based on the context.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Secure AI Integration Section -->
         
