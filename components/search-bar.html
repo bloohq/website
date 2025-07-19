@@ -239,6 +239,43 @@ DEPENDENCIES:
                  this.showingSuggestions = false;
                  this.selectedIndex = -1;
              }
+         },
+         getCategoryCounts() {
+             const counts = {};
+             const categoryOrder = ['Feature', 'Docs', 'API', 'Insights'];
+             
+             // Count results by category
+             for (const result of this.results) {
+                 const category = result.item.category;
+                 if (category) {
+                     counts[category] = (counts[category] || 0) + 1;
+                 }
+             }
+             
+             // Return ordered array of categories with counts
+             return categoryOrder
+                 .filter(cat => counts[cat] > 0)
+                 .map(cat => ({ name: cat, count: counts[cat] }));
+         },
+         getCategoryTextClass(category) {
+             // Return just the text color classes for the counter bar
+             const textColors = {
+                 'Feature': 'text-[#00A0D2] dark:text-[#00A0D2]',
+                 'Docs': 'text-green-700 dark:text-green-400',
+                 'API': 'text-[#F06C9B] dark:text-[#F06C9B]',
+                 'Insights': 'text-yellow-700 dark:text-yellow-400'
+             };
+             return textColors[category] || 'text-gray-600 dark:text-gray-400';
+         },
+         getCategoryPlural(category, count) {
+             // Handle proper pluralization for each category
+             const plurals = {
+                 'Feature': count === 1 ? 'Feature' : 'Features',
+                 'Docs': count === 1 ? 'Doc' : 'Docs',
+                 'API': count === 1 ? 'API' : 'APIs',
+                 'Insights': count === 1 ? 'Insight' : 'Insights'
+             };
+             return plurals[category] || category;
          }
      }"
      @click.away="showResults = false; searchFocused = false; showingSuggestions = false">
@@ -278,9 +315,11 @@ DEPENDENCIES:
              x-transition:leave="transition ease-in duration-150"
              x-transition:leave-start="opacity-100 translate-y-0"
              x-transition:leave-end="opacity-0 translate-y-1"
-             class="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 max-h-96 overflow-y-auto z-50 custom-scrollbar">
+             class="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 max-h-96 overflow-hidden z-50 flex flex-col">
             
-            <template x-if="loading">
+            <!-- Scrollable content area -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar">
+                <template x-if="loading">
                 <div class="p-4 text-center text-gray-500 text-sm">
                     <svg class="w-4 h-4 text-gray-400 animate-spin mr-2 inline-block" fill="currentColor">
                         <use href="/icons/sprite.svg#spinner"></use>
@@ -318,8 +357,8 @@ DEPENDENCIES:
                 </div>
             </template>
             
-            <template x-if="!loading && results.length > 0 && !showingSuggestions">
-                <div class="py-2">
+                <template x-if="!loading && results.length > 0 && !showingSuggestions">
+                    <div class="py-2">
                     <template x-for="(result, index) in results" :key="index">
                         <div @click="selectResult(result)"
                              @mouseenter="() => {
@@ -344,6 +383,21 @@ DEPENDENCIES:
                             </div>
                         </div>
                     </template>
+                    </div>
+                </template>
+            </div>
+            
+            <!-- Category Counter Bar -->
+            <template x-if="!loading && results.length > 0 && !showingSuggestions && getCategoryCounts().length > 0">
+                <div class="flex-shrink-0 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 py-2 rounded-b-lg">
+                    <div class="flex items-center justify-center gap-4 text-xs font-medium">
+                        <template x-for="cat in getCategoryCounts()" :key="cat.name">
+                            <div class="flex items-center gap-1">
+                                <span x-text="cat.count" class="font-bold" :class="getCategoryTextClass(cat.name)"></span>
+                                <span x-text="getCategoryPlural(cat.name, cat.count)" class="text-gray-500 dark:text-gray-400"></span>
+                            </div>
+                        </template>
+                    </div>
                 </div>
             </template>
         </div>
