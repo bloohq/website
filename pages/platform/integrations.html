@@ -1,10 +1,24 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Connect with 5,000+ tools" 
-            "Subtitle" "Blue integrates with your existing tools and workflows to help you get the most out of your business." 
+            "Title" "Connect with 7,000+ tools" 
+            "Subtitle" "Blue works with with all major integration platforms to connect your existing tools and workflows to Blue." 
             "MarginBottom" "mb-8"
     }}
+
+     <!-- Integration Partners -->
+ <div class="mb-16">
+    {{$integrationData := parseJSON `{
+        "logos": [
+            { "name": "Zapier", "src": "/images/zapier.svg" },
+            { "name": "Make.com", "src": "/images/make.svg" },
+            { "name": "Pabbly Connect", "src": "/images/pabbly-1.svg" },
+            { "name": "Albato", "src": "/images/albato.png" },
+            { "name": "Boost.space", "src": "/images/boost-space.svg" }
+        ]
+    }`}}
+    {{template "logo-grid" $integrationData}}
+</div>
 
     {{$integrationData := parseJSON `{
         "integrations": [
