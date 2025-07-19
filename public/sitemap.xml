@@ -596,7 +596,7 @@
   </url>
   <url>
     <loc>https://blue.cc/api/projects/project-activity</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -962,7 +962,7 @@
   </url>
   <url>
     <loc>https://blue.cc/docs/projects/file-management</loc>
-    <lastmod>2025-07-10</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1490,7 +1490,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/ai-faq</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1520,7 +1520,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/basecamp</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1633,12 +1633,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blue.cc/insights/file-storage-faq</loc>
-    <lastmod>2025-07-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://blue.cc/insights/from-project-to-process-management</loc>
     <lastmod>2025-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -1706,7 +1700,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/loudegg1</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1796,7 +1790,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/security-faq</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1814,7 +1808,7 @@
   </url>
   <url>
     <loc>https://blue.cc/insights/trello</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

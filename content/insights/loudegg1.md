@@ -119,7 +119,7 @@ One of the pain points before, when my other company was using Asana, was that w
 
 We made a very conscious decision right at the beginning, like six-seven years ago, to do that. So basically, the API that we expose to customers is the same API that we use to power Blue. It's not like a baby version or dumbed-down version. Essentially, you can loop through to then download all your files as well.
 
-On the point of file storage, the other nice thing about Blue is that we offer unlimited file storage to accounts, and the maximum individual file size that you can upload is 5 gigabytes, which is a lot more than many other systems. Some systems limit you to only 100 megabytes, for example.
+On the point of file storage, the other nice thing about Blue is that we offer generous file storage to accounts, and the maximum individual file size that you can upload is 5 gigabytes, which is a lot more than many other systems. Some systems limit you to only 100 megabytes, for example.
 
 **Joe:** Can you speak to server locations, data governance stuff like that, just kind of in a general sense or at least give some place people can explore?
 

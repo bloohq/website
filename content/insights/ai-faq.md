@@ -1,7 +1,7 @@
 ---
 title: How does Blue offer unlimited AI Access?
 category: "FAQ"
-description: How does Blue offer unlimited file storage for project management? 
+description: How does Blue offer unlimited AIfor project management? 
 date: 2024-01-08
 ---
 
@@ -9,13 +9,13 @@ At Blue, we're one of the few [project management platforms](/solutions/use-case
 
 > To organize the world's work by building the best project management platform on the planet—simple, powerful, flexible, and affordable for all.
 
-We want enteprise-level functionality to be available to everyone, not just the large corporations with deep pockets. This is why we have [one plan that includes all features without any additional paid add-ons or upsells.](/pricing). [When we reviewed Trello](/insights/trello), we noted how it was annoying to work on a platform that is now designed essentially to upsell you to working with Jira. 
+We want enteprise-level functionality to be available to everyone, not just the large corporations with deep pockets. This is why we have [one plan that includes all features](/pricing). [When we reviewed Trello](/insights/trello), we noted how it was annoying to work on a platform that is now designed essentially to upsell you to working with Jira. 
 
 A lot of companies are currently charging significant amounts for AI features. But, we know that the prices of inference — the "processing" of language that happens in the background when you send a request via a platform such as ChatGPT — have been dropping exponentialy. 
 
  We believe AI will become a standard feature, not a separate category, much like the internet itself.
 
-However, we understand that customers can be skeptical of "unlimited" claims, and this is why we are writing this article — so show the economics behind giving all of our customers complimentary AI usage. We did a [similar write up for our policy of unlimited file storage.](/insights/unlimited-file-storage-faq)
+However, we understand that customers can be skeptical of "unlimited" claims, and this is why we are writing this article — so show the economics behind giving all of our customers complimentary AI usage. 
 
 Blue provides a range of AI tools, including free AI chat on our website trained on our documents, various public AI tools such as project risk analysis and email creators, AI categorization for records inside projects, and AI summaries for comments within records—with many more features planned for the future.
 

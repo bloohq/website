@@ -311,7 +311,7 @@ Blue also includes [Reference](https://documentation.blue.cc/custom-fields/refer
 
 ## File Storage
 
-Both Blue and Trello offer unlimited file storage for each account. However, the main difference is the limit in file size for each individual file.
+Both Blue and Trello offer generous file storage for each account. However, the main difference is the limit in file size for each individual file.
 
 Trello varies this across their plans:
 

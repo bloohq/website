@@ -165,7 +165,7 @@ And they also miss a lot of other features:
 
 ## File Storage
 
-When it comes to file storage, Blue and Basecamp take different paths. Blue keeps things simple by offering unlimited file storage across all its plans. This means that no matter how big your team or how extensive your projects, you'll never have to stress about running out of space. Plus, with a generous upload limit of 5GB per file, Blue can handle most business needs without a hitch.
+When it comes to file storage, Blue and Basecamp take different paths. Blue keeps things simple by offering generous file storage across all its plans. This means that no matter how big your team or how extensive your projects, you'll never have to stress about running out of space. Plus, with a generous upload limit of 5GB per file, Blue can handle most business needs without a hitch.
 
 Basecamp, however, opts for a tiered storage system based on the plan you select. Their basic plan gives you a solid 500GB of storage, which should be more than enough for small to medium-sized teams or projects. If your business has larger needs, then their Pro Unlimited plan really shines, offering a whopping 5TB of storage. This flexible approach lets teams scale their storage as they grow.
 
@@ -267,7 +267,7 @@ Basecamp has been around for a while and is well-known in the project management
 - **Pricing:** Blue offers a cost-effective solution with just $7 per user per month, compared to Basecamp's $15 per user per month. For teams with up to 49 users, this can be a significant savings.
 - **Feature Set:** Blue boasts a wide range of features, including essential views like Timeline, Dashboard, and Table views, which Basecamp doesn't offer. Additionally, it offers advanced tools like AI integration, customizable forms, task dependencies, and cross-project references.
 - **Flexibility:** Blue provides various viewing options and allows you to customize permissions to fit your team's needs. This flexibility can be appealing for teams who find Basecamp's more rigid setup limiting.
-- **Storage:** Blue offers unlimited file storage across all plans, with a clear 5GB limit for individual files. This straightforward approach can be easier to manage than Basecamp's tiered storage system, which might not suit every team.
+- **Storage:** Blue offers generous file storage across all plans, with a clear 5GB limit for individual files. This straightforward approach can be easier to manage than Basecamp's tiered storage system, which might not suit every team.
 - **Continuous Improvement:** Unlike Basecamp, which updates infrequently, Blue shows a commitment to regular enhancements and new features. This means the platform is likely to evolve alongside your needs.
 - **Focus:** While Basecamp's parent company juggles multiple products, Blue is solely dedicated to refining its project management platform, suggesting a heightened focus on delivering a strong product.
 
