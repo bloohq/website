@@ -183,15 +183,15 @@
                   <span class="text-sm font-medium text-gray-600 dark:text-gray-400 ml-3" :class="{ 'text-gray-900 dark:text-white': isYearly }">Yearly</span>
                 </div>
                 
-                <!-- Price Display -->
+                <!-- Price Display -->  
                 <div x-show="!isYearly" class="flex items-baseline justify-center gap-x-2">
                   <span class="text-6xl font-semibold tracking-tight text-gray-900 dark:text-white">$20</span>
-                  <span class="text-sm/6 font-semibold tracking-wide text-gray-600 dark:text-gray-400">/company</span>
+                  <span class="text-sm/6 font-semibold tracking-wide text-gray-600 dark:text-gray-400">/organization</span>
                 </div>
                 
                 <div x-show="isYearly" class="flex items-baseline justify-center gap-x-2">
                   <span class="text-6xl font-semibold tracking-tight text-gray-900 dark:text-white">$200</span>
-                  <span class="text-sm/6 font-semibold tracking-wide text-gray-600 dark:text-gray-400">/company</span>
+                  <span class="text-sm/6 font-semibold tracking-wide text-gray-600 dark:text-gray-400">/organization</span>
                 </div>
                 
                 <a href="/platform/white-label" class="mt-10 block w-full rounded-md bg-brand-blue px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-brand-blue/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue transition-colors group">
