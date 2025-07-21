@@ -5,37 +5,6 @@
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Hero Video -->
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "dashboards-hero"
-    }}
-
-    <!-- Stats Section -->
-    {{$statsData := parseJSON `{
-        "Title": "Make data-driven decisions faster",
-        "Description": "Transform complex data into actionable insights with powerful visualization tools.",
-        "Stats": [
-            {
-                "Number": "50+",
-                "Label": "Chart types",
-                "Description": "Visualize data your way"
-            },
-            {
-                "Number": "Real-time",
-                "Label": "Updates",
-                "Description": "Always see the latest data"
-            },
-            {
-                "Number": "Unlimited",
-                "Label": "Dashboards",
-                "Description": "Create as many as you need"
-            }
-        ]
-    }`}}
-    {{template "stats-section" $statsData}}
 
     <!-- Stat Cards Feature -->
     {{$statCardsFeature := parseJSON `{
