@@ -6,12 +6,11 @@
             "MarginBottom" "mb-16"
     }}
 
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "automations-hero"
-    }}
+    <!-- Hero Video -->
+    {{$heroData := parseJSON `{
+        "Youtube": "https://www.youtube.com/embed/XTUPR8kjn7A"
+    }`}}
+    {{template "hero-video" $heroData}}
 
     <!-- How Automations Work Section -->
     <section class="mt-20 mb-20">
