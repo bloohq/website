@@ -9,7 +9,6 @@ import (
 	"time"
 )
 
-
 // CachePolicy defines caching behavior for different file types
 type CachePolicy struct {
 	MaxAge    int  // Cache duration in seconds

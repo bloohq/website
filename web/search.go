@@ -233,6 +233,28 @@ func extractPageTitle(htmlContent, url, filePath string, metadata *Metadata) str
 	return generateTitleFromFilename(filePath)
 }
 
+// stripHTMLTags removes HTML tags from a string
+func stripHTMLTags(text string) string {
+	// Remove all HTML tags
+	for {
+		start := strings.Index(text, "<")
+		if start == -1 {
+			break
+		}
+		end := strings.Index(text[start:], ">")
+		if end == -1 {
+			// Handle unclosed tags
+			text = text[:start]
+			break
+		}
+		text = text[:start] + " " + text[start+end+1:]
+	}
+	
+	// Clean up whitespace
+	text = strings.Join(strings.Fields(text), " ")
+	return strings.TrimSpace(text)
+}
+
 // extractH1Title extracts title from the first H1 element
 func extractH1Title(html string) string {
 	// Look for <h1> tags
@@ -258,7 +280,7 @@ func extractH1Title(html string) string {
 	titleContent := html[contentStart : contentStart+end]
 
 	// Remove any nested HTML tags and clean up
-	title := extractTextFromHTML(titleContent)
+	title := stripHTMLTags(titleContent)
 	return strings.TrimSpace(title)
 }
 
@@ -687,7 +709,7 @@ func extractTextFromHTML(html string) string {
 	text = strings.ReplaceAll(text, ")", " ")
 	text = strings.ReplaceAll(text, "[", " ")
 	text = strings.ReplaceAll(text, "]", " ")
-	text = strings.ReplaceAll(text, ";", " ")
+	// Don't remove semicolons as they're part of HTML entities like &amp;
 	text = strings.ReplaceAll(text, ":", " ")
 	text = strings.ReplaceAll(text, "...", " ")
 	text = strings.ReplaceAll(text, "=>", " ")

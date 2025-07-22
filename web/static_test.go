@@ -45,8 +45,8 @@ func TestCacheFileServer(t *testing.T) {
 		{
 			path:           "/test.js",
 			expectedCache:  true,
-			expectedMaxAge: "max-age=604800",
-			description:    "JS should have 1 week cache",
+			expectedMaxAge: "max-age=2592000",
+			description:    "JS should have 1 month cache",
 		},
 		{
 			path:           "/test.png",
