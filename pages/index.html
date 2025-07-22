@@ -6,42 +6,41 @@
     animatedWords: [], 
     showSubtitle: false,
     init() {
-        // Check auth state
-        if (window.AuthCookie) {
-            this.authState = window.AuthCookie.read();
-        }
-        
-        // Set title based on auth state
-        const firstName = (this.authState && this.authState.firstName) || 'there';
-        const title = this.authState && this.authState.isLoggedIn
-            ? `Welcome back, ${firstName}. `
-            : 'Blue is a powerful platform to create, manage, and scale processes.';
+        // Function to set up title animation
+        const setupTitle = (authState) => {
+            const firstName = (authState && authState.firstName) || 'there';
+            const title = authState && authState.isLoggedIn
+                ? `Welcome back, ${firstName}. `
+                : 'Blue is a powerful platform to create, manage, and scale processes.';
+                
+            this.words = title.split(' ');
+            this.animatedWords = [];
+            this.showSubtitle = false;
             
-        this.words = title.split(' ');
+            // Animate words
+            this.words.forEach((word, i) => setTimeout(() => this.animatedWords.push(i), i * 80)); 
+            setTimeout(() => this.showSubtitle = true, 100);
+        };
         
-        // Animate words
-        this.words.forEach((word, i) => setTimeout(() => this.animatedWords.push(i), i * 80)); 
-        setTimeout(() => this.showSubtitle = true, 100);
-        
-        // Poll for auth state changes
-        setInterval(() => {
-            if (window.AuthCookie) {
-                const newAuthState = window.AuthCookie.read();
-                if (JSON.stringify(newAuthState) !== JSON.stringify(this.authState)) {
-                    this.authState = newAuthState;
-                    // Update title and re-animate
-                    const newFirstName = (this.authState && this.authState.firstName) || 'there';
-                    const newTitle = this.authState && this.authState.isLoggedIn
-                        ? `Welcome back, ${newFirstName}. `
-                        : 'Blue is a powerful platform to create, manage, and scale processes.';
-                    this.words = newTitle.split(' ');
-                    this.animatedWords = [];
-                    this.showSubtitle = false;
-                    this.words.forEach((word, i) => setTimeout(() => this.animatedWords.push(i), i * 80));
-                    setTimeout(() => this.showSubtitle = true, 100);
+        // Subscribe to auth state changes
+        if (window.AuthStateManager) {
+            this.unsubscribe = window.AuthStateManager.subscribe((authState) => {
+                // Only re-animate if state actually changed
+                if (JSON.stringify(authState) !== JSON.stringify(this.authState)) {
+                    this.authState = authState;
+                    setupTitle(authState);
                 }
-            }
-        }, 1000);
+            });
+        } else {
+            // Fallback if auth manager not available
+            setupTitle(null);
+        }
+    },
+    destroy() {
+        // Clean up subscription
+        if (this.unsubscribe) {
+            this.unsubscribe();
+        }
     }
 }">
     <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-3">
@@ -72,15 +71,18 @@
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center" x-data="{ 
         authState: null,
         init() {
-            if (window.AuthCookie) {
-                this.authState = window.AuthCookie.read();
+            // Subscribe to auth state changes
+            if (window.AuthStateManager) {
+                this.unsubscribe = window.AuthStateManager.subscribe((authState) => {
+                    this.authState = authState;
+                });
             }
-            // Poll for changes
-            setInterval(() => {
-                if (window.AuthCookie) {
-                    this.authState = window.AuthCookie.read();
-                }
-            }, 1000);
+        },
+        destroy() {
+            // Clean up subscription
+            if (this.unsubscribe) {
+                this.unsubscribe();
+            }
         }
     }">
         <a href="https://app.blue.cc" 

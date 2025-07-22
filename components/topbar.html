@@ -47,17 +47,18 @@
         window.addEventListener('scroll', this.handleScroll);
         this.handleScroll();
         
-        // Initialize auth state from cookie
-        if (window.AuthCookie) {
-            this.authState = window.AuthCookie.read();
+        // Subscribe to auth state changes
+        if (window.AuthStateManager) {
+            this.unsubscribe = window.AuthStateManager.subscribe((authState) => {
+                this.authState = authState;
+            });
         }
-        
-        // Poll for auth state changes every second
-        setInterval(() => {
-            if (window.AuthCookie) {
-                this.authState = window.AuthCookie.read();
-            }
-        }, 1000);
+    },
+    destroy() {
+        // Clean up subscription
+        if (this.unsubscribe) {
+            this.unsubscribe();
+        }
     },
     toggleDarkMode() {
         this.darkMode = !this.darkMode;

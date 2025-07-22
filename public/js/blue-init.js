@@ -144,12 +144,12 @@ window.BlueInit = {
      * Initialize auth cookie functionality
      */
     initAuthCookie() {
-        if (typeof AuthCookie !== 'undefined') {
-            // Auth cookie utility is available
-            // Components that need auth state will handle their own initialization
-            console.log('✅ Auth cookie utility available');
+        if (typeof AuthCookie !== 'undefined' && typeof AuthStateManager !== 'undefined') {
+            // Initialize the centralized auth state manager
+            AuthStateManager.init();
+            console.log('✅ Auth state manager initialized');
         } else {
-            console.warn('AuthCookie not loaded - auth state detection will not work');
+            console.warn('AuthCookie or AuthStateManager not loaded - auth state detection will not work');
         }
     }
 };
