@@ -22,25 +22,24 @@ type PageMetadata struct {
 
 // SiteMetadata represents global site metadata
 type SiteMetadata struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	URL         string `json:"url"`
-	Language    string `json:"language"`
-	Author      string `json:"author"`
+	Name         string            `json:"name"`
+	Descriptions map[string]string `json:"descriptions"`
+	URL          string            `json:"url"`
+	Author       string            `json:"author"`
 }
 
 // MetadataDefaults represents default metadata values
 type MetadataDefaults struct {
-	TitleSuffix string   `json:"title_suffix"`
-	Description string   `json:"description"`
-	Keywords    []string `json:"keywords"`
+	TitleSuffix  string              `json:"title_suffix"`
+	Descriptions map[string]string   `json:"descriptions"`
+	Keywords     map[string][]string `json:"keywords"`
 }
 
 // Metadata holds the complete metadata structure
 type Metadata struct {
-	Site     SiteMetadata                `json:"site"`
-	Pages    map[string]PageMetadata     `json:"pages"`
-	Defaults MetadataDefaults            `json:"defaults"`
+	Site     SiteMetadata                           `json:"site"`
+	Pages    map[string]map[string]PageMetadata    `json:"pages"`
+	Defaults MetadataDefaults                       `json:"defaults"`
 }
 
 // Frontmatter represents markdown file frontmatter
@@ -191,7 +190,7 @@ func (s *SEOService) ParseFrontmatter(content []byte) (*Frontmatter, []byte, err
 }
 
 // PreparePageMetadata creates page metadata for the given path
-func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatter *Frontmatter) (string, string, []string, *PageMetadata, *SiteMetadata) {
+func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatter *Frontmatter, lang string) (string, string, []string, *PageMetadata, *SiteMetadata) {
 	// Get page key for metadata lookup
 	pageKey := s.getPageKey(path)
 	
@@ -213,25 +212,51 @@ func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatt
 	// If no frontmatter or missing fields, use metadata.json
 	if title == "" || description == "" {
 		if s.metadata != nil {
-			// Check if specific page metadata exists
-			if meta, exists := s.metadata.Pages[pageKey]; exists {
-				pageMeta = &meta
-				if title == "" {
-					title = meta.Title
+			// Check if specific page metadata exists for the language
+			if pageData, exists := s.metadata.Pages[pageKey]; exists {
+				if langMeta, langExists := pageData[lang]; langExists {
+					pageMeta = &langMeta
+					if title == "" {
+						title = langMeta.Title
+					}
+					if description == "" {
+						description = langMeta.Description
+					}
+					keywords = langMeta.Keywords
+				} else if enMeta, enExists := pageData["en"]; enExists {
+					// Fallback to English if language not found
+					pageMeta = &enMeta
+					if title == "" {
+						title = enMeta.Title
+					}
+					if description == "" {
+						description = enMeta.Description
+					}
+					keywords = enMeta.Keywords
 				}
-				if description == "" {
-					description = meta.Description
-				}
-				keywords = meta.Keywords
 			} else {
 				// Use defaults
 				if title == "" {
 					title = s.getFallbackTitle(path)
 				}
 				if description == "" {
-					description = s.metadata.Defaults.Description
+					// Try language-specific default description
+					if s.metadata.Defaults.Descriptions != nil {
+						if desc, ok := s.metadata.Defaults.Descriptions[lang]; ok && desc != "" {
+							description = desc
+						} else if desc, ok := s.metadata.Defaults.Descriptions["en"]; ok && desc != "" {
+							description = desc
+						}
+					}
 				}
-				keywords = s.metadata.Defaults.Keywords
+				// Try language-specific default keywords
+				if s.metadata.Defaults.Keywords != nil {
+					if kw, ok := s.metadata.Defaults.Keywords[lang]; ok && len(kw) > 0 {
+						keywords = kw
+					} else if kw, ok := s.metadata.Defaults.Keywords["en"]; ok && len(kw) > 0 {
+						keywords = kw
+					}
+				}
 			}
 		} else {
 			// Fallback if no metadata loaded

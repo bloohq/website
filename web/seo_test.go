@@ -24,10 +24,12 @@ func TestLoadSEOData(t *testing.T) {
 			Description: "Test site description",
 			URL:         "https://example.com",
 		},
-		Pages: map[string]PageMetadata{
+		Pages: map[string]map[string]PageMetadata{
 			"/about": {
-				Title:       "About Us",
-				Description: "About page description",
+				"en": {
+					Title:       "About Us",
+					Description: "About page description",
+				},
 			},
 		},
 		Defaults: MetadataDefaults{
@@ -164,17 +166,23 @@ func TestPreparePageMetadata(t *testing.T) {
 				Description: "Test site description",
 				URL:         "https://example.com",
 			},
-			Pages: map[string]PageMetadata{
+			Pages: map[string]map[string]PageMetadata{
 				"about": {
-					Title:       "About Us",
-					Description: "About page description",
-					Keywords:    []string{"about", "company"},
+					"en": {
+						Title:       "About Us",
+						Description: "About page description",
+						Keywords:    []string{"about", "company"},
+					},
 				},
 			},
 			Defaults: MetadataDefaults{
 				TitleSuffix: " | Test Site",
-				Description: "Default description",
-				Keywords:    []string{"test", "site"},
+				Descriptions: map[string]string{
+					"en": "Default description",
+				},
+				Keywords: map[string][]string{
+					"en": {"test", "site"},
+				},
 			},
 		},
 	}
@@ -231,7 +239,7 @@ func TestPreparePageMetadata(t *testing.T) {
 	
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			title, desc, keywords, _, _ := seoService.PreparePageMetadata(tt.path, tt.isMarkdown, tt.frontmatter)
+			title, desc, keywords, _, _ := seoService.PreparePageMetadata(tt.path, tt.isMarkdown, tt.frontmatter, "en")
 			
 			if title != tt.expectedTitle {
 				t.Errorf("Expected title %q, got %q", tt.expectedTitle, title)

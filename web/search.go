@@ -35,10 +35,12 @@ func GenerateSearchIndex() error {
 	var searchItems []SearchItem
 
 	// Load metadata.json for title lookup
-	metadata, err := loadMetadata()
-	if err != nil {
-		fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
-	}
+	// TODO: Update to support multi-language metadata structure
+	var metadata *Metadata = nil
+	// metadata, err := loadMetadata()
+	// if err != nil {
+	// 	fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
+	// }
 
 	// Index HTML pages
 	if err := indexHTMLPages(&searchItems, metadata, nil); err != nil {
@@ -59,10 +61,12 @@ func GenerateSearchIndexWithCache(markdownService *MarkdownService) error {
 	var searchItems []SearchItem
 
 	// Load metadata.json for title lookup
-	metadata, err := loadMetadata()
-	if err != nil {
-		fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
-	}
+	// TODO: Update to support multi-language metadata structure
+	var metadata *Metadata = nil
+	// metadata, err := loadMetadata()
+	// if err != nil {
+	// 	fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
+	// }
 
 	// Index HTML pages
 	if err := indexHTMLPages(&searchItems, metadata, nil); err != nil {
@@ -83,10 +87,12 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 	var searchItems []SearchItem
 
 	// Load metadata.json for title lookup
-	metadata, err := loadMetadata()
-	if err != nil {
-		fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
-	}
+	// TODO: Update to support multi-language metadata structure
+	var metadata *Metadata = nil
+	// metadata, err := loadMetadata()
+	// if err != nil {
+	// 	fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
+	// }
 
 	// Index cached HTML pages
 	if err := indexCachedHTMLPages(&searchItems, htmlService, metadata); err != nil {
@@ -176,13 +182,14 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[str
 		// For non-cached HTML pages, use metadata description as content if available
 		var textContent string
 		var description string
-		if metadata != nil {
-			pageKey := getPageKey(url)
-			if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Description != "" {
-				textContent = pageMeta.Description
-				description = pageMeta.Description
-			}
-		}
+		// TODO: Re-enable when metadata loading is updated for multi-language
+		// if metadata != nil {
+		// 	pageKey := getPageKey(url)
+		// 	if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Description != "" {
+		// 		textContent = pageMeta.Description
+		// 		description = pageMeta.Description
+		// 	}
+		// }
 		
 		// Fallback to HTML extraction if no metadata description
 		if textContent == "" {
@@ -212,12 +219,13 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[str
 // 3. Generate clean title from filename
 func extractPageTitle(htmlContent, url, filePath string, metadata *Metadata) string {
 	// 1. Check metadata.json first
-	if metadata != nil {
-		pageKey := getPageKey(url)
-		if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Title != "" {
-			return pageMeta.Title
-		}
-	}
+	// TODO: Re-enable when metadata loading is updated for multi-language
+	// if metadata != nil {
+	// 	pageKey := getPageKey(url)
+	// 	if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Title != "" {
+	// 		return pageMeta.Title
+	// 	}
+	// }
 
 	// 2. Try to extract from H1 tags
 	if title := extractH1Title(htmlContent); title != "" {
@@ -542,12 +550,13 @@ func indexCachedHTMLPages(items *[]SearchItem, htmlService *HTMLService, metadat
 
 		// Get description from metadata if available
 		description := ""
-		if metadata != nil {
-			pageKey := getPageKey(urlPath)
-			if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Description != "" {
-				description = pageMeta.Description
-			}
-		}
+		// TODO: Re-enable when metadata loading is updated for multi-language
+		// if metadata != nil {
+		// 	pageKey := getPageKey(urlPath)
+		// 	if pageMeta, exists := metadata.Pages[pageKey]; exists && pageMeta.Description != "" {
+		// 		description = pageMeta.Description
+		// 	}
+		// }
 
 		// Extract clean text from pre-rendered HTML
 		textContent := extractTextFromHTML(content.HTML)

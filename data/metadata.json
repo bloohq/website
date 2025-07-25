@@ -1,236 +1,342 @@
 {
   "site": {
     "name": "Blue",
-    "description": "Blue is a powerful platform to create, manage, and scale processes.",
     "url": "https://blue.cc",
-    "language": "en",
-    "author": "Blue Team"
+    "author": "Blue Team",
+    "descriptions": {
+      "en": "Blue is a powerful platform to create, manage, and scale processes.",
+      "es": "Blue es una poderosa plataforma para crear, gestionar y escalar procesos."
+    }
   },
   "pages": {
     "home": {
-      "title": "Blue - Powerful Process Management Platform",
-      "description": "Blue revolutionizes how teams collaborate and manage their work. Built for the modern workplace, our platform combines powerful project management tools with intuitive design.",
-      "keywords": ["process management", "project management", "team collaboration", "workflow automation", "blue"]
+      "en": {
+        "title": "Blue - Powerful Process Management Platform",
+        "description": "Blue revolutionizes how teams collaborate and manage their work. Built for the modern workplace, our platform combines powerful project management tools with intuitive design.",
+        "keywords": ["process management", "project management", "team collaboration", "workflow automation", "blue"]
+      },
+      "es": {
+        "title": "Blue - Poderosa Plataforma de Gestión de Procesos",
+        "description": "Blue revoluciona cómo los equipos colaboran y gestionan su trabajo. Creado para el lugar de trabajo moderno, nuestra plataforma combina potentes herramientas de gestión de proyectos con un diseño intuitivo.",
+        "keywords": ["gestión de procesos", "gestión de proyectos", "colaboración de equipos", "automatización de flujos de trabajo", "blue"]
+      }
     },
     "about": {
-      "title": "About Blue - Modern Team Collaboration Platform",
-      "description": "Learn more about Blue and how we're revolutionizing team collaboration and process management for modern workplaces.",
-      "keywords": ["about blue", "company", "team collaboration", "process management"]
+      "en": {
+        "title": "About Blue - Modern Team Collaboration Platform",
+        "description": "Learn more about Blue and how we're revolutionizing team collaboration and process management for modern workplaces.",
+        "keywords": ["about blue", "company", "team collaboration", "process management"]
+      }
     },
     "company/about": {
-      "title": "About",
-      "description": "Discover Blue's mission to transform how teams work together and manage their processes with our innovative platform.",
-      "keywords": ["about", "company", "mission", "team", "blue"]
+      "en": {
+        "title": "About",
+        "description": "Discover Blue's mission to transform how teams work together and manage their processes with our innovative platform.",
+        "keywords": ["about", "company", "mission", "team", "blue"]
+      },
+      "es": {
+        "title": "Acerca de",
+        "description": "Descubre la misión de Blue de transformar cómo los equipos trabajan juntos y gestionan sus procesos con nuestra innovadora plataforma.",
+        "keywords": ["acerca de", "empresa", "misión", "equipo", "blue"]
+      }
     },
     "pricing": {
-      "title": "Pricing",
-      "description": "Choose the Blue plan that fits your team's needs. Simple, transparent pricing with no hidden fees. Start your free trial today.",
-      "keywords": ["pricing", "plans", "free trial", "team management", "blue"]
+      "en": {
+        "title": "Pricing",
+        "description": "Choose the Blue plan that fits your team's needs. Simple, transparent pricing with no hidden fees. Start your free trial today.",
+        "keywords": ["pricing", "plans", "free trial", "team management", "blue"]
+      }
     },
     "platform/changelog": {
-      "title": "Changelog",
-      "description": "Stay up to date with the latest features and improvements in Blue.",
-      "keywords": ["changelog", "updates", "features", "improvements", "blue"]
+      "en": {
+        "title": "Changelog",
+        "description": "Stay up to date with the latest features and improvements in Blue.",
+        "keywords": ["changelog", "updates", "features", "improvements", "blue"]
+      }
     },
     "resources/faq": {
-      "title": "FAQ",
-      "description": "Frequently asked questions about Blue. Find answers to common questions about our platform, features, and pricing.",
-      "keywords": ["faq", "frequently asked questions", "help", "support", "blue"]
+      "en": {
+        "title": "FAQ",
+        "description": "Frequently asked questions about Blue. Find answers to common questions about our platform, features, and pricing.",
+        "keywords": ["faq", "frequently asked questions", "help", "support", "blue"]
+      }
     },
     "platform/status": {
-      "title": "System Status",
-      "description": "Monitor Blue's platform status and service uptime in real-time. View the current operational status and 90-day uptime history for all Blue services including API, web app, and background services.",
-      "keywords": ["status", "uptime", "system health", "service monitoring", "platform status", "operational", "blue status", "downtime", "service availability"]
+      "en": {
+        "title": "System Status",
+        "description": "Monitor Blue's platform status and service uptime in real-time. View the current operational status and 90-day uptime history for all Blue services including API, web app, and background services.",
+        "keywords": ["status", "uptime", "system health", "service monitoring", "platform status", "operational", "blue status", "downtime", "service availability"]
+      }
     },
     "insights": {
-      "title": "Insights",
-      "description": "Stay informed with Blue's latest insights on process management, product updates, engineering practices, and modern workplace trends. Expert perspectives on scaling teams and optimizing workflows.",
-      "keywords": ["insights", "blog", "articles", "process management", "product updates", "engineering", "best practices", "modern work", "team productivity", "workflow optimization", "industry trends", "blue"]
+      "en": {
+        "title": "Insights",
+        "description": "Stay informed with Blue's latest insights on process management, product updates, engineering practices, and modern workplace trends. Expert perspectives on scaling teams and optimizing workflows.",
+        "keywords": ["insights", "blog", "articles", "process management", "product updates", "engineering", "best practices", "modern work", "team productivity", "workflow optimization", "industry trends", "blue"]
+      }
     },
     "platform/roadmap": {
-      "title": "Product Roadmap",
-      "description": "Track Blue's development progress and see what's coming next. View upcoming features, current development status, and planned improvements to the platform.",
-      "keywords": ["roadmap", "product roadmap", "features", "development", "future", "planned features", "blue platform", "updates", "progress"]
+      "en": {
+        "title": "Product Roadmap",
+        "description": "Track Blue's development progress and see what's coming next. View upcoming features, current development status, and planned improvements to the platform.",
+        "keywords": ["roadmap", "product roadmap", "features", "development", "future", "planned features", "blue platform", "updates", "progress"]
+      }
     },
     "customers": {
-      "title": "Our Customers",
-      "description": "Watch real customer testimonials and success stories.",
-      "keywords": ["customers", "testimonials", "case studies", "success stories", "client reviews", "enterprise customers", "customer stories", "blue"]
+      "en": {
+        "title": "Our Customers",
+        "description": "Watch real customer testimonials and success stories.",
+        "keywords": ["customers", "testimonials", "case studies", "success stories", "client reviews", "enterprise customers", "customer stories", "blue"]
+      }
     },
     "enterprise": {
-      "title": "Enterprise",
-      "description": "Blue is designed to scale with your business. We've built a platform that can handle the most complex workflows and processes.",
-      "keywords": ["enterprise", "scale", "workflows", "processes", "automation", "blue"]
+      "en": {
+        "title": "Enterprise",
+        "description": "Blue is designed to scale with your business. We've built a platform that can handle the most complex workflows and processes.",
+        "keywords": ["enterprise", "scale", "workflows", "processes", "automation", "blue"]
+      }
     },
     "brand": {
-      "title": "Brand Guidelines",
-      "description": "Explore Blue's brand guidelines including typography, visual identity, and brand assets. Learn how to properly use Blue's brand elements.",
-      "keywords": ["brand", "brand guidelines", "typography", "visual identity", "brand assets", "logo", "design system", "style guide"]
+      "en": {
+        "title": "Brand Guidelines",
+        "description": "Explore Blue's brand guidelines including typography, visual identity, and brand assets. Learn how to properly use Blue's brand elements.",
+        "keywords": ["brand", "brand guidelines", "typography", "visual identity", "brand assets", "logo", "design system", "style guide"]
+      }
     },
     "company": {
-      "title": "Company",
-      "description": "Learn about Blue's company, our team, and our mission to revolutionize process management for modern teams.",
-      "keywords": ["company", "about us", "team", "mission", "leadership", "blue"]
+      "en": {
+        "title": "Company",
+        "description": "Learn about Blue's company, our team, and our mission to revolutionize process management for modern teams.",
+        "keywords": ["company", "about us", "team", "mission", "leadership", "blue"]
+      }
     },
     "solutions/industry/solopreneurs": {
-      "title": "Project Management for Solopreneurs",
-      "description": "Streamline your solo business with Blue's powerful project management platform. Manage clients, projects, tasks, and workflows in one simple solution designed for solopreneurs.",
-      "keywords": ["solopreneurs", "solo entrepreneurs", "freelancers", "independent business", "project management", "client management", "workflow automation", "business productivity", "blue"]
+      "en": {
+        "title": "Project Management for Solopreneurs",
+        "description": "Streamline your solo business with Blue's powerful project management platform. Manage clients, projects, tasks, and workflows in one simple solution designed for solopreneurs.",
+        "keywords": ["solopreneurs", "solo entrepreneurs", "freelancers", "independent business", "project management", "client management", "workflow automation", "business productivity", "blue"]
+      }
     },
     "platform/api": {
-      "title": "API",
-      "description": "Access Blue's powerful API for seamless integration and automation.",
-      "keywords": ["api", "integration", "automation", "developer", "blue"]
+      "en": {
+        "title": "API",
+        "description": "Access Blue's powerful API for seamless integration and automation.",
+        "keywords": ["api", "integration", "automation", "developer", "blue"]
+      }
     },
     "platform/download": {
-      "title": "Download",
-      "description": "Download Blue for your platform and start managing processes efficiently.",
-      "keywords": ["download", "install", "desktop", "mobile", "blue"]
+      "en": {
+        "title": "Download",
+        "description": "Download Blue for your platform and start managing processes efficiently.",
+        "keywords": ["download", "install", "desktop", "mobile", "blue"]
+      }
     },
     "platform": {
-      "title": "Platform",
-      "description": "Explore Blue's comprehensive platform features and capabilities.",
-      "keywords": ["platform", "features", "capabilities", "overview", "blue"]
+      "en": {
+        "title": "Platform",
+        "description": "Explore Blue's comprehensive platform features and capabilities.",
+        "keywords": ["platform", "features", "capabilities", "overview", "blue"]
+      }
     },
     "platform/integrations": {
-      "title": "Integrations",
-      "description": "Connect Blue with your favorite tools and services for seamless workflow integration.",
-      "keywords": ["integrations", "connect", "third-party", "apps", "blue"]
+      "en": {
+        "title": "Integrations",
+        "description": "Connect Blue with your favorite tools and services for seamless workflow integration.",
+        "keywords": ["integrations", "connect", "third-party", "apps", "blue"]
+      }
     },
     "platform/security": {
-      "title": "Security",
-      "description": "Learn about Blue's enterprise-grade security features and compliance standards.",
-      "keywords": ["security", "compliance", "encryption", "data protection", "blue"]
+      "en": {
+        "title": "Security",
+        "description": "Learn about Blue's enterprise-grade security features and compliance standards.",
+        "keywords": ["security", "compliance", "encryption", "data protection", "blue"]
+      }
     },
     "platform/white-label": {
-      "title": "White Label",
-      "description": "Customize Blue with your brand for a seamless white-label experience.",
-      "keywords": ["white label", "branding", "customization", "enterprise", "blue"]
+      "en": {
+        "title": "White Label",
+        "description": "Customize Blue with your brand for a seamless white-label experience.",
+        "keywords": ["white label", "branding", "customization", "enterprise", "blue"]
+      }
     },
     "platform/features": {
-      "title": "Features",
-      "description": "Discover all the powerful features Blue offers for process management.",
-      "keywords": ["features", "capabilities", "tools", "functionality", "blue"]
+      "en": {
+        "title": "Features",
+        "description": "Discover all the powerful features Blue offers for process management.",
+        "keywords": ["features", "capabilities", "tools", "functionality", "blue"]
+      }
     },
     "platform/features/activity": {
-      "title": "Activity",
-      "description": "Track all activities and updates across your projects and processes.",
-      "keywords": ["activity", "tracking", "updates", "monitoring", "blue"]
+      "en": {
+        "title": "Activity",
+        "description": "Track all activities and updates across your projects and processes.",
+        "keywords": ["activity", "tracking", "updates", "monitoring", "blue"]
+      }
     },
     "platform/features/ai": {
-      "title": "AI",
-      "description": "Leverage AI-powered features to automate and optimize your workflows.",
-      "keywords": ["ai", "artificial intelligence", "automation", "smart features", "blue"]
+      "en": {
+        "title": "AI",
+        "description": "Leverage AI-powered features to automate and optimize your workflows.",
+        "keywords": ["ai", "artificial intelligence", "automation", "smart features", "blue"]
+      }
     },
     "platform/features/audit-trails": {
-      "title": "Audit Trails",
-      "description": "Maintain complete audit trails for compliance and accountability.",
-      "keywords": ["audit trails", "compliance", "tracking", "history", "blue"]
+      "en": {
+        "title": "Audit Trails",
+        "description": "Maintain complete audit trails for compliance and accountability.",
+        "keywords": ["audit trails", "compliance", "tracking", "history", "blue"]
+      }
     },
     "platform/features/automations": {
-      "title": "Automations",
-      "description": "Create powerful automations to streamline your workflows.",
-      "keywords": ["automations", "workflow", "efficiency", "triggers", "blue"]
+      "en": {
+        "title": "Automations",
+        "description": "Create powerful automations to streamline your workflows.",
+        "keywords": ["automations", "workflow", "efficiency", "triggers", "blue"]
+      }
     },
     "platform/features/calendar": {
-      "title": "Calendar",
-      "description": "Manage schedules and deadlines with integrated calendar views.",
-      "keywords": ["calendar", "scheduling", "deadlines", "timeline", "blue"]
+      "en": {
+        "title": "Calendar",
+        "description": "Manage schedules and deadlines with integrated calendar views.",
+        "keywords": ["calendar", "scheduling", "deadlines", "timeline", "blue"]
+      }
     },
     "platform/features/chat": {
-      "title": "Chat",
-      "description": "Collaborate in real-time with integrated team chat.",
-      "keywords": ["chat", "messaging", "collaboration", "communication", "blue"]
+      "en": {
+        "title": "Chat",
+        "description": "Collaborate in real-time with integrated team chat.",
+        "keywords": ["chat", "messaging", "collaboration", "communication", "blue"]
+      }
     },
     "platform/features/custom-fields": {
-      "title": "Custom Fields",
-      "description": "Create custom fields to capture exactly the data you need.",
-      "keywords": ["custom fields", "customization", "data", "forms", "blue"]
+      "en": {
+        "title": "Custom Fields",
+        "description": "Create custom fields to capture exactly the data you need.",
+        "keywords": ["custom fields", "customization", "data", "forms", "blue"]
+      }
     },
     "platform/features/dashboards": {
-      "title": "Dashboards",
-      "description": "Visualize your data with customizable dashboards and reports.",
-      "keywords": ["dashboards", "analytics", "visualization", "reports", "blue"]
+      "en": {
+        "title": "Dashboards",
+        "description": "Visualize your data with customizable dashboards and reports.",
+        "keywords": ["dashboards", "analytics", "visualization", "reports", "blue"]
+      }
     },
     "platform/features/database": {
-      "title": "Database",
-      "description": "Powerful database capabilities for managing structured data.",
-      "keywords": ["database", "data management", "records", "storage", "blue"]
+      "en": {
+        "title": "Database",
+        "description": "Powerful database capabilities for managing structured data.",
+        "keywords": ["database", "data management", "records", "storage", "blue"]
+      }
     },
     "platform/features/docs": {
-      "title": "Docs",
-      "description": "Create and collaborate on documents within your projects.",
-      "keywords": ["docs", "documents", "collaboration", "writing", "blue"]
+      "en": {
+        "title": "Docs",
+        "description": "Create and collaborate on documents within your projects.",
+        "keywords": ["docs", "documents", "collaboration", "writing", "blue"]
+      }
     },
     "platform/features/file-management": {
-      "title": "File Management",
-      "description": "Organize and manage files across all your projects.",
-      "keywords": ["file management", "storage", "organization", "documents", "blue"]
+      "en": {
+        "title": "File Management",
+        "description": "Organize and manage files across all your projects.",
+        "keywords": ["file management", "storage", "organization", "documents", "blue"]
+      }
     },
     "platform/features/forms": {
-      "title": "Forms",
-      "description": "Build custom forms to collect data and automate processes.",
-      "keywords": ["forms", "data collection", "surveys", "input", "blue"]
+      "en": {
+        "title": "Forms",
+        "description": "Build custom forms to collect data and automate processes.",
+        "keywords": ["forms", "data collection", "surveys", "input", "blue"]
+      }
     },
     "platform/features/kanban-board": {
-      "title": "Kanban Board",
-      "description": "Visualize workflows with flexible Kanban boards.",
-      "keywords": ["kanban", "board", "workflow", "visual management", "blue"]
+      "en": {
+        "title": "Kanban Board",
+        "description": "Visualize workflows with flexible Kanban boards.",
+        "keywords": ["kanban", "board", "workflow", "visual management", "blue"]
+      }
     },
     "platform/features/list": {
-      "title": "List",
-      "description": "Organize tasks and items in customizable list views.",
-      "keywords": ["list", "tasks", "organization", "view", "blue"]
+      "en": {
+        "title": "List",
+        "description": "Organize tasks and items in customizable list views.",
+        "keywords": ["list", "tasks", "organization", "view", "blue"]
+      }
     },
     "platform/features/map": {
-      "title": "Map",
-      "description": "Visualize location-based data with integrated mapping.",
-      "keywords": ["map", "location", "geography", "visualization", "blue"]
+      "en": {
+        "title": "Map",
+        "description": "Visualize location-based data with integrated mapping.",
+        "keywords": ["map", "location", "geography", "visualization", "blue"]
+      }
     },
     "platform/features/pdf-generation": {
-      "title": "PDF Generation",
-      "description": "Generate professional PDFs from your data and documents.",
-      "keywords": ["pdf", "generation", "documents", "export", "blue"]
+      "en": {
+        "title": "PDF Generation",
+        "description": "Generate professional PDFs from your data and documents.",
+        "keywords": ["pdf", "generation", "documents", "export", "blue"]
+      }
     },
     "platform/features/records": {
-      "title": "Records",
-      "description": "Manage records with powerful database capabilities.",
-      "keywords": ["records", "database", "data management", "tracking", "blue"]
+      "en": {
+        "title": "Records",
+        "description": "Manage records with powerful database capabilities.",
+        "keywords": ["records", "database", "data management", "tracking", "blue"]
+      }
     },
     "platform/features/templates": {
-      "title": "Templates",
-      "description": "Save time with reusable templates for common processes.",
-      "keywords": ["templates", "reusable", "efficiency", "standardization", "blue"]
+      "en": {
+        "title": "Templates",
+        "description": "Save time with reusable templates for common processes.",
+        "keywords": ["templates", "reusable", "efficiency", "standardization", "blue"]
+      }
     },
     "platform/features/timeline-gantt-charts": {
-      "title": "Timeline Gantt Charts",
-      "description": "Plan and track projects with timeline and Gantt chart views.",
-      "keywords": ["timeline", "gantt", "project planning", "scheduling", "blue"]
+      "en": {
+        "title": "Timeline Gantt Charts",
+        "description": "Plan and track projects with timeline and Gantt chart views.",
+        "keywords": ["timeline", "gantt", "project planning", "scheduling", "blue"]
+      }
     },
     "platform/features/user-permissions": {
-      "title": "User Permissions",
-      "description": "Control access with granular user permissions and roles.",
-      "keywords": ["permissions", "access control", "security", "roles", "blue"]
+      "en": {
+        "title": "User Permissions",
+        "description": "Control access with granular user permissions and roles.",
+        "keywords": ["permissions", "access control", "security", "roles", "blue"]
+      }
     },
     "platform/features/views": {
-      "title": "Views",
-      "description": "Create custom views to see your data exactly how you need it.",
-      "keywords": ["views", "customization", "data visualization", "filters", "blue"]
+      "en": {
+        "title": "Views",
+        "description": "Create custom views to see your data exactly how you need it.",
+        "keywords": ["views", "customization", "data visualization", "filters", "blue"]
+      }
     },
     "platform/features/wiki": {
-      "title": "Wiki",
-      "description": "Build a knowledge base with integrated wiki functionality.",
-      "keywords": ["wiki", "knowledge base", "documentation", "information", "blue"]
+      "en": {
+        "title": "Wiki",
+        "description": "Build a knowledge base with integrated wiki functionality.",
+        "keywords": ["wiki", "knowledge base", "documentation", "information", "blue"]
+      }
     },
     "platform/features/workspaces": {
-      "title": "Workspaces",
-      "description": "Organize projects and teams with dedicated workspaces.",
-      "keywords": ["workspaces", "organization", "teams", "projects", "blue"]
+      "en": {
+        "title": "Workspaces",
+        "description": "Organize projects and teams with dedicated workspaces.",
+        "keywords": ["workspaces", "organization", "teams", "projects", "blue"]
+      }
     }
   },
   "defaults": {
     "title_suffix": " | Blue",
-    "description": "Blue - Powerful platform to create, manage, and scale processes for modern teams.",
-    "keywords": ["blue", "process management", "team collaboration", "workflow"]
+    "descriptions": {
+      "en": "Blue - Powerful platform to create, manage, and scale processes for modern teams.",
+      "es": "Blue - Poderosa plataforma para crear, gestionar y escalar procesos para equipos modernos."
+    },
+    "keywords": {
+      "en": ["blue", "process management", "team collaboration", "workflow"],
+      "es": ["blue", "gestión de procesos", "colaboración de equipos", "flujo de trabajo"]
+    }
   }
 }

@@ -12,6 +12,7 @@ import (
 type SchemaService struct {
 	metadata *Metadata
 	siteURL  string
+	language string
 }
 
 // NewSchemaService creates a new schema service instance
@@ -19,7 +20,13 @@ func NewSchemaService(metadata *Metadata, siteURL string) *SchemaService {
 	return &SchemaService{
 		metadata: metadata,
 		siteURL:  strings.TrimSuffix(siteURL, "/"),
+		language: DefaultLanguage, // Default to English
 	}
+}
+
+// SetLanguage updates the language for schema generation
+func (s *SchemaService) SetLanguage(lang string) {
+	s.language = lang
 }
 
 // GenerateSchema generates appropriate schema based on page type
@@ -90,8 +97,14 @@ func (s *SchemaService) generateOrganizationSchema() map[string]interface{} {
 		},
 	}
 	
-	if s.metadata != nil && s.metadata.Site.Description != "" {
-		schema["description"] = s.metadata.Site.Description
+	// Try to get language-specific description
+	if s.metadata != nil && s.metadata.Site.Descriptions != nil {
+		if desc, ok := s.metadata.Site.Descriptions[s.language]; ok && desc != "" {
+			schema["description"] = desc
+		} else if desc, ok := s.metadata.Site.Descriptions["en"]; ok && desc != "" {
+			// Fallback to English
+			schema["description"] = desc
+		}
 	}
 	
 	return schema
