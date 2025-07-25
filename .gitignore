@@ -103,3 +103,7 @@ public/sitemap.xml
 public/sitemap.xml
 workspace.txt
 translation-tracker.md
+web/public/searchIndex-es.json
+web/public/searchIndex-km.json
+web/public/searchIndex-ko.json
+web/public/searchIndex-sv.json
