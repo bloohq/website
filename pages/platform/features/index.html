@@ -1,174 +1,136 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Feature Index" 
-            "Subtitle" "Discover all the modules and features in Blue." 
+            "Title" (t "features.page_title")
+            "Subtitle" (t "features.page_subtitle")
             "MarginBottom" "mb-16"
     }}
 
-    {{$featuresData := parseJSON `{
-        "sections": [
-            {
-                "title": "Product",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "Workspaces", "link": "/platform/features/workspaces" },
-                            { "label": "Records", "link": "/platform/features/records" },
-                            { "label": "User Permissions", "link": "/platform/features/user-permissions" },
-                            { "label": "File Management", "link": "/platform/features/file-management" },
-                            { "label": "Automations", "link": "/platform/features/automations" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Dashboards", "link": "/platform/features/dashboards" },
-                            { "label": "Templates", "link": "/platform/features/templates" },
-                            { "label": "Search", "link": "/docs/projects/search" },
-                            { "label": "Artificial Intelligence", "link": "/platform/features/ai" },
-                            { "label": "Forms", "link": "/platform/features/forms" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Chat", "link": "/platform/features/chat" },
-                            { "label": "Wiki & Docs", "link": "/platform/features/wiki-docs" },
-                            { "label": "Notifications", "link": "/docs/user-management/notifications" },
-                            { "label": "PDF Generation", "link": "/platform/features/pdf-generation" },
-                            { "label": "Repeating Records", "link": "/docs/records/repeat" }
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Views",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "Kanban Board", "link": "/platform/features/kanban-board" },
-                            { "label": "Calendar", "link": "/platform/features/calendar" },
-                            { "label": "Timeline & Gantt Charts", "link": "/platform/features/timeline-gantt-charts" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Database", "link": "/platform/features/database" },
-                            { "label": "Map", "link": "/platform/features/map" },
-                            { "label": "List", "link": "/docs/views/list" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Filters", "link": "/docs/views/filters" },
-                            { "label": "Audit Trails", "link": "/platform/features/audit-trails" }
-
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Custom Fields",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "Overview", "link": "/platform/features/custom-fields" },
-                            { "label": "Single Line Text", "link": "/docs/custom-fields/single-line-text" },
-                            { "label": "Multiple Line Text", "link": "/docs/custom-fields/multiple-line-text" },
-                            { "label": "URL / Link", "link": "/docs/custom-fields/url-link" },
-                            { "label": "Currency", "link": "/docs/custom-fields/currency" },
-                            { "label": "Country", "link": "/docs/custom-fields/country" },
-                            { "label": "Date", "link": "/docs/custom-fields/date" },
-                            { "label": "Formula", "link": "/docs/custom-fields/formula" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "File", "link": "/docs/custom-fields/file" },
-                            { "label": "Single Select", "link": "/docs/custom-fields/single-select" },
-                            { "label": "Multiple Select", "link": "/docs/custom-fields/multiple-select" },
-                            { "label": "Location / Map", "link": "/docs/custom-fields/location-map" },
-                            { "label": "Phone Number", "link": "/docs/custom-fields/phone-number" },
-                            { "label": "Email", "link": "/docs/custom-fields/email" },
-                            { "label": "Star Rating", "link": "/docs/custom-fields/star-rating" },
-                            { "label": "Checkbox", "link": "/docs/custom-fields/checkbox" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Number", "link": "/docs/custom-fields/number" },
-                            { "label": "Percent", "link": "/docs/custom-fields/percent" },
-                            { "label": "Unique ID", "link": "/docs/custom-fields/unique-id" },
-                            { "label": "Reference", "link": "/docs/custom-fields/reference" },
-                            { "label": "Lookup", "link": "/docs/custom-fields/lookup" },
-                            { "label": "Duration", "link": "/docs/custom-fields/duration" },
-                            { "label": "Button", "link": "/docs/custom-fields/button" },
-                            { "label": "Time In List", "link": "/docs/custom-fields/time-in-list" }
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Integrations",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "API", "link": "/docs/integrations/api" },
-                            { "label": "Webhooks", "link": "/docs/integrations/webhooks" },
-                            { "label": "CSV Import", "link": "/docs/integrations/csv-import" },
-                            { "label": "CSV Export", "link": "/docs/integrations/csv-export" },
-                            { "label": "Calendar Sync", "link": "/docs/integrations/calendar-sync" }
-                            
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Zapier", "link": "/docs/integrations/zapier" },
-                            { "label": "Make.com", "link": "/docs/integrations/make" },
-                            { "label": "Pabbly Connect", "link": "/docs/integrations/pabbly-connect" },
-                            { "label": "Albato", "link": "/docs/integrations/api" },
-                            { "label": "Boost.space", "link": "/docs/integrations/api" }
-                            
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "HTTP Request Automations", "link": "/docs/integrations/api" },
-                            { "label": "Python SDK", "link": "/api/libraries/python" },
-                            { "label": "GraphQL Playground", "link": "/api/start-guide/graphql-playground" },
-                            { "label": "Google Maps", "link": "/docs/integrations/googlemaps" },
-                            { "label": "Github", "link": "/docs/integrations/github" }
-                            
-                          
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Download",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "iOS (iPhone) ", "link": "/platform/download" },
-                             { "label": "Android", "link": "/platform/download" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "iOS (iPad)", "link": "/platform/download" },
-                            { "label": "Chrome Extension (Unofficial)", "link": "/platform/download" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            {"label": "Mac", "link": "/platform/download" },
-                            { "label": "Windows", "link": "/platform/download" }
-                            
-                        ]
-                    }
-                ]
-            }
-        ]
-    }`}}
+    {{$featuresData := dict "sections" (slice
+        (dict
+            "title" (t "features.sections.product.title")
+            "columns" (slice
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.product.features.workspaces") "link" "/platform/features/workspaces")
+                    (dict "label" (t "features.sections.product.features.records") "link" "/platform/features/records")
+                    (dict "label" (t "features.sections.product.features.user_permissions") "link" "/platform/features/user-permissions")
+                    (dict "label" (t "features.sections.product.features.file_management") "link" "/platform/features/file-management")
+                    (dict "label" (t "features.sections.product.features.automations") "link" "/platform/features/automations")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.product.features.dashboards") "link" "/platform/features/dashboards")
+                    (dict "label" (t "features.sections.product.features.templates") "link" "/platform/features/templates")
+                    (dict "label" (t "features.sections.product.features.search") "link" "/docs/projects/search")
+                    (dict "label" (t "features.sections.product.features.artificial_intelligence") "link" "/platform/features/ai")
+                    (dict "label" (t "features.sections.product.features.forms") "link" "/platform/features/forms")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.product.features.chat") "link" "/platform/features/chat")
+                    (dict "label" (t "features.sections.product.features.wiki_docs") "link" "/platform/features/wiki-docs")
+                    (dict "label" (t "features.sections.product.features.notifications") "link" "/docs/user-management/notifications")
+                    (dict "label" (t "features.sections.product.features.pdf_generation") "link" "/platform/features/pdf-generation")
+                    (dict "label" (t "features.sections.product.features.repeating_records") "link" "/docs/records/repeat")
+                ))
+            )
+        )
+        (dict
+            "title" (t "features.sections.views.title")
+            "columns" (slice
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.views.features.kanban_board") "link" "/platform/features/kanban-board")
+                    (dict "label" (t "features.sections.views.features.calendar") "link" "/platform/features/calendar")
+                    (dict "label" (t "features.sections.views.features.timeline_gantt_charts") "link" "/platform/features/timeline-gantt-charts")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.views.features.database") "link" "/platform/features/database")
+                    (dict "label" (t "features.sections.views.features.map") "link" "/platform/features/map")
+                    (dict "label" (t "features.sections.views.features.list") "link" "/docs/views/list")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.views.features.filters") "link" "/docs/views/filters")
+                    (dict "label" (t "features.sections.views.features.audit_trails") "link" "/platform/features/audit-trails")
+                ))
+            )
+        )
+        (dict
+            "title" (t "features.sections.custom_fields.title")
+            "columns" (slice
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.custom_fields.features.overview") "link" "/platform/features/custom-fields")
+                    (dict "label" (t "features.sections.custom_fields.features.single_line_text") "link" "/docs/custom-fields/single-line-text")
+                    (dict "label" (t "features.sections.custom_fields.features.multiple_line_text") "link" "/docs/custom-fields/multiple-line-text")
+                    (dict "label" (t "features.sections.custom_fields.features.url_link") "link" "/docs/custom-fields/url-link")
+                    (dict "label" (t "features.sections.custom_fields.features.currency") "link" "/docs/custom-fields/currency")
+                    (dict "label" (t "features.sections.custom_fields.features.country") "link" "/docs/custom-fields/country")
+                    (dict "label" (t "features.sections.custom_fields.features.date") "link" "/docs/custom-fields/date")
+                    (dict "label" (t "features.sections.custom_fields.features.formula") "link" "/docs/custom-fields/formula")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.custom_fields.features.file") "link" "/docs/custom-fields/file")
+                    (dict "label" (t "features.sections.custom_fields.features.single_select") "link" "/docs/custom-fields/single-select")
+                    (dict "label" (t "features.sections.custom_fields.features.multiple_select") "link" "/docs/custom-fields/multiple-select")
+                    (dict "label" (t "features.sections.custom_fields.features.location_map") "link" "/docs/custom-fields/location-map")
+                    (dict "label" (t "features.sections.custom_fields.features.phone_number") "link" "/docs/custom-fields/phone-number")
+                    (dict "label" (t "features.sections.custom_fields.features.email") "link" "/docs/custom-fields/email")
+                    (dict "label" (t "features.sections.custom_fields.features.star_rating") "link" "/docs/custom-fields/star-rating")
+                    (dict "label" (t "features.sections.custom_fields.features.checkbox") "link" "/docs/custom-fields/checkbox")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.custom_fields.features.number") "link" "/docs/custom-fields/number")
+                    (dict "label" (t "features.sections.custom_fields.features.percent") "link" "/docs/custom-fields/percent")
+                    (dict "label" (t "features.sections.custom_fields.features.unique_id") "link" "/docs/custom-fields/unique-id")
+                    (dict "label" (t "features.sections.custom_fields.features.reference") "link" "/docs/custom-fields/reference")
+                    (dict "label" (t "features.sections.custom_fields.features.lookup") "link" "/docs/custom-fields/lookup")
+                    (dict "label" (t "features.sections.custom_fields.features.duration") "link" "/docs/custom-fields/duration")
+                    (dict "label" (t "features.sections.custom_fields.features.button") "link" "/docs/custom-fields/button")
+                    (dict "label" (t "features.sections.custom_fields.features.time_in_list") "link" "/docs/custom-fields/time-in-list")
+                ))
+            )
+        )
+        (dict
+            "title" (t "features.sections.integrations.title")
+            "columns" (slice
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.integrations.features.api") "link" "/docs/integrations/api")
+                    (dict "label" (t "features.sections.integrations.features.webhooks") "link" "/docs/integrations/webhooks")
+                    (dict "label" (t "features.sections.integrations.features.csv_import") "link" "/docs/integrations/csv-import")
+                    (dict "label" (t "features.sections.integrations.features.csv_export") "link" "/docs/integrations/csv-export")
+                    (dict "label" (t "features.sections.integrations.features.calendar_sync") "link" "/docs/integrations/calendar-sync")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.integrations.features.zapier") "link" "/docs/integrations/zapier")
+                    (dict "label" (t "features.sections.integrations.features.make_com") "link" "/docs/integrations/make")
+                    (dict "label" (t "features.sections.integrations.features.pabbly_connect") "link" "/docs/integrations/pabbly-connect")
+                    (dict "label" (t "features.sections.integrations.features.albato") "link" "/docs/integrations/api")
+                    (dict "label" (t "features.sections.integrations.features.boost_space") "link" "/docs/integrations/api")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.integrations.features.http_request_automations") "link" "/docs/integrations/api")
+                    (dict "label" (t "features.sections.integrations.features.python_sdk") "link" "/api/libraries/python")
+                    (dict "label" (t "features.sections.integrations.features.graphql_playground") "link" "/api/start-guide/graphql-playground")
+                    (dict "label" (t "features.sections.integrations.features.google_maps") "link" "/docs/integrations/googlemaps")
+                    (dict "label" (t "features.sections.integrations.features.github") "link" "/docs/integrations/github")
+                ))
+            )
+        )
+        (dict
+            "title" (t "features.sections.download.title")
+            "columns" (slice
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.download.features.ios_iphone") "link" "/platform/download")
+                    (dict "label" (t "features.sections.download.features.android") "link" "/platform/download")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.download.features.ios_ipad") "link" "/platform/download")
+                    (dict "label" (t "features.sections.download.features.chrome_extension") "link" "/platform/download")
+                ))
+                (dict "items" (slice
+                    (dict "label" (t "features.sections.download.features.mac") "link" "/platform/download")
+                    (dict "label" (t "features.sections.download.features.windows") "link" "/platform/download")
+                ))
+            )
+        )
+    )}}
     
     {{template "features-grid" $featuresData}}
 

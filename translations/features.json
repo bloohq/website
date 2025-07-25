@@ -1,0 +1,1586 @@
+{
+  "en": {
+    "page_title": "Feature Index",
+    "page_subtitle": "Discover all the modules and features in Blue.",
+    "sections": {
+      "product": {
+        "title": "Product",
+        "features": {
+          "workspaces": "Workspaces",
+          "records": "Records",
+          "user_permissions": "User Permissions",
+          "file_management": "File Management",
+          "automations": "Automations",
+          "dashboards": "Dashboards",
+          "templates": "Templates",
+          "search": "Search",
+          "artificial_intelligence": "Artificial Intelligence",
+          "forms": "Forms",
+          "chat": "Chat",
+          "wiki_docs": "Wiki & Docs",
+          "notifications": "Notifications",
+          "pdf_generation": "PDF Generation",
+          "repeating_records": "Repeating Records"
+        }
+      },
+      "views": {
+        "title": "Views",
+        "features": {
+          "kanban_board": "Kanban Board",
+          "calendar": "Calendar",
+          "timeline_gantt_charts": "Timeline & Gantt Charts",
+          "database": "Database",
+          "map": "Map",
+          "list": "List",
+          "filters": "Filters",
+          "audit_trails": "Audit Trails"
+        }
+      },
+      "custom_fields": {
+        "title": "Custom Fields",
+        "features": {
+          "overview": "Overview",
+          "single_line_text": "Single Line Text",
+          "multiple_line_text": "Multiple Line Text",
+          "url_link": "URL / Link",
+          "currency": "Currency",
+          "country": "Country",
+          "date": "Date",
+          "formula": "Formula",
+          "file": "File",
+          "single_select": "Single Select",
+          "multiple_select": "Multiple Select",
+          "location_map": "Location / Map",
+          "phone_number": "Phone Number",
+          "email": "Email",
+          "star_rating": "Star Rating",
+          "checkbox": "Checkbox",
+          "number": "Number",
+          "percent": "Percent",
+          "unique_id": "Unique ID",
+          "reference": "Reference",
+          "lookup": "Lookup",
+          "duration": "Duration",
+          "button": "Button",
+          "time_in_list": "Time In List"
+        }
+      },
+      "integrations": {
+        "title": "Integrations",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "CSV Import",
+          "csv_export": "CSV Export",
+          "calendar_sync": "Calendar Sync",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP Request Automations",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Download",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome Extension (Unofficial)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "es": {
+    "page_title": "Índice de Funcionalidades",
+    "page_subtitle": "Descubre todos los módulos y funcionalidades de Blue.",
+    "sections": {
+      "product": {
+        "title": "Producto",
+        "features": {
+          "workspaces": "Espacios de Trabajo",
+          "records": "Registros",
+          "user_permissions": "Permisos de Usuario",
+          "file_management": "Gestión de Archivos",
+          "automations": "Automatizaciones",
+          "dashboards": "Tableros",
+          "templates": "Plantillas",
+          "search": "Búsqueda",
+          "artificial_intelligence": "Inteligencia Artificial",
+          "forms": "Formularios",
+          "chat": "Chat",
+          "wiki_docs": "Wiki y Documentos",
+          "notifications": "Notificaciones",
+          "pdf_generation": "Generación de PDF",
+          "repeating_records": "Registros Repetitivos"
+        }
+      },
+      "views": {
+        "title": "Vistas",
+        "features": {
+          "kanban_board": "Tablero Kanban",
+          "calendar": "Calendario",
+          "timeline_gantt_charts": "Cronograma y Gráficos Gantt",
+          "database": "Base de Datos",
+          "map": "Mapa",
+          "list": "Lista",
+          "filters": "Filtros",
+          "audit_trails": "Registro de Auditoría"
+        }
+      },
+      "custom_fields": {
+        "title": "Campos Personalizados",
+        "features": {
+          "overview": "Resumen",
+          "single_line_text": "Texto de Una Línea",
+          "multiple_line_text": "Texto de Múltiples Líneas",
+          "url_link": "URL / Enlace",
+          "currency": "Moneda",
+          "country": "País",
+          "date": "Fecha",
+          "formula": "Fórmula",
+          "file": "Archivo",
+          "single_select": "Selección Única",
+          "multiple_select": "Selección Múltiple",
+          "location_map": "Ubicación / Mapa",
+          "phone_number": "Número de Teléfono",
+          "email": "Correo Electrónico",
+          "star_rating": "Calificación por Estrellas",
+          "checkbox": "Casilla de Verificación",
+          "number": "Número",
+          "percent": "Porcentaje",
+          "unique_id": "ID Único",
+          "reference": "Referencia",
+          "lookup": "Búsqueda",
+          "duration": "Duración",
+          "button": "Botón",
+          "time_in_list": "Tiempo en Lista"
+        }
+      },
+      "integrations": {
+        "title": "Integraciones",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "Importación CSV",
+          "csv_export": "Exportación CSV",
+          "calendar_sync": "Sincronización de Calendario",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Automatizaciones de Solicitud HTTP",
+          "python_sdk": "SDK de Python",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Descargar",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Extensión de Chrome (No Oficial)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "fr": {
+    "page_title": "Index des Fonctionnalités",
+    "page_subtitle": "Découvrez tous les modules et fonctionnalités de Blue.",
+    "sections": {
+      "product": {
+        "title": "Produit",
+        "features": {
+          "workspaces": "Espaces de Travail",
+          "records": "Enregistrements",
+          "user_permissions": "Autorisations Utilisateur",
+          "file_management": "Gestion de Fichiers",
+          "automations": "Automatisations",
+          "dashboards": "Tableaux de Bord",
+          "templates": "Modèles",
+          "search": "Recherche",
+          "artificial_intelligence": "Intelligence Artificielle",
+          "forms": "Formulaires",
+          "chat": "Chat",
+          "wiki_docs": "Wiki et Documents",
+          "notifications": "Notifications",
+          "pdf_generation": "Génération PDF",
+          "repeating_records": "Enregistrements Récurrents"
+        }
+      },
+      "views": {
+        "title": "Vues",
+        "features": {
+          "kanban_board": "Tableau Kanban",
+          "calendar": "Calendrier",
+          "timeline_gantt_charts": "Chronologie et Diagrammes de Gantt",
+          "database": "Base de Données",
+          "map": "Carte",
+          "list": "Liste",
+          "filters": "Filtres",
+          "audit_trails": "Pistes d'Audit"
+        }
+      },
+      "custom_fields": {
+        "title": "Champs Personnalisés",
+        "features": {
+          "overview": "Aperçu",
+          "single_line_text": "Texte sur Une Ligne",
+          "multiple_line_text": "Texte sur Plusieurs Lignes",
+          "url_link": "URL / Lien",
+          "currency": "Devise",
+          "country": "Pays",
+          "date": "Date",
+          "formula": "Formule",
+          "file": "Fichier",
+          "single_select": "Sélection Unique",
+          "multiple_select": "Sélection Multiple",
+          "location_map": "Localisation / Carte",
+          "phone_number": "Numéro de Téléphone",
+          "email": "E-mail",
+          "star_rating": "Notation par Étoiles",
+          "checkbox": "Case à Cocher",
+          "number": "Nombre",
+          "percent": "Pourcentage",
+          "unique_id": "ID Unique",
+          "reference": "Référence",
+          "lookup": "Recherche",
+          "duration": "Durée",
+          "button": "Bouton",
+          "time_in_list": "Temps dans la Liste"
+        }
+      },
+      "integrations": {
+        "title": "Intégrations",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "Import CSV",
+          "csv_export": "Export CSV",
+          "calendar_sync": "Synchronisation Calendrier",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Automatisations de Requête HTTP",
+          "python_sdk": "SDK Python",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Télécharger",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Extension Chrome (Non Officielle)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "de": {
+    "page_title": "Funktionsübersicht",
+    "page_subtitle": "Entdecken Sie alle Module und Funktionen von Blue.",
+    "sections": {
+      "product": {
+        "title": "Produkt",
+        "features": {
+          "workspaces": "Arbeitsbereiche",
+          "records": "Datensätze",
+          "user_permissions": "Benutzerberechtigungen",
+          "file_management": "Dateiverwaltung",
+          "automations": "Automatisierungen",
+          "dashboards": "Dashboards",
+          "templates": "Vorlagen",
+          "search": "Suche",
+          "artificial_intelligence": "Künstliche Intelligenz",
+          "forms": "Formulare",
+          "chat": "Chat",
+          "wiki_docs": "Wiki & Dokumente",
+          "notifications": "Benachrichtigungen",
+          "pdf_generation": "PDF-Generierung",
+          "repeating_records": "Wiederkehrende Datensätze"
+        }
+      },
+      "views": {
+        "title": "Ansichten",
+        "features": {
+          "kanban_board": "Kanban Board",
+          "calendar": "Kalender",
+          "timeline_gantt_charts": "Zeitachse & Gantt-Diagramme",
+          "database": "Datenbank",
+          "map": "Karte",
+          "list": "Liste",
+          "filters": "Filter",
+          "audit_trails": "Audit-Protokolle"
+        }
+      },
+      "custom_fields": {
+        "title": "Benutzerdefinierte Felder",
+        "features": {
+          "overview": "Überblick",
+          "single_line_text": "Einzeiliger Text",
+          "multiple_line_text": "Mehrzeiliger Text",
+          "url_link": "URL / Link",
+          "currency": "Währung",
+          "country": "Land",
+          "date": "Datum",
+          "formula": "Formel",
+          "file": "Datei",
+          "single_select": "Einzelauswahl",
+          "multiple_select": "Mehrfachauswahl",
+          "location_map": "Standort / Karte",
+          "phone_number": "Telefonnummer",
+          "email": "E-Mail",
+          "star_rating": "Sterne-Bewertung",
+          "checkbox": "Kontrollkästchen",
+          "number": "Zahl",
+          "percent": "Prozent",
+          "unique_id": "Eindeutige ID",
+          "reference": "Referenz",
+          "lookup": "Nachschlagen",
+          "duration": "Dauer",
+          "button": "Schaltfläche",
+          "time_in_list": "Zeit in Liste"
+        }
+      },
+      "integrations": {
+        "title": "Integrationen",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "CSV-Import",
+          "csv_export": "CSV-Export",
+          "calendar_sync": "Kalender-Synchronisation",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP-Request-Automatisierungen",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Herunterladen",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome-Erweiterung (Inoffiziell)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "ja": {
+    "page_title": "機能一覧",
+    "page_subtitle": "Blueのすべてのモジュールと機能をご覧ください。",
+    "sections": {
+      "product": {
+        "title": "プロダクト",
+        "features": {
+          "workspaces": "ワークスペース",
+          "records": "レコード",
+          "user_permissions": "ユーザー権限",
+          "file_management": "ファイル管理",
+          "automations": "自動化",
+          "dashboards": "ダッシュボード",
+          "templates": "テンプレート",
+          "search": "検索",
+          "artificial_intelligence": "人工知能",
+          "forms": "フォーム",
+          "chat": "チャット",
+          "wiki_docs": "Wiki & ドキュメント",
+          "notifications": "通知",
+          "pdf_generation": "PDF生成",
+          "repeating_records": "繰り返しレコード"
+        }
+      },
+      "views": {
+        "title": "ビュー",
+        "features": {
+          "kanban_board": "かんばんボード",
+          "calendar": "カレンダー",
+          "timeline_gantt_charts": "タイムライン & ガントチャート",
+          "database": "データベース",
+          "map": "マップ",
+          "list": "リスト",
+          "filters": "フィルター",
+          "audit_trails": "監査証跡"
+        }
+      },
+      "custom_fields": {
+        "title": "カスタムフィールド",
+        "features": {
+          "overview": "概要",
+          "single_line_text": "単一行テキスト",
+          "multiple_line_text": "複数行テキスト",
+          "url_link": "URL / リンク",
+          "currency": "通貨",
+          "country": "国",
+          "date": "日付",
+          "formula": "数式",
+          "file": "ファイル",
+          "single_select": "単一選択",
+          "multiple_select": "複数選択",
+          "location_map": "位置 / マップ",
+          "phone_number": "電話番号",
+          "email": "メール",
+          "star_rating": "星評価",
+          "checkbox": "チェックボックス",
+          "number": "数値",
+          "percent": "パーセント",
+          "unique_id": "一意ID",
+          "reference": "参照",
+          "lookup": "ルックアップ",
+          "duration": "期間",
+          "button": "ボタン",
+          "time_in_list": "リスト内時間"
+        }
+      },
+      "integrations": {
+        "title": "連携",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhook",
+          "csv_import": "CSVインポート",
+          "csv_export": "CSVエクスポート",
+          "calendar_sync": "カレンダー同期",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTPリクエスト自動化",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "ダウンロード",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome拡張機能（非公式）",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "pt": {
+    "page_title": "Índice de Recursos",
+    "page_subtitle": "Descubra todos os módulos e recursos do Blue.",
+    "sections": {
+      "product": {
+        "title": "Produto",
+        "features": {
+          "workspaces": "Espaços de Trabalho",
+          "records": "Registros",
+          "user_permissions": "Permissões de Usuário",
+          "file_management": "Gerenciamento de Arquivos",
+          "automations": "Automações",
+          "dashboards": "Painéis",
+          "templates": "Modelos",
+          "search": "Busca",
+          "artificial_intelligence": "Inteligência Artificial",
+          "forms": "Formulários",
+          "chat": "Chat",
+          "wiki_docs": "Wiki & Documentos",
+          "notifications": "Notificações",
+          "pdf_generation": "Geração de PDF",
+          "repeating_records": "Registros Recorrentes"
+        }
+      },
+      "views": {
+        "title": "Visualizações",
+        "features": {
+          "kanban_board": "Quadro Kanban",
+          "calendar": "Calendário",
+          "timeline_gantt_charts": "Cronograma & Gráficos Gantt",
+          "database": "Banco de Dados",
+          "map": "Mapa",
+          "list": "Lista",
+          "filters": "Filtros",
+          "audit_trails": "Trilhas de Auditoria"
+        }
+      },
+      "custom_fields": {
+        "title": "Campos Personalizados",
+        "features": {
+          "overview": "Visão Geral",
+          "single_line_text": "Texto de Linha Única",
+          "multiple_line_text": "Texto de Múltiplas Linhas",
+          "url_link": "URL / Link",
+          "currency": "Moeda",
+          "country": "País",
+          "date": "Data",
+          "formula": "Fórmula",
+          "file": "Arquivo",
+          "single_select": "Seleção Única",
+          "multiple_select": "Seleção Múltipla",
+          "location_map": "Localização / Mapa",
+          "phone_number": "Número de Telefone",
+          "email": "E-mail",
+          "star_rating": "Avaliação por Estrelas",
+          "checkbox": "Caixa de Seleção",
+          "number": "Número",
+          "percent": "Porcentagem",
+          "unique_id": "ID Único",
+          "reference": "Referência",
+          "lookup": "Consulta",
+          "duration": "Duração",
+          "button": "Botão",
+          "time_in_list": "Tempo na Lista"
+        }
+      },
+      "integrations": {
+        "title": "Integrações",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "Importação CSV",
+          "csv_export": "Exportação CSV",
+          "calendar_sync": "Sincronização de Calendário",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Automações de Requisição HTTP",
+          "python_sdk": "SDK Python",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Baixar",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Extensão Chrome (Não Oficial)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "ru": {
+    "page_title": "Индекс Функций",
+    "page_subtitle": "Откройте для себя все модули и функции Blue.",
+    "sections": {
+      "product": {
+        "title": "Продукт",
+        "features": {
+          "workspaces": "Рабочие Пространства",
+          "records": "Записи",
+          "user_permissions": "Права Пользователей",
+          "file_management": "Управление Файлами",
+          "automations": "Автоматизация",
+          "dashboards": "Панели Управления",
+          "templates": "Шаблоны",
+          "search": "Поиск",
+          "artificial_intelligence": "Искусственный Интеллект",
+          "forms": "Формы",
+          "chat": "Чат",
+          "wiki_docs": "Wiki и Документы",
+          "notifications": "Уведомления",
+          "pdf_generation": "Генерация PDF",
+          "repeating_records": "Повторяющиеся Записи"
+        }
+      },
+      "views": {
+        "title": "Представления",
+        "features": {
+          "kanban_board": "Канбан Доска",
+          "calendar": "Календарь",
+          "timeline_gantt_charts": "Временная Шкала и Диаграммы Ганта",
+          "database": "База Данных",
+          "map": "Карта",
+          "list": "Список",
+          "filters": "Фильтры",
+          "audit_trails": "Журналы Аудита"
+        }
+      },
+      "custom_fields": {
+        "title": "Пользовательские Поля",
+        "features": {
+          "overview": "Обзор",
+          "single_line_text": "Однострочный Текст",
+          "multiple_line_text": "Многострочный Текст",
+          "url_link": "URL / Ссылка",
+          "currency": "Валюта",
+          "country": "Страна",
+          "date": "Дата",
+          "formula": "Формула",
+          "file": "Файл",
+          "single_select": "Одиночный Выбор",
+          "multiple_select": "Множественный Выбор",
+          "location_map": "Местоположение / Карта",
+          "phone_number": "Номер Телефона",
+          "email": "Электронная Почта",
+          "star_rating": "Звездный Рейтинг",
+          "checkbox": "Флажок",
+          "number": "Число",
+          "percent": "Процент",
+          "unique_id": "Уникальный ID",
+          "reference": "Ссылка",
+          "lookup": "Поиск",
+          "duration": "Продолжительность",
+          "button": "Кнопка",
+          "time_in_list": "Время в Списке"
+        }
+      },
+      "integrations": {
+        "title": "Интеграции",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "Импорт CSV",
+          "csv_export": "Экспорт CSV",
+          "calendar_sync": "Синхронизация Календаря",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Автоматизация HTTP Запросов",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Скачать",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Расширение Chrome (Неофициальное)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "ko": {
+    "page_title": "기능 목록",
+    "page_subtitle": "Blue의 모든 모듈과 기능을 확인하세요.",
+    "sections": {
+      "product": {
+        "title": "제품",
+        "features": {
+          "workspaces": "워크스페이스",
+          "records": "레코드",
+          "user_permissions": "사용자 권한",
+          "file_management": "파일 관리",
+          "automations": "자동화",
+          "dashboards": "대시보드",
+          "templates": "템플릿",
+          "search": "검색",
+          "artificial_intelligence": "인공지능",
+          "forms": "양식",
+          "chat": "채팅",
+          "wiki_docs": "위키 & 문서",
+          "notifications": "알림",
+          "pdf_generation": "PDF 생성",
+          "repeating_records": "반복 레코드"
+        }
+      },
+      "views": {
+        "title": "보기",
+        "features": {
+          "kanban_board": "칸반 보드",
+          "calendar": "캘린더",
+          "timeline_gantt_charts": "타임라인 & 간트 차트",
+          "database": "데이터베이스",
+          "map": "지도",
+          "list": "목록",
+          "filters": "필터",
+          "audit_trails": "감사 추적"
+        }
+      },
+      "custom_fields": {
+        "title": "사용자 정의 필드",
+        "features": {
+          "overview": "개요",
+          "single_line_text": "한 줄 텍스트",
+          "multiple_line_text": "여러 줄 텍스트",
+          "url_link": "URL / 링크",
+          "currency": "통화",
+          "country": "국가",
+          "date": "날짜",
+          "formula": "공식",
+          "file": "파일",
+          "single_select": "단일 선택",
+          "multiple_select": "다중 선택",
+          "location_map": "위치 / 지도",
+          "phone_number": "전화번호",
+          "email": "이메일",
+          "star_rating": "별점 평가",
+          "checkbox": "체크박스",
+          "number": "숫자",
+          "percent": "백분율",
+          "unique_id": "고유 ID",
+          "reference": "참조",
+          "lookup": "조회",
+          "duration": "기간",
+          "button": "버튼",
+          "time_in_list": "목록 내 시간"
+        }
+      },
+      "integrations": {
+        "title": "통합",
+        "features": {
+          "api": "API",
+          "webhooks": "웹훅",
+          "csv_import": "CSV 가져오기",
+          "csv_export": "CSV 내보내기",
+          "calendar_sync": "캘린더 동기화",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP 요청 자동화",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "다운로드",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome 확장 프로그램 (비공식)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "it": {
+    "page_title": "Indice delle Funzionalità",
+    "page_subtitle": "Scopri tutti i moduli e le funzionalità di Blue.",
+    "sections": {
+      "product": {
+        "title": "Prodotto",
+        "features": {
+          "workspaces": "Spazi di Lavoro",
+          "records": "Record",
+          "user_permissions": "Permessi Utente",
+          "file_management": "Gestione File",
+          "automations": "Automazioni",
+          "dashboards": "Dashboard",
+          "templates": "Modelli",
+          "search": "Ricerca",
+          "artificial_intelligence": "Intelligenza Artificiale",
+          "forms": "Moduli",
+          "chat": "Chat",
+          "wiki_docs": "Wiki e Documenti",
+          "notifications": "Notifiche",
+          "pdf_generation": "Generazione PDF",
+          "repeating_records": "Record Ricorrenti"
+        }
+      },
+      "views": {
+        "title": "Visualizzazioni",
+        "features": {
+          "kanban_board": "Bacheca Kanban",
+          "calendar": "Calendario",
+          "timeline_gantt_charts": "Timeline e Grafici Gantt",
+          "database": "Database",
+          "map": "Mappa",
+          "list": "Lista",
+          "filters": "Filtri",
+          "audit_trails": "Tracce di Controllo"
+        }
+      },
+      "custom_fields": {
+        "title": "Campi Personalizzati",
+        "features": {
+          "overview": "Panoramica",
+          "single_line_text": "Testo Singola Riga",
+          "multiple_line_text": "Testo Righe Multiple",
+          "url_link": "URL / Link",
+          "currency": "Valuta",
+          "country": "Paese",
+          "date": "Data",
+          "formula": "Formula",
+          "file": "File",
+          "single_select": "Selezione Singola",
+          "multiple_select": "Selezione Multipla",
+          "location_map": "Posizione / Mappa",
+          "phone_number": "Numero di Telefono",
+          "email": "Email",
+          "star_rating": "Valutazione a Stelle",
+          "checkbox": "Casella di Controllo",
+          "number": "Numero",
+          "percent": "Percentuale",
+          "unique_id": "ID Univoco",
+          "reference": "Riferimento",
+          "lookup": "Ricerca",
+          "duration": "Durata",
+          "button": "Pulsante",
+          "time_in_list": "Tempo nella Lista"
+        }
+      },
+      "integrations": {
+        "title": "Integrazioni",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhook",
+          "csv_import": "Importazione CSV",
+          "csv_export": "Esportazione CSV",
+          "calendar_sync": "Sincronizzazione Calendario",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Automazioni Richieste HTTP",
+          "python_sdk": "SDK Python",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Scarica",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Estensione Chrome (Non Ufficiale)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "id": {
+    "page_title": "Indeks Fitur",
+    "page_subtitle": "Temukan semua modul dan fitur di Blue.",
+    "sections": {
+      "product": {
+        "title": "Produk",
+        "features": {
+          "workspaces": "Ruang Kerja",
+          "records": "Catatan",
+          "user_permissions": "Izin Pengguna",
+          "file_management": "Manajemen File",
+          "automations": "Otomatisasi",
+          "dashboards": "Dashboard",
+          "templates": "Template",
+          "search": "Pencarian",
+          "artificial_intelligence": "Kecerdasan Buatan",
+          "forms": "Formulir",
+          "chat": "Chat",
+          "wiki_docs": "Wiki & Dokumen",
+          "notifications": "Notifikasi",
+          "pdf_generation": "Pembuatan PDF",
+          "repeating_records": "Catatan Berulang"
+        }
+      },
+      "views": {
+        "title": "Tampilan",
+        "features": {
+          "kanban_board": "Papan Kanban",
+          "calendar": "Kalender",
+          "timeline_gantt_charts": "Timeline & Grafik Gantt",
+          "database": "Database",
+          "map": "Peta",
+          "list": "Daftar",
+          "filters": "Filter",
+          "audit_trails": "Jejak Audit"
+        }
+      },
+      "custom_fields": {
+        "title": "Field Kustom",
+        "features": {
+          "overview": "Ikhtisar",
+          "single_line_text": "Teks Satu Baris",
+          "multiple_line_text": "Teks Multi Baris",
+          "url_link": "URL / Link",
+          "currency": "Mata Uang",
+          "country": "Negara",
+          "date": "Tanggal",
+          "formula": "Formula",
+          "file": "File",
+          "single_select": "Pilihan Tunggal",
+          "multiple_select": "Pilihan Ganda",
+          "location_map": "Lokasi / Peta",
+          "phone_number": "Nomor Telepon",
+          "email": "Email",
+          "star_rating": "Rating Bintang",
+          "checkbox": "Kotak Centang",
+          "number": "Angka",
+          "percent": "Persen",
+          "unique_id": "ID Unik",
+          "reference": "Referensi",
+          "lookup": "Pencarian",
+          "duration": "Durasi",
+          "button": "Tombol",
+          "time_in_list": "Waktu di Daftar"
+        }
+      },
+      "integrations": {
+        "title": "Integrasi",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhook",
+          "csv_import": "Import CSV",
+          "csv_export": "Export CSV",
+          "calendar_sync": "Sinkronisasi Kalender",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Otomatisasi Permintaan HTTP",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Unduh",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Ekstensi Chrome (Tidak Resmi)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "nl": {
+    "page_title": "Functie Index",
+    "page_subtitle": "Ontdek alle modules en functies in Blue.",
+    "sections": {
+      "product": {
+        "title": "Product",
+        "features": {
+          "workspaces": "Werkruimtes",
+          "records": "Records",
+          "user_permissions": "Gebruikersrechten",
+          "file_management": "Bestandsbeheer",
+          "automations": "Automatiseringen",
+          "dashboards": "Dashboards",
+          "templates": "Sjablonen",
+          "search": "Zoeken",
+          "artificial_intelligence": "Kunstmatige Intelligentie",
+          "forms": "Formulieren",
+          "chat": "Chat",
+          "wiki_docs": "Wiki & Documenten",
+          "notifications": "Meldingen",
+          "pdf_generation": "PDF Generatie",
+          "repeating_records": "Herhalende Records"
+        }
+      },
+      "views": {
+        "title": "Weergaven",
+        "features": {
+          "kanban_board": "Kanban Bord",
+          "calendar": "Kalender",
+          "timeline_gantt_charts": "Tijdlijn & Gantt Grafieken",
+          "database": "Database",
+          "map": "Kaart",
+          "list": "Lijst",
+          "filters": "Filters",
+          "audit_trails": "Audit Sporen"
+        }
+      },
+      "custom_fields": {
+        "title": "Aangepaste Velden",
+        "features": {
+          "overview": "Overzicht",
+          "single_line_text": "Enkele Regel Tekst",
+          "multiple_line_text": "Meerdere Regels Tekst",
+          "url_link": "URL / Link",
+          "currency": "Valuta",
+          "country": "Land",
+          "date": "Datum",
+          "formula": "Formule",
+          "file": "Bestand",
+          "single_select": "Enkele Selectie",
+          "multiple_select": "Meerdere Selectie",
+          "location_map": "Locatie / Kaart",
+          "phone_number": "Telefoonnummer",
+          "email": "E-mail",
+          "star_rating": "Ster Beoordeling",
+          "checkbox": "Selectievakje",
+          "number": "Nummer",
+          "percent": "Percentage",
+          "unique_id": "Unieke ID",
+          "reference": "Referentie",
+          "lookup": "Opzoeken",
+          "duration": "Duur",
+          "button": "Knop",
+          "time_in_list": "Tijd in Lijst"
+        }
+      },
+      "integrations": {
+        "title": "Integraties",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "CSV Import",
+          "csv_export": "CSV Export",
+          "calendar_sync": "Kalender Synchronisatie",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP Verzoek Automatiseringen",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Downloaden",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome Extensie (Onofficieel)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "pl": {
+    "page_title": "Indeks Funkcji",
+    "page_subtitle": "Poznaj wszystkie moduły i funkcje Blue.",
+    "sections": {
+      "product": {
+        "title": "Produkt",
+        "features": {
+          "workspaces": "Przestrzenie Robocze",
+          "records": "Rekordy",
+          "user_permissions": "Uprawnienia Użytkowników",
+          "file_management": "Zarządzanie Plikami",
+          "automations": "Automatyzacje",
+          "dashboards": "Pulpity",
+          "templates": "Szablony",
+          "search": "Wyszukiwanie",
+          "artificial_intelligence": "Sztuczna Inteligencja",
+          "forms": "Formularze",
+          "chat": "Chat",
+          "wiki_docs": "Wiki i Dokumenty",
+          "notifications": "Powiadomienia",
+          "pdf_generation": "Generowanie PDF",
+          "repeating_records": "Powtarzające się Rekordy"
+        }
+      },
+      "views": {
+        "title": "Widoki",
+        "features": {
+          "kanban_board": "Tablica Kanban",
+          "calendar": "Kalendarz",
+          "timeline_gantt_charts": "Oś Czasu i Wykresy Gantta",
+          "database": "Baza Danych",
+          "map": "Mapa",
+          "list": "Lista",
+          "filters": "Filtry",
+          "audit_trails": "Ścieżki Audytu"
+        }
+      },
+      "custom_fields": {
+        "title": "Pola Niestandardowe",
+        "features": {
+          "overview": "Przegląd",
+          "single_line_text": "Tekst Jednowierszowy",
+          "multiple_line_text": "Tekst Wielowierszowy",
+          "url_link": "URL / Link",
+          "currency": "Waluta",
+          "country": "Kraj",
+          "date": "Data",
+          "formula": "Formuła",
+          "file": "Plik",
+          "single_select": "Pojedynczy Wybór",
+          "multiple_select": "Wielokrotny Wybór",
+          "location_map": "Lokalizacja / Mapa",
+          "phone_number": "Numer Telefonu",
+          "email": "E-mail",
+          "star_rating": "Ocena Gwiazdkowa",
+          "checkbox": "Pole Wyboru",
+          "number": "Liczba",
+          "percent": "Procent",
+          "unique_id": "Unikalny ID",
+          "reference": "Odwołanie",
+          "lookup": "Wyszukiwanie",
+          "duration": "Czas Trwania",
+          "button": "Przycisk",
+          "time_in_list": "Czas na Liście"
+        }
+      },
+      "integrations": {
+        "title": "Integracje",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhook",
+          "csv_import": "Import CSV",
+          "csv_export": "Eksport CSV",
+          "calendar_sync": "Synchronizacja Kalendarza",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "Automatyzacje Żądań HTTP",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Pobierz",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Rozszerzenie Chrome (Nieoficjalne)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "sv": {
+    "page_title": "Funktionsindex",
+    "page_subtitle": "Upptäck alla moduler och funktioner i Blue.",
+    "sections": {
+      "product": {
+        "title": "Produkt",
+        "features": {
+          "workspaces": "Arbetsytor",
+          "records": "Poster",
+          "user_permissions": "Användarbehörigheter",
+          "file_management": "Filhantering",
+          "automations": "Automatiseringar",
+          "dashboards": "Instrumentpaneler",
+          "templates": "Mallar",
+          "search": "Sök",
+          "artificial_intelligence": "Artificiell Intelligens",
+          "forms": "Formulär",
+          "chat": "Chatt",
+          "wiki_docs": "Wiki & Dokument",
+          "notifications": "Meddelanden",
+          "pdf_generation": "PDF-generering",
+          "repeating_records": "Återkommande Poster"
+        }
+      },
+      "views": {
+        "title": "Vyer",
+        "features": {
+          "kanban_board": "Kanban-tavla",
+          "calendar": "Kalender",
+          "timeline_gantt_charts": "Tidslinje & Gantt-diagram",
+          "database": "Databas",
+          "map": "Karta",
+          "list": "Lista",
+          "filters": "Filter",
+          "audit_trails": "Granskningsspår"
+        }
+      },
+      "custom_fields": {
+        "title": "Anpassade Fält",
+        "features": {
+          "overview": "Översikt",
+          "single_line_text": "Enrads Text",
+          "multiple_line_text": "Flerrads Text",
+          "url_link": "URL / Länk",
+          "currency": "Valuta",
+          "country": "Land",
+          "date": "Datum",
+          "formula": "Formel",
+          "file": "Fil",
+          "single_select": "Enskilt Val",
+          "multiple_select": "Flera Val",
+          "location_map": "Plats / Karta",
+          "phone_number": "Telefonnummer",
+          "email": "E-post",
+          "star_rating": "Stjärnbetyg",
+          "checkbox": "Kryssruta",
+          "number": "Nummer",
+          "percent": "Procent",
+          "unique_id": "Unikt ID",
+          "reference": "Referens",
+          "lookup": "Uppslagning",
+          "duration": "Varaktighet",
+          "button": "Knapp",
+          "time_in_list": "Tid i Lista"
+        }
+      },
+      "integrations": {
+        "title": "Integrationer",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "CSV-import",
+          "csv_export": "CSV-export",
+          "calendar_sync": "Kalendersynkronisering",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP-förfrågnings Automatiseringar",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "Ladda ner",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome-tillägg (Inofficiellt)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "zh": {
+    "page_title": "功能索引",
+    "page_subtitle": "探索Blue中的所有模块和功能。",
+    "sections": {
+      "product": {
+        "title": "产品",
+        "features": {
+          "workspaces": "工作空间",
+          "records": "记录",
+          "user_permissions": "用户权限",
+          "file_management": "文件管理",
+          "automations": "自动化",
+          "dashboards": "仪表板",
+          "templates": "模板",
+          "search": "搜索",
+          "artificial_intelligence": "人工智能",
+          "forms": "表单",
+          "chat": "聊天",
+          "wiki_docs": "Wiki与文档",
+          "notifications": "通知",
+          "pdf_generation": "PDF生成",
+          "repeating_records": "重复记录"
+        }
+      },
+      "views": {
+        "title": "视图",
+        "features": {
+          "kanban_board": "看板",
+          "calendar": "日历",
+          "timeline_gantt_charts": "时间线与甘特图",
+          "database": "数据库",
+          "map": "地图",
+          "list": "列表",
+          "filters": "筛选器",
+          "audit_trails": "审计跟踪"
+        }
+      },
+      "custom_fields": {
+        "title": "自定义字段",
+        "features": {
+          "overview": "概览",
+          "single_line_text": "单行文本",
+          "multiple_line_text": "多行文本",
+          "url_link": "URL / 链接",
+          "currency": "货币",
+          "country": "国家",
+          "date": "日期",
+          "formula": "公式",
+          "file": "文件",
+          "single_select": "单选",
+          "multiple_select": "多选",
+          "location_map": "位置 / 地图",
+          "phone_number": "电话号码",
+          "email": "邮箱",
+          "star_rating": "星级评分",
+          "checkbox": "复选框",
+          "number": "数字",
+          "percent": "百分比",
+          "unique_id": "唯一ID",
+          "reference": "引用",
+          "lookup": "查找",
+          "duration": "时长",
+          "button": "按钮",
+          "time_in_list": "列表中的时间"
+        }
+      },
+      "integrations": {
+        "title": "集成",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhook",
+          "csv_import": "CSV导入",
+          "csv_export": "CSV导出",
+          "calendar_sync": "日历同步",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP请求自动化",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "下载",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome扩展（非官方）",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "zh-TW": {
+    "page_title": "功能索引",
+    "page_subtitle": "探索Blue中的所有模組和功能。",
+    "sections": {
+      "product": {
+        "title": "產品",
+        "features": {
+          "workspaces": "工作空間",
+          "records": "記錄",
+          "user_permissions": "使用者權限",
+          "file_management": "檔案管理",
+          "automations": "自動化",
+          "dashboards": "儀表板",
+          "templates": "範本",
+          "search": "搜尋",
+          "artificial_intelligence": "人工智慧",
+          "forms": "表單",
+          "chat": "聊天",
+          "wiki_docs": "Wiki與文件",
+          "notifications": "通知",
+          "pdf_generation": "PDF生成",
+          "repeating_records": "重複記錄"
+        }
+      },
+      "views": {
+        "title": "檢視",
+        "features": {
+          "kanban_board": "看板",
+          "calendar": "行事曆",
+          "timeline_gantt_charts": "時間軸與甘特圖",
+          "database": "資料庫",
+          "map": "地圖",
+          "list": "清單",
+          "filters": "篩選器",
+          "audit_trails": "稽核軌跡"
+        }
+      },
+      "custom_fields": {
+        "title": "自訂欄位",
+        "features": {
+          "overview": "概覽",
+          "single_line_text": "單行文字",
+          "multiple_line_text": "多行文字",
+          "url_link": "URL / 連結",
+          "currency": "貨幣",
+          "country": "國家",
+          "date": "日期",
+          "formula": "公式",
+          "file": "檔案",
+          "single_select": "單選",
+          "multiple_select": "多選",
+          "location_map": "位置 / 地圖",
+          "phone_number": "電話號碼",
+          "email": "電子郵件",
+          "star_rating": "星級評分",
+          "checkbox": "核取方塊",
+          "number": "數字",
+          "percent": "百分比",
+          "unique_id": "唯一ID",
+          "reference": "參考",
+          "lookup": "查找",
+          "duration": "持續時間",
+          "button": "按鈕",
+          "time_in_list": "清單中的時間"
+        }
+      },
+      "integrations": {
+        "title": "整合",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhook",
+          "csv_import": "CSV匯入",
+          "csv_export": "CSV匯出",
+          "calendar_sync": "行事曆同步",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "HTTP請求自動化",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "下載",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "Chrome擴充功能（非官方）",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  },
+  "km": {
+    "page_title": "បញ្ជីមុខងារ",
+    "page_subtitle": "ស្វែងយល់អំពីម៉ូឌុលនិងមុខងារទាំងអស់នៅក្នុង Blue។",
+    "sections": {
+      "product": {
+        "title": "ផលិតផល",
+        "features": {
+          "workspaces": "កន្លែងធ្វើការ",
+          "records": "កំណត់ត្រា",
+          "user_permissions": "សិទ្ធិអ្នកប្រើប្រាស់",
+          "file_management": "ការគ្រប់គ្រងឯកសារ",
+          "automations": "ស្វ័យប្រវត្តិកម្ម",
+          "dashboards": "ផ្ទាំងគ្រប់គ្រង",
+          "templates": "គំរូ",
+          "search": "ស្វែងរក",
+          "artificial_intelligence": "បញ្ញាសិប្បនិម្មិត",
+          "forms": "បែបបទ",
+          "chat": "ជជែក",
+          "wiki_docs": "Wiki និងឯកសារ",
+          "notifications": "ការជូនដំណឹង",
+          "pdf_generation": "ការបង្កើត PDF",
+          "repeating_records": "កំណត់ត្រាដដែលៗ"
+        }
+      },
+      "views": {
+        "title": "ទិដ្ឋភាព",
+        "features": {
+          "kanban_board": "បន្ទះ Kanban",
+          "calendar": "ប្រតិទិន",
+          "timeline_gantt_charts": "កាលវិភាគនិងតារាង Gantt",
+          "database": "មូលដ្ឋានទិន្នន័យ",
+          "map": "ផែនទី",
+          "list": "បញ្ជី",
+          "filters": "តម្រង",
+          "audit_trails": "ដានសាវតាធម្ម"
+        }
+      },
+      "custom_fields": {
+        "title": "វាលតាមតម្រូវការ",
+        "features": {
+          "overview": "ទិដ្ឋភាពទូទៅ",
+          "single_line_text": "អត្ថបទមួយបន្ទាត់",
+          "multiple_line_text": "អត្ថបទច្រើនបន្ទាត់",
+          "url_link": "URL / តំណ",
+          "currency": "រូបិយប័ណ្ណ",
+          "country": "ប្រទេស",
+          "date": "កាលបរិច្ឆេទ",
+          "formula": "រូបមន្ត",
+          "file": "ឯកសារ",
+          "single_select": "ជម្រើសតែមួយ",
+          "multiple_select": "ជម្រើសច្រើន",
+          "location_map": "ទីតាំង / ផែនទី",
+          "phone_number": "លេខទូរស័ព្ទ",
+          "email": "អ៊ីមែល",
+          "star_rating": "ការវាយតម្លៃផ្កាយ",
+          "checkbox": "ប្រអប់ធីក",
+          "number": "លេខ",
+          "percent": "ភាគរយ",
+          "unique_id": "លេខសម្គាល់តែមួយ",
+          "reference": "យោង",
+          "lookup": "ស្វែងរក",
+          "duration": "រយៈពេល",
+          "button": "ប៊ូតុង",
+          "time_in_list": "ពេលវេលានៅក្នុងបញ្ជី"
+        }
+      },
+      "integrations": {
+        "title": "ការរួមបញ្ចូល",
+        "features": {
+          "api": "API",
+          "webhooks": "Webhooks",
+          "csv_import": "នាំចូល CSV",
+          "csv_export": "នាំចេញ CSV",
+          "calendar_sync": "ការធ្វើសមកាលកម្មប្រតិទិន",
+          "zapier": "Zapier",
+          "make_com": "Make.com",
+          "pabbly_connect": "Pabbly Connect",
+          "albato": "Albato",
+          "boost_space": "Boost.space",
+          "http_request_automations": "ស្វ័យប្រវត្តិកម្មសំណើ HTTP",
+          "python_sdk": "Python SDK",
+          "graphql_playground": "GraphQL Playground",
+          "google_maps": "Google Maps",
+          "github": "Github"
+        }
+      },
+      "download": {
+        "title": "ទាញយក",
+        "features": {
+          "ios_iphone": "iOS (iPhone)",
+          "android": "Android",
+          "ios_ipad": "iOS (iPad)",
+          "chrome_extension": "កម្មវិធីបន្ថែម Chrome (មិនផ្លូវការ)",
+          "mac": "Mac",
+          "windows": "Windows"
+        }
+      }
+    }
+  }
+}
