@@ -379,6 +379,42 @@ func extractPageTitle(htmlContent, url, filePath string, metadata *Metadata) str
 	return generateTitleFromFilename(filePath)
 }
 
+// extractPageTitleWithLang implements the same title extraction algorithm but accepts
+// language as a parameter to avoid redundant extractLanguageFromPath() calls
+func extractPageTitleWithLang(htmlContent, url, filePath string, metadata *Metadata, lang string) string {
+	// 1. Check metadata.json first
+	if metadata != nil {
+		pageKey := getPageKey(url)
+		if lang == "" {
+			lang = DefaultLanguage
+		}
+
+		if pageData, exists := metadata.Pages[pageKey]; exists {
+			// Try language-specific title first
+			if langMeta, langExists := pageData[lang]; langExists && langMeta.Title != "" {
+				return langMeta.Title
+			}
+			// Fallback to English
+			if enMeta, enExists := pageData["en"]; enExists && enMeta.Title != "" {
+				return enMeta.Title
+			}
+		}
+	}
+
+	// 2. Try to extract from H1 tags
+	if title := extractH1Title(htmlContent); title != "" {
+		return title
+	}
+
+	// 3. Try to extract from title tags (fallback)
+	if title := extractHTMLTitle(htmlContent); title != "" {
+		return title
+	}
+
+	// 4. Generate clean title from filename
+	return generateTitleFromFilename(filePath)
+}
+
 // stripHTMLTags removes HTML tags from a string
 func stripHTMLTags(text string) string {
 	// Remove all HTML tags
@@ -862,7 +898,7 @@ func indexCachedHTMLPagesForLanguage(items *[]SearchItem, htmlService *HTMLServi
 		}
 		// If no title from metadata, extract from HTML
 		if title == "" {
-			title = extractPageTitle(content.HTML, actualURL, content.FilePath, metadata)
+			title = extractPageTitleWithLang(content.HTML, actualURL, content.FilePath, metadata, lang)
 		}
 
 		// Get description from metadata if available
