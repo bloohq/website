@@ -56,5 +56,411 @@
         "description": "Ponte en contacto con nuestro equipo"
       }
     }
+  },
+  "zh": {
+    "placeholder_short": "搜索...",
+    "placeholder_long": "搜索文档、功能、API、洞察...",
+    "searching": "搜索中...",
+    "no_results": "未找到相关结果",
+    "quick_links": "快速链接",
+    "suggestions": {
+      "platform_overview": {
+        "title": "平台概览",
+        "description": "探索 Blue 的功能"
+      },
+      "features": {
+        "title": "功能",
+        "description": "发现所有 Blue 功能"
+      },
+      "documentation": {
+        "title": "文档",
+        "description": "学习如何有效使用 Blue"
+      },
+      "api_reference": {
+        "title": "API 参考",
+        "description": "集成 Blue API"
+      },
+      "contact_us": {
+        "title": "联系我们",
+        "description": "与我们的团队取得联系"
+      }
+    }
+  },
+  "fr": {
+    "placeholder_short": "Rechercher...",
+    "placeholder_long": "Rechercher des docs, fonctionnalités, API, insights...",
+    "searching": "Recherche en cours...",
+    "no_results": "Aucun résultat trouvé pour",
+    "quick_links": "Liens Rapides",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Aperçu de la Plateforme",
+        "description": "Explorez les capacités de Blue"
+      },
+      "features": {
+        "title": "Fonctionnalités",
+        "description": "Découvrez toutes les fonctionnalités de Blue"
+      },
+      "documentation": {
+        "title": "Documentation",
+        "description": "Apprenez à utiliser Blue efficacement"
+      },
+      "api_reference": {
+        "title": "Référence API",
+        "description": "Intégrez avec l'API Blue"
+      },
+      "contact_us": {
+        "title": "Contactez-nous",
+        "description": "Entrez en contact avec notre équipe"
+      }
+    }
+  },
+  "de": {
+    "placeholder_short": "Suchen...",
+    "placeholder_long": "Dokumente, Funktionen, API, Einblicke suchen...",
+    "searching": "Suche läuft...",
+    "no_results": "Keine Ergebnisse gefunden für",
+    "quick_links": "Schnelllinks",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Plattformübersicht",
+        "description": "Entdecken Sie die Möglichkeiten von Blue"
+      },
+      "features": {
+        "title": "Funktionen",
+        "description": "Entdecken Sie alle Blue-Funktionen"
+      },
+      "documentation": {
+        "title": "Dokumentation",
+        "description": "Lernen Sie, Blue effektiv zu nutzen"
+      },
+      "api_reference": {
+        "title": "API-Referenz",
+        "description": "Integrieren Sie mit der Blue-API"
+      },
+      "contact_us": {
+        "title": "Kontaktieren Sie uns",
+        "description": "Nehmen Sie Kontakt mit unserem Team auf"
+      }
+    }
+  },
+  "ja": {
+    "placeholder_short": "検索...",
+    "placeholder_long": "ドキュメント、機能、API、インサイトを検索...",
+    "searching": "検索中...",
+    "no_results": "検索結果が見つかりません",
+    "quick_links": "クイックリンク",
+    "suggestions": {
+      "platform_overview": {
+        "title": "プラットフォーム概要",
+        "description": "Blueの機能を探索"
+      },
+      "features": {
+        "title": "機能",
+        "description": "すべてのBlue機能を発見"
+      },
+      "documentation": {
+        "title": "ドキュメント",
+        "description": "Blueを効果的に使用する方法を学ぶ"
+      },
+      "api_reference": {
+        "title": "APIリファレンス",
+        "description": "Blue APIと統合"
+      },
+      "contact_us": {
+        "title": "お問い合わせ",
+        "description": "私たちのチームにご連絡ください"
+      }
+    }
+  },
+  "pt": {
+    "placeholder_short": "Pesquisar...",
+    "placeholder_long": "Pesquisar documentos, recursos, API, insights...",
+    "searching": "Pesquisando...",
+    "no_results": "Nenhum resultado encontrado para",
+    "quick_links": "Links Rápidos",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Visão Geral da Plataforma",
+        "description": "Explore as capacidades do Blue"
+      },
+      "features": {
+        "title": "Recursos",
+        "description": "Descubra todos os recursos do Blue"
+      },
+      "documentation": {
+        "title": "Documentação",
+        "description": "Aprenda a usar o Blue efetivamente"
+      },
+      "api_reference": {
+        "title": "Referência da API",
+        "description": "Integre com a API Blue"
+      },
+      "contact_us": {
+        "title": "Entre em Contato",
+        "description": "Entre em contato com nossa equipe"
+      }
+    }
+  },
+  "ru": {
+    "placeholder_short": "Поиск...",
+    "placeholder_long": "Поиск документов, функций, API, инсайтов...",
+    "searching": "Поиск...",
+    "no_results": "Результаты не найдены для",
+    "quick_links": "Быстрые Ссылки",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Обзор Платформы",
+        "description": "Изучите возможности Blue"
+      },
+      "features": {
+        "title": "Функции",
+        "description": "Откройте все функции Blue"
+      },
+      "documentation": {
+        "title": "Документация",
+        "description": "Узнайте, как эффективно использовать Blue"
+      },
+      "api_reference": {
+        "title": "Справочник API",
+        "description": "Интегрируйтесь с Blue API"
+      },
+      "contact_us": {
+        "title": "Свяжитесь с нами",
+        "description": "Свяжитесь с нашей командой"
+      }
+    }
+  },
+  "ko": {
+    "placeholder_short": "검색...",
+    "placeholder_long": "문서, 기능, API, 인사이트 검색...",
+    "searching": "검색 중...",
+    "no_results": "검색 결과가 없습니다",
+    "quick_links": "빠른 링크",
+    "suggestions": {
+      "platform_overview": {
+        "title": "플랫폼 개요",
+        "description": "Blue의 기능 탐색"
+      },
+      "features": {
+        "title": "기능",
+        "description": "모든 Blue 기능 발견"
+      },
+      "documentation": {
+        "title": "문서",
+        "description": "Blue를 효과적으로 사용하는 방법 배우기"
+      },
+      "api_reference": {
+        "title": "API 참조",
+        "description": "Blue API와 통합"
+      },
+      "contact_us": {
+        "title": "문의하기",
+        "description": "우리 팀과 연락하기"
+      }
+    }
+  },
+  "it": {
+    "placeholder_short": "Cerca...",
+    "placeholder_long": "Cerca documenti, funzionalità, API, insights...",
+    "searching": "Ricerca in corso...",
+    "no_results": "Nessun risultato trovato per",
+    "quick_links": "Link Rapidi",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Panoramica della Piattaforma",
+        "description": "Esplora le capacità di Blue"
+      },
+      "features": {
+        "title": "Funzionalità",
+        "description": "Scopri tutte le funzionalità di Blue"
+      },
+      "documentation": {
+        "title": "Documentazione",
+        "description": "Impara a usare Blue efficacemente"
+      },
+      "api_reference": {
+        "title": "Riferimento API",
+        "description": "Integra con l'API Blue"
+      },
+      "contact_us": {
+        "title": "Contattaci",
+        "description": "Entra in contatto con il nostro team"
+      }
+    }
+  },
+  "id": {
+    "placeholder_short": "Cari...",
+    "placeholder_long": "Cari dokumen, fitur, API, wawasan...",
+    "searching": "Mencari...",
+    "no_results": "Tidak ada hasil ditemukan untuk",
+    "quick_links": "Tautan Cepat",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Gambaran Platform",
+        "description": "Jelajahi kemampuan Blue"
+      },
+      "features": {
+        "title": "Fitur",
+        "description": "Temukan semua fitur Blue"
+      },
+      "documentation": {
+        "title": "Dokumentasi",
+        "description": "Pelajari cara menggunakan Blue secara efektif"
+      },
+      "api_reference": {
+        "title": "Referensi API",
+        "description": "Integrasi dengan Blue API"
+      },
+      "contact_us": {
+        "title": "Hubungi Kami",
+        "description": "Hubungi tim kami"
+      }
+    }
+  },
+  "nl": {
+    "placeholder_short": "Zoeken...",
+    "placeholder_long": "Zoek documenten, functies, API, inzichten...",
+    "searching": "Zoeken...",
+    "no_results": "Geen resultaten gevonden voor",
+    "quick_links": "Snelle Links",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Platform Overzicht",
+        "description": "Ontdek de mogelijkheden van Blue"
+      },
+      "features": {
+        "title": "Functies",
+        "description": "Ontdek alle Blue functies"
+      },
+      "documentation": {
+        "title": "Documentatie",
+        "description": "Leer hoe je Blue effectief gebruikt"
+      },
+      "api_reference": {
+        "title": "API Referentie",
+        "description": "Integreer met de Blue API"
+      },
+      "contact_us": {
+        "title": "Contact",
+        "description": "Neem contact op met ons team"
+      }
+    }
+  },
+  "pl": {
+    "placeholder_short": "Szukaj...",
+    "placeholder_long": "Szukaj dokumentów, funkcji, API, spostrzeżeń...",
+    "searching": "Wyszukiwanie...",
+    "no_results": "Nie znaleziono wyników dla",
+    "quick_links": "Szybkie Linki",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Przegląd Platformy",
+        "description": "Odkryj możliwości Blue"
+      },
+      "features": {
+        "title": "Funkcje",
+        "description": "Odkryj wszystkie funkcje Blue"
+      },
+      "documentation": {
+        "title": "Dokumentacja",
+        "description": "Dowiedz się, jak efektywnie korzystać z Blue"
+      },
+      "api_reference": {
+        "title": "Dokumentacja API",
+        "description": "Integracja z Blue API"
+      },
+      "contact_us": {
+        "title": "Kontakt",
+        "description": "Skontaktuj się z naszym zespołem"
+      }
+    }
+  },
+  "zh-TW": {
+    "placeholder_short": "搜尋...",
+    "placeholder_long": "搜尋文件、功能、API、洞察...",
+    "searching": "搜尋中...",
+    "no_results": "未找到相關結果",
+    "quick_links": "快速連結",
+    "suggestions": {
+      "platform_overview": {
+        "title": "平台概覽",
+        "description": "探索 Blue 的功能"
+      },
+      "features": {
+        "title": "功能",
+        "description": "發現所有 Blue 功能"
+      },
+      "documentation": {
+        "title": "文件",
+        "description": "學習如何有效使用 Blue"
+      },
+      "api_reference": {
+        "title": "API 參考",
+        "description": "整合 Blue API"
+      },
+      "contact_us": {
+        "title": "聯絡我們",
+        "description": "與我們的團隊取得聯繫"
+      }
+    }
+  },
+  "sv": {
+    "placeholder_short": "Sök...",
+    "placeholder_long": "Sök dokument, funktioner, API, insikter...",
+    "searching": "Söker...",
+    "no_results": "Inga resultat hittades för",
+    "quick_links": "Snabblänkar",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Plattformsöversikt",
+        "description": "Utforska Blues möjligheter"
+      },
+      "features": {
+        "title": "Funktioner",
+        "description": "Upptäck alla Blue-funktioner"
+      },
+      "documentation": {
+        "title": "Dokumentation",
+        "description": "Lär dig använda Blue effektivt"
+      },
+      "api_reference": {
+        "title": "API-referens",
+        "description": "Integrera med Blue API"
+      },
+      "contact_us": {
+        "title": "Kontakta oss",
+        "description": "Kom i kontakt med vårt team"
+      }
+    }
+  },
+  "km": {
+    "placeholder_short": "ស្វែងរក...",
+    "placeholder_long": "ស្វែងរកឯកសារ មុខងារ API ការយល់ដឹង...",
+    "searching": "កំពុងស្វែងរក...",
+    "no_results": "រកមិនឃើញលទ្ធផលសម្រាប់",
+    "quick_links": "តំណភ្ជាប់រហ័ស",
+    "suggestions": {
+      "platform_overview": {
+        "title": "ទិដ្ឋភាពទូទៅនៃវេទិកា",
+        "description": "រុករកសមត្ថភាពរបស់ Blue"
+      },
+      "features": {
+        "title": "មុខងារ",
+        "description": "រកឃើញមុខងារ Blue ទាំងអស់"
+      },
+      "documentation": {
+        "title": "ឯកសារ",
+        "description": "រៀនពីរបៀបប្រើ Blue ប្រកបដោយប្រសិទ្ធភាព"
+      },
+      "api_reference": {
+        "title": "ឯកសារយោង API",
+        "description": "ធ្វើសមាហរណកម្មជាមួយ Blue API"
+      },
+      "contact_us": {
+        "title": "ទាក់ទងយើង",
+        "description": "ទំនាក់ទំនងជាមួយក្រុមរបស់យើង"
+      }
+    }
   }
 }
