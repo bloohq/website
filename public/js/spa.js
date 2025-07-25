@@ -17,6 +17,33 @@ window.SPAUtils = {
     },
 
     /**
+     * Get current language from URL
+     * @returns {string} Language code or empty string
+     */
+    getCurrentLanguage() {
+        const path = window.location.pathname;
+        const langMatch = path.match(/^\/([a-z]{2}|[a-z]{2}-[A-Z]{2})(\/|$)/);
+        return langMatch ? langMatch[1] : '';
+    },
+
+    /**
+     * Add language prefix to path if needed
+     * @param {string} path - The path to process
+     * @returns {string} Path with language prefix
+     */
+    addLanguagePrefix(path) {
+        const currentLang = this.getCurrentLanguage();
+        if (!currentLang) return path;
+        
+        // Check if path already has a language prefix
+        const hasLangPrefix = /^\/([a-z]{2}|[a-z]{2}-[A-Z]{2})(\/|$)/.test(path);
+        if (hasLangPrefix) return path;
+        
+        // Add current language prefix
+        return path === '/' ? `/${currentLang}` : `/${currentLang}${path}`;
+    },
+
+    /**
      * Set up client-side routing for internal links
      */
     setupClientRouting() {
@@ -35,9 +62,13 @@ window.SPAUtils = {
             
             // Prefetch on hover
             link.addEventListener('mouseenter', () => {
+                const targetUrl = new URL(link.href);
+                const languageAwarePath = this.addLanguagePrefix(targetUrl.pathname);
+                targetUrl.pathname = languageAwarePath;
+                
                 const prefetchLink = document.createElement('link');
                 prefetchLink.rel = 'prefetch';
-                prefetchLink.href = link.href;
+                prefetchLink.href = targetUrl.href;
                 document.head.appendChild(prefetchLink);
             });
             
@@ -60,7 +91,12 @@ window.SPAUtils = {
      */
     async handleNavigation(link) {
         try {
-            const response = await fetch(link.href);
+            // Add language prefix to the URL if needed
+            const targetUrl = new URL(link.href);
+            const languageAwarePath = this.addLanguagePrefix(targetUrl.pathname);
+            targetUrl.pathname = languageAwarePath;
+            
+            const response = await fetch(targetUrl.href);
             if (!response.ok) throw new Error('Network response was not ok');
             
             const html = await response.text();
@@ -71,13 +107,16 @@ window.SPAUtils = {
             const currentMain = document.querySelector('main');
             
             if (newMain && currentMain) {
-                await this.updatePageContent(newMain, currentMain, link, doc);
+                await this.updatePageContent(newMain, currentMain, targetUrl, doc);
             } else {
-                window.location.href = link.href;
+                window.location.href = targetUrl.href;
             }
         } catch (error) {
             console.error('Client routing failed:', error);
-            window.location.href = link.href;
+            // Add language prefix to fallback URL too
+            const targetUrl = new URL(link.href);
+            targetUrl.pathname = this.addLanguagePrefix(targetUrl.pathname);
+            window.location.href = targetUrl.href;
         }
     },
 
@@ -85,10 +124,10 @@ window.SPAUtils = {
      * Update page content with smooth transition
      * @param {HTMLElement} newMain - New main content element
      * @param {HTMLElement} currentMain - Current main content element
-     * @param {HTMLElement} link - The clicked link element
+     * @param {URL} targetUrl - The target URL object
      * @param {Document} doc - Parsed document from response
      */
-    async updatePageContent(newMain, currentMain, link, doc) {
+    async updatePageContent(newMain, currentMain, targetUrl, doc) {
         // Much faster transition - 50ms total
         currentMain.style.opacity = '0';
         currentMain.style.transition = 'opacity 50ms ease-out';
@@ -107,13 +146,15 @@ window.SPAUtils = {
             this.updateMetaTags(doc);
             
             // Update URL
-            window.history.pushState(null, '', link.href);
+            window.history.pushState(null, '', targetUrl.href);
             
-            // Update sidebar active state
-            this.updateSidebarState(new URL(link.href).pathname);
+            // Update sidebar active state - remove language prefix for sidebar matching
+            const pathname = targetUrl.pathname;
+            const pathWithoutLang = pathname.replace(/^\/([a-z]{2}|[a-z]{2}-[A-Z]{2})(\/|$)/, '/');
+            this.updateSidebarState(pathWithoutLang);
             
             // Collapse sidebar menus when navigating to home
-            if (new URL(link.href).pathname === '/') {
+            if (pathWithoutLang === '/') {
                 window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'));
             }
             
@@ -121,8 +162,7 @@ window.SPAUtils = {
             this.reinitializeContent();
             
             // For pages with Alpine.js content, re-setup after Alpine renders
-            const pathname = new URL(link.href).pathname;
-            if (pathname === '/insights' || pathname === '/platform/integrations' || pathname === '/platform/api' || pathname === '/platform/status') {
+            if (pathWithoutLang === '/insights' || pathWithoutLang === '/platform/integrations' || pathWithoutLang === '/platform/api' || pathWithoutLang === '/platform/status') {
                 setTimeout(() => {
                     this.setupClientRouting();
                 }, 100);
@@ -179,8 +219,10 @@ window.SPAUtils = {
      */
     setupPopStateHandler() {
         window.addEventListener('popstate', () => {
-            // Update sidebar active state for browser navigation
-            this.updateSidebarState(window.location.pathname);
+            // Update sidebar active state for browser navigation - remove language prefix
+            const pathname = window.location.pathname;
+            const pathWithoutLang = pathname.replace(/^\/([a-z]{2}|[a-z]{2}-[A-Z]{2})(\/|$)/, '/');
+            this.updateSidebarState(pathWithoutLang);
             window.location.reload();
         });
     }
