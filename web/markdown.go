@@ -85,62 +85,62 @@ func (ms *MarkdownService) PreRenderAllMarkdown(contentService *ContentService, 
 	// Walk through all markdown files in content directory for each language
 	for _, lang := range SupportedLanguages {
 		contentDir := filepath.Join("content", lang)
-		
+
 		// Skip if language directory doesn't exist
 		if _, err := os.Stat(contentDir); os.IsNotExist(err) {
 			log.Printf("Skipping language %s: directory not found", lang)
 			continue
 		}
-		
+
 		err := filepath.WalkDir(contentDir, func(path string, d os.DirEntry, err error) error {
-		if err != nil {
-			return err
-		}
+			if err != nil {
+				return err
+			}
 
-		// Skip non-markdown files
-		if !strings.HasSuffix(path, ".md") {
+			// Skip non-markdown files
+			if !strings.HasSuffix(path, ".md") {
+				return nil
+			}
+
+			// Get file info for modification time
+			info, err := d.Info()
+			if err != nil {
+				log.Printf("Warning: could not get file info for %s: %v", path, err)
+				return nil // Continue processing other files
+			}
+
+			// Generate URL path for this file (removes language from path)
+			urlPath := ms.generateURLPath(path)
+
+			// Process insights files
+
+			// Process the markdown file
+			html, frontmatter, err := ms.ProcessMarkdownFile(path, seoService)
+			if err != nil {
+				log.Printf("Warning: failed to process %s: %v", path, err)
+				return nil // Continue processing other files
+			}
+
+			// Frontmatter processed
+
+			// Cache the pre-rendered content with language-specific key
+			cachedContent := &CachedContent{
+				HTML:        html,
+				Frontmatter: frontmatter,
+				ModTime:     info.ModTime(),
+				FilePath:    path,
+			}
+
+			// Use language-specific cache key
+			cacheKey := lang + ":" + urlPath
+			ms.cache.Set(cacheKey, cachedContent)
+			count++
+
+			// Progress tracking removed for cleaner output
+
 			return nil
-		}
+		})
 
-		// Get file info for modification time
-		info, err := d.Info()
-		if err != nil {
-			log.Printf("Warning: could not get file info for %s: %v", path, err)
-			return nil // Continue processing other files
-		}
-
-		// Generate URL path for this file (removes language from path)
-		urlPath := ms.generateURLPath(path)
-		
-		// Process insights files
-
-		// Process the markdown file
-		html, frontmatter, err := ms.ProcessMarkdownFile(path, seoService)
-		if err != nil {
-			log.Printf("Warning: failed to process %s: %v", path, err)
-			return nil // Continue processing other files
-		}
-
-		// Frontmatter processed
-
-		// Cache the pre-rendered content with language-specific key
-		cachedContent := &CachedContent{
-			HTML:        html,
-			Frontmatter: frontmatter,
-			ModTime:     info.ModTime(),
-			FilePath:    path,
-		}
-
-		// Use language-specific cache key
-		cacheKey := lang + ":" + urlPath
-		ms.cache.Set(cacheKey, cachedContent)
-		count++
-
-		// Progress tracking removed for cleaner output
-
-		return nil
-	})
-	
 		if err != nil {
 			return fmt.Errorf("failed to walk content directory for %s: %w", lang, err)
 		}
@@ -155,7 +155,7 @@ func (ms *MarkdownService) generateURLPath(filePath string) string {
 	// Remove content/ prefix and .md suffix
 	urlPath := strings.TrimPrefix(filePath, "content/")
 	urlPath = strings.TrimSuffix(urlPath, ".md")
-	
+
 	// Remove language prefix (e.g., "en/" or "es/")
 	for _, lang := range SupportedLanguages {
 		if strings.HasPrefix(urlPath, lang+"/") {
@@ -180,7 +180,7 @@ func (ms *MarkdownService) generateURLPath(filePath string) string {
 
 	// Reconstruct URL with leading slash
 	cleanURL := "/" + strings.Join(urlParts, "/")
-	
+
 	// Handle root case
 	if cleanURL == "/" {
 		return "/"
@@ -201,19 +201,24 @@ func (ms *MarkdownService) GetCachedContentForLang(urlPath, lang string) (*Cache
 	if content, found := ms.cache.Get(cacheKey); found {
 		return content, true
 	}
-	
+
 	// Fall back to English if specific language not found
 	if lang != DefaultLanguage {
 		englishKey := DefaultLanguage + ":" + urlPath
 		return ms.cache.Get(englishKey)
 	}
-	
+
 	return nil, false
 }
 
 // GetAllCachedContent returns all cached content (for search indexing)
 func (ms *MarkdownService) GetAllCachedContent() map[string]*CachedContent {
 	return ms.cache.GetAll()
+}
+
+// GetCachedContentByLanguage returns all cached content for a specific language
+func (ms *MarkdownService) GetCachedContentByLanguage(lang string) map[string]*CachedContent {
+	return ms.cache.GetByLanguage(lang)
 }
 
 // GetCacheSize returns the number of cached items

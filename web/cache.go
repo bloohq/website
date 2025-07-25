@@ -2,6 +2,7 @@ package web
 
 import (
 	"html/template"
+	"strings"
 	"sync"
 	"time"
 )
@@ -37,7 +38,7 @@ func NewMarkdownCache() *MarkdownCache {
 func (mc *MarkdownCache) Get(urlPath string) (*CachedContent, bool) {
 	mc.mu.RLock()
 	defer mc.mu.RUnlock()
-	
+
 	content, exists := mc.cache[urlPath]
 	return content, exists
 }
@@ -46,7 +47,7 @@ func (mc *MarkdownCache) Get(urlPath string) (*CachedContent, bool) {
 func (mc *MarkdownCache) Set(urlPath string, content *CachedContent) {
 	mc.mu.Lock()
 	defer mc.mu.Unlock()
-	
+
 	mc.cache[urlPath] = content
 }
 
@@ -54,7 +55,7 @@ func (mc *MarkdownCache) Set(urlPath string, content *CachedContent) {
 func (mc *MarkdownCache) GetAll() map[string]*CachedContent {
 	mc.mu.RLock()
 	defer mc.mu.RUnlock()
-	
+
 	// Return a copy to avoid race conditions
 	result := make(map[string]*CachedContent)
 	for k, v := range mc.cache {
@@ -63,11 +64,29 @@ func (mc *MarkdownCache) GetAll() map[string]*CachedContent {
 	return result
 }
 
+// GetByLanguage returns all cached content for a specific language
+func (mc *MarkdownCache) GetByLanguage(lang string) map[string]*CachedContent {
+	mc.mu.RLock()
+	defer mc.mu.RUnlock()
+
+	result := make(map[string]*CachedContent)
+	prefix := lang + ":"
+
+	for key, content := range mc.cache {
+		if strings.HasPrefix(key, prefix) {
+			// Remove language prefix from key for result
+			cleanKey := strings.TrimPrefix(key, prefix)
+			result[cleanKey] = content
+		}
+	}
+	return result
+}
+
 // Size returns the number of cached items
 func (mc *MarkdownCache) Size() int {
 	mc.mu.RLock()
 	defer mc.mu.RUnlock()
-	
+
 	return len(mc.cache)
 }
 
@@ -75,7 +94,7 @@ func (mc *MarkdownCache) Size() int {
 func (mc *MarkdownCache) Clear() {
 	mc.mu.Lock()
 	defer mc.mu.Unlock()
-	
+
 	mc.cache = make(map[string]*CachedContent)
 }
 
@@ -88,7 +107,7 @@ func (cc *CachedContent) GetHTML() template.HTML {
 func (mc *MarkdownCache) Delete(urlPath string) {
 	mc.mu.Lock()
 	defer mc.mu.Unlock()
-	
+
 	delete(mc.cache, urlPath)
 }
 
@@ -96,12 +115,12 @@ func (mc *MarkdownCache) Delete(urlPath string) {
 func (mc *MarkdownCache) GetCacheStats() map[string]interface{} {
 	mc.mu.RLock()
 	defer mc.mu.RUnlock()
-	
+
 	totalSize := 0
 	for _, content := range mc.cache {
 		totalSize += len(content.HTML)
 	}
-	
+
 	return map[string]interface{}{
 		"count":     len(mc.cache),
 		"totalSize": totalSize,
@@ -127,7 +146,7 @@ func NewHTMLCache() *HTMLCache {
 func (hc *HTMLCache) Get(urlPath string) (*CachedContent, bool) {
 	hc.mu.RLock()
 	defer hc.mu.RUnlock()
-	
+
 	content, exists := hc.cache[urlPath]
 	return content, exists
 }
@@ -136,7 +155,7 @@ func (hc *HTMLCache) Get(urlPath string) (*CachedContent, bool) {
 func (hc *HTMLCache) Set(urlPath string, content *CachedContent) {
 	hc.mu.Lock()
 	defer hc.mu.Unlock()
-	
+
 	hc.cache[urlPath] = content
 }
 
@@ -144,7 +163,7 @@ func (hc *HTMLCache) Set(urlPath string, content *CachedContent) {
 func (hc *HTMLCache) GetAll() map[string]*CachedContent {
 	hc.mu.RLock()
 	defer hc.mu.RUnlock()
-	
+
 	// Return a copy to avoid race conditions
 	result := make(map[string]*CachedContent)
 	for k, v := range hc.cache {
@@ -153,11 +172,29 @@ func (hc *HTMLCache) GetAll() map[string]*CachedContent {
 	return result
 }
 
+// GetByLanguage returns all cached HTML content for a specific language
+func (hc *HTMLCache) GetByLanguage(lang string) map[string]*CachedContent {
+	hc.mu.RLock()
+	defer hc.mu.RUnlock()
+
+	result := make(map[string]*CachedContent)
+	prefix := lang + ":"
+
+	for key, content := range hc.cache {
+		if strings.HasPrefix(key, prefix) {
+			// Remove language prefix from key for result
+			cleanKey := strings.TrimPrefix(key, prefix)
+			result[cleanKey] = content
+		}
+	}
+	return result
+}
+
 // Size returns the number of cached HTML items
 func (hc *HTMLCache) Size() int {
 	hc.mu.RLock()
 	defer hc.mu.RUnlock()
-	
+
 	return len(hc.cache)
 }
 
@@ -165,7 +202,7 @@ func (hc *HTMLCache) Size() int {
 func (hc *HTMLCache) Clear() {
 	hc.mu.Lock()
 	defer hc.mu.Unlock()
-	
+
 	hc.cache = make(map[string]*CachedContent)
 }
 
@@ -173,7 +210,7 @@ func (hc *HTMLCache) Clear() {
 func (hc *HTMLCache) Delete(urlPath string) {
 	hc.mu.Lock()
 	defer hc.mu.Unlock()
-	
+
 	delete(hc.cache, urlPath)
 }
 
@@ -181,12 +218,12 @@ func (hc *HTMLCache) Delete(urlPath string) {
 func (hc *HTMLCache) GetCacheStats() map[string]interface{} {
 	hc.mu.RLock()
 	defer hc.mu.RUnlock()
-	
+
 	totalSize := 0
 	for _, content := range hc.cache {
 		totalSize += len(content.HTML)
 	}
-	
+
 	return map[string]interface{}{
 		"count":     len(hc.cache),
 		"totalSize": totalSize,

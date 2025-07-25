@@ -231,6 +231,11 @@ func (hs *HTMLService) GetAllCachedContent() map[string]*CachedContent {
 	return hs.cache.GetAll()
 }
 
+// GetCachedContentByLanguage returns all cached HTML content for a specific language
+func (hs *HTMLService) GetCachedContentByLanguage(lang string) map[string]*CachedContent {
+	return hs.cache.GetByLanguage(lang)
+}
+
 // GetCacheSize returns the number of cached HTML items
 func (hs *HTMLService) GetCacheSize() int {
 	return hs.cache.Size()
@@ -242,12 +247,12 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 	// Create a temporary router instance to use its preparePageData method
 	// This avoids code duplication while maintaining the existing API
 	tempRouter := &Router{
-		markdownService:  hs.markdownService,
-		seoService:       seoService,
+		markdownService:   hs.markdownService,
+		seoService:        seoService,
 		navigationService: navigationService,
-		schemaService:    hs.schemaService,
-		tocExcludedPaths: []string{"/changelog", "/roadmap", "/platform/status"},
+		schemaService:     hs.schemaService,
+		tocExcludedPaths:  []string{"/changelog", "/roadmap", "/platform/status"},
 	}
-	
+
 	return tempRouter.preparePageData(path, content, isMarkdown, frontmatter, navigationService.GetNavigationForPathWithLanguage(path, lang), lang)
 }
