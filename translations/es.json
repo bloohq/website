@@ -90,5 +90,12 @@
     "sign_up": "Registrarse",
     "start_free_trial": "Iniciar prueba gratuita",
     "watch_demo": "Ver una demostración"
+  },
+  "search": {
+    "placeholder_short": "Buscar...",
+    "placeholder_long": "Buscar documentos, funciones, API, perspectivas...",
+    "searching": "Buscando...",
+    "no_results": "No se encontraron resultados para",
+    "quick_links": "Enlaces Rápidos"
   }
 }

@@ -10,6 +10,13 @@
     "start_free_trial": "Start free trial",
     "read_insights": "Read our insights"
   },
+  "search": {
+    "placeholder_short": "Search...",
+    "placeholder_long": "Search docs, features, API, insights...",
+    "searching": "Searching...",
+    "no_results": "No results found for",
+    "quick_links": "Quick Links"
+  },
   "about": {
     "page_title": "Blue is bringing delight to process management.",
     "page_subtitle": "We're an independent company with a passion for helping teams work better, together.",
