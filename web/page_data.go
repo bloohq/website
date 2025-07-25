@@ -31,8 +31,15 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		// Initialize PNG generator
 		pngGen := NewPNGGenerator()
 
-		for urlPath, content := range cachedInsights {
-			if strings.HasPrefix(urlPath, "/insights/") && content.Frontmatter != nil {
+		// Build the language-specific cache key prefix
+		// Cache keys are stored as "lang:/path" format
+		cachePrefix := lang + ":/insights/"
+
+		for cacheKey, content := range cachedInsights {
+			if strings.HasPrefix(cacheKey, cachePrefix) && content.Frontmatter != nil {
+				// Extract the actual URL path from the cache key
+				urlPath := strings.TrimPrefix(cacheKey, lang+":")
+				
 				// Extract category from tags or category field
 				category := content.Frontmatter.Category
 				if category == "" && len(content.Frontmatter.Tags) > 0 {
