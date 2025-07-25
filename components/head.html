@@ -11,12 +11,21 @@
     <meta property="og:description" content="{{.Description}}">
     {{if .SiteMeta}}<meta property="og:url" content="{{.SiteMeta.URL}}">{{end}}
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="{{.LanguageLocale}}">
     <meta property="og:image" content="https://www.blue.cc/og.png">
-    <link rel="canonical" href="https://www.blue.cc{{.Path}}">
+    <link rel="canonical" href="https://blue.cc/{{.Language}}{{.Path}}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{.Title}}">
     <meta name="twitter:description" content="{{.Description}}">
     <meta name="twitter:image" content="https://www.blue.cc/og.png">
+    
+    {{if .SupportedLanguages}}
+    <!-- Hreflang tags for international SEO -->
+    {{range $lang := .SupportedLanguages}}
+    <link rel="alternate" hreflang="{{$lang}}" href="https://blue.cc/{{$lang}}{{$.Path}}">
+    {{end}}
+    <link rel="alternate" hreflang="x-default" href="https://blue.cc/en{{$.Path}}">
+    {{end}}
     
     {{if .SchemaData}}
     <!-- Structured Data -->

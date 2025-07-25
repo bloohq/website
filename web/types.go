@@ -15,19 +15,21 @@ type InsightData struct {
 
 // PageData holds data for template rendering
 type PageData struct {
-	Title          string
-	Content        template.HTML
-	Navigation     *Navigation
-	PageMeta       *PageMetadata
-	SiteMeta       *SiteMetadata
-	Description    string
-	Keywords       []string
-	IsMarkdown     bool
-	Frontmatter    *Frontmatter
-	TOC            []TOCEntry
-	CustomerNumber int
-	Insights       []InsightData
-	Path           string
-	SchemaData     template.JS
-	Language       string
+	Title              string
+	Content            template.HTML
+	Navigation         *Navigation
+	PageMeta           *PageMetadata
+	SiteMeta           *SiteMetadata
+	Description        string
+	Keywords           []string
+	IsMarkdown         bool
+	Frontmatter        *Frontmatter
+	TOC                []TOCEntry
+	CustomerNumber     int
+	Insights           []InsightData
+	Path               string
+	SchemaData         template.JS
+	Language           string
+	LanguageLocale     string
+	SupportedLanguages []string
 }

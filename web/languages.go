@@ -29,6 +29,34 @@ var SupportedLanguages = []string{
 // DefaultLanguage is the fallback language
 const DefaultLanguage = "en"
 
+// LanguageLocales maps language codes to locale strings for og:locale
+var LanguageLocales = map[string]string{
+	"en":    "en_US",
+	"zh":    "zh_CN",
+	"es":    "es_ES",
+	"fr":    "fr_FR",
+	"de":    "de_DE",
+	"ja":    "ja_JP",
+	"pt":    "pt_BR",
+	"ru":    "ru_RU",
+	"ko":    "ko_KR",
+	"it":    "it_IT",
+	"id":    "id_ID",
+	"nl":    "nl_NL",
+	"pl":    "pl_PL",
+	"zh-TW": "zh_TW",
+	"sv":    "sv_SE",
+	"km":    "km_KH",
+}
+
+// GetLocaleForLanguage returns the locale string for a given language code
+func GetLocaleForLanguage(lang string) string {
+	if locale, ok := LanguageLocales[lang]; ok {
+		return locale
+	}
+	return "en_US" // Default locale
+}
+
 // detectPreferredLanguage detects user's preferred language from cookie or Accept-Language header
 func detectPreferredLanguage(r *http.Request) string {
 	// 1. Check cookie first (user's explicit choice)
