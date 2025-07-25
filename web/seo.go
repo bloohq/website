@@ -83,6 +83,20 @@ type URLSet struct {
 	URLs    []URLEntry `xml:"url"`
 }
 
+// SitemapEntry represents a single sitemap in the sitemap index
+type SitemapEntry struct {
+	XMLName xml.Name `xml:"sitemap"`
+	Loc     string   `xml:"loc"`
+	LastMod string   `xml:"lastmod,omitempty"`
+}
+
+// SitemapIndex represents the root sitemap index element
+type SitemapIndex struct {
+	XMLName  xml.Name       `xml:"sitemapindex"`
+	Xmlns    string         `xml:"xmlns,attr"`
+	Sitemaps []SitemapEntry `xml:"sitemap"`
+}
+
 // SEOService handles all SEO-related functionality
 type SEOService struct {
 	metadata  *Metadata
@@ -324,21 +338,84 @@ func (s *SEOService) getFallbackTitle(path string) string {
 
 // GenerateSitemap creates a sitemap.xml file in the public directory
 func (s *SEOService) GenerateSitemap(baseURL string) error {
+	// Generate main sitemap index
+	if err := s.generateSitemapIndex(baseURL); err != nil {
+		return fmt.Errorf("failed to generate sitemap index: %w", err)
+	}
+	
+	// Generate language-specific sitemaps
+	for _, lang := range SupportedLanguages {
+		if err := s.generateLanguageSitemap(baseURL, lang); err != nil {
+			return fmt.Errorf("failed to generate sitemap for %s: %w", lang, err)
+		}
+	}
+	
+	return nil
+}
+
+// generateSitemapIndex creates the main sitemap index file
+func (s *SEOService) generateSitemapIndex(baseURL string) error {
+	// Create sitemap index entries
+	var sitemaps []SitemapEntry
+	currentTime := time.Now().Format("2006-01-02")
+	
+	for _, lang := range SupportedLanguages {
+		filename := "sitemap.xml"
+		if lang != DefaultLanguage {
+			filename = fmt.Sprintf("sitemap-%s.xml", lang)
+		}
+		
+		sitemaps = append(sitemaps, SitemapEntry{
+			Loc:     baseURL + "/" + filename,
+			LastMod: currentTime,
+		})
+	}
+	
+	// Create sitemap index structure
+	sitemapIndex := SitemapIndex{
+		Xmlns:    "http://www.sitemaps.org/schemas/sitemap/0.9",
+		Sitemaps: sitemaps,
+	}
+	
+	// Generate XML
+	xmlData, err := xml.MarshalIndent(sitemapIndex, "", "  ")
+	if err != nil {
+		return fmt.Errorf("failed to marshal sitemap index XML: %w", err)
+	}
+	
+	// Add XML declaration
+	xmlContent := xml.Header + string(xmlData)
+	
+	// Write to public/sitemap_index.xml
+	if err := os.WriteFile("public/sitemap_index.xml", []byte(xmlContent), 0644); err != nil {
+		return fmt.Errorf("failed to write sitemap_index.xml: %w", err)
+	}
+	
+	// Also create a copy as sitemap.xml for backward compatibility
+	if err := os.WriteFile("public/sitemap.xml", []byte(xmlContent), 0644); err != nil {
+		return fmt.Errorf("failed to write sitemap.xml: %w", err)
+	}
+	
+	return nil
+}
+
+// generateLanguageSitemap creates a language-specific sitemap
+func (s *SEOService) generateLanguageSitemap(baseURL, lang string) error {
 	var urls []URLEntry
 	currentTime := time.Now().Format("2006-01-02")
 	
-	// Add static HTML pages
-	htmlUrls, err := s.scanHTMLPages("pages", baseURL, currentTime)
+	// Add static HTML pages for this language
+	htmlUrls, err := s.scanHTMLPagesForLanguage("pages", baseURL, currentTime, lang)
 	if err != nil {
-		log.Printf("Warning: failed to scan HTML pages: %v", err)
+		log.Printf("Warning: failed to scan HTML pages for %s: %v", lang, err)
 	} else {
 		urls = append(urls, htmlUrls...)
 	}
 	
-	// Add markdown content pages
-	markdownUrls, err := s.scanMarkdownContent("content", baseURL, currentTime)
+	// Add markdown content pages for this language
+	markdownUrls, err := s.scanMarkdownContentForLanguage("content", baseURL, currentTime, lang)
 	if err != nil {
-		log.Printf("Warning: failed to scan markdown content: %v", err)
+		log.Printf("Warning: failed to scan markdown content for %s: %v", lang, err)
 	} else {
 		urls = append(urls, markdownUrls...)
 	}
@@ -358,9 +435,15 @@ func (s *SEOService) GenerateSitemap(baseURL string) error {
 	// Add XML declaration
 	xmlContent := xml.Header + string(xmlData)
 	
-	// Write to public/sitemap.xml
-	if err := os.WriteFile("public/sitemap.xml", []byte(xmlContent), 0644); err != nil {
-		return fmt.Errorf("failed to write sitemap.xml: %w", err)
+	// Determine filename
+	filename := "public/sitemap.xml"
+	if lang != DefaultLanguage {
+		filename = fmt.Sprintf("public/sitemap-%s.xml", lang)
+	}
+	
+	// Write to file
+	if err := os.WriteFile(filename, []byte(xmlContent), 0644); err != nil {
+		return fmt.Errorf("failed to write %s: %w", filename, err)
 	}
 	
 	return nil
@@ -580,4 +663,86 @@ func (s *SEOService) getURLProperties(urlPath string) (priority, changeFreq stri
 	}
 	
 	return priority, changeFreq
+}
+
+// scanHTMLPagesForLanguage scans HTML pages for a specific language
+func (s *SEOService) scanHTMLPagesForLanguage(pagesDir, baseURL, currentTime, lang string) ([]URLEntry, error) {
+	var urls []URLEntry
+	
+	err := filepath.Walk(pagesDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		
+		if !info.IsDir() && strings.HasSuffix(path, ".html") {
+			// Convert file path to URL path
+			urlPath := s.filePathToURL(path, pagesDir)
+			if urlPath == "" {
+				return nil // Skip invalid paths
+			}
+			
+			// Build language-specific URL
+			if lang != DefaultLanguage {
+				urlPath = "/" + lang + urlPath
+			}
+			
+			// Determine priority and change frequency based on path
+			priority, changeFreq := s.getURLProperties(urlPath)
+			
+			urls = append(urls, URLEntry{
+				Loc:        baseURL + urlPath,
+				LastMod:    currentTime,
+				ChangeFreq: changeFreq,
+				Priority:   priority,
+			})
+		}
+		
+		return nil
+	})
+	
+	return urls, err
+}
+
+// scanMarkdownContentForLanguage scans markdown content for a specific language
+func (s *SEOService) scanMarkdownContentForLanguage(contentDir, baseURL, currentTime, lang string) ([]URLEntry, error) {
+	var urls []URLEntry
+	
+	err := filepath.Walk(contentDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		
+		if !info.IsDir() && strings.HasSuffix(path, ".md") {
+			// Convert file path to URL path
+			urlPath := s.markdownFilePathToURL(path, contentDir)
+			if urlPath == "" {
+				return nil // Skip invalid paths
+			}
+			
+			// Build language-specific URL
+			if lang != DefaultLanguage {
+				urlPath = "/" + lang + urlPath
+			}
+			
+			// Determine priority and change frequency based on path
+			priority, changeFreq := s.getURLProperties(urlPath)
+			
+			// Try to get actual modification time from file
+			lastMod := currentTime
+			if stat, err := os.Stat(path); err == nil {
+				lastMod = stat.ModTime().Format("2006-01-02")
+			}
+			
+			urls = append(urls, URLEntry{
+				Loc:        baseURL + urlPath,
+				LastMod:    lastMod,
+				ChangeFreq: changeFreq,
+				Priority:   priority,
+			})
+		}
+		
+		return nil
+	})
+	
+	return urls, err
 }
