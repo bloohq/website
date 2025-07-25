@@ -8,10 +8,10 @@
     init() {
         // Function to set up title animation
         const setupTitle = (authState) => {
-            const firstName = (authState && authState.firstName) || 'there';
+            const firstName = (authState && authState.firstName) || '{{t "home.welcome_default"}}';
             const title = authState && authState.isLoggedIn
-                ? `Welcome back, ${firstName}. `
-                : 'Blue is a powerful platform to create, manage, and scale processes.';
+                ? `{{t "home.welcome_back"}}${firstName}{{t "home.welcome_suffix"}}`
+                : '{{t "home.hero_title"}}';
                 
             this.words = title.split(' ');
             this.animatedWords = [];
@@ -67,8 +67,8 @@
     <p 
         :class="showSubtitle ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'" 
         class="text-xl text-gray-600 dark:text-gray-400 transition-all duration-800 ease-out">
-        <span x-show="authState && authState.isLoggedIn">Pick up where you left off or explore what's new in Blue.</span>
-        <span x-show="!authState || !authState.isLoggedIn">Meet the system for modern operations — gain visibility, speed up processes, and scale your organization.</span>
+        <span x-show="authState && authState.isLoggedIn">{{t "home.hero_subtitle_logged_in"}}</span>
+        <span x-show="!authState || !authState.isLoggedIn">{{t "home.hero_subtitle_default"}}</span>
     </p>
 </div>
 
@@ -100,32 +100,32 @@
         <a href="https://app.blue.cc" 
            target="_blank"
            class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg bg-brand-blue text-white hover:bg-brand-blue/90 transition-colors duration-200 shadow-lg hover:shadow-xl group">
-            <span x-show="authState && authState.isLoggedIn">Go to Dashboard</span>
-            <span x-show="!authState || !authState.isLoggedIn">Get Started Free</span>
+            <span x-show="authState && authState.isLoggedIn">{{t "home.cta_dashboard"}}</span>
+            <span x-show="!authState || !authState.isLoggedIn">{{t "home.cta_get_started"}}</span>
             <svg class="ml-2 w-5 h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
         </a>
         <a :href="authState && authState.isLoggedIn ? '/platform/changelog' : '/platform/features'" 
            class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
-            <span x-show="authState && authState.isLoggedIn">What's New</span>
-            <span x-show="!authState || !authState.isLoggedIn">See How It Works</span>
+            <span x-show="authState && authState.isLoggedIn">{{t "home.cta_whats_new"}}</span>
+            <span x-show="!authState || !authState.isLoggedIn">{{t "home.cta_see_how"}}</span>
         </a>
     </div>
     
     <!-- News Bar -->
     <div class="mt-8">
-        {{$newsBarData := parseJSON `{
-            "MainText": "You can now create your own branded version of Blue with the White Label module.",
-            "ButtonText": "Learn more",
+        {{$newsBarData := parseJSON (printf `{
+            "MainText": "%s",
+            "ButtonText": "%s",
             "ButtonUrl": "/platform/white-label"
-        }`}}
+        }` (t "home.news_bar.main_text") (t "home.news_bar.button_text"))}}
         {{template "news-bar" $newsBarData}}
     </div>
     
   
-    {{$logoData := parseJSON `{
-        "title": "Trusted by more than 17,000 teams",
+    {{$logoData := parseJSON (printf `{
+        "title": "%s", 
         "logos": [
             { "name": "CBRE", "src": "/customers/cbre.svg" },
             { "name": "Cisco", "src": "/customers/cisco.svg" },
@@ -140,28 +140,28 @@
             { "name": "World Food Programme", "src": "/customers/wfp.svg" },
             { "name": "ILO", "src": "/customers/ilo.webp" }
         ]
-    }`}}
+    }` (t "home.trusted_by"))}}
     
     {{template "logo-grid" $logoData}}
 
-    {{$valuePropsData := parseJSON `{
-        "Title": "Designed to turn everything<br> into a clear process.",
-        "Description": "Because great organizations thrive on clear, repeatable processes.",
+    {{$valuePropsData := parseJSON (printf `{
+        "Title": "%s",
+        "Description": "%s",
         "ValueProps": [
             {
-                "Title": "Built for how you actually work",
-                "Description": "Your processes with no forced workflows or rigid structures."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "A platform for customers, not investors",
-                "Description": "Founder-led, profitable, and built for decades not quarters."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "Fair pricing that scales with you",
-                "Description": "$7/user. No surprises. Save 90% vs enterprise tools."
+                "Title": "%s",
+                "Description": "%s"
             }
         ]
-    }`}}
+    }` (t "home.designed_to_turn.title") (t "home.designed_to_turn.description") (t "home.designed_to_turn.value_props.built_for_work.title") (t "home.designed_to_turn.value_props.built_for_work.description") (t "home.designed_to_turn.value_props.platform_for_customers.title") (t "home.designed_to_turn.value_props.platform_for_customers.description") (t "home.designed_to_turn.value_props.fair_pricing.title") (t "home.designed_to_turn.value_props.fair_pricing.description"))}}
     
     {{template "value-propositions" $valuePropsData}}
 
@@ -169,76 +169,76 @@
 
 <!-- Features as Benefits Section -->
 <section class="max-w-7xl mx-auto">
-    <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Work — the way it should be.</h3>
+    <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">{{t "home.work_the_way"}}</h3>
     
     <!-- One source of truth -->
     <div class="mb-20">
-        {{$automateData := parseJSON `{
-            "Title": "One source of truth.",
-            "Description": "Create records for all your business data, so you finally have one place to keep everything.",
+        {{$automateData := parseJSON (printf `{
+            "Title": "%s",
+            "Description": "%s",
             "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "left",
             "SeeAlso": {
                 "Links": [
                     {
-                        "Text": "Records",
+                        "Text": "%s",
                         "Url": "/platform/features/records",
-                        "Description": "map to your business entities"
+                        "Description": "%s"
                     },
                     {
-                        "Text": "Custom fields",
+                        "Text": "%s",
                         "Url": "/platform/features/custom-fields",
-                        "Description": "model your data"
+                        "Description": "%s"
                     },
                     {
-                        "Text": "Workspaces",
+                        "Text": "%s",
                         "Url": "/platform/features/workspaces",
-                        "Description": "keep everything private with the right links"
+                        "Description": "%s"
                     }
                 ]
             }
-        }`}}
+        }` (t "home.features.one_source.title") (t "home.features.one_source.description") (t "home.features.one_source.see_also.records.text") (t "home.features.one_source.see_also.records.description") (t "home.features.one_source.see_also.custom_fields.text") (t "home.features.one_source.see_also.custom_fields.description") (t "home.features.one_source.see_also.workspaces.text") (t "home.features.one_source.see_also.workspaces.description"))}}
         {{template "feature-video" $automateData}}
     </div>
 
      <!-- See Everything, Miss Nothing -->
      <div class="mb-20">
-        {{$seeEverythingData := parseJSON `{
-            "Title": "Everything is a process.",
-            "Description": "Blue helps you create clear, repeatable processes for everything you do.",
+        {{$seeEverythingData := parseJSON (printf `{
+            "Title": "%s",
+            "Description": "%s",
             "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "right",
             "SeeAlso": {
                 "Links": [
                     {
-                        "Text": "Lists",
+                        "Text": "%s",
                         "Url": "/docs/records/lists",
-                        "Description": "create consistent process steps"
+                        "Description": "%s"
                     },
                     {
-                        "Text": "Checklists",
+                        "Text": "%s",
                         "Url": "/insights/create-checklist-templates",
-                        "Description": "ensure everyone knows what to do"
+                        "Description": "%s"
                     },
                     {
-                        "Text": "Forms",
+                        "Text": "%s",
                         "Url": "/platform/features/forms",
-                        "Description": "give you consistent data intake"
+                        "Description": "%s"
                     }
                 ]
             }
-        }`}}
+        }` (t "home.features.everything_process.title") (t "home.features.everything_process.description") (t "home.features.everything_process.see_also.lists.text") (t "home.features.everything_process.see_also.lists.description") (t "home.features.everything_process.see_also.checklists.text") (t "home.features.everything_process.see_also.checklists.description") (t "home.features.everything_process.see_also.forms.text") (t "home.features.everything_process.see_also.forms.description"))}}
         {{template "feature-video" $seeEverythingData}}
     </div>
    
     <!-- Create Clear Process -->
     <div class="mb-20">
-        {{$automateData := parseJSON `{
-            "Title": "Automations help you scale.",
-            "Description": "Blue's powerful automation engine handles everything from status updates and notifications to complex multi-step workflows.",
+        {{$automateData := parseJSON (printf `{
+            "Title": "%s",
+            "Description": "%s",
             "VideoUrl": "https://media.blue.cc/automations-on-off.mp4",
             "VideoPosition": "left"
-        }`}}
+        }` (t "home.features.automations.title") (t "home.features.automations.description"))}}
         {{template "feature-video" $automateData}}
     </div>
 
@@ -249,74 +249,74 @@
 
     <section class="mb-16">
                     
-                    {{$statsData := parseJSON `{
-                        "Title": "Crafted to operate at scale.",
+                    {{$statsData := parseJSON (printf `{
+                        "Title": "%s",
                         "Stats": [
                             {
-                                "Number": "17000+",
-                                "Description": "teams worldwide"
+                                "Number": "%s",
+                                "Description": "%s"
                             },
                             {
-                                "Number": "5M+",
-                                "Description": "processes automated"
+                                "Number": "%s",
+                                "Description": "%s"
                             },
                             {
-                                "Number": "500M+",
-                                "Description": "records managed"
+                                "Number": "%s",
+                                "Description": "%s"
                             }
                         ]
-                    }`}}
+                    }` (t "home.stats.title") (t "home.stats.teams.number") (t "home.stats.teams.description") (t "home.stats.processes.number") (t "home.stats.processes.description") (t "home.stats.records.number") (t "home.stats.records.description"))}}
                     
                     {{template "stats-section" $statsData}}
     </section>
 
-    {{$testimonialData := parseJSON `{
+    {{$testimonialData := parseJSON (printf `{
         "testimonials": [
             {
-                "quote": "Blue keeps things completely organized — it's an absolutely wonderful tool.",
+                "quote": "%s",
                 "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
                 "posterUrl": "/testimonials/davidsacks.jpeg"
             },
             {
-                "quote": "The automation features of Blue help us run our operations seamlessly.",
+                "quote": "%s",
                 "videoUrl": "https://media.blue.cc/lady.mp4",
                 "posterUrl": "/testimonials/lady.jpg"
             },
             {
-                "quote": "My entire life is in Blue! I love how fantasticly responsive the team is.",
+                "quote": "%s",
                 "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
                 "posterUrl": "/testimonials/ricklewis.jpg"
             },
             {
-                "quote": "If you're wondering if you should buy Blue...the answer is YES.",
+                "quote": "%s",
                 "videoUrl": "https://media.blue.cc/ana.mov",
                 "posterUrl": "/testimonials/ana-testimonial.jpg"
             }
         ]
-    }`}}
+    }` (t "home.testimonials.quote_1") (t "home.testimonials.quote_2") (t "home.testimonials.quote_3") (t "home.testimonials.quote_4"))}}
 
     {{template "testimonial-videos" $testimonialData}}
 
 
     <!-- Your Data, Your Way -->
     <div class="mb-20">
-        {{$yourDataData := parseJSON `{
-            "Title": "Your perfect data structure.",
-            "Description": "Create custom fields, design your own record types, and build the perfect database that fits your exact workflow.",
+        {{$yourDataData := parseJSON (printf `{
+            "Title": "%s",
+            "Description": "%s",
             "VideoUrl": "https://media.blue.cc/custom-fields-showcase.mp4",
             "VideoPosition": "right"
-        }`}}
+        }` (t "home.features.your_data.title") (t "home.features.your_data.description"))}}
         {{template "feature-video" $yourDataData}}
     </div>
 
     <!-- Insights That Drive Action -->
     <div class="mb-20">
-        {{$insightsData := parseJSON `{
-            "Title": "Real-time management dashboards.",
-            "Description": "Easily build dashboards that automatically update as your data changes.",
+        {{$insightsData := parseJSON (printf `{
+            "Title": "%s",
+            "Description": "%s",
             "VideoUrl": "https://media.blue.cc/dashboard-showcase.mp4",
             "VideoPosition": "left"
-        }`}}
+        }` (t "home.features.dashboards.title") (t "home.features.dashboards.description"))}}
         {{template "feature-video" $insightsData}}
     </div>
 </section>
@@ -324,57 +324,57 @@
 <!-- Likely need a unique integrations area here with various logos.-->
 
     <!-- Features Grid Section -->
-    {{$featuresData := parseJSON `{
-        "Title": "Everything you need to succeed",
+    {{$featuresData := parseJSON (printf `{
+        "Title": "%s",
         "Features": [
             {   
-                "Title": "Security",
-                "Description": "Enterprise-grade security with end-to-end encryption and compliance certifications.",
+                "Title": "%s",
+                "Description": "%s",
                 "Url": "/platform/security"
             },
             {
-                "Title": "Performance",
-                "Description": "Lightning-fast response times and 99.9% uptime guarantee for mission-critical work.",
+                "Title": "%s",
+                "Description": "%s",
                 "Url": "/platform/performance"
             },
             {
-                "Title": "Analytics",
-                "Description": "Real-time insights and customizable dashboards to track what matters most."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "Integrations",
-                "Description": "Connect with 7,000+ tools including Slack, Gmail, Zapier, and custom APIs.",
+                "Title": "%s",
+                "Description": "%s",
                 "Url": "/platform/integrations"
             },
             {
-                "Title": "Automations",
-                "Description": "Streamline workflows with intelligent automation that learns from your processes."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "Mobile Apps",
-                "Description": "Work on the go with apps for iPhone, iPad, and Android devices."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "Collaboration",
-                "Description": "Real-time collaboration tools with comments, mentions, and team workspaces."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "Customization",
-                "Description": "Fully customizable interface, fields, and workflows to match your business needs."
+                "Title": "%s",
+                "Description": "%s"
             },
             {
-                "Title": "Support",
-                "Description": "Free email support with optional paid phone support."
+                "Title": "%s",
+                "Description": "%s"
             }
         ]
-    }`}}
+    }` (t "home.features_grid.title") (t "home.features_grid.security.title") (t "home.features_grid.security.description") (t "home.features_grid.performance.title") (t "home.features_grid.performance.description") (t "home.features_grid.analytics.title") (t "home.features_grid.analytics.description") (t "home.features_grid.integrations.title") (t "home.features_grid.integrations.description") (t "home.features_grid.automations_grid.title") (t "home.features_grid.automations_grid.description") (t "home.features_grid.mobile.title") (t "home.features_grid.mobile.description") (t "home.features_grid.collaboration.title") (t "home.features_grid.collaboration.description") (t "home.features_grid.customization.title") (t "home.features_grid.customization.description") (t "home.features_grid.support.title") (t "home.features_grid.support.description"))}}
     
     {{template "features-grid-simple" $featuresData}}
        
  <!-- Integration Partners -->
  <div class="mb-16">
-    {{$integrationData := parseJSON `{
-        "title": "Connect with 7,000+ tools through our integration partners",
+    {{$integrationData := parseJSON (printf `{
+        "title": "%s",
         "logos": [
             { "name": "Zapier", "src": "/images/zapier.svg" },
             { "name": "Make.com", "src": "/images/make.svg" },
@@ -382,7 +382,7 @@
             { "name": "Albato", "src": "/images/albato.png" },
             { "name": "Boost.space", "src": "/images/boost-space.svg" }
         ]
-    }`}}
+    }` (t "home.integrations.title"))}}
     {{template "logo-grid" $integrationData}}
 </div>
 
@@ -392,41 +392,41 @@
 I wonder if process management is really needed, is that a "use case"? -->
 <section class="mb-8">
         
-    {{$showcaseData := parseJSON `{
-        "Title": "Selected use cases.",
+    {{$showcaseData := parseJSON (printf `{
+        "Title": "%s",
         "Features": [
             {
                 "Id": "process-management",
-                "Title": "Process Management", 
+                "Title": "%s", 
                 "VideoUrl": "/video3.mp4"
             },
             {
                 "Id": "project-management",
-                "Title": "Project Management",
+                "Title": "%s",
                 "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
             },
             {
                 "Id": "sales-crm",
-                "Title": "Sales CRM",
+                "Title": "%s",
                 "VideoUrl": "/video4.mp4"
             },
             {
                 "Id": "service-tickets",
-                "Title": "Service Tickets",
+                "Title": "%s",
                 "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
             },
             {
                 "Id": "asset-management",
-                "Title": "Asset Management",
+                "Title": "%s",
                 "VideoUrl": "/testvideo2.mp4"
             },
             {
                 "Id": "content-calendar",
-                "Title": "Content Calendar",
+                "Title": "%s",
                 "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
             }
         ]
-    }`}}
+    }` (t "home.use_cases.title") (t "home.use_cases.process_management") (t "home.use_cases.project_management") (t "home.use_cases.sales_crm") (t "home.use_cases.service_tickets") (t "home.use_cases.asset_management") (t "home.use_cases.content_calendar"))}}
     
     {{template "interactive-feature-showcase" $showcaseData}}
 </section>
@@ -436,20 +436,20 @@ I wonder if process management is really needed, is that a "use case"? -->
     {{template "testimonial-single" 
         dict 
             "ImageUrl" "/testimonials/kyriacos.jpeg"
-            "Quote" "Blue has massively helped us manage our data work, ensuring that our teams are clear on what they need to do, and why. It's a great tool for us."
-            "Name" "Kyriacos Koupparis, PhD"
-            "Title" "Head of Unit, Early Warning and Forecasting, World Food Programme."
+            "Quote" (t "home.testimonial_kyriacos.quote")
+            "Name" (t "home.testimonial_kyriacos.name")
+            "Title" (t "home.testimonial_kyriacos.title")
     }}
 </div>
 
 <!-- Call to Action -->
-{{$ctaData := parseJSON `{
-    "Title": "Ready to get started?",
-    "SecondaryText": "Request a demo",
+{{$ctaData := parseJSON (printf `{
+    "Title": "%s",
+    "SecondaryText": "%s",
     "SecondaryUrl": "/contact",
-    "PrimaryText": "Get started",
+    "PrimaryText": "%s",
     "PrimaryUrl": "https://app.blue.cc"
-}`}}
+}` (t "home.cta_final.title") (t "home.cta_final.secondary_text") (t "home.cta_final.primary_text"))}}
 
 {{template "dual-button-cta" $ctaData}}
 
