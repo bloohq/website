@@ -2,99 +2,269 @@
   "sections": [
     {
       "id": "platform",
-      "name": "Platform",
+      "name": {
+        "en": "Platform",
+        "es": "Plataforma",
+        "zh": "平台",
+        "fr": "Plateforme",
+        "de": "Plattform",
+        "ja": "プラットフォーム",
+        "pt": "Plataforma",
+        "ru": "Платформа",
+        "ko": "플랫폼",
+        "it": "Piattaforma",
+        "id": "Platform",
+        "nl": "Platform",
+        "pl": "Platforma",
+        "zh-TW": "平台",
+        "sv": "Plattform",
+        "km": "វេទិកា"
+      },
       "expanded": false,
       "children": [
-        {"id": "overview", "name": "Overview", "href": "/platform/"},
-        {"id": "all-features", "name": "Feature Index", "href": "/platform/features/"},
-        {"id": "white-label", "name": "White Label", "href": "/platform/white-label"},
-        {"id": "api", "name": "API", "href": "/platform/api"},
-        {"id": "integrations", "name": "Integrations", "href": "/platform/integrations"},
-        {"id": "roadmap", "name": "Roadmap", "href": "/platform/roadmap"},
-        {"id": "changelog", "name": "Changelog", "href": "/platform/changelog"},
-        {"id": "security", "name": "Security", "href": "/platform/security"},
-        {"id": "download-app", "name": "Download Apps", "href": "/platform/download"}
+        {"id": "overview", "name": {"en": "Overview", "es": "Descripción general", "zh": "概览", "fr": "Vue d'ensemble", "de": "Übersicht", "ja": "概要", "pt": "Visão geral", "ru": "Обзор", "ko": "개요", "it": "Panoramica", "id": "Ikhtisar", "nl": "Overzicht", "pl": "Przegląd", "zh-TW": "概覽", "sv": "Översikt", "km": "ទិដ្ឋភាពទូទៅ"}, "href": "/platform/"},
+        {"id": "all-features", "name": {"en": "Feature Index", "es": "Índice de funciones", "zh": "功能索引", "fr": "Index des fonctionnalités", "de": "Funktionsindex", "ja": "機能一覧", "pt": "Índice de recursos", "ru": "Индекс функций", "ko": "기능 색인", "it": "Indice delle funzioni", "id": "Indeks Fitur", "nl": "Functie-index", "pl": "Indeks funkcji", "zh-TW": "功能索引", "sv": "Funktionsindex", "km": "លិបិក្រមមុខងារ"}, "href": "/platform/features/"},
+        {"id": "white-label", "name": {"en": "White Label", "es": "Marca blanca", "zh": "白标", "fr": "Marque blanche", "de": "White Label", "ja": "ホワイトラベル", "pt": "Marca branca", "ru": "Белая метка", "ko": "화이트 라벨", "it": "White Label", "id": "Label Putih", "nl": "White Label", "pl": "Biała etykieta", "zh-TW": "白標", "sv": "White Label", "km": "ស្លាកសញ្ញាពណ៌ស"}, "href": "/platform/white-label"},
+        {"id": "api", "name": {"en": "API", "es": "API", "zh": "API", "fr": "API", "de": "API", "ja": "API", "pt": "API", "ru": "API", "ko": "API", "it": "API", "id": "API", "nl": "API", "pl": "API", "zh-TW": "API", "sv": "API", "km": "API"}, "href": "/platform/api"},
+        {"id": "integrations", "name": {"en": "Integrations", "es": "Integraciones", "zh": "集成", "fr": "Intégrations", "de": "Integrationen", "ja": "統合", "pt": "Integrações", "ru": "Интеграции", "ko": "통합", "it": "Integrazioni", "id": "Integrasi", "nl": "Integraties", "pl": "Integracje", "zh-TW": "整合", "sv": "Integrationer", "km": "ការរួមបញ្ចូល"}, "href": "/platform/integrations"},
+        {"id": "roadmap", "name": {"en": "Roadmap", "es": "Hoja de ruta", "zh": "路线图", "fr": "Feuille de route", "de": "Roadmap", "ja": "ロードマップ", "pt": "Roteiro", "ru": "Дорожная карта", "ko": "로드맵", "it": "Roadmap", "id": "Peta Jalan", "nl": "Roadmap", "pl": "Plan działania", "zh-TW": "路線圖", "sv": "Färdplan", "km": "ផែនទីបង្ហាញផ្លូវ"}, "href": "/platform/roadmap"},
+        {"id": "changelog", "name": {"en": "Changelog", "es": "Registro de cambios", "zh": "更新日志", "fr": "Journal des modifications", "de": "Änderungsprotokoll", "ja": "変更履歴", "pt": "Registro de alterações", "ru": "История изменений", "ko": "변경 사항", "it": "Registro delle modifiche", "id": "Log Perubahan", "nl": "Wijzigingslogboek", "pl": "Dziennik zmian", "zh-TW": "更新日誌", "sv": "Ändringslogg", "km": "កំណត់ហេតុផ្លាស់ប្តូរ"}, "href": "/platform/changelog"},
+        {"id": "security", "name": {"en": "Security", "es": "Seguridad", "zh": "安全", "fr": "Sécurité", "de": "Sicherheit", "ja": "セキュリティ", "pt": "Segurança", "ru": "Безопасность", "ko": "보안", "it": "Sicurezza", "id": "Keamanan", "nl": "Beveiliging", "pl": "Bezpieczeństwo", "zh-TW": "安全", "sv": "Säkerhet", "km": "សុវត្ថិភាព"}, "href": "/platform/security"},
+        {"id": "download-app", "name": {"en": "Download Apps", "es": "Descargar aplicaciones", "zh": "下载应用", "fr": "Télécharger les applications", "de": "Apps herunterladen", "ja": "アプリをダウンロード", "pt": "Baixar aplicativos", "ru": "Скачать приложения", "ko": "앱 다운로드", "it": "Scarica app", "id": "Unduh Aplikasi", "nl": "Apps downloaden", "pl": "Pobierz aplikacje", "zh-TW": "下載應用程式", "sv": "Ladda ner appar", "km": "ទាញយកកម្មវិធី"}, "href": "/platform/download"}
 
       ]
     },
     {
       "id": "solutions",
-      "name": "Solutions",
+      "name": {
+        "en": "Solutions",
+        "es": "Soluciones",
+        "zh": "解决方案",
+        "fr": "Solutions",
+        "de": "Lösungen",
+        "ja": "ソリューション",
+        "pt": "Soluções",
+        "ru": "Решения",
+        "ko": "솔루션",
+        "it": "Soluzioni",
+        "id": "Solusi",
+        "nl": "Oplossingen",
+        "pl": "Rozwiązania",
+        "zh-TW": "解決方案",
+        "sv": "Lösningar",
+        "km": "ដំណោះស្រាយ"
+      },
       "expanded": false,
       "children": [
         {
           "id": "by-industry",
-          "name": "By Industry",
+          "name": {
+            "en": "By Industry",
+            "es": "Por industria",
+            "zh": "按行业",
+            "fr": "Par secteur",
+            "de": "Nach Branche",
+            "ja": "業界別",
+            "pt": "Por setor",
+            "ru": "По отраслям",
+            "ko": "산업별",
+            "it": "Per settore",
+            "id": "Berdasarkan Industri",
+            "nl": "Per industrie",
+            "pl": "Według branży",
+            "zh-TW": "按行業",
+            "sv": "Efter bransch",
+            "km": "តាមឧស្សាហកម្ម"
+          },
           "expanded": false,
           "children": [
-            {"id": "government", "name": "Government", "href": "/solutions/industry/government"},
-            {"id": "non-profits", "name": "Non-Profits", "href": "/solutions/industry/non-profits"},
-            {"id": "education", "name": "Education", "href": "/solutions/industry/education"},
-            {"id": "logistics", "name": "Logistics", "href": "/solutions/industry/logistics"},
-            {"id": "real-estate", "name": "Real Estate", "href": "/solutions/industry/real-estate"},
-            {"id": "professional-services", "name": "Professional Services", "href": "/solutions/industry/professional-services"},
-            {"id": "production", "name": "Production", "href": "/solutions/industry/production"},
-            {"id": "solopreneurs", "name": "Solopreneurs", "href": "/solutions/industry/solopreneurs"}
+            {"id": "government", "name": {"en": "Government", "es": "Gobierno", "zh": "政府", "fr": "Gouvernement", "de": "Regierung", "ja": "政府", "pt": "Governo", "ru": "Правительство", "ko": "정부", "it": "Governo", "id": "Pemerintah", "nl": "Overheid", "pl": "Rząd", "zh-TW": "政府", "sv": "Regering", "km": "រដ្ឋាភិបាល"}, "href": "/solutions/industry/government"},
+            {"id": "non-profits", "name": {"en": "Non-Profits", "es": "Sin fines de lucro", "zh": "非营利组织", "fr": "Organismes sans but lucratif", "de": "Gemeinnützige Organisationen", "ja": "非営利団体", "pt": "Sem fins lucrativos", "ru": "Некоммерческие организации", "ko": "비영리", "it": "No profit", "id": "Nirlaba", "nl": "Non-profit", "pl": "Organizacje non-profit", "zh-TW": "非營利組織", "sv": "Ideella organisationer", "km": "អង្គការមិនរកប្រាក់ចំណេញ"}, "href": "/solutions/industry/non-profits"},
+            {"id": "education", "name": {"en": "Education", "es": "Educación", "zh": "教育", "fr": "Éducation", "de": "Bildung", "ja": "教育", "pt": "Educação", "ru": "Образование", "ko": "교육", "it": "Istruzione", "id": "Pendidikan", "nl": "Onderwijs", "pl": "Edukacja", "zh-TW": "教育", "sv": "Utbildning", "km": "ការអប់រំ"}, "href": "/solutions/industry/education"},
+            {"id": "logistics", "name": {"en": "Logistics", "es": "Logística", "zh": "物流", "fr": "Logistique", "de": "Logistik", "ja": "物流", "pt": "Logística", "ru": "Логистика", "ko": "물류", "it": "Logistica", "id": "Logistik", "nl": "Logistiek", "pl": "Logistyka", "zh-TW": "物流", "sv": "Logistik", "km": "ភស្តុភារ"}, "href": "/solutions/industry/logistics"},
+            {"id": "real-estate", "name": {"en": "Real Estate", "es": "Bienes raíces", "zh": "房地产", "fr": "Immobilier", "de": "Immobilien", "ja": "不動産", "pt": "Imóveis", "ru": "Недвижимость", "ko": "부동산", "it": "Immobiliare", "id": "Real Estat", "nl": "Vastgoed", "pl": "Nieruchomości", "zh-TW": "房地產", "sv": "Fastigheter", "km": "អចលនទ្រព្យ"}, "href": "/solutions/industry/real-estate"},
+            {"id": "professional-services", "name": {"en": "Professional Services", "es": "Servicios profesionales", "zh": "专业服务", "fr": "Services professionnels", "de": "Professionelle Dienstleistungen", "ja": "プロフェッショナルサービス", "pt": "Serviços profissionais", "ru": "Профессиональные услуги", "ko": "전문 서비스", "it": "Servizi professionali", "id": "Layanan Profesional", "nl": "Professionele diensten", "pl": "Usługi profesjonalne", "zh-TW": "專業服務", "sv": "Professionella tjänster", "km": "សេវាកម្មវិជ្ជាជីវៈ"}, "href": "/solutions/industry/professional-services"},
+            {"id": "production", "name": {"en": "Production", "es": "Producción", "zh": "生产", "fr": "Production", "de": "Produktion", "ja": "生産", "pt": "Produção", "ru": "Производство", "ko": "생산", "it": "Produzione", "id": "Produksi", "nl": "Productie", "pl": "Produkcja", "zh-TW": "生產", "sv": "Produktion", "km": "ផលិតកម្ម"}, "href": "/solutions/industry/production"},
+            {"id": "solopreneurs", "name": {"en": "Solopreneurs", "es": "Emprendedores individuales", "zh": "个人创业者", "fr": "Solopreneurs", "de": "Einzelunternehmer", "ja": "ソロプレナー", "pt": "Empreendedores individuais", "ru": "Индивидуальные предприниматели", "ko": "1인 기업가", "it": "Imprenditori individuali", "id": "Solopreneur", "nl": "Solopreneurs", "pl": "Soloprzedsiębiorcy", "zh-TW": "個人創業者", "sv": "Ensamföretagare", "km": "សហគ្រិនឯករាជ្យ"}, "href": "/solutions/industry/solopreneurs"}
           ]
         },
         {
           "id": "by-use-case",
-          "name": "By Use Case",
+          "name": {
+            "en": "By Use Case",
+            "es": "Por caso de uso",
+            "zh": "按用例",
+            "fr": "Par cas d'usage",
+            "de": "Nach Anwendungsfall",
+            "ja": "ユースケース別",
+            "pt": "Por caso de uso",
+            "ru": "По сценариям использования",
+            "ko": "사용 사례별",
+            "it": "Per caso d'uso",
+            "id": "Berdasarkan Kasus Penggunaan",
+            "nl": "Per use case",
+            "pl": "Według przypadku użycia",
+            "zh-TW": "按用例",
+            "sv": "Efter användningsfall",
+            "km": "តាមករណីប្រើប្រាស់"
+          },
           "expanded": false,
           "children": [
-            {"id": "process-management", "name": "Process Management", "href": "/solutions/use-case/process-management"},
-            {"id": "project-management", "name": "Project Management", "href": "/solutions/use-case/project-management"},
-            {"id": "sales-crm", "name": "Sales CRM", "href": "/solutions/use-case/sales-crm"},
-            {"id": "service-tickets", "name": "Service Tickets", "href": "/solutions/use-case/service-tickets"},
-            {"id": "it", "name": "IT", "href": "/solutions/use-case/it"},
-            {"id": "client-portal", "name": "Client Portal", "href": "/solutions/use-case/client-portal"},
-            {"id": "asset-management", "name": "Asset Management", "href": "/solutions/use-case/asset-management"}
+            {"id": "process-management", "name": {"en": "Process Management", "es": "Gestión de procesos", "zh": "流程管理", "fr": "Gestion des processus", "de": "Prozessmanagement", "ja": "プロセス管理", "pt": "Gestão de processos", "ru": "Управление процессами", "ko": "프로세스 관리", "it": "Gestione dei processi", "id": "Manajemen Proses", "nl": "Procesbeheer", "pl": "Zarządzanie procesami", "zh-TW": "流程管理", "sv": "Processhantering", "km": "ការគ្រប់គ្រងដំណើរការ"}, "href": "/solutions/use-case/process-management"},
+            {"id": "project-management", "name": {"en": "Project Management", "es": "Gestión de proyectos", "zh": "项目管理", "fr": "Gestion de projet", "de": "Projektmanagement", "ja": "プロジェクト管理", "pt": "Gestão de projetos", "ru": "Управление проектами", "ko": "프로젝트 관리", "it": "Gestione dei progetti", "id": "Manajemen Proyek", "nl": "Projectbeheer", "pl": "Zarządzanie projektami", "zh-TW": "專案管理", "sv": "Projekthantering", "km": "ការគ្រប់គ្រងគម្រោង"}, "href": "/solutions/use-case/project-management"},
+            {"id": "sales-crm", "name": {"en": "Sales CRM", "es": "CRM de ventas", "zh": "销售CRM", "fr": "CRM de vente", "de": "Vertriebs-CRM", "ja": "営業CRM", "pt": "CRM de vendas", "ru": "CRM для продаж", "ko": "영업 CRM", "it": "CRM vendite", "id": "CRM Penjualan", "nl": "Verkoop CRM", "pl": "CRM sprzedaży", "zh-TW": "銷售CRM", "sv": "Försäljnings-CRM", "km": "CRM លក់"}, "href": "/solutions/use-case/sales-crm"},
+            {"id": "service-tickets", "name": {"en": "Service Tickets", "es": "Tickets de servicio", "zh": "服务工单", "fr": "Tickets de service", "de": "Service-Tickets", "ja": "サービスチケット", "pt": "Tickets de serviço", "ru": "Сервисные заявки", "ko": "서비스 티켓", "it": "Ticket di assistenza", "id": "Tiket Layanan", "nl": "Service tickets", "pl": "Zgłoszenia serwisowe", "zh-TW": "服務工單", "sv": "Serviceärenden", "km": "សំបុត្រសេវាកម្ម"}, "href": "/solutions/use-case/service-tickets"},
+            {"id": "it", "name": {"en": "IT", "es": "TI", "zh": "IT", "fr": "IT", "de": "IT", "ja": "IT", "pt": "TI", "ru": "ИТ", "ko": "IT", "it": "IT", "id": "TI", "nl": "IT", "pl": "IT", "zh-TW": "IT", "sv": "IT", "km": "IT"}, "href": "/solutions/use-case/it"},
+            {"id": "client-portal", "name": {"en": "Client Portal", "es": "Portal del cliente", "zh": "客户门户", "fr": "Portail client", "de": "Kundenportal", "ja": "クライアントポータル", "pt": "Portal do cliente", "ru": "Клиентский портал", "ko": "클라이언트 포털", "it": "Portale clienti", "id": "Portal Klien", "nl": "Klantenportaal", "pl": "Portal klienta", "zh-TW": "客戶入口網站", "sv": "Kundportal", "km": "វិបផតថលអតិថិជន"}, "href": "/solutions/use-case/client-portal"},
+            {"id": "asset-management", "name": {"en": "Asset Management", "es": "Gestión de activos", "zh": "资产管理", "fr": "Gestion des actifs", "de": "Asset-Management", "ja": "資産管理", "pt": "Gestão de ativos", "ru": "Управление активами", "ko": "자산 관리", "it": "Gestione patrimoniale", "id": "Manajemen Aset", "nl": "Asset management", "pl": "Zarządzanie aktywami", "zh-TW": "資產管理", "sv": "Tillgångsförvaltning", "km": "ការគ្រប់គ្រងទ្រព្យសកម្ម"}, "href": "/solutions/use-case/asset-management"}
           ]
         }
       ]
     },
     {
       "id": "resources",
-      "name": "Resources",
+      "name": {
+        "en": "Resources",
+        "es": "Recursos",
+        "zh": "资源",
+        "fr": "Ressources",
+        "de": "Ressourcen",
+        "ja": "リソース",
+        "pt": "Recursos",
+        "ru": "Ресурсы",
+        "ko": "리소스",
+        "it": "Risorse",
+        "id": "Sumber Daya",
+        "nl": "Bronnen",
+        "pl": "Zasoby",
+        "zh-TW": "資源",
+        "sv": "Resurser",
+        "km": "ធនធាន"
+      },
       "expanded": false,
       "children": [
-        {"id": "faq", "name": "FAQ", "href": "/resources/faq"},
-        {"id": "how-to-videos", "name": "How-to Videos", "href": "https://www.youtube.com/@HeyBlueTeam/videos", "external": true},
-        {"id": "hire-expert", "name": "Hire an Expert", "href": "/resources/experts"},
-        {"id": "support", "name": "Get Support", "href": "/contact/support"},
-        {"id": "community-forums", "name": "Community Forums", "href": "https://ask.blue.cc", "external": true}
+        {"id": "faq", "name": {"en": "FAQ", "es": "Preguntas frecuentes", "zh": "常见问题", "fr": "FAQ", "de": "FAQ", "ja": "よくある質問", "pt": "Perguntas frequentes", "ru": "Часто задаваемые вопросы", "ko": "자주 묻는 질문", "it": "FAQ", "id": "FAQ", "nl": "Veelgestelde vragen", "pl": "FAQ", "zh-TW": "常見問題", "sv": "Vanliga frågor", "km": "សំណួរដែលសួរញឹកញាប់"}, "href": "/resources/faq"},
+        {"id": "how-to-videos", "name": {"en": "How-to Videos", "es": "Videos instructivos", "zh": "教程视频", "fr": "Vidéos pratiques", "de": "Anleitungsvideos", "ja": "ハウツービデオ", "pt": "Vídeos tutoriais", "ru": "Обучающие видео", "ko": "사용법 동영상", "it": "Video tutorial", "id": "Video Panduan", "nl": "Instructievideo's", "pl": "Filmy instruktażowe", "zh-TW": "教學影片", "sv": "Instruktionsvideor", "km": "វីដេអូណែនាំ"}, "href": "https://www.youtube.com/@HeyBlueTeam/videos", "external": true},
+        {"id": "hire-expert", "name": {"en": "Hire an Expert", "es": "Contratar un experto", "zh": "聘请专家", "fr": "Engager un expert", "de": "Experten beauftragen", "ja": "エキスパートを雇う", "pt": "Contratar um especialista", "ru": "Нанять эксперта", "ko": "전문가 고용", "it": "Assumi un esperto", "id": "Sewa Ahli", "nl": "Expert inhuren", "pl": "Zatrudnij eksperta", "zh-TW": "聘請專家", "sv": "Anlita en expert", "km": "ជួលអ្នកជំនាញ"}, "href": "/resources/experts"},
+        {"id": "support", "name": {"en": "Get Support", "es": "Obtener soporte", "zh": "获取支持", "fr": "Obtenir de l'aide", "de": "Support erhalten", "ja": "サポートを受ける", "pt": "Obter suporte", "ru": "Получить поддержку", "ko": "지원 받기", "it": "Ottieni supporto", "id": "Dapatkan Dukungan", "nl": "Ondersteuning krijgen", "pl": "Uzyskaj wsparcie", "zh-TW": "獲得支援", "sv": "Få support", "km": "ទទួលបានការគាំទ្រ"}, "href": "/contact/support"},
+        {"id": "community-forums", "name": {"en": "Community Forums", "es": "Foros de la comunidad", "zh": "社区论坛", "fr": "Forums communautaires", "de": "Community-Foren", "ja": "コミュニティフォーラム", "pt": "Fóruns da comunidade", "ru": "Форумы сообщества", "ko": "커뮤니티 포럼", "it": "Forum della community", "id": "Forum Komunitas", "nl": "Community forums", "pl": "Fora społeczności", "zh-TW": "社群論壇", "sv": "Community-forum", "km": "វេទិកាសហគមន៍"}, "href": "https://ask.blue.cc", "external": true}
       ]
     },
     {
       "id": "pricing",
-      "name": "Pricing",
+      "name": {
+        "en": "Pricing",
+        "es": "Precios",
+        "zh": "定价",
+        "fr": "Tarifs",
+        "de": "Preise",
+        "ja": "料金",
+        "pt": "Preços",
+        "ru": "Цены",
+        "ko": "가격",
+        "it": "Prezzi",
+        "id": "Harga",
+        "nl": "Prijzen",
+        "pl": "Cennik",
+        "zh-TW": "定價",
+        "sv": "Priser",
+        "km": "តម្លៃ"
+      },
       "href": "/pricing"
     },
     {
       "id": "customers",
-      "name": "Customers",
+      "name": {
+        "en": "Customers",
+        "es": "Clientes",
+        "zh": "客户",
+        "fr": "Clients",
+        "de": "Kunden",
+        "ja": "お客様",
+        "pt": "Clientes",
+        "ru": "Клиенты",
+        "ko": "고객",
+        "it": "Clienti",
+        "id": "Pelanggan",
+        "nl": "Klanten",
+        "pl": "Klienci",
+        "zh-TW": "客戶",
+        "sv": "Kunder",
+        "km": "អតិថិជន"
+      },
       "href": "/customers"
     },
     {
       "id": "enterprise",
-      "name": "Enterprise",
+      "name": {
+        "en": "Enterprise",
+        "es": "Empresa",
+        "zh": "企业",
+        "fr": "Entreprise",
+        "de": "Unternehmen",
+        "ja": "エンタープライズ",
+        "pt": "Empresa",
+        "ru": "Корпоративный",
+        "ko": "엔터프라이즈",
+        "it": "Azienda",
+        "id": "Perusahaan",
+        "nl": "Onderneming",
+        "pl": "Przedsiębiorstwo",
+        "zh-TW": "企業",
+        "sv": "Företag",
+        "km": "សហគ្រាស"
+      },
       "href": "/enterprise"
     },
     {
       "id": "insights",
-      "name": "Insights",
+      "name": {
+        "en": "Insights",
+        "es": "Perspectivas",
+        "zh": "洞察",
+        "fr": "Perspectives",
+        "de": "Einblicke",
+        "ja": "インサイト",
+        "pt": "Insights",
+        "ru": "Аналитика",
+        "ko": "인사이트",
+        "it": "Approfondimenti",
+        "id": "Wawasan",
+        "nl": "Inzichten",
+        "pl": "Spostrzeżenia",
+        "zh-TW": "洞察",
+        "sv": "Insikter",
+        "km": "ការយល់ដឹង"
+      },
       "href": "/insights"
     },
     {
       "id": "company",
-      "name": "Company",
+      "name": {
+        "en": "Company",
+        "es": "Empresa",
+        "zh": "公司",
+        "fr": "Entreprise",
+        "de": "Unternehmen",
+        "ja": "会社",
+        "pt": "Empresa",
+        "ru": "Компания",
+        "ko": "회사",
+        "it": "Azienda",
+        "id": "Perusahaan",
+        "nl": "Bedrijf",
+        "pl": "Firma",
+        "zh-TW": "公司",
+        "sv": "Företag",
+        "km": "ក្រុមហ៊ុន"
+      },
       "expanded": false,
       "children": [
-        {"id": "about", "name": "About", "href": "/company/about"},
-        {"id": "charter", "name": "Charter", "href": "/company/charter"},
-        {"id": "values", "name": "Values", "href": "/company/values"},
-        {"id": "partner-program", "name": "Partner with us", "href": "/company/partners"},
-        {"id": "brand", "name": "Brand", "href": "/brand"}
+        {"id": "about", "name": {"en": "About", "es": "Acerca de", "zh": "关于", "fr": "À propos", "de": "Über uns", "ja": "会社概要", "pt": "Sobre", "ru": "О нас", "ko": "소개", "it": "Chi siamo", "id": "Tentang", "nl": "Over", "pl": "O nas", "zh-TW": "關於", "sv": "Om", "km": "អំពី"}, "href": "/company/about"},
+        {"id": "charter", "name": {"en": "Charter", "es": "Carta", "zh": "章程", "fr": "Charte", "de": "Charta", "ja": "憲章", "pt": "Carta", "ru": "Устав", "ko": "헌장", "it": "Carta", "id": "Piagam", "nl": "Charter", "pl": "Karta", "zh-TW": "章程", "sv": "Stadgar", "km": "ធម្មនុញ្ញ"}, "href": "/company/charter"},
+        {"id": "values", "name": {"en": "Values", "es": "Valores", "zh": "价值观", "fr": "Valeurs", "de": "Werte", "ja": "価値観", "pt": "Valores", "ru": "Ценности", "ko": "가치", "it": "Valori", "id": "Nilai", "nl": "Waarden", "pl": "Wartości", "zh-TW": "價值觀", "sv": "Värderingar", "km": "គុណតម្លៃ"}, "href": "/company/values"},
+        {"id": "partner-program", "name": {"en": "Partner with us", "es": "Asóciese con nosotros", "zh": "与我们合作", "fr": "Devenez partenaire", "de": "Partner werden", "ja": "パートナーになる", "pt": "Seja nosso parceiro", "ru": "Станьте партнером", "ko": "파트너십", "it": "Diventa partner", "id": "Bermitra dengan kami", "nl": "Word partner", "pl": "Zostań partnerem", "zh-TW": "與我們合作", "sv": "Bli partner", "km": "ដៃគូជាមួយយើង"}, "href": "/company/partners"},
+        {"id": "brand", "name": {"en": "Brand", "es": "Marca", "zh": "品牌", "fr": "Marque", "de": "Marke", "ja": "ブランド", "pt": "Marca", "ru": "Бренд", "ko": "브랜드", "it": "Brand", "id": "Merek", "nl": "Merk", "pl": "Marka", "zh-TW": "品牌", "sv": "Varumärke", "km": "ម៉ាក"}, "href": "/brand"}
       ]
     }
   ]

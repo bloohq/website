@@ -12,13 +12,13 @@ import (
 
 // NavItem represents a navigation item
 type NavItem struct {
-	ID         string    `json:"id"`
-	Name       string    `json:"name"`
-	Href       string    `json:"href,omitempty"`
-	External   bool      `json:"external,omitempty"`
-	Expanded   bool      `json:"expanded,omitempty"`
-	Children   []NavItem `json:"children,omitempty"`
-	OriginalID string    `json:"-"` // Store original directory name for sorting (not sent to JSON)
+	ID         string                 `json:"id"`
+	Name       interface{}            `json:"name"` // Can be string or map[string]string for multi-language
+	Href       string                 `json:"href,omitempty"`
+	External   bool                   `json:"external,omitempty"`
+	Expanded   bool                   `json:"expanded,omitempty"`
+	Children   []NavItem              `json:"children,omitempty"`
+	OriginalID string                 `json:"-"` // Store original directory name for sorting (not sent to JSON)
 }
 
 // Navigation holds the complete navigation structure
@@ -38,6 +38,81 @@ type NavigationService struct {
 	apiNavigation   *Navigation
 	legalNavigation *Navigation
 	seoService      *SEOService
+}
+
+// GetLocalizedName extracts the correct language name from a NavItem's Name field
+func (ns *NavigationService) GetLocalizedName(nameField interface{}, lang string) string {
+	if nameField == nil {
+		return ""
+	}
+	
+	// If it's already a string (for dynamic content), return as-is
+	if str, ok := nameField.(string); ok {
+		return str
+	}
+	
+	// If it's a map (from nav.json with language objects)
+	if nameMap, ok := nameField.(map[string]interface{}); ok {
+		// Try the requested language first
+		if name, exists := nameMap[lang]; exists {
+			if str, ok := name.(string); ok {
+				return str
+			}
+		}
+		// Fallback to English
+		if name, exists := nameMap[DefaultLanguage]; exists {
+			if str, ok := name.(string); ok {
+				return str
+			}
+		}
+		// Fallback to first available language
+		for _, name := range nameMap {
+			if str, ok := name.(string); ok {
+				return str
+			}
+		}
+	}
+	
+	return ""
+}
+
+// LocalizeNavigation creates a localized copy of navigation for a specific language
+func (ns *NavigationService) LocalizeNavigation(nav *Navigation, lang string) *Navigation {
+	if nav == nil {
+		return nil
+	}
+	
+	localizedNav := &Navigation{
+		Sections: make([]NavItem, len(nav.Sections)),
+	}
+	
+	for i, section := range nav.Sections {
+		localizedNav.Sections[i] = ns.localizeNavItem(section, lang)
+	}
+	
+	return localizedNav
+}
+
+// localizeNavItem recursively localizes a NavItem and its children
+func (ns *NavigationService) localizeNavItem(item NavItem, lang string) NavItem {
+	localizedItem := NavItem{
+		ID:         item.ID,
+		Name:       ns.GetLocalizedName(item.Name, lang), // Convert to localized string
+		Href:       item.Href,
+		External:   item.External,
+		Expanded:   item.Expanded,
+		OriginalID: item.OriginalID,
+	}
+	
+	// Localize children recursively
+	if len(item.Children) > 0 {
+		localizedItem.Children = make([]NavItem, len(item.Children))
+		for i, child := range item.Children {
+			localizedItem.Children[i] = ns.localizeNavItem(child, lang)
+		}
+	}
+	
+	return localizedItem
 }
 
 // NewNavigationService creates a new navigation service
@@ -277,46 +352,51 @@ func (ns *NavigationService) sortNavItems(items []NavItem) {
 
 // GetNavigationForPath returns the appropriate navigation based on the URL path
 func (ns *NavigationService) GetNavigationForPath(path string) *Navigation {
+	return ns.GetNavigationForPathWithLanguage(path, DefaultLanguage)
+}
+
+// GetNavigationForPathWithLanguage returns the appropriate navigation based on the URL path and language
+func (ns *NavigationService) GetNavigationForPathWithLanguage(path, lang string) *Navigation {
 	// Always start with static navigation
 	if ns.navigation == nil {
 		return &Navigation{}
 	}
 
-	// Make a copy of the static navigation
-	nav := &Navigation{
-		Sections: make([]NavItem, len(ns.navigation.Sections)),
-	}
-	copy(nav.Sections, ns.navigation.Sections)
+	// Create a localized copy of the static navigation
+	nav := ns.LocalizeNavigation(ns.navigation, lang)
 
 	// Always add Documentation section if available
 	if ns.docsNavigation != nil {
+		localizedDocs := ns.LocalizeNavigation(ns.docsNavigation, lang)
 		docSection := NavItem{
 			ID:       "documentation",
-			Name:     "Documentation",
+			Name:     "Documentation", // This could be localized too if needed
 			Expanded: strings.HasPrefix(path, "/docs"), // Only expand when on docs pages
-			Children: ns.docsNavigation.Sections,
+			Children: localizedDocs.Sections,
 		}
 		nav.Sections = append(nav.Sections, docSection)
 	}
 
 	// Always add API Reference section if available
 	if ns.apiNavigation != nil {
+		localizedAPI := ns.LocalizeNavigation(ns.apiNavigation, lang)
 		apiSection := NavItem{
 			ID:       "api-reference",
-			Name:     "API Reference",
+			Name:     "API Reference", // This could be localized too if needed
 			Expanded: strings.HasPrefix(path, "/api"), // Only expand when on API pages
-			Children: ns.apiNavigation.Sections,
+			Children: localizedAPI.Sections,
 		}
 		nav.Sections = append(nav.Sections, apiSection)
 	}
 
 	// Always add Legal section if available (placed at end for bottom positioning)
 	if ns.legalNavigation != nil {
+		localizedLegal := ns.LocalizeNavigation(ns.legalNavigation, lang)
 		legalSection := NavItem{
 			ID:       "legal",
-			Name:     "Legal",
+			Name:     "Legal", // This could be localized too if needed
 			Expanded: strings.HasPrefix(path, "/legal"), // Only expand when on legal pages
-			Children: ns.legalNavigation.Sections,
+			Children: localizedLegal.Sections,
 		}
 		nav.Sections = append(nav.Sections, legalSection)
 	}

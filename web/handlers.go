@@ -30,7 +30,7 @@ func (r *Router) serve404(w http.ResponseWriter, req *http.Request) {
 		}
 
 		// Prepare page data for 404 page (before processing templates)
-		pageData := r.preparePageData("/404", "", false, nil, r.navigationService.GetNavigationForPath("/404"), lang)
+		pageData := r.preparePageData("/404", "", false, nil, r.navigationService.GetNavigationForPathWithLanguage("/404", lang), lang)
 
 		// Create a template for the 404 page content
 		contentTmpl := template.New("404-content").Funcs(getTemplateFuncs(lang))

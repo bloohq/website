@@ -249,5 +249,5 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 		tocExcludedPaths: []string{"/changelog", "/roadmap", "/platform/status"},
 	}
 	
-	return tempRouter.preparePageData(path, content, isMarkdown, frontmatter, navigationService.GetNavigationForPath(path), lang)
+	return tempRouter.preparePageData(path, content, isMarkdown, frontmatter, navigationService.GetNavigationForPathWithLanguage(path, lang), lang)
 }

@@ -283,7 +283,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		isMarkdown = false
 
 		// Process all HTML pages as templates to enable template variables
-		pageData := r.preparePageData(path, "", isMarkdown, frontmatter, r.navigationService.GetNavigationForPath(path), lang)
+		pageData := r.preparePageData(path, "", isMarkdown, frontmatter, r.navigationService.GetNavigationForPathWithLanguage(path, lang), lang)
 
 		// Create a template for the page content with language-specific functions
 		contentTmpl := template.New("page-content").Funcs(getTemplateFuncs(lang))
@@ -354,7 +354,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// Prepare page data
-	pageData := r.preparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.navigationService.GetNavigationForPath(path), lang)
+	pageData := r.preparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.navigationService.GetNavigationForPathWithLanguage(path, lang), lang)
 
 	// Set content type and execute main layout
 	w.Header().Set("Content-Type", "text/html")
