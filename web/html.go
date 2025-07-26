@@ -7,6 +7,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
+	"time"
 )
 
 // HTMLService handles HTML page pre-rendering
@@ -41,15 +43,24 @@ func (hs *HTMLService) getCacheKey(lang, path string) string {
 	return lang + ":" + path
 }
 
+// htmlTask represents an HTML file + language combination to be rendered
+type htmlTask struct {
+	path     string
+	urlPath  string
+	lang     string
+	modTime  time.Time
+}
+
 // PreRenderAllHTMLPages pre-renders all HTML pages in the pages directory
 func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationService, seoService *SEOService) error {
-	count := 0
-
 	// List of pages to exclude from pre-rendering (dynamic content)
 	excludedPages := []string{
 		"/platform/status", // Dynamic status page (truly dynamic - status changes)
 		// Note: /insights is now pre-rendered with insights data baked in
 	}
+
+	// Collect all HTML rendering tasks
+	var htmlTasks []htmlTask
 
 	// Walk through all HTML files in pages directory
 	err := filepath.WalkDir(hs.pagesDir, func(path string, d os.DirEntry, err error) error {
@@ -78,29 +89,15 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 			return nil // Continue processing other files
 		}
 
-		// Pre-render the HTML page for each supported language
+		// Create tasks for each language
 		for _, lang := range SupportedLanguages {
-			// Pre-render the HTML page with the specific language
-			html, err := hs.renderHTMLPageWithLang(path, urlPath, navigationService, seoService, lang)
-			if err != nil {
-				log.Printf("Warning: failed to pre-render %s for language %s: %v", path, lang, err)
-				continue // Continue with next language
-			}
-
-			// Cache the pre-rendered content with language-specific key
-			cachedContent := &CachedContent{
-				HTML:        html,
-				Frontmatter: nil, // HTML pages don't have frontmatter
-				ModTime:     info.ModTime(),
-				FilePath:    path,
-			}
-
-			cacheKey := hs.getCacheKey(lang, urlPath)
-			hs.cache.Set(cacheKey, cachedContent)
-			count++
+			htmlTasks = append(htmlTasks, htmlTask{
+				path:    path,
+				urlPath: urlPath,
+				lang:    lang,
+				modTime: info.ModTime(),
+			})
 		}
-
-		// Progress tracking removed for cleaner output
 
 		return nil
 	})
@@ -109,12 +106,81 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 		return fmt.Errorf("failed to walk pages directory: %w", err)
 	}
 
+	// Process all tasks in parallel using worker pool
+	const numWorkers = 30
+	taskChan := make(chan htmlTask, len(htmlTasks))
+	resultChan := make(chan int, len(htmlTasks))
+	errorChan := make(chan error, numWorkers)
+
+	// Pre-cache component templates once
+	componentFiles, err := hs.loadComponentTemplates()
+	if err != nil {
+		return fmt.Errorf("failed to load component templates: %w", err)
+	}
+
+	// Start workers
+	var wg sync.WaitGroup
+	for i := 0; i < numWorkers; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for task := range taskChan {
+				// Pre-render the HTML page with the specific language
+				html, err := hs.renderHTMLPageWithComponents(task.path, task.urlPath, navigationService, seoService, task.lang, componentFiles)
+				if err != nil {
+					log.Printf("Warning: failed to pre-render %s for language %s: %v", task.path, task.lang, err)
+					continue // Continue processing other tasks
+				}
+
+				// Cache the pre-rendered content with language-specific key
+				cachedContent := &CachedContent{
+					HTML:        html,
+					Frontmatter: nil, // HTML pages don't have frontmatter
+					ModTime:     task.modTime,
+					FilePath:    task.path,
+				}
+
+				cacheKey := hs.getCacheKey(task.lang, task.urlPath)
+				hs.cache.Set(cacheKey, cachedContent)
+				resultChan <- 1
+			}
+		}()
+	}
+
+	// Send all tasks to workers
+	for _, task := range htmlTasks {
+		taskChan <- task
+	}
+	close(taskChan)
+
+	// Wait for all workers to complete
+	go func() {
+		wg.Wait()
+		close(resultChan)
+		close(errorChan)
+	}()
+
+	// Count processed pages
+	count := 0
+	for range resultChan {
+		count++
+	}
+
+	// Check for any errors
+	select {
+	case err := <-errorChan:
+		if err != nil {
+			return err
+		}
+	default:
+	}
+
 	// Pre-rendering complete
 	return nil
 }
 
-// renderHTMLPageWithLang renders a single HTML page with templates for a specific language
-func (hs *HTMLService) renderHTMLPageWithLang(filePath, urlPath string, navigationService *NavigationService, seoService *SEOService, lang string) (string, error) {
+// renderHTMLPageWithComponents renders a single HTML page with pre-loaded components
+func (hs *HTMLService) renderHTMLPageWithComponents(filePath, urlPath string, navigationService *NavigationService, seoService *SEOService, lang string, componentFiles []string) (string, error) {
 	// Read the HTML file
 	contentBytes, err := os.ReadFile(filePath)
 	if err != nil {
@@ -126,12 +192,6 @@ func (hs *HTMLService) renderHTMLPageWithLang(filePath, urlPath string, navigati
 
 	// Create template for page content with the specified language
 	contentTmpl := template.New("page-content").Funcs(getTemplateFuncs(lang))
-
-	// Load component templates
-	componentFiles, err := hs.loadComponentTemplates()
-	if err != nil {
-		return "", fmt.Errorf("failed to load components: %w", err)
-	}
 
 	// Parse component files first
 	if len(componentFiles) > 0 {
@@ -176,6 +236,17 @@ func (hs *HTMLService) renderHTMLPageWithLang(filePath, urlPath string, navigati
 	}
 
 	return finalHTML.String(), nil
+}
+
+// renderHTMLPageWithLang renders a single HTML page with templates for a specific language
+func (hs *HTMLService) renderHTMLPageWithLang(filePath, urlPath string, navigationService *NavigationService, seoService *SEOService, lang string) (string, error) {
+	// Load component templates
+	componentFiles, err := hs.loadComponentTemplates()
+	if err != nil {
+		return "", fmt.Errorf("failed to load components: %w", err)
+	}
+
+	return hs.renderHTMLPageWithComponents(filePath, urlPath, navigationService, seoService, lang, componentFiles)
 }
 
 // loadComponentTemplates loads all component template files
