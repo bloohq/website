@@ -12,13 +12,13 @@ import (
 
 // NavItem represents a navigation item
 type NavItem struct {
-	ID         string                 `json:"id"`
-	Name       interface{}            `json:"name"` // Can be string or map[string]string for multi-language
-	Href       string                 `json:"href,omitempty"`
-	External   bool                   `json:"external,omitempty"`
-	Expanded   bool                   `json:"expanded,omitempty"`
-	Children   []NavItem              `json:"children,omitempty"`
-	OriginalID string                 `json:"-"` // Store original directory name for sorting (not sent to JSON)
+	ID         string      `json:"id"`
+	Name       interface{} `json:"name"` // Can be string or map[string]string for multi-language
+	Href       string      `json:"href,omitempty"`
+	External   bool        `json:"external,omitempty"`
+	Expanded   bool        `json:"expanded,omitempty"`
+	Children   []NavItem   `json:"children,omitempty"`
+	OriginalID string      `json:"-"` // Store original directory name for sorting (not sent to JSON)
 }
 
 // Navigation holds the complete navigation structure
@@ -33,11 +33,8 @@ type DirMetadata struct {
 
 // NavigationService handles all navigation-related operations
 type NavigationService struct {
-	navigation      *Navigation
-	docsNavigation  *Navigation
-	apiNavigation   *Navigation
-	legalNavigation *Navigation
-	seoService      *SEOService
+	navigation *Navigation
+	seoService *SEOService
 }
 
 // GetLocalizedName extracts the correct language name from a NavItem's Name field
@@ -45,12 +42,12 @@ func (ns *NavigationService) GetLocalizedName(nameField interface{}, lang string
 	if nameField == nil {
 		return ""
 	}
-	
+
 	// If it's already a string (for dynamic content), return as-is
 	if str, ok := nameField.(string); ok {
 		return str
 	}
-	
+
 	// If it's a map (from nav.json with language objects)
 	if nameMap, ok := nameField.(map[string]interface{}); ok {
 		// Try the requested language first
@@ -72,7 +69,7 @@ func (ns *NavigationService) GetLocalizedName(nameField interface{}, lang string
 			}
 		}
 	}
-	
+
 	return ""
 }
 
@@ -81,15 +78,15 @@ func (ns *NavigationService) LocalizeNavigation(nav *Navigation, lang string) *N
 	if nav == nil {
 		return nil
 	}
-	
+
 	localizedNav := &Navigation{
 		Sections: make([]NavItem, len(nav.Sections)),
 	}
-	
+
 	for i, section := range nav.Sections {
 		localizedNav.Sections[i] = ns.localizeNavItem(section, lang)
 	}
-	
+
 	return localizedNav
 }
 
@@ -103,7 +100,7 @@ func (ns *NavigationService) localizeNavItem(item NavItem, lang string) NavItem 
 		Expanded:   item.Expanded,
 		OriginalID: item.OriginalID,
 	}
-	
+
 	// Localize children recursively
 	if len(item.Children) > 0 {
 		localizedItem.Children = make([]NavItem, len(item.Children))
@@ -111,7 +108,7 @@ func (ns *NavigationService) localizeNavItem(item NavItem, lang string) NavItem 
 			localizedItem.Children[i] = ns.localizeNavItem(child, lang)
 		}
 	}
-	
+
 	return localizedItem
 }
 
@@ -121,13 +118,10 @@ func NewNavigationService(seoService *SEOService) *NavigationService {
 		seoService: seoService,
 	}
 
-	// Load static navigation
+	// Load static navigation (now includes docs, API, and legal sections)
 	if err := service.LoadNavigation(); err != nil {
 		log.Printf("Error loading navigation: %v", err)
 	}
-
-	// Generate dynamic navigations
-	service.GenerateDynamicNavigations()
 
 	return service
 }
@@ -143,26 +137,8 @@ func (ns *NavigationService) LoadNavigation() error {
 	return json.Unmarshal(data, ns.navigation)
 }
 
-// GenerateDynamicNavigations generates all dynamic navigation structures
-func (ns *NavigationService) GenerateDynamicNavigations() {
-	// Generate for each content type
-	for key, contentType := range ContentTypes {
-		nav, err := ns.GenerateContentNavigation(contentType.BaseDir, contentType.URLPrefix)
-		if err != nil {
-			log.Printf("Error generating %s navigation: %v", key, err)
-			continue
-		}
-
-		switch key {
-		case "docs":
-			ns.docsNavigation = nav
-		case "api":
-			ns.apiNavigation = nav
-		case "legal":
-			ns.legalNavigation = nav
-		}
-	}
-}
+// Note: Dynamic navigation generation removed - docs, API, and legal sections
+// are now hardcoded in nav.json for better translation support
 
 // GenerateContentNavigation creates navigation tree from content directory
 func (ns *NavigationService) GenerateContentNavigation(contentDir, baseURL string) (*Navigation, error) {
@@ -242,10 +218,10 @@ func (ns *NavigationService) processDirectory(dirPath, dirName, baseURL, rootCon
 	if len(pathParts) >= 2 {
 		contentType = pathParts[1]
 	}
-	
+
 	// Create unique ID by prefixing with content type
 	uniqueID := contentType + "-" + CleanID(dirName)
-	
+
 	navItem := &NavItem{
 		ID:         uniqueID,
 		Name:       title,
@@ -357,48 +333,27 @@ func (ns *NavigationService) GetNavigationForPath(path string) *Navigation {
 
 // GetNavigationForPathWithLanguage returns the appropriate navigation based on the URL path and language
 func (ns *NavigationService) GetNavigationForPathWithLanguage(path, lang string) *Navigation {
-	// Always start with static navigation
+	// Return localized static navigation (now includes docs, API, and legal sections from nav.json)
 	if ns.navigation == nil {
 		return &Navigation{}
 	}
 
-	// Create a localized copy of the static navigation
+	// Create a localized copy of the static navigation and set expansion state based on current path
 	nav := ns.LocalizeNavigation(ns.navigation, lang)
 
-	// Always add Documentation section if available
-	if ns.docsNavigation != nil {
-		localizedDocs := ns.LocalizeNavigation(ns.docsNavigation, lang)
-		docSection := NavItem{
-			ID:       "documentation",
-			Name:     "Documentation", // This could be localized too if needed
-			Expanded: strings.HasPrefix(path, "/docs"), // Only expand when on docs pages
-			Children: localizedDocs.Sections,
+	// Set expansion state for sections based on current path
+	if nav != nil && nav.Sections != nil {
+		for i := range nav.Sections {
+			section := &nav.Sections[i]
+			switch section.ID {
+			case "documentation":
+				section.Expanded = strings.HasPrefix(path, "/docs")
+			case "api-reference":
+				section.Expanded = strings.HasPrefix(path, "/api")
+			case "legal":
+				section.Expanded = strings.HasPrefix(path, "/legal")
+			}
 		}
-		nav.Sections = append(nav.Sections, docSection)
-	}
-
-	// Always add API Reference section if available
-	if ns.apiNavigation != nil {
-		localizedAPI := ns.LocalizeNavigation(ns.apiNavigation, lang)
-		apiSection := NavItem{
-			ID:       "api-reference",
-			Name:     "API Reference", // This could be localized too if needed
-			Expanded: strings.HasPrefix(path, "/api"), // Only expand when on API pages
-			Children: localizedAPI.Sections,
-		}
-		nav.Sections = append(nav.Sections, apiSection)
-	}
-
-	// Always add Legal section if available (placed at end for bottom positioning)
-	if ns.legalNavigation != nil {
-		localizedLegal := ns.LocalizeNavigation(ns.legalNavigation, lang)
-		legalSection := NavItem{
-			ID:       "legal",
-			Name:     "Legal", // This could be localized too if needed
-			Expanded: strings.HasPrefix(path, "/legal"), // Only expand when on legal pages
-			Children: localizedLegal.Sections,
-		}
-		nav.Sections = append(nav.Sections, legalSection)
 	}
 
 	return nav
@@ -414,28 +369,41 @@ func (ns *NavigationService) GetFirstItemInDirectory(path string) string {
 		return ""
 	}
 
-	// Get the appropriate navigation based on content type
-	var navigation *Navigation
+	// Find the appropriate section in the main navigation
+	if ns.navigation == nil {
+		return ""
+	}
+
+	var targetSection *NavItem
+	sectionID := ""
 	switch contentType.Name {
 	case "docs":
-		navigation = ns.docsNavigation
+		sectionID = "documentation"
 	case "api":
-		navigation = ns.apiNavigation
+		sectionID = "api-reference"
 	case "legal":
-		navigation = ns.legalNavigation
+		sectionID = "legal"
 	default:
 		return ""
 	}
 
-	if navigation == nil {
+	// Find the section in the main navigation
+	for i := range ns.navigation.Sections {
+		if ns.navigation.Sections[i].ID == sectionID {
+			targetSection = &ns.navigation.Sections[i]
+			break
+		}
+	}
+
+	if targetSection == nil || len(targetSection.Children) == 0 {
 		return ""
 	}
 
 	// If it's a root content type path (e.g., /docs, /api, /legal)
 	if cleanPath == contentType.URLPrefix {
 		// Return the first section's first item
-		if len(navigation.Sections) > 0 {
-			firstSection := navigation.Sections[0]
+		if len(targetSection.Children) > 0 {
+			firstSection := targetSection.Children[0]
 			if firstSection.Href != "" {
 				return firstSection.Href
 			}
@@ -453,7 +421,7 @@ func (ns *NavigationService) GetFirstItemInDirectory(path string) string {
 	relativePath = strings.TrimPrefix(relativePath, "/")
 
 	// Find the matching directory in the navigation tree
-	return ns.findFirstItemInPath(navigation.Sections, relativePath, contentType.URLPrefix)
+	return ns.findFirstItemInPath(targetSection.Children, relativePath, contentType.URLPrefix)
 }
 
 // findFirstItemInPath recursively searches the navigation tree for a matching path

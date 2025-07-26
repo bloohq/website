@@ -266,6 +266,1250 @@
         {"id": "partner-program", "name": {"en": "Partner with us", "es": "Asóciese con nosotros", "zh": "与我们合作", "fr": "Devenez partenaire", "de": "Partner werden", "ja": "パートナーになる", "pt": "Seja nosso parceiro", "ru": "Станьте партнером", "ko": "파트너십", "it": "Diventa partner", "id": "Bermitra dengan kami", "nl": "Word partner", "pl": "Zostań partnerem", "zh-TW": "與我們合作", "sv": "Bli partner", "km": "ដៃគូជាមួយយើង"}, "href": "/company/partners"},
         {"id": "brand", "name": {"en": "Brand", "es": "Marca", "zh": "品牌", "fr": "Marque", "de": "Marke", "ja": "ブランド", "pt": "Marca", "ru": "Бренд", "ko": "브랜드", "it": "Brand", "id": "Merek", "nl": "Merk", "pl": "Marka", "zh-TW": "品牌", "sv": "Varumärke", "km": "ម៉ាក"}, "href": "/brand"}
       ]
+    },
+    {
+      "id": "documentation",
+      "name": {
+        "en": "Documentation",
+        "es": "Documentación",
+        "zh": "文档",
+        "fr": "Documentation",
+        "de": "Dokumentation",
+        "ja": "ドキュメント",
+        "pt": "Documentação",
+        "ru": "Документация",
+        "ko": "문서",
+        "it": "Documentazione",
+        "id": "Dokumentasi",
+        "nl": "Documentatie",
+        "pl": "Dokumentacja",
+        "zh-TW": "文件",
+        "sv": "Dokumentation",
+        "km": "ឯកសារ"
+      },
+      "expanded": false,
+      "children": [
+        {
+          "id": "docs-start-guide",
+          "name": {
+            "en": "Start Guide",
+            "es": "Guía de inicio",
+            "zh": "入门指南",
+            "fr": "Guide de démarrage",
+            "de": "Erste Schritte",
+            "ja": "スタートガイド",
+            "pt": "Guia de início",
+            "ru": "Руководство по началу работы",
+            "ko": "시작 가이드",
+            "it": "Guida iniziale",
+            "id": "Panduan Memulai",
+            "nl": "Startgids",
+            "pl": "Przewodnik startowy",
+            "zh-TW": "入門指南",
+            "sv": "Startguide",
+            "km": "មគ្គុទ្ទេសក៍ចាប់ផ្តើម"
+          },
+          "expanded": false,
+          "children": [
+            {
+              "id": "docs-start-guide-welcome",
+              "name": {
+                "en": "Welcome",
+                "es": "Bienvenido",
+                "zh": "欢迎",
+                "fr": "Bienvenue",
+                "de": "Willkommen",
+                "ja": "ようこそ",
+                "pt": "Bem-vindo",
+                "ru": "Добро пожаловать",
+                "ko": "환영합니다",
+                "it": "Benvenuto",
+                "id": "Selamat datang",
+                "nl": "Welkom",
+                "pl": "Witamy",
+                "zh-TW": "歡迎",
+                "sv": "Välkommen",
+                "km": "សូមស្វាគមន៍"
+              },
+              "href": "/docs/start-guide/welcome"
+            },
+            {
+              "id": "docs-start-guide-concepts",
+              "name": {
+                "en": "Concepts",
+                "es": "Conceptos",
+                "zh": "概念",
+                "fr": "Concepts",
+                "de": "Konzepte",
+                "ja": "概念",
+                "pt": "Conceitos",
+                "ru": "Концепции",
+                "ko": "개념",
+                "it": "Concetti",
+                "id": "Konsep",
+                "nl": "Concepten",
+                "pl": "Koncepcje",
+                "zh-TW": "概念",
+                "sv": "Koncept",
+                "km": "គោលគំនិត"
+              },
+              "href": "/docs/start-guide/concepts"
+            },
+            {
+              "id": "docs-start-guide-download-apps",
+              "name": {
+                "en": "Download Apps",
+                "es": "Descargar aplicaciones",
+                "zh": "下载应用",
+                "fr": "Télécharger les applications",
+                "de": "Apps herunterladen",
+                "ja": "アプリをダウンロード",
+                "pt": "Baixar aplicativos",
+                "ru": "Скачать приложения",
+                "ko": "앱 다운로드",
+                "it": "Scarica app",
+                "id": "Unduh Aplikasi",
+                "nl": "Apps downloaden",
+                "pl": "Pobierz aplikacje",
+                "zh-TW": "下載應用程式",
+                "sv": "Ladda ner appar",
+                "km": "ទាញយកកម្មវិធី"
+              },
+              "href": "/docs/start-guide/download-apps"
+            },
+            {
+              "id": "docs-start-guide-white-label",
+              "name": {
+                "en": "White Label",
+                "es": "Marca blanca",
+                "zh": "白标",
+                "fr": "Marque blanche",
+                "de": "White Label",
+                "ja": "ホワイトラベル",
+                "pt": "Marca branca",
+                "ru": "Белая метка",
+                "ko": "화이트 라벨",
+                "it": "White Label",
+                "id": "Label Putih",
+                "nl": "White Label",
+                "pl": "Biała etykieta",
+                "zh-TW": "白標",
+                "sv": "White Label",
+                "km": "ស្លាកសញ្ញាពណ៌ស"
+              },
+              "href": "/docs/start-guide/white-label"
+            }
+          ]
+        },
+        {
+          "id": "docs-projects",
+          "name": {
+            "en": "Projects",
+            "es": "Proyectos",
+            "zh": "项目",
+            "fr": "Projets",
+            "de": "Projekte",
+            "ja": "プロジェクト",
+            "pt": "Projetos",
+            "ru": "Проекты",
+            "ko": "프로젝트",
+            "it": "Progetti",
+            "id": "Proyek",
+            "nl": "Projecten",
+            "pl": "Projekty",
+            "zh-TW": "專案",
+            "sv": "Projekt",
+            "km": "គម្រោង"
+          },
+          "expanded": false,
+          "children": [
+            {
+              "id": "docs-projects-index",
+              "name": {
+                "en": "Introduction",
+                "es": "Introducción",
+                "zh": "介绍",
+                "fr": "Introduction",
+                "de": "Einführung",
+                "ja": "はじめに",
+                "pt": "Introdução",
+                "ru": "Введение",
+                "ko": "소개",
+                "it": "Introduzione",
+                "id": "Pengantar",
+                "nl": "Inleiding",
+                "pl": "Wprowadzenie",
+                "zh-TW": "介紹",
+                "sv": "Introduktion",
+                "km": "ការណែនាំ"
+              },
+              "href": "/docs/projects/index"
+            },
+            {
+              "id": "docs-projects-records",
+              "name": {
+                "en": "Records",
+                "es": "Registros",
+                "zh": "记录",
+                "fr": "Enregistrements",
+                "de": "Datensätze",
+                "ja": "レコード",
+                "pt": "Registros",
+                "ru": "Записи",
+                "ko": "레코드",
+                "it": "Record",
+                "id": "Catatan",
+                "nl": "Records",
+                "pl": "Rekordy",
+                "zh-TW": "記錄",
+                "sv": "Poster",
+                "km": "កំណត់ត្រា"
+              },
+              "href": "/docs/projects/records"
+            },
+            {
+              "id": "docs-projects-file-management",
+              "name": {
+                "en": "File Management",
+                "es": "Gestión de archivos",
+                "zh": "文件管理",
+                "fr": "Gestion de fichiers",
+                "de": "Dateiverwaltung",
+                "ja": "ファイル管理",
+                "pt": "Gerenciamento de arquivos",
+                "ru": "Управление файлами",
+                "ko": "파일 관리",
+                "it": "Gestione file",
+                "id": "Manajemen File",
+                "nl": "Bestandsbeheer",
+                "pl": "Zarządzanie plikami",
+                "zh-TW": "檔案管理",
+                "sv": "Filhantering",
+                "km": "ការគ្រប់គ្រងឯកសារ"
+              },
+              "href": "/docs/projects/file-management"
+            },
+            {
+              "id": "docs-projects-documents",
+              "name": {
+                "en": "Documents",
+                "es": "Documentos",
+                "zh": "文档",
+                "fr": "Documents",
+                "de": "Dokumente",
+                "ja": "ドキュメント",
+                "pt": "Documentos",
+                "ru": "Документы",
+                "ko": "문서",
+                "it": "Documenti",
+                "id": "Dokumen",
+                "nl": "Documenten",
+                "pl": "Dokumenty",
+                "zh-TW": "文件",
+                "sv": "Dokument",
+                "km": "ឯកសារ"
+              },
+              "href": "/docs/projects/documents"
+            },
+            {
+              "id": "docs-projects-wiki",
+              "name": {
+                "en": "Wiki",
+                "es": "Wiki",
+                "zh": "知识库",
+                "fr": "Wiki",
+                "de": "Wiki",
+                "ja": "Wiki",
+                "pt": "Wiki",
+                "ru": "Вики",
+                "ko": "위키",
+                "it": "Wiki",
+                "id": "Wiki",
+                "nl": "Wiki",
+                "pl": "Wiki",
+                "zh-TW": "知識庫",
+                "sv": "Wiki",
+                "km": "វិគី"
+              },
+              "href": "/docs/projects/wiki"
+            },
+            {
+              "id": "docs-projects-activity",
+              "name": {
+                "en": "Activity",
+                "es": "Actividad",
+                "zh": "活动",
+                "fr": "Activité",
+                "de": "Aktivität",
+                "ja": "アクティビティ",
+                "pt": "Atividade",
+                "ru": "Активность",
+                "ko": "활동",
+                "it": "Attività",
+                "id": "Aktivitas",
+                "nl": "Activiteit",
+                "pl": "Aktywność",
+                "zh-TW": "活動",
+                "sv": "Aktivitet",
+                "km": "សកម្មភាព"
+              },
+              "href": "/docs/projects/activity"
+            },
+            {
+              "id": "docs-projects-chat",
+              "name": {
+                "en": "Chat",
+                "es": "Chat",
+                "zh": "聊天",
+                "fr": "Chat",
+                "de": "Chat",
+                "ja": "チャット",
+                "pt": "Chat",
+                "ru": "Чат",
+                "ko": "채팅",
+                "it": "Chat",
+                "id": "Chat",
+                "nl": "Chat",
+                "pl": "Czat",
+                "zh-TW": "聊天",
+                "sv": "Chatt",
+                "km": "ជជែក"
+              },
+              "href": "/docs/projects/chat"
+            },
+            {
+              "id": "docs-projects-forms",
+              "name": {
+                "en": "Forms",
+                "es": "Formularios",
+                "zh": "表单",
+                "fr": "Formulaires",
+                "de": "Formulare",
+                "ja": "フォーム",
+                "pt": "Formulários",
+                "ru": "Формы",
+                "ko": "양식",
+                "it": "Moduli",
+                "id": "Formulir",
+                "nl": "Formulieren",
+                "pl": "Formularze",
+                "zh-TW": "表單",
+                "sv": "Formulär",
+                "km": "ទម្រង់"
+              },
+              "href": "/docs/projects/forms"
+            },
+            {
+              "id": "docs-projects-copying-projects",
+              "name": {
+                "en": "Copying Projects",
+                "es": "Copiar proyectos",
+                "zh": "复制项目",
+                "fr": "Copier des projets",
+                "de": "Projekte kopieren",
+                "ja": "プロジェクトのコピー",
+                "pt": "Copiar projetos",
+                "ru": "Копирование проектов",
+                "ko": "프로젝트 복사",
+                "it": "Copia progetti",
+                "id": "Menyalin Proyek",
+                "nl": "Projecten kopiëren",
+                "pl": "Kopiowanie projektów",
+                "zh-TW": "複製專案",
+                "sv": "Kopiera projekt",
+                "km": "ចម្លងគម្រោង"
+              },
+              "href": "/docs/projects/copying-projects"
+            },
+            {
+              "id": "docs-projects-archiving-projects",
+              "name": {
+                "en": "Archiving Projects",
+                "es": "Archivar proyectos",
+                "zh": "归档项目",
+                "fr": "Archiver des projets",
+                "de": "Projekte archivieren",
+                "ja": "プロジェクトのアーカイブ",
+                "pt": "Arquivar projetos",
+                "ru": "Архивирование проектов",
+                "ko": "프로젝트 보관",
+                "it": "Archivia progetti",
+                "id": "Mengarsipkan Proyek",
+                "nl": "Projecten archiveren",
+                "pl": "Archiwizowanie projektów",
+                "zh-TW": "封存專案",
+                "sv": "Arkivera projekt",
+                "km": "ទុកបណ្ណសារគម្រោង"
+              },
+              "href": "/docs/projects/archiving-projects"
+            },
+            {
+              "id": "docs-projects-templates",
+              "name": {
+                "en": "Templates",
+                "es": "Plantillas",
+                "zh": "模板",
+                "fr": "Modèles",
+                "de": "Vorlagen",
+                "ja": "テンプレート",
+                "pt": "Modelos",
+                "ru": "Шаблоны",
+                "ko": "템플릿",
+                "it": "Modelli",
+                "id": "Template",
+                "nl": "Sjablonen",
+                "pl": "Szablony",
+                "zh-TW": "範本",
+                "sv": "Mallar",
+                "km": "គំរូ"
+              },
+              "href": "/docs/projects/templates"
+            },
+            {
+              "id": "docs-projects-search",
+              "name": {
+                "en": "Search",
+                "es": "Búsqueda",
+                "zh": "搜索",
+                "fr": "Recherche",
+                "de": "Suchen",
+                "ja": "検索",
+                "pt": "Pesquisar",
+                "ru": "Поиск",
+                "ko": "검색",
+                "it": "Cerca",
+                "id": "Pencarian",
+                "nl": "Zoeken",
+                "pl": "Wyszukiwanie",
+                "zh-TW": "搜尋",
+                "sv": "Sök",
+                "km": "ស្វែងរក"
+              },
+              "href": "/docs/projects/search"
+            },
+            {
+              "id": "docs-projects-featuresonoff",
+              "name": {
+                "en": "Turning Features On/Off",
+                "es": "Activar/Desactivar funciones",
+                "zh": "开启/关闭功能",
+                "fr": "Activer/Désactiver les fonctionnalités",
+                "de": "Funktionen ein-/ausschalten",
+                "ja": "機能のオン/オフ",
+                "pt": "Ativar/Desativar recursos",
+                "ru": "Включение/выключение функций",
+                "ko": "기능 켜기/끄기",
+                "it": "Attivare/Disattivare funzionalità",
+                "id": "Mengaktifkan/Menonaktifkan Fitur",
+                "nl": "Functies aan/uitzetten",
+                "pl": "Włączanie/wyłączanie funkcji",
+                "zh-TW": "開啟/關閉功能",
+                "sv": "Slå på/av funktioner",
+                "km": "បើក/បិទមុខងារ"
+              },
+              "href": "/docs/projects/featuresonoff"
+            }
+          ]
+        },
+        {
+          "id": "docs-records",
+          "name": {
+            "en": "Records",
+            "es": "Registros",
+            "zh": "记录",
+            "fr": "Enregistrements",
+            "de": "Datensätze",
+            "ja": "レコード",
+            "pt": "Registros",
+            "ru": "Записи",
+            "ko": "레코드",
+            "it": "Record",
+            "id": "Catatan",
+            "nl": "Records",
+            "pl": "Rekordy",
+            "zh-TW": "記錄",
+            "sv": "Poster",
+            "km": "កំណត់ត្រា"
+          },
+          "expanded": false,
+          "children": [
+            {
+              "id": "docs-records-introduction",
+              "name": {
+                "en": "Introduction",
+                "es": "Introducción",
+                "zh": "介绍",
+                "fr": "Introduction",
+                "de": "Einführung",
+                "ja": "はじめに",
+                "pt": "Introdução",
+                "ru": "Введение",
+                "ko": "소개",
+                "it": "Introduzione",
+                "id": "Pengantar",
+                "nl": "Inleiding",
+                "pl": "Wprowadzenie",
+                "zh-TW": "介紹",
+                "sv": "Introduktion",
+                "km": "ការណែនាំ"
+              },
+              "href": "/docs/records/introduction"
+            },
+            {
+              "id": "docs-records-lists",
+              "name": {
+                "en": "Lists",
+                "es": "Listas",
+                "zh": "列表",
+                "fr": "Listes",
+                "de": "Listen",
+                "ja": "リスト",
+                "pt": "Listas",
+                "ru": "Списки",
+                "ko": "목록",
+                "it": "Elenchi",
+                "id": "Daftar",
+                "nl": "Lijsten",
+                "pl": "Listy",
+                "zh-TW": "清單",
+                "sv": "Listor",
+                "km": "បញ្ជី"
+              },
+              "href": "/docs/records/lists"
+            },
+            {
+              "id": "docs-records-tags",
+              "name": {
+                "en": "Tags",
+                "es": "Etiquetas",
+                "zh": "标签",
+                "fr": "Étiquettes",
+                "de": "Tags",
+                "ja": "タグ",
+                "pt": "Tags",
+                "ru": "Теги",
+                "ko": "태그",
+                "it": "Tag",
+                "id": "Tag",
+                "nl": "Tags",
+                "pl": "Tagi",
+                "zh-TW": "標籤",
+                "sv": "Taggar",
+                "km": "ស្លាក"
+              },
+              "href": "/docs/records/tags"
+            },
+            {
+              "id": "docs-records-comments",
+              "name": {
+                "en": "Comments",
+                "es": "Comentarios",
+                "zh": "评论",
+                "fr": "Commentaires",
+                "de": "Kommentare",
+                "ja": "コメント",
+                "pt": "Comentários",
+                "ru": "Комментарии",
+                "ko": "댓글",
+                "it": "Commenti",
+                "id": "Komentar",
+                "nl": "Opmerkingen",
+                "pl": "Komentarze",
+                "zh-TW": "評論",
+                "sv": "Kommentarer",
+                "km": "មតិយោបល់"
+              },
+              "href": "/docs/records/comments"
+            },
+            {
+              "id": "docs-records-activity",
+              "name": {
+                "en": "Activity",
+                "es": "Actividad",
+                "zh": "活动",
+                "fr": "Activité",
+                "de": "Aktivität",
+                "ja": "アクティビティ",
+                "pt": "Atividade",
+                "ru": "Активность",
+                "ko": "활동",
+                "it": "Attività",
+                "id": "Aktivitas",
+                "nl": "Activiteit",
+                "pl": "Aktywność",
+                "zh-TW": "活動",
+                "sv": "Aktivitet",
+                "km": "សកម្មភាព"
+              },
+              "href": "/docs/records/activity"
+            },
+            {
+              "id": "docs-records-assignees",
+              "name": {
+                "en": "Assignees",
+                "es": "Asignados",
+                "zh": "分配对象",
+                "fr": "Assignés",
+                "de": "Zugewiesene",
+                "ja": "担当者",
+                "pt": "Responsáveis",
+                "ru": "Исполнители",
+                "ko": "담당자",
+                "it": "Assegnatari",
+                "id": "Penerima Tugas",
+                "nl": "Toegewezenen",
+                "pl": "Przypisani",
+                "zh-TW": "分配對象",
+                "sv": "Tilldelade",
+                "km": "អ្នកទទួលបន្ទុក"
+              },
+              "href": "/docs/records/assignees"
+            },
+            {
+              "id": "docs-records-dependencies",
+              "name": {
+                "en": "Dependencies",
+                "es": "Dependencias",
+                "zh": "依赖关系",
+                "fr": "Dépendances",
+                "de": "Abhängigkeiten",
+                "ja": "依存関係",
+                "pt": "Dependências",
+                "ru": "Зависимости",
+                "ko": "종속성",
+                "it": "Dipendenze",
+                "id": "Ketergantungan",
+                "nl": "Afhankelijkheden",
+                "pl": "Zależności",
+                "zh-TW": "相依性",
+                "sv": "Beroenden",
+                "km": "ភាពអាស្រ័យ"
+              },
+              "href": "/docs/records/dependencies"
+            },
+            {
+              "id": "docs-records-dates",
+              "name": {
+                "en": "Dates",
+                "es": "Fechas",
+                "zh": "日期",
+                "fr": "Dates",
+                "de": "Termine",
+                "ja": "日付",
+                "pt": "Datas",
+                "ru": "Даты",
+                "ko": "날짜",
+                "it": "Date",
+                "id": "Tanggal",
+                "nl": "Data",
+                "pl": "Daty",
+                "zh-TW": "日期",
+                "sv": "Datum",
+                "km": "កាលបរិច្ឆេទ"
+              },
+              "href": "/docs/records/dates"
+            },
+            {
+              "id": "docs-records-repeat",
+              "name": {
+                "en": "Repeat",
+                "es": "Repetir",
+                "zh": "重复",
+                "fr": "Répéter",
+                "de": "Wiederholen",
+                "ja": "繰り返し",
+                "pt": "Repetir",
+                "ru": "Повторение",
+                "ko": "반복",
+                "it": "Ripeti",
+                "id": "Ulangi",
+                "nl": "Herhalen",
+                "pl": "Powtarzaj",
+                "zh-TW": "重複",
+                "sv": "Upprepa",
+                "km": "ធ្វើម្តងទៀត"
+              },
+              "href": "/docs/records/repeat"
+            },
+            {
+              "id": "docs-records-reminders",
+              "name": {
+                "en": "Reminders",
+                "es": "Recordatorios",
+                "zh": "提醒",
+                "fr": "Rappels",
+                "de": "Erinnerungen",
+                "ja": "リマインダー",
+                "pt": "Lembretes",
+                "ru": "Напоминания",
+                "ko": "알림",
+                "it": "Promemoria",
+                "id": "Pengingat",
+                "nl": "Herinneringen",
+                "pl": "Przypomnienia",
+                "zh-TW": "提醒",
+                "sv": "Påminnelser",
+                "km": "ការរំលឹក"
+              },
+              "href": "/docs/records/reminders"
+            },
+            {
+              "id": "docs-records-copying-records",
+              "name": {
+                "en": "Copying Records",
+                "es": "Copiar registros",
+                "zh": "复制记录",
+                "fr": "Copier des enregistrements",
+                "de": "Datensätze kopieren",
+                "ja": "レコードのコピー",
+                "pt": "Copiar registros",
+                "ru": "Копирование записей",
+                "ko": "레코드 복사",
+                "it": "Copia record",
+                "id": "Menyalin Catatan",
+                "nl": "Records kopiëren",
+                "pl": "Kopiowanie rekordów",
+                "zh-TW": "複製記錄",
+                "sv": "Kopiera poster",
+                "km": "ចម្លងកំណត់ត្រា"
+              },
+              "href": "/docs/records/copying-records"
+            },
+            {
+              "id": "docs-records-moving-records",
+              "name": {
+                "en": "Moving Records",
+                "es": "Mover registros",
+                "zh": "移动记录",
+                "fr": "Déplacer des enregistrements",
+                "de": "Datensätze verschieben",
+                "ja": "レコードの移動",
+                "pt": "Mover registros",
+                "ru": "Перемещение записей",
+                "ko": "레코드 이동",
+                "it": "Sposta record",
+                "id": "Memindahkan Catatan",
+                "nl": "Records verplaatsen",
+                "pl": "Przenoszenie rekordów",
+                "zh-TW": "移動記錄",
+                "sv": "Flytta poster",
+                "km": "ផ្លាស់ប្តូរកំណត់ត្រា"
+              },
+              "href": "/docs/records/moving-records"
+            },
+            {
+              "id": "docs-records-printing-records",
+              "name": {
+                "en": "Printing Records",
+                "es": "Imprimir registros",
+                "zh": "打印记录",
+                "fr": "Imprimer des enregistrements",
+                "de": "Datensätze drucken",
+                "ja": "レコードの印刷",
+                "pt": "Imprimir registros",
+                "ru": "Печать записей",
+                "ko": "레코드 인쇄",
+                "it": "Stampa record",
+                "id": "Mencetak Catatan",
+                "nl": "Records afdrukken",
+                "pl": "Drukowanie rekordów",
+                "zh-TW": "列印記錄",
+                "sv": "Skriv ut poster",
+                "km": "បោះពុម្ពកំណត់ត្រា"
+              },
+              "href": "/docs/records/printing-records"
+            },
+            {
+              "id": "docs-records-ai-content-summarization",
+              "name": {
+                "en": "AI Content Summarization",
+                "es": "Resumen de contenido con IA",
+                "zh": "AI内容摘要",
+                "fr": "Résumé de contenu IA",
+                "de": "KI-Inhaltszusammenfassung",
+                "ja": "AIコンテンツ要約",
+                "pt": "Resumo de conteúdo com IA",
+                "ru": "ИИ-суммаризация контента",
+                "ko": "AI 콘텐츠 요약",
+                "it": "Riassunto contenuto AI",
+                "id": "Ringkasan Konten AI",
+                "nl": "AI-inhoudssamenvatting",
+                "pl": "Podsumowanie treści AI",
+                "zh-TW": "AI內容摘要",
+                "sv": "AI-innehållssammanfattning",
+                "km": "សង្ខេបមាតិកាដោយ AI"
+              },
+              "href": "/docs/records/ai-content-summarization"
+            },
+            {
+              "id": "docs-records-cover-images",
+              "name": {
+                "en": "Cover Images",
+                "es": "Imágenes de portada",
+                "zh": "封面图片",
+                "fr": "Images de couverture",
+                "de": "Titelbilder",
+                "ja": "カバー画像",
+                "pt": "Imagens de capa",
+                "ru": "Обложки",
+                "ko": "커버 이미지",
+                "it": "Immagini di copertina",
+                "id": "Gambar Sampul",
+                "nl": "Omslagafbeeldingen",
+                "pl": "Obrazy okładek",
+                "zh-TW": "封面圖片",
+                "sv": "Omslagsbilder",
+                "km": "រូបភាពគម្រប"
+              },
+              "href": "/docs/records/cover-images"
+            }
+          ]
+        },
+        {
+          "id": "docs-views",
+          "name": {
+            "en": "Views",
+            "es": "Vistas",
+            "zh": "视图",
+            "fr": "Vues",
+            "de": "Ansichten",
+            "ja": "ビュー",
+            "pt": "Visualizações",
+            "ru": "Представления",
+            "ko": "보기",
+            "it": "Visualizzazioni",
+            "id": "Tampilan",
+            "nl": "Weergaven",
+            "pl": "Widoki",
+            "zh-TW": "檢視",
+            "sv": "Vyer",
+            "km": "ទិដ្ឋភាព"
+          },
+          "expanded": false,
+          "children": [
+            {
+              "id": "docs-views-kanban-board",
+              "name": {
+                "en": "Board",
+                "es": "Tablero",
+                "zh": "看板",
+                "fr": "Tableau",
+                "de": "Board",
+                "ja": "ボード",
+                "pt": "Quadro",
+                "ru": "Доска",
+                "ko": "보드",
+                "it": "Bacheca",
+                "id": "Papan",
+                "nl": "Bord",
+                "pl": "Tablica",
+                "zh-TW": "看板",
+                "sv": "Tavla",
+                "km": "ក្ដារ"
+              },
+              "href": "/docs/views/kanban-board"
+            },
+            {
+              "id": "docs-views-calendar",
+              "name": {
+                "en": "Calendar",
+                "es": "Calendario",
+                "zh": "日历",
+                "fr": "Calendrier",
+                "de": "Kalender",
+                "ja": "カレンダー",
+                "pt": "Calendário",
+                "ru": "Календарь",
+                "ko": "달력",
+                "it": "Calendario",
+                "id": "Kalender",
+                "nl": "Kalender",
+                "pl": "Kalendarz",
+                "zh-TW": "行事曆",
+                "sv": "Kalender",
+                "km": "ប្រតិទិន"
+              },
+              "href": "/docs/views/calendar"
+            },
+            {
+              "id": "docs-views-timeline-gantt-charts",
+              "name": {
+                "en": "Timeline & Gantt Charts",
+                "es": "Cronograma y gráficos de Gantt",
+                "zh": "时间线和甘特图",
+                "fr": "Chronologie et diagrammes de Gantt",
+                "de": "Zeitleiste & Gantt-Diagramme",
+                "ja": "タイムラインとガントチャート",
+                "pt": "Cronograma e gráficos de Gantt",
+                "ru": "Временная шкала и диаграммы Ганта",
+                "ko": "타임라인 및 간트 차트",
+                "it": "Timeline e diagrammi di Gantt",
+                "id": "Timeline & Diagram Gantt",
+                "nl": "Tijdlijn & Gantt-grafieken",
+                "pl": "Oś czasu i wykresy Gantta",
+                "zh-TW": "時間軸和甘特圖",
+                "sv": "Tidslinje & Gantt-diagram",
+                "km": "ខ្សែពេលវេលា និងតារាង Gantt"
+              },
+              "href": "/docs/views/timeline-gantt-charts"
+            },
+            {
+              "id": "docs-views-database",
+              "name": {
+                "en": "Database",
+                "es": "Base de datos",
+                "zh": "数据库",
+                "fr": "Base de données",
+                "de": "Datenbank",
+                "ja": "データベース",
+                "pt": "Banco de dados",
+                "ru": "База данных",
+                "ko": "데이터베이스",
+                "it": "Database",
+                "id": "Basis Data",
+                "nl": "Database",
+                "pl": "Baza danych",
+                "zh-TW": "資料庫",
+                "sv": "Databas",
+                "km": "មូលដ្ឋានទិន្នន័យ"
+              },
+              "href": "/docs/views/database"
+            },
+            {
+              "id": "docs-views-map",
+              "name": {
+                "en": "Map",
+                "es": "Mapa",
+                "zh": "地图",
+                "fr": "Carte",
+                "de": "Karte",
+                "ja": "マップ",
+                "pt": "Mapa",
+                "ru": "Карта",
+                "ko": "지도",
+                "it": "Mappa",
+                "id": "Peta",
+                "nl": "Kaart",
+                "pl": "Mapa",
+                "zh-TW": "地圖",
+                "sv": "Karta",
+                "km": "ផែនទី"
+              },
+              "href": "/docs/views/map"
+            },
+            {
+              "id": "docs-views-list",
+              "name": {
+                "en": "List",
+                "es": "Lista",
+                "zh": "列表",
+                "fr": "Liste",
+                "de": "Liste",
+                "ja": "リスト",
+                "pt": "Lista",
+                "ru": "Список",
+                "ko": "목록",
+                "it": "Elenco",
+                "id": "Daftar",
+                "nl": "Lijst",
+                "pl": "Lista",
+                "zh-TW": "清單",
+                "sv": "Lista",
+                "km": "បញ្ជី"
+              },
+              "href": "/docs/views/list"
+            },
+            {
+              "id": "docs-views-filters",
+              "name": {
+                "en": "Filters",
+                "es": "Filtros",
+                "zh": "过滤器",
+                "fr": "Filtres",
+                "de": "Filter",
+                "ja": "フィルター",
+                "pt": "Filtros",
+                "ru": "Фильтры",
+                "ko": "필터",
+                "it": "Filtri",
+                "id": "Filter",
+                "nl": "Filters",
+                "pl": "Filtry",
+                "zh-TW": "篩選器",
+                "sv": "Filter",
+                "km": "តម្រង"
+              },
+              "href": "/docs/views/filters"
+            }
+          ]
+        },
+        {
+          "id": "docs-custom-fields",
+          "name": {"en": "Custom Fields"},
+          "expanded": false,
+          "children": [
+            {"id": "docs-custom-fields-introduction", "name": {"en": "Introduction"}, "href": "/docs/custom-fields/introduction"},
+            {"id": "docs-custom-fields-single-line-text", "name": {"en": "Single Line Text"}, "href": "/docs/custom-fields/single-line-text"},
+            {"id": "docs-custom-fields-multiple-line-text", "name": {"en": "Multiple Line Text"}, "href": "/docs/custom-fields/multiple-line-text"},
+            {"id": "docs-custom-fields-url-link", "name": {"en": "URL / Link"}, "href": "/docs/custom-fields/url-link"},
+            {"id": "docs-custom-fields-currency", "name": {"en": "Currency"}, "href": "/docs/custom-fields/currency"},
+            {"id": "docs-custom-fields-country", "name": {"en": "Country"}, "href": "/docs/custom-fields/country"},
+            {"id": "docs-custom-fields-date", "name": {"en": "Date"}, "href": "/docs/custom-fields/date"},
+            {"id": "docs-custom-fields-formula", "name": {"en": "Formula"}, "href": "/docs/custom-fields/formula"},
+            {"id": "docs-custom-fields-file", "name": {"en": "File"}, "href": "/docs/custom-fields/file"},
+            {"id": "docs-custom-fields-single-select", "name": {"en": "Single Select"}, "href": "/docs/custom-fields/single-select"},
+            {"id": "docs-custom-fields-multiple-select", "name": {"en": "Multiple Select"}, "href": "/docs/custom-fields/multiple-select"},
+            {"id": "docs-custom-fields-location-map", "name": {"en": "Location / Map"}, "href": "/docs/custom-fields/location-map"},
+            {"id": "docs-custom-fields-phone-number", "name": {"en": "Phone Number"}, "href": "/docs/custom-fields/phone-number"},
+            {"id": "docs-custom-fields-email", "name": {"en": "Email"}, "href": "/docs/custom-fields/email"},
+            {"id": "docs-custom-fields-star-rating", "name": {"en": "Star Rating"}, "href": "/docs/custom-fields/star-rating"},
+            {"id": "docs-custom-fields-checkbox", "name": {"en": "Checkbox"}, "href": "/docs/custom-fields/checkbox"},
+            {"id": "docs-custom-fields-number", "name": {"en": "Number"}, "href": "/docs/custom-fields/number"},
+            {"id": "docs-custom-fields-percent", "name": {"en": "Percent"}, "href": "/docs/custom-fields/percent"},
+            {"id": "docs-custom-fields-unique-id", "name": {"en": "Unique ID"}, "href": "/docs/custom-fields/unique-id"},
+            {"id": "docs-custom-fields-reference", "name": {"en": "Reference"}, "href": "/docs/custom-fields/reference"},
+            {"id": "docs-custom-fields-lookup", "name": {"en": "Lookup"}, "href": "/docs/custom-fields/lookup"},
+            {"id": "docs-custom-fields-duration", "name": {"en": "Duration"}, "href": "/docs/custom-fields/duration"},
+            {"id": "docs-custom-fields-button", "name": {"en": "Button"}, "href": "/docs/custom-fields/button"},
+            {"id": "docs-custom-fields-time-in-list", "name": {"en": "Time In List"}, "href": "/docs/custom-fields/time-in-list"}
+          ]
+        },
+        {
+          "id": "docs-automations",
+          "name": {"en": "Automations"},
+          "expanded": false,
+          "children": [
+            {"id": "docs-automations-introduction", "name": {"en": "Introduction"}, "href": "/docs/automations/introduction"},
+            {"id": "docs-automations-triggers", "name": {"en": "Triggers"}, "href": "/docs/automations/triggers"},
+            {"id": "docs-automations-actions", "name": {"en": "Actions"}, "href": "/docs/automations/actions"},
+            {
+              "id": "docs-automations-actions-sub",
+              "name": {"en": "Actions"},
+              "expanded": false,
+              "children": [
+                {"id": "docs-automations-actions-email-automations", "name": {"en": "Email Automations"}, "href": "/docs/automations/actions/email-automations"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "docs-user-management",
+          "name": {"en": "User Management"},
+          "expanded": false,
+          "children": [
+            {"id": "docs-user-management-introduction", "name": {"en": "Introduction"}, "href": "/docs/user-management/introduction"},
+            {"id": "docs-user-management-notifications", "name": {"en": "Notifications"}, "href": "/docs/user-management/notifications"},
+            {"id": "docs-user-management-profile-settings", "name": {"en": "Profile Settings"}, "href": "/docs/user-management/profile-settings"},
+            {"id": "docs-user-management-magic-links", "name": {"en": "Magic Links"}, "href": "/docs/user-management/magic-links"},
+            {"id": "docs-user-management-mentions", "name": {"en": "@mentions"}, "href": "/docs/user-management/mentions"},
+            {"id": "docs-user-management-organisation-administrator", "name": {"en": "Organisation Administrator"}, "href": "/docs/user-management/organisation-administrator"},
+            {
+              "id": "docs-user-management-roles",
+              "name": {"en": "Roles"},
+              "expanded": false,
+              "children": [
+                {"id": "docs-user-management-roles-project-administrator", "name": {"en": "Project Administrator"}, "href": "/docs/user-management/roles/project-administrator"},
+                {"id": "docs-user-management-roles-team-member", "name": {"en": "Team Member"}, "href": "/docs/user-management/roles/team-member"},
+                {"id": "docs-user-management-roles-client", "name": {"en": "Client"}, "href": "/docs/user-management/roles/client"},
+                {"id": "docs-user-management-roles-comment-only", "name": {"en": "Comment Only"}, "href": "/docs/user-management/roles/comment-only"},
+                {"id": "docs-user-management-roles-view-only", "name": {"en": "View Only"}, "href": "/docs/user-management/roles/view-only"},
+                {"id": "docs-user-management-roles-custom-user-roles", "name": {"en": "Custom User Roles"}, "href": "/docs/user-management/roles/custom-user-roles"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "docs-dashboards",
+          "name": {"en": "Dashboards"},
+          "expanded": false,
+          "children": [
+            {"id": "docs-dashboards-introduction", "name": {"en": "Introduction"}, "href": "/docs/dashboards/introduction"},
+            {"id": "docs-dashboards-stat-cards", "name": {"en": "Stat Cards"}, "href": "/docs/dashboards/stat-cards"},
+            {"id": "docs-dashboards-pie-charts", "name": {"en": "Pie Charts"}, "href": "/docs/dashboards/pie-charts"},
+            {"id": "docs-dashboards-bar-graphs", "name": {"en": "Bar Graphs"}, "href": "/docs/dashboards/bar-graphs"}
+          ]
+        },
+        {
+          "id": "docs-integrations",
+          "name": {"en": "Integrations"},
+          "expanded": false,
+          "children": [
+            {"id": "docs-integrations-api", "name": {"en": "API"}, "href": "/docs/integrations/api"},
+            {"id": "docs-integrations-webhooks", "name": {"en": "Webhooks"}, "href": "/docs/integrations/webhooks"},
+            {"id": "docs-integrations-pabbly-connect", "name": {"en": "Pabbly Connect"}, "href": "/docs/integrations/pabbly-connect"},
+            {"id": "docs-integrations-zapier", "name": {"en": "Zapier"}, "href": "/docs/integrations/zapier"},
+            {"id": "docs-integrations-make", "name": {"en": "Make.com"}, "href": "/docs/integrations/make"},
+            {"id": "docs-integrations-csv-import", "name": {"en": "CSV Import"}, "href": "/docs/integrations/csv-import"},
+            {"id": "docs-integrations-csv-export", "name": {"en": "CSV Export"}, "href": "/docs/integrations/csv-export"},
+            {"id": "docs-integrations-calendar-sync", "name": {"en": "Calendar Sync"}, "href": "/docs/integrations/calendar-sync"},
+            {"id": "docs-integrations-googlemaps", "name": {"en": "Google Maps"}, "href": "/docs/integrations/googlemaps"},
+            {"id": "docs-integrations-github", "name": {"en": "Github"}, "href": "/docs/integrations/github"}
+          ]
+        },
+        {
+          "id": "docs-billing",
+          "name": {"en": "Billing"},
+          "href": "/docs/billing"
+        }
+      ]
+    },
+    {
+      "id": "api-reference",
+      "name": {
+        "en": "API Reference"
+      },
+      "expanded": false,
+      "children": [
+        {
+          "id": "api-start-guide",
+          "name": {"en": "Start Guide"},
+          "expanded": false,
+          "children": [
+            {"id": "api-start-guide-introduction", "name": {"en": "Introduction"}, "href": "/api/start-guide/introduction"},
+            {"id": "api-start-guide-authentication", "name": {"en": "Authentication"}, "href": "/api/start-guide/authentication"},
+            {"id": "api-start-guide-making-requests", "name": {"en": "Making Requests"}, "href": "/api/start-guide/making-requests"},
+            {"id": "api-start-guide-graphql-playground", "name": {"en": "GraphQL Playground"}, "href": "/api/start-guide/graphql-playground"},
+            {"id": "api-start-guide-capabilities", "name": {"en": "Capabilities"}, "href": "/api/start-guide/capabilities"},
+            {"id": "api-start-guide-rate-limits", "name": {"en": "Rate Limits"}, "href": "/api/start-guide/rate-limits"},
+            {"id": "api-start-guide-upload-files", "name": {"en": "Uploading Files"}, "href": "/api/start-guide/upload-files"}
+          ]
+        },
+        {
+          "id": "api-projects",
+          "name": {"en": "Projects"},
+          "expanded": false,
+          "children": [
+            {"id": "api-projects-index", "name": {"en": "Projects API"}, "href": "/api/projects/index"},
+            {"id": "api-projects-create-project", "name": {"en": "Create a Project"}, "href": "/api/projects/create-project"},
+            {"id": "api-projects-delete-project", "name": {"en": "Delete Project"}, "href": "/api/projects/delete-project"},
+            {"id": "api-projects-list-projects", "name": {"en": "List all Projects"}, "href": "/api/projects/list-projects"},
+            {"id": "api-projects-archive-project", "name": {"en": "Archive Project"}, "href": "/api/projects/archive-project"},
+            {"id": "api-projects-project-activity", "name": {"en": "Project Activity"}, "href": "/api/projects/project-activity"},
+            {"id": "api-projects-rename-project", "name": {"en": "Rename Project"}, "href": "/api/projects/rename-project"},
+            {"id": "api-projects-copy-project", "name": {"en": "Copy a Project"}, "href": "/api/projects/copy-project"},
+            {"id": "api-projects-lists", "name": {"en": "Lists"}, "href": "/api/projects/lists"},
+            {"id": "api-projects-templates", "name": {"en": "Templates"}, "href": "/api/projects/templates"}
+          ]
+        },
+        {
+          "id": "api-records",
+          "name": {"en": "Records"},
+          "expanded": false,
+          "children": [
+            {"id": "api-records-index", "name": {"en": "Create a Record"}, "href": "/api/records/index"},
+            {"id": "api-records-list-records", "name": {"en": "List Records"}, "href": "/api/records/list-records"},
+            {"id": "api-records-toggle-record-status", "name": {"en": "Toggle Record Status"}, "href": "/api/records/toggle-record-status"},
+            {"id": "api-records-tags", "name": {"en": "Tags"}, "href": "/api/records/tags"},
+            {"id": "api-records-move-record-list", "name": {"en": "Move Record to List"}, "href": "/api/records/move-record-list"},
+            {"id": "api-records-assignees", "name": {"en": "Assign Record"}, "href": "/api/records/assignees"},
+            {"id": "api-records-update-record", "name": {"en": "Update Record"}, "href": "/api/records/update-record"},
+            {"id": "api-records-copy-record", "name": {"en": "Copy Record"}, "href": "/api/records/copy-record"},
+            {"id": "api-records-add-comment", "name": {"en": "Add Comment"}, "href": "/api/records/add-comment"}
+          ]
+        },
+        {
+          "id": "api-custom-fields",
+          "name": {"en": "Custom Fields"},
+          "expanded": false,
+          "children": [
+            {"id": "api-custom-fields-index", "name": {"en": "Custom Fields API"}, "href": "/api/custom-fields/index"},
+            {"id": "api-custom-fields-list-custom-fields", "name": {"en": "List all Custom Fields"}, "href": "/api/custom-fields/list-custom-fields"},
+            {"id": "api-custom-fields-create-custom-fields", "name": {"en": "Create a Custom Field"}, "href": "/api/custom-fields/create-custom-fields"},
+            {"id": "api-custom-fields-custom-field-values", "name": {"en": "Set Custom Field Values"}, "href": "/api/custom-fields/custom-field-values"},
+            {"id": "api-custom-fields-delete-custom-field", "name": {"en": "Delete Custom Field"}, "href": "/api/custom-fields/delete-custom-field"},
+            {"id": "api-custom-fields-button", "name": {"en": "Button Custom Field"}, "href": "/api/custom-fields/button"},
+            {"id": "api-custom-fields-checkbox", "name": {"en": "Checkbox Custom Field"}, "href": "/api/custom-fields/checkbox"},
+            {"id": "api-custom-fields-country", "name": {"en": "Country Custom Field"}, "href": "/api/custom-fields/country"},
+            {"id": "api-custom-fields-currency-conversion", "name": {"en": "Currency Conversion Custom Field"}, "href": "/api/custom-fields/currency-conversion"},
+            {"id": "api-custom-fields-currency", "name": {"en": "Currency Custom Field"}, "href": "/api/custom-fields/currency"},
+            {"id": "api-custom-fields-date", "name": {"en": "Date Custom Field"}, "href": "/api/custom-fields/date"},
+            {"id": "api-custom-fields-email", "name": {"en": "Email Custom Field"}, "href": "/api/custom-fields/email"},
+            {"id": "api-custom-fields-file", "name": {"en": "File Custom Field"}, "href": "/api/custom-fields/file"},
+            {"id": "api-custom-fields-formula", "name": {"en": "Formula Custom Field"}, "href": "/api/custom-fields/formula"},
+            {"id": "api-custom-fields-location", "name": {"en": "Location Custom Field"}, "href": "/api/custom-fields/location"},
+            {"id": "api-custom-fields-lookup", "name": {"en": "Lookup Custom Field"}, "href": "/api/custom-fields/lookup"},
+            {"id": "api-custom-fields-number", "name": {"en": "Number Custom Field"}, "href": "/api/custom-fields/number"},
+            {"id": "api-custom-fields-percent", "name": {"en": "Percent Custom Field"}, "href": "/api/custom-fields/percent"},
+            {"id": "api-custom-fields-phone", "name": {"en": "Phone Custom Field"}, "href": "/api/custom-fields/phone"},
+            {"id": "api-custom-fields-rating", "name": {"en": "Rating Custom Field"}, "href": "/api/custom-fields/rating"},
+            {"id": "api-custom-fields-reference", "name": {"en": "Reference Custom Field"}, "href": "/api/custom-fields/reference"},
+            {"id": "api-custom-fields-select-multi", "name": {"en": "Multi-Select Custom Field"}, "href": "/api/custom-fields/select-multi"},
+            {"id": "api-custom-fields-select-single", "name": {"en": "Single-Select Custom Field"}, "href": "/api/custom-fields/select-single"},
+            {"id": "api-custom-fields-text-multi", "name": {"en": "Multi-Line Text Custom Field"}, "href": "/api/custom-fields/text-multi"},
+            {"id": "api-custom-fields-text-single", "name": {"en": "Single-Line Text Custom Field"}, "href": "/api/custom-fields/text-single"},
+            {"id": "api-custom-fields-time-duration", "name": {"en": "Time Duration Custom Field"}, "href": "/api/custom-fields/time-duration"},
+            {"id": "api-custom-fields-unique-id", "name": {"en": "Unique ID Custom Field"}, "href": "/api/custom-fields/unique-id"},
+            {"id": "api-custom-fields-url", "name": {"en": "URL Custom Field"}, "href": "/api/custom-fields/url"}
+          ]
+        },
+        {
+          "id": "api-automations",
+          "name": {"en": "Automations"},
+          "expanded": false,
+          "children": [
+            {"id": "api-automations-index", "name": {"en": "List all Automations"}, "href": "/api/automations/index"}
+          ]
+        },
+        {
+          "id": "api-user-management",
+          "name": {"en": "User Management"},
+          "expanded": false,
+          "children": [
+            {"id": "api-user-management-index", "name": {"en": "Invite User"}, "href": "/api/user-management/index"},
+            {"id": "api-user-management-list-users", "name": {"en": "List Users"}, "href": "/api/user-management/list-users"},
+            {"id": "api-user-management-remove-user", "name": {"en": "Remove Users"}, "href": "/api/user-management/remove-user"},
+            {"id": "api-user-management-retrieve-custom-role", "name": {"en": "Custom Roles"}, "href": "/api/user-management/retrieve-custom-role"}
+          ]
+        },
+        {
+          "id": "api-company-management",
+          "name": {"en": "Company Management"},
+          "expanded": false,
+          "children": [
+            {"id": "api-company-management-index", "name": {"en": "Create a Company"}, "href": "/api/company-management/index"}
+          ]
+        },
+        {
+          "id": "api-dashboards",
+          "name": {"en": "Dashboards"},
+          "expanded": false,
+          "children": [
+            {"id": "api-dashboards-index", "name": {"en": "List Dashboards"}, "href": "/api/dashboards/index"},
+            {"id": "api-dashboards-clone-dashboard-copy", "name": {"en": "Clone Dashboard"}, "href": "/api/dashboards/-clone-dashboard-copy"},
+            {"id": "api-dashboards-rename-dashboard", "name": {"en": "Rename Dashboard"}, "href": "/api/dashboards/-rename-dashboard"}
+          ]
+        },
+        {
+          "id": "api-libraries",
+          "name": {"en": "Libraries"},
+          "expanded": false,
+          "children": [
+            {"id": "api-libraries-python", "name": {"en": "Python"}, "href": "/api/libraries/python"}
+          ]
+        },
+        {
+          "id": "api-error-codes",
+          "name": {"en": "Error Codes"},
+          "href": "/api/error-codes"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "name": {
+        "en": "Legal"
+      },
+      "expanded": false,
+      "children": [
+        {"id": "legal-index", "name": {"en": "Legal"}, "href": "/legal/index"},
+        {"id": "legal-terms", "name": {"en": "Terms & Conditions"}, "href": "/legal/terms"},
+        {"id": "legal-privacy", "name": {"en": "Privacy Policy"}, "href": "/legal/privacy"},
+        {"id": "legal-security", "name": {"en": "Security"}, "href": "/legal/security"},
+        {"id": "legal-gdpr", "name": {"en": "GDPR Compliance"}, "href": "/legal/gdpr"},
+        {"id": "legal-hipaa", "name": {"en": "HIPAA"}, "href": "/legal/hipaa"},
+        {"id": "legal-dpa", "name": {"en": "Data Processing Agreement"}, "href": "/legal/dpa"},
+        {"id": "legal-baa", "name": {"en": "Business Associate Agreement"}, "href": "/legal/baa"}
+      ]
     }
   ]
 }
