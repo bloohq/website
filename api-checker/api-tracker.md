@@ -14,23 +14,23 @@
 - [🔧] 3.making-requests.md - Fixed: Replaced hallucinated subscription with subscribeToActivity, added error examples
 - [✅] 4.GraphQL-playground.md - Verified accurate (auth covered in 2.authentication.md, introspection intentional)
 - [🔧] 5.capabilities.md - Enhanced: Added query depth limit info and bulk operations clarification
-- [🔄] 7.rate-limits.md
-- [ ] 8.upload-files.md
+- [🔧] 7.rate-limits.md - Fixed: Replaced misleading "no rate limits" with accurate table of 12 rate-limited operations
+- [🔧] 8.upload-files.md - Fixed: Updated REST API file size limit from 5GB to 4.8GB to match implementation
 
 ### Projects
-- [ ] 1.index.md
+- [🔧] 1.index.md - Fixed: Updated to use projectList query, added missing PERSONAL/PROCUREMENT categories, corrected error codes, fixed API links
 - [🔧] 2.create-project.md - Fixed: Removed hallucinated enum value, clarified coverConfig limitation, added response fields & error docs
 - [✅] 2.delete-project.md - Accurate documentation, only minor error message fix applied
-- [🔄] 2.list-projects.md
-- [ ] 3.archive-project.md
-- [ ] 3.project-activity.md
-- [ ] 3.rename-project.md
-- [ ] 4.copy-project.md
-- [ ] 5.lists.md
-- [ ] 11.templates.md
+- [🔧] 2.list-projects.md - Enhanced: Added complete Project fields table with types and additional available fields
+- [✅] 3.archive-project.md - Verified accurate, minor error message text fix applied
+- [🔧] 3.project-activity.md - Fixed: Replaced UI documentation with comprehensive API documentation based on actual implementation
+- [❌] 3.rename-project.md - Critical Issues: Hallucinated PROJECT_NAME_TOO_LONG error, no name length validation, name is optional not required
+- [🔄] 4.copy-project.md
+- [🔧] 5.lists.md - Enhanced: Fixed CLIENT role permissions and error message text
+- [🔄] 11.templates.md
 
 ### Records
-- [ ] 1.index.md
+- [🔧] 1.index.md - Enhanced: Fixed CLIENT role permissions clarification and error message text
 - [ ] 2.list-records.md
 - [ ] 3.toggle-record-status.md
 - [ ] 4.tags.md
