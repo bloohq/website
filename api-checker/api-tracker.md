@@ -53,18 +53,18 @@
 - [🔧] currency.md - Fixed: Removed non-existent projectId/isActive params, corrected permissions model, replaced hallucinated error codes with actual ones (75% accurate)
 - [🔧] date.md - Fixed: Corrected permission model (role-based not constants), clarified date values accessed via customField.value, fixed broken link, added query examples, corrected operators (IS/NOT instead of NULL/NOT_NULL)
 - [🔧] email.md - Fixed: Corrected error code (NOT_FOUND), clarified email values accessed via customField.value.text, fixed broken link, added query examples
-- [🔄] file.md
-- [🔄] formula.md
+- [🔧] file.md - Fixed: Corrected field types (id: ID!, size: Float!), fixed permissions from constants to role-based, updated broken API links, fixed error code
+- [🔧] formula.md - Complete rewrite: Clarified formulas are for CHART calculations only, not field-level. Fixed permissions, removed non-existent error codes, corrected all broken links
 - [ ] location.md
 - [🔧] lookup.md - Complete rewrite: Removed all hallucinated aggregation functions, fixed to show lookups as data extractors only (from 30% to 100% accurate)
 - [ ] number.md
 - [ ] percent.md
 - [🔧] phone.md - Fixed: Clarified validation only happens on createTodo, not setTodoCustomField; removed non-existent Forms API link
-- [ ] rating.md
-- [ ] reference.md
+- [🔄] rating.md
+- [🔄] reference.md
 - [ ] select-multi.md
-- [ ] select-single.md
-- [ ] text-multi.md
+- [🔄] select-single.md
+- [🔄] text-multi.md
 - [🔄] text-single.md
 - [🔧] time-duration.md - Fixed: Added missing timeDurationTargetTime field and DAYS/HOURS/MINUTES/SECONDS display formats
 - [✅] unique-id.md - Verified: 98% accurate, only fixed one broken link. All features documented correctly
@@ -97,5 +97,5 @@
 - Total Files: 73
 - Verified: 11
 - Issues Found: 0
-- Fixed: 38
+- Fixed: 40
 
