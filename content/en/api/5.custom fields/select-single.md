@@ -113,7 +113,31 @@ mutation SetSingleSelectValue {
 |-----------|------|----------|-------------|
 | `todoId` | String! | ✅ Yes | ID of the record to update |
 | `customFieldId` | String! | ✅ Yes | ID of the single-select custom field |
-| `customFieldOptionId` | String! | ✅ Yes | ID of the option to select |
+| `customFieldOptionId` | String | No | ID of the option to select (preferred for single-select) |
+| `customFieldOptionIds` | [String!] | No | Array of option IDs (uses first element for single-select) |
+
+## Querying Single-Select Values
+
+Query a record's single-select value:
+
+```graphql
+query GetRecordWithSingleSelect {
+  todo(id: "todo_123") {
+    id
+    title
+    customFields {
+      id
+      customField {
+        name
+        type
+      }
+      value  # For SELECT_SINGLE, contains: {"id": "opt_123", "title": "High", "color": "#dc3545", "position": 3}
+    }
+  }
+}
+```
+
+The `value` field returns a JSON object with the selected option's details.
 
 ## Creating Records with Single-Select Values
 
@@ -126,7 +150,7 @@ mutation CreateRecordWithSingleSelect {
     todoListId: "list_123"
     customFields: [{
       customFieldId: "priority_field_id"
-      value: "option_high_priority"
+      customFieldOptionId: "option_high_priority"
     }]
   }) {
     id
@@ -137,11 +161,7 @@ mutation CreateRecordWithSingleSelect {
         name
         type
       }
-      selectedOption {
-        id
-        title
-        color
-      }
+      value  # Contains the selected option object
     }
   }
 }
@@ -155,7 +175,7 @@ mutation CreateRecordWithSingleSelect {
 |-------|------|-------------|
 | `id` | String! | Unique identifier for the field value |
 | `customField` | CustomField! | The custom field definition |
-| `selectedOption` | CustomFieldOption | The currently selected option (null if none) |
+| `value` | JSON | Contains the selected option object with id, title, color, position |
 | `todo` | Todo! | The record this value belongs to |
 | `createdAt` | DateTime! | When the value was created |
 | `updatedAt` | DateTime! | When the value was last modified |
@@ -179,17 +199,16 @@ mutation CreateRecordWithSingleSelect {
 | `type` | CustomFieldType! | Always `SELECT_SINGLE` |
 | `description` | String | Help text for the field |
 | `customFieldOptions` | [CustomFieldOption!] | All available options |
-| `selectedOption` | CustomFieldOption | Current selection for this record |
 
 ## Value Format
 
 ### Input Format
-- **API Parameter**: Single option ID (`"option_123"`)
-- **String Format**: Single option ID (`"option_123"`)
-- **Multiple IDs**: If multiple IDs provided, only the first is used
+- **API Parameter**: Use `customFieldOptionId` for single option ID
+- **Alternative**: Use `customFieldOptionIds` array (takes first element)
+- **Clearing Selection**: Omit both fields or pass empty values
 
 ### Output Format
-- **GraphQL Response**: Single CustomFieldOption object
+- **GraphQL Response**: JSON object in `value` field containing {id, title, color, position}
 - **Activity Log**: Option title as string
 - **Automation Data**: Option title as string
 
@@ -261,10 +280,10 @@ mutation ReorderOptions {
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create single-select field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update single-select field | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| Add/edit options | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| Set selected value | Standard record edit permissions |
+| Create single-select field | Company role: `OWNER` or `ADMIN` |
+| Update single-select field | Company role: `OWNER` or `ADMIN` |
+| Add/edit options | Company role: `OWNER` or `ADMIN` |
+| Set selected value | Any company role (`OWNER`, `ADMIN`, `MEMBER`, `CLIENT`) or custom project role with edit permission |
 | View selected value | Standard record view permissions |
 
 ## Error Responses
@@ -273,9 +292,9 @@ mutation ReorderOptions {
 ```json
 {
   "errors": [{
-    "message": "Custom field option not found",
+    "message": "Custom field option was not found.",
     "extensions": {
-      "code": "NOT_FOUND"
+      "code": "CUSTOM_FIELD_OPTION_NOT_FOUND"
     }
   }]
 }
@@ -297,9 +316,21 @@ mutation ReorderOptions {
 ```json
 {
   "errors": [{
-    "message": "Custom field not found",
+    "message": "Custom field was not found.",
     "extensions": {
-      "code": "NOT_FOUND"
+      "code": "CUSTOM_FIELD_NOT_FOUND"
+    }
+  }]
+}
+```
+
+### Unable to Parse Value
+```json
+{
+  "errors": [{
+    "message": "Unable to parse custom field value.",
+    "extensions": {
+      "code": "CUSTOM_FIELD_VALUE_PARSE_ERROR"
     }
   }]
 }
@@ -385,7 +416,7 @@ Single-select field changes are automatically tracked:
 |---------|---------------|--------------|
 | **Selection Limit** | Exactly 1 option | Multiple options |
 | **Input Parameter** | `customFieldOptionId` | `customFieldOptionIds` |
-| **Response Field** | `selectedOption` | `selectedOptions` |
+| **Response Field** | `value` (single option object) | `value` (array of option objects) |
 | **Storage Behavior** | Replaces existing selection | Adds to existing selections |
 | **Common Use Cases** | Status, category, priority | Tags, skills, categories |
 
@@ -403,5 +434,4 @@ Single-select field changes are automatically tracked:
 - [Multi-Select Fields](/api/custom-fields/select-multi) - For multiple-choice selections
 - [Checkbox Fields](/api/custom-fields/checkbox) - For simple boolean choices
 - [Text Fields](/api/custom-fields/text-single) - For free-form text input
-- [Custom Fields Overview](/custom-fields/list-custom-fields) - General concepts
-- [Custom Field Options](/api/custom-fields/options) - Managing field options
+- [Custom Fields Overview](/api/custom-fields/1.index) - General concepts
