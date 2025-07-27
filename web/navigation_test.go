@@ -201,21 +201,9 @@ func TestGetNavigationForPath(t *testing.T) {
 		navigation: &Navigation{
 			Sections: []NavItem{
 				{ID: "platform", Name: "Platform", Href: "/platform"},
-			},
-		},
-		docsNavigation: &Navigation{
-			Sections: []NavItem{
-				{ID: "docs-intro", Name: "Introduction", Href: "/docs/intro"},
-			},
-		},
-		apiNavigation: &Navigation{
-			Sections: []NavItem{
-				{ID: "api-overview", Name: "Overview", Href: "/api/overview"},
-			},
-		},
-		legalNavigation: &Navigation{
-			Sections: []NavItem{
-				{ID: "legal-terms", Name: "Terms", Href: "/legal/terms"},
+				{ID: "documentation", Name: "Docs", Href: "/docs"},
+				{ID: "api-reference", Name: "API", Href: "/api"},
+				{ID: "legal", Name: "Legal", Href: "/legal"},
 			},
 		},
 	}
@@ -278,27 +266,35 @@ func TestGetNavigationForPath(t *testing.T) {
 func TestGetFirstItemInDirectory(t *testing.T) {
 	// Create navigation service with test data
 	navService := &NavigationService{
-		docsNavigation: &Navigation{
+		navigation: &Navigation{
 			Sections: []NavItem{
 				{
-					ID:   "getting-started",
-					Name: "Getting Started",
+					ID:   "documentation",
+					Name: "Docs",
 					Children: []NavItem{
-						{ID: "intro", Name: "Introduction", Href: "/docs/getting-started/intro"},
-						{ID: "setup", Name: "Setup", Href: "/docs/getting-started/setup"},
+						{
+							ID:   "getting-started",
+							Name: "Getting Started",
+							Children: []NavItem{
+								{ID: "intro", Name: "Introduction", Href: "/docs/getting-started/intro"},
+								{ID: "setup", Name: "Setup", Href: "/docs/getting-started/setup"},
+							},
+						},
+						{
+							ID:   "guides",
+							Name: "Guides",
+							Href: "/docs/guides",
+						},
 					},
 				},
 				{
-					ID:   "guides",
-					Name: "Guides",
-					Href: "/docs/guides",
+					ID:   "api-reference",
+					Name: "API",
+					Children: []NavItem{
+						{ID: "overview", Name: "Overview", Href: "/api/overview"},
+						{ID: "auth", Name: "Authentication", Href: "/api/auth"},
+					},
 				},
-			},
-		},
-		apiNavigation: &Navigation{
-			Sections: []NavItem{
-				{ID: "overview", Name: "Overview", Href: "/api/overview"},
-				{ID: "auth", Name: "Authentication", Href: "/api/auth"},
 			},
 		},
 	}
@@ -482,6 +478,9 @@ func TestNavigationServiceIntegration(t *testing.T) {
 	navData := &Navigation{
 		Sections: []NavItem{
 			{ID: "home", Name: "Home", Href: "/"},
+			{ID: "documentation", Name: "Docs", Href: "/docs"},
+			{ID: "api-reference", Name: "API", Href: "/api"},
+			{ID: "legal", Name: "Legal", Href: "/legal"},
 		},
 	}
 	navJSON, _ := json.Marshal(navData)
@@ -493,10 +492,7 @@ func TestNavigationServiceIntegration(t *testing.T) {
 		os.MkdirAll(dir, 0755)
 
 		// Add a test file
-		testMd := `---
-title: ` + contentType + ` Test
----
-# Test`
+		testMd := `---\ntitle: ` + contentType + ` Test\n---\n# Test`
 		os.WriteFile(filepath.Join(dir, "test.md"), []byte(testMd), 0644)
 	}
 
@@ -509,21 +505,9 @@ title: ` + contentType + ` Test
 	seoService := NewSEOService()
 	navService := NewNavigationService(seoService)
 
-	// Verify all navigations are loaded
+	// Verify navigation is loaded
 	if navService.navigation == nil {
-		t.Error("Static navigation not loaded")
-	}
-
-	if navService.docsNavigation == nil {
-		t.Error("Docs navigation not generated")
-	}
-
-	if navService.apiNavigation == nil {
-		t.Error("API navigation not generated")
-	}
-
-	if navService.legalNavigation == nil {
-		t.Error("Legal navigation not generated")
+		t.Error("Navigation not loaded")
 	}
 
 	// Test combined navigation
