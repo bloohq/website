@@ -1,6 +1,6 @@
 # Verification for: 4.copy-project.md
 Path: /content/en/api/2.projects/4.copy-project.md
-Status: [✓] In Progress / [ ] Completed
+Status: [ ] In Progress / [✓] Completed - MAJOR FIXES APPLIED
 
 **MAJOR DISCREPANCIES FOUND:**
 - CopyProjectStatus response schema is completely wrong

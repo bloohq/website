@@ -24,21 +24,21 @@
 - [🔧] 2.list-projects.md - Enhanced: Added complete Project fields table with types and additional available fields
 - [✅] 3.archive-project.md - Verified accurate, minor error message text fix applied
 - [🔧] 3.project-activity.md - Fixed: Replaced UI documentation with comprehensive API documentation based on actual implementation
-- [❌] 3.rename-project.md - Critical Issues: Hallucinated PROJECT_NAME_TOO_LONG error, no name length validation, name is optional not required
-- [🔄] 4.copy-project.md
+- [🔧] 3.rename-project.md - Fixed: Removed hallucinated PROJECT_NAME_TOO_LONG error, updated name to optional, added comprehensive EditProjectInput fields
+- [🔧] 4.copy-project.md - Fixed: Wrong copyProjectStatus schema, added missing coverConfig option, corrected dependency claims
 - [🔧] 5.lists.md - Enhanced: Fixed CLIENT role permissions and error message text
-- [🔄] 11.templates.md
+- [✅] 11.templates.md
 
 ### Records
 - [🔧] 1.index.md - Enhanced: Fixed CLIENT role permissions clarification and error message text
-- [ ] 2.list-records.md
-- [ ] 3.toggle-record-status.md
-- [ ] 4.tags.md
-- [ ] 5.move-record-list.md
-- [ ] 6.assignees.md
-- [ ] 7.update-record.md
-- [ ] 8.copy-record.md
-- [ ] 9.add-comment.md
+- [✅] 2.list-records.md - Verified comprehensive implementation with enhanced performance notes
+- [🔧] 3.toggle-record-status.md - Fixed: Corrected error messages, updated side effects list, removed archived project claim, fixed related endpoint references
+- [🔧] 4.tags.md - Enhanced: Complete rewrite with full CRUD operations, advanced filtering, AI suggestions, and comprehensive documentation
+- [🔧] 5.move-record-list.md - Complete rewrite: From 20 lines to 170+ comprehensive documentation with all implementation details
+- [✅] 6.assignees.md - Verified: Complete rewrite from 20 lines to comprehensive API documentation with 3 operations, permissions, business logic - NO HALLUCINATIONS FOUND
+- [✅] 7.update-record.md - Verified comprehensive implementation with enhanced permissions and return value documentation
+- [🔄] 8.copy-record.md
+- [🔄] 9.add-comment.md
 
 ### Custom Fields
 - [ ] 1.index.md
