@@ -4,11 +4,11 @@ description: Create calculated fields that automatically compute values based on
 category: Custom Fields
 ---
 
-Formula custom fields automatically calculate values based on other custom fields, todo properties, and data from your project. They update automatically when source data changes and support various display formats including numbers, currency, and percentages.
+Formula custom fields are used for chart and dashboard calculations within Blue. They define aggregation functions (SUM, AVERAGE, COUNT, etc.) that operate on custom field data to display calculated metrics in charts. Formulas are not calculated at the individual todo level but rather aggregate data across multiple records for visualization purposes.
 
 ## Basic Example
 
-Create a simple formula field:
+Create a formula field for chart calculations:
 
 ```graphql
 mutation CreateFormulaField {
@@ -24,6 +24,7 @@ mutation CreateFormulaField {
       display: {
         type: NUMBER
         precision: 2
+        function: SUM
       }
     }
   }) {
@@ -77,7 +78,8 @@ mutation CreateCurrencyFormula {
 |-----------|------|----------|-------------|
 | `name` | String! | ✅ Yes | Display name of the formula field |
 | `type` | CustomFieldType! | ✅ Yes | Must be `FORMULA` |
-| `formula` | JSON! | ✅ Yes | Formula definition (see below) |
+| `projectId` | String! | ✅ Yes | The project ID where this field will be created |
+| `formula` | JSON | No | Formula definition for chart calculations |
 | `description` | String | No | Help text shown to users |
 
 ### Formula Structure
@@ -85,17 +87,17 @@ mutation CreateCurrencyFormula {
 ```json
 {
   "logic": {
-    "text": "Plain text formula",
-    "html": "HTML formatted formula"
+    "text": "Display text for the formula",
+    "html": "HTML formatted display text"
   },
   "display": {
     "type": "NUMBER|CURRENCY|PERCENTAGE",
     "currency": {
       "code": "USD",
-      "name": "US Dollar"
+      "name": "US Dollar"  
     },
     "precision": 2,
-    "function": "SUM|AVERAGE|COUNT|MAX|MIN"
+    "function": "SUM|AVERAGE|AVERAGEA|COUNT|COUNTA|MAX|MIN"
   }
 }
 ```

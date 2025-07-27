@@ -11,12 +11,14 @@ URL custom fields allow you to store website addresses and links in your records
 Create a simple URL field:
 
 ```graphql
-mutation CreateUrlField {
-  createCustomField(input: {
-    name: "Project Website"
-    type: URL
-    projectId: "proj_123"
-  }) {
+mutation CreateUrlField($projectId: String!) {
+  createCustomField(
+    projectId: $projectId
+    input: {
+      name: "Project Website"
+      type: URL
+    }
+  ) {
     id
     name
     type
@@ -29,13 +31,15 @@ mutation CreateUrlField {
 Create a URL field with description:
 
 ```graphql
-mutation CreateDetailedUrlField {
-  createCustomField(input: {
-    name: "Reference Link"
-    type: URL
-    projectId: "proj_123"
-    description: "Link to external documentation or resources"
-  }) {
+mutation CreateDetailedUrlField($projectId: String!) {
+  createCustomField(
+    projectId: $projectId
+    input: {
+      name: "Reference Link"
+      type: URL
+      description: "Link to external documentation or resources"
+    }
+  ) {
     id
     name
     type
@@ -53,6 +57,8 @@ mutation CreateDetailedUrlField {
 | `name` | String! | ✅ Yes | Display name of the URL field |
 | `type` | CustomFieldType! | ✅ Yes | Must be `URL` |
 | `description` | String | No | Help text shown to users |
+
+**Note:** The `projectId` is passed as a separate argument to the mutation, not as part of the input object.
 
 ## Setting URL Values
 
@@ -165,12 +171,16 @@ https://docs.example.com/api/v1
 
 ## Required Permissions
 
-| Action | Required Permission |
+Custom field operations use role-based permissions:
+
+| Action | Required Role |
 |--------|-------------------|
-| Create URL field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update URL field | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| Set URL value | Standard record edit permissions |
-| View URL value | Standard record view permissions |
+| Create URL field | `OWNER` or `ADMIN` role in the project |
+| Update URL field | `OWNER` or `ADMIN` role in the project |
+| Set URL value | User must have edit permissions for the record |
+| View URL value | User must have view permissions for the record |
+
+**Note:** Permissions are checked based on user roles in the project, not specific permission constants.
 
 ## Error Responses
 
@@ -334,8 +344,7 @@ query SearchUrls {
 
 - [Text Fields](/api/custom-fields/text-single) - For non-URL text data
 - [Email Fields](/api/custom-fields/email) - For email addresses
-- [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General concepts
-- [Forms API](/api/forms) - For URL input validation
+- [Custom Fields Overview](/api/custom-fields/2.list-custom-fields) - General concepts
 
 ## Migration from Text Fields
 

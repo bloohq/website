@@ -355,5 +355,5 @@ mutation SetUniqueIdValue {
 
 - [Text Fields](/api/custom-fields/text-single) - For manual text identifiers
 - [Number Fields](/api/custom-fields/number) - For numeric sequences
-- [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General concepts
+- [Custom Fields Overview](/api/custom-fields/2.list-custom-fields) - General concepts
 - [Automations](/api/automations) - For ID-based automation rules

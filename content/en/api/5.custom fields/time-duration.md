@@ -44,7 +44,7 @@ mutation CreateTimeDurationField {
 
 ## Advanced Example
 
-Create a complex time duration field that tracks time between custom field changes:
+Create a complex time duration field that tracks time between custom field changes with an SLA target:
 
 ```graphql
 mutation CreateAdvancedTimeDurationField {
@@ -54,6 +54,7 @@ mutation CreateAdvancedTimeDurationField {
     projectId: "proj_123"
     description: "Time from review request to approval"
     timeDurationDisplay: FULL_DATE_STRING
+    timeDurationTargetTime: 86400  # 24 hour SLA target
     timeDurationStartInput: {
       type: TODO_CUSTOM_FIELD
       condition: FIRST
@@ -102,6 +103,7 @@ mutation CreateAdvancedTimeDurationField {
 | `timeDurationDisplay` | CustomFieldTimeDurationDisplayType! | ✅ Yes | How to display the duration |
 | `timeDurationStartInput` | CustomFieldTimeDurationInput! | ✅ Yes | Start event configuration |
 | `timeDurationEndInput` | CustomFieldTimeDurationInput! | ✅ Yes | End event configuration |
+| `timeDurationTargetTime` | Float | No | Target duration in seconds for SLA monitoring |
 
 ### CustomFieldTimeDurationInput
 
@@ -141,6 +143,10 @@ mutation CreateAdvancedTimeDurationField {
 | `FULL_DATE` | Days:Hours:Minutes:Seconds format | `"01:02:03:04"` |
 | `FULL_DATE_STRING` | Written out in full words | `"Two hours, two minutes, three seconds"` |
 | `FULL_DATE_SUBSTRING` | Numeric with units | `"1 hour, 2 minutes, 3 seconds"` |
+| `DAYS` | Duration in days only | `"2.5"` (2.5 days) |
+| `HOURS` | Duration in hours only | `"60"` (60 hours) |
+| `MINUTES` | Duration in minutes only | `"3600"` (3600 minutes) |
+| `SECONDS` | Duration in seconds only | `"216000"` (216000 seconds) |
 
 ## Response Fields
 
@@ -163,6 +169,7 @@ mutation CreateAdvancedTimeDurationField {
 | `timeDurationDisplay` | CustomFieldTimeDurationDisplayType | Display format for the duration |
 | `timeDurationStart` | CustomFieldTimeDuration | Start event configuration |
 | `timeDurationEnd` | CustomFieldTimeDuration | End event configuration |
+| `timeDurationTargetTime` | Float | Target duration in seconds (for SLA monitoring) |
 
 ## Duration Calculation
 
@@ -216,6 +223,18 @@ Duration values are automatically formatted based on the `timeDurationDisplay` s
 
 // FULL_DATE_SUBSTRING format
 3723 seconds → "1 hour, 2 minutes, 3 seconds"
+
+// DAYS format
+216000 seconds → "2.5" (2.5 days)
+
+// HOURS format
+7200 seconds → "2" (2 hours)
+
+// MINUTES format
+180 seconds → "3" (3 minutes)
+
+// SECONDS format
+3661 seconds → "3661" (raw seconds)
 ```
 
 ## Common Configuration Examples
@@ -356,7 +375,15 @@ Duration fields will show `null` when:
 - Use `FULL_DATE_SUBSTRING` for most readable format
 - Use `FULL_DATE` for compact, consistent width display
 - Use `FULL_DATE_STRING` for formal reports and documents
+- Use `DAYS`, `HOURS`, `MINUTES`, or `SECONDS` for simple numeric displays
 - Consider your UI space constraints when choosing format
+
+### SLA Monitoring with Target Time
+When using `timeDurationTargetTime`:
+- Set the target duration in seconds
+- Compare actual duration against target for SLA compliance
+- Use in dashboards to highlight overdue items
+- Example: 24-hour response SLA = 86400 seconds
 
 ### Workflow Integration
 - Design duration fields to match your actual business processes

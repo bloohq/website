@@ -62,7 +62,12 @@ mutation SetEmailValue {
     todoId: "todo_123"
     customFieldId: "field_456"
     text: "john.doe@example.com"
-  })
+  }) {
+    id
+    customField {
+      value  # Returns { text: "john.doe@example.com" }
+    }
+  }
 }
 ```
 
@@ -92,9 +97,11 @@ mutation CreateRecordWithEmail {
     title
     customFields {
       id
-      name
-      type
-      text
+      customField {
+        name
+        type
+        value  # Email is accessed here as { text: "client@company.com" }
+      }
     }
   }
 }
@@ -106,13 +113,56 @@ mutation CreateRecordWithEmail {
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | String! | Unique identifier for the custom field |
+| `id` | ID! | Unique identifier for the custom field |
 | `name` | String! | Display name of the email field |
 | `type` | CustomFieldType! | The field type (EMAIL) |
 | `description` | String | Help text for the field |
-| `text` | String | The stored email address value |
+| `value` | JSON | Contains the email value (see below) |
 | `createdAt` | DateTime! | When the field was created |
 | `updatedAt` | DateTime! | When the field was last modified |
+
+**Important**: Email values are accessed through the `customField.value.text` field, not directly on the response.
+
+## Querying Email Values
+
+When querying records with email custom fields, access the email through the `customField.value.text` path:
+
+```graphql
+query GetRecordWithEmail {
+  todo(id: "todo_123") {
+    id
+    title
+    customFields {
+      id
+      customField {
+        name
+        type
+        value  # For EMAIL type, contains { text: "email@example.com" }
+      }
+    }
+  }
+}
+```
+
+The response will include the email in the nested structure:
+
+```json
+{
+  "data": {
+    "todo": {
+      "customFields": [{
+        "customField": {
+          "name": "Contact Email",
+          "type": "EMAIL",
+          "value": {
+            "text": "john.doe@example.com"
+          }
+        }
+      }]
+    }
+  }
+}
+```
 
 ## Email Validation
 
@@ -194,7 +244,7 @@ user name@domain.com # Spaces not allowed
   "errors": [{
     "message": "Custom field not found",
     "extensions": {
-      "code": "CUSTOM_FIELD_NOT_FOUND"
+      "code": "NOT_FOUND"
     }
   }]
 }
@@ -274,5 +324,4 @@ user name@domain.com # Spaces not allowed
 - [Text Fields](/api/custom-fields/text-single) - For non-email text data
 - [URL Fields](/api/custom-fields/url) - For website addresses
 - [Phone Fields](/api/custom-fields/phone) - For phone numbers
-- [Custom Fields Overview](/custom-fields/list-custom-fields) - General concepts
-- [Forms API](/api/forms) - For validated email input
+- [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General concepts

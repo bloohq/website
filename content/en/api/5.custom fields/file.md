@@ -211,13 +211,13 @@ mutation SetMultipleFiles {
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | String! | Database ID |
+| `id` | ID! | Database ID |
 | `uid` | String! | Unique file identifier |
 | `name` | String! | Original filename |
-| `size` | Int! | File size in bytes |
+| `size` | Float! | File size in bytes |
 | `type` | String! | MIME type |
 | `extension` | String! | File extension |
-| `status` | FileStatus! | PENDING or CONFIRMED |
+| `status` | FileStatus | PENDING or CONFIRMED (nullable) |
 | `shared` | Boolean! | Whether file is shared |
 | `createdAt` | DateTime! | Upload timestamp |
 
@@ -225,7 +225,7 @@ mutation SetMultipleFiles {
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | String! | Junction record ID |
+| `id` | ID! | Junction record ID |
 | `uid` | String! | Unique identifier |
 | `position` | Float! | Display order |
 | `file` | File! | Associated file object |
@@ -289,8 +289,8 @@ mutation CreateRecordWithFiles {
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create file field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update file field | `CUSTOM_FIELDS_UPDATE` at company or project level |
+| Create file field | `OWNER` or `ADMIN` project-level role |
+| Update file field | `OWNER` or `ADMIN` project-level role |
 | Upload files | Project or company membership |
 | Attach files | ADMIN, OWNER, MEMBER, or CLIENT role |
 | View files | Standard record view permissions |
@@ -328,7 +328,7 @@ mutation CreateRecordWithFiles {
   "errors": [{
     "message": "Custom field not found",
     "extensions": {
-      "code": "NOT_FOUND"
+      "code": "CUSTOM_FIELD_NOT_FOUND"
     }
   }]
 }
@@ -410,7 +410,7 @@ mutation CreateRecordWithFiles {
 
 ## Related Resources
 
-- [Upload Files API](/api/files/upload) - File upload endpoints
-- [Custom Fields Overview](/custom-fields/list-custom-fields) - General concepts
-- [Automations API](/api/automations/index) - File-based automations
+- [Upload Files API](/api/upload-files) - File upload endpoints
+- [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General concepts
+- [Automations API](/api/automations) - File-based automations
 - [AWS S3 Documentation](https://docs.aws.amazon.com/s3/) - Storage backend
