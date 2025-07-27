@@ -52,6 +52,8 @@ mutation CreateDetailedTextSingleField {
 | `type` | CustomFieldType! | ✅ Yes | Must be `TEXT_SINGLE` |
 | `description` | String | No | Help text shown to users |
 
+**Note**: Project context is automatically determined from your authentication headers. No `projectId` parameter is needed.
+
 ## Setting Text Values
 
 To set or update a single-line text value on a record:
@@ -121,6 +123,47 @@ mutation CreateRecordWithTextSingle {
 
 **Important**: Text values are accessed through the `customField.value.text` field, not directly on TodoCustomField.
 
+## Querying Text Values
+
+When querying records with text custom fields, access the text through the `customField.value.text` path:
+
+```graphql
+query GetRecordWithText {
+  todo(id: "todo_123") {
+    id
+    title
+    customFields {
+      id
+      customField {
+        name
+        type
+        value  # For TEXT_SINGLE type, contains { text: "your text value" }
+      }
+    }
+  }
+}
+```
+
+The response will include the text in the nested structure:
+
+```json
+{
+  "data": {
+    "todo": {
+      "customFields": [{
+        "customField": {
+          "name": "Product SKU",
+          "type": "TEXT_SINGLE",
+          "value": {
+            "text": "ABC-123-XYZ"
+          }
+        }
+      }]
+    }
+  }
+}
+```
+
 ## Text Validation
 
 ### Form Validation
@@ -169,8 +212,8 @@ Status: Active
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create text field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update text field | `CUSTOM_FIELDS_UPDATE` at company or project level |
+| Create text field | `OWNER` or `ADMIN` role at project level |
+| Update text field | `OWNER` or `ADMIN` role at project level |
 | Set text value | Standard record edit permissions |
 | View text value | Standard record view permissions |
 
@@ -237,7 +280,9 @@ query SearchTextSingle {
     id
     title
     customFields {
-      text
+      customField {
+        value  # Access text via value.text
+      }
     }
   }
 }
@@ -318,4 +363,3 @@ query SearchTextSingle {
 - [URL Fields](/api/custom-fields/url) - For website addresses
 - [Unique ID Fields](/api/custom-fields/unique-id) - For auto-generated identifiers
 - [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General concepts
-- [Forms API](/api/forms) - For validated text input
