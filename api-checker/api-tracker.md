@@ -85,9 +85,9 @@
 ### Dashboards
 - [🔧] 1.index.md - Complete rewrite: From 20 lines to 247 lines. Added pagination structure, filtering options, sorting, permissions, error handling, and comprehensive examples
 - [🔧] 2. Clone Dashboard copy.md - Complete rewrite: From 22 lines to 200+ comprehensive documentation. Added parameters, permissions, error handling, use cases, and deep copy behavior explanation
-- [ ] 3. Rename Dashboard.md
+- [🔧] 3. Rename Dashboard.md - Complete rewrite: From 22 lines to 172 lines. Added permissions, complete input/response docs, user management, error handling
 - [✅] 4.delete-dashboard.md - Created comprehensive documentation for deleteDashboard mutation
-- [ ] create-dashboard.md - TODO: Create documentation for createDashboard mutation (exists in API)
+- [✅] create-dashboard.md - Created comprehensive documentation: 217 lines covering all parameters, permissions, workflow, and use cases
 - [ ] edit-dashboard.md - TODO: Create documentation for editDashboard mutation (exists in API)
 
 ### Libraries
