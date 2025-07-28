@@ -1,11 +1,24 @@
 // Global status functionality for both full status page and API page
 window.StatusUtils = {
+    // Get translations for current language
+    getTranslations() {
+        return window.blueData?.translations?.status || {};
+    },
+    
+    // Get current language
+    getCurrentLang() {
+        return window.blueData?.lang || 'en';
+    },
     // Factory function for full status page (multiple services)
     createStatusPageData() {
         return {
             services: [],
             loading: true,
             error: null,
+            get translations() {
+                // Get fresh translations each time to handle SPA updates
+                return StatusUtils.getTranslations();
+            },
             
             async loadData() {
                 try {
@@ -45,7 +58,13 @@ window.StatusUtils = {
             formatTooltip: StatusUtils.formatTooltip,
             getStatusColor: StatusUtils.getStatusColor,
             getStatusDotColor: StatusUtils.getStatusDotColor,
-            getPulseColor: StatusUtils.getPulseColor
+            getPulseColor: StatusUtils.getPulseColor,
+            formatUptimePercentage: StatusUtils.formatUptimePercentage,
+            getLoadingMessage: () => StatusUtils.getTranslations().loading || 'Loading status data...',
+            getErrorMessage: (error) => {
+                const template = StatusUtils.getTranslations().error || 'Error loading status data: {{error}}';
+                return template.replace('{{error}}', error);
+            }
         }
     },
 
@@ -55,6 +74,10 @@ window.StatusUtils = {
             apiService: null,
             loading: true,
             error: null,
+            get translations() {
+                // Get fresh translations each time to handle SPA updates
+                return StatusUtils.getTranslations();
+            },
             
             async loadData() {
                 try {
@@ -101,27 +124,55 @@ window.StatusUtils = {
             formatTooltip: StatusUtils.formatTooltip,
             getStatusColor: StatusUtils.getStatusColor,
             getStatusDotColor: StatusUtils.getStatusDotColor,
-            getPulseColor: StatusUtils.getPulseColor
+            getPulseColor: StatusUtils.getPulseColor,
+            formatUptimePercentage: StatusUtils.formatUptimePercentage,
+            getLoadingMessage: () => StatusUtils.getTranslations().loading || 'Loading status data...',
+            getErrorMessage: (error) => {
+                const template = StatusUtils.getTranslations().error || 'Error loading status data: {{error}}';
+                return template.replace('{{error}}', error);
+            }
         }
     },
 
     // Shared utility functions
     formatTooltip(day) {
         const date = new Date(day.date);
-        const options = { 
+        const translations = StatusUtils.getTranslations();
+        const lang = StatusUtils.getCurrentLang();
+        
+        // Get date format options from translations or use defaults
+        const dateFormat = translations.dateFormat || { 
             weekday: 'short', 
             year: 'numeric', 
             month: 'long', 
             day: 'numeric' 
         };
-        const formattedDate = date.toLocaleDateString('en-US', options);
         
-        let statusText = 'Operational';
-        if (day.status === 'degraded') {
-            statusText = 'Degraded Performance';
-        } else if (day.status === 'outage') {
-            statusText = 'Major Outage';
-        }
+        // Map language codes to locales
+        const localeMap = {
+            'en': 'en-US',
+            'es': 'es-ES',
+            'fr': 'fr-FR',
+            'de': 'de-DE',
+            'pt': 'pt-BR',
+            'it': 'it-IT',
+            'ja': 'ja-JP',
+            'ko': 'ko-KR',
+            'zh': 'zh-CN',
+            'zh-TW': 'zh-TW',
+            'ru': 'ru-RU',
+            'nl': 'nl-NL',
+            'pl': 'pl-PL',
+            'sv': 'sv-SE',
+            'id': 'id-ID',
+            'km': 'km-KH'
+        };
+        
+        const locale = localeMap[lang] || 'en-US';
+        const formattedDate = date.toLocaleDateString(locale, dateFormat);
+        
+        // Translate status text
+        const statusText = translations.statuses?.[day.status] || day.status;
         
         return `${formattedDate}<br>${statusText} (${day.uptime.toFixed(1)}%)`;
     },
@@ -163,5 +214,11 @@ window.StatusUtils = {
             default:
                 return 'bg-gray-400';
         }
+    },
+    
+    formatUptimePercentage(uptime) {
+        const translations = StatusUtils.getTranslations();
+        const template = translations.uptimePercentage || '{{uptime}}% uptime';
+        return template.replace('{{uptime}}', uptime.toFixed(2));
     }
 };

@@ -1,0 +1,642 @@
+{
+  "en": {
+    "title": "System Status",
+    "subtitle": "Real-time monitoring of Blue's infrastructure and services.",
+    "history": "90-Day History",
+    "legend": {
+      "operational": "Operational",
+      "degraded": "Degraded Performance",
+      "outage": "Major Outage"
+    },
+    "uptime": {
+      "operational": "≥ 99% uptime",
+      "degraded": "≥ 95% uptime",
+      "outage": "< 95% uptime"
+    },
+    "uptimePercentage": "{{uptime}}% uptime",
+    "loading": "Loading status data...",
+    "error": "Error loading status data: {{error}}",
+    "statuses": {
+      "operational": "Operational",
+      "degraded": "Degraded Performance",
+      "outage": "Major Outage",
+      "up": "Up",
+      "down": "Down",
+      "unknown": "Unknown"
+    },
+    "time": {
+      "lessThanMinute": "Less than a minute ago",
+      "minute": "1 minute ago",
+      "minutes": "{{count}} minutes ago",
+      "hour": "1 hour ago",
+      "hours": "{{count}} hours ago",
+      "moreThanDay": "More than a day ago"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "es": {
+    "title": "Estado del Sistema",
+    "subtitle": "Monitoreo en tiempo real de la infraestructura y servicios de Blue.",
+    "history": "Historial de 90 Días",
+    "legend": {
+      "operational": "Operativo",
+      "degraded": "Rendimiento Degradado",
+      "outage": "Interrupción Mayor"
+    },
+    "uptime": {
+      "operational": "≥ 99% disponibilidad",
+      "degraded": "≥ 95% disponibilidad",
+      "outage": "< 95% disponibilidad"
+    },
+    "uptimePercentage": "{{uptime}}% disponibilidad",
+    "loading": "Cargando datos de estado...",
+    "error": "Error al cargar datos de estado: {{error}}",
+    "statuses": {
+      "operational": "Operativo",
+      "degraded": "Rendimiento Degradado",
+      "outage": "Interrupción Mayor",
+      "up": "Activo",
+      "down": "Inactivo",
+      "unknown": "Desconocido"
+    },
+    "time": {
+      "lessThanMinute": "Hace menos de un minuto",
+      "minute": "Hace 1 minuto",
+      "minutes": "Hace {{count}} minutos",
+      "hour": "Hace 1 hora",
+      "hours": "Hace {{count}} horas",
+      "moreThanDay": "Hace más de un día"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "fr": {
+    "title": "État du Système",
+    "subtitle": "Surveillance en temps réel de l'infrastructure et des services de Blue.",
+    "history": "Historique de 90 Jours",
+    "legend": {
+      "operational": "Opérationnel",
+      "degraded": "Performance Dégradée",
+      "outage": "Panne Majeure"
+    },
+    "uptime": {
+      "operational": "≥ 99% de disponibilité",
+      "degraded": "≥ 95% de disponibilité",
+      "outage": "< 95% de disponibilité"
+    },
+    "uptimePercentage": "{{uptime}}% de disponibilité",
+    "loading": "Chargement des données d'état...",
+    "error": "Erreur lors du chargement des données d'état : {{error}}",
+    "statuses": {
+      "operational": "Opérationnel",
+      "degraded": "Performance Dégradée",
+      "outage": "Panne Majeure",
+      "up": "Actif",
+      "down": "Inactif",
+      "unknown": "Inconnu"
+    },
+    "time": {
+      "lessThanMinute": "Il y a moins d'une minute",
+      "minute": "Il y a 1 minute",
+      "minutes": "Il y a {{count}} minutes",
+      "hour": "Il y a 1 heure",
+      "hours": "Il y a {{count}} heures",
+      "moreThanDay": "Il y a plus d'un jour"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "de": {
+    "title": "Systemstatus",
+    "subtitle": "Echtzeitüberwachung der Infrastruktur und Dienste von Blue.",
+    "history": "90-Tage-Verlauf",
+    "legend": {
+      "operational": "Betriebsbereit",
+      "degraded": "Beeinträchtigte Leistung",
+      "outage": "Größerer Ausfall"
+    },
+    "uptime": {
+      "operational": "≥ 99% Verfügbarkeit",
+      "degraded": "≥ 95% Verfügbarkeit",
+      "outage": "< 95% Verfügbarkeit"
+    },
+    "uptimePercentage": "{{uptime}}% Verfügbarkeit",
+    "loading": "Statusdaten werden geladen...",
+    "error": "Fehler beim Laden der Statusdaten: {{error}}",
+    "statuses": {
+      "operational": "Betriebsbereit",
+      "degraded": "Beeinträchtigte Leistung",
+      "outage": "Größerer Ausfall",
+      "up": "Aktiv",
+      "down": "Inaktiv",
+      "unknown": "Unbekannt"
+    },
+    "time": {
+      "lessThanMinute": "Vor weniger als einer Minute",
+      "minute": "Vor 1 Minute",
+      "minutes": "Vor {{count}} Minuten",
+      "hour": "Vor 1 Stunde",
+      "hours": "Vor {{count}} Stunden",
+      "moreThanDay": "Vor mehr als einem Tag"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "ja": {
+    "title": "システムステータス",
+    "subtitle": "Blueのインフラストラクチャとサービスのリアルタイム監視。",
+    "history": "90日間の履歴",
+    "legend": {
+      "operational": "稼働中",
+      "degraded": "パフォーマンス低下",
+      "outage": "大規模障害"
+    },
+    "uptime": {
+      "operational": "≥ 99% 稼働率",
+      "degraded": "≥ 95% 稼働率",
+      "outage": "< 95% 稼働率"
+    },
+    "uptimePercentage": "{{uptime}}% 稼働率",
+    "loading": "ステータスデータを読み込み中...",
+    "error": "ステータスデータの読み込みエラー: {{error}}",
+    "statuses": {
+      "operational": "稼働中",
+      "degraded": "パフォーマンス低下",
+      "outage": "大規模障害",
+      "up": "稼働",
+      "down": "停止",
+      "unknown": "不明"
+    },
+    "time": {
+      "lessThanMinute": "1分未満前",
+      "minute": "1分前",
+      "minutes": "{{count}}分前",
+      "hour": "1時間前",
+      "hours": "{{count}}時間前",
+      "moreThanDay": "1日以上前"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "pt": {
+    "title": "Status do Sistema",
+    "subtitle": "Monitoramento em tempo real da infraestrutura e serviços da Blue.",
+    "history": "Histórico de 90 Dias",
+    "legend": {
+      "operational": "Operacional",
+      "degraded": "Desempenho Degradado",
+      "outage": "Interrupção Maior"
+    },
+    "uptime": {
+      "operational": "≥ 99% de disponibilidade",
+      "degraded": "≥ 95% de disponibilidade",
+      "outage": "< 95% de disponibilidade"
+    },
+    "uptimePercentage": "{{uptime}}% de disponibilidade",
+    "loading": "Carregando dados de status...",
+    "error": "Erro ao carregar dados de status: {{error}}",
+    "statuses": {
+      "operational": "Operacional",
+      "degraded": "Desempenho Degradado",
+      "outage": "Interrupção Maior",
+      "up": "Ativo",
+      "down": "Inativo",
+      "unknown": "Desconhecido"
+    },
+    "time": {
+      "lessThanMinute": "Há menos de um minuto",
+      "minute": "Há 1 minuto",
+      "minutes": "Há {{count}} minutos",
+      "hour": "Há 1 hora",
+      "hours": "Há {{count}} horas",
+      "moreThanDay": "Há mais de um dia"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "ru": {
+    "title": "Статус системы",
+    "subtitle": "Мониторинг инфраструктуры и сервисов Blue в реальном времени.",
+    "history": "История за 90 дней",
+    "legend": {
+      "operational": "Работает",
+      "degraded": "Снижение производительности",
+      "outage": "Серьезный сбой"
+    },
+    "uptime": {
+      "operational": "≥ 99% времени работы",
+      "degraded": "≥ 95% времени работы",
+      "outage": "< 95% времени работы"
+    },
+    "uptimePercentage": "{{uptime}}% времени работы",
+    "loading": "Загрузка данных о статусе...",
+    "error": "Ошибка при загрузке данных о статусе: {{error}}",
+    "statuses": {
+      "operational": "Работает",
+      "degraded": "Снижение производительности",
+      "outage": "Серьезный сбой",
+      "up": "Работает",
+      "down": "Не работает",
+      "unknown": "Неизвестно"
+    },
+    "time": {
+      "lessThanMinute": "Менее минуты назад",
+      "minute": "1 минуту назад",
+      "minutes": "{{count}} минут назад",
+      "hour": "1 час назад",
+      "hours": "{{count}} часов назад",
+      "moreThanDay": "Более дня назад"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "ko": {
+    "title": "시스템 상태",
+    "subtitle": "Blue의 인프라 및 서비스 실시간 모니터링.",
+    "history": "90일 기록",
+    "legend": {
+      "operational": "정상 작동",
+      "degraded": "성능 저하",
+      "outage": "주요 장애"
+    },
+    "uptime": {
+      "operational": "≥ 99% 가동률",
+      "degraded": "≥ 95% 가동률",
+      "outage": "< 95% 가동률"
+    },
+    "uptimePercentage": "{{uptime}}% 가동률",
+    "loading": "상태 데이터 로딩 중...",
+    "error": "상태 데이터 로딩 오류: {{error}}",
+    "statuses": {
+      "operational": "정상 작동",
+      "degraded": "성능 저하",
+      "outage": "주요 장애",
+      "up": "작동 중",
+      "down": "중단됨",
+      "unknown": "알 수 없음"
+    },
+    "time": {
+      "lessThanMinute": "1분 미만 전",
+      "minute": "1분 전",
+      "minutes": "{{count}}분 전",
+      "hour": "1시간 전",
+      "hours": "{{count}}시간 전",
+      "moreThanDay": "1일 이상 전"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "it": {
+    "title": "Stato del Sistema",
+    "subtitle": "Monitoraggio in tempo reale dell'infrastruttura e dei servizi di Blue.",
+    "history": "Storico di 90 Giorni",
+    "legend": {
+      "operational": "Operativo",
+      "degraded": "Prestazioni Degradate",
+      "outage": "Interruzione Maggiore"
+    },
+    "uptime": {
+      "operational": "≥ 99% di disponibilità",
+      "degraded": "≥ 95% di disponibilità",
+      "outage": "< 95% di disponibilità"
+    },
+    "uptimePercentage": "{{uptime}}% di disponibilità",
+    "loading": "Caricamento dati di stato...",
+    "error": "Errore nel caricamento dei dati di stato: {{error}}",
+    "statuses": {
+      "operational": "Operativo",
+      "degraded": "Prestazioni Degradate",
+      "outage": "Interruzione Maggiore",
+      "up": "Attivo",
+      "down": "Non attivo",
+      "unknown": "Sconosciuto"
+    },
+    "time": {
+      "lessThanMinute": "Meno di un minuto fa",
+      "minute": "1 minuto fa",
+      "minutes": "{{count}} minuti fa",
+      "hour": "1 ora fa",
+      "hours": "{{count}} ore fa",
+      "moreThanDay": "Più di un giorno fa"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "id": {
+    "title": "Status Sistem",
+    "subtitle": "Pemantauan real-time infrastruktur dan layanan Blue.",
+    "history": "Riwayat 90 Hari",
+    "legend": {
+      "operational": "Beroperasi",
+      "degraded": "Kinerja Menurun",
+      "outage": "Gangguan Besar"
+    },
+    "uptime": {
+      "operational": "≥ 99% waktu aktif",
+      "degraded": "≥ 95% waktu aktif",
+      "outage": "< 95% waktu aktif"
+    },
+    "uptimePercentage": "{{uptime}}% waktu aktif",
+    "loading": "Memuat data status...",
+    "error": "Kesalahan saat memuat data status: {{error}}",
+    "statuses": {
+      "operational": "Beroperasi",
+      "degraded": "Kinerja Menurun",
+      "outage": "Gangguan Besar",
+      "up": "Aktif",
+      "down": "Tidak Aktif",
+      "unknown": "Tidak Diketahui"
+    },
+    "time": {
+      "lessThanMinute": "Kurang dari semenit yang lalu",
+      "minute": "1 menit yang lalu",
+      "minutes": "{{count}} menit yang lalu",
+      "hour": "1 jam yang lalu",
+      "hours": "{{count}} jam yang lalu",
+      "moreThanDay": "Lebih dari sehari yang lalu"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "nl": {
+    "title": "Systeemstatus",
+    "subtitle": "Real-time monitoring van Blue's infrastructuur en diensten.",
+    "history": "90-Dagen Geschiedenis",
+    "legend": {
+      "operational": "Operationeel",
+      "degraded": "Verminderde Prestaties",
+      "outage": "Grote Storing"
+    },
+    "uptime": {
+      "operational": "≥ 99% beschikbaarheid",
+      "degraded": "≥ 95% beschikbaarheid",
+      "outage": "< 95% beschikbaarheid"
+    },
+    "uptimePercentage": "{{uptime}}% beschikbaarheid",
+    "loading": "Statusgegevens laden...",
+    "error": "Fout bij het laden van statusgegevens: {{error}}",
+    "statuses": {
+      "operational": "Operationeel",
+      "degraded": "Verminderde Prestaties",
+      "outage": "Grote Storing",
+      "up": "Actief",
+      "down": "Inactief",
+      "unknown": "Onbekend"
+    },
+    "time": {
+      "lessThanMinute": "Minder dan een minuut geleden",
+      "minute": "1 minuut geleden",
+      "minutes": "{{count}} minuten geleden",
+      "hour": "1 uur geleden",
+      "hours": "{{count}} uur geleden",
+      "moreThanDay": "Meer dan een dag geleden"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "pl": {
+    "title": "Status Systemu",
+    "subtitle": "Monitorowanie w czasie rzeczywistym infrastruktury i usług Blue.",
+    "history": "Historia 90 Dni",
+    "legend": {
+      "operational": "Sprawny",
+      "degraded": "Obniżona Wydajność",
+      "outage": "Poważna Awaria"
+    },
+    "uptime": {
+      "operational": "≥ 99% dostępności",
+      "degraded": "≥ 95% dostępności",
+      "outage": "< 95% dostępności"
+    },
+    "uptimePercentage": "{{uptime}}% dostępności",
+    "loading": "Ładowanie danych statusu...",
+    "error": "Błąd podczas ładowania danych statusu: {{error}}",
+    "statuses": {
+      "operational": "Sprawny",
+      "degraded": "Obniżona Wydajność",
+      "outage": "Poważna Awaria",
+      "up": "Aktywny",
+      "down": "Nieaktywny",
+      "unknown": "Nieznany"
+    },
+    "time": {
+      "lessThanMinute": "Mniej niż minutę temu",
+      "minute": "1 minutę temu",
+      "minutes": "{{count}} minut temu",
+      "hour": "1 godzinę temu",
+      "hours": "{{count}} godzin temu",
+      "moreThanDay": "Więcej niż dzień temu"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "zh-TW": {
+    "title": "系統狀態",
+    "subtitle": "即時監控 Blue 的基礎設施和服務。",
+    "history": "90 天歷史記錄",
+    "legend": {
+      "operational": "正常運作",
+      "degraded": "效能降低",
+      "outage": "重大中斷"
+    },
+    "uptime": {
+      "operational": "≥ 99% 正常運作時間",
+      "degraded": "≥ 95% 正常運作時間",
+      "outage": "< 95% 正常運作時間"
+    },
+    "uptimePercentage": "{{uptime}}% 正常運作時間",
+    "loading": "正在載入狀態資料...",
+    "error": "載入狀態資料時發生錯誤：{{error}}",
+    "statuses": {
+      "operational": "正常運作",
+      "degraded": "效能降低",
+      "outage": "重大中斷",
+      "up": "運作中",
+      "down": "停止運作",
+      "unknown": "未知"
+    },
+    "time": {
+      "lessThanMinute": "不到一分鐘前",
+      "minute": "1 分鐘前",
+      "minutes": "{{count}} 分鐘前",
+      "hour": "1 小時前",
+      "hours": "{{count}} 小時前",
+      "moreThanDay": "超過一天前"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "sv": {
+    "title": "Systemstatus",
+    "subtitle": "Realtidsövervakning av Blues infrastruktur och tjänster.",
+    "history": "90-dagars historik",
+    "legend": {
+      "operational": "I drift",
+      "degraded": "Nedsatt prestanda",
+      "outage": "Större avbrott"
+    },
+    "uptime": {
+      "operational": "≥ 99% drifttid",
+      "degraded": "≥ 95% drifttid",
+      "outage": "< 95% drifttid"
+    },
+    "uptimePercentage": "{{uptime}}% drifttid",
+    "loading": "Laddar statusdata...",
+    "error": "Fel vid laddning av statusdata: {{error}}",
+    "statuses": {
+      "operational": "I drift",
+      "degraded": "Nedsatt prestanda",
+      "outage": "Större avbrott",
+      "up": "Aktiv",
+      "down": "Inaktiv",
+      "unknown": "Okänd"
+    },
+    "time": {
+      "lessThanMinute": "Mindre än en minut sedan",
+      "minute": "1 minut sedan",
+      "minutes": "{{count}} minuter sedan",
+      "hour": "1 timme sedan",
+      "hours": "{{count}} timmar sedan",
+      "moreThanDay": "Mer än en dag sedan"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "km": {
+    "title": "ស្ថានភាពប្រព័ន្ធ",
+    "subtitle": "ការត្រួតពិនិត្យក្នុងពេលជាក់ស្តែងនូវហេដ្ឋារចនាសម្ព័ន្ធ និងសេវាកម្មរបស់ Blue។",
+    "history": "ប្រវត្តិ ៩០ ថ្ងៃ",
+    "legend": {
+      "operational": "ដំណើរការធម្មតា",
+      "degraded": "ដំណើរការមិនល្អ",
+      "outage": "រំខានធំ"
+    },
+    "uptime": {
+      "operational": "≥ ៩៩% ពេលវេលាដំណើរការ",
+      "degraded": "≥ ៩៥% ពេលវេលាដំណើរការ",
+      "outage": "< ៩៥% ពេលវេលាដំណើរការ"
+    },
+    "uptimePercentage": "{{uptime}}% ពេលវេលាដំណើរការ",
+    "loading": "កំពុងផ្ទុកទិន្នន័យស្ថានភាព...",
+    "error": "កំហុសក្នុងការផ្ទុកទិន្នន័យស្ថានភាព៖ {{error}}",
+    "statuses": {
+      "operational": "ដំណើរការធម្មតា",
+      "degraded": "ដំណើរការមិនល្អ",
+      "outage": "រំខានធំ",
+      "up": "សកម្ម",
+      "down": "អសកម្ម",
+      "unknown": "មិនស្គាល់"
+    },
+    "time": {
+      "lessThanMinute": "តិចជាងមួយនាទីមុន",
+      "minute": "១ នាទីមុន",
+      "minutes": "{{count}} នាទីមុន",
+      "hour": "១ ម៉ោងមុន",
+      "hours": "{{count}} ម៉ោងមុន",
+      "moreThanDay": "ច្រើនជាងមួយថ្ងៃមុន"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  },
+  "zh": {
+    "title": "系统状态",
+    "subtitle": "实时监控 Blue 的基础设施和服务。",
+    "history": "90 天历史记录",
+    "legend": {
+      "operational": "正常运行",
+      "degraded": "性能下降",
+      "outage": "重大故障"
+    },
+    "uptime": {
+      "operational": "≥ 99% 正常运行时间",
+      "degraded": "≥ 95% 正常运行时间",
+      "outage": "< 95% 正常运行时间"
+    },
+    "uptimePercentage": "{{uptime}}% 正常运行时间",
+    "loading": "正在加载状态数据...",
+    "error": "加载状态数据时出错：{{error}}",
+    "statuses": {
+      "operational": "正常运行",
+      "degraded": "性能下降",
+      "outage": "重大故障",
+      "up": "运行中",
+      "down": "已停止",
+      "unknown": "未知"
+    },
+    "time": {
+      "lessThanMinute": "不到一分钟前",
+      "minute": "1 分钟前",
+      "minutes": "{{count}} 分钟前",
+      "hour": "1 小时前",
+      "hours": "{{count}} 小时前",
+      "moreThanDay": "超过一天前"
+    },
+    "dateFormat": {
+      "weekday": "short",
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric"
+    }
+  }
+}

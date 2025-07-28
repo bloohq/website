@@ -1,8 +1,56 @@
 <!-- Main content -->
+<!-- Store translations in data attributes for SPA compatibility -->
+<div id="status-translations" style="display: none;"
+     data-uptime-percentage="{{t "status.uptimePercentage"}}"
+     data-loading="{{t "status.loading"}}"
+     data-error="{{t "status.error"}}"
+     data-status-operational="{{t "status.statuses.operational"}}"
+     data-status-degraded="{{t "status.statuses.degraded"}}"
+     data-status-outage="{{t "status.statuses.outage"}}"
+     data-status-up="{{t "status.statuses.up"}}"
+     data-status-down="{{t "status.statuses.down"}}"
+     data-status-unknown="{{t "status.statuses.unknown"}}"
+     data-lang="{{.Language}}">
+</div>
+
+<script>
+    // Function to setup translations from data attributes
+    function setupStatusTranslations() {
+        const translationEl = document.getElementById('status-translations');
+        if (translationEl) {
+            window.blueData = window.blueData || {};
+            window.blueData.translations = window.blueData.translations || {};
+            window.blueData.translations.status = {
+                uptimePercentage: translationEl.dataset.uptimePercentage,
+                loading: translationEl.dataset.loading,
+                error: translationEl.dataset.error,
+                statuses: {
+                    operational: translationEl.dataset.statusOperational,
+                    degraded: translationEl.dataset.statusDegraded,
+                    outage: translationEl.dataset.statusOutage,
+                    up: translationEl.dataset.statusUp,
+                    down: translationEl.dataset.statusDown,
+                    unknown: translationEl.dataset.statusUnknown
+                }
+            };
+            window.blueData.lang = translationEl.dataset.lang;
+        }
+    }
+    
+    // Setup on initial load
+    setupStatusTranslations();
+    
+    // Re-setup after SPA navigation
+    document.addEventListener('DOMContentLoaded', setupStatusTranslations);
+    
+    // Also listen for Alpine initialization (for SPA updates)
+    document.addEventListener('alpine:init', setupStatusTranslations);
+</script>
+
     {{template "page-heading" 
         dict 
-            "Title" "System Status" 
-            "Subtitle" "Real-time monitoring of Blue's infrastructure and services." 
+            "Title" (t "status.title") 
+            "Subtitle" (t "status.subtitle") 
             "MarginBottom" "mb-8"
     }}
 
@@ -11,15 +59,15 @@
         <!-- 90-Day History -->
         <div class="mb-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">90-Day History</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{{t "status.history"}}</h2>
                 <!-- Legend -->
                 <div class="flex items-center space-x-6 text-sm text-gray-600 dark:text-gray-300">
                     <div class="flex items-center relative" x-data="{ tooltipVisible: false }" @mouseenter="tooltipVisible = true" @mouseleave="tooltipVisible = false">
                         <div class="w-3 h-3 bg-green-500 rounded-sm mr-2"></div>
-                        <span class="cursor-help">Operational</span>
+                        <span class="cursor-help">{{t "status.legend.operational"}}</span>
                         <div x-show="tooltipVisible" x-transition class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50">
                             <div class="relative px-2 py-1 text-white bg-gray-900 rounded text-xs whitespace-nowrap">
-                                ≥ 99% uptime
+                                {{t "status.uptime.operational"}}
                                 <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
                                     <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-gray-900"></div>
                                 </div>
@@ -28,10 +76,10 @@
                     </div>
                     <div class="flex items-center relative" x-data="{ tooltipVisible: false }" @mouseenter="tooltipVisible = true" @mouseleave="tooltipVisible = false">
                         <div class="w-3 h-3 bg-yellow-500 rounded-sm mr-2"></div>
-                        <span class="cursor-help">Degraded Performance</span>
+                        <span class="cursor-help">{{t "status.legend.degraded"}}</span>
                         <div x-show="tooltipVisible" x-transition class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50">
                             <div class="relative px-2 py-1 text-white bg-gray-900 rounded text-xs whitespace-nowrap">
-                                ≥ 95% uptime
+                                {{t "status.uptime.degraded"}}
                                 <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
                                     <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-gray-900"></div>
                                 </div>
@@ -40,10 +88,10 @@
                     </div>
                     <div class="flex items-center relative" x-data="{ tooltipVisible: false }" @mouseenter="tooltipVisible = true" @mouseleave="tooltipVisible = false">
                         <div class="w-3 h-3 bg-red-500 rounded-sm mr-2"></div>
-                        <span class="cursor-help">Major Outage</span>
+                        <span class="cursor-help">{{t "status.legend.outage"}}</span>
                         <div x-show="tooltipVisible" x-transition class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50">
                             <div class="relative px-2 py-1 text-white bg-gray-900 rounded text-xs whitespace-nowrap">
-                                &lt; 95% uptime
+                                {{t "status.uptime.outage"}}
                                 <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
                                     <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-gray-900"></div>
                                 </div>
@@ -53,7 +101,7 @@
                 </div>
             </div>
             
-            <div class="space-y-6" x-data="StatusUtils.createStatusPageData()" x-init="loadData()">
+            <div class="space-y-6" x-data="StatusUtils.createStatusPageData()" x-init="setupStatusTranslations(); loadData()">
                 <template x-for="service in services" :key="service.name">
                     <div>
                         <div class="flex justify-between items-center mb-2">
@@ -64,7 +112,7 @@
                                 </span>
                                 <h3 class="text-lg font-medium text-gray-900 dark:text-white" x-text="service.name"></h3>
                             </div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="service.uptime.toFixed(2) + '% uptime'"></span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="formatUptimePercentage(service.uptime)"></span>
                         </div>
                         <div class="flex space-x-1">
                             <template x-for="day in service.days" :key="day.date">
@@ -97,12 +145,12 @@
                 
                 <!-- Loading state -->
                 <div x-show="loading" class="text-center py-8">
-                    <div class="text-gray-500 dark:text-gray-400">Loading status data...</div>
+                    <div class="text-gray-500 dark:text-gray-400" x-text="getLoadingMessage()"></div>
                 </div>
                 
                 <!-- Error state -->
                 <div x-show="error" class="text-center py-8">
-                    <div class="text-red-500 dark:text-red-400" x-text="'Error loading status data: ' + error"></div>
+                    <div class="text-red-500 dark:text-red-400" x-text="getErrorMessage(error)"></div>
                 </div>
             </div>
         </div>
