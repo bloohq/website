@@ -1,6 +1,6 @@
 <!-- Main content -->
 <!-- Custom personalized page heading for homepage -->
-<div class="mb-16" x-data="{ 
+<div class="mb-16 @container" x-data="{ 
     authState: null,
     words: [],
     animatedWords: [], 
@@ -55,7 +55,7 @@
         }
     }
 }">
-    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-3">
+    <h1 class="text-4xl @[900px]:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-3">
         <template x-for="(word, index) in words" :key="index">
             <span 
                 :class="animatedWords.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'" 
