@@ -110,3 +110,4 @@ web/public/searchIndex-sv.json
 pages/mobile.html
 /public/insights
 /api-checker/reviews
+generate_changelog_json.py
