@@ -62,7 +62,7 @@ USE CASES:
         <!-- Month/Year Label -->
         <div class="md:w-48 md:flex-shrink-0 mb-8 md:mb-0">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
-                {{.month}} {{.year}}
+                {{t (printf "changelog.months.%s" (lower .month))}} {{.year}}
             </h2>
         </div>
         
