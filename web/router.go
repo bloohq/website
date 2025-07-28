@@ -1,6 +1,7 @@
 package web
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -24,6 +25,7 @@ type Router struct {
 	schemaService     *SchemaService
 	statusChecker     *HealthChecker
 	tocExcludedPaths  []string
+	logger            *Logger
 }
 
 // loadComponentTemplates loads all component template files
@@ -36,7 +38,7 @@ func (r *Router) loadComponentTemplates() ([]string, error) {
 }
 
 // NewRouter creates a new router instance
-func NewRouter(pagesDir string) *Router {
+func NewRouter(pagesDir string, logger *Logger) *Router {
 	// Initialize SEO service
 	seoService := NewSEOService()
 	if err := seoService.LoadData(); err != nil {
@@ -70,31 +72,37 @@ func NewRouter(pagesDir string) *Router {
 			"/roadmap",
 			"/platform/status",
 		},
+		logger: logger,
 	}
 
 	// Pre-render all markdown content at startup
-	log.Printf("📝 Pre-rendering markdown content...")
+	renderStart := time.Now()
+	logger.Log(LogRender, "📝", "Starting", "Markdown pre-rendering")
 	if err := markdownService.PreRenderAllMarkdown(contentService, seoService); err != nil {
-		log.Printf("⚠️  Warning: failed to pre-render markdown content: %v", err)
+		logger.Log(LogError, "⚠️", "Failed", fmt.Sprintf("Pre-render markdown: %v", err))
 	} else {
-		log.Printf("✅ Markdown cache initialized (%d files)", markdownService.GetCacheSize())
+		fileCount := markdownService.GetCacheSize()
+		logger.Log(LogRender, "✅", "Completed", fmt.Sprintf("%d Markdown files cached", fileCount), time.Since(renderStart))
 	}
 
 	// Pre-render all HTML pages at startup
-	log.Printf("🌐 Pre-rendering HTML pages...")
+	htmlStart := time.Now()
+	logger.Log(LogRender, "🌐", "Starting", "HTML pre-rendering")
 	if err := htmlService.PreRenderAllHTMLPages(navigationService, seoService); err != nil {
-		log.Printf("⚠️  Warning: failed to pre-render HTML pages: %v", err)
+		logger.Log(LogError, "⚠️", "Failed", fmt.Sprintf("Pre-render HTML: %v", err))
 	} else {
-		log.Printf("✅ HTML cache initialized (%d pages across %d languages)", htmlService.GetCacheSize(), len(SupportedLanguages))
+		pageCount := htmlService.GetCacheSize()
+		logger.Log(LogRender, "✅", "Completed", fmt.Sprintf("%d pages across %d languages", pageCount, len(SupportedLanguages)), time.Since(htmlStart))
 	}
 
 	// Generate search index with pre-rendered content
 	searchStart := time.Now()
-	log.Printf("🔍 Building search index...")
-	if err := GenerateSearchIndexWithCaches(markdownService, htmlService); err != nil {
-		log.Printf("⚠️  Warning: failed to generate search index: %v", err)
+	logger.Log(LogIndex, "🔍", "Starting", "Search index generation")
+	itemCount, err := GenerateSearchIndexWithCaches(markdownService, htmlService, logger)
+	if err != nil {
+		logger.Log(LogError, "⚠️", "Failed", fmt.Sprintf("Generate search index: %v", err))
 	} else {
-		log.Printf("✅ Search index ready (took %v)", time.Since(searchStart))
+		logger.Log(LogIndex, "✅", "Completed", fmt.Sprintf("%d items indexed", itemCount), time.Since(searchStart))
 	}
 
 	// Link checker moved to main.go for parallel execution

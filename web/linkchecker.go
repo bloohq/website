@@ -13,6 +13,7 @@ import (
 	"strings"
 	"sync"
 	"sync/atomic"
+	"time"
 
 	"golang.org/x/net/html"
 )
@@ -29,6 +30,8 @@ type LinkChecker struct {
 	totalLinks      int64
 	validLinks      int64
 	concurrency     int
+	logger          *Logger
+	startTime       time.Time
 }
 
 // BrokenLink represents a broken link found in the site
@@ -377,10 +380,9 @@ func (lc *LinkChecker) printResults() {
 	brokenCount := total - valid
 
 	if brokenCount == 0 {
-		log.Printf("✅ %d/%d links valid", valid, total)
+		lc.logger.Log(LogCheck, "✅", "Completed", fmt.Sprintf("%d/%d links valid", valid, total), time.Since(lc.startTime))
 	} else {
-		log.Printf("🔗 %d/%d links valid", valid, total)
-		log.Printf("❌ %d broken links found", brokenCount)
+		lc.logger.Log(LogCheck, "✅", "Completed", fmt.Sprintf("%d/%d links valid, %d broken", valid, total, brokenCount), time.Since(lc.startTime))
 
 		// Generate CSV file
 		lc.generateCSV()
@@ -444,13 +446,13 @@ func (lc *LinkChecker) generateCSV() {
 		}
 	}
 
-	log.Printf("📝 Broken links exported to 404.csv")
+	// CSV export notification removed for cleaner output
 }
 
 // RunLinkChecker runs the link checker with the provided services
-func RunLinkChecker(markdownService *MarkdownService, htmlService *HTMLService, seoService *SEOService) error {
-	log.Printf("🔗 Checking internal links...")
-
+func RunLinkChecker(markdownService *MarkdownService, htmlService *HTMLService, seoService *SEOService, logger *Logger) error {
 	checker := NewLinkChecker(markdownService, htmlService, seoService)
+	checker.logger = logger
+	checker.startTime = time.Now()
 	return checker.CheckAllLinks()
 }

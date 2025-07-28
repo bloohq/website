@@ -95,14 +95,12 @@ type languageStats struct {
 }
 
 // GenerateSearchIndexWithCaches creates a JSON search index using both HTML and markdown caches
-func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService *HTMLService) error {
+func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService *HTMLService, logger *Logger) (int, error) {
 	// Load metadata.json for title lookup
-	metadataStart := time.Now()
 	metadata, err := loadMetadata()
 	if err != nil {
-		fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
+		logger.Log(LogWarn, "⚠️", "Warning", fmt.Sprintf("Could not load metadata.json: %v", err))
 	}
-	fmt.Printf("   📊 Metadata loading: %v\n", time.Since(metadataStart))
 
 	// Generate search index for each language in parallel
 	type languageResult struct {
@@ -114,7 +112,6 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 	resultChan := make(chan languageResult, len(SupportedLanguages))
 
 	// Process each language concurrently with true independence
-	parallelStart := time.Now()
 	for _, lang := range SupportedLanguages {
 		go func(lang string) {
 			langStart := time.Now()
@@ -165,7 +162,7 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 	for i := 0; i < len(SupportedLanguages); i++ {
 		result := <-resultChan
 		if result.err != nil {
-			return result.err
+			return 0, result.err
 		}
 		
 		// Track statistics
@@ -181,14 +178,7 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 		}
 	}
 	
-	fmt.Printf("   ⏱️  Search index breakdown:\n")
-	fmt.Printf("      - Collection (max): %v\n", maxCollectTime)
-	fmt.Printf("      - JSON Marshal (max): %v\n", maxMarshalTime)
-	fmt.Printf("      - File Write (max): %v\n", maxWriteTime)
-	fmt.Printf("      - Total items indexed: %d\n", totalItems)
-	fmt.Printf("      - Parallel processing: %v\n", time.Since(parallelStart))
-
-	return nil
+	return totalItems, nil
 }
 
 // searchTask represents a single item to be indexed
@@ -372,7 +362,7 @@ func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService
 	// Get cached HTML pages
 	cacheStart := time.Now()
 	htmlContent := htmlService.GetCachedContentByLanguage(lang)
-	htmlCacheTime := time.Since(cacheStart)
+	_ = time.Since(cacheStart) // Cache time removed for cleaner output
 	
 	for urlPath, content := range htmlContent {
 		tasks = append(tasks, searchTask{
@@ -385,7 +375,7 @@ func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService
 	// Get cached markdown content
 	cacheStart = time.Now()
 	markdownContent := markdownService.GetCachedContentByLanguage(lang)
-	mdCacheTime := time.Since(cacheStart)
+	_ = time.Since(cacheStart) // Cache time removed for cleaner output
 	
 	for urlPath, content := range markdownContent {
 		tasks = append(tasks, searchTask{
@@ -395,12 +385,9 @@ func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService
 		})
 	}
 	
-	if lang == DefaultLanguage {
-		fmt.Printf("      [%s] Cache retrieval: HTML %v, MD %v, Tasks: %d\n", lang, htmlCacheTime, mdCacheTime, len(tasks))
-	}
+	// Cache retrieval stats removed for cleaner output
 	
 	// Process tasks with worker pool
-	processingStart := time.Now()
 	const numWorkers = 30
 	// Buffer channels to avoid blocking
 	taskChan := make(chan searchTask, len(tasks))
@@ -466,13 +453,7 @@ func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService
 	default:
 	}
 	
-	if lang == DefaultLanguage {
-		avgExtraction := time.Duration(0)
-		if extractionCount > 0 {
-			avgExtraction = extractionTime / time.Duration(extractionCount)
-		}
-		fmt.Printf("      [%s] Processing: %v (avg extraction: %v × %d items)\n", lang, time.Since(processingStart), avgExtraction, extractionCount)
-	}
+	// Cache retrieval stats removed for cleaner output
 
 	// Build a map of indexed URLs to avoid duplicates from non-cached pages
 	indexedURLs := make(map[string]bool)
