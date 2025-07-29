@@ -679,7 +679,7 @@
         "keywords": ["កំណត់ត្រា", "ការគ្រប់គ្រងទិន្នន័យ", "ការតាមដានកិច្ចការ", "ការគ្រប់គ្រងអតិថិជន", "កិច្ចព្រមព្រៀង", "សំបុត្រ", "blue"]
       }
     },
-    "platform/features/sales-crm": {
+    "solutions/use-case/sales-crm": {
       "en": {
         "title": "Sales CRM",
         "description": "Create simple, clear processes for your sales team with real-time visibility into your pipeline and automations.",

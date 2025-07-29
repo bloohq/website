@@ -49,7 +49,7 @@
             {{$automationsData := parseJSON `{
                 "Title": "Save hours per week.",
                 "Description": "Powerful automations means that your team can stay focused on selling instead of low-value administration work. Spend more time with leads and less time on admin tasks.",
-                "VideoUrl": "/testvideo2.mp4",
+                "VideoUrl": "https://media.blue.cc/automations-manager-review.mp4",
                 "VideoPosition": "right",
                 "Button": {
                     "Text": "Learn more",
@@ -75,21 +75,18 @@
             {{template "feature-video" $automationsData}}
         </div>
         
-        <!-- Dashboards Feature Video -->
-        <div class="mb-16">
-            {{$dashboardsData := parseJSON `{
-                "Title": "Simple, real-time sales dashboards.",
-                "Description": "What gets measured gets improved. Blue gives you real-time dashboards for all your critical sales metrics. Get instant insights into your sales pipeline performance with live data updates.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
-                "Button": {
-                    "Text": "Learn more",
-                    "Url": "/docs/dashboards/introduction"
-                }
-            }`}}
-            
-            {{template "feature-video" $dashboardsData}}
-        </div>
+        <!-- Dashboards Feature Image -->
+        {{$dashboardsFeature := parseJSON `{
+            "Title": "Simple, real-time sales dashboards.",
+            "Description": "What gets measured gets improved. Blue gives you real-time dashboards for all your critical sales metrics. Get instant insights into your sales pipeline performance with live data updates.",
+            "ImageUrl": "/product/stats-cards.png",
+            "ImagePosition": "left",
+            "Button": {
+                "Text": "Learn more",
+                "Url": "/docs/dashboards/introduction"
+            }
+        }`}}
+        {{template "feature-image" $dashboardsFeature}}
         
         <!-- Custom Fields Feature Video -->
         <div class="mb-16">
@@ -149,6 +146,73 @@
             
             {{template "feature-video" $notificationsData}}
         </div>
+    </section>
+
+           <!-- Enterprise Customer Testimonial -->
+           <section class="mb-16">        
+            {{template "testimonial-single" 
+                dict 
+                    "Quote" "We are saving each sales rep in our team 9 hours a week with Blue."
+                    "VideoUrl" "https://media.blue.cc/dandeigan.mp4"
+                    "PosterUrl" "/testimonials/dandeigan.jpg"
+                    "Name" "Dan Deigan"
+                    "Title" "Sales Director at Pinnacle Logistics"
+            }}
+        </section>
+
+     <!-- Platform Integrations Section -->
+     <section id="integrations" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Platform Integrations</h2>
+        
+        <!-- API-First Architecture for Sales CRM -->
+        <div class="max-w-4xl mx-auto mb-16">
+            {{$apiData := parseJSON `{
+                "Title": "API-First Architecture for Sales CRM",
+                "Description": "Blue provides 100% API coverage through GraphQL, enabling your sales team to automate lead management, sync deals, and integrate every stage of your sales pipeline with your existing tools. Build custom sales dashboards, automate follow-ups, and connect Blue to your marketing stack for a seamless sales workflow.",
+                "Examples": [
+                    {
+                        "Type": "query",
+                        "Label": "Query Sales Data",
+                        "Language": "graphql",
+                        "Code": "query GetProjects {\n  projectList(filter: { companyIds: [\"your-company-id\"] }) {\n    items {\n      id\n      name\n      updatedAt\n      recordCount\n    }\n  }\n}"
+                    },
+                    {
+                        "Type": "mutation",
+                        "Label": "Create Sales Task",
+                        "Language": "graphql", 
+                        "Code": "mutation CreateRecord {\n  createTodo(input: {\n    todoListId: \"list-id\"\n    title: \"New Task\"\n    position: 65535\n  }) {\n    id\n    title\n    position\n  }\n}"
+                    },
+                    {
+                        "Type": "subscription",
+                        "Label": "Real-time Sales Updates",
+                        "Language": "graphql",
+                        "Code": "subscription ProjectUpdates {\n  projectUpdated {\n    id\n    name\n    updatedAt\n    lastActivity\n  }\n}"
+                    }
+                ],
+                "Link": {
+                    "Text": "Explore Sales CRM API Documentation",
+                    "Url": "/api/"
+                }
+            }`}}
+            {{template "technical-capability-card" $apiData}}
+        </div>
+
+        <!-- Integration Partners for Sales CRM -->
+        <div class="mb-16">
+            {{$integrationData := parseJSON `{
+                "title": "Connect your sales CRM with 7,000+ tools",
+                "subtitle": "Integrate Blue with your favorite sales and marketing platforms—automate lead capture, sync contacts, trigger follow-ups, and more.",
+                "logos": [
+                    { "name": "Zapier", "src": "/images/zapier.svg" },
+                    { "name": "Make.com", "src": "/images/make.svg" },
+                    { "name": "Pabbly Connect", "src": "/images/pabbly.svg" },
+                    { "name": "Albato", "src": "/images/albato.png" },
+                    { "name": "Boost.space", "src": "/images/boost-space.svg" }
+                ]
+            }`}}
+            {{template "logo-grid" $integrationData}}
+        </div>
+
     </section>
 
 
