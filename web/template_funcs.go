@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"html"
 	"html/template"
+	"regexp"
 	"strings"
 	"time"
 )
@@ -18,7 +20,8 @@ var templateFuncs = template.FuncMap{
 	"dict": dict,
 	"slice": slice,
 	"html": func(s string) template.HTML {
-		return template.HTML(s)
+		// Sanitize HTML to only allow specific safe tags
+		return template.HTML(sanitizeHTML(s))
 	},
 	"parseJSON": func(s string) (interface{}, error) {
 		var data interface{}
@@ -138,4 +141,39 @@ func dict(values ...interface{}) (map[string]interface{}, error) {
 // slice creates a slice from the given values for use in templates
 func slice(values ...interface{}) []interface{} {
 	return values
+}
+
+// sanitizeHTML removes all HTML tags except for a whitelist of safe tags
+func sanitizeHTML(input string) string {
+	// First, escape all HTML to prevent any XSS
+	escaped := html.EscapeString(input)
+	
+	// Define allowed tags - only self-closing tags and simple formatting tags
+	allowedTags := map[string]bool{
+		"br":     true,
+		"strong": true,
+		"em":     true,
+		"b":      true,
+		"i":      true,
+	}
+	
+	// Replace allowed tags back to their unescaped form
+	// This regex matches escaped HTML tags like &lt;br&gt; or &lt;br/&gt; or &lt;br /&gt;
+	tagPattern := regexp.MustCompile(`&lt;(/?)(\w+)(\s*/?)&gt;`)
+	
+	result := tagPattern.ReplaceAllStringFunc(escaped, func(match string) string {
+		// Extract the tag name from the escaped HTML
+		parts := tagPattern.FindStringSubmatch(match)
+		if len(parts) >= 3 {
+			tagName := strings.ToLower(parts[2])
+			if allowedTags[tagName] {
+				// Convert back to actual HTML tag
+				return strings.ReplaceAll(strings.ReplaceAll(match, "&lt;", "<"), "&gt;", ">")
+			}
+		}
+		// Keep the escaped version for non-allowed tags
+		return match
+	})
+	
+	return result
 }
