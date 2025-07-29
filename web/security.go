@@ -1,6 +1,7 @@
 package web
 
 import (
+	"context"
 	"log"
 	"net/http"
 	"strings"
@@ -80,18 +81,35 @@ func (rl *RateLimiter) Cleanup() {
 	}
 }
 
-// Global rate limiter instance
-var apiRateLimiter = NewRateLimiter(60, time.Minute)
+// Global rate limiter instance and cleanup control
+var (
+	apiRateLimiter = NewRateLimiter(60, time.Minute)
+	cleanupCtx     context.Context
+	cleanupCancel  context.CancelFunc
+)
 
 // Start cleanup goroutine
 func init() {
+	cleanupCtx, cleanupCancel = context.WithCancel(context.Background())
 	go func() {
 		ticker := time.NewTicker(5 * time.Minute)
 		defer ticker.Stop()
-		for range ticker.C {
-			apiRateLimiter.Cleanup()
+		for {
+			select {
+			case <-ticker.C:
+				apiRateLimiter.Cleanup()
+			case <-cleanupCtx.Done():
+				return
+			}
 		}
 	}()
+}
+
+// StopRateLimiterCleanup stops the background cleanup goroutine
+func StopRateLimiterCleanup() {
+	if cleanupCancel != nil {
+		cleanupCancel()
+	}
 }
 
 // RateLimitMiddleware returns a middleware that enforces rate limiting
