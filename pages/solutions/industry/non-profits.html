@@ -32,11 +32,11 @@
                     "Description": "Special non-profit pricing lets you focus your budget on your mission, not software costs."
                 },
                 {
-                    "Title": "Blue is simple to use",
+                    "Title": "Simplicity",
                     "Description": "Get teams up and running in hours, not weeks. Higher adoption means more time for mission-critical work."
                 },
                 {
-                    "Title": "Blue is flexible",
+                    "Title": "Flexibility",
                     "Description": "Adapts to your unique processes. Stay compliant, start quickly, and expand as you grow."
                 }
             ]
@@ -64,13 +64,9 @@
     <div class="mb-20 px-6 lg:px-8">
         {{$grantManagementData := parseJSON `{
             "VideoPosition": "left",
-            "VideoUrl": "/product/automation.mp4",
+            "VideoUrl": "https://media.blue.cc/grant-management-example.mp4",
             "Title": "Grant Application Process",
             "Description": "Track application stages, automate deadline reminders, and manage documents. Never miss a critical grant deadline again.",
-            "Button": {
-                "Text": "Learn about Grant Management",
-                "Url": "/platform/features/automations"
-            },
             "SeeAlso": {
                 "Heading": "See also",
                 "Links": [
@@ -86,8 +82,8 @@
     <!-- Project Management Feature -->
     <div class="mb-20 px-6 lg:px-8">
         {{$projectManagementData := parseJSON `{
-            "VideoPosition": "right",
-            "VideoUrl": "/product/project-settings.mp4",
+            "ImagePosition": "right",
+            "ImageUrl": "/product/project-management-database.png",
             "Title": "Project and Program Management",
             "Description": "Deliver projects on time and within budget. Monitor progress, allocate resources, and maintain transparency for stakeholders and funders.",
             "Button": {
@@ -103,14 +99,14 @@
                 ]
             }
         }`}}
-        {{template "feature-video" $projectManagementData}}
+        {{template "feature-image" $projectManagementData}}
     </div>
 
     <!-- Volunteer Management Feature -->
     <div class="mb-20 px-6 lg:px-8">
         {{$volunteerManagementData := parseJSON `{
             "VideoPosition": "left",
-            "VideoUrl": "/product/user-roles.mp4",
+            "VideoUrl": "https://media.blue.cc/volunteer-custom-role.mp4",
             "Title": "Volunteer Management",
             "Description": "Create custom roles, manage permissions, and coordinate volunteer activities. Maximize every volunteer's contribution to your mission.",
             "Button": {
@@ -129,28 +125,7 @@
         {{template "feature-video" $volunteerManagementData}}
     </div>
 
-    <!-- Event Planning Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$eventPlanningData := parseJSON `{
-            "VideoPosition": "right",
-            "VideoUrl": "/product/reminders.mp4",
-            "Title": "Event Planning and Management",
-            "Description": "Plan and execute impactful events with ease. Track RSVPs, manage logistics, and coordinate volunteers and vendors in one place.",
-            "Button": {
-                "Text": "See Event Management",
-                "Url": "/solutions/use-case/project-management"
-            },
-            "SeeAlso": {
-                "Heading": "See also",
-                "Links": [
-                    { "Text": "Calendar Sync", "Description": "sync event schedules with external calendars", "Url": "/docs/integrations/calendar-sync" },
-                    { "Text": "PDF Generation", "Description": "create event programs and attendee lists automatically", "Url": "/platform/features/pdf-generation" },
-                    { "Text": "Database View", "Description": "manage vendor contacts and logistics in spreadsheet format", "Url": "/platform/features/database" }
-                ]
-            }
-        }`}}
-        {{template "feature-video" $eventPlanningData}}
-    </div>
+
 
     <!-- Non-Profit Stats Section -->
     <div class="mb-20">

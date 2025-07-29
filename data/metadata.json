@@ -596,6 +596,88 @@
         "description": "បំប្លែងទិន្នន័យទីតាំងរបស់អ្នកទៅជាការយល់ដឹងដែលអាចធ្វើសកម្មភាពជាមួយនឹងទិដ្ឋភាពផែនទីអន្តរកម្មរបស់ Blue។ តាមដានទ្រព្យសម្បត្តិ វិភាគគំរូភូមិសាស្ត្រ និងធ្វើការសម្រេចចិត្តផ្អែកលើទិន្នន័យ។",
         "keywords": ["ទិដ្ឋភាពផែនទី", "ការតាមដានទីតាំង", "ទិន្នន័យភូមិសាស្ត្រ", "ការតាមដានទ្រព្យសម្បត្តិ", "ផែនទីពេលវេលាជាក់ស្តែង", "blue"]
       }
+    },
+    "solutions/industry/non-profits": {
+      "en": {
+        "title": "Non-Profit Solutions",
+        "description": "Maximize mission impact with streamlined grant management, volunteer coordination, and donor tracking.",
+        "keywords": ["non-profit", "grant management", "volunteer coordination", "donor tracking", "mission impact", "blue"]
+      },
+      "es": {
+        "title": "Soluciones para Organizaciones Sin Fines de Lucro",
+        "description": "Maximiza el impacto de la misión con gestión de subvenciones optimizada, coordinación de voluntarios y seguimiento de donantes.",
+        "keywords": ["organizaciones sin fines de lucro", "gestión de subvenciones", "coordinación de voluntarios", "seguimiento de donantes", "impacto de misión", "blue"]
+      },
+      "zh": {
+        "title": "非营利组织解决方案",
+        "description": "通过简化的拨款管理、志愿者协调和捐赠者跟踪，最大化使命影响力。",
+        "keywords": ["非营利组织", "拨款管理", "志愿者协调", "捐赠者跟踪", "使命影响", "blue"]
+      },
+      "fr": {
+        "title": "Solutions pour Organisations à But Non Lucratif",
+        "description": "Maximisez l'impact de votre mission avec une gestion rationalisée des subventions, la coordination des bénévoles et le suivi des donateurs.",
+        "keywords": ["organisations à but non lucratif", "gestion des subventions", "coordination des bénévoles", "suivi des donateurs", "impact de mission", "blue"]
+      },
+      "de": {
+        "title": "Nonprofit-Lösungen",
+        "description": "Maximieren Sie die Wirkung Ihrer Mission mit optimierter Zuschussverwaltung, Freiwilligenkoordination und Spendenverfolgung.",
+        "keywords": ["nonprofit", "zuschussverwaltung", "freiwilligenkoordination", "spendenverfolgung", "missionswirkung", "blue"]
+      },
+      "ja": {
+        "title": "非営利団体ソリューション",
+        "description": "合理化された助成金管理、ボランティア調整、寄付者追跡により、ミッションの影響を最大化します。",
+        "keywords": ["非営利団体", "助成金管理", "ボランティア調整", "寄付者追跡", "ミッション影響", "blue"]
+      },
+      "pt": {
+        "title": "Soluções para Organizações Sem Fins Lucrativos",
+        "description": "Maximize o impacto da missão com gestão simplificada de subsídios, coordenação de voluntários e rastreamento de doadores.",
+        "keywords": ["organizações sem fins lucrativos", "gestão de subsídios", "coordenação de voluntários", "rastreamento de doadores", "impacto da missão", "blue"]
+      },
+      "ru": {
+        "title": "Решения для Некоммерческих Организаций",
+        "description": "Максимизируйте влияние миссии с помощью упрощенного управления грантами, координации волонтеров и отслеживания доноров.",
+        "keywords": ["некоммерческие организации", "управление грантами", "координация волонтеров", "отслеживание доноров", "влияние миссии", "blue"]
+      },
+      "ko": {
+        "title": "비영리 조직 솔루션",
+        "description": "간소화된 보조금 관리, 자원봉사자 조정, 기부자 추적으로 미션 영향력을 극대화하세요.",
+        "keywords": ["비영리 조직", "보조금 관리", "자원봉사자 조정", "기부자 추적", "미션 영향", "blue"]
+      },
+      "it": {
+        "title": "Soluzioni per Organizzazioni Non Profit",
+        "description": "Massimizza l'impatto della missione con gestione semplificata delle sovvenzioni, coordinamento dei volontari e tracciamento dei donatori.",
+        "keywords": ["organizzazioni non profit", "gestione sovvenzioni", "coordinamento volontari", "tracciamento donatori", "impatto missione", "blue"]
+      },
+      "id": {
+        "title": "Solusi Organisasi Nirlaba",
+        "description": "Maksimalkan dampak misi dengan manajemen hibah yang disederhanakan, koordinasi relawan, dan pelacakan donor.",
+        "keywords": ["organisasi nirlaba", "manajemen hibah", "koordinasi relawan", "pelacakan donor", "dampak misi", "blue"]
+      },
+      "nl": {
+        "title": "Non-Profit Oplossingen",
+        "description": "Maximaliseer missie-impact met gestroomlijnde subsidiebeheer, vrijwilligerscoördinatie en donortracking.",
+        "keywords": ["non-profit", "subsidiebeheer", "vrijwilligerscoördinatie", "donortracking", "missie-impact", "blue"]
+      },
+      "pl": {
+        "title": "Rozwiązania dla Organizacji Non-Profit",
+        "description": "Zmaksymalizuj wpływ misji dzięki usprawnionym zarządzaniu dotacjami, koordynacji wolontariuszy i śledzeniu darczyńców.",
+        "keywords": ["organizacje non-profit", "zarządzanie dotacjami", "koordynacja wolontariuszy", "śledzenie darczyńców", "wpływ misji", "blue"]
+      },
+      "zh-TW": {
+        "title": "非營利組織解決方案",
+        "description": "通過簡化的撥款管理、志願者協調和捐贈者追蹤，最大化使命影響力。",
+        "keywords": ["非營利組織", "撥款管理", "志願者協調", "捐贈者追蹤", "使命影響", "blue"]
+      },
+      "sv": {
+        "title": "Ideella Organisationslösningar",
+        "description": "Maximera uppdragets påverkan med strömlinjeformad bidragshantering, volontärkoordinering och giverspårning.",
+        "keywords": ["ideella organisationer", "bidragshantering", "volontärkoordinering", "giverspårning", "uppdragspåverkan", "blue"]
+      },
+      "km": {
+        "title": "ដំណោះស្រាយសម្រាប់អង្គការមិនរកប្រាក់ចំណេញ",
+        "description": "បង្កើនផលប៉ះពាល់បេសកកម្មដោយការគ្រប់គ្រងជំនួយសម្រាប់គម្រោងដែលបានកែលម្អ ការសម្របសម្រួលអ្នកស្ម័គ្រចិត្ត និងការតាមដានអ្នកបរិច្ចាគ។",
+        "keywords": ["អង្គការមិនរកប្រាក់ចំណេញ", "ការគ្រប់គ្រងជំនួយគម្រោង", "ការសម្របសម្រួលអ្នកស្ម័គ្រចិត្ត", "ការតាមដានអ្នកបរិច្ចាគ", "ផលប៉ះពាល់បេសកកម្ម", "blue"]
+      }
     }
   },
   "defaults": {
