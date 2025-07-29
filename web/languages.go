@@ -2,6 +2,8 @@ package web
 
 import (
 	"net/http"
+	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -73,17 +75,84 @@ func detectPreferredLanguage(r *http.Request) string {
 	acceptLang := r.Header.Get("Accept-Language")
 	if acceptLang != "" {
 		// Parse Accept-Language header (e.g., "es-ES,es;q=0.9,en;q=0.8")
-		// Simple approach: check if any supported language appears in the header
-		acceptLower := strings.ToLower(acceptLang)
-		for _, lang := range SupportedLanguages {
-			if strings.Contains(acceptLower, lang) {
-				return lang
-			}
+		preferredLang := parseAcceptLanguage(acceptLang, SupportedLanguages)
+		if preferredLang != "" {
+			return preferredLang
 		}
 	}
 	
 	// 3. Default to English
 	return DefaultLanguage
+}
+
+// parseAcceptLanguage parses Accept-Language header and returns the best match
+func parseAcceptLanguage(header string, supported []string) string {
+	type langPref struct {
+		lang    string
+		quality float64
+	}
+	
+	var prefs []langPref
+	
+	// Parse each language preference
+	for _, part := range strings.Split(header, ",") {
+		part = strings.TrimSpace(part)
+		
+		// Split language and quality value
+		langQ := strings.Split(part, ";")
+		lang := strings.TrimSpace(langQ[0])
+		quality := 1.0
+		
+		// Parse quality value if present
+		if len(langQ) > 1 {
+			qPart := strings.TrimSpace(langQ[1])
+			if strings.HasPrefix(qPart, "q=") {
+				if q, err := strconv.ParseFloat(qPart[2:], 64); err == nil {
+					quality = q
+				}
+			}
+		}
+		
+		prefs = append(prefs, langPref{lang: lang, quality: quality})
+	}
+	
+	// Sort by quality (highest first)
+	sort.Slice(prefs, func(i, j int) bool {
+		return prefs[i].quality > prefs[j].quality
+	})
+	
+	// Find the best match
+	for _, pref := range prefs {
+		prefLower := strings.ToLower(pref.lang)
+		
+		// Check for exact match first
+		for _, supported := range supported {
+			if prefLower == strings.ToLower(supported) {
+				return supported
+			}
+		}
+		
+		// Check for language-only match (e.g., "es-MX" matches "es")
+		// But be careful with "zh" vs "zh-TW"
+		langOnly := prefLower
+		if idx := strings.IndexByte(langOnly, '-'); idx > 0 {
+			langOnly = langOnly[:idx]
+		}
+		
+		for _, supported := range supported {
+			supportedLower := strings.ToLower(supported)
+			// Exact language match (not substring)
+			if langOnly == supportedLower {
+				// Special case: don't match "zh-TW" to "zh"
+				if supported == "zh" && strings.HasPrefix(prefLower, "zh-") && prefLower != "zh-cn" {
+					continue
+				}
+				return supported
+			}
+		}
+	}
+	
+	return ""
 }
 
 // isLanguagePrefix checks if a path segment is a valid language code
