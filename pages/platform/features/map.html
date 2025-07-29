@@ -6,27 +6,16 @@
         "MarginBottom" "mb-16"
 }}
 
-{{template "hero-video" 
-    dict 
-        "VideoUrl" "/testvideo2.mp4"
-        "ShowUnmuteButton" true
-        "MarginBottom" "mb-16"
-}}
 
-{{template "call-out-text" 
-    dict 
-        "Text" "Location data reveals patterns you can't see in spreadsheets. Map view transforms coordinates into actionable insights." 
-        "MarginBottom" "mb-16"
-}}
 
 <!-- Real-Time Location Tracking Feature -->
 {{$trackingFeature := parseJSON `{
     "Title": "Track everything in real time.",
     "Description": "Always know where your assets, shipments, or team members are. Map view updates automatically as location data changes, giving you instant visibility across your operations.",
-    "VideoUrl": "/testvideo2.mp4",
-    "VideoPosition": "right"
+    "ImageUrl": "/product/map.png",
+    "ImagePosition": "right"
 }`}}
-{{template "feature-video" $trackingFeature}}
+{{template "feature-image" $trackingFeature}}
 
 <!-- Real-Time Location Tracking Benefits Grid -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,14 +39,20 @@
     {{template "feature-benefits-grid" $trackingBenefits}}
 </div>
 
+{{template "call-out-text" 
+    dict 
+        "Text" "Location data reveals patterns you can't see in spreadsheets. Map view transforms coordinates into actionable insights." 
+        "MarginBottom" "mb-16"
+}}
+
 <!-- Geographical Insights Feature -->
 {{$insightsFeature := parseJSON `{
     "Title": "Discover hidden patterns in your data.",
     "Description": "Uncover trends and relationships that are invisible in traditional views. Map view reveals geographical patterns that help you make better decisions and identify new opportunities.",
-    "VideoUrl": "/testvideo2.mp4",
-    "VideoPosition": "left"
+    "ImageUrl": "/product/map-org.png",
+    "ImagePosition": "left"
 }`}}
-{{template "feature-video" $insightsFeature}}
+{{template "feature-image" $insightsFeature}}
 
 <!-- Geographical Insights Benefits Grid -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,67 +76,6 @@
     {{template "feature-benefits-grid" $insightsBenefits}}
 </div>
 
-<!-- Location Custom Fields Feature -->
-{{$locationFieldsFeature := parseJSON `{
-    "Title": "Structure location data perfectly.",
-    "Description": "Our dedicated location custom field captures coordinates, Google Maps links, and even lets you search for locations. Every location change is logged for complete auditability.",
-    "VideoUrl": "/testvideo2.mp4",
-    "VideoPosition": "right"
-}`}}
-{{template "feature-video" $locationFieldsFeature}}
-
-<!-- Location Custom Fields Benefits Grid -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {{$locationFieldsBenefits := parseJSON `{
-        "Benefits": [
-            {
-                "Title": "Clear references",
-                "Description": "Give each record a precise location with coordinates or addresses."
-            },
-            {
-                "Title": "Complete audit trail",
-                "Description": "Track every location change with timestamps and user information."
-            },
-            {
-                "Title": "Easy to use",
-                "Description": "Search for locations or paste Google Maps links - no technical expertise required."
-            }
-        ],
-        "MarginBottom": "mb-20"
-    }`}}
-    {{template "feature-benefits-grid" $locationFieldsBenefits}}
-</div>
-
-<!-- Cross-Project Visualization Feature -->
-{{$crossProjectFeature := parseJSON `{
-    "Title": "Visualize data across all projects.",
-    "Description": "Your location data shouldn't be confined to a single project. Map view works across projects, so you can easily visualize and analyze data in one place, unlocking new insights and opportunities.",
-    "VideoUrl": "/testvideo2.mp4",
-    "VideoPosition": "left"
-}`}}
-{{template "feature-video" $crossProjectFeature}}
-
-<!-- Cross-Project Visualization Benefits Grid -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {{$crossProjectBenefits := parseJSON `{
-        "Benefits": [
-            {
-                "Title": "Unified perspective",
-                "Description": "Bring together location data from different teams and departments."
-            },
-            {
-                "Title": "Discover connections",
-                "Description": "Identify patterns across projects that might otherwise go unnoticed."
-            },
-            {
-                "Title": "Break down silos",
-                "Description": "Provide shared visual context for teams across your organization."
-            }
-        ],
-        "MarginBottom": "mb-20"
-    }`}}
-    {{template "feature-benefits-grid" $crossProjectBenefits}}
-</div>
 
 <!-- Call to Action -->
 {{$ctaData := parseJSON `{
