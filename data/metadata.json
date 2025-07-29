@@ -597,6 +597,88 @@
         "keywords": ["ទិដ្ឋភាពផែនទី", "ការតាមដានទីតាំង", "ទិន្នន័យភូមិសាស្ត្រ", "ការតាមដានទ្រព្យសម្បត្តិ", "ផែនទីពេលវេលាជាក់ស្តែង", "blue"]
       }
     },
+    "platform/features/records": {
+      "en": {
+        "title": "Records",
+        "description": "The fundamental building blocks of Blue. Track tasks, customers, deals, tickets — anything your business needs in one flexible system.",
+        "keywords": ["records", "data management", "task tracking", "customer management", "deals", "tickets", "blue"]
+      },
+      "es": {
+        "title": "Registros",
+        "description": "Los bloques de construcción fundamentales de Blue. Rastrea tareas, clientes, ofertas, tickets — cualquier cosa que tu negocio necesite en un sistema flexible.",
+        "keywords": ["registros", "gestión de datos", "seguimiento de tareas", "gestión de clientes", "ofertas", "tickets", "blue"]
+      },
+      "zh": {
+        "title": "记录",
+        "description": "Blue 的基本构建块。跟踪任务、客户、交易、工单——在一个灵活的系统中管理您的业务所需的任何内容。",
+        "keywords": ["记录", "数据管理", "任务跟踪", "客户管理", "交易", "工单", "blue"]
+      },
+      "fr": {
+        "title": "Enregistrements",
+        "description": "Les blocs de construction fondamentaux de Blue. Suivez les tâches, les clients, les offres, les tickets — tout ce dont votre entreprise a besoin dans un système flexible.",
+        "keywords": ["enregistrements", "gestion des données", "suivi des tâches", "gestion des clients", "offres", "tickets", "blue"]
+      },
+      "de": {
+        "title": "Datensätze",
+        "description": "Die grundlegenden Bausteine von Blue. Verfolgen Sie Aufgaben, Kunden, Deals, Tickets — alles was Ihr Unternehmen in einem flexiblen System benötigt.",
+        "keywords": ["datensätze", "datenmanagement", "aufgabenverfolgung", "kundenverwaltung", "deals", "tickets", "blue"]
+      },
+      "ja": {
+        "title": "レコード",
+        "description": "Blueの基本的な構成要素。タスク、顧客、取引、チケット — ビジネスに必要なあらゆるものを1つの柔軟なシステムで追跡します。",
+        "keywords": ["レコード", "データ管理", "タスク追跡", "顧客管理", "取引", "チケット", "blue"]
+      },
+      "pt": {
+        "title": "Registros",
+        "description": "Os blocos de construção fundamentais do Blue. Rastreie tarefas, clientes, negócios, tickets — qualquer coisa que seu negócio precise em um sistema flexível.",
+        "keywords": ["registros", "gestão de dados", "rastreamento de tarefas", "gestão de clientes", "negócios", "tickets", "blue"]
+      },
+      "ru": {
+        "title": "Записи",
+        "description": "Основные строительные блоки Blue. Отслеживайте задачи, клиентов, сделки, тикеты — все, что нужно вашему бизнесу в одной гибкой системе.",
+        "keywords": ["записи", "управление данными", "отслеживание задач", "управление клиентами", "сделки", "тикеты", "blue"]
+      },
+      "ko": {
+        "title": "레코드",
+        "description": "Blue의 기본 구성 요소입니다. 작업, 고객, 거래, 티켓 등 비즈니스에 필요한 모든 것을 하나의 유연한 시스템으로 추적하세요.",
+        "keywords": ["레코드", "데이터 관리", "작업 추적", "고객 관리", "거래", "티켓", "blue"]
+      },
+      "it": {
+        "title": "Record",
+        "description": "I mattoni fondamentali di Blue. Traccia attività, clienti, offerte, ticket — tutto ciò di cui la tua azienda ha bisogno in un sistema flessibile.",
+        "keywords": ["record", "gestione dati", "tracciamento attività", "gestione clienti", "offerte", "ticket", "blue"]
+      },
+      "id": {
+        "title": "Rekaman",
+        "description": "Blok bangunan fundamental dari Blue. Lacak tugas, pelanggan, penawaran, tiket — apa pun yang dibutuhkan bisnis Anda dalam satu sistem yang fleksibel.",
+        "keywords": ["rekaman", "manajemen data", "pelacakan tugas", "manajemen pelanggan", "penawaran", "tiket", "blue"]
+      },
+      "nl": {
+        "title": "Records",
+        "description": "De fundamentele bouwstenen van Blue. Volg taken, klanten, deals, tickets — alles wat uw bedrijf nodig heeft in één flexibel systeem.",
+        "keywords": ["records", "databeheer", "taakopvolging", "klantbeheer", "deals", "tickets", "blue"]
+      },
+      "pl": {
+        "title": "Rekordy",
+        "description": "Podstawowe elementy budulcowe Blue. Śledź zadania, klientów, oferty, zgłoszenia — wszystko czego potrzebuje Twoja firma w jednym elastycznym systemie.",
+        "keywords": ["rekordy", "zarządzanie danymi", "śledzenie zadań", "zarządzanie klientami", "oferty", "zgłoszenia", "blue"]
+      },
+      "zh-TW": {
+        "title": "記錄",
+        "description": "Blue 的基本構建塊。追蹤任務、客戶、交易、工單——在一個靈活的系統中管理您的業務所需的任何內容。",
+        "keywords": ["記錄", "數據管理", "任務追蹤", "客戶管理", "交易", "工單", "blue"]
+      },
+      "sv": {
+        "title": "Register",
+        "description": "De grundläggande byggstenarna i Blue. Spåra uppgifter, kunder, affärer, biljetter — allt ditt företag behöver i ett flexibelt system.",
+        "keywords": ["register", "datahantering", "uppgiftsspårning", "kundhantering", "affärer", "biljetter", "blue"]
+      },
+      "km": {
+        "title": "កំណត់ត្រា",
+        "description": "ធាតុផ្សំជាមូលដ្ឋានរបស់ Blue។ តាមដានកិច្ចការ អតិថិជន កិច្ចព្រមព្រៀង សំបុត្រ — អ្វីក៏ដោយដែលអាជីវកម្មរបស់អ្នកត្រូវការនៅក្នុងប្រព័ន្ធដែលអាចបត់បែនបាន។",
+        "keywords": ["កំណត់ត្រា", "ការគ្រប់គ្រងទិន្នន័យ", "ការតាមដានកិច្ចការ", "ការគ្រប់គ្រងអតិថិជន", "កិច្ចព្រមព្រៀង", "សំបុត្រ", "blue"]
+      }
+    },
     "solutions/industry/non-profits": {
       "en": {
         "title": "Non-Profit Solutions",
