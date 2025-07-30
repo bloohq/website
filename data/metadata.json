@@ -1170,6 +1170,88 @@
         "description": "ធ្វើឱ្យដំណើរការរដ្ឋាភិបាលកាន់តែប្រសើរ និងកែលម្អសេវាកម្មពលរដ្ឋជាមួយនឹងវេទិកាមានសុវត្ថិភាព និងអនុលោមតាមបទបញ្ញត្តិរបស់ Blue។",
         "keywords": ["ដំណោះស្រាយរដ្ឋាភិបាល", "សេវាកម្មពលរដ្ឋ", "ដំណើរការរដ្ឋាភិបាល", "វិស័យសាធារណៈ", "ការអនុលោមតាម", "blue"]
       }
+    },
+    "solutions/use-case/service-tickets": {
+      "en": {
+        "title": "Service Tickets",
+        "description": "Transform your support operations with flexible ticket management, intelligent routing, and real-time SLA tracking.",
+        "keywords": ["service tickets", "ticket management", "support operations", "intelligent routing", "SLA tracking", "help desk", "blue"]
+      },
+      "es": {
+        "title": "Tickets de Servicio",
+        "description": "Transforma tus operaciones de soporte con gestión flexible de tickets, enrutamiento inteligente y seguimiento de SLA en tiempo real.",
+        "keywords": ["tickets de servicio", "gestión de tickets", "operaciones de soporte", "enrutamiento inteligente", "seguimiento de SLA", "mesa de ayuda", "blue"]
+      },
+      "zh": {
+        "title": "服务工单",
+        "description": "通过灵活的工单管理、智能路由和实时 SLA 跟踪来改变您的支持运营。",
+        "keywords": ["服务工单", "工单管理", "支持运营", "智能路由", "SLA 跟踪", "服务台", "blue"]
+      },
+      "fr": {
+        "title": "Tickets de Service",
+        "description": "Transformez vos opérations de support avec une gestion flexible des tickets, un routage intelligent et un suivi SLA en temps réel.",
+        "keywords": ["tickets de service", "gestion des tickets", "opérations de support", "routage intelligent", "suivi SLA", "centre d'assistance", "blue"]
+      },
+      "de": {
+        "title": "Service-Tickets",
+        "description": "Transformieren Sie Ihre Support-Abläufe mit flexiblem Ticket-Management, intelligentem Routing und Echtzeit-SLA-Tracking.",
+        "keywords": ["service-tickets", "ticket-management", "support-abläufe", "intelligentes routing", "sla-tracking", "helpdesk", "blue"]
+      },
+      "ja": {
+        "title": "サービスチケット",
+        "description": "柔軟なチケット管理、インテリジェントルーティング、リアルタイムSLA追跡でサポート業務を変革します。",
+        "keywords": ["サービスチケット", "チケット管理", "サポート業務", "インテリジェントルーティング", "SLA追跡", "ヘルプデスク", "blue"]
+      },
+      "pt": {
+        "title": "Tickets de Serviço",
+        "description": "Transforme suas operações de suporte com gerenciamento flexível de tickets, roteamento inteligente e acompanhamento de SLA em tempo real.",
+        "keywords": ["tickets de serviço", "gerenciamento de tickets", "operações de suporte", "roteamento inteligente", "acompanhamento de SLA", "central de ajuda", "blue"]
+      },
+      "ru": {
+        "title": "Служебные Заявки",
+        "description": "Преобразуйте свои операции поддержки с помощью гибкого управления заявками, интеллектуальной маршрутизации и отслеживания SLA в реальном времени.",
+        "keywords": ["служебные заявки", "управление заявками", "операции поддержки", "интеллектуальная маршрутизация", "отслеживание SLA", "служба поддержки", "blue"]
+      },
+      "ko": {
+        "title": "서비스 티켓",
+        "description": "유연한 티켓 관리, 지능형 라우팅, 실시간 SLA 추적으로 지원 운영을 혁신하세요.",
+        "keywords": ["서비스 티켓", "티켓 관리", "지원 운영", "지능형 라우팅", "SLA 추적", "헬프데스크", "blue"]
+      },
+      "it": {
+        "title": "Ticket di Servizio",
+        "description": "Trasforma le tue operazioni di supporto con gestione flessibile dei ticket, instradamento intelligente e tracciamento SLA in tempo reale.",
+        "keywords": ["ticket di servizio", "gestione ticket", "operazioni di supporto", "instradamento intelligente", "tracciamento SLA", "help desk", "blue"]
+      },
+      "id": {
+        "title": "Tiket Layanan",
+        "description": "Ubah operasi dukungan Anda dengan manajemen tiket yang fleksibel, perutean cerdas, dan pelacakan SLA real-time.",
+        "keywords": ["tiket layanan", "manajemen tiket", "operasi dukungan", "perutean cerdas", "pelacakan SLA", "help desk", "blue"]
+      },
+      "nl": {
+        "title": "Service Tickets",
+        "description": "Transformeer uw supportactiviteiten met flexibel ticketbeheer, intelligente routering en real-time SLA-tracking.",
+        "keywords": ["service tickets", "ticketbeheer", "supportactiviteiten", "intelligente routering", "sla-tracking", "helpdesk", "blue"]
+      },
+      "pl": {
+        "title": "Zgłoszenia Serwisowe",
+        "description": "Przekształć swoje operacje wsparcia dzięki elastycznemu zarządzaniu zgłoszeniami, inteligentnemu kierowaniu i śledzeniu SLA w czasie rzeczywistym.",
+        "keywords": ["zgłoszenia serwisowe", "zarządzanie zgłoszeniami", "operacje wsparcia", "inteligentne kierowanie", "śledzenie SLA", "helpdesk", "blue"]
+      },
+      "zh-TW": {
+        "title": "服務工單",
+        "description": "通過靈活的工單管理、智能路由和即時 SLA 追蹤來改變您的支援營運。",
+        "keywords": ["服務工單", "工單管理", "支援營運", "智能路由", "SLA 追蹤", "服務台", "blue"]
+      },
+      "sv": {
+        "title": "Serviceärenden",
+        "description": "Transformera dina supportoperationer med flexibel ärendehantering, intelligent routing och realtids-SLA-spårning.",
+        "keywords": ["serviceärenden", "ärendehantering", "supportoperationer", "intelligent routing", "sla-spårning", "helpdesk", "blue"]
+      },
+      "km": {
+        "title": "សំបុត្រសេវាកម្ម",
+        "description": "បំប្លែងប្រតិបត្តិការគាំទ្ររបស់អ្នកជាមួយនឹងការគ្រប់គ្រងសំបុត្រដែលអាចបត់បែនបាន ការបញ្ជូនឆ្លាតវៃ និងការតាមដាន SLA ពេលវេលាជាក់ស្តែង។",
+        "keywords": ["សំបុត្រសេវាកម្ម", "ការគ្រប់គ្រងសំបុត្រ", "ប្រតិបត្តិការគាំទ្រ", "ការបញ្ជូនឆ្លាតវៃ", "ការតាមដាន SLA", "តុជំនួយ", "blue"]
+      }
     }
   },
   "defaults": {
