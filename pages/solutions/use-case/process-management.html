@@ -6,13 +6,6 @@
             "MarginBottom" "mb-16"
     }}
 
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "process-management"
-    }}
-
     <!-- Customer Logos -->
     <section class="mb-16">
         {{$logoData := parseJSON `{
@@ -37,7 +30,7 @@
             {{$processDesignData := parseJSON `{
                 "Title": "Design processes that actually work.",
                 "Description": "Create custom lists for each process step, add the exact fields you need, and organize everything in folders. No templates to fight against—build processes that match how your team actually works.",
-                "VideoUrl": "/testvideo2.mp4",
+                "VideoUrl": "https://media.blue.cc/recruitment-board.mp4",
                 "VideoPosition": "right",
                 "Button": {
                     "Text": "Learn about custom fields",
@@ -68,7 +61,7 @@
             {{$automationData := parseJSON `{
                 "Title": "Processes that run themselves.",
                 "Description": "Stack and layer automations to keep work moving forward. Create checklists, set due dates, assign tasks, and automatically move records to the next step when conditions are met. Your processes never get stuck.",
-                "VideoUrl": "/testvideo2.mp4",
+                "VideoUrl": "https://media.blue.cc/automations-on-off.mp4",
                 "VideoPosition": "left",
                 "Button": {
                     "Text": "Explore automations",
@@ -101,34 +94,18 @@
         
         <!-- Process Visibility & Tracking -->
         <div class="mb-16">
-            {{$visibilityData := parseJSON `{
-                "Title": "See exactly where processes get stuck.",
-                "Description": "Real-time dashboards show completion rates, bottlenecks, and performance metrics. Track time in each stage, identify where processes slow down, and optimize your workflows based on actual data.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Heading": "Tracking features",
-                    "Links": [
-                        {
-                            "Text": "Time in list tracking",
-                            "Url": "/docs/custom-fields/time-in-list",
-                            "Description": "shows where records get stuck"
-                        },
-                        {
-                            "Text": "Process dashboards",
-                            "Url": "/docs/dashboards/introduction",
-                            "Description": "for performance monitoring"
-                        },
-                        {
-                            "Text": "Completion analytics",
-                            "Url": "/docs/dashboards/charts",
-                            "Description": "to measure success rates"
-                        }
-                    ]
-                }
-            }`}}
-            
-            {{template "feature-video" $visibilityData}}
+            <div class="max-w-7xl mx-auto mb-8">
+                <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">See exactly where processes get stuck.</h2>
+                <div class="mb-8">
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">Real-time dashboards show completion rates, bottlenecks, and performance metrics. Track time in each stage, identify where processes slow down, and optimize your workflows based on actual data.</p>
+                </div>
+                
+                {{template "hero-video" 
+                    dict 
+                        "Youtube" "https://www.youtube.com/embed/8Aifkoqptzk"
+                        "Id" "process-tracking"
+                }}
+            </div>
         </div>
         
         <!-- Security & Compliance -->
@@ -163,59 +140,19 @@
             {{template "feature-video" $complianceData}}
         </div>
     </section>
-
-    <!-- Interactive Feature Showcase -->
-    <section class="mb-16">
-        {{$showcaseData := parseJSON `{
-            "Title": "Perfect for every process",
-            "Features": [
-                {
-                    "Id": "onboarding",
-                    "Title": "Employee Onboarding",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "compliance",
-                    "Title": "Compliance Workflows",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                },
-                {
-                    "Id": "approvals",
-                    "Title": "Approval Processes",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "manufacturing",
-                    "Title": "Manufacturing SOPs",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                },
-                {
-                    "Id": "quality-control",
-                    "Title": "Quality Control",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "client-delivery",
-                    "Title": "Client Delivery",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                }
-            ]
-        }`}}
-        
-        {{template "interactive-feature-showcase" $showcaseData}}
-    </section>
-
-    <!-- Testimonial -->
-    <section class="mb-16">        
-        {{template "testimonial-single" 
-            dict 
-                "Quote" "Blue transformed how we manage our compliance processes. What used to take weeks now happens automatically, and we never miss a deadline."
-                "VideoUrl" "/testvideo2.mp4"
-                "PosterUrl" "/testimonials/june.jpg"
-                "Name" "Michael Rodriguez"
-                "Title" "Operations Director"
-        }}
-    </section>
+   
+         <!-- Ivan Keogh Testimonial -->
+         <div class="mb-16">
+            {{$testimonialData := parseJSON `{
+                "ImageUrl": "/customers/ivan-keogh.jpeg",
+                "Quote": "Comin Asia (part of RMA Group) has relied on Blue for nearly six years as our core CRM platform. We chose Blue over Salesforce for its intuitive interface, real‑time dashboards, and flexible automation—boosting our sales visibility and reducing manual admin and helping us scale across Cambodia, Vietnam, Thailand, Laos, and Myanmar.",
+                "Name": "Ivan Keogh",
+                "Title": "CEO of Comin Asia",
+                "DesktopFontSize": "lg:text-3xl"
+            }`}}
+            
+            {{template "testimonial-single" $testimonialData}}
+        </div>
 
     <!-- Value Proposition Section -->
     <section class="mb-16">
@@ -261,7 +198,6 @@
         {{$faqData := parseJSON `{
             "categories": [
                 {
-                    "id": "FAQ",
                     "name": "Frequently asked questions",
                     "questions": [
                         {
