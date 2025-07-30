@@ -116,7 +116,7 @@
     <div class="mb-20 px-6 lg:px-8">
         {{$salesCrmData := parseJSON `{
             "VideoPosition": "left",
-            "VideoUrl": "/product/kanban-board.mp4",
+            "VideoUrl": "https://media.blue.cc/database-group-example.mp4",
             "Title": "Sales CRM & Client Management",
             "Description": "Track leads, manage proposals, and close deals with a powerful CRM built for professional services. Link opportunities to clients and see your entire sales pipeline in one view.",
             "Button": {
@@ -173,7 +173,7 @@
             }}
             
             <div class="text-center mt-8">
-                <a href="/solutions/use-case/customer-portal" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
+                <a href="/solutions/use-case/client-portal" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
                     See Client Portal Features
                     <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -183,35 +183,13 @@
         </div>
     </section>
 
-    <!-- Hiring & HR Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$hiringData := parseJSON `{
-            "VideoPosition": "right",
-            "VideoUrl": "/product/user-roles.mp4",
-            "Title": "Hiring & Team Management",
-            "Description": "Streamline your hiring process from application to onboarding. Track candidates, manage interviews, and coordinate with hiring managers across departments.",
-            "Button": {
-                "Text": "Learn about Hiring",
-                "Url": "/solutions/use-case/hiring"
-            },
-            "SeeAlso": {
-                "Links": [
-                    { "Text": "Kanban Board", "Description": "visualize hiring pipeline stages and candidate flow", "Url": "/platform/features/kanban-board" },
-                    { "Text": "Calendar Sync", "Description": "coordinate interview schedules across teams", "Url": "/docs/integrations/calendar-sync" },
-                    { "Text": "Reference Fields", "Description": "link candidates to positions and interviewers", "Url": "/docs/custom-fields/reference" }
-                ]
-            }
-        }`}}
-        {{template "feature-video" $hiringData}}
-    </div>
-
 
 
     <!-- Business Intelligence Feature -->
-    <div class="mb-20 px-6 lg:px-8">
+    <div class="mb-20">
         {{$biData := parseJSON `{
-            "VideoPosition": "right",
-            "VideoUrl": "/product/reporting.mp4",
+            "ImagePosition": "right",
+            "ImageUrl": "/product/stats-cards.png",
             "Title": "Business Intelligence & Analytics",
             "Description": "Get insights into your entire business with cross-project dashboards. Track pipeline value, close rates, revenue goals, and team performance in real-time.",
             "Button": {
@@ -226,7 +204,7 @@
                 ]
             }
         }`}}
-        {{template "feature-video" $biData}}
+        {{template "feature-image" $biData}}
     </div>
 
     <!-- Professional Services Stats Section -->
