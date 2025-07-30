@@ -49,8 +49,8 @@ window.SPAUtils = {
     setupClientRouting() {
         const navLinks = document.querySelectorAll('a[href^="/"]:not([data-spa-handled])');
         navLinks.forEach(link => {
-            // Skip external links, special links, and pages with dynamic scripts
-            if (link.target === '_blank' || link.href.includes('#')) return;
+            // Skip external links, special links, download links, and pages with dynamic scripts
+            if (link.target === '_blank' || link.href.includes('#') || link.hasAttribute('download')) return;
             
             // Skip SPA routing for pages that need full page loads
             const url = new URL(link.href);
