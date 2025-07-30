@@ -30,6 +30,16 @@ EXAMPLE IMPLEMENTATIONS:
         "MarginBottom" "mb-24"
 }}
 
+3. With custom desktop font size:
+{{template "testimonial-single" 
+    dict 
+        "Quote" "This is a shorter quote that needs smaller text." 
+        "Name" "John Doe" 
+        "Title" "CEO, Company" 
+        "ImageUrl" "/testimonials/john.jpg"
+        "DesktopFontSize" "lg:text-3xl"
+}}
+
 Note: Common usage includes LogoSrc parameter but component doesn't use it.
 Also uses Name/Title instead of Author.
 
@@ -41,7 +51,8 @@ DATA STRUCTURE:
     "ImageUrl": "/path/to/image.jpg",   // Customer photo (required if no video)
     "VideoUrl": "/path/to/video.mp4",   // Testimonial video (optional)
     "PosterUrl": "/path/to/poster.jpg", // Video poster frame (optional)
-    "MarginBottom": "mb-16"              // Bottom margin (optional, default: mb-16)
+    "MarginBottom": "mb-16",            // Bottom margin (optional, default: mb-16)
+    "DesktopFontSize": "lg:text-4xl"    // Desktop font size (optional, default: lg:text-4xl)
 }
 
 FEATURES:
@@ -52,6 +63,7 @@ FEATURES:
 - Browser video controls
 - Responsive grid layout
 - Dark mode support
+- Customizable desktop font size
 
 LAYOUT:
 - Container: Gray-50 background, rounded-2xl
@@ -79,7 +91,7 @@ VIDEO CONTROLS:
 
 STYLING:
 - Background: Gray-50 (dark: gray-800)
-- Quote: 2xl-4xl font size, medium weight
+- Quote: 2xl mobile, 4xl desktop (customizable), medium weight
 - Quote color: Gray-900 (dark: gray-100)
 - Name: lg font size, semibold
 - Title: Regular text, gray-600
@@ -151,7 +163,7 @@ USE CASES:
         <!-- Content Column -->
         <div class="lg:col-span-8 space-y-6">
             <!-- Quote -->
-            <p class="text-2xl lg:text-4xl text-gray-900 dark:text-gray-100 font-medium leading-relaxed">
+            <p class="text-2xl {{if .DesktopFontSize}}{{.DesktopFontSize}}{{else}}lg:text-4xl{{end}} text-gray-900 dark:text-gray-100 font-medium leading-relaxed">
                 "{{.Quote}}"
             </p>
             
