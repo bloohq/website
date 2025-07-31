@@ -1,8 +1,8 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Track every last nut, bolt, and piece of equipment." 
-            "Subtitle" "Blue's flexible database and powerful automation helps you track, manage, and optimize any type of asset—from IT equipment to heavy machinery." 
+            "Title" (t "asset-management.page_title") 
+            "Subtitle" (t "asset-management.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
@@ -14,17 +14,17 @@
 
     <!-- Customer Logos -->
     <section class="mb-16">
-        {{$logoData := parseJSON `{
-            "title": "500,000+ assets managed in Blue",
-            "logos": [
+        {{$logoData := dict 
+            "title" (t "asset-management.customer_logos_title")
+            "logos" (parseJSON `[
                 { "name": "Heineken", "src": "/customers/heineken.svg" },
                 { "name": "Deloitte", "src": "/customers/deloitte.svg" },
                 { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
                 { "name": "FedEx", "src": "/customers/fedex.svg" },
                 { "name": "World Food Programme", "src": "/customers/wfp.svg" },
                 { "name": "ILO", "src": "/customers/ilo.webp" }
-            ]
-        }`}}
+            ]`)
+        }}
         
         {{template "logo-grid" $logoData}}
     </section>
@@ -32,47 +32,47 @@
 
     <!-- Value Proposition Section -->
     <section class="mb-16">
-        {{$valuePropsData := parseJSON `{
-            "Title": "Why Blue beats traditional asset management software",
-            "Description": "Rigid asset management systems force you into their way of thinking. Blue adapts to yours.",
-            "ValueProps": [
+        {{$valuePropsData := dict 
+            "Title" (t "asset-management.value_props_title")
+            "Description" (t "asset-management.value_props_description")
+            "ValueProps" (parseJSON `[
                 {
-                    "Title": "Unlimited flexibility",
-                    "Description": "Track any asset type with custom fields designed for your exact needs."
+                    "Title": "{{t \"asset-management.unlimited_flexibility_title\"}}",
+                    "Description": "{{t \"asset-management.unlimited_flexibility_description\"}}"
                 },
                 {
-                    "Title": "Complete audit trail",
-                    "Description": "Every change is automatically logged for compliance and accountability."
+                    "Title": "{{t \"asset-management.complete_audit_trail_title\"}}",
+                    "Description": "{{t \"asset-management.complete_audit_trail_description\"}}"
                 },
                 {
-                    "Title": "API-first design",
-                    "Description": "Your asset data is instantly available to any other system you use."
+                    "Title": "{{t \"asset-management.api_first_design_title\"}}",
+                    "Description": "{{t \"asset-management.api_first_design_description\"}}"
                 }
-            ]
-        }`}}
+            ]`)
+        }}
         
         {{template "value-propositions" $valuePropsData}}
     </section>
 
     <!-- Stats Section -->
     <section class="mb-16">
-        {{$statsData := parseJSON `{
-            "Title": "Asset management that delivers results",
-            "Stats": [
+        {{$statsData := dict 
+            "Title" (t "asset-management.stats_title")
+            "Stats" (parseJSON `[
                 {
                     "Number": "30%",
-                    "Description": "reduction in asset downtime"
+                    "Description": "{{t \"asset-management.stat_downtime_reduction\"}}"
                 },
                 {
                     "Number": "25%",
-                    "Description": "increase in asset utilization"
+                    "Description": "{{t \"asset-management.stat_utilization_increase\"}}"
                 },
                 {
                     "Number": "40%",
-                    "Description": "faster asset requests"
+                    "Description": "{{t \"asset-management.stat_faster_requests\"}}"
                 }
-            ]
-        }`}}
+            ]`)
+        }}
         
         {{template "stats-section" $statsData}}
     </section>
@@ -81,95 +81,95 @@
     <section class="mb-16">
         <!-- Flexible Asset Database -->
         <div class="mb-16">
-            {{$assetDatabaseData := parseJSON `{
-                "Title": "Build the perfect asset database for your needs.",
-                "Description": "Create custom fields for serial numbers, purchase dates, locations, and any data you need. Track IT equipment, vehicles, machinery, or furniture with the same flexible system. Blue generates serial numbers automatically or import your existing ones.",
-                "VideoUrl": "https://media.blue.cc/asset-database.mp4",
-                "VideoPosition": "right",
-                "Button": {
-                    "Text": "Learn about custom fields",
-                    "Url": "/docs/custom-fields/introduction"
-                },
-                "SeeAlso": {
-                    "Heading": "Asset data features",
-                    "Links": [
+            {{$assetDatabaseData := dict 
+                "Title" (t "asset-management.asset_database_title")
+                "Description" (t "asset-management.asset_database_description")
+                "VideoUrl" "https://media.blue.cc/asset-database.mp4"
+                "VideoPosition" "right"
+                "Button" (dict 
+                    "Text" (t "asset-management.learn_about_custom_fields")
+                    "Url" "/docs/custom-fields/introduction"
+                )
+                "SeeAlso" (dict 
+                    "Heading" (t "asset-management.asset_data_features")
+                    "Links" (parseJSON `[
                         {
-                            "Text": "Unique ID generation",
+                            "Text": "{{t \"asset-management.unique_id_generation\"}}",
                             "Url": "/docs/custom-fields/unique-id",
-                            "Description": "automatic or imported"
+                            "Description": "{{t \"asset-management.unique_id_generation_description\"}}"
                         },
                         {
-                            "Text": "Reference fields",
+                            "Text": "{{t \"asset-management.reference_fields\"}}",
                             "Url": "/docs/custom-fields/reference",
-                            "Description": "link assets to employees and departments"
+                            "Description": "{{t \"asset-management.reference_fields_description\"}}"
                         }
-                    ]
-                }
-            }`}}
+                    ]`)
+                )
+            }}
             
             {{template "feature-video" $assetDatabaseData}}
         </div>
         
         <!-- Automated Maintenance -->
         <div class="mb-16">
-            {{$maintenanceData := parseJSON `{
-                "Title": "Never miss maintenance again.",
-                "Description": "Set up recurring maintenance schedules that automatically create tasks and assign them to the right team members. Track maintenance history, costs, and compliance requirements with complete audit trails.",
-                "VideoUrl": "https://media.blue.cc/asset-repeat.mp4",
-                "VideoPosition": "left",
-                "SeeAlso": {
-                    "Heading": "Maintenance features",
-                    "Links": [
+            {{$maintenanceData := dict 
+                "Title" (t "asset-management.maintenance_title")
+                "Description" (t "asset-management.maintenance_description")
+                "VideoUrl" "https://media.blue.cc/asset-repeat.mp4"
+                "VideoPosition" "left"
+                "SeeAlso" (dict 
+                    "Heading" (t "asset-management.maintenance_features")
+                    "Links" (parseJSON `[
                         {
-                            "Text": "Recurring records",
+                            "Text": "{{t \"asset-management.recurring_records\"}}",
                             "Url": "/docs/records/repeat",
-                            "Description": "for scheduled maintenance"
+                            "Description": "{{t \"asset-management.recurring_records_description\"}}"
                         },
                         {
-                            "Text": "Maintenance automations",
+                            "Text": "{{t \"asset-management.maintenance_automations\"}}",
                             "Url": "/docs/automations/introduction",
-                            "Description": "automatic task creation"
+                            "Description": "{{t \"asset-management.maintenance_automations_description\"}}"
                         },
                         {
-                            "Text": "Due date tracking",
+                            "Text": "{{t \"asset-management.due_date_tracking\"}}",
                             "Url": "/docs/custom-fields/date",
-                            "Description": "with automatic reminders"
+                            "Description": "{{t \"asset-management.due_date_tracking_description\"}}"
                         }
-                    ]
-                }
-            }`}}
+                    ]`)
+                )
+            }}
             
             {{template "feature-video" $maintenanceData}}
         </div>
         
         <!-- Asset Assignment & Approval -->
         <div class="mb-16">
-            {{$assignmentData := parseJSON `{
-                "Title": "Smart asset allocation with approval workflows.",
-                "Description": "Assign assets to employees or departments with built-in approval processes. Use button fields for manager confirmation or checkbox workflows for equipment requests. Track who has what, when, and why.",
-                "VideoUrl": "https://media.blue.cc/request-asset.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Heading": "Assignment tools",
-                    "Links": [
+            {{$assignmentData := dict 
+                "Title" (t "asset-management.assignment_title")
+                "Description" (t "asset-management.assignment_description")
+                "VideoUrl" "https://media.blue.cc/request-asset.mp4"
+                "VideoPosition" "right"
+                "SeeAlso" (dict 
+                    "Heading" (t "asset-management.assignment_tools")
+                    "Links" (parseJSON `[
                         {
-                            "Text": "Button fields",
+                            "Text": "{{t \"asset-management.button_fields\"}}",
                             "Url": "/docs/custom-fields/button",
-                            "Description": "for manager approvals"
+                            "Description": "{{t \"asset-management.button_fields_description\"}}"
                         },
                         {
-                            "Text": "Checkbox workflows",
+                            "Text": "{{t \"asset-management.checkbox_workflows\"}}",
                             "Url": "/docs/custom-fields/checkbox",
-                            "Description": "for request tracking"
+                            "Description": "{{t \"asset-management.checkbox_workflows_description\"}}"
                         },
                         {
-                            "Text": "User assignment",
+                            "Text": "{{t \"asset-management.user_assignment\"}}",
                             "Url": "/docs/user-management/introduction",
-                            "Description": "track asset ownership"
+                            "Description": "{{t \"asset-management.user_assignment_description\"}}"
                         }
-                    ]
-                }
-            }`}}
+                    ]`)
+                )
+            }}
             
             {{template "feature-video" $assignmentData}}
         </div>
@@ -181,17 +181,17 @@
                     <!-- Left side - Text content -->
                     <div class="space-y-4">
                         <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">
-                            Your asset data, available everywhere.
+                            {{t "asset-management.api_integration_title"}}
                         </h3>
                         <p class="text-gray-600 dark:text-gray-300">
-                            Blue's API instantly exposes your asset inventory to any other software—no developer setup required. Create, update, and sync asset data with external systems in real-time.
+                            {{t "asset-management.api_integration_description"}}
                         </p>
                         
                         <!-- Button -->
                         <div class="pt-2">
                             <a href="/platform/api" 
                                class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
-                                Explore the API
+                                {{t "asset-management.explore_api"}}
                                 <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
@@ -201,26 +201,26 @@
                         <!-- See Also -->
                         <div class="pt-4">
                             <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
-                                See also
+                                {{t "asset-management.see_also"}}
                             </h5>
                             <ul class="space-y-2">
                                 <li>
                                     <a href="/docs/integrations/api" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
-                                        API integration
+                                        {{t "asset-management.api_integration_link"}}
                                     </a>
-                                    <span class="text-sm text-gray-500 dark:text-gray-400"> real-time data synchronization</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400"> {{t "asset-management.api_integration_link_description"}}</span>
                                 </li>
                                 <li>
                                     <a href="/docs/dashboards/introduction" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
-                                        Asset dashboards
+                                        {{t "asset-management.asset_dashboards"}}
                                     </a>
-                                    <span class="text-sm text-gray-500 dark:text-gray-400"> for performance tracking</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400"> {{t "asset-management.asset_dashboards_description"}}</span>
                                 </li>
                                 <li>
                                     <a href="/docs/custom-fields/introduction" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
-                                        Custom fields
+                                        {{t "asset-management.custom_fields"}}
                                     </a>
-                                    <span class="text-sm text-gray-500 dark:text-gray-400"> flexible asset data structure</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400"> {{t "asset-management.custom_fields_description"}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -267,16 +267,16 @@
         
         <!-- Integration Partners -->
         <div class="mb-16">
-            {{$integrationData := parseJSON `{
-                "title": "Connect with 7,000+ tools through our integration partners",
-                "logos": [
+            {{$integrationData := dict 
+                "title" (t "asset-management.integration_partners_title")
+                "logos" (parseJSON `[
                     { "name": "Zapier", "src": "/images/zapier.svg" },
                     { "name": "Make.com", "src": "/images/make.svg" },
                     { "name": "Pabbly Connect", "src": "/images/pabbly.svg" },
                     { "name": "Albato", "src": "/images/albato.png" },
                     { "name": "Boost.space", "src": "/images/boost-space.svg" }
-                ]
-            }`}}
+                ]`)
+            }}
             {{template "logo-grid" $integrationData}}
         </div>
     </section>
@@ -286,70 +286,70 @@
 
     <!-- Asset Management Features Grid -->
     <section class="mb-16">
-        {{$featuresData := parseJSON `{
-            "Title": "Everything you need for comprehensive asset management",
-            "Features": [
+        {{$featuresData := dict 
+            "Title" (t "asset-management.features_title")
+            "Features" (parseJSON `[
                 {
                     "Icon": "database",
-                    "Title": "Centralized Database",
-                    "Description": "All asset information in one place with custom fields for any data you need to track."
+                    "Title": "{{t \"asset-management.centralized_database_title\"}}",
+                    "Description": "{{t \"asset-management.centralized_database_description\"}}"
                 },
                 {
                     "Icon": "calendar",
-                    "Title": "Maintenance Scheduling",
-                    "Description": "Automated recurring maintenance with reminders, assignments, and compliance tracking."
+                    "Title": "{{t \"asset-management.maintenance_scheduling_title\"}}",
+                    "Description": "{{t \"asset-management.maintenance_scheduling_description\"}}"
                 },
                 {
                     "Icon": "map-pin",
-                    "Title": "Location Tracking",
-                    "Description": "Track asset locations and movements with location fields and API integration."
+                    "Title": "{{t \"asset-management.location_tracking_title\"}}",
+                    "Description": "{{t \"asset-management.location_tracking_description\"}}"
                 },
                 {
                     "Icon": "users",
-                    "Title": "Asset Assignment",
-                    "Description": "Assign assets to employees or departments with approval workflows and ownership tracking."
+                    "Title": "{{t \"asset-management.asset_assignment_title\"}}",
+                    "Description": "{{t \"asset-management.asset_assignment_description\"}}"
                 },
                 {
                     "Icon": "chart-bar",
-                    "Title": "Utilization Analytics",
-                    "Description": "Track usage patterns, costs, and performance with real-time dashboards and reports."
+                    "Title": "{{t \"asset-management.utilization_analytics_title\"}}",
+                    "Description": "{{t \"asset-management.utilization_analytics_description\"}}"
                 },
                 {
                     "Icon": "shield-check",
-                    "Title": "Compliance Management",
-                    "Description": "Complete audit trails and regulatory reporting for any compliance requirements."
+                    "Title": "{{t \"asset-management.compliance_management_title\"}}",
+                    "Description": "{{t \"asset-management.compliance_management_description\"}}"
                 },
                 {
                     "Icon": "code",
-                    "Title": "API Integration",
-                    "Description": "Instant API access to your asset data without any developer setup required."
+                    "Title": "{{t \"asset-management.api_integration_feature_title\"}}",
+                    "Description": "{{t \"asset-management.api_integration_feature_description\"}}"
                 },
                 {
                     "Icon": "clock",
-                    "Title": "Lifecycle Management",
-                    "Description": "Track assets from acquisition to disposal with complete history and documentation."
+                    "Title": "{{t \"asset-management.lifecycle_management_title\"}}",
+                    "Description": "{{t \"asset-management.lifecycle_management_description\"}}"
                 },
                 {
                     "Icon": "bell",
-                    "Title": "Smart Notifications",
-                    "Description": "Automated alerts for maintenance, compliance deadlines, and lifecycle milestones."
+                    "Title": "{{t \"asset-management.smart_notifications_title\"}}",
+                    "Description": "{{t \"asset-management.smart_notifications_description\"}}"
                 }
-            ]
-        }`}}
+            ]`)
+        }}
 
         {{template "features-grid-simple" $featuresData}}
     </section>
 
     <!-- First CTA -->
     <section class="mb-16">
-        {{$firstCTA := parseJSON `{
-            "Title": "Take control of your assets today.",
-            "Subtitle": "Join thousands of organizations using Blue to optimize their asset management.",
-            "SecondaryText": "See a demo",
-            "SecondaryUrl": "/contact",
-            "PrimaryText": "Start free trial",
-            "PrimaryUrl": "https://app.blue.cc"
-        }`}}
+        {{$firstCTA := dict 
+            "Title" (t "asset-management.cta_title")
+            "Subtitle" (t "asset-management.cta_subtitle")
+            "SecondaryText" (t "asset-management.see_demo")
+            "SecondaryUrl" "/contact"
+            "PrimaryText" (t "asset-management.start_free_trial")
+            "PrimaryUrl" "https://app.blue.cc"
+        }}
         
         {{template "dual-button-cta" $firstCTA}}
     </section>
@@ -357,55 +357,55 @@
     <!-- FAQ Section -->
     <section class="mb-16">
         
-        {{$faqData := parseJSON `{
-            "categories": [
+        {{$faqData := dict 
+            "categories" (parseJSON `[
                 {
-                    "name": "Frequently asked questions",
+                    "name": "{{t \"asset-management.faq_category\"}}",
                     "questions": [
                         {
-                            "question": "How does Blue help track different types of assets?",
-                            "answer": "Blue's flexible custom field system adapts to any asset type. Whether you're tracking IT equipment with serial numbers and warranties, vehicles with mileage and maintenance schedules, or office furniture with purchase dates and locations—Blue handles it all in one unified system."
+                            "question": "{{t \"asset-management.faq_track_different_types_question\"}}",
+                            "answer": "{{t \"asset-management.faq_track_different_types_answer\"}}"
                         },
                         {
-                            "question": "Can Blue integrate with my existing asset management systems?",
-                            "answer": "Yes, Blue's API provides instant access to your asset data without any developer setup. You can sync data between Blue and other systems, or use Blue as your central asset database while keeping other tools connected."
+                            "question": "{{t \"asset-management.faq_integration_question\"}}",
+                            "answer": "{{t \"asset-management.faq_integration_answer\"}}"
                         },
                         {
-                            "question": "How does Blue handle asset maintenance scheduling?",
-                            "answer": "Create recurring maintenance schedules that automatically generate tasks and assign them to the right team members. Set up reminders based on time intervals, usage hours, or custom triggers. All maintenance history is automatically tracked with complete audit trails."
+                            "question": "{{t \"asset-management.faq_maintenance_scheduling_question\"}}",
+                            "answer": "{{t \"asset-management.faq_maintenance_scheduling_answer\"}}"
                         },
                         {
-                            "question": "Can Blue help reduce asset downtime?",
-                            "answer": "Absolutely. Blue's proactive maintenance scheduling, automated reminders, and real-time tracking help you stay ahead of issues. Monitor asset performance, track maintenance history, and identify patterns that could lead to downtime before they become problems."
+                            "question": "{{t \"asset-management.faq_reduce_downtime_question\"}}",
+                            "answer": "{{t \"asset-management.faq_reduce_downtime_answer\"}}"
                         },
                         {
-                            "question": "How does Blue track asset locations and movements?",
-                            "answer": "Use location fields to track where assets are located, and reference fields to link them to specific employees or departments. For mobile assets, integrate with tracking systems via Blue's API to automatically update locations when assets move."
+                            "question": "{{t \"asset-management.faq_location_tracking_question\"}}",
+                            "answer": "{{t \"asset-management.faq_location_tracking_answer\"}}"
                         },
                         {
-                            "question": "Can Blue handle asset approval workflows?",
-                            "answer": "Yes, create sophisticated approval workflows using button fields for manager confirmations, checkbox workflows for request tracking, and automated assignments. Set up multi-level approvals and ensure proper authorization for asset allocation."
+                            "question": "{{t \"asset-management.faq_approval_workflows_question\"}}",
+                            "answer": "{{t \"asset-management.faq_approval_workflows_answer\"}}"
                         },
                         {
-                            "question": "How does Blue support compliance and auditing?",
-                            "answer": "Every change in Blue is automatically logged with complete audit trails. Generate compliance reports, track regulatory requirements, and maintain detailed records of all asset activities. Perfect for industries with strict compliance requirements."
+                            "question": "{{t \"asset-management.faq_compliance_auditing_question\"}}",
+                            "answer": "{{t \"asset-management.faq_compliance_auditing_answer\"}}"
                         },
                         {
-                            "question": "Can Blue generate custom reports for asset management?",
-                            "answer": "Yes, Blue's dashboard system lets you create custom reports and real-time analytics. Track utilization rates, maintenance costs, asset performance, and any other metrics important to your business. All data is also available via API for external reporting tools."
+                            "question": "{{t \"asset-management.faq_custom_reports_question\"}}",
+                            "answer": "{{t \"asset-management.faq_custom_reports_answer\"}}"
                         },
                         {
-                            "question": "How secure is asset data in Blue?",
-                            "answer": "Blue provides enterprise-grade security with field-level permissions, complete audit trails, and secure data handling. Control exactly who can see and edit which asset information, and maintain full visibility into all data access and changes."
+                            "question": "{{t \"asset-management.faq_security_question\"}}",
+                            "answer": "{{t \"asset-management.faq_security_answer\"}}"
                         },
                         {
-                            "question": "Can Blue scale as our asset inventory grows?",
-                            "answer": "Absolutely. Blue handles everything from small inventories to hundreds of thousands of assets without performance degradation. Add new asset types, custom fields, and workflows as your needs evolve—all without rebuilding your system."
+                            "question": "{{t \"asset-management.faq_scalability_question\"}}",
+                            "answer": "{{t \"asset-management.faq_scalability_answer\"}}"
                         }
                     ]
                 }
-            ]
-        }`}}
+            ]`)
+        }}
         
         {{template "faq-sections" $faqData}}
     </section>

@@ -1,8 +1,8 @@
 <!-- Download Page -->
     {{template "page-heading" 
         dict 
-            "Title" "Download Blue Apps" 
-            "Subtitle" "Blue is available everywhere you work — Web, MacOS, Windows, iOS, & Android."
+            "Title" (t "download.page_title") 
+            "Subtitle" (t "download.page_subtitle")
             "MarginBottom" "mb-16"
     }}
 
@@ -16,10 +16,10 @@
             </div>
             
             <!-- Desktop Content -->
-            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Desktop</h3>
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "download.desktop_title"}}</h3>
             
             <div class="flex items-center gap-4 text-sm">
-                <span class="font-medium text-gray-400 dark:text-gray-500">MacOS & Windows</span>
+                <span class="font-medium text-gray-400 dark:text-gray-500">{{t "download.desktop_platforms"}}</span>
             </div>
         </a>
         
@@ -31,10 +31,10 @@
 </div>
             
             <!-- iPhone Content -->
-            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">iPhone</h3>
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "download.iphone_title"}}</h3>
             
             <div class="flex items-center gap-4 text-sm">
-                <span class="font-medium text-gray-400 dark:text-gray-500">iOS 14+</span>
+                <span class="font-medium text-gray-400 dark:text-gray-500">{{t "download.iphone_requirement"}}</span>
             </div>
         </a>
         
@@ -46,10 +46,10 @@
 </div>
             
             <!-- Android Content -->
-            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Android</h3>
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "download.android_title"}}</h3>
             
             <div class="flex items-center gap-4 text-sm">
-                <span class="font-medium text-gray-400 dark:text-gray-500">Android 8+</span>
+                <span class="font-medium text-gray-400 dark:text-gray-500">{{t "download.android_requirement"}}</span>
             </div>
         </a>
         
@@ -61,10 +61,10 @@
 </div>
             
             <!-- iPad Content -->
-            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">iPad</h3>
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "download.ipad_title"}}</h3>
             
             <div class="flex items-center gap-4 text-sm">
-                <span class="font-medium text-gray-400 dark:text-gray-500">iPadOS 14+</span>
+                <span class="font-medium text-gray-400 dark:text-gray-500">{{t "download.ipad_requirement"}}</span>
             </div>
         </a>
     </div>

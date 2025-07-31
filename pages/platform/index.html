@@ -1,88 +1,88 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Platform Overview" 
-            "Subtitle" "Understand Blue's technical architecture, core capabilities, and integration options." 
+            "Title" (t "platform.page_title") 
+            "Subtitle" (t "platform.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
     <!-- Awards Grid -->
     <div class="mb-16">
-        {{$awardsData := parseJSON `{
-            "awards": [
-                {
-                    "name": "High Performer G2 Winter 2025",
-                    "src": "/awards/high-performer-g2-winter-2025.png"
-                },
-                {
-                    "name": "Momentum Leader G2 Winter 2025",
-                    "src": "/awards/momentum-leader-g2-winter-2025.png"
-                },
-                {
-                    "name": "Crozdesk Happiest Users",
-                    "src": "/awards/crozdesk-happiest-users-badge.webp"
-                },
-                {
-                    "name": "Crozdesk Quality Choice",
-                    "src": "/awards/crozdesk-quality-choice-badge.webp"
-                },
-                {
-                    "name": "Crozdesk Trusted Vendor",
-                    "src": "/awards/crozdesk-trusted-vendor-badge.webp"
-                }
-            ]
-        }`}}
+        {{$awardsData := dict
+            "awards" (slice
+                (dict
+                    "name" "High Performer G2 Winter 2025"
+                    "src" "/awards/high-performer-g2-winter-2025.png"
+                )
+                (dict
+                    "name" "Momentum Leader G2 Winter 2025"
+                    "src" "/awards/momentum-leader-g2-winter-2025.png"
+                )
+                (dict
+                    "name" "Crozdesk Happiest Users"
+                    "src" "/awards/crozdesk-happiest-users-badge.webp"
+                )
+                (dict
+                    "name" "Crozdesk Quality Choice"
+                    "src" "/awards/crozdesk-quality-choice-badge.webp"
+                )
+                (dict
+                    "name" "Crozdesk Trusted Vendor"
+                    "src" "/awards/crozdesk-trusted-vendor-badge.webp"
+                )
+            )
+        }}
         {{template "awards-grid" $awardsData}}
     </div>
 
     <!-- White Label News Bar -->
     <div class="mb-16">
-        {{$newsBarData := parseJSON `{
-            "MainText": "White Label module now available - create your own branded version of Blue.",
-            "ButtonText": "Learn more",
-            "ButtonUrl": "/platform/white-label"
-        }`}}
+        {{$newsBarData := dict
+            "MainText" (t "platform.white_label_news")
+            "ButtonText" (t "platform.learn_more")
+            "ButtonUrl" "/platform/white-label"
+        }}
         {{template "news-bar" $newsBarData}}
     </div>
 
     <!-- Platform Architecture Section -->
     <section id="architecture" class="max-w-7xl mx-auto mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Platform Architecture</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "platform.platform_architecture_title"}}</h2>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Text Content -->
             <div class="space-y-6">
                 <p class="text-lg text-gray-600 dark:text-gray-400">
-                    Blue is organized around a clear, logical hierarchy that scales from individual tasks to enterprise operations.
+                    {{t "platform.platform_architecture_description"}}
                 </p>
                 
                 <div class="space-y-4">
                     <div class="flex items-start gap-4">
                         <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
                         <div>
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Organizations</h3>
-                            <p class="text-gray-600 dark:text-gray-400">Top-level containers that hold all workspaces, users, and data</p>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{t "platform.organizations_title"}}</h3>
+                            <p class="text-gray-600 dark:text-gray-400">{{t "platform.organizations_description"}}</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
                         <div>
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Workspaces</h3>
-                            <p class="text-gray-600 dark:text-gray-400">Projects with defined timelines or ongoing processes that never end</p>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{t "platform.workspaces_title"}}</h3>
+                            <p class="text-gray-600 dark:text-gray-400">{{t "platform.workspaces_description"}}</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
                         <div>
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Records</h3>
-                            <p class="text-gray-600 dark:text-gray-400">Individual items representing tasks, customers, deals, or any business entity</p>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{t "platform.records_title"}}</h3>
+                            <p class="text-gray-600 dark:text-gray-400">{{t "platform.records_description"}}</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-3 h-3 bg-brand-blue rounded-full mt-2"></div>
                         <div>
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Custom Fields</h3>
-                            <p class="text-gray-600 dark:text-gray-400">Granular data points and metadata that define your record structure</p>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{t "platform.custom_fields_title"}}</h3>
+                            <p class="text-gray-600 dark:text-gray-400">{{t "platform.custom_fields_description"}}</p>
                         </div>
                     </div>
                 </div>
@@ -378,295 +378,295 @@
 
     <!-- Platform Value Propositions -->
     <section class="mb-20">
-        {{$platformValueProps := parseJSON `{
-            "Title": "Why Blue's platform approach<br>works better.",
-            "Description": "Unlike rigid tools that force your processes into their structure, Blue adapts to how you actually work.",
-            "ValueProps": [
-                {
-                    "Title": "Flexible by design, not by accident",
-                    "Description": "24 custom field types, unlimited automation rules, and 6 different views mean you build your perfect workflow, not compromise with ours."
-                },
-                {
-                    "Title": "API-first architecture from day one",
-                    "Description": "100% feature coverage through GraphQL gives you complete programmatic control—no feature gatekeeping or integration limitations."
-                },
-                {
-                    "Title": "Enterprise-ready without the complexity",
-                    "Description": "Advanced permissions, audit trails, and white-label capabilities that scale from 5 to 5,000 users without architectural changes."
-                }
-            ]
-        }`}}
+        {{$platformValueProps := dict
+            "Title" (t "platform.why_platform_works_title")
+            "Description" (t "platform.why_platform_works_description")
+            "ValueProps" (slice
+                (dict
+                    "Title" (t "platform.flexible_by_design_title")
+                    "Description" (t "platform.flexible_by_design_description")
+                )
+                (dict
+                    "Title" (t "platform.api_first_title")
+                    "Description" (t "platform.api_first_description")
+                )
+                (dict
+                    "Title" (t "platform.enterprise_ready_title")
+                    "Description" (t "platform.enterprise_ready_description")
+                )
+            )
+        }}
         {{template "value-propositions" $platformValueProps}}
     </section>
 
     <!-- Core Features Showcase Section -->
     <section id="core-features" class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Core Platform Features</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">{{t "platform.core_features_title"}}</h2>
         
         <!-- Multiple Views -->
         <div class="mb-20">
-            {{$viewsData := parseJSON `{
-                "Title": "6 Powerful Views",
-                "Description": "See your work exactly how you want it. Switch seamlessly between Board, Calendar, Database, Timeline, Map, and List views to match your workflow and preferences.",
-                "VideoUrl": "https://media.blue.cc/switch-views.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Links": [
-                        {
-                            "Text": "Board view",
-                            "Description": "for visual project management",
-                            "Url": "/docs/features/kanban-board"
-                        },
-                        {
-                            "Text": "Timeline & Gantt Charts",
-                            "Description": "for project scheduling",
-                            "Url": "/docs/views/timeline-gantt-charts"
-                        }
-                    ]
-                }
-            }`}}
+            {{$viewsData := dict
+                "Title" (t "platform.six_views_title")
+                "Description" (t "platform.six_views_description")
+                "VideoUrl" "https://media.blue.cc/switch-views.mp4"
+                "VideoPosition" "right"
+                "SeeAlso" (dict
+                    "Links" (slice
+                        (dict
+                            "Text" (t "platform.board_view_text")
+                            "Description" (t "platform.board_view_description")
+                            "Url" "/docs/features/kanban-board"
+                        )
+                        (dict
+                            "Text" (t "platform.timeline_gantt_text")
+                            "Description" (t "platform.timeline_gantt_description")
+                            "Url" "/docs/views/timeline-gantt-charts"
+                        )
+                    )
+                )
+            }}
             {{template "feature-video" $viewsData}}
         </div>
 
         <!-- Custom Fields -->
         <div class="mb-20">
-            {{$customFieldsData := parseJSON `{
-                "Title": "Dozens of Custom Field Types",
-                "Description": "Build the perfect database for your needs. From simple text and numbers to complex formulas, locations, and file uploads - structure your data exactly how your business works.",
-                "VideoUrl": "https://media.blue.cc/custom-fields-showcase.mp4",
-                "VideoPosition": "left",
-                "SeeAlso": {
-                    "Links": [
-                        {
-                            "Text": "Formula fields",
-                            "Description": "for calculations and data processing",
-                            "Url": "/docs/custom-fields/formula"
-                        },
-                        {
-                            "Text": "Reference fields",
-                            "Description": "to link records across projects",
-                            "Url": "/docs/custom-fields/reference"
-                        }
-                    ]
-                }
-            }`}}
+            {{$customFieldsData := dict
+                "Title" (t "platform.custom_field_types_title")
+                "Description" (t "platform.custom_field_types_description")
+                "VideoUrl" "https://media.blue.cc/custom-fields-showcase.mp4"
+                "VideoPosition" "left"
+                "SeeAlso" (dict
+                    "Links" (slice
+                        (dict
+                            "Text" (t "platform.formula_fields_text")
+                            "Description" (t "platform.formula_fields_description")
+                            "Url" "/docs/custom-fields/formula"
+                        )
+                        (dict
+                            "Text" (t "platform.reference_fields_text")
+                            "Description" (t "platform.reference_fields_description")
+                            "Url" "/docs/custom-fields/reference"
+                        )
+                    )
+                )
+            }}
             {{template "feature-video" $customFieldsData}}
         </div>
 
         <!-- Automation Engine -->
         <div class="mb-20">
-            {{$automationData := parseJSON `{
-                "Title": "Unlimited Automation Engine",
-                "Description": "Create sophisticated workflows without writing code. Set up triggers, conditions, and actions to automate everything from status updates to complex multi-step business processes.",
-                "VideoUrl": "https://media.blue.cc/automations-on-off.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Links": [
-                        {
-                            "Text": "Email automations",
-                            "Description": "to send custom notifications",
-                            "Url": "/docs/automations/actions/email-automations"
-                        },
-                        {
-                            "Text": "Automation triggers",
-                            "Description": "for workflow events",
-                            "Url": "/docs/automations/triggers"
-                        }
-                    ]
-                }
-            }`}}
+            {{$automationData := dict
+                "Title" (t "platform.automation_engine_title")
+                "Description" (t "platform.automation_engine_description")
+                "VideoUrl" "https://media.blue.cc/automations-on-off.mp4"
+                "VideoPosition" "right"
+                "SeeAlso" (dict
+                    "Links" (slice
+                        (dict
+                            "Text" (t "platform.email_automations_text")
+                            "Description" (t "platform.email_automations_description")
+                            "Url" "/docs/automations/actions/email-automations"
+                        )
+                        (dict
+                            "Text" (t "platform.automation_triggers_text")
+                            "Description" (t "platform.automation_triggers_description")
+                            "Url" "/docs/automations/triggers"
+                        )
+                    )
+                )
+            }}
             {{template "feature-video" $automationData}}
         </div>
 
         <!-- User Permission Engine -->
         <div class="mb-20">
-            {{$permissionsData := parseJSON `{
-                "Title": "User Permission Engine",
-                "Description": "Granular control over who can see and do what. Create custom roles, set project-specific permissions, and invite external users without counting against your billing.",
-                "VideoUrl": "https://media.blue.cc/user-permissions-custom-fields.mp4",
-                "VideoPosition": "left",
-                "SeeAlso": {
-                    "Links": [
-                        {
-                            "Text": "Custom user roles",
-                            "Description": "for granular access control",
-                            "Url": "/docs/user-management/roles/custom-user-roles"
-                        },
-                        {
-                            "Text": "Client role",
-                            "Description": "for external stakeholder access",
-                            "Url": "/docs/user-management/roles/client"
-                        }
-                    ]
-                }
-            }`}}
+            {{$permissionsData := dict
+                "Title" (t "platform.user_permissions_title")
+                "Description" (t "platform.user_permissions_description")
+                "VideoUrl" "https://media.blue.cc/user-permissions-custom-fields.mp4"
+                "VideoPosition" "left"
+                "SeeAlso" (dict
+                    "Links" (slice
+                        (dict
+                            "Text" (t "platform.custom_user_roles_text")
+                            "Description" (t "platform.custom_user_roles_description")
+                            "Url" "/docs/user-management/roles/custom-user-roles"
+                        )
+                        (dict
+                            "Text" (t "platform.client_role_text")
+                            "Description" (t "platform.client_role_description")
+                            "Url" "/docs/user-management/roles/client"
+                        )
+                    )
+                )
+            }}
             {{template "feature-video" $permissionsData}}
         </div>
 
         <!-- Real-time Dashboards -->
         <div class="mb-20">
-            {{$dashboardsData := parseJSON `{
-                "Title": "Real-time Dashboards",
-                "Description": "Get instant insights with cross-project dashboards that update automatically. Create stat cards, charts, and reports that give you a complete view of your operations.",
-                "VideoUrl": "https://media.blue.cc/dashboard-showcase.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Links": [
-                        {
-                            "Text": "Stat cards",
-                            "Description": "for key performance metrics",
-                            "Url": "/docs/dashboards/stat-cards"
-                        },
-                        {
-                            "Text": "Bar graphs",
-                            "Description": "for data visualization",
-                            "Url": "/docs/dashboards/bar-graphs"
-                        }
-                    ]
-                }
-            }`}}
+            {{$dashboardsData := dict
+                "Title" (t "platform.dashboards_title")
+                "Description" (t "platform.dashboards_description")
+                "VideoUrl" "https://media.blue.cc/dashboard-showcase.mp4"
+                "VideoPosition" "right"
+                "SeeAlso" (dict
+                    "Links" (slice
+                        (dict
+                            "Text" (t "platform.stat_cards_text")
+                            "Description" (t "platform.stat_cards_description")
+                            "Url" "/docs/dashboards/stat-cards"
+                        )
+                        (dict
+                            "Text" (t "platform.bar_graphs_text")
+                            "Description" (t "platform.bar_graphs_description")
+                            "Url" "/docs/dashboards/bar-graphs"
+                        )
+                    )
+                )
+            }}
             {{template "feature-video" $dashboardsData}}
         </div>
 
         <!-- Granular Audit Trails -->
         <div class="mb-20">
-            {{$auditData := parseJSON `{
-                "Title": "Granular Audit Trails",
-                "Description": "Complete visibility into every action taken in your workspace. Track who changed what and when with detailed audit logs that ensure accountability and compliance.",
-                "VideoUrl": "https://media.blue.cc/audit-trails-org.mp4",
-                "VideoPosition": "left",
-                "SeeAlso": {
-                    "Links": [
-                        {
-                            "Text": "Security features",
-                            "Description": "and compliance standards",
-                            "Url": "/docs/security"
-                        },
-                        {
-                            "Text": "Activity tracking",
-                            "Description": "for record changes",
-                            "Url": "/docs/records/activity"
-                        }
-                    ]
-                }
-            }`}}
+            {{$auditData := dict
+                "Title" (t "platform.audit_trails_title")
+                "Description" (t "platform.audit_trails_description")
+                "VideoUrl" "https://media.blue.cc/audit-trails-org.mp4"
+                "VideoPosition" "left"
+                "SeeAlso" (dict
+                    "Links" (slice
+                        (dict
+                            "Text" (t "platform.security_features_text")
+                            "Description" (t "platform.security_features_description")
+                            "Url" "/docs/security"
+                        )
+                        (dict
+                            "Text" (t "platform.activity_tracking_text")
+                            "Description" (t "platform.activity_tracking_description")
+                            "Url" "/docs/records/activity"
+                        )
+                    )
+                )
+            }}
             {{template "feature-video" $auditData}}
         </div>
 
         <!-- Features Grid Section -->
         <div class="mb-20">
-            {{$featuresGridData := parseJSON `{
-                "Title": "& there's more...",
-                "Features": [
-                    {
-                        "Icon": "magic",
-                        "Title": "Templates",
-                        "Description": "Convert any project into a reusable template with all automations and structure preserved.",
-                        "Url": "/docs/projects/templates"
-                    },
-                    {
-                        "Icon": "document",
-                        "Title": "Wiki & Documents",
-                        "Description": "Collaborative rich-text docs with real-time editing, @mentions, and auto-generated table of contents.",
-                        "Url": "/docs/wiki"
-                    },
-                    {
-                        "Icon": "bolt",
-                        "Title": "AI Summaries",
-                        "Description": "Automatically summarize long comment threads and generate action lists with one click.",
-                        "Url": "/docs/records/ai-summaries"
-                    },
-                    {
-                        "Icon": "plug",
-                        "Title": "Dependencies",
-                        "Description": "Block/blocked-by relationships ensure tasks complete in the right order automatically.",
-                        "Url": "/docs/records/dependencies"
-                    },
-                    {
-                        "Icon": "gear",
-                        "Title": "Recurring Tasks",
-                        "Description": "Set tasks to recreate automatically on daily, weekly, monthly, or custom schedules.",
-                        "Url": "/docs/records/recurring-tasks"
-                    },
-                    {
-                        "Icon": "search",
-                        "Title": "Universal Search",
-                        "Description": "Lightning-fast CMD+K search across all records, comments, documents, and files.",
-                        "Url": "/docs/features/universal-search"
-                    },
-                    {
-                        "Icon": "users",
-                        "Title": "Chat",
-                        "Description": "Topic-based team chats within projects with file uploads and YouTube embeds.",
-                        "Url": "/docs/chat"
-                    },
-                    {
-                        "Icon": "chart",
-                        "Title": "Time in Process Step",
-                        "Description": "Track how long records spend in each stage of your workflow for process optimization.",
-                        "Url": "/docs/custom-fields/time-in-process-step"
-                    },
-                    {
-                        "Icon": "eye",
-                        "Title": "Activity Feed",
-                        "Description": "Real-time stream of all changes with filtering by user, date, and action type.",
-                        "Url": "/docs/records/activity"
-                    }
-                ]
-            }`}}
+            {{$featuresGridData := dict
+                "Title" (t "platform.more_features_title")
+                "Features" (slice
+                    (dict
+                        "Icon" "magic"
+                        "Title" (t "platform.templates_title")
+                        "Description" (t "platform.templates_description")
+                        "Url" "/docs/projects/templates"
+                    )
+                    (dict
+                        "Icon" "document"
+                        "Title" (t "platform.wiki_documents_title")
+                        "Description" (t "platform.wiki_documents_description")
+                        "Url" "/docs/wiki"
+                    )
+                    (dict
+                        "Icon" "bolt"
+                        "Title" (t "platform.ai_summaries_title")
+                        "Description" (t "platform.ai_summaries_description")
+                        "Url" "/docs/records/ai-summaries"
+                    )
+                    (dict
+                        "Icon" "plug"
+                        "Title" (t "platform.dependencies_title")
+                        "Description" (t "platform.dependencies_description")
+                        "Url" "/docs/records/dependencies"
+                    )
+                    (dict
+                        "Icon" "gear"
+                        "Title" (t "platform.recurring_tasks_title")
+                        "Description" (t "platform.recurring_tasks_description")
+                        "Url" "/docs/records/recurring-tasks"
+                    )
+                    (dict
+                        "Icon" "search"
+                        "Title" (t "platform.universal_search_title")
+                        "Description" (t "platform.universal_search_description")
+                        "Url" "/docs/features/universal-search"
+                    )
+                    (dict
+                        "Icon" "users"
+                        "Title" (t "platform.chat_title")
+                        "Description" (t "platform.chat_description")
+                        "Url" "/docs/chat"
+                    )
+                    (dict
+                        "Icon" "chart"
+                        "Title" (t "platform.time_in_process_title")
+                        "Description" (t "platform.time_in_process_description")
+                        "Url" "/docs/custom-fields/time-in-process-step"
+                    )
+                    (dict
+                        "Icon" "eye"
+                        "Title" (t "platform.activity_feed_title")
+                        "Description" (t "platform.activity_feed_description")
+                        "Url" "/docs/records/activity"
+                    )
+                )
+            }}
             {{template "features-grid-simple" $featuresGridData}}
         </div>
     </section>
 
     <!-- Platform Integrations Section -->
     <section id="integrations" class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Platform Integrations</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">{{t "platform.platform_integrations_title"}}</h2>
         
         <!-- API-First Architecture -->
         <div class="max-w-4xl mx-auto mb-16">
-            {{$apiData := parseJSON `{
-                "Title": "API-First Architecture",
-                "Description": "Blue provides 100% API coverage through GraphQL, giving you complete programmatic access to all platform features.",
-                "Examples": [
-                    {
-                        "Type": "query",
-                        "Label": "Query Data",
-                        "Language": "graphql",
-                        "Code": "query GetProjects {\n  projectList(filter: { companyIds: [\"your-company-id\"] }) {\n    items {\n      id\n      name\n      updatedAt\n      recordCount\n    }\n  }\n}"
-                    },
-                    {
-                        "Type": "mutation",
-                        "Label": "Write Data",
-                        "Language": "graphql", 
-                        "Code": "mutation CreateRecord {\n  createTodo(input: {\n    todoListId: \"list-id\"\n    title: \"New Task\"\n    position: 65535\n  }) {\n    id\n    title\n    position\n  }\n}"
-                    },
-                    {
-                        "Type": "subscription",
-                        "Label": "Real-time Updates",
-                        "Language": "graphql",
-                        "Code": "subscription ProjectUpdates {\n  projectUpdated {\n    id\n    name\n    updatedAt\n    lastActivity\n  }\n}"
-                    }
-                ],
-                "Link": {
-                    "Text": "Explore API Documentation",
-                    "Url": "/api/"
-                }
-            }`}}
+            {{$apiData := dict
+                "Title" (t "platform.api_architecture_title")
+                "Description" (t "platform.api_architecture_description")
+                "Examples" (slice
+                    (dict
+                        "Type" "query"
+                        "Label" (t "platform.query_data_label")
+                        "Language" "graphql"
+                        "Code" "query GetProjects {\n  projectList(filter: { companyIds: [\"your-company-id\"] }) {\n    items {\n      id\n      name\n      updatedAt\n      recordCount\n    }\n  }\n}"
+                    )
+                    (dict
+                        "Type" "mutation"
+                        "Label" (t "platform.write_data_label")
+                        "Language" "graphql"
+                        "Code" "mutation CreateRecord {\n  createTodo(input: {\n    todoListId: \"list-id\"\n    title: \"New Task\"\n    position: 65535\n  }) {\n    id\n    title\n    position\n  }\n}"
+                    )
+                    (dict
+                        "Type" "subscription"
+                        "Label" (t "platform.realtime_updates_label")
+                        "Language" "graphql"
+                        "Code" "subscription ProjectUpdates {\n  projectUpdated {\n    id\n    name\n    updatedAt\n    lastActivity\n  }\n}"
+                    )
+                )
+                "Link" (dict
+                    "Text" (t "platform.explore_api_docs")
+                    "Url" "/api/"
+                )
+            }}
             {{template "technical-capability-card" $apiData}}
         </div>
 
         <!-- Integration Partners -->
         <div class="mb-16">
-            {{$integrationData := parseJSON `{
-                "title": "Connect with 7,000+ tools through our integration partners",
-                "logos": [
-                    { "name": "Zapier", "src": "/images/zapier.svg" },
-                    { "name": "Make.com", "src": "/images/make.svg" },
-                    { "name": "Pabbly Connect", "src": "/images/pabbly.svg" },
-                    { "name": "Albato", "src": "/images/albato.png" },
-                    { "name": "Boost.space", "src": "/images/boost-space.svg" }
-                ]
-            }`}}
+            {{$integrationData := dict
+                "title" (t "platform.integration_partners_title")
+                "logos" (slice
+                    (dict "name" "Zapier" "src" "/images/zapier.svg")
+                    (dict "name" "Make.com" "src" "/images/make.svg")
+                    (dict "name" "Pabbly Connect" "src" "/images/pabbly.svg")
+                    (dict "name" "Albato" "src" "/images/albato.png")
+                    (dict "name" "Boost.space" "src" "/images/boost-space.svg")
+                )
+            }}
             {{template "logo-grid" $integrationData}}
         </div>
 
@@ -674,11 +674,11 @@
 
     <!-- White Label Capabilities Section -->
     <section id="white-label" class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">White Label Capabilities</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">{{t "platform.white_label_section_title"}}</h2>
         
         <div class="max-w-7xl mx-auto mb-8">
             <div class="mb-8">
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">Create a completely branded version of Blue with custom logos, colors, and domain. Remove all Blue branding and make the platform truly yours with our White Label module.</p>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">{{t "platform.white_label_description"}}</p>
             </div>
             
             {{template "hero-video" 
@@ -690,7 +690,7 @@
             
             <div class="text-center mt-8">
                 <a href="/platform/white-label" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
-                    Learn about White Label pricing
+                    {{t "platform.learn_white_label_pricing"}}
                     <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
@@ -701,96 +701,96 @@
 
     <!-- Technical Platform Strengths Section -->
     <section class="mb-20">
-        {{$platformStatsData := parseJSON `{
-            "Title": "Crafted to operate at scale.",
-            "Stats": [
-                {
-                    "Number": "17000+",
-                    "Description": "teams worldwide"
-                },
-                {
-                    "Number": "5M+",
-                    "Description": "processes automated"
-                },
-                {
-                    "Number": "500M+",
-                    "Description": "records managed"
-                }
-            ]
-        }`}}
+        {{$platformStatsData := dict
+            "Title" (t "platform.scale_title")
+            "Stats" (slice
+                (dict
+                    "Number" "17000+"
+                    "Description" (t "platform.stat_teams")
+                )
+                (dict
+                    "Number" "5M+"
+                    "Description" (t "platform.stat_processes")
+                )
+                (dict
+                    "Number" "500M+"
+                    "Description" (t "platform.stat_records")
+                )
+            )
+        }}
         {{template "stats-section" $platformStatsData}}
     </section>
 
     <!-- FAQ Section -->
     <section id="FAQ" class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Platform FAQ</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">{{t "platform.platform_faq_title"}}</h2>
         
-        {{$faqData := parseJSON `{
-            "categories": [
-                {
-                    "name": "Platform Architecture",
-                    "questions": [
-                        {
-                            "question": "How does Blue's platform architecture work?",
-                            "answer": "Blue uses a hierarchical structure: Organizations contain Workspaces, which contain Records with Custom Fields. This allows for flexible organization from individual tasks to enterprise-wide operations."
-                        },
-                        {
-                            "question": "What are the differences between Workspaces and Records?",
-                            "answer": "Workspaces are projects or ongoing processes that contain multiple Records. Records are individual items like tasks, customers, or deals. Each Record can have multiple Custom Fields to capture specific data."
-                        },
-                        {
-                            "question": "Can I customize the platform for my specific needs?",
-                            "answer": "Yes, Blue offers extensive customization through 24 Custom Field types, unlimited automation rules, multiple view options, and custom user permissions. You can structure your data exactly how your business works."
-                        }
-                    ]
-                },
-                {
-                    "name": "Technical Capabilities",
-                    "questions": [
-                        {
-                            "question": "What API access does Blue provide?",
-                            "answer": "Blue provides 100% API coverage through GraphQL, including queries, mutations, and real-time subscriptions. This gives you complete programmatic access to all platform features."
-                        },
-                        {
-                            "question": "How many integrations does Blue support?",
-                            "answer": "Blue connects with 5,000+ tools through integration partners like Zapier, Make.com, Pabbly Connect, Albato, and Boost.space. We also provide webhooks and a full API for custom integrations."
-                        },
-                        {
-                            "question": "What kind of automation can I create?",
-                            "answer": "Blue's automation engine supports unlimited workflows with triggers, conditions, and actions. You can automate everything from simple status updates to complex multi-step business processes without coding."
-                        }
-                    ]
-                },
-                {
-                    "name": "Enterprise Features",
-                    "questions": [
-                        {
-                            "question": "What is White Label and how does it work?",
-                            "answer": "White Label allows you to completely rebrand Blue with your own logo, colors, and domain. Remove all Blue branding and make the platform appear as your own internal system."
-                        },
-                        {
-                            "question": "How do user permissions work?",
-                            "answer": "Blue offers granular, project-level permissions with custom roles. You can control exactly who can see and do what across different projects, and invite external users without affecting your billing."
-                        },
-                        {
-                            "question": "What kind of audit trails does Blue provide?",
-                            "answer": "Blue provides comprehensive audit logs that track every action taken in your workspace, including who made changes, what was changed, and when. This ensures complete accountability and compliance."
-                        }
-                    ]
-                }
-            ]
-        }`}}
+        {{$faqData := dict
+            "categories" (slice
+                (dict
+                    "name" (t "platform.faq_architecture_category")
+                    "questions" (slice
+                        (dict
+                            "question" (t "platform.faq_architecture_q1")
+                            "answer" (t "platform.faq_architecture_a1")
+                        )
+                        (dict
+                            "question" (t "platform.faq_architecture_q2")
+                            "answer" (t "platform.faq_architecture_a2")
+                        )
+                        (dict
+                            "question" (t "platform.faq_architecture_q3")
+                            "answer" (t "platform.faq_architecture_a3")
+                        )
+                    )
+                )
+                (dict
+                    "name" (t "platform.faq_technical_category")
+                    "questions" (slice
+                        (dict
+                            "question" (t "platform.faq_technical_q1")
+                            "answer" (t "platform.faq_technical_a1")
+                        )
+                        (dict
+                            "question" (t "platform.faq_technical_q2")
+                            "answer" (t "platform.faq_technical_a2")
+                        )
+                        (dict
+                            "question" (t "platform.faq_technical_q3")
+                            "answer" (t "platform.faq_technical_a3")
+                        )
+                    )
+                )
+                (dict
+                    "name" (t "platform.faq_enterprise_category")
+                    "questions" (slice
+                        (dict
+                            "question" (t "platform.faq_enterprise_q1")
+                            "answer" (t "platform.faq_enterprise_a1")
+                        )
+                        (dict
+                            "question" (t "platform.faq_enterprise_q2")
+                            "answer" (t "platform.faq_enterprise_a2")
+                        )
+                        (dict
+                            "question" (t "platform.faq_enterprise_q3")
+                            "answer" (t "platform.faq_enterprise_a3")
+                        )
+                    )
+                )
+            )
+        }}
         
         {{template "faq-sections" $faqData}}
     </section>
 
     <!-- Call to Action -->
-    {{$ctaData := parseJSON `{
-        "Title": "Ready to explore Blue?",
-        "SecondaryText": "View all features",
-        "SecondaryUrl": "/platform/features/",
-        "PrimaryText": "Start free trial",
-        "PrimaryUrl": "https://app.blue.cc"
-    }`}}
+    {{$ctaData := dict
+        "Title" (t "platform.cta_title")
+        "SecondaryText" (t "platform.view_all_features")
+        "SecondaryUrl" "/platform/features/"
+        "PrimaryText" (t "platform.start_free_trial")
+        "PrimaryUrl" "https://app.blue.cc"
+    }}
     {{template "dual-button-cta" $ctaData}}
 
