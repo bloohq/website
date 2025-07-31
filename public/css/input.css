@@ -549,3 +549,44 @@ main > div > div {
 .animation-delay-1600 {
   animation-delay: 1600ms;
 }
+
+/* Kanban Board Swipe Navigation */
+@media (max-width: 768px) {
+  .kanban-scroll-container {
+    /* Enable horizontal scrolling with snap points */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .kanban-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .kanban-board {
+    /* Ensure flex layout on mobile */
+    display: flex !important;
+    width: max-content !important;
+  }
+  
+  .kanban-board > .kanban-column {
+    /* Each column snaps to view */
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+  }
+  
+  /* Ensure cards don't overflow on mobile */
+  .kanban-column > div {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Smooth transitions for indicators */
+.roadmap-container button {
+  will-change: background-color;
+}
