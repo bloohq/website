@@ -1,6 +1,9 @@
 {
   "de": {
     "api_description": "Blue bietet 100% API-Abdeckung über GraphQL, wodurch Ihr Vertriebsteam das Lead-Management automatisieren, Deals synchronisieren und jede Phase Ihres Vertriebstrichters mit Ihren bestehenden Tools integrieren kann. Erstellen Sie benutzerdefinierte Vertriebs-Dashboards, automatisieren Sie Nachverfolgungen und verbinden Sie Blue mit Ihrem Marketing-Stack für einen nahtlosen Vertriebsworkflow.",
+    "api_example_1_label": "Verkaufsdaten abfragen",
+    "api_example_2_label": "Verkauf Aufgabe erstellen",
+    "api_example_3_label": "Echtzeit-Verkaufsupdates",
     "api_link_text": "Erkunden Sie die Sales CRM API-Dokumentation",
     "api_mutation_label": "Verkaufstask erstellen",
     "api_query_label": "Verkaufsdaten abfragen",
@@ -70,6 +73,9 @@
   },
   "en": {
     "api_description": "Blue provides 100% API coverage through GraphQL, enabling your sales team to automate lead management, sync deals, and integrate every stage of your sales pipeline with your existing tools. Build custom sales dashboards, automate follow-ups, and connect Blue to your marketing stack for a seamless sales workflow.",
+    "api_example_1_label": "Query Sales Data",
+    "api_example_2_label": "Create Sales Task",
+    "api_example_3_label": "Real-time Sales Updates",
     "api_link_text": "Explore Sales CRM API Documentation",
     "api_mutation_label": "Create Sales Task",
     "api_query_label": "Query Sales Data",
@@ -135,13 +141,13 @@
     "testimonial_2_title": "CEO of Comin Asia",
     "testimonial_3_name": "Dan Deigan",
     "testimonial_3_quote": "We are saving each sales rep in our team 9 hours a week with Blue.",
-    "testimonial_3_title": "Sales Director at Pinnacle Logistics",
-    "api_example_1_label": "Query Sales Data",
-    "api_example_2_label": "Create Sales Task",
-    "api_example_3_label": "Real-time Sales Updates"
+    "testimonial_3_title": "Sales Director at Pinnacle Logistics"
   },
   "es": {
     "api_description": "Blue proporciona una cobertura del 100% de la API a través de GraphQL, lo que permite a su equipo de ventas automatizar la gestión de leads, sincronizar acuerdos e integrar cada etapa de su embudo de ventas con sus herramientas existentes. Cree paneles de ventas personalizados, automatice los seguimientos y conecte Blue a su conjunto de marketing para un flujo de trabajo de ventas sin interrupciones.",
+    "api_example_1_label": "Consultar Datos de Ventas",
+    "api_example_2_label": "Crear tarea de ventas",
+    "api_example_3_label": "Actualizaciones de Ventas en Tiempo Real",
     "api_link_text": "Explorar la documentación de la API de Sales CRM",
     "api_mutation_label": "Crear Tarea de Ventas",
     "api_query_label": "Consultar Datos de Ventas",
@@ -211,6 +217,9 @@
   },
   "fr": {
     "api_description": "Blue offre une couverture API à 100 % via GraphQL, permettant à votre équipe de vente d'automatiser la gestion des leads, de synchroniser les affaires et d'intégrer chaque étape de votre pipeline de vente avec vos outils existants. Créez des tableaux de bord de vente personnalisés, automatisez les relances et connectez Blue à votre pile marketing pour un flux de travail de vente sans faille.",
+    "api_example_1_label": "Interroger les données de vente",
+    "api_example_2_label": "Créer une tâche de vente",
+    "api_example_3_label": "Mises à jour des ventes en temps réel",
     "api_link_text": "Explorer la documentation de l'API Sales CRM",
     "api_mutation_label": "Créer une tâche de vente",
     "api_query_label": "Interroger les données de vente",
@@ -280,6 +289,9 @@
   },
   "id": {
     "api_description": "Blue menyediakan cakupan API 100% melalui GraphQL, memungkinkan tim penjualan Anda untuk mengotomatiskan manajemen prospek, menyinkronkan kesepakatan, dan mengintegrasikan setiap tahap saluran penjualan Anda dengan alat yang sudah ada. Buat dasbor penjualan kustom, otomatisasi tindak lanjut, dan hubungkan Blue ke tumpukan pemasaran Anda untuk alur kerja penjualan yang mulus.",
+    "api_example_1_label": "Query Data Penjualan",
+    "api_example_2_label": "Buat Tugas Penjualan",
+    "api_example_3_label": "Pembaruan Penjualan Waktu Nyata",
     "api_link_text": "Jelajahi Dokumentasi API CRM Penjualan",
     "api_mutation_label": "Buat Tugas Penjualan",
     "api_query_label": "Query Data Penjualan",
@@ -349,6 +361,9 @@
   },
   "it": {
     "api_description": "Blue offre una copertura API al 100% tramite GraphQL, consentendo al tuo team di vendita di automatizzare la gestione dei lead, sincronizzare le trattative e integrare ogni fase del tuo pipeline di vendita con gli strumenti esistenti. Crea dashboard di vendita personalizzate, automatizza i follow-up e collega Blue al tuo stack di marketing per un flusso di lavoro di vendita senza soluzione di continuità.",
+    "api_example_1_label": "Interroga i Dati di Vendita",
+    "api_example_2_label": "Crea Attività di Vendita",
+    "api_example_3_label": "Aggiornamenti di Vendita in Tempo Reale",
     "api_link_text": "Esplora la documentazione API del Sales CRM",
     "api_mutation_label": "Crea Compito di Vendita",
     "api_query_label": "Interroga i dati di vendita",
@@ -418,6 +433,9 @@
   },
   "ja": {
     "api_description": "BlueはGraphQLを通じて100%のAPIカバレッジを提供し、営業チームがリード管理を自動化し、取引を同期し、既存のツールと販売パイプラインの各ステージを統合できるようにします。カスタム営業ダッシュボードを構築し、フォローアップを自動化し、シームレスな営業ワークフローのためにBlueをマーケティングスタックに接続します。",
+    "api_example_1_label": "売上データを照会する",
+    "api_example_2_label": "営業タスクを作成",
+    "api_example_3_label": "リアルタイムの営業更新",
     "api_link_text": "Sales CRM APIドキュメントを探る",
     "api_mutation_label": "販売タスクを作成",
     "api_query_label": "売上データを照会する",
@@ -487,6 +505,9 @@
   },
   "km": {
     "api_description": "Blue ផ្តល់នូវការក覆 100% API តាមរយៈ GraphQL ដែលអនុញ្ញាតឱ្យក្រុមលក់របស់អ្នកអាចអូតូម៉ាតការគ្រប់គ្រងឱកាសលក់ ការសម្របសម្រួលកិច្ចព្រមព្រៀង និងភ្ជាប់គ្រប់ដំណាក់កាលនៃបំពង់លក់របស់អ្នកជាមួយឧបករណ៍ដែលមានស្រាប់។ បង្កើតផ្ទាំងគ្រប់គ្រងលក់ផ្ទាល់ខ្លួន អូតូម៉ាតការតាមដាន និងភ្ជាប់ Blue ទៅនឹងស្តុកទីផ្សាររបស់អ្នកសម្រាប់ដំណើរការលក់ដែលរលូន។",
+    "api_example_1_label": "សំណួរ ព័ត៌មានលក់",
+    "api_example_2_label": "បង្កើតភារកិច្ចលក់",
+    "api_example_3_label": "ការអាប់ដេតការលក់នៅពេលវេលាពិតប្រាកដ",
     "api_link_text": "ស្វែងយល់អំពីឯកសារបញ្ជាក់ API សម្រាប់ Sales CRM",
     "api_mutation_label": "បង្កើតភារកិច្ចលក់",
     "api_query_label": "សំណើរ ទិន្នន័យលក់",
@@ -556,6 +577,9 @@
   },
   "ko": {
     "api_description": "Blue는 GraphQL을 통해 100% API 지원을 제공하여 귀사의 영업 팀이 리드 관리 자동화, 거래 동기화 및 기존 도구와의 판매 파이프라인의 모든 단계를 통합할 수 있도록 합니다. 맞춤형 영업 대시보드를 구축하고 후속 작업을 자동화하며, 원활한 영업 워크플로를 위해 Blue를 마케팅 스택에 연결하세요.",
+    "api_example_1_label": "판매 데이터 조회",
+    "api_example_2_label": "판매 작업 생성",
+    "api_example_3_label": "실시간 판매 업데이트",
     "api_link_text": "판매 CRM API 문서 탐색",
     "api_mutation_label": "판매 작업 생성",
     "api_query_label": "판매 데이터 조회",
@@ -625,6 +649,9 @@
   },
   "nl": {
     "api_description": "Blue biedt 100% API-dekking via GraphQL, waardoor uw verkoopteam leadbeheer kan automatiseren, deals kan synchroniseren en elke fase van uw verkooppipeline kan integreren met uw bestaande tools. Bouw aangepaste verkoopdashboards, automatiseer follow-ups en verbind Blue met uw marketingstack voor een naadloze verkoopworkflow.",
+    "api_example_1_label": "Verzoek Verkoopgegevens",
+    "api_example_2_label": "Creëer Verkooptaak",
+    "api_example_3_label": "Realtime Verkoopupdates",
     "api_link_text": "Verken de Sales CRM API-documentatie",
     "api_mutation_label": "Creëer Verkooptaak",
     "api_query_label": "Verzoek Verkoopgegevens",
@@ -694,6 +721,9 @@
   },
   "pl": {
     "api_description": "Blue zapewnia 100% pokrycia API za pomocą GraphQL, umożliwiając Twojemu zespołowi sprzedaży automatyzację zarządzania leadami, synchronizację transakcji oraz integrację każdego etapu lejka sprzedażowego z istniejącymi narzędziami. Twórz niestandardowe pulpity sprzedażowe, automatyzuj follow-upy i połącz Blue z Twoim zestawem narzędzi marketingowych, aby uzyskać płynny proces sprzedaży.",
+    "api_example_1_label": "Zapytaj o dane sprzedażowe",
+    "api_example_2_label": "Utwórz zadanie sprzedażowe",
+    "api_example_3_label": "Aktualizacje sprzedaży w czasie rzeczywistym",
     "api_link_text": "Zbadaj dokumentację API CRM sprzedaży",
     "api_mutation_label": "Utwórz zadanie sprzedażowe",
     "api_query_label": "Zapytaj dane sprzedażowe",
@@ -763,6 +793,9 @@
   },
   "pt": {
     "api_description": "A Blue oferece 100% de cobertura de API através do GraphQL, permitindo que sua equipe de vendas automatize a gestão de leads, sincronize negócios e integre cada etapa do seu funil de vendas com suas ferramentas existentes. Crie painéis de vendas personalizados, automatize acompanhamentos e conecte a Blue ao seu conjunto de ferramentas de marketing para um fluxo de vendas contínuo.",
+    "api_example_1_label": "Consultar Dados de Vendas",
+    "api_example_2_label": "Criar Tarefa de Vendas",
+    "api_example_3_label": "Atualizações de Vendas em Tempo Real",
     "api_link_text": "Explore a Documentação da API do Sales CRM",
     "api_mutation_label": "Criar Tarefa de Vendas",
     "api_query_label": "Consultar Dados de Vendas",
@@ -832,6 +865,9 @@
   },
   "ru": {
     "api_description": "Blue предоставляет 100% покрытие API через GraphQL, позволяя вашей команде продаж автоматизировать управление лидами, синхронизировать сделки и интегрировать каждый этап вашего воронки продаж с вашими существующими инструментами. Создавайте настраиваемые панели продаж, автоматизируйте последующие действия и подключайте Blue к вашему маркетинговому стеку для бесшовного рабочего процесса продаж.",
+    "api_example_1_label": "Запрос данных о продажах",
+    "api_example_2_label": "Создать задачу по продажам",
+    "api_example_3_label": "Обновления продаж в реальном времени",
     "api_link_text": "Изучите документацию API Sales CRM",
     "api_mutation_label": "Создать задачу по продажам",
     "api_query_label": "Запрос данных о продажах",
@@ -901,6 +937,9 @@
   },
   "sv": {
     "api_description": "Blue erbjuder 100 % API-täckning genom GraphQL, vilket gör det möjligt för ditt säljteam att automatisera leadhantering, synkronisera affärer och integrera varje steg i din försäljningspipeline med dina befintliga verktyg. Skapa anpassade försäljningsinstrumentpaneler, automatisera uppföljningar och koppla Blue till din marknadsföringsstack för ett sömlöst försäljningsarbetsflöde.",
+    "api_example_1_label": "Fråga försäljningsdata",
+    "api_example_2_label": "Skapa försäljningsuppgift",
+    "api_example_3_label": "Realtidsförsäljningsuppdateringar",
     "api_link_text": "Utforska Sales CRM API-dokumentation",
     "api_mutation_label": "Skapa försäljningsuppgift",
     "api_query_label": "Fråga försäljningsdata",
@@ -970,6 +1009,9 @@
   },
   "zh": {
     "api_description": "Blue通过GraphQL提供100%的API覆盖，使您的销售团队能够自动化潜在客户管理、同步交易，并将销售管道的每个阶段与现有工具集成。构建自定义销售仪表板，自动化跟进，并将Blue连接到您的营销工具，以实现无缝的销售工作流程。",
+    "api_example_1_label": "查询销售数据",
+    "api_example_2_label": "创建销售任务",
+    "api_example_3_label": "实时销售更新",
     "api_link_text": "探索销售 CRM API 文档",
     "api_mutation_label": "创建销售任务",
     "api_query_label": "查询销售数据",
@@ -1039,6 +1081,9 @@
   },
   "zh-TW": {
     "api_description": "Blue 提供 100% 的 API 覆蓋，通過 GraphQL，使您的銷售團隊能夠自動化潛在客戶管理、同步交易，並將銷售管道的每個階段與您現有的工具整合。建立自定義銷售儀表板，自動化跟進，並將 Blue 連接到您的行銷工具堆疊，以實現無縫的銷售工作流程。",
+    "api_example_1_label": "查詢銷售數據",
+    "api_example_2_label": "創建銷售任務",
+    "api_example_3_label": "即時銷售更新",
     "api_link_text": "探索銷售 CRM API 文件",
     "api_mutation_label": "創建銷售任務",
     "api_query_label": "查詢銷售數據",
