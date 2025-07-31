@@ -218,74 +218,74 @@
     <div class="mb-20">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">{{t "professional-services.faq_title"}}</h2>
         
-        {{$professionalServicesFaqData := parseJSON `{
-            "categories": [
-                {
-                    "name": "Client Management & Portal",
-                    "questions": [
-                        {
-                            "question": "Can clients access their projects through Blue?",
-                            "answer": "Yes! Blue offers a client portal where you can invite clients into their own workspace. They can see project progress, upload files, and stay updated on deliverables. The portal is available with full white-label branding so clients never see Blue branding."
-                        },
-                        {
-                            "question": "How do you control what clients can see and do?",
-                            "answer": "Blue's granular user permissions let you control exactly what clients can access. You can hide sensitive information, limit their ability to edit records, and ensure they only see their specific project data."
-                        },
-                        {
-                            "question": "Can we customize the client portal with our branding?",
-                            "answer": "Absolutely. Blue offers full white-label options where clients see your branding instead of Blue's. This creates a seamless, professional experience that reinforces your brand."
-                        }
-                    ]
-                },
-                {
-                    "name": "Project Management & Visibility",
-                    "questions": [
-                        {
-                            "question": "How can management get better visibility into projects?",
-                            "answer": "Blue provides real-time dashboards showing project status, deadlines, remaining work, and team capacity. Management can see at a glance which projects are on track, which need attention, and how much work is left to complete."
-                        },
-                        {
-                            "question": "Can we track billable hours and project profitability?",
-                            "answer": "Yes, Blue includes time tracking features that let you monitor billable hours, track project budgets, and analyze profitability. You can see utilization rates, project margins, and revenue trends in real-time."
-                        },
-                        {
-                            "question": "How does Blue handle multiple processes across our business?",
-                            "answer": "Blue lets you manage all your processes - sales, hiring, marketing, and project delivery - in one platform. You can see your entire business operations and client relationships without switching between disconnected systems."
-                        }
-                    ]
-                },
-                {
-                    "name": "Implementation & Scaling",
-                    "questions": [
-                        {
-                            "question": "How quickly can we implement Blue?",
-                            "answer": "Most professional services firms are operational within 1-2 weeks. Since Blue was built by a professional services agency, the workflows and processes are already optimized for your business model."
-                        },
-                        {
-                            "question": "What size firms does Blue work best for?",
-                            "answer": "Blue is ideal for professional services firms up to 50 people. It provides the structure and automation that growing firms need while remaining simple enough for everyone to adopt quickly."
-                        },
-                        {
-                            "question": "Can Blue integrate with our existing tools?",
-                            "answer": "Blue offers API integration and webhooks to connect with your existing accounting, email, and other business systems. This ensures data flows seamlessly between your tools."
-                        }
-                    ]
-                }
-            ]
-        }`}}
+        {{$professionalServicesFaqData := dict
+            "categories" (slice
+                (dict
+                    "name" (t "professional-services.faq_category_1")
+                    "questions" (slice
+                        (dict
+                            "question" (t "professional-services.faq_1_1_question")
+                            "answer" (t "professional-services.faq_1_1_answer")
+                        )
+                        (dict
+                            "question" (t "professional-services.faq_1_2_question")
+                            "answer" (t "professional-services.faq_1_2_answer")
+                        )
+                        (dict
+                            "question" (t "professional-services.faq_1_3_question")
+                            "answer" (t "professional-services.faq_1_3_answer")
+                        )
+                    )
+                )
+                (dict
+                    "name" (t "professional-services.faq_category_2")
+                    "questions" (slice
+                        (dict
+                            "question" (t "professional-services.faq_2_1_question")
+                            "answer" (t "professional-services.faq_2_1_answer")
+                        )
+                        (dict
+                            "question" (t "professional-services.faq_2_2_question")
+                            "answer" (t "professional-services.faq_2_2_answer")
+                        )
+                        (dict
+                            "question" (t "professional-services.faq_2_3_question")
+                            "answer" (t "professional-services.faq_2_3_answer")
+                        )
+                    )
+                )
+                (dict
+                    "name" (t "professional-services.faq_category_3")
+                    "questions" (slice
+                        (dict
+                            "question" (t "professional-services.faq_3_1_question")
+                            "answer" (t "professional-services.faq_3_1_answer")
+                        )
+                        (dict
+                            "question" (t "professional-services.faq_3_2_question")
+                            "answer" (t "professional-services.faq_3_2_answer")
+                        )
+                        (dict
+                            "question" (t "professional-services.faq_3_3_question")
+                            "answer" (t "professional-services.faq_3_3_answer")
+                        )
+                    )
+                )
+            )
+        }}
         
         {{template "faq-sections" $professionalServicesFaqData}}
     </div>
 
     <!-- Final CTA -->
     <div class="px-6 lg:px-8">
-        {{$ctaData := parseJSON `{
-            "Title": "Ready to transform your agency or professional services firm?",
-            "SecondaryText": "Watch Demo",
-            "SecondaryUrl": "/request-demo",
-            "PrimaryText": "Start Free Trial",
-            "PrimaryUrl": "/signup"
-        }`}}
+        {{$ctaData := dict
+            "Title" (t "professional-services.cta_title")
+            "SecondaryText" (t "professional-services.cta_secondary_text")
+            "SecondaryUrl" "/request-demo"
+            "PrimaryText" (t "professional-services.cta_primary_text")
+            "PrimaryUrl" "/signup"
+        }}
         {{template "dual-button-cta" $ctaData}}
     </div>
 
