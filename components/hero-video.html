@@ -10,7 +10,7 @@ USAGE:
 
 EXAMPLE IMPLEMENTATIONS:
 
-1. Basic local video (no custom mute button):
+1. Basic local video (with browser controls):
 {{template "hero-video" 
     dict 
         "VideoUrl" "/product/hero/blue-hero-video-fast.mp4"
@@ -23,7 +23,14 @@ EXAMPLE IMPLEMENTATIONS:
         "ShowUnmuteButton" true
 }}
 
-3. YouTube video:
+3. Local video without any controls (completely autoplay):
+{{template "hero-video" 
+    dict 
+        "VideoUrl" "/product/hero-video.mp4" 
+        "HideControls" true
+}}
+
+4. YouTube video:
 {{template "hero-video" 
     dict 
         "Youtube": "https://www.youtube.com/watch?v=lbFvQ-0ENTY"
@@ -34,6 +41,7 @@ DATA STRUCTURE:
     "VideoUrl": "/path/to/video.mp4",     // Local video file path (required if no YouTube)
     "Youtube": "https://youtube.com/...", // YouTube URL (required if no VideoUrl)
     "ShowUnmuteButton": true,             // Show custom mute button (optional, local videos only)
+    "HideControls": true,                 // Hide browser controls (optional, local videos only, default: false)
     "MarginBottom": "mb-20"               // Bottom margin (optional, default: "mb-16")
 }
 
@@ -42,7 +50,7 @@ FEATURES:
 - Supports both local video files and YouTube videos
 - Autoplay with muted audio by default (local videos)
 - Continuous loop playback (local videos)
-- Browser native controls always visible
+- Browser native controls (optional, can be hidden with HideControls)
 - Optional custom mute/unmute button overlay (local videos only)
 - AlpineJS-powered mute toggle
 - Rounded corners with border
@@ -67,7 +75,7 @@ LOCAL VIDEO ATTRIBUTES:
 - muted: Required for autoplay to work
 - loop: Continuous playback
 - playsinline: Prevents fullscreen on mobile
-- controls: Shows browser playback controls
+- controls: Shows browser playback controls (optional, controlled by HideControls)
 
 YOUTUBE EMBED:
 - Responsive iframe with 16:9 aspect ratio
@@ -78,7 +86,7 @@ YOUTUBE EMBED:
 USE CASES:
 - Homepage hero sections
 - Product demonstrations
-- Background videos
+- Background videos (use HideControls: true)
 - Feature showcases
 - Landing page headers
 */ -}}
@@ -117,7 +125,7 @@ USE CASES:
         muted 
         loop 
         playsinline
-        controls
+        {{if not .HideControls}}controls{{end}}
     >
         <source src="{{.VideoUrl}}" type="video/mp4">
         Your browser does not support the video tag.
