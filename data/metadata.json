@@ -269,6 +269,88 @@
         "keywords": ["អំពី", "ក្រុមហ៊ុន", "បេសកកម្ម", "ក្រុម", "blue"]
       }
     },
+    "brand": {
+      "en": {
+        "title": "Brand",
+        "description": "Our brand styles define the visual identity and typography that creates a consistent experience.",
+        "keywords": ["brand", "design system", "visual identity", "typography", "style guide", "blue"]
+      },
+      "es": {
+        "title": "Marca",
+        "description": "Nuestros estilos de marca definen la identidad visual y la tipografía que crea una experiencia consistente.",
+        "keywords": ["marca", "sistema de diseño", "identidad visual", "tipografía", "guía de estilo", "blue"]
+      },
+      "zh": {
+        "title": "品牌",
+        "description": "我们的品牌风格定义了视觉识别和排版，创造一致的体验。",
+        "keywords": ["品牌", "设计系统", "视觉识别", "排版", "风格指南", "blue"]
+      },
+      "fr": {
+        "title": "Marque",
+        "description": "Nos styles de marque définissent l'identité visuelle et la typographie qui créent une expérience cohérente.",
+        "keywords": ["marque", "système de design", "identité visuelle", "typographie", "guide de style", "blue"]
+      },
+      "de": {
+        "title": "Marke",
+        "description": "Unsere Markenstile definieren die visuelle Identität und Typografie, die eine konsistente Erfahrung schafft.",
+        "keywords": ["marke", "design-system", "visuelle identität", "typografie", "style guide", "blue"]
+      },
+      "ja": {
+        "title": "ブランド",
+        "description": "当社のブランドスタイルは、一貫した体験を作り出すビジュアルアイデンティティとタイポグラフィを定義しています。",
+        "keywords": ["ブランド", "デザインシステム", "ビジュアルアイデンティティ", "タイポグラフィ", "スタイルガイド", "blue"]
+      },
+      "pt": {
+        "title": "Marca",
+        "description": "Nossos estilos de marca definem a identidade visual e tipografia que cria uma experiência consistente.",
+        "keywords": ["marca", "sistema de design", "identidade visual", "tipografia", "guia de estilo", "blue"]
+      },
+      "ru": {
+        "title": "Бренд",
+        "description": "Наши стили бренда определяют визуальную идентичность и типографику, которые создают последовательный опыт.",
+        "keywords": ["бренд", "дизайн-система", "визуальная идентичность", "типографика", "руководство по стилю", "blue"]
+      },
+      "ko": {
+        "title": "브랜드",
+        "description": "우리의 브랜드 스타일은 일관된 경험을 만드는 시각적 아이덴티티와 타이포그래피를 정의합니다.",
+        "keywords": ["브랜드", "디자인 시스템", "시각적 아이덴티티", "타이포그래피", "스타일 가이드", "blue"]
+      },
+      "it": {
+        "title": "Brand",
+        "description": "I nostri stili di brand definiscono l'identità visiva e la tipografia che creano un'esperienza coerente.",
+        "keywords": ["brand", "sistema di design", "identità visiva", "tipografia", "guida di stile", "blue"]
+      },
+      "id": {
+        "title": "Merek",
+        "description": "Gaya merek kami mendefinisikan identitas visual dan tipografi yang menciptakan pengalaman yang konsisten.",
+        "keywords": ["merek", "sistem desain", "identitas visual", "tipografi", "panduan gaya", "blue"]
+      },
+      "nl": {
+        "title": "Merk",
+        "description": "Onze merkstijlen definiëren de visuele identiteit en typografie die een consistente ervaring creëren.",
+        "keywords": ["merk", "ontwerpsysteem", "visuele identiteit", "typografie", "stijlgids", "blue"]
+      },
+      "pl": {
+        "title": "Marka",
+        "description": "Nasze style marki definiują tożsamość wizualną i typografię, które tworzą spójne doświadczenie.",
+        "keywords": ["marka", "system projektowy", "tożsamość wizualna", "typografia", "przewodnik stylu", "blue"]
+      },
+      "zh-TW": {
+        "title": "品牌",
+        "description": "我們的品牌風格定義了視覺識別和排版，創造一致的體驗。",
+        "keywords": ["品牌", "設計系統", "視覺識別", "排版", "風格指南", "blue"]
+      },
+      "sv": {
+        "title": "Varumärke",
+        "description": "Våra varumärkesstiler definierar den visuella identiteten och typografin som skapar en konsekvent upplevelse.",
+        "keywords": ["varumärke", "designsystem", "visuell identitet", "typografi", "stilguide", "blue"]
+      },
+      "km": {
+        "title": "ម៉ាកយីហោ",
+        "description": "រចនាប័ទ្មម៉ាកយីហោរបស់យើងកំណត់អត្តសញ្ញាណមើលឃើញ និងលក្ខណៈអក្សរដែលបង្កើតបទពិសោធន៍ស្របគ្នា។",
+        "keywords": ["ម៉ាកយីហោ", "ប្រព័ន្ធរចនា", "អត្តសញ្ញាណមើលឃើញ", "លក្ខណៈអក្សរ", "មគ្គុទ្ទេសក៍រចនាប័ទ្ម", "blue"]
+      }
+    },
     "pricing": {
       "en": {
         "title": "Pricing",
