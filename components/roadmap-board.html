@@ -96,9 +96,66 @@ USE CASES:
 - Project status boards
 */ -}}
 {{define "roadmap-board"}}
-<div class="kanban-board grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}"
+<div class="roadmap-container {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}"
      x-data="{
          magneticCards: {},
+         currentColumn: 0,
+         columns: 4,
+         scrollContainer: null,
+         isDragging: false,
+         startX: 0,
+         scrollLeft: 0,
+         
+         init() {
+             this.scrollContainer = this.$refs.scrollContainer;
+             this.updateCurrentColumn();
+             
+             // Update column on scroll
+             this.scrollContainer.addEventListener('scroll', () => {
+                 if (!this.isDragging) {
+                     this.updateCurrentColumn();
+                 }
+             });
+         },
+         
+         updateCurrentColumn() {
+             const containerWidth = this.scrollContainer.offsetWidth;
+             const scrollLeft = this.scrollContainer.scrollLeft;
+             const columnWidth = this.scrollContainer.scrollWidth / this.columns;
+             this.currentColumn = Math.round(scrollLeft / columnWidth);
+         },
+         
+         scrollToColumn(index) {
+             const containerWidth = this.scrollContainer.offsetWidth;
+             const scrollWidth = this.scrollContainer.scrollWidth;
+             const columnWidth = scrollWidth / this.columns;
+             const targetScroll = columnWidth * index;
+             
+             this.scrollContainer.scrollTo({
+                 left: targetScroll,
+                 behavior: 'smooth'
+             });
+         },
+         
+         handleTouchStart(e) {
+             this.isDragging = true;
+             this.startX = e.touches[0].pageX - this.scrollContainer.offsetLeft;
+             this.scrollLeft = this.scrollContainer.scrollLeft;
+         },
+         
+         handleTouchMove(e) {
+             if (!this.isDragging) return;
+             e.preventDefault();
+             const x = e.touches[0].pageX - this.scrollContainer.offsetLeft;
+             const walk = (this.startX - x) * 1.5;
+             this.scrollContainer.scrollLeft = this.scrollLeft + walk;
+         },
+         
+         handleTouchEnd() {
+             this.isDragging = false;
+             this.updateCurrentColumn();
+         },
+         
          handleCardMagnetic(event, cardId) {
              const element = event.currentTarget;
              const rect = element.getBoundingClientRect();
@@ -119,8 +176,17 @@ USE CASES:
              return `transform: translate(${pos.x}px, ${pos.y}px) scale(${pos.x || pos.y ? 1.02 : 1}); transition: all 200ms ease-out;`;
          }
      }">
+    
+    <!-- Mobile swipe container -->
+    <div class="relative">
+        <div class="kanban-scroll-container overflow-x-auto md:overflow-visible"
+             x-ref="scrollContainer"
+             @touchstart="handleTouchStart($event)"
+             @touchmove="handleTouchMove($event)"
+             @touchend="handleTouchEnd()">
+            <div class="kanban-board flex md:grid gap-6 md:grid-cols-2 lg:grid-cols-4 w-max md:w-auto">
     <!-- Ideas Column -->
-    <div class="kanban-column">
+    <div class="kanban-column w-[85vw] md:w-auto">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">{{t "roadmap.columns.ideas"}}</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
             {{range $index, $item := .ideas}}
@@ -136,7 +202,7 @@ USE CASES:
     </div>
 
     <!-- Planned Column -->
-    <div class="kanban-column">
+    <div class="kanban-column w-[85vw] md:w-auto">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">{{t "roadmap.columns.planned"}}</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
             {{range $index, $item := .planned}}
@@ -152,7 +218,7 @@ USE CASES:
     </div>
 
     <!-- In Progress Column -->
-    <div class="kanban-column">
+    <div class="kanban-column w-[85vw] md:w-auto">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">{{t "roadmap.columns.in_progress"}}</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
             {{range $index, $item := .inProgress}}
@@ -168,7 +234,7 @@ USE CASES:
     </div>
 
     <!-- Testing Column -->
-    <div class="kanban-column">
+    <div class="kanban-column w-[85vw] md:w-auto">
         <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">{{t "roadmap.columns.testing"}}</h3>
         <div class="space-y-3 border border-gray-300 rounded-lg p-4 min-h-[400px]">
             <!-- Changelog Link Card - Always visible -->
@@ -191,6 +257,7 @@ USE CASES:
                 <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{{.description}}</p>
             </div>
             {{end}}
+            </div>
         </div>
     </div>
 </div>
