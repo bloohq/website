@@ -269,6 +269,88 @@
         "keywords": ["អំពី", "ក្រុមហ៊ុន", "បេសកកម្ម", "ក្រុម", "blue"]
       }
     },
+    "company/charter": {
+      "en": {
+        "title": "Blue Charter",
+        "description": "Our Charter describes the principles we use to execute on Blue's mission to organize the world's work.",
+        "keywords": ["charter", "principles", "mission", "values", "blue"]
+      },
+      "es": {
+        "title": "Carta de Blue",
+        "description": "Nuestra Carta describe los principios que utilizamos para ejecutar la misión de Blue de organizar el trabajo del mundo.",
+        "keywords": ["carta", "principios", "misión", "valores", "blue"]
+      },
+      "zh": {
+        "title": "Blue 宪章",
+        "description": "我们的宪章描述了我们用来执行 Blue 使命的原则，即组织世界的工作。",
+        "keywords": ["宪章", "原则", "使命", "价值观", "blue"]
+      },
+      "fr": {
+        "title": "Charte Blue",
+        "description": "Notre Charte décrit les principes que nous utilisons pour exécuter la mission de Blue d'organiser le travail du monde.",
+        "keywords": ["charte", "principes", "mission", "valeurs", "blue"]
+      },
+      "de": {
+        "title": "Blue Charta",
+        "description": "Unsere Charta beschreibt die Prinzipien, die wir verwenden, um Blues Mission zur Organisation der Arbeit der Welt umzusetzen.",
+        "keywords": ["charta", "prinzipien", "mission", "werte", "blue"]
+      },
+      "ja": {
+        "title": "Blue チャーター",
+        "description": "私たちのチャーターは、世界の仕事を整理するというBlueのミッションを実行するために使用する原則を説明しています。",
+        "keywords": ["チャーター", "原則", "ミッション", "価値観", "blue"]
+      },
+      "pt": {
+        "title": "Carta Blue",
+        "description": "Nossa Carta descreve os princípios que usamos para executar a missão da Blue de organizar o trabalho do mundo.",
+        "keywords": ["carta", "princípios", "missão", "valores", "blue"]
+      },
+      "ru": {
+        "title": "Устав Blue",
+        "description": "Наш Устав описывает принципы, которые мы используем для выполнения миссии Blue по организации работы в мире.",
+        "keywords": ["устав", "принципы", "миссия", "ценности", "blue"]
+      },
+      "ko": {
+        "title": "Blue 헌장",
+        "description": "우리의 헌장은 세계의 일을 조직화하는 Blue의 사명을 실행하는 데 사용하는 원칙을 설명합니다.",
+        "keywords": ["헌장", "원칙", "사명", "가치", "blue"]
+      },
+      "it": {
+        "title": "Carta Blue",
+        "description": "La nostra Carta descrive i principi che utilizziamo per eseguire la missione di Blue di organizzare il lavoro del mondo.",
+        "keywords": ["carta", "principi", "missione", "valori", "blue"]
+      },
+      "id": {
+        "title": "Piagam Blue",
+        "description": "Piagam kami menjelaskan prinsip-prinsip yang kami gunakan untuk menjalankan misi Blue dalam mengatur pekerjaan dunia.",
+        "keywords": ["piagam", "prinsip", "misi", "nilai", "blue"]
+      },
+      "nl": {
+        "title": "Blue Charter",
+        "description": "Ons Charter beschrijft de principes die we gebruiken om Blue's missie uit te voeren om het werk van de wereld te organiseren.",
+        "keywords": ["charter", "principes", "missie", "waarden", "blue"]
+      },
+      "pl": {
+        "title": "Karta Blue",
+        "description": "Nasza Karta opisuje zasady, których używamy do realizacji misji Blue organizowania pracy na świecie.",
+        "keywords": ["karta", "zasady", "misja", "wartości", "blue"]
+      },
+      "zh-TW": {
+        "title": "Blue 憲章",
+        "description": "我們的憲章描述了我們用來執行 Blue 使命的原則，即組織世界的工作。",
+        "keywords": ["憲章", "原則", "使命", "價值觀", "blue"]
+      },
+      "sv": {
+        "title": "Blue Charter",
+        "description": "Vår Charter beskriver de principer vi använder för att genomföra Blues uppdrag att organisera världens arbete.",
+        "keywords": ["charter", "principer", "uppdrag", "värderingar", "blue"]
+      },
+      "km": {
+        "title": "ធម្មនុញ្ញ Blue",
+        "description": "ធម្មនុញ្ញរបស់យើងពិពណ៌នាអំពីគោលការណ៍ដែលយើងប្រើដើម្បីអនុវត្តបេសកកម្មរបស់ Blue ក្នុងការរៀបចំការងាររបស់ពិភពលោក។",
+        "keywords": ["ធម្មនុញ្ញ", "គោលការណ៍", "បេសកកម្ម", "តម្លៃ", "blue"]
+      }
+    },
     "brand": {
       "en": {
         "title": "Brand",
