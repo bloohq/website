@@ -264,6 +264,8 @@ func processHTMLSearchTask(task searchTask, metadata *Metadata, lang string, ext
 	category := ""
 	if strings.HasPrefix(urlPath, "/platform/features") {
 		category = "Feature"
+	} else if strings.HasPrefix(urlPath, "/platform") {
+		category = "Platform"
 	} else if strings.HasPrefix(urlPath, "/solutions") {
 		category = "Solution"
 	}
@@ -564,12 +566,23 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[str
 		fullText := title + " " + description + " " + textContent
 		keywords := extractor.ExtractKeywords(fullText, 80)
 
+		// Determine category based on URL path
+		category := ""
+		if strings.HasPrefix(url, "/platform/features") {
+			category = "Feature"
+		} else if strings.HasPrefix(url, "/platform") {
+			category = "Platform"
+		} else if strings.HasPrefix(url, "/solutions") {
+			category = "Solution"
+		}
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: description,
 			Keywords:    keywords,
 			URL:         url,
 			Type:        "page",
+			Category:    category,
 		})
 
 		return nil
@@ -1105,6 +1118,8 @@ func indexCachedHTMLPagesForLanguage(items *[]SearchItem, htmlService *HTMLServi
 		category := ""
 		if strings.HasPrefix(urlPath, "/platform/features") {
 			category = "Feature"
+		} else if strings.HasPrefix(urlPath, "/platform") {
+			category = "Platform"
 		} else if strings.HasPrefix(urlPath, "/solutions") {
 			category = "Solution"
 		}

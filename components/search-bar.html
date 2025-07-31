@@ -202,6 +202,9 @@ DEPENDENCIES:
              const categoryColors = {
                  // Blue Blue (#00A0D2) for Features
                  'Feature': 'bg-[#00A0D2]/10 text-[#00A0D2] dark:bg-[#00A0D2]/20 dark:text-[#00A0D2]',
+                
+                // Blue Blue (#00A0D2) for Platform (same as Feature)
+                'Platform': 'bg-[#00A0D2]/10 text-[#00A0D2] dark:bg-[#00A0D2]/20 dark:text-[#00A0D2]',
                  
                  // Aquamarine (#A9F0D1) for Docs and Solutions - darker text for readability
                  'Docs': 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300',
@@ -265,7 +268,7 @@ DEPENDENCIES:
          },
          getCategoryCounts() {
              const counts = {};
-             const categoryOrder = ['Feature', 'Docs', 'API', 'Insights'];
+             const categoryOrder = ['Platform', 'Feature', 'Docs', 'API', 'Insights'];
              
              // Count results by category
              for (const result of this.results) {
@@ -284,6 +287,7 @@ DEPENDENCIES:
              // Return just the text color classes for the counter bar
              const textColors = {
                  'Feature': 'text-[#00A0D2] dark:text-[#00A0D2]',
+                 'Platform': 'text-[#00A0D2] dark:text-[#00A0D2]',
                  'Docs': 'text-green-700 dark:text-green-400',
                  'API': 'text-[#F06C9B] dark:text-[#F06C9B]',
                  'Insights': 'text-yellow-700 dark:text-yellow-400'
@@ -294,6 +298,7 @@ DEPENDENCIES:
              // Handle proper pluralization for each category
              const plurals = {
                  'Feature': count === 1 ? 'Feature' : 'Features',
+                 'Platform': count === 1 ? 'Platform' : 'Platform',
                  'Docs': count === 1 ? 'Doc' : 'Docs',
                  'API': count === 1 ? 'API' : 'APIs',
                  'Insights': count === 1 ? 'Insight' : 'Insights'
