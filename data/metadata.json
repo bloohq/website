@@ -433,6 +433,88 @@
         "keywords": ["តម្លៃ", "គម្រោង", "សាកល្បងឥតគិតថ្លៃ", "ការគ្រប់គ្រងក្រុម", "blue"]
       }
     },
+    "platform/api": {
+      "en": {
+        "title": "Blue API",
+        "description": "Blue has a powerful API with 100% feature coverage that allows you to build custom integrations and workflows.",
+        "keywords": ["api", "graphql", "integration", "automation", "developers", "blue"]
+      },
+      "es": {
+        "title": "API de Blue",
+        "description": "Blue tiene una API poderosa con cobertura de características del 100% que le permite crear integraciones y flujos de trabajo personalizados.",
+        "keywords": ["api", "graphql", "integración", "automatización", "desarrolladores", "blue"]
+      },
+      "zh": {
+        "title": "Blue API",
+        "description": "Blue 拥有功能覆盖率达 100% 的强大 API，让您能够构建自定义集成和工作流程。",
+        "keywords": ["api", "graphql", "集成", "自动化", "开发者", "blue"]
+      },
+      "fr": {
+        "title": "API Blue",
+        "description": "Blue dispose d'une API puissante avec une couverture de fonctionnalités à 100% qui vous permet de créer des intégrations et des workflows personnalisés.",
+        "keywords": ["api", "graphql", "intégration", "automatisation", "développeurs", "blue"]
+      },
+      "de": {
+        "title": "Blue API",
+        "description": "Blue verfügt über eine leistungsstarke API mit 100% Funktionsabdeckung, mit der Sie benutzerdefinierte Integrationen und Workflows erstellen können.",
+        "keywords": ["api", "graphql", "integration", "automatisierung", "entwickler", "blue"]
+      },
+      "ja": {
+        "title": "Blue API",
+        "description": "Blueは100%の機能カバレッジを持つ強力なAPIを提供し、カスタム統合とワークフローの構築を可能にします。",
+        "keywords": ["api", "graphql", "統合", "自動化", "開発者", "blue"]
+      },
+      "pt": {
+        "title": "API Blue",
+        "description": "Blue tem uma API poderosa com cobertura de recursos de 100% que permite criar integrações e fluxos de trabalho personalizados.",
+        "keywords": ["api", "graphql", "integração", "automação", "desenvolvedores", "blue"]
+      },
+      "ru": {
+        "title": "Blue API",
+        "description": "Blue имеет мощный API со 100% покрытием функций, который позволяет создавать пользовательские интеграции и рабочие процессы.",
+        "keywords": ["api", "graphql", "интеграция", "автоматизация", "разработчики", "blue"]
+      },
+      "ko": {
+        "title": "Blue API",
+        "description": "Blue는 100% 기능 커버리지를 갖춘 강력한 API를 제공하여 사용자 정의 통합 및 워크플로를 구축할 수 있습니다.",
+        "keywords": ["api", "graphql", "통합", "자동화", "개발자", "blue"]
+      },
+      "it": {
+        "title": "API Blue",
+        "description": "Blue ha un'API potente con copertura delle funzionalità al 100% che ti consente di creare integrazioni e flussi di lavoro personalizzati.",
+        "keywords": ["api", "graphql", "integrazione", "automazione", "sviluppatori", "blue"]
+      },
+      "id": {
+        "title": "API Blue",
+        "description": "Blue memiliki API yang kuat dengan cakupan fitur 100% yang memungkinkan Anda membangun integrasi dan alur kerja khusus.",
+        "keywords": ["api", "graphql", "integrasi", "otomasi", "pengembang", "blue"]
+      },
+      "nl": {
+        "title": "Blue API",
+        "description": "Blue heeft een krachtige API met 100% functiedekking waarmee u aangepaste integraties en workflows kunt bouwen.",
+        "keywords": ["api", "graphql", "integratie", "automatisering", "ontwikkelaars", "blue"]
+      },
+      "pl": {
+        "title": "API Blue",
+        "description": "Blue posiada potężne API z pełnym pokryciem funkcji, które pozwala na tworzenie niestandardowych integracji i przepływów pracy.",
+        "keywords": ["api", "graphql", "integracja", "automatyzacja", "programiści", "blue"]
+      },
+      "zh-TW": {
+        "title": "Blue API",
+        "description": "Blue 擁有功能覆蓋率達 100% 的強大 API，讓您能夠建立自訂整合和工作流程。",
+        "keywords": ["api", "graphql", "整合", "自動化", "開發者", "blue"]
+      },
+      "sv": {
+        "title": "Blue API",
+        "description": "Blue har ett kraftfullt API med 100% funktionstäckning som låter dig bygga anpassade integrationer och arbetsflöden.",
+        "keywords": ["api", "graphql", "integration", "automatisering", "utvecklare", "blue"]
+      },
+      "km": {
+        "title": "Blue API",
+        "description": "Blue មាន API ដ៏មានអានុភាពជាមួយនឹងការគ្របដណ្តប់មុខងារ 100% ដែលអនុញ្ញាតឱ្យអ្នកបង្កើតការរួមបញ្ចូល និងលំហូរការងារផ្ទាល់ខ្លួន។",
+        "keywords": ["api", "graphql", "ការរួមបញ្ចូល", "ស្វ័យប្រវត្តិកម្ម", "អ្នកអភិវឌ្ឍន៍", "blue"]
+      }
+    },
     "platform/changelog": {
       "en": {
         "title": "Changelog",
