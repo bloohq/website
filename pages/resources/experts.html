@@ -139,12 +139,12 @@
                         <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">Angelique Delamere</h3>
                         <span class="text-2xl">🇿🇦</span>
                     </div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Asia</div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">Blue consultant specializing in enhancing workflows for creative agencies.</p>
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{t "experts.location_asia"}}</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{t "experts.expert_tagline_angelique"}}</p>
                     <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                        <span>English</span>
+                        <span>{{t "experts.language_english"}}</span>
                         <span class="hidden sm:inline">•</span>
-                        <span>4+ years</span>
+                        <span>{{t "experts.experience_years_4_plus"}}</span>
                         <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$50/hour</span>
                     </div>
@@ -156,13 +156,13 @@
                  @click="openModal({
                     name: 'Lorenzo Hickey',
                     image: '/experts/lorenzohickey.jpeg',
-                    location: 'North America',
+                    location: '{{t "experts.location_north_america"}}',
                     flag: '🇺🇸',
-                    country: 'United States',
-                    tagline: 'Early Blue adopter with 30+ years of experience in project management.',
-                    languages: ['English'],
-                    experience: '4+ years',
-                    longDescription: 'Lorenzo was one of the earliest users of Blue, and has successfully implemented over 50 clients businesses into Blue across numerous industries.',
+                    country: '{{t "experts.country_united_states"}}',
+                    tagline: '{{t "experts.expert_tagline_lorenzo"}}',
+                    languages: ['{{t "experts.language_english"}}'],
+                    experience: '{{t "experts.experience_years_4_plus"}}',
+                    longDescription: '{{t "experts.expert_long_desc_lorenzo"}}',
                     email: 'lorenzo@shapeshiftworld.com',
                     price: '$50/hour'
                  })">
@@ -172,12 +172,12 @@
                         <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">Lorenzo Hickey</h3>
                         <span class="text-2xl">🇺🇸</span>
                     </div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">North America</div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">Early Blue adopter with 30+ years of experience in project management.</p>
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{t "experts.location_north_america"}}</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{t "experts.expert_tagline_lorenzo"}}</p>
                     <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                        <span>English</span>
+                        <span>{{t "experts.language_english"}}</span>
                         <span class="hidden sm:inline">•</span>
-                        <span>4+ years</span>
+                        <span>{{t "experts.experience_years_4_plus"}}</span>
                         <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$50/hour</span>
                     </div>
@@ -189,13 +189,13 @@
                  @click="openModal({
                     name: 'François Houte',
                     image: '/experts/houte.jpg',
-                    location: 'Europe',
+                    location: '{{t "experts.location_europe"}}',
                     flag: '🇫🇷',
-                    country: 'France',
-                    tagline: 'Project manager and trainer in project management for businesses.',
-                    languages: ['French', 'English'],
-                    experience: '2-4 years',
-                    longDescription: 'François has been using Blue for almost 4 years for managing client projects such as virtual tours, SEO, and web marketing. He can help you structure your projects according to your needs and train your teams so that the integration of Blue is a true success for your business.',
+                    country: '{{t "experts.country_france"}}',
+                    tagline: '{{t "experts.expert_tagline_francois"}}',
+                    languages: ['{{t "experts.language_french"}}', '{{t "experts.language_english"}}'],
+                    experience: '{{t "experts.experience_years_2_4"}}',
+                    longDescription: '{{t "experts.expert_long_desc_francois"}}',
                     email: 'contact@visite360pro.com',
                     phone: '+33 6 08 23 53 78',
                     price: '$50/hour'
@@ -206,12 +206,12 @@
                         <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">François Houte</h3>
                         <span class="text-2xl">🇫🇷</span>
                     </div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Europe</div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">Project manager and trainer in project management for businesses.</p>
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{t "experts.location_europe"}}</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{t "experts.expert_tagline_francois"}}</p>
                     <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                        <span>French, English</span>
+                        <span>{{t "experts.language_french"}}, {{t "experts.language_english"}}</span>
                         <span class="hidden sm:inline">•</span>
-                        <span>2-4 years</span>
+                        <span>{{t "experts.experience_years_2_4"}}</span>
                         <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$50/hour</span>
                     </div>
@@ -223,12 +223,13 @@
                  @click="openModal({
                     name: 'Ousa Chea',
                     image: '/experts/ousachea.jpeg',
-                    location: 'Asia',
+                    location: '{{t "experts.location_asia"}}',
                     flag: '🇰🇭',
-                    tagline: 'Specialist in implementing Blue for web-based projects.',
-                    languages: ['Khmer', 'English'],
-                    experience: '4+ years',
-                    longDescription: 'Ousa has been using Blue since the early days. He has a solid background in website project management and knows how to best leverage the Blue feature set to manage web-based projects.',
+                    country: '{{t "experts.country_cambodia"}}',
+                    tagline: '{{t "experts.expert_tagline_ousa"}}',
+                    languages: ['{{t "experts.language_khmer"}}', '{{t "experts.language_english"}}'],
+                    experience: '{{t "experts.experience_years_4_plus"}}',
+                    longDescription: '{{t "experts.expert_long_desc_ousa"}}',
                     email: 'ousauser@gmail.com',
                     linkedin: 'https://www.linkedin.com/in/ousachea/',
                     price: '$20/hour'
@@ -239,12 +240,12 @@
                         <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">Ousa Chea</h3>
                         <span class="text-2xl">🇰🇭</span>
                     </div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Asia</div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">Specialist in implementing Blue for web-based projects.</p>
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{t "experts.location_asia"}}</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{t "experts.expert_tagline_ousa"}}</p>
                     <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                        <span>Khmer, English</span>
+                        <span>{{t "experts.language_khmer"}}, {{t "experts.language_english"}}</span>
                         <span class="hidden sm:inline">•</span>
-                        <span>4+ years</span>
+                        <span>{{t "experts.experience_years_4_plus"}}</span>
                         <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$20/hour</span>
                     </div>
@@ -256,12 +257,13 @@
                  @click="openModal({
                     name: 'Eran Bucai',
                     image: '/experts/eranbucai.jpg',
-                    location: 'Asia',
+                    location: '{{t "experts.location_asia"}}',
                     flag: '🇦🇺',
-                    tagline: 'Blue consultant specializing in the solopreneurs sector and VA workflows.',
-                    languages: ['English'],
-                    experience: '4+ years',
-                    longDescription: 'Eran is the founder of DotComTruths and specializes in helping solopreneurs and startups to scale and automate their operations and get more customers. He has a team of VAs (Virtual Assistants) who can help you create your business processes in Blue.',
+                    country: '{{t "experts.country_australia"}}',
+                    tagline: '{{t "experts.expert_tagline_eran"}}',
+                    languages: ['{{t "experts.language_english"}}'],
+                    experience: '{{t "experts.experience_years_4_plus"}}',
+                    longDescription: '{{t "experts.expert_long_desc_eran"}}',
                     email: 'contact@eranbucai.com',
                     linkedin: 'https://www.linkedin.com/in/eranbucai/',
                     price: '$25/hour'
@@ -272,12 +274,12 @@
                         <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">Eran Bucai</h3>
                         <span class="text-2xl">🇦🇺</span>
                     </div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Asia</div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">Blue consultant specializing in the solopreneurs sector and VA workflows.</p>
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{t "experts.location_asia"}}</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{t "experts.expert_tagline_eran"}}</p>
                     <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                        <span>English</span>
+                        <span>{{t "experts.language_english"}}</span>
                         <span class="hidden sm:inline">•</span>
-                        <span>4+ years</span>
+                        <span>{{t "experts.experience_years_4_plus"}}</span>
                         <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$25/hour</span>
                     </div>
