@@ -179,6 +179,12 @@ window.SPAUtils = {
         if (newTitle) document.title = newTitle.textContent;
         this.updateMetaTags(doc);
 
+        // Update body data-language attribute
+        const newBodyLang = doc.body.getAttribute('data-language');
+        if (newBodyLang) {
+            document.body.setAttribute('data-language', newBodyLang);
+        }
+
         // Update URL
         window.history.pushState(null, '', targetUrl.href);
 
@@ -258,6 +264,12 @@ window.SPAUtils = {
             
             // Update meta tags for SEO
             this.updateMetaTags(doc);
+            
+            // Update body data-language attribute
+            const newBodyLang = doc.body.getAttribute('data-language');
+            if (newBodyLang) {
+                document.body.setAttribute('data-language', newBodyLang);
+            }
             
             // Update URL
             window.history.pushState(null, '', targetUrl.href);

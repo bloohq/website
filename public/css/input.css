@@ -36,6 +36,15 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Khmer language font override */
+.lang-km {
+    font-family: 'Noto Sans Khmer', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+.lang-km [lang="km"] {
+    font-family: 'Noto Sans Khmer', sans-serif !important;
+}
+
 /* Ensure flex containers don't break */
 .flex-1 {
     min-width: 0; /* Prevent flex items from growing beyond their container */

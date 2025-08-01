@@ -41,6 +41,11 @@
                 return;
             }
             
+            // Handle font loading/unloading for language switch
+            if (window.FontLoader && typeof window.FontLoader.handleLanguageSwitch === 'function') {
+                window.FontLoader.handleLanguageSwitch(language.code);
+            }
+            
             // Get the current path dynamically
             const currentPath = this.getCurrentPath();
             

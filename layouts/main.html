@@ -7,7 +7,8 @@
         scrollProgress: 0
     }" 
     @scroll.window="scrollProgress = Math.round((window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100)"
-    class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300">
+    class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300"
+    data-language="{{.Language}}">
     
     {{$topNewsData := parseJSON (printf `{
         "message": "%s",
@@ -212,6 +213,7 @@
     <script src="/js/flip-char.js"></script>
     <script src="/js/white-label-logo-upload.js"></script>
     <script src="/js/pricing-calculator.js"></script>
+    <script src="/js/font-loader.js"></script>
     <script src="/js/blue-init.js"></script>
     
     <!-- Then initialize with error handling -->

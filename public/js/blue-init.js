@@ -29,6 +29,9 @@ window.BlueInit = {
         // Initialize auth cookie checking (for components that need it)
         this.initAuthCookie();
         
+        // Initialize font loader
+        this.initFontLoader();
+        
         console.log('✅ Blue initialization complete');
     },
     
@@ -56,6 +59,9 @@ window.BlueInit = {
         
         // Re-initialize auth cookie checking
         this.initAuthCookie();
+        
+        // Check and maintain font loading state
+        this.initFontLoader();
         
         // Re-setup client routing (handled by SPA utils)
         if (typeof SPAUtils !== 'undefined' && SPAUtils.setupClientRouting) {
@@ -174,5 +180,16 @@ window.BlueInit = {
                 alpineData.loadData();
             }
         });
+    },
+    
+    /**
+     * Initialize font loader
+     */
+    initFontLoader() {
+        if (typeof FontLoader !== 'undefined') {
+            FontLoader.init();
+        } else {
+            console.warn('FontLoader not loaded - dynamic fonts will not work');
+        }
     }
 };
