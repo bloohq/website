@@ -8,12 +8,12 @@ USAGE:
 {{template "cta-single-button" $ctaData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$ctaData := parseJSON `{
-    "Title": "Join us in shaping a future of technology",
-    "ButtonText": "View careers",
-    "ButtonUrl": "/careers",
-    "MarginBottom": "mb-20"
-}`}}
+{{$ctaData := dict
+    "Title" "Join us in shaping a future of technology"
+    "ButtonText" "View careers"
+    "ButtonUrl" "/careers"
+    "MarginBottom" "mb-20"
+}}
 {{template "cta-single-button" $ctaData}}
 
 DATA STRUCTURE:

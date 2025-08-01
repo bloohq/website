@@ -8,11 +8,11 @@ USAGE:
 {{template "top-news-bar" $topNewsData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$topNewsData := parseJSON `{
-    "message": "🎉 New features released! Check out our latest updates.",
-    "linkText": "Learn more",
-    "linkUrl": "/changelog"
-}`}}
+{{$topNewsData := dict
+    "message" "🎉 New features released! Check out our latest updates."
+    "linkText" "Learn more"
+    "linkUrl" "/changelog"
+}}
 {{template "top-news-bar" $topNewsData}}
 
 DATA STRUCTURE:

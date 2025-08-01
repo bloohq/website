@@ -8,27 +8,27 @@ USAGE:
 {{template "logo-grid-large" $logoData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$logoData := parseJSON `{
-    "title": "Trusted by 300+ government agencies and departments", 
-    "logos": [
-        { 
-            "name": "State of California", 
-            "src": "/customers/state_of_california.png" 
-        },
-        { 
-            "name": "Department of Education", 
-            "src": "/customers/department_of_education.png" 
-        },
-        { 
-            "name": "City of New York", 
-            "src": "/customers/city_of_new_york.png" 
-        },
-        { 
-            "name": "US Department of Defense", 
-            "src": "/customers/us_dod.png" 
-        }
-    ]
-}`}}
+{{$logoData := dict
+    "title" "Trusted by 300+ government agencies and departments"
+    "logos" (slice
+        (dict
+            "name" "State of California"
+            "src" "/customers/state_of_california.png"
+        )
+        (dict
+            "name" "Department of Education"
+            "src" "/customers/department_of_education.png"
+        )
+        (dict
+            "name" "City of New York"
+            "src" "/customers/city_of_new_york.png"
+        )
+        (dict
+            "name" "US Department of Defense"
+            "src" "/customers/us_dod.png"
+        )
+    )
+}}
 {{template "logo-grid-large" $logoData}}
 
 DATA STRUCTURE:

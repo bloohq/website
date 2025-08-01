@@ -115,53 +115,53 @@
     
     <!-- News Bar -->
     <div class="mt-8">
-        {{$newsBarData := parseJSON (printf `{
-            "MainText": "%s",
-            "ButtonText": "%s",
-            "ButtonUrl": "/platform/white-label"
-        }` (t "home.news_bar.main_text") (t "home.news_bar.button_text"))}}
+        {{$newsBarData := dict
+            "MainText" (t "home.news_bar.main_text")
+            "ButtonText" (t "home.news_bar.button_text")
+            "ButtonUrl" "/platform/white-label"
+        }}
         {{template "news-bar" $newsBarData}}
     </div>
     
   
-    {{$logoData := parseJSON (printf `{
-        "title": "%s", 
-        "logos": [
-            { "name": "CBRE", "src": "/customers/cbre.svg" },
-            { "name": "Cisco", "src": "/customers/cisco.svg" },
-            { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-            { "name": "FedEx", "src": "/customers/fedex.svg" },
-            { "name": "Manulife", "src": "/customers/manulife.svg" },
-            { "name": "Red Hat", "src": "/customers/redhat.svg" },
-            { "name": "Heineken", "src": "/customers/heineken.svg" },
-            { "name": "Sheraton", "src": "/customers/sheraton.svg" },
-            { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
-            { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
-            { "name": "World Food Programme", "src": "/customers/wfp.svg" },
-            { "name": "ILO", "src": "/customers/ilo.webp" }
-        ]
-    }` (t "home.trusted_by"))}}
+    {{$logoData := dict
+        "title" (t "home.trusted_by")
+        "logos" (slice
+            (dict "name" "CBRE" "src" "/customers/cbre.svg")
+            (dict "name" "Cisco" "src" "/customers/cisco.svg")
+            (dict "name" "Deloitte" "src" "/customers/deloitte.svg")
+            (dict "name" "FedEx" "src" "/customers/fedex.svg")
+            (dict "name" "Manulife" "src" "/customers/manulife.svg")
+            (dict "name" "Red Hat" "src" "/customers/redhat.svg")
+            (dict "name" "Heineken" "src" "/customers/heineken.svg")
+            (dict "name" "Sheraton" "src" "/customers/sheraton.svg")
+            (dict "name" "Columbia University" "src" "/customers/columbia-university.webp")
+            (dict "name" "Save the Children" "src" "/customers/savethechildren.svg")
+            (dict "name" "World Food Programme" "src" "/customers/wfp.svg")
+            (dict "name" "ILO" "src" "/customers/ilo.webp")
+        )
+    }}
     
     {{template "logo-grid" $logoData}}
 
-    {{$valuePropsData := parseJSON (printf `{
-        "Title": "%s",
-        "Description": "%s",
-        "ValueProps": [
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            }
-        ]
-    }` (t "home.designed_to_turn.title") (t "home.designed_to_turn.description") (t "home.designed_to_turn.value_props.built_for_work.title") (t "home.designed_to_turn.value_props.built_for_work.description") (t "home.designed_to_turn.value_props.platform_for_customers.title") (t "home.designed_to_turn.value_props.platform_for_customers.description") (t "home.designed_to_turn.value_props.fair_pricing.title") (t "home.designed_to_turn.value_props.fair_pricing.description"))}}
+    {{$valuePropsData := dict
+        "Title" (t "home.designed_to_turn.title")
+        "Description" (t "home.designed_to_turn.description")
+        "ValueProps" (slice
+            (dict
+                "Title" (t "home.designed_to_turn.value_props.built_for_work.title")
+                "Description" (t "home.designed_to_turn.value_props.built_for_work.description")
+            )
+            (dict
+                "Title" (t "home.designed_to_turn.value_props.platform_for_customers.title")
+                "Description" (t "home.designed_to_turn.value_props.platform_for_customers.description")
+            )
+            (dict
+                "Title" (t "home.designed_to_turn.value_props.fair_pricing.title")
+                "Description" (t "home.designed_to_turn.value_props.fair_pricing.description")
+            )
+        )
+    }}
     
     {{template "value-propositions" $valuePropsData}}
 
@@ -173,72 +173,72 @@
     
     <!-- One source of truth -->
     <div class="mb-20">
-        {{$automateData := parseJSON (printf `{
-            "Title": "%s",
-            "Description": "%s",
-            "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "left",
-            "SeeAlso": {
-                "Links": [
-                    {
-                        "Text": "%s",
-                        "Url": "/platform/features/records",
-                        "Description": "%s"
-                    },
-                    {
-                        "Text": "%s",
-                        "Url": "/platform/features/custom-fields",
-                        "Description": "%s"
-                    },
-                    {
-                        "Text": "%s",
-                        "Url": "/platform/features/workspaces",
-                        "Description": "%s"
-                    }
-                ]
-            }
-        }` (t "home.features.one_source.title") (t "home.features.one_source.description") (t "home.features.one_source.see_also.records.text") (t "home.features.one_source.see_also.records.description") (t "home.features.one_source.see_also.custom_fields.text") (t "home.features.one_source.see_also.custom_fields.description") (t "home.features.one_source.see_also.workspaces.text") (t "home.features.one_source.see_also.workspaces.description"))}}
+        {{$automateData := dict
+            "Title" (t "home.features.one_source.title")
+            "Description" (t "home.features.one_source.description")
+            "VideoUrl" "/testvideo2.mp4"
+            "VideoPosition" "left"
+            "SeeAlso" (dict
+                "Links" (slice
+                    (dict
+                        "Text" (t "home.features.one_source.see_also.records.text")
+                        "Url" "/platform/features/records"
+                        "Description" (t "home.features.one_source.see_also.records.description")
+                    )
+                    (dict
+                        "Text" (t "home.features.one_source.see_also.custom_fields.text")
+                        "Url" "/platform/features/custom-fields"
+                        "Description" (t "home.features.one_source.see_also.custom_fields.description")
+                    )
+                    (dict
+                        "Text" (t "home.features.one_source.see_also.workspaces.text")
+                        "Url" "/platform/features/workspaces"
+                        "Description" (t "home.features.one_source.see_also.workspaces.description")
+                    )
+                )
+            )
+        }}
         {{template "feature-video" $automateData}}
     </div>
 
      <!-- See Everything, Miss Nothing -->
      <div class="mb-20">
-        {{$seeEverythingData := parseJSON (printf `{
-            "Title": "%s",
-            "Description": "%s",
-            "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "right",
-            "SeeAlso": {
-                "Links": [
-                    {
-                        "Text": "%s",
-                        "Url": "/docs/records/lists",
-                        "Description": "%s"
-                    },
-                    {
-                        "Text": "%s",
-                        "Url": "/insights/create-checklist-templates",
-                        "Description": "%s"
-                    },
-                    {
-                        "Text": "%s",
-                        "Url": "/platform/features/forms",
-                        "Description": "%s"
-                    }
-                ]
-            }
-        }` (t "home.features.everything_process.title") (t "home.features.everything_process.description") (t "home.features.everything_process.see_also.lists.text") (t "home.features.everything_process.see_also.lists.description") (t "home.features.everything_process.see_also.checklists.text") (t "home.features.everything_process.see_also.checklists.description") (t "home.features.everything_process.see_also.forms.text") (t "home.features.everything_process.see_also.forms.description"))}}
+        {{$seeEverythingData := dict
+            "Title" (t "home.features.everything_process.title")
+            "Description" (t "home.features.everything_process.description")
+            "VideoUrl" "/testvideo2.mp4"
+            "VideoPosition" "right"
+            "SeeAlso" (dict
+                "Links" (slice
+                    (dict
+                        "Text" (t "home.features.everything_process.see_also.lists.text")
+                        "Url" "/docs/records/lists"
+                        "Description" (t "home.features.everything_process.see_also.lists.description")
+                    )
+                    (dict
+                        "Text" (t "home.features.everything_process.see_also.checklists.text")
+                        "Url" "/insights/create-checklist-templates"
+                        "Description" (t "home.features.everything_process.see_also.checklists.description")
+                    )
+                    (dict
+                        "Text" (t "home.features.everything_process.see_also.forms.text")
+                        "Url" "/platform/features/forms"
+                        "Description" (t "home.features.everything_process.see_also.forms.description")
+                    )
+                )
+            )
+        }}
         {{template "feature-video" $seeEverythingData}}
     </div>
    
     <!-- Create Clear Process -->
     <div class="mb-20">
-        {{$automateData := parseJSON (printf `{
-            "Title": "%s",
-            "Description": "%s",
-            "VideoUrl": "https://media.blue.cc/automations-on-off.mp4",
-            "VideoPosition": "left"
-        }` (t "home.features.automations.title") (t "home.features.automations.description"))}}
+        {{$automateData := dict
+            "Title" (t "home.features.automations.title")
+            "Description" (t "home.features.automations.description")
+            "VideoUrl" "https://media.blue.cc/automations-on-off.mp4"
+            "VideoPosition" "left"
+        }}
         {{template "feature-video" $automateData}}
     </div>
 
@@ -249,74 +249,74 @@
 
     <section class="mb-16">
                     
-                    {{$statsData := parseJSON (printf `{
-                        "Title": "%s",
-                        "Stats": [
-                            {
-                                "Number": "%s",
-                                "Description": "%s"
-                            },
-                            {
-                                "Number": "%s",
-                                "Description": "%s"
-                            },
-                            {
-                                "Number": "%s",
-                                "Description": "%s"
-                            }
-                        ]
-                    }` (t "home.stats.title") (t "home.stats.teams.number") (t "home.stats.teams.description") (t "home.stats.processes.number") (t "home.stats.processes.description") (t "home.stats.records.number") (t "home.stats.records.description"))}}
+                    {{$statsData := dict
+                        "Title" (t "home.stats.title")
+                        "Stats" (slice
+                            (dict
+                                "Number" (t "home.stats.teams.number")
+                                "Description" (t "home.stats.teams.description")
+                            )
+                            (dict
+                                "Number" (t "home.stats.processes.number")
+                                "Description" (t "home.stats.processes.description")
+                            )
+                            (dict
+                                "Number" (t "home.stats.records.number")
+                                "Description" (t "home.stats.records.description")
+                            )
+                        )
+                    }}
                     
                     {{template "stats-section" $statsData}}
     </section>
 
-    {{$testimonialData := parseJSON (printf `{
-        "testimonials": [
-            {
-                "quote": "%s",
-                "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
-                "posterUrl": "/testimonials/davidsacks.jpeg"
-            },
-            {
-                "quote": "%s",
-                "videoUrl": "https://media.blue.cc/lady.mp4",
-                "posterUrl": "/testimonials/lady.jpg"
-            },
-            {
-                "quote": "%s",
-                "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
-                "posterUrl": "/testimonials/ricklewis.jpg"
-            },
-            {
-                "quote": "%s",
-                "videoUrl": "https://media.blue.cc/ana.mov",
-                "posterUrl": "/testimonials/ana-testimonial.jpg"
-            }
-        ]
-    }` (t "home.testimonials.quote_1") (t "home.testimonials.quote_2") (t "home.testimonials.quote_3") (t "home.testimonials.quote_4"))}}
+    {{$testimonialData := dict
+        "testimonials" (slice
+            (dict
+                "quote" (t "home.testimonials.quote_1")
+                "videoUrl" "https://media.blue.cc/davidzack-testimonial.mp4"
+                "posterUrl" "/testimonials/davidsacks.jpeg"
+            )
+            (dict
+                "quote" (t "home.testimonials.quote_2")
+                "videoUrl" "https://media.blue.cc/lady.mp4"
+                "posterUrl" "/testimonials/lady.jpg"
+            )
+            (dict
+                "quote" (t "home.testimonials.quote_3")
+                "videoUrl" "https://media.blue.cc/ricklews-testimonial.mov"
+                "posterUrl" "/testimonials/ricklewis.jpg"
+            )
+            (dict
+                "quote" (t "home.testimonials.quote_4")
+                "videoUrl" "https://media.blue.cc/ana.mov"
+                "posterUrl" "/testimonials/ana-testimonial.jpg"
+            )
+        )
+    }}
 
     {{template "testimonial-videos" $testimonialData}}
 
 
     <!-- Your Data, Your Way -->
     <div class="mb-20">
-        {{$yourDataData := parseJSON (printf `{
-            "Title": "%s",
-            "Description": "%s",
-            "VideoUrl": "https://media.blue.cc/custom-fields-showcase.mp4",
-            "VideoPosition": "right"
-        }` (t "home.features.your_data.title") (t "home.features.your_data.description"))}}
+        {{$yourDataData := dict
+            "Title" (t "home.features.your_data.title")
+            "Description" (t "home.features.your_data.description")
+            "VideoUrl" "https://media.blue.cc/custom-fields-showcase.mp4"
+            "VideoPosition" "right"
+        }}
         {{template "feature-video" $yourDataData}}
     </div>
 
     <!-- Insights That Drive Action -->
     <div class="mb-20">
-        {{$insightsData := parseJSON (printf `{
-            "Title": "%s",
-            "Description": "%s",
-            "VideoUrl": "https://media.blue.cc/dashboard-showcase.mp4",
-            "VideoPosition": "left"
-        }` (t "home.features.dashboards.title") (t "home.features.dashboards.description"))}}
+        {{$insightsData := dict
+            "Title" (t "home.features.dashboards.title")
+            "Description" (t "home.features.dashboards.description")
+            "VideoUrl" "https://media.blue.cc/dashboard-showcase.mp4"
+            "VideoPosition" "left"
+        }}
         {{template "feature-video" $insightsData}}
     </div>
 </section>
@@ -324,65 +324,65 @@
 <!-- Likely need a unique integrations area here with various logos.-->
 
     <!-- Features Grid Section -->
-    {{$featuresData := parseJSON (printf `{
-        "Title": "%s",
-        "Features": [
-            {   
-                "Title": "%s",
-                "Description": "%s",
-                "Url": "/platform/security"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s",
-                "Url": "/platform/performance"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s",
-                "Url": "/platform/integrations"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            },
-            {
-                "Title": "%s",
-                "Description": "%s"
-            }
-        ]
-    }` (t "home.features_grid.title") (t "home.features_grid.security.title") (t "home.features_grid.security.description") (t "home.features_grid.performance.title") (t "home.features_grid.performance.description") (t "home.features_grid.analytics.title") (t "home.features_grid.analytics.description") (t "home.features_grid.integrations.title") (t "home.features_grid.integrations.description") (t "home.features_grid.automations_grid.title") (t "home.features_grid.automations_grid.description") (t "home.features_grid.mobile.title") (t "home.features_grid.mobile.description") (t "home.features_grid.collaboration.title") (t "home.features_grid.collaboration.description") (t "home.features_grid.customization.title") (t "home.features_grid.customization.description") (t "home.features_grid.support.title") (t "home.features_grid.support.description"))}}
+    {{$featuresData := dict
+        "Title" (t "home.features_grid.title")
+        "Features" (slice
+            (dict
+                "Title" (t "home.features_grid.security.title")
+                "Description" (t "home.features_grid.security.description")
+                "Url" "/platform/security"
+            )
+            (dict
+                "Title" (t "home.features_grid.performance.title")
+                "Description" (t "home.features_grid.performance.description")
+                "Url" "/platform/performance"
+            )
+            (dict
+                "Title" (t "home.features_grid.analytics.title")
+                "Description" (t "home.features_grid.analytics.description")
+            )
+            (dict
+                "Title" (t "home.features_grid.integrations.title")
+                "Description" (t "home.features_grid.integrations.description")
+                "Url" "/platform/integrations"
+            )
+            (dict
+                "Title" (t "home.features_grid.automations_grid.title")
+                "Description" (t "home.features_grid.automations_grid.description")
+            )
+            (dict
+                "Title" (t "home.features_grid.mobile.title")
+                "Description" (t "home.features_grid.mobile.description")
+            )
+            (dict
+                "Title" (t "home.features_grid.collaboration.title")
+                "Description" (t "home.features_grid.collaboration.description")
+            )
+            (dict
+                "Title" (t "home.features_grid.customization.title")
+                "Description" (t "home.features_grid.customization.description")
+            )
+            (dict
+                "Title" (t "home.features_grid.support.title")
+                "Description" (t "home.features_grid.support.description")
+            )
+        )
+    }}
     
     {{template "features-grid-simple" $featuresData}}
        
  <!-- Integration Partners -->
  <div class="mb-16">
-    {{$integrationData := parseJSON (printf `{
-        "title": "%s",
-        "logos": [
-            { "name": "Zapier", "src": "/images/zapier.svg" },
-            { "name": "Make.com", "src": "/images/make.svg" },
-            { "name": "Pabbly Connect", "src": "/images/pabbly.svg" },
-            { "name": "Albato", "src": "/images/albato.png" },
-            { "name": "Boost.space", "src": "/images/boost-space.svg" }
-        ]
-    }` (t "home.integrations.title"))}}
+    {{$integrationData := dict
+        "title" (t "home.integrations.title")
+        "logos" (slice
+            (dict "name" "Zapier" "src" "/images/zapier.svg")
+            (dict "name" "Make.com" "src" "/images/make.svg")
+            (dict "name" "Pabbly Connect" "src" "/images/pabbly.svg")
+            (dict "name" "Albato" "src" "/images/albato.png")
+            (dict "name" "Boost.space" "src" "/images/boost-space.svg")
+        )
+    }}
     {{template "logo-grid" $integrationData}}
 </div>
 
@@ -392,41 +392,41 @@
 I wonder if process management is really needed, is that a "use case"? -->
 <section class="mb-8">
         
-    {{$showcaseData := parseJSON (printf `{
-        "Title": "%s",
-        "Features": [
-            {
-                "Id": "process-management",
-                "Title": "%s", 
-                "VideoUrl": "/video3.mp4"
-            },
-            {
-                "Id": "project-management",
-                "Title": "%s",
-                "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-            },
-            {
-                "Id": "sales-crm",
-                "Title": "%s",
-                "VideoUrl": "/video4.mp4"
-            },
-            {
-                "Id": "service-tickets",
-                "Title": "%s",
-                "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-            },
-            {
-                "Id": "asset-management",
-                "Title": "%s",
-                "VideoUrl": "/testvideo2.mp4"
-            },
-            {
-                "Id": "content-calendar",
-                "Title": "%s",
-                "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-            }
-        ]
-    }` (t "home.use_cases.title") (t "home.use_cases.process_management") (t "home.use_cases.project_management") (t "home.use_cases.sales_crm") (t "home.use_cases.service_tickets") (t "home.use_cases.asset_management") (t "home.use_cases.content_calendar"))}}
+    {{$showcaseData := dict
+        "Title" (t "home.use_cases.title")
+        "Features" (slice
+            (dict
+                "Id" "process-management"
+                "Title" (t "home.use_cases.process_management")
+                "VideoUrl" "/video3.mp4"
+            )
+            (dict
+                "Id" "project-management"
+                "Title" (t "home.use_cases.project_management")
+                "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+            )
+            (dict
+                "Id" "sales-crm"
+                "Title" (t "home.use_cases.sales_crm")
+                "VideoUrl" "/video4.mp4"
+            )
+            (dict
+                "Id" "service-tickets"
+                "Title" (t "home.use_cases.service_tickets")
+                "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+            )
+            (dict
+                "Id" "asset-management"
+                "Title" (t "home.use_cases.asset_management")
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "content-calendar"
+                "Title" (t "home.use_cases.content_calendar")
+                "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+            )
+        )
+    }}
     
     {{template "interactive-feature-showcase" $showcaseData}}
 </section>
@@ -443,13 +443,13 @@ I wonder if process management is really needed, is that a "use case"? -->
 </div>
 
 <!-- Call to Action -->
-{{$ctaData := parseJSON (printf `{
-    "Title": "%s",
-    "SecondaryText": "%s",
-    "SecondaryUrl": "/contact",
-    "PrimaryText": "%s",
-    "PrimaryUrl": "https://app.blue.cc"
-}` (t "home.cta_final.title") (t "home.cta_final.secondary_text") (t "home.cta_final.primary_text"))}}
+{{$ctaData := dict
+    "Title" (t "home.cta_final.title")
+    "SecondaryText" (t "home.cta_final.secondary_text")
+    "SecondaryUrl" "/contact"
+    "PrimaryText" (t "home.cta_final.primary_text")
+    "PrimaryUrl" "https://app.blue.cc"
+}}
 
 {{template "dual-button-cta" $ctaData}}
 

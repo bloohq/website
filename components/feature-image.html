@@ -8,31 +8,31 @@ USAGE:
 {{template "feature-image" $featureData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$automateData := parseJSON `{
-    "id": "automation-saves-time",
-    "Title": "Automate everything.",
-    "Description": "Set up custom workflows that save 10+ hours per week. From simple reminders to complex multi-step processes.",
-    "ImageUrl": "/product/automations/automations-hero.png",
-    "ImagePosition": "right",  // "left" or "right" (default: "right")
-    "Button": {
-        "Text": "Learn more",
-        "Url": "/platform/features/automations"
-    },
-    "SeeAlso": {
-        "Heading": "Related features",  // Optional custom heading
-        "Links": [
-            {
-                "Text": "Workflow Templates",
-                "Url": "/templates",
-                "Description": "- Pre-built automation templates"
-            },
-            {
-                "Text": "API Documentation",
-                "Url": "/api"
-            }
-        ]
-    }
-}`}}
+{{$automateData := dict
+    "id" "automation-saves-time"
+    "Title" "Automate everything."
+    "Description" "Set up custom workflows that save 10+ hours per week. From simple reminders to complex multi-step processes."
+    "ImageUrl" "/product/automations/automations-hero.png"
+    "ImagePosition" "right"  // "left" or "right" (default: "right")
+    "Button" (dict
+        "Text" "Learn more"
+        "Url" "/platform/features/automations"
+    )
+    "SeeAlso" (dict
+        "Heading" "Related features"  // Optional custom heading
+        "Links" (slice
+            (dict
+                "Text" "Workflow Templates"
+                "Url" "/templates"
+                "Description" "- Pre-built automation templates"
+            )
+            (dict
+                "Text" "API Documentation"
+                "Url" "/api"
+            )
+        )
+    )
+}}
 {{template "feature-image" $automateData}}
 
 DATA STRUCTURE:

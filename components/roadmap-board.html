@@ -8,37 +8,37 @@ USAGE:
 {{template "roadmap-board" $roadmapData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$roadmapData := parseJSON `{
-    "ideas": [
-        {
-            "title": "Voice Assistant Integration",
-            "description": "Add voice commands for hands-free task management"
-        }
-    ],
-    "planned": [
-        {
-            "title": "AI Suggested Workflows",
-            "description": "Let AI analyze your processes and suggest automation workflows"
-        },
-        {
-            "title": "Mobile App Redesign",
-            "description": "Complete overhaul of mobile experience with new features"
-        }
-    ],
-    "inProgress": [
-        {
-            "title": "Advanced Reporting",
-            "description": "Export reports to PDF and Excel with custom branding"
-        }
-    ],
-    "testing": [
-        {
-            "title": "Two-Factor Authentication",
-            "description": "Enhanced security with TOTP-based 2FA support"
-        }
-    ],
-    "MarginBottom": "mb-24"
-}`}}
+{{$roadmapData := dict
+    "ideas" (slice
+        (dict
+            "title" "Voice Assistant Integration"
+            "description" "Add voice commands for hands-free task management"
+        )
+    )
+    "planned" (slice
+        (dict
+            "title" "AI Suggested Workflows"
+            "description" "Let AI analyze your processes and suggest automation workflows"
+        )
+        (dict
+            "title" "Mobile App Redesign"
+            "description" "Complete overhaul of mobile experience with new features"
+        )
+    )
+    "inProgress" (slice
+        (dict
+            "title" "Advanced Reporting"
+            "description" "Export reports to PDF and Excel with custom branding"
+        )
+    )
+    "testing" (slice
+        (dict
+            "title" "Two-Factor Authentication"
+            "description" "Enhanced security with TOTP-based 2FA support"
+        )
+    )
+    "MarginBottom" "mb-24"
+}}
 {{template "roadmap-board" $roadmapData}}
 
 

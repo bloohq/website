@@ -8,24 +8,22 @@ USAGE:
 {{template "feature-benefits-grid" $benefitsData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$statCardsBenefits := parseJSON `{
-    "Benefits": [
-        {
-            "Title": "Instant Visual Clarity",
-            "Description": "Big, bold numbers with clean design. Understand your metrics at a glance."
-        },
-        {
-            "Title": "Real-Time Updates",
-            "Description": "Monitor changes as they occur. Always be informed with the latest data."
-        },
-        {
-            "Title": "Visually Engaging",
-            "Description": "Bold and clear design. Stat cards highlight critical numbers for quick assessment.",
-            "Url": "/learn-more"  // Optional: Makes the card clickable
-        }
-    ],
-    "MarginBottom": "mb-20"  // Optional: Custom bottom margin
-}`}}
+{{$statCardsBenefits := dict "Benefits" (slice
+    (dict
+        "Title" "Instant Visual Clarity"
+        "Description" "Big, bold numbers with clean design. Understand your metrics at a glance."
+    )
+    (dict
+        "Title" "Real-Time Updates"
+        "Description" "Monitor changes as they occur. Always be informed with the latest data."
+    )
+    (dict
+        "Title" "Visually Engaging"
+        "Description" "Bold and clear design. Stat cards highlight critical numbers for quick assessment."
+        "Url" "/learn-more"  // Optional: Makes the card clickable
+    )
+) "MarginBottom" "mb-20"  // Optional: Custom bottom margin
+}}
 {{template "feature-benefits-grid" $statCardsBenefits}}
 
 DATA STRUCTURE:

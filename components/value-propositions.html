@@ -8,25 +8,25 @@ USAGE:
 {{template "value-propositions" $valuePropsData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$valuePropsData := parseJSON `{
-    "Title": "One platform.<br>Endless possibilities.",
-    "Description": "Blue adapts to how you work, not the other way around. Build the perfect system for your team.",
-    "Animation": true,  // Optional, default: true
-    "ValueProps": [
-        {
-            "Title": "Infinitely customizable",
-            "Description": "23 field types, custom workflows, and flexible permissions. Make Blue work exactly how you need it to."
-        },
-        {
-            "Title": "Powerful automations",
-            "Description": "Build multi-step workflows with conditions, approvals, and integrations. No code required."
-        },
-        {
-            "Title": "Real-time insights",
-            "Description": "Dashboards that update instantly. See what's happening across your entire organization."
-        }
-    ]
-}`}}
+{{$valuePropsData := dict
+    "Title" "One platform.<br>Endless possibilities."
+    "Description" "Blue adapts to how you work, not the other way around. Build the perfect system for your team."
+    "Animation" true
+    "ValueProps" (slice
+        (dict
+            "Title" "Infinitely customizable"
+            "Description" "23 field types, custom workflows, and flexible permissions. Make Blue work exactly how you need it to."
+        )
+        (dict
+            "Title" "Powerful automations"
+            "Description" "Build multi-step workflows with conditions, approvals, and integrations. No code required."
+        )
+        (dict
+            "Title" "Real-time insights"
+            "Description" "Dashboards that update instantly. See what's happening across your entire organization."
+        )
+    )
+}}
 {{template "value-propositions" $valuePropsData}}
 
 DATA STRUCTURE:

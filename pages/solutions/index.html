@@ -6,60 +6,60 @@
             "MarginBottom" "mb-16"
     }}
 
-    {{$solutionsData := parseJSON `{
-        "sections": [
-            {
-                "title": "Industries",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "Government", "link": "/solutions/industry/government" },
-                            { "label": "Non-Profits", "link": "/solutions/industry/non-profits" },
-                            { "label": "Education", "link": "/solutions/industry/education" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Logistics", "link": "/solutions/industry/logistics" },
-                            { "label": "Real Estate", "link": "/solutions/industry/real-estate" },
-                            { "label": "Professional Services", "link": "/solutions/industry/professional-services" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Production", "link": "/solutions/industry/production" },
-                            { "label": "Solopreneurs", "link": "/solutions/industry/solopreneurs" }
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Use Cases",
-                "columns": [
-                    {
-                        "items": [
-                            { "label": "Process Management", "link": "/solutions/use-case/process-management" },
-                            { "label": "Project Management", "link": "/solutions/use-case/project-management" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "Sales CRM", "link": "/solutions/use-case/sales-crm" },
-                            { "label": "Service Tickets", "link": "/solutions/use-case/service-tickets" }
-                        ]
-                    },
-                    {
-                        "items": [
-                            { "label": "IT", "link": "/solutions/use-case/it" },
-                            { "label": "Asset Management", "link": "/solutions/use-case/asset-management" },
-                            { "label": "Hiring", "link": "/solutions/use-case/hiring" },
-                            { "label": "Client Portal", "link": "/solutions/use-case/client-portal" }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }`}}
+    {{$solutionsData := dict
+        "sections" (slice
+            (dict
+                "title" "Industries"
+                "columns" (slice
+                    (dict
+                        "items" (slice
+                            (dict "label" "Government" "link" "/solutions/industry/government")
+                            (dict "label" "Non-Profits" "link" "/solutions/industry/non-profits")
+                            (dict "label" "Education" "link" "/solutions/industry/education")
+                        )
+                    )
+                    (dict
+                        "items" (slice
+                            (dict "label" "Logistics" "link" "/solutions/industry/logistics")
+                            (dict "label" "Real Estate" "link" "/solutions/industry/real-estate")
+                            (dict "label" "Professional Services" "link" "/solutions/industry/professional-services")
+                        )
+                    )
+                    (dict
+                        "items" (slice
+                            (dict "label" "Production" "link" "/solutions/industry/production")
+                            (dict "label" "Solopreneurs" "link" "/solutions/industry/solopreneurs")
+                        )
+                    )
+                )
+            )
+            (dict
+                "title" "Use Cases"
+                "columns" (slice
+                    (dict
+                        "items" (slice
+                            (dict "label" "Process Management" "link" "/solutions/use-case/process-management")
+                            (dict "label" "Project Management" "link" "/solutions/use-case/project-management")
+                        )
+                    )
+                    (dict
+                        "items" (slice
+                            (dict "label" "Sales CRM" "link" "/solutions/use-case/sales-crm")
+                            (dict "label" "Service Tickets" "link" "/solutions/use-case/service-tickets")
+                        )
+                    )
+                    (dict
+                        "items" (slice
+                            (dict "label" "IT" "link" "/solutions/use-case/it")
+                            (dict "label" "Asset Management" "link" "/solutions/use-case/asset-management")
+                            (dict "label" "Hiring" "link" "/solutions/use-case/hiring")
+                            (dict "label" "Client Portal" "link" "/solutions/use-case/client-portal")
+                        )
+                    )
+                )
+            )
+        )
+    }}
     
     {{template "features-grid" $solutionsData}}
 

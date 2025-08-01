@@ -8,22 +8,22 @@ USAGE:
 {{template "testimonial-videos" $testimonialData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$testimonialData := parseJSON `{
-    "title": "What our customers are saying",
-    "testimonials": [
-        {
-            "videoUrl": "/testimonials/customer1.mp4",
-            "posterUrl": "/testimonials/customer1-poster.jpg",
-            "quote": "Blue has completely transformed how we manage our projects. The automation features alone save us 20+ hours every week."
-        },
-        {
-            "videoUrl": "/testimonials/customer2.mp4",
-            "posterUrl": "/testimonials/customer2-poster.jpg",
-            "quote": "The best investment we've made in our business. Blue streamlines everything from task management to reporting."
-        }
-    ],
-    "MarginBottom": "mb-24"
-}`}}
+{{$testimonialData := dict
+    "title" "What our customers are saying"
+    "testimonials" (slice
+        (dict
+            "videoUrl" "/testimonials/customer1.mp4"
+            "posterUrl" "/testimonials/customer1-poster.jpg"
+            "quote" "Blue has completely transformed how we manage our projects. The automation features alone save us 20+ hours every week."
+        )
+        (dict
+            "videoUrl" "/testimonials/customer2.mp4"
+            "posterUrl" "/testimonials/customer2-poster.jpg"
+            "quote" "The best investment we've made in our business. Blue streamlines everything from task management to reporting."
+        )
+    )
+    "MarginBottom" "mb-24"
+}}
 {{template "testimonial-videos" $testimonialData}}
 
 Note: Common usage shows additional fields like author, company, title,

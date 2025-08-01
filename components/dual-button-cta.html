@@ -8,13 +8,13 @@ USAGE:
 {{template "dual-button-cta" $ctaData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$ctaData := parseJSON `{
-    "Title": "Ready to see why 17,000 teams switched to Blue?",
-    "PrimaryText": "Get started",
-    "PrimaryUrl": "/contact/sales",
-    "SecondaryText": "Take product tour",
-    "SecondaryUrl": "/product-tour"
-}`}}
+{{$ctaData := dict
+    "Title" "Ready to see why 17,000 teams switched to Blue?"
+    "PrimaryText" "Get started"
+    "PrimaryUrl" "/contact/sales"
+    "SecondaryText" "Take product tour"
+    "SecondaryUrl" "/product-tour"
+}}
 {{template "dual-button-cta" $ctaData}}
 
 

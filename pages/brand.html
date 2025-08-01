@@ -1156,42 +1156,42 @@
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "bottom" - Menu grid first (top), preview second (bottom) - responsive: 1 col mobile, 2 tablet, 3 desktop</code>
                 </div>
                 
-                {{$showcaseDataTop := parseJSON `{
-                    "Title": "Workflow automation (Top)",
-                    "Position": "bottom",
-                    "Features": [
-                        {
-                            "Id": "automation-setup-top",
-                            "Title": "Automation setup",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "trigger-conditions-top",
-                            "Title": "Trigger conditions",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "workflow-actions-top",
-                            "Title": "Workflow actions",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "automation-testing-top",
-                            "Title": "Testing & deployment",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "performance-monitoring-top",
-                            "Title": "Performance monitoring",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "integration-management-top",
-                            "Title": "Integration management",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        }
-                    ]
-                }`}}
+                {{$showcaseDataTop := dict
+                    "Title" "Workflow automation (Top)"
+                    "Position" "bottom"
+                    "Features" (slice
+                        (dict
+                            "Id" "automation-setup-top"
+                            "Title" "Automation setup"
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "trigger-conditions-top"
+                            "Title" "Trigger conditions"
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "workflow-actions-top"
+                            "Title" "Workflow actions"
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "automation-testing-top"
+                            "Title" "Testing & deployment"
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "performance-monitoring-top"
+                            "Title" "Performance monitoring"
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "integration-management-top"
+                            "Title" "Integration management"
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                    )
+                }}
                 
                 {{template "interactive-feature-showcase" $showcaseDataTop}}
             </div>
@@ -1204,37 +1204,37 @@
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "top" - Preview first (top), menu grid second (bottom) - responsive: 1 col mobile, 2 tablet, 3 desktop</code>
                 </div>
                 
-                {{$showcaseDataBottom := parseJSON `{
-                    "Title": "Analytics dashboard (Bottom)",
-                    "Position": "top",
-                    "Features": [
-                        {
-                            "Id": "dashboard-overview-bottom",
-                            "Title": "Dashboard overview",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "performance-metrics-bottom",
-                            "Title": "Performance metrics",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "custom-reports-bottom",
-                            "Title": "Custom reports",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "data-visualization-bottom",
-                            "Title": "Data visualization",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "team-productivity-bottom",
-                            "Title": "Team productivity",
-                            "VideoUrl": "/testvideo2.mp4"
-                        }
-                    ]
-                }`}}
+                {{$showcaseDataBottom := dict
+                    "Title" "Analytics dashboard (Bottom)"
+                    "Position" "top"
+                    "Features" (slice
+                        (dict
+                            "Id" "dashboard-overview-bottom"
+                            "Title" "Dashboard overview"
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "performance-metrics-bottom"
+                            "Title" "Performance metrics"
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "custom-reports-bottom"
+                            "Title" "Custom reports"
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "data-visualization-bottom"
+                            "Title" "Data visualization"
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "team-productivity-bottom"
+                            "Title" "Team productivity"
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                    )
+                }}
                 
                 {{template "interactive-feature-showcase" $showcaseDataBottom}}
             </div>

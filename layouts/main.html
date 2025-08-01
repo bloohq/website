@@ -10,11 +10,11 @@
     class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300"
     data-language="{{.Language}}">
     
-    {{$topNewsData := parseJSON (printf `{
-        "message": "%s",
-        "linkText": "%s",
-        "linkUrl": "/docs"
-    }` (t "common.news_message") (t "common.explore_link"))}}
+    {{$topNewsData := dict
+        "message" (t "common.news_message")
+        "linkText" (t "common.explore_link")
+        "linkUrl" "/docs"
+    }}
     {{template "top-news-bar" $topNewsData}}
     
     {{template "topbar" .}}

@@ -22,88 +22,88 @@
 </section>
 
 <!-- Main Feature Video -->
-{{$mainFeatureVideo := parseJSON `{
-    "Title": "Visualize your workflow with kanban boards.",
-    "Description": "Visualize tasks, streamline workflows, and boost productivity with Blue's intuitive Kanban boards.",
-    "VideoUrl": "/product/kanban-board-overview.mp4",
-    "VideoPosition": "right"
-}`}}
+{{$mainFeatureVideo := dict
+    "Title" "Visualize your workflow with kanban boards."
+    "Description" "Visualize tasks, streamline workflows, and boost productivity with Blue's intuitive Kanban boards."
+    "VideoUrl" "/product/kanban-board-overview.mp4"
+    "VideoPosition" "right"
+}}
 {{template "feature-video" $mainFeatureVideo}}
 
-{{$boardFeatureBenefits := parseJSON `{
-    "Benefits": [
-        {
-            "Title": "Drag-and-Drop",
-            "Description": "Quickly adjust tasks and priorities with simple drag-and-drop actions."
-        },
-        {
-            "Title": "Real-Time Tracking",
-            "Description": "Monitor task status instantly to keep projects on track."
-        },
-        {
-            "Title": "Flexible",
-            "Description": "Create and reorder lists as needed to match your workflow."
-        }
-    ],
-    "MarginBottom": "mb-20"
-}`}}
+{{$boardFeatureBenefits := dict
+    "Benefits" (slice
+        (dict
+            "Title" "Drag-and-Drop"
+            "Description" "Quickly adjust tasks and priorities with simple drag-and-drop actions."
+        )
+        (dict
+            "Title" "Real-Time Tracking"
+            "Description" "Monitor task status instantly to keep projects on track."
+        )
+        (dict
+            "Title" "Flexible"
+            "Description" "Create and reorder lists as needed to match your workflow."
+        )
+    )
+    "MarginBottom" "mb-20"
+}}
 {{template "feature-benefits-grid" $boardFeatureBenefits}}
 
 <!-- Board View Feature -->
-{{$boardViewFeature := parseJSON `{
-    "Title": "Elevate Project Visualization with Blue's Board View.",
-    "Description": "Transform project management with our intuitive Kanban Board View. Easily track and manage workflows visually.",
-    "VideoUrl": "/product/kanban-board-view.mp4",
-    "VideoPosition": "left"
-}`}}
+{{$boardViewFeature := dict
+    "Title" "Elevate Project Visualization with Blue's Board View."
+    "Description" "Transform project management with our intuitive Kanban Board View. Easily track and manage workflows visually."
+    "VideoUrl" "/product/kanban-board-view.mp4"
+    "VideoPosition" "left"
+}}
 {{template "feature-video" $boardViewFeature}}
 
 <!-- Stats Section -->
-{{$statsData := parseJSON `{
-    "Title": "",
-    "Stats": [
-        {"Number": "50%", "Description": "Faster task completion"},
-        {"Number": "100%", "Description": "Visual clarity"},
-        {"Number": "Unlimited", "Description": "Customization options"}
-    ]
-}`}}
+{{$statsData := dict
+    "Title" ""
+    "Stats" (slice
+        (dict "Number" "50%" "Description" "Faster task completion")
+        (dict "Number" "100%" "Description" "Visual clarity")
+        (dict "Number" "Unlimited" "Description" "Customization options")
+    )
+}}
 {{template "stats-section" $statsData}}
 
 <!-- Bulk Editing Feature -->
-{{$bulkEditingFeature := parseJSON `{
-    "Title": "Maximize Efficiency with Bulk Editing.",
-    "Description": "Speed up project management with Blue's Board View bulk actions. Edit multiple tasks quickly to streamline progress.",
-    "VideoUrl": "/product/kanban-bulk-edit.mp4",
-    "VideoPosition": "right"
-}`}}
+{{$bulkEditingFeature := dict
+    "Title" "Maximize Efficiency with Bulk Editing."
+    "Description" "Speed up project management with Blue's Board View bulk actions. Edit multiple tasks quickly to streamline progress."
+    "VideoUrl" "/product/kanban-bulk-edit.mp4"
+    "VideoPosition" "right"
+}}
 {{template "feature-video" $bulkEditingFeature}}
 
-{{$bulkEditingBenefits := parseJSON `{
-    "Benefits": [
-        {
-            "Title": "Bulk Updates",
-            "Description": "Change statuses, deadlines, or assignments in one go."
-        },
-        {
-            "Title": "Error Reduction",
-            "Description": "Reduce mistakes with consistent, unified bulk edits."
-        },
-        {
-            "Title": "Time-Saving",
-            "Description": "Cut down on repetitive tasks, freeing up time for strategy."
-        }
-    ],
-    "MarginBottom": "mb-20"
-}`}}
+{{$bulkEditingBenefits := dict
+    "Benefits" (slice
+        (dict
+            "Title" "Bulk Updates"
+            "Description" "Change statuses, deadlines, or assignments in one go."
+        )
+        (dict
+            "Title" "Error Reduction"
+            "Description" "Reduce mistakes with consistent, unified bulk edits."
+        )
+        (dict
+            "Title" "Time-Saving"
+            "Description" "Cut down on repetitive tasks, freeing up time for strategy."
+        )
+    )
+    "MarginBottom" "mb-20"
+}}
 {{template "feature-benefits-grid" $bulkEditingBenefits}}
 
 <!-- Automation Integration -->
-{{$automationFeature := parseJSON `{
-    "Title": "Supercharge your workflow with an automated kanban board.",
-    "Description": "Automations are simple to setup, but powerful.",
-    "VideoUrl": "/product/kanban-automation.mp4",
-    "VideoPosition": "left"
-}`}}
+{{$automationFeature := dict
+    "Title" "Supercharge your workflow with an automated kanban board."
+    "Description" "Automations are simple to setup, but powerful."
+    "VideoUrl" "/product/kanban-automation.mp4"
+    "VideoPosition" "left"
+}}
 {{template "feature-video" $automationFeature}}
 
 <!-- FAQ Section -->
@@ -191,11 +191,11 @@
 {{template "faq-sections" $faqData}}
 
 <!-- Call to Action -->
-{{$ctaData := parseJSON `{
-    "Title": "Start visualizing your workflow today.",
-    "PrimaryText": "Get Started Free",
-    "PrimaryUrl": "https://app.blue.cc",
-    "SecondaryText": "View documentation",
-    "SecondaryUrl": "/docs/kanban-board"
-}`}}
+{{$ctaData := dict
+    "Title" "Start visualizing your workflow today."
+    "PrimaryText" "Get Started Free"
+    "PrimaryUrl" "https://app.blue.cc"
+    "SecondaryText" "View documentation"
+    "SecondaryUrl" "/docs/kanban-board"
+}}
 {{template "dual-button-cta" $ctaData}}

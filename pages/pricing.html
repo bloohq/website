@@ -241,14 +241,14 @@
       <section id="testimonials" class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
         {{$logoData := dict
           "title" (t "pricing.trusted_by_teams")
-          "logos" (parseJSON `[
-            { "name": "CBRE", "src": "/customers/cbre.svg" },
-            { "name": "Cisco", "src": "/customers/cisco.svg" },
-            { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-            { "name": "FedEx", "src": "/customers/fedex.svg" },
-            { "name": "Heineken", "src": "/customers/heineken.svg" },
-            { "name": "Marriott", "src": "/customers/marriot.svg" }
-          ]`)
+          "logos" (slice
+            (dict "name" "CBRE" "src" "/customers/cbre.svg")
+            (dict "name" "Cisco" "src" "/customers/cisco.svg")
+            (dict "name" "Deloitte" "src" "/customers/deloitte.svg")
+            (dict "name" "FedEx" "src" "/customers/fedex.svg")
+            (dict "name" "Heineken" "src" "/customers/heineken.svg")
+            (dict "name" "Marriott" "src" "/customers/marriot.svg")
+          )
         }}
         
         {{template "logo-grid" $logoData}}
@@ -257,28 +257,28 @@
       <!-- Customer Testimonials Section -->
       <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
         {{$testimonialData := dict
-          "testimonials" (parseJSON (printf `[
-            {
-              "quote": "%s",
-              "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
-              "posterUrl": "/testimonials/davidsacks.jpeg"
-            },
-            {
-              "quote": "%s",
-              "videoUrl": "https://media.blue.cc/ana.mov",
-              "posterUrl": "/testimonials/ana-testimonial.jpg"
-            },
-            {
-              "quote": "%s",
-              "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
-              "posterUrl": "/testimonials/ricklewis.jpg"
-            },
-            {
-              "quote": "%s",
-              "videoUrl": "https://media.blue.cc/rike-whelan.mp4",
-              "posterUrl": "/testimonials/rike-whelan.jpg"
-            }
-          ]` (t "pricing.testimonial_1") (t "pricing.testimonial_2") (t "pricing.testimonial_3") (t "pricing.testimonial_4")))
+          "testimonials" (slice
+            (dict
+              "quote" (t "pricing.testimonial_1")
+              "videoUrl" "https://media.blue.cc/davidzack-testimonial.mp4"
+              "posterUrl" "/testimonials/davidsacks.jpeg"
+            )
+            (dict
+              "quote" (t "pricing.testimonial_2")
+              "videoUrl" "https://media.blue.cc/ana.mov"
+              "posterUrl" "/testimonials/ana-testimonial.jpg"
+            )
+            (dict
+              "quote" (t "pricing.testimonial_3")
+              "videoUrl" "https://media.blue.cc/ricklews-testimonial.mov"
+              "posterUrl" "/testimonials/ricklewis.jpg"
+            )
+            (dict
+              "quote" (t "pricing.testimonial_4")
+              "videoUrl" "https://media.blue.cc/rike-whelan.mp4"
+              "posterUrl" "/testimonials/rike-whelan.jpg"
+            )
+          )
         }}
         
         {{template "testimonial-videos" $testimonialData}}

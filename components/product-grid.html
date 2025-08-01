@@ -8,39 +8,39 @@ USAGE:
 {{template "product-grid" $productGridData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$productGridData := parseJSON `{
-    "Products": [
-        {
-            "ImageUrl": "/product/workspaces/workspaces-board.jpg",
-            "Title": "Workspaces Board View",
-            "Description": "Kanban-style boards for visual project management",
-            "BorderRight": true,
-            "BorderBottom": true
-        },
-        {
-            "ImageUrl": "/product/dashboards/pie-chart.png",
-            "Title": "Dashboard Pie Chart",
-            "Description": "Visualize data with interactive charts",
-            "BorderRight": false,
-            "BorderBottom": true
-        },
-        {
-            "ImageUrl": "/product/automations/workflow-builder.png",
-            "Title": "Workflow Builder",
-            "Description": "Drag-and-drop automation creation",
-            "BorderRight": true,
-            "BorderBottom": false
-        },
-        {
-            "ImageUrl": "/product/records/custom-fields.png",
-            "Title": "Custom Fields",
-            "Description": "23 field types for any data need",
-            "BorderRight": false,
-            "BorderBottom": false
-        }
-    ],
-    "MarginBottom": "mb-24"
-}`}}
+{{$productGridData := dict
+    "Products" (slice
+        (dict
+            "ImageUrl" "/product/workspaces/workspaces-board.jpg"
+            "Title" "Workspaces Board View"
+            "Description" "Kanban-style boards for visual project management"
+            "BorderRight" true
+            "BorderBottom" true
+        )
+        (dict
+            "ImageUrl" "/product/dashboards/pie-chart.png"
+            "Title" "Dashboard Pie Chart"
+            "Description" "Visualize data with interactive charts"
+            "BorderRight" false
+            "BorderBottom" true
+        )
+        (dict
+            "ImageUrl" "/product/automations/workflow-builder.png"
+            "Title" "Workflow Builder"
+            "Description" "Drag-and-drop automation creation"
+            "BorderRight" true
+            "BorderBottom" false
+        )
+        (dict
+            "ImageUrl" "/product/records/custom-fields.png"
+            "Title" "Custom Fields"
+            "Description" "23 field types for any data need"
+            "BorderRight" false
+            "BorderBottom" false
+        )
+    )
+    "MarginBottom" "mb-24"
+}}
 {{template "product-grid" $productGridData}}
 
 Note: Component expects .Products but common usage shows .items. Use .Products.

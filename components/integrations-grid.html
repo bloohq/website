@@ -8,35 +8,35 @@ USAGE:
 {{template "integrations-grid" $integrationData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$integrationData := parseJSON `{
-    "integrations": [
-        {
-            "name": "Slack",
-            "src": "/integrations/slack.svg"
-        },
-        {
-            "name": "Microsoft Teams",
-            "src": "/integrations/microsoft-teams.svg"
-        },
-        {
-            "name": "Google Workspace",
-            "src": "/integrations/google-workspace.svg"
-        },
-        {
-            "name": "Zapier",
-            "src": "/integrations/zapier.svg"
-        },
-        {
-            "name": "Salesforce",
-            "src": "/integrations/salesforce.svg"
-        },
-        {
-            "name": "HubSpot",
-            "src": "/integrations/hubspot.svg"
-        }
-    ],
-    "MarginBottom": "mb-24"
-}`}}
+{{$integrationData := dict
+    "integrations" (slice
+        (dict
+            "name" "Slack"
+            "src" "/integrations/slack.svg"
+        )
+        (dict
+            "name" "Microsoft Teams"
+            "src" "/integrations/microsoft-teams.svg"
+        )
+        (dict
+            "name" "Google Workspace"
+            "src" "/integrations/google-workspace.svg"
+        )
+        (dict
+            "name" "Zapier"
+            "src" "/integrations/zapier.svg"
+        )
+        (dict
+            "name" "Salesforce"
+            "src" "/integrations/salesforce.svg"
+        )
+        (dict
+            "name" "HubSpot"
+            "src" "/integrations/hubspot.svg"
+        )
+    )
+    "MarginBottom" "mb-24"
+}}
 {{template "integrations-grid" $integrationData}}
 
 DATA STRUCTURE:

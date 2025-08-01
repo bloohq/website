@@ -8,22 +8,22 @@ USAGE:
 {{template "awards-grid" $awardsData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$awardsData := parseJSON `{
-    "awards": [
-        {
-            "name": "Crozdesk Happiest Users",
-            "src": "/awards/crozdesk-happiest-users-badge.webp"
-        },
-        {
-            "name": "Crozdesk Quality Choice", 
-            "src": "/awards/crozdesk-quality-choice-badge.webp"
-        },
-        {
-            "name": "Crozdesk Trusted Vendor",
-            "src": "/awards/crozdesk-trusted-vendor-badge.webp"
-        }
-    ]
-}`}}
+{{$awardsData := dict
+    "awards" (slice
+        (dict
+            "name" "Crozdesk Happiest Users"
+            "src" "/awards/crozdesk-happiest-users-badge.webp"
+        )
+        (dict
+            "name" "Crozdesk Quality Choice"
+            "src" "/awards/crozdesk-quality-choice-badge.webp"
+        )
+        (dict
+            "name" "Crozdesk Trusted Vendor"
+            "src" "/awards/crozdesk-trusted-vendor-badge.webp"
+        )
+    )
+}}
 {{template "awards-grid" $awardsData}}
 
 DATA STRUCTURE:

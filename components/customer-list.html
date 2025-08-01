@@ -8,16 +8,16 @@ USAGE:
 {{template "customer-list" $educationCustomers}}
 
 EXAMPLE IMPLEMENTATION:
-{{$educationCustomers := parseJSON `{
-    "customers": [
-        {"name": "University of California, Berkeley", "url": "https://berkeley.edu"},
-        {"name": "MIT", "url": "https://mit.edu"},
-        {"name": "Stanford University", "url": "https://stanford.edu"},
-        {"name": "Worcester Polytechnic Institute", "url": "https://wpi.edu"},
-        {"name": "Washington State University", "url": "https://wsu.edu"},
-        {"name": "Western Washington University", "url": "https://wwu.edu"}
-    ]
-}`}}
+{{$educationCustomers := dict
+    "customers" (slice
+        (dict "name" "University of California, Berkeley" "url" "https://berkeley.edu")
+        (dict "name" "MIT" "url" "https://mit.edu")
+        (dict "name" "Stanford University" "url" "https://stanford.edu")
+        (dict "name" "Worcester Polytechnic Institute" "url" "https://wpi.edu")
+        (dict "name" "Washington State University" "url" "https://wsu.edu")
+        (dict "name" "Western Washington University" "url" "https://wwu.edu")
+    )
+}}
 {{template "customer-list" $educationCustomers}}
 
 DATA STRUCTURE:

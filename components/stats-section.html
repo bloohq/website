@@ -8,15 +8,15 @@ USAGE:
 {{template "stats-section" $statsData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$statsData := parseJSON `{
-    "Title": "Blue is mission-critical infrastructure for thousands of teams.",
-    "Stats": [
-        { "Number": "17K+", "Description": "Teams trust Blue" },
-        { "Number": "2M+", "Description": "Records created" },
-        { "Number": "99.9%", "Description": "Uptime SLA" }
-    ],
-    "MarginBottom": "mb-20"  // Optional
-}`}}
+{{$statsData := dict
+    "Title" "Blue is mission-critical infrastructure for thousands of teams."
+    "Stats" (slice
+        (dict "Number" "17K+" "Description" "Teams trust Blue")
+        (dict "Number" "2M+" "Description" "Records created")
+        (dict "Number" "99.9%" "Description" "Uptime SLA")
+    )
+    "MarginBottom" "mb-20"
+}}
 {{template "stats-section" $statsData}}
 
 

@@ -8,34 +8,32 @@ USAGE:
 {{template "faq-sections" $faqData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$faqData := parseJSON `{
-    "categories": [
-        {
-            "id": "general",
-            "name": "General Questions",
-            "questions": [
-                {
-                    "question": "What is Blue?",
-                    "answer": "Blue is a process management platform that helps teams organize work, automate processes, and track everything in one place. It combines task management, workflow automation, and business intelligence into a single, unified system."
-                },
-                {
-                    "question": "How much does Blue cost?",
-                    "answer": "Blue offers flexible pricing starting at $15/user/month. We have plans for teams of all sizes, from small startups to large enterprises. All plans include unlimited workspaces, records, and automations."
-                }
-            ]
-        },
-        {
-            "id": "technical",
-            "name": "Technical Questions",
-            "questions": [
-                {
-                    "question": "What integrations does Blue support?",
-                    "answer": "Blue integrates with 30+ popular tools including Slack, Microsoft Teams, Google Workspace, Zapier, and more. You can also use our GraphQL API to build custom integrations."
-                }
-            ]
-        }
-    ]
-}`}}
+{{$faqData := dict "categories" (slice
+    (dict
+        "id" "general"
+        "name" "General Questions"
+        "questions" (slice
+            (dict
+                "question" "What is Blue?"
+                "answer" "Blue is a process management platform that helps teams organize work, automate processes, and track everything in one place. It combines task management, workflow automation, and business intelligence into a single, unified system."
+            )
+            (dict
+                "question" "How much does Blue cost?"
+                "answer" "Blue offers flexible pricing starting at $15/user/month. We have plans for teams of all sizes, from small startups to large enterprises. All plans include unlimited workspaces, records, and automations."
+            )
+        )
+    )
+    (dict
+        "id" "technical"
+        "name" "Technical Questions"
+        "questions" (slice
+            (dict
+                "question" "What integrations does Blue support?"
+                "answer" "Blue integrates with 30+ popular tools including Slack, Microsoft Teams, Google Workspace, Zapier, and more. You can also use our GraphQL API to build custom integrations."
+            )
+        )
+    )
+)}}
 {{template "faq-sections" $faqData}}
 
 DATA STRUCTURE:

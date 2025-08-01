@@ -8,46 +8,46 @@ USAGE:
 {{template "features-grid" $featuresData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$featuresData := parseJSON `{
-    "sections": [
-        {
-            "title": "Product",
-            "columns": [
-                {
-                    "items": [
-                        { "label": "Organizations", "link": "/platform/features/records" }, 
-                        { "label": "Workspaces", "link": "/platform/features/workspaces" },
-                        { "label": "Records", "link": "/platform/features/records" }
-                    ]
-                },
-                {
-                    "items": [
-                        { "label": "Custom Fields", "link": "/platform/features/custom-fields" },
-                        { "label": "Automations", "link": "/platform/features/automations" }
-                    ]
-                },
-                {
-                    "items": [
-                        { "label": "Dashboards", "link": "/platform/features/dashboards" },
-                        { "label": "Time Tracking" }  // No link = plain text
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Platform",
-            "columns": [
-                {
-                    "items": [
-                        { "label": "API", "link": "/platform/api" },
-                        { "label": "Integrations", "link": "/platform/integrations" }
-                    ]
-                }
-            ]
-        }
-    ],
-    "MarginBottom": "mb-24"
-}`}}
+{{$featuresData := dict
+    "sections" (slice
+        (dict
+            "title" "Product"
+            "columns" (slice
+                (dict
+                    "items" (slice
+                        (dict "label" "Organizations" "link" "/platform/features/records")
+                        (dict "label" "Workspaces" "link" "/platform/features/workspaces")
+                        (dict "label" "Records" "link" "/platform/features/records")
+                    )
+                )
+                (dict
+                    "items" (slice
+                        (dict "label" "Custom Fields" "link" "/platform/features/custom-fields")
+                        (dict "label" "Automations" "link" "/platform/features/automations")
+                    )
+                )
+                (dict
+                    "items" (slice
+                        (dict "label" "Dashboards" "link" "/platform/features/dashboards")
+                        (dict "label" "Time Tracking")
+                    )
+                )
+            )
+        )
+        (dict
+            "title" "Platform"
+            "columns" (slice
+                (dict
+                    "items" (slice
+                        (dict "label" "API" "link" "/platform/api")
+                        (dict "label" "Integrations" "link" "/platform/integrations")
+                    )
+                )
+            )
+        )
+    )
+    "MarginBottom" "mb-24"
+}}
 {{template "features-grid" $featuresData}}
 
 DATA STRUCTURE:

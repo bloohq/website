@@ -8,28 +8,28 @@ USAGE:
 {{template "interactive-feature-showcase" $showcaseData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$showcaseData := parseJSON `{
-    "id": "manage-everything",
-    "Title": "Manage everything with workspaces.",
-    "Description": "Create workspaces for anything - projects, departments, clients, or processes. Each with its own workflows, permissions, and data.",
-    "Position": "right",  // "left", "right", "top", or "bottom" (default: "left")
-    "Features": [
-        {
-            "Id": "projects",
-            "Title": "Projects",
-            "VideoUrl": "/product/workspaces/projects-demo.mp4"
-        },
-        {
-            "Id": "departments", 
-            "Title": "Departments",
-            "ImageUrl": "/product/workspaces/departments.png"
-        },
-        {
-            "Id": "clients",
-            "Title": "Clients"  // Will show placeholder if no media
-        }
-    ]
-}`}}
+{{$showcaseData := dict
+    "id" "manage-everything"
+    "Title" "Manage everything with workspaces."
+    "Description" "Create workspaces for anything - projects, departments, clients, or processes. Each with its own workflows, permissions, and data."
+    "Position" "right"
+    "Features" (slice
+        (dict
+            "Id" "projects"
+            "Title" "Projects"
+            "VideoUrl" "/product/workspaces/projects-demo.mp4"
+        )
+        (dict
+            "Id" "departments"
+            "Title" "Departments"
+            "ImageUrl" "/product/workspaces/departments.png"
+        )
+        (dict
+            "Id" "clients"
+            "Title" "Clients"
+        )
+    )
+}}
 {{template "interactive-feature-showcase" $showcaseData}}
 
 Note: Common usage includes tabs, content, stats, and imageSrc fields,

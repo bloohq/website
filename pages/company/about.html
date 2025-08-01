@@ -170,30 +170,30 @@
     <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">{{t "about.awards.title"}}</h2>
     <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">{{t "about.awards.description"}}</p>
     
-    {{$awardsData := parseJSON `{
-        "awards": [
-            {
-                "name": "High Performer G2 Winter 2025",
-                "src": "/awards/high-performer-g2-winter-2025.png"
-            },
-            {
-                "name": "Momentum Leader G2 Winter 2025",
-                "src": "/awards/momentum-leader-g2-winter-2025.png"
-            },
-            {
-                "name": "Crozdesk Happiest Users",
-                "src": "/awards/crozdesk-happiest-users-badge.webp"
-            },
-            {
-                "name": "Crozdesk Quality Choice",
-                "src": "/awards/crozdesk-quality-choice-badge.webp"
-            },
-            {
-                "name": "Crozdesk Trusted Vendor",
-                "src": "/awards/crozdesk-trusted-vendor-badge.webp"
-            }
-        ]
-    }`}}
+    {{$awardsData := dict
+        "awards" (slice
+            (dict
+                "name" "High Performer G2 Winter 2025"
+                "src" "/awards/high-performer-g2-winter-2025.png"
+            )
+            (dict
+                "name" "Momentum Leader G2 Winter 2025"
+                "src" "/awards/momentum-leader-g2-winter-2025.png"
+            )
+            (dict
+                "name" "Crozdesk Happiest Users"
+                "src" "/awards/crozdesk-happiest-users-badge.webp"
+            )
+            (dict
+                "name" "Crozdesk Quality Choice"
+                "src" "/awards/crozdesk-quality-choice-badge.webp"
+            )
+            (dict
+                "name" "Crozdesk Trusted Vendor"
+                "src" "/awards/crozdesk-trusted-vendor-badge.webp"
+            )
+        )
+    }}
     {{template "awards-grid" $awardsData}}
 </section>
 

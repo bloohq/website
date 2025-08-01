@@ -8,12 +8,12 @@ USAGE:
 {{template "news-bar" $newsBarData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$newsBarData := parseJSON `{
-    "MainText": "Blue becomes AppSumo's fastest product to reach $1M in sales!",
-    "ButtonText": "Read more",
-    "ButtonUrl": "/insights/appsumo-fastest-one-million",
-    "MarginBottom": "mb-24"
-}`}}
+{{$newsBarData := dict
+    "MainText" "Blue becomes AppSumo's fastest product to reach $1M in sales!"
+    "ButtonText" "Read more"
+    "ButtonUrl" "/insights/appsumo-fastest-one-million"
+    "MarginBottom" "mb-24"
+}}
 {{template "news-bar" $newsBarData}}
 
 DATA STRUCTURE:

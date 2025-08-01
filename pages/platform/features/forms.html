@@ -6,9 +6,9 @@
   }}
 
   <!-- Hero Video -->
-  {{$heroData := parseJSON `{
-    "Youtube": "https://www.youtube.com/embed/lbFvQ-0ENTY"
-  }`}}
+  {{$heroData := dict
+    "Youtube" "https://www.youtube.com/embed/lbFvQ-0ENTY"
+  }}
   {{template "hero-video" $heroData}}
 
   <!-- News Bar - White Label Forms Support -->

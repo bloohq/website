@@ -145,25 +145,25 @@
     </div>
 
     <!-- Stats Section -->
-    {{$statsData := parseJSON (printf `{
-        "Title": "%s",
-        "Stats": [
-            {"Number": "%s", "Description": "%s"},
-            {"Number": "%s", "Description": "%s"},
-            {"Number": "%s", "Description": "%s"}
-        ]
-    }` (t "security.stats.title") (t "security.stats.teams.number") (t "security.stats.teams.label") (t "security.stats.countries.number") (t "security.stats.countries.label") (t "security.stats.data.number") (t "security.stats.data.label"))}}
+    {{$statsData := dict
+        "Title" (t "security.stats.title")
+        "Stats" (slice
+            (dict "Number" (t "security.stats.teams.number") "Description" (t "security.stats.teams.label"))
+            (dict "Number" (t "security.stats.countries.number") "Description" (t "security.stats.countries.label"))
+            (dict "Number" (t "security.stats.data.number") "Description" (t "security.stats.data.label"))
+        )
+    }}
     
     {{template "stats-section" $statsData}}
 
     <!-- Call to Action -->
-    {{$ctaData := parseJSON (printf `{
-        "Title": "%s",
-        "SecondaryText": "%s",
-        "SecondaryUrl": "%s",
-        "PrimaryText": "%s",
-        "PrimaryUrl": "%s"
-    }` (t "security.cta.title") (t "security.cta.secondary_text") (t "security.cta.secondary_url") (t "security.cta.primary_text") (t "security.cta.primary_url"))}}
+    {{$ctaData := dict
+        "Title" (t "security.cta.title")
+        "SecondaryText" (t "security.cta.secondary_text")
+        "SecondaryUrl" (t "security.cta.secondary_url")
+        "PrimaryText" (t "security.cta.primary_text")
+        "PrimaryUrl" (t "security.cta.primary_url")
+    }}
     
     {{template "dual-button-cta" $ctaData}}
 

@@ -16,14 +16,14 @@
     <section class="mb-16">
         {{$logoData := dict 
             "title" (t "asset-management.customer_logos_title")
-            "logos" (parseJSON `[
-                { "name": "Heineken", "src": "/customers/heineken.svg" },
-                { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-                { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
-                { "name": "FedEx", "src": "/customers/fedex.svg" },
-                { "name": "World Food Programme", "src": "/customers/wfp.svg" },
-                { "name": "ILO", "src": "/customers/ilo.webp" }
-            ]`)
+            "logos" (slice
+                (dict "name" "Heineken" "src" "/customers/heineken.svg")
+                (dict "name" "Deloitte" "src" "/customers/deloitte.svg")
+                (dict "name" "Save the Children" "src" "/customers/savethechildren.svg")
+                (dict "name" "FedEx" "src" "/customers/fedex.svg")
+                (dict "name" "World Food Programme" "src" "/customers/wfp.svg")
+                (dict "name" "ILO" "src" "/customers/ilo.webp")
+            )
         }}
         
         {{template "logo-grid" $logoData}}
@@ -269,13 +269,13 @@
         <div class="mb-16">
             {{$integrationData := dict 
                 "title" (t "asset-management.integration_partners_title")
-                "logos" (parseJSON `[
-                    { "name": "Zapier", "src": "/images/zapier.svg" },
-                    { "name": "Make.com", "src": "/images/make.svg" },
-                    { "name": "Pabbly Connect", "src": "/images/pabbly.svg" },
-                    { "name": "Albato", "src": "/images/albato.png" },
-                    { "name": "Boost.space", "src": "/images/boost-space.svg" }
-                ]`)
+                "logos" (slice
+                    (dict "name" "Zapier" "src" "/images/zapier.svg")
+                    (dict "name" "Make.com" "src" "/images/make.svg")
+                    (dict "name" "Pabbly Connect" "src" "/images/pabbly.svg")
+                    (dict "name" "Albato" "src" "/images/albato.png")
+                    (dict "name" "Boost.space" "src" "/images/boost-space.svg")
+                )
             }}
             {{template "logo-grid" $integrationData}}
         </div>

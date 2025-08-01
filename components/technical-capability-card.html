@@ -8,29 +8,29 @@ USAGE:
 {{template "technical-capability-card" $techData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$codeExamplesData := parseJSON `{
-    "Title": "Ready to start building?",
-    "Description": "Access comprehensive documentation, code examples, and SDKs to integrate Blue into your workflow.",
-    "Examples": [
-        {
-            "Type": "graphql",
-            "Label": "GraphQL",
-            "Language": "graphql",
-            "Code": "mutation CreateProject {\n  createProject(input: {\n    title: \"Q4 Marketing Campaign\"\n    type: PROJECT\n  }) {\n    id\n    title\n    createdAt\n  }\n}"
-        },
-        {
-            "Type": "python",
-            "Label": "Python SDK",
-            "Language": "python",
-            "Code": "from blue_sdk import BlueClient\n\nclient = BlueClient(api_key='your_api_key')\n\n# Create a new project\nproject = client.projects.create(\n    title='Q4 Marketing Campaign',\n    type='PROJECT'\n)\n\nprint(f'Created project: {project.id}')"
-        }
-    ],
-    "Link": {
-        "Text": "View API Docs",
-        "Url": "/api"
-    },
-    "MarginBottom": "mb-24"
-}`}}
+{{$codeExamplesData := dict
+    "Title" "Ready to start building?"
+    "Description" "Access comprehensive documentation, code examples, and SDKs to integrate Blue into your workflow."
+    "Examples" (slice
+        (dict
+            "Type" "graphql"
+            "Label" "GraphQL"
+            "Language" "graphql"
+            "Code" "mutation CreateProject {\n  createProject(input: {\n    title: \"Q4 Marketing Campaign\"\n    type: PROJECT\n  }) {\n    id\n    title\n    createdAt\n  }\n}"
+        )
+        (dict
+            "Type" "python"
+            "Label" "Python SDK"
+            "Language" "python"
+            "Code" "from blue_sdk import BlueClient\n\nclient = BlueClient(api_key='your_api_key')\n\n# Create a new project\nproject = client.projects.create(\n    title='Q4 Marketing Campaign',\n    type='PROJECT'\n)\n\nprint(f'Created project: {project.id}')"
+        )
+    )
+    "Link" (dict
+        "Text" "View API Docs"
+        "Url" "/api"
+    )
+    "MarginBottom" "mb-24"
+}}
 {{template "technical-capability-card" $codeExamplesData}}
 
 Note: Common usage includes Features array and button fields,

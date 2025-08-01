@@ -8,26 +8,26 @@ USAGE:
 {{template "features-grid-simple" $featuresData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$featuresData := parseJSON `{
-    "Title": "Everything your team needs, nothing they don't.",
-    "Features": [
-        {
-            "Title": "Time tracking",
-            "Description": "Track time across any record. Run reports to see where time is being spent.",
-            "Icon": "clock",  // Optional: References sprite icon
-            "Url": "/features/time-tracking"  // Optional: Makes title clickable
-        },
-        {
-            "Title": "Custom fields",
-            "Description": "23 different field types to capture any type of business data you need."
-        },
-        {
-            "Title": "Integrations",
-            "Description": "Connect with 30+ tools including Slack, Teams, Google Workspace, and more.",
-            "Url": "/integrations"
-        }
-    ]
-}`}}
+{{$featuresData := dict
+    "Title" "Everything your team needs, nothing they don't."
+    "Features" (slice
+        (dict
+            "Title" "Time tracking"
+            "Description" "Track time across any record. Run reports to see where time is being spent."
+            "Icon" "clock"
+            "Url" "/features/time-tracking"
+        )
+        (dict
+            "Title" "Custom fields"
+            "Description" "23 different field types to capture any type of business data you need."
+        )
+        (dict
+            "Title" "Integrations"
+            "Description" "Connect with 30+ tools including Slack, Teams, Google Workspace, and more."
+            "Url" "/integrations"
+        )
+    )
+}}
 {{template "features-grid-simple" $featuresData}}
 
 

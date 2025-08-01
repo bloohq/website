@@ -8,17 +8,17 @@ USAGE:
 {{template "logo-grid" $logoData}}
 
 EXAMPLE IMPLEMENTATION:
-{{$logoData := parseJSON `{
-    "title": "Trusted by more than 17,000 teams",
-    "logos": [
-        { "name": "CBRE", "src": "/customers/cbre.svg" },
-        { "name": "Cisco", "src": "/customers/cisco.svg" },
-        { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-        { "name": "Intel", "src": "/customers/intel.svg" },
-        { "name": "Microsoft", "src": "/customers/microsoft.svg" },
-        { "name": "Toyota", "src": "/customers/toyota.svg" }
-    ]
-}`}}
+{{$logoData := dict
+    "title" "Trusted by more than 17,000 teams"
+    "logos" (slice
+        (dict "name" "CBRE" "src" "/customers/cbre.svg")
+        (dict "name" "Cisco" "src" "/customers/cisco.svg")
+        (dict "name" "Deloitte" "src" "/customers/deloitte.svg")
+        (dict "name" "Intel" "src" "/customers/intel.svg")
+        (dict "name" "Microsoft" "src" "/customers/microsoft.svg")
+        (dict "name" "Toyota" "src" "/customers/toyota.svg")
+    )
+}}
 {{template "logo-grid" $logoData}}
 
 DATA STRUCTURE:
