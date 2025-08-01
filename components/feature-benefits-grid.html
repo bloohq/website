@@ -74,12 +74,12 @@ USE CASES:
     {{if .Url}}
     <a href="{{.Url}}" class="block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors cursor-pointer">
         <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{{.Title}}</h3>
-        <p class="text-gray-600 dark:text-gray-400">{{.Description}}</p>
+        <p class="text-gray-600 dark:text-gray-400 text-sm 2xl:text-base">{{.Description}}</p>
     </a>
     {{else}}
     <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
         <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{{.Title}}</h3>
-        <p class="text-gray-600 dark:text-gray-400">{{.Description}}</p>
+        <p class="text-gray-600 dark:text-gray-400 text-sm 2xl:text-base">{{.Description}}</p>
     </div>
     {{end}}
     {{end}}
