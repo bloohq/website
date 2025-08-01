@@ -1,59 +1,59 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Solutions Index" 
-            "Subtitle" "Discover how Blue adapts to your industry and use case." 
+            "Title" (t "solutions.page_title") 
+            "Subtitle" (t "solutions.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
     {{$solutionsData := dict
         "sections" (slice
             (dict
-                "title" "Industries"
+                "title" (t "solutions.industries_section_title")
                 "columns" (slice
                     (dict
                         "items" (slice
-                            (dict "label" "Government" "link" "/solutions/industry/government")
-                            (dict "label" "Non-Profits" "link" "/solutions/industry/non-profits")
-                            (dict "label" "Education" "link" "/solutions/industry/education")
+                            (dict "label" (t "solutions.industry_government") "link" "/solutions/industry/government")
+                            (dict "label" (t "solutions.industry_non_profits") "link" "/solutions/industry/non-profits")
+                            (dict "label" (t "solutions.industry_education") "link" "/solutions/industry/education")
                         )
                     )
                     (dict
                         "items" (slice
-                            (dict "label" "Logistics" "link" "/solutions/industry/logistics")
-                            (dict "label" "Real Estate" "link" "/solutions/industry/real-estate")
-                            (dict "label" "Professional Services" "link" "/solutions/industry/professional-services")
+                            (dict "label" (t "solutions.industry_logistics") "link" "/solutions/industry/logistics")
+                            (dict "label" (t "solutions.industry_real_estate") "link" "/solutions/industry/real-estate")
+                            (dict "label" (t "solutions.industry_professional_services") "link" "/solutions/industry/professional-services")
                         )
                     )
                     (dict
                         "items" (slice
-                            (dict "label" "Production" "link" "/solutions/industry/production")
-                            (dict "label" "Solopreneurs" "link" "/solutions/industry/solopreneurs")
+                            (dict "label" (t "solutions.industry_production") "link" "/solutions/industry/production")
+                            (dict "label" (t "solutions.industry_solopreneurs") "link" "/solutions/industry/solopreneurs")
                         )
                     )
                 )
             )
             (dict
-                "title" "Use Cases"
+                "title" (t "solutions.use_cases_section_title")
                 "columns" (slice
                     (dict
                         "items" (slice
-                            (dict "label" "Process Management" "link" "/solutions/use-case/process-management")
-                            (dict "label" "Project Management" "link" "/solutions/use-case/project-management")
+                            (dict "label" (t "solutions.use_case_process_management") "link" "/solutions/use-case/process-management")
+                            (dict "label" (t "solutions.use_case_project_management") "link" "/solutions/use-case/project-management")
                         )
                     )
                     (dict
                         "items" (slice
-                            (dict "label" "Sales CRM" "link" "/solutions/use-case/sales-crm")
-                            (dict "label" "Service Tickets" "link" "/solutions/use-case/service-tickets")
+                            (dict "label" (t "solutions.use_case_sales_crm") "link" "/solutions/use-case/sales-crm")
+                            (dict "label" (t "solutions.use_case_service_tickets") "link" "/solutions/use-case/service-tickets")
                         )
                     )
                     (dict
                         "items" (slice
-                            (dict "label" "IT" "link" "/solutions/use-case/it")
-                            (dict "label" "Asset Management" "link" "/solutions/use-case/asset-management")
-                            (dict "label" "Hiring" "link" "/solutions/use-case/hiring")
-                            (dict "label" "Client Portal" "link" "/solutions/use-case/client-portal")
+                            (dict "label" (t "solutions.use_case_it") "link" "/solutions/use-case/it")
+                            (dict "label" (t "solutions.use_case_asset_management") "link" "/solutions/use-case/asset-management")
+                            (dict "label" (t "solutions.use_case_hiring") "link" "/solutions/use-case/hiring")
+                            (dict "label" (t "solutions.use_case_client_portal") "link" "/solutions/use-case/client-portal")
                         )
                     )
                 )
