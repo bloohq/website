@@ -254,22 +254,13 @@
         {{template "features-grid-simple" $educationFeatures}}
     </div>
 
-    <!-- Education Use Cases Section Header -->
-    <div class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">{{t "education.use_cases_title"}}</h2>
-    </div>
-
     <!-- Student Records Management Feature -->
     <div class="mb-20 px-6 lg:px-8">
         {{$studentRecordsData := dict
-            "VideoPosition" "left"
-            "VideoUrl" "/product/custom-fields.mp4"
+            "ImagePosition" "left"
+            "ImageUrl" "/product/student-list.png"
             "Title" (t "education.student_records_title")
             "Description" (t "education.student_records_description")
-            "Button" (dict
-                "Text" (t "education.student_records_button")
-                "Url" "/docs/use-cases/student-management"
-            )
             "SeeAlso" (dict
                 "Links" (slice
                     (dict "Text" (t "education.student_records_link_1") "Description" (t "education.student_records_link_1_desc") "Url" "/platform/features/database")
@@ -278,73 +269,7 @@
                 )
             )
         }}
-        {{template "feature-video" $studentRecordsData}}
-    </div>
-
-    <!-- Course & Faculty Management Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$courseManagementData := dict
-            "VideoPosition" "right"
-            "VideoUrl" "/product/kanban-board.mp4"
-            "Title" (t "education.course_management_title")
-            "Description" (t "education.course_management_description")
-            "Button" (dict
-                "Text" (t "education.course_management_button")
-                "Url" "/solutions/use-case/resource-management"
-            )
-            "SeeAlso" (dict
-                "Links" (slice
-                    (dict "Text" (t "education.course_management_link_1") "Description" (t "education.course_management_link_1_desc") "Url" "/platform/features/calendar")
-                    (dict "Text" (t "education.course_management_link_2") "Description" (t "education.course_management_link_2_desc") "Url" "/platform/features/workspaces")
-                    (dict "Text" (t "education.course_management_link_3") "Description" (t "education.course_management_link_3_desc") "Url" "/docs/views/timeline-gantt-charts")
-                )
-            )
-        }}
-        {{template "feature-video" $courseManagementData}}
-    </div>
-
-    <!-- Academic Compliance Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$complianceData := dict
-            "VideoPosition" "left"
-            "VideoUrl" "/product/reporting.mp4"
-            "Title" (t "education.compliance_title")
-            "Description" (t "education.compliance_description")
-            "Button" (dict
-                "Text" (t "education.compliance_button")
-                "Url" "/docs/reporting"
-            )
-            "SeeAlso" (dict
-                "Links" (slice
-                    (dict "Text" (t "education.compliance_link_1") "Description" (t "education.compliance_link_1_desc") "Url" "/platform/features/audit-trails")
-                    (dict "Text" (t "education.compliance_link_2") "Description" (t "education.compliance_link_2_desc") "Url" "/platform/features/pdf-generation")
-                    (dict "Text" (t "education.compliance_link_3") "Description" (t "education.compliance_link_3_desc") "Url" "/docs/integrations/csv-export")
-                )
-            )
-        }}
-        {{template "feature-video" $complianceData}}
-    </div>
-
-    <!-- Student Services Management Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$studentServicesData := dict
-            "VideoPosition" "right"
-            "VideoUrl" "/product/forms.mp4"
-            "Title" (t "education.student_services_title")
-            "Description" (t "education.student_services_description")
-            "Button" (dict
-                "Text" (t "education.student_services_button")
-                "Url" "/docs/forms"
-            )
-            "SeeAlso" (dict
-                "Links" (slice
-                    (dict "Text" (t "education.student_services_link_1") "Description" (t "education.student_services_link_1_desc") "Url" "/docs/wiki")
-                    (dict "Text" (t "education.student_services_link_2") "Description" (t "education.student_services_link_2_desc") "Url" "/platform/features/templates")
-                    (dict "Text" (t "education.student_services_link_3") "Description" (t "education.student_services_link_3_desc") "Url" "/docs/projects/search")
-                )
-            )
-        }}
-        {{template "feature-video" $studentServicesData}}
+        {{template "feature-image" $studentRecordsData}}
     </div>
 
     <!-- Education Stats Section -->
