@@ -321,7 +321,6 @@
     </div>
 </section>
 
-<!-- Likely need a unique integrations area here with various logos.-->
 
     <!-- Features Grid Section -->
     {{$featuresData := dict
@@ -386,50 +385,6 @@
     {{template "logo-grid" $integrationData}}
 </div>
 
-
-<!-- Interactive Feature Showcase Section 
-
-I wonder if process management is really needed, is that a "use case"? -->
-<section class="mb-8">
-        
-    {{$showcaseData := dict
-        "Title" (t "home.use_cases.title")
-        "Features" (slice
-            (dict
-                "Id" "process-management"
-                "Title" (t "home.use_cases.process_management")
-                "VideoUrl" "/video3.mp4"
-            )
-            (dict
-                "Id" "project-management"
-                "Title" (t "home.use_cases.project_management")
-                "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
-            )
-            (dict
-                "Id" "sales-crm"
-                "Title" (t "home.use_cases.sales_crm")
-                "VideoUrl" "/video4.mp4"
-            )
-            (dict
-                "Id" "service-tickets"
-                "Title" (t "home.use_cases.service_tickets")
-                "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
-            )
-            (dict
-                "Id" "asset-management"
-                "Title" (t "home.use_cases.asset_management")
-                "VideoUrl" "/testvideo2.mp4"
-            )
-            (dict
-                "Id" "content-calendar"
-                "Title" (t "home.use_cases.content_calendar")
-                "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
-            )
-        )
-    }}
-    
-    {{template "interactive-feature-showcase" $showcaseData}}
-</section>
 
    <!-- Testimonial Section -->
    <div class="mb-20 px-6 lg:px-8">
