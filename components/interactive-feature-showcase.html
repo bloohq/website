@@ -154,6 +154,9 @@ USE CASES:
             mutedStates: {},
             videoStates: {},
             selectFeature(id) {
+                // Pause all videos first
+                this.pauseAllVideos();
+                
                 // Load video if not already loaded
                 if (!this.videoStates[id]) {
                     this.videoStates[id] = { loaded: true, preloading: false };
@@ -161,16 +164,37 @@ USE CASES:
                     this.videoStates[id].loaded = true;
                 }
                 
-                // Mute all videos when switching
-                Object.keys(this.$refs).forEach(key => {
-                    if (key.startsWith('video-') && this.$refs[key]) {
-                        this.$refs[key].muted = true;
-                        const featureId = key.replace('video-', '');
-                        this.mutedStates[featureId] = true;
-                    }
-                });
                 this.selectedFeature = id;
                 this.updateUnderline();
+            },
+            pauseAllVideos() {
+                // Pause videos immediately if available
+                const videos = this.$el.querySelectorAll('video:not(.hidden)');
+                videos.forEach(video => {
+                    if (video && typeof video.pause === 'function') {
+                        video.pause();
+                        video.muted = true;
+                    }
+                });
+                
+                // Also try with refs after DOM update
+                this.$nextTick(() => {
+                    Object.keys(this.$refs).forEach(key => {
+                        if (key.startsWith('video-') && this.$refs[key]) {
+                            try {
+                                this.$refs[key].pause();
+                                this.$refs[key].muted = true;
+                            } catch (e) {
+                                // Video might not be ready yet
+                            }
+                        }
+                    });
+                });
+                
+                // Reset all mute states
+                Object.keys(this.mutedStates).forEach(key => {
+                    this.mutedStates[key] = true;
+                });
             },
             preloadVideo(id) {
                 // Start preloading on hover if not already loaded
@@ -229,11 +253,19 @@ USE CASES:
                     <video 
                         x-ref="video-{{.Id}}"
                         class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                        autoplay 
+                        :autoplay="selectedFeature === '{{.Id}}'"
                         muted 
                         loop 
                         playsinline
                         {{if not .HideControls}}controls{{end}}
+                        @loadeddata="if (selectedFeature === '{{.Id}}') { $el.play(); }"
+                        x-init="$watch('selectedFeature', value => {
+                            if (value !== '{{.Id}}' && $el && typeof $el.pause === 'function') {
+                                $el.pause();
+                            } else if (value === '{{.Id}}' && $el && typeof $el.play === 'function') {
+                                $el.play();
+                            }
+                        })"
                     >
                         <source src="{{.VideoUrl}}" type="video/mp4">
                         Your browser does not support the video tag.
@@ -351,11 +383,19 @@ USE CASES:
                     <video 
                         x-ref="video-{{.Id}}"
                         class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                        autoplay 
+                        :autoplay="selectedFeature === '{{.Id}}'"
                         muted 
                         loop 
                         playsinline
                         {{if not .HideControls}}controls{{end}}
+                        @loadeddata="if (selectedFeature === '{{.Id}}') { $el.play(); }"
+                        x-init="$watch('selectedFeature', value => {
+                            if (value !== '{{.Id}}' && $el && typeof $el.pause === 'function') {
+                                $el.pause();
+                            } else if (value === '{{.Id}}' && $el && typeof $el.play === 'function') {
+                                $el.play();
+                            }
+                        })"
                     >
                         <source src="{{.VideoUrl}}" type="video/mp4">
                         Your browser does not support the video tag.
@@ -435,11 +475,19 @@ USE CASES:
                     <video 
                         x-ref="video-{{.Id}}"
                         class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                        autoplay 
+                        :autoplay="selectedFeature === '{{.Id}}'"
                         muted 
                         loop 
                         playsinline
                         {{if not .HideControls}}controls{{end}}
+                        @loadeddata="if (selectedFeature === '{{.Id}}') { $el.play(); }"
+                        x-init="$watch('selectedFeature', value => {
+                            if (value !== '{{.Id}}' && $el && typeof $el.pause === 'function') {
+                                $el.pause();
+                            } else if (value === '{{.Id}}' && $el && typeof $el.play === 'function') {
+                                $el.play();
+                            }
+                        })"
                     >
                         <source src="{{.VideoUrl}}" type="video/mp4">
                         Your browser does not support the video tag.
@@ -557,11 +605,19 @@ USE CASES:
                     <video 
                         x-ref="video-{{.Id}}"
                         class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                        autoplay 
+                        :autoplay="selectedFeature === '{{.Id}}'"
                         muted 
                         loop 
                         playsinline
                         {{if not .HideControls}}controls{{end}}
+                        @loadeddata="if (selectedFeature === '{{.Id}}') { $el.play(); }"
+                        x-init="$watch('selectedFeature', value => {
+                            if (value !== '{{.Id}}' && $el && typeof $el.pause === 'function') {
+                                $el.pause();
+                            } else if (value === '{{.Id}}' && $el && typeof $el.play === 'function') {
+                                $el.play();
+                            }
+                        })"
                     >
                         <source src="{{.VideoUrl}}" type="video/mp4">
                         Your browser does not support the video tag.
