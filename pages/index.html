@@ -72,7 +72,7 @@
     </p>
 </div>
 
-<!-- Top Position -->
+<!-- Hero Videos -->
 <div>
     
     {{$showcaseDataTop := dict
@@ -82,11 +82,13 @@
                 "Id" "automation-setup-top"
                 "Title" "CRM"
                 "VideoUrl" "/testvideo2.mp4"
+                "ShowUnmuteButton" true
             )
             (dict
                 "Id" "trigger-conditions-top"
                 "Title" "HR"
                 "VideoUrl" "/testvideo2.mp4"
+                "ShowUnmuteButton" true
             )
             (dict
                 "Id" "workflow-actions-top"
@@ -99,6 +101,11 @@
                 "VideoUrl" "/testvideo2.mp4"
             )
             (dict
+                "Id" "service-tickets-top"
+                "Title" "Service Tickets"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
                 "Id" "performance-monitoring-top"
                 "Title" "Sales"
                 "VideoUrl" "/testvideo2.mp4"
@@ -108,18 +115,22 @@
                 "Title" "Marketing"
                 "VideoUrl" "/testvideo2.mp4"
             )
+            (dict
+                "Id" "operations-top"
+                "Title" "Operations"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "compliance-top"
+                "Title" "Compliance"
+                "VideoUrl" "/testvideo2.mp4"
+            )
         )
     }}
     
     {{template "interactive-feature-showcase" $showcaseDataTop}}
 </div>
 
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "homepage"
-    }}
 
     <!-- Hero CTAs -->
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center" x-data="{ 

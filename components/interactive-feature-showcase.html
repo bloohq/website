@@ -7,7 +7,9 @@ Displays an interactive feature selector with media preview and animated navigat
 USAGE:
 {{template "interactive-feature-showcase" $showcaseData}}
 
-EXAMPLE IMPLEMENTATION:
+EXAMPLE IMPLEMENTATIONS:
+
+1. Basic implementation:
 {{$showcaseData := dict
     "id" "manage-everything"
     "Title" "Manage everything with workspaces."
@@ -32,6 +34,26 @@ EXAMPLE IMPLEMENTATION:
 }}
 {{template "interactive-feature-showcase" $showcaseData}}
 
+2. With audio controls:
+{{$showcaseData := dict
+    "Features" (slice
+        (dict
+            "Id" "demo-video"
+            "Title" "Product Demo"
+            "VideoUrl" "/product/demo.mp4"
+            "ShowUnmuteButton" true
+        )
+        (dict
+            "Id" "tutorial"
+            "Title" "Tutorial"
+            "VideoUrl" "/product/tutorial.mp4"
+            "ShowUnmuteButton" true
+            "HideControls" true
+        )
+    )
+}}
+{{template "interactive-feature-showcase" $showcaseData}}
+
 Note: Common usage includes tabs, content, stats, and imageSrc fields,
 but component expects Features array with Id, Title, VideoUrl/ImageUrl.
 
@@ -46,7 +68,9 @@ DATA STRUCTURE:
             "Id": "feature-id",           // Unique feature ID (required)
             "Title": "Feature name",      // Feature title (required)
             "VideoUrl": "/video.mp4",     // Video path (optional)
-            "ImageUrl": "/image.png"      // Image path (optional)
+            "ImageUrl": "/image.png",     // Image path (optional)
+            "ShowUnmuteButton": true,     // Show mute/unmute button for video (optional)
+            "HideControls": true          // Hide browser video controls (optional)
         }
     ],
     "MarginBottom": "mb-16"               // Bottom margin (optional, default: "mb-16")
@@ -60,9 +84,11 @@ LAYOUT OPTIONS:
 
 FEATURES:
 - Interactive feature selection with hover/click
-- Animated blue circle indicator
+- Animated blue underline indicator
 - Smooth content transitions
-- Video autoplay support
+- Video autoplay support with optional audio controls
+- Custom mute/unmute button overlay (per video)
+- Option to hide browser video controls
 - Image and video previews
 - Placeholder for missing media
 - AlpineJS state management
@@ -91,7 +117,9 @@ STYLING:
 - Preview border: 2px, rounded-lg
 
 MEDIA HANDLING:
-- Videos: Autoplay, muted, loop, inline
+- Videos: Autoplay, muted by default, loop, inline
+- Audio controls: Optional mute/unmute button per video
+- Browser controls: Can be hidden with HideControls flag
 - Images: Cover fit, lazy loading
 - Placeholder: Gray background with text
 
@@ -123,9 +151,29 @@ USE CASES:
             hoveredFeature: null,
             underlineLeft: 0,
             underlineWidth: 0,
+            mutedStates: {},
             selectFeature(id) {
+                // Mute all videos when switching
+                Object.keys(this.$refs).forEach(key => {
+                    if (key.startsWith('video-') && this.$refs[key]) {
+                        this.$refs[key].muted = true;
+                        const featureId = key.replace('video-', '');
+                        this.mutedStates[featureId] = true;
+                    }
+                });
                 this.selectedFeature = id;
                 this.updateUnderline();
+            },
+            toggleMute(featureId) {
+                const video = this.$refs[`video-${featureId}`];
+                if (video) {
+                    const currentMuted = this.mutedStates[featureId] ?? true;
+                    this.mutedStates[featureId] = !currentMuted;
+                    video.muted = this.mutedStates[featureId];
+                }
+            },
+            isMuted(featureId) {
+                return this.mutedStates[featureId] ?? true;
             },
             updateUnderline() {
                 this.$nextTick(() => {
@@ -148,20 +196,40 @@ USE CASES:
             {{range .Features}}
             <div 
                 x-show="selectedFeature === '{{.Id}}'"
-                class="w-full"
+                class="w-full relative"
             >
                 {{if .VideoUrl}}
                 <!-- Video Preview -->
                 <video 
+                    x-ref="video-{{.Id}}"
                     class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
+                    {{if not .HideControls}}controls{{end}}
                 >
                     <source src="{{.VideoUrl}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                {{if .ShowUnmuteButton}}
+                <!-- Custom Unmute Button -->
+                <button 
+                    x-show="selectedFeature === '{{.Id}}'"
+                    @click="toggleMute('{{.Id}}')"
+                    :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
+                    class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
+                >
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- Muted icon -->
+                        <path x-show="isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"/>
+                        <!-- Unmuted icon -->
+                        <path x-show="!isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.146 5.146a1 1 0 011.414 0c2.39 2.391 2.39 6.268 0 8.658a1 1 0 01-1.414-1.414c1.598-1.598 1.598-4.232 0-5.83a1 1 0 010-1.414z"/>
+                    </svg>
+                    <span x-text="isMuted('{{.Id}}') ? 'Unmute' : 'Mute'"></span>
+                </button>
+                {{end}}
                 {{else if .ImageUrl}}
                 <!-- Image Preview -->
                 <img 
@@ -222,20 +290,40 @@ USE CASES:
             {{range .Features}}
             <div 
                 x-show="selectedFeature === '{{.Id}}'"
-                class="w-full"
+                class="w-full relative"
             >
                 {{if .VideoUrl}}
                 <!-- Video Preview -->
                 <video 
+                    x-ref="video-{{.Id}}"
                     class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
+                    {{if not .HideControls}}controls{{end}}
                 >
                     <source src="{{.VideoUrl}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                {{if .ShowUnmuteButton}}
+                <!-- Custom Unmute Button -->
+                <button 
+                    x-show="selectedFeature === '{{.Id}}'"
+                    @click="toggleMute('{{.Id}}')"
+                    :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
+                    class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
+                >
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- Muted icon -->
+                        <path x-show="isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"/>
+                        <!-- Unmuted icon -->
+                        <path x-show="!isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.146 5.146a1 1 0 011.414 0c2.39 2.391 2.39 6.268 0 8.658a1 1 0 01-1.414-1.414c1.598-1.598 1.598-4.232 0-5.83a1 1 0 010-1.414z"/>
+                    </svg>
+                    <span x-text="isMuted('{{.Id}}') ? 'Unmute' : 'Mute'"></span>
+                </button>
+                {{end}}
                 {{else if .ImageUrl}}
                 <!-- Image Preview -->
                 <img 
@@ -260,20 +348,40 @@ USE CASES:
             {{range .Features}}
             <div 
                 x-show="selectedFeature === '{{.Id}}'"
-                class="w-full"
+                class="w-full relative"
             >
                 {{if .VideoUrl}}
                 <!-- Video Preview -->
                 <video 
+                    x-ref="video-{{.Id}}"
                     class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
+                    {{if not .HideControls}}controls{{end}}
                 >
                     <source src="{{.VideoUrl}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                {{if .ShowUnmuteButton}}
+                <!-- Custom Unmute Button -->
+                <button 
+                    x-show="selectedFeature === '{{.Id}}'"
+                    @click="toggleMute('{{.Id}}')"
+                    :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
+                    class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
+                >
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- Muted icon -->
+                        <path x-show="isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"/>
+                        <!-- Unmuted icon -->
+                        <path x-show="!isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.146 5.146a1 1 0 011.414 0c2.39 2.391 2.39 6.268 0 8.658a1 1 0 01-1.414-1.414c1.598-1.598 1.598-4.232 0-5.83a1 1 0 010-1.414z"/>
+                    </svg>
+                    <span x-text="isMuted('{{.Id}}') ? 'Unmute' : 'Mute'"></span>
+                </button>
+                {{end}}
                 {{else if .ImageUrl}}
                 <!-- Image Preview -->
                 <img 
@@ -334,20 +442,40 @@ USE CASES:
             {{range .Features}}
             <div 
                 x-show="selectedFeature === '{{.Id}}'"
-                class="w-full"
+                class="w-full relative"
             >
                 {{if .VideoUrl}}
                 <!-- Video Preview -->
                 <video 
+                    x-ref="video-{{.Id}}"
                     class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
+                    {{if not .HideControls}}controls{{end}}
                 >
                     <source src="{{.VideoUrl}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                {{if .ShowUnmuteButton}}
+                <!-- Custom Unmute Button -->
+                <button 
+                    x-show="selectedFeature === '{{.Id}}'"
+                    @click="toggleMute('{{.Id}}')"
+                    :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
+                    class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
+                >
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- Muted icon -->
+                        <path x-show="isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"/>
+                        <!-- Unmuted icon -->
+                        <path x-show="!isMuted('{{.Id}}')" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.146 5.146a1 1 0 011.414 0c2.39 2.391 2.39 6.268 0 8.658a1 1 0 01-1.414-1.414c1.598-1.598 1.598-4.232 0-5.83a1 1 0 010-1.414z"/>
+                    </svg>
+                    <span x-text="isMuted('{{.Id}}') ? 'Unmute' : 'Mute'"></span>
+                </button>
+                {{end}}
                 {{else if .ImageUrl}}
                 <!-- Image Preview -->
                 <img 
