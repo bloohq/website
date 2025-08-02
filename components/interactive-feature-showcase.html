@@ -152,7 +152,15 @@ USE CASES:
             underlineLeft: 0,
             underlineWidth: 0,
             mutedStates: {},
+            videoStates: {},
             selectFeature(id) {
+                // Load video if not already loaded
+                if (!this.videoStates[id]) {
+                    this.videoStates[id] = { loaded: true, preloading: false };
+                } else if (!this.videoStates[id].loaded) {
+                    this.videoStates[id].loaded = true;
+                }
+                
                 // Mute all videos when switching
                 Object.keys(this.$refs).forEach(key => {
                     if (key.startsWith('video-') && this.$refs[key]) {
@@ -163,6 +171,18 @@ USE CASES:
                 });
                 this.selectedFeature = id;
                 this.updateUnderline();
+            },
+            preloadVideo(id) {
+                // Start preloading on hover if not already loaded
+                if (!this.videoStates[id] || (!this.videoStates[id].loaded && !this.videoStates[id].preloading)) {
+                    this.videoStates[id] = { loaded: false, preloading: true };
+                }
+            },
+            isVideoLoaded(id) {
+                return this.videoStates[id]?.loaded ?? false;
+            },
+            isVideoPreloading(id) {
+                return this.videoStates[id]?.preloading ?? false;
             },
             toggleMute(featureId) {
                 const video = this.$refs[`video-${featureId}`];
@@ -187,7 +207,12 @@ USE CASES:
                 });
             }
         }"
-        x-init="$nextTick(() => updateUnderline())"
+        x-init="() => {
+            // Initialize first video as loaded
+            const firstFeatureId = '{{(index .Features 0).Id}}';
+            videoStates[firstFeatureId] = { loaded: true, preloading: false };
+            $nextTick(() => updateUnderline());
+        }"
         @resize.window="updateUnderline()"
     >
         {{if eq $position "top"}}
@@ -199,24 +224,50 @@ USE CASES:
                 class="w-full relative"
             >
                 {{if .VideoUrl}}
-                <!-- Video Preview -->
-                <video 
-                    x-ref="video-{{.Id}}"
-                    class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                    {{if not .HideControls}}controls{{end}}
+                <!-- Video Container -->
+                <template x-if="isVideoLoaded('{{.Id}}')">
+                    <video 
+                        x-ref="video-{{.Id}}"
+                        class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        {{if not .HideControls}}controls{{end}}
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </template>
+                
+                <!-- Preload Video (hidden) -->
+                <template x-if="isVideoPreloading('{{.Id}}') && !isVideoLoaded('{{.Id}}')">
+                    <video 
+                        class="hidden"
+                        preload="metadata"
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                    </video>
+                </template>
+                
+                <!-- Loading Placeholder -->
+                <div 
+                    x-show="!isVideoLoaded('{{.Id}}')"
+                    class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm flex items-center justify-center"
                 >
-                    <source src="{{.VideoUrl}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                    <div class="text-gray-500 dark:text-gray-400">
+                        <svg class="w-8 h-8 mx-auto mb-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-sm">Loading video...</span>
+                    </div>
+                </div>
                 
                 {{if .ShowUnmuteButton}}
                 <!-- Custom Unmute Button -->
                 <button 
-                    x-show="selectedFeature === '{{.Id}}'"
+                    x-show="selectedFeature === '{{.Id}}' && isVideoLoaded('{{.Id}}')"
                     @click="toggleMute('{{.Id}}')"
                     :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
                     class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
@@ -253,6 +304,7 @@ USE CASES:
             <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
                 {{range $index, $feature := .Features}}
                 <button @click="selectFeature('{{$feature.Id}}')" 
+                        @mouseenter="preloadVideo('{{$feature.Id}}')"
                         data-feature="{{$feature.Id}}"
                         :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
                         class="pb-0.5 sm:pb-1 cursor-pointer relative">
@@ -272,6 +324,7 @@ USE CASES:
             <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
                 {{range $index, $feature := .Features}}
                 <button @click="selectFeature('{{$feature.Id}}')" 
+                        @mouseenter="preloadVideo('{{$feature.Id}}')"
                         data-feature="{{$feature.Id}}"
                         :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
                         class="pb-0.5 sm:pb-1 cursor-pointer relative">
@@ -293,24 +346,50 @@ USE CASES:
                 class="w-full relative"
             >
                 {{if .VideoUrl}}
-                <!-- Video Preview -->
-                <video 
-                    x-ref="video-{{.Id}}"
-                    class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                    {{if not .HideControls}}controls{{end}}
+                <!-- Video Container -->
+                <template x-if="isVideoLoaded('{{.Id}}')">
+                    <video 
+                        x-ref="video-{{.Id}}"
+                        class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        {{if not .HideControls}}controls{{end}}
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </template>
+                
+                <!-- Preload Video (hidden) -->
+                <template x-if="isVideoPreloading('{{.Id}}') && !isVideoLoaded('{{.Id}}')">
+                    <video 
+                        class="hidden"
+                        preload="metadata"
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                    </video>
+                </template>
+                
+                <!-- Loading Placeholder -->
+                <div 
+                    x-show="!isVideoLoaded('{{.Id}}')"
+                    class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm flex items-center justify-center"
                 >
-                    <source src="{{.VideoUrl}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                    <div class="text-gray-500 dark:text-gray-400">
+                        <svg class="w-8 h-8 mx-auto mb-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-sm">Loading video...</span>
+                    </div>
+                </div>
                 
                 {{if .ShowUnmuteButton}}
                 <!-- Custom Unmute Button -->
                 <button 
-                    x-show="selectedFeature === '{{.Id}}'"
+                    x-show="selectedFeature === '{{.Id}}' && isVideoLoaded('{{.Id}}')"
                     @click="toggleMute('{{.Id}}')"
                     :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
                     class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
@@ -351,24 +430,50 @@ USE CASES:
                 class="w-full relative"
             >
                 {{if .VideoUrl}}
-                <!-- Video Preview -->
-                <video 
-                    x-ref="video-{{.Id}}"
-                    class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                    {{if not .HideControls}}controls{{end}}
+                <!-- Video Container -->
+                <template x-if="isVideoLoaded('{{.Id}}')">
+                    <video 
+                        x-ref="video-{{.Id}}"
+                        class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        {{if not .HideControls}}controls{{end}}
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </template>
+                
+                <!-- Preload Video (hidden) -->
+                <template x-if="isVideoPreloading('{{.Id}}') && !isVideoLoaded('{{.Id}}')">
+                    <video 
+                        class="hidden"
+                        preload="metadata"
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                    </video>
+                </template>
+                
+                <!-- Loading Placeholder -->
+                <div 
+                    x-show="!isVideoLoaded('{{.Id}}')"
+                    class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm flex items-center justify-center"
                 >
-                    <source src="{{.VideoUrl}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                    <div class="text-gray-500 dark:text-gray-400">
+                        <svg class="w-8 h-8 mx-auto mb-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-sm">Loading video...</span>
+                    </div>
+                </div>
                 
                 {{if .ShowUnmuteButton}}
                 <!-- Custom Unmute Button -->
                 <button 
-                    x-show="selectedFeature === '{{.Id}}'"
+                    x-show="selectedFeature === '{{.Id}}' && isVideoLoaded('{{.Id}}')"
                     @click="toggleMute('{{.Id}}')"
                     :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
                     class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
@@ -405,6 +510,7 @@ USE CASES:
             <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
                 {{range $index, $feature := .Features}}
                 <button @click="selectFeature('{{$feature.Id}}')" 
+                        @mouseenter="preloadVideo('{{$feature.Id}}')"
                         data-feature="{{$feature.Id}}"
                         :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
                         class="pb-0.5 sm:pb-1 cursor-pointer relative">
@@ -424,6 +530,7 @@ USE CASES:
             <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
                 {{range $index, $feature := .Features}}
                 <button @click="selectFeature('{{$feature.Id}}')" 
+                        @mouseenter="preloadVideo('{{$feature.Id}}')"
                         data-feature="{{$feature.Id}}"
                         :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
                         class="pb-0.5 sm:pb-1 cursor-pointer relative">
@@ -445,24 +552,50 @@ USE CASES:
                 class="w-full relative"
             >
                 {{if .VideoUrl}}
-                <!-- Video Preview -->
-                <video 
-                    x-ref="video-{{.Id}}"
-                    class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline
-                    {{if not .HideControls}}controls{{end}}
+                <!-- Video Container -->
+                <template x-if="isVideoLoaded('{{.Id}}')">
+                    <video 
+                        x-ref="video-{{.Id}}"
+                        class="w-full h-full object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        {{if not .HideControls}}controls{{end}}
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </template>
+                
+                <!-- Preload Video (hidden) -->
+                <template x-if="isVideoPreloading('{{.Id}}') && !isVideoLoaded('{{.Id}}')">
+                    <video 
+                        class="hidden"
+                        preload="metadata"
+                    >
+                        <source src="{{.VideoUrl}}" type="video/mp4">
+                    </video>
+                </template>
+                
+                <!-- Loading Placeholder -->
+                <div 
+                    x-show="!isVideoLoaded('{{.Id}}')"
+                    class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm flex items-center justify-center"
                 >
-                    <source src="{{.VideoUrl}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                    <div class="text-gray-500 dark:text-gray-400">
+                        <svg class="w-8 h-8 mx-auto mb-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-sm">Loading video...</span>
+                    </div>
+                </div>
                 
                 {{if .ShowUnmuteButton}}
                 <!-- Custom Unmute Button -->
                 <button 
-                    x-show="selectedFeature === '{{.Id}}'"
+                    x-show="selectedFeature === '{{.Id}}' && isVideoLoaded('{{.Id}}')"
                     @click="toggleMute('{{.Id}}')"
                     :class="isMuted('{{.Id}}') ? 'bg-green-500 bg-opacity-80' : 'bg-black bg-opacity-50'"
                     class="absolute top-4 right-4 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
