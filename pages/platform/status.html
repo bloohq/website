@@ -127,8 +127,24 @@
         
         {{if .StatusData}}
         <!-- Last updated -->
-        <div class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-            {{t "status.lastUpdated"}}: {{.StatusData.Generated.Format "Jan 2, 2006 15:04:05 MST"}}
+        <div class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400"
+             x-data="{ 
+                timestamp: '{{.StatusData.Generated.Format "2006-01-02T15:04:05Z07:00"}}',
+                formattedTime: '',
+                init() {
+                    const date = new Date(this.timestamp);
+                    this.formattedTime = date.toLocaleString(undefined, {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        timeZoneName: 'short'
+                    });
+                }
+             }">
+            {{t "status.lastUpdated"}}: <span x-text="formattedTime">{{.StatusData.Generated.Format "Jan 2, 2006 15:04:05 MST"}}</span>
         </div>
         {{end}}
     </div>
