@@ -128,7 +128,7 @@ USE CASES:
         <!-- See Also Section -->
         <div class="pt-4">
             <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
-                {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
+                {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}{{t "common.see_also"}}{{end}}
             </h5>
             <ul class="space-y-2">
                 {{range .SeeAlso.Links}}

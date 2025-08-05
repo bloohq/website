@@ -28,7 +28,8 @@
     "close_mobile_menu": "Close mobile menu",
     "dismiss_announcement": "Dismiss announcement",
     "news_message": "📚 New website and documentation! Everything you need to know about Blue in one place.",
-    "explore_link": "Explore docs"
+    "explore_link": "Explore docs",
+    "see_also": "See also"
   },
   "es": {
     "company_name": "Blue",
@@ -59,7 +60,8 @@
     "close_mobile_menu": "Cerrar menú móvil",
     "dismiss_announcement": "Descartar anuncio",
     "news_message": "📚 ¡Nuevo sitio web y documentación! Todo lo que necesitas saber sobre Blue en un solo lugar.",
-    "explore_link": "Explorar documentación"
+    "explore_link": "Explorar documentación",
+    "see_also": "Ver también"
   },
   "zh": {
     "company_name": "Blue",
@@ -90,7 +92,8 @@
     "close_mobile_menu": "关闭手机菜单",
     "dismiss_announcement": "关闭公告",
     "news_message": "📚 全新网站和文档！在一个地方了解关于 Blue 的一切信息。",
-    "explore_link": "浏览文档"
+    "explore_link": "浏览文档",
+    "see_also": "另请参阅"
   },
   "fr": {
     "company_name": "Blue",
@@ -121,7 +124,8 @@
     "close_mobile_menu": "Fermer le menu mobile",
     "dismiss_announcement": "Ignorer l'annonce",
     "news_message": "📚 Nouveau site web et documentation ! Tout ce que vous devez savoir sur Blue en un seul endroit.",
-    "explore_link": "Explorer la documentation"
+    "explore_link": "Explorer la documentation",
+    "see_also": "Voir aussi"
   },
   "de": {
     "company_name": "Blue",
@@ -152,7 +156,8 @@
     "close_mobile_menu": "Mobile Menü schließen",
     "dismiss_announcement": "Ankündigung schließen",
     "news_message": "📚 Neue Website und Dokumentation! Alles was Sie über Blue wissen müssen an einem Ort.",
-    "explore_link": "Dokumentation erkunden"
+    "explore_link": "Dokumentation erkunden",
+    "see_also": "Siehe auch"
   },
   "ja": {
     "company_name": "Blue",
@@ -183,7 +188,8 @@
     "close_mobile_menu": "モバイルメニューを閉じる",
     "dismiss_announcement": "お知らせを閉じる",
     "news_message": "📚 新しいウェブサイトとドキュメント！Blue について知る必要があることすべてが一箇所に。",
-    "explore_link": "ドキュメントを見る"
+    "explore_link": "ドキュメントを見る",
+    "see_also": "参照"
   },
   "pt": {
     "company_name": "Blue",
@@ -214,7 +220,8 @@
     "close_mobile_menu": "Fechar menu móvel",
     "dismiss_announcement": "Dispensar anúncio",
     "news_message": "📚 Novo site e documentação! Tudo o que você precisa saber sobre Blue em um só lugar.",
-    "explore_link": "Explorar documentação"
+    "explore_link": "Explorar documentação",
+    "see_also": "Veja também"
   },
   "ru": {
     "company_name": "Blue",
@@ -245,7 +252,8 @@
     "close_mobile_menu": "Закрыть мобильное меню",
     "dismiss_announcement": "Закрыть объявление",
     "news_message": "📚 Новый сайт и документация! Всё что нужно знать о Blue в одном месте.",
-    "explore_link": "Изучить документацию"
+    "explore_link": "Изучить документацию",
+    "see_also": "Смотрите также"
   },
   "ko": {
     "company_name": "Blue",
@@ -276,7 +284,8 @@
     "close_mobile_menu": "모바일 메뉴 닫기",
     "dismiss_announcement": "공지사항 닫기",
     "news_message": "📚 새로운 웹사이트와 문서! Blue에 대해 알아야 할 모든 것을 한 곳에서.",
-    "explore_link": "문서 탐색"
+    "explore_link": "문서 탐색",
+    "see_also": "또한 보기"
   },
   "it": {
     "company_name": "Blue",
@@ -307,7 +316,8 @@
     "close_mobile_menu": "Chiudi menu mobile",
     "dismiss_announcement": "Chiudi annuncio",
     "news_message": "📚 Nuovo sito web e documentazione! Tutto quello che devi sapere su Blue in un unico posto.",
-    "explore_link": "Esplora documentazione"
+    "explore_link": "Esplora documentazione",
+    "see_also": "Vedi anche"
   },
   "id": {
     "company_name": "Blue",
@@ -338,7 +348,8 @@
     "close_mobile_menu": "Tutup menu mobile",
     "dismiss_announcement": "Tutup pengumuman",
     "news_message": "📚 Website dan dokumentasi baru! Semua yang perlu Anda ketahui tentang Blue dalam satu tempat.",
-    "explore_link": "Jelajahi dokumentasi"
+    "explore_link": "Jelajahi dokumentasi",
+    "see_also": "Lihat juga"
   },
   "nl": {
     "company_name": "Blue",
@@ -369,7 +380,8 @@
     "close_mobile_menu": "Mobiel menu sluiten",
     "dismiss_announcement": "Aankondiging sluiten",
     "news_message": "📚 Nieuwe website en documentatie! Alles wat je moet weten over Blue op één plek.",
-    "explore_link": "Documentatie verkennen"
+    "explore_link": "Documentatie verkennen",
+    "see_also": "Zie ook"
   },
   "pl": {
     "company_name": "Blue",
@@ -400,7 +412,8 @@
     "close_mobile_menu": "Zamknij menu mobilne",
     "dismiss_announcement": "Zamknij ogłoszenie",
     "news_message": "📚 Nowa strona internetowa i dokumentacja! Wszystko, co musisz wiedzieć o Blue w jednym miejscu.",
-    "explore_link": "Przeglądaj dokumentację"
+    "explore_link": "Przeglądaj dokumentację",
+    "see_also": "Zobacz także"
   },
   "zh-TW": {
     "company_name": "Blue",
@@ -431,7 +444,8 @@
     "close_mobile_menu": "關閉手機選單",
     "dismiss_announcement": "關閉公告",
     "news_message": "📚 全新網站和文件！在一個地方了解關於 Blue 的所有資訊。",
-    "explore_link": "瀏覽文件"
+    "explore_link": "瀏覽文件",
+    "see_also": "另見"
   },
   "sv": {
     "company_name": "Blue",
@@ -462,7 +476,8 @@
     "close_mobile_menu": "Stäng mobilmeny",
     "dismiss_announcement": "Stäng meddelande",
     "news_message": "📚 Ny webbplats och dokumentation! Allt du behöver veta om Blue på ett ställe.",
-    "explore_link": "Utforska dokumentation"
+    "explore_link": "Utforska dokumentation",
+    "see_also": "Se även"
   },
   "km": {
     "company_name": "Blue",
@@ -493,6 +508,7 @@
     "close_mobile_menu": "បិទម៉ឺនុយទូរសព្ទ",
     "dismiss_announcement": "បិទការប្រកាស",
     "news_message": "📚 គេហទំព័រ និងឯកសារថ្មី! អ្វីៗទាំងអស់ដែលអ្នកត្រូវដឹងអំពី Blue នៅកន្លែងតែមួយ។",
-    "explore_link": "មើលឯកសារ"
+    "explore_link": "មើលឯកសារ",
+    "see_also": "មើលផងដែរ"
   }
 }
