@@ -213,22 +213,20 @@ func main() {
 	logger.Log(web.LogInit, "✅", "Completed", "Server ready", time.Since(logger.GetStartTime()))
 
 	// Bind to all network interfaces for production environments like Render
-	host := os.Getenv("HOST")
-	if host == "" {
-		// Default to 0.0.0.0 to work with cloud providers
-		host = "0.0.0.0"
-		if os.Getenv("ENV") != "production" {
-			// Will be shown in final banner
-		}
+	// Render requires binding to 0.0.0.0 explicitly
+	addr := ":" + port  // This binds to 0.0.0.0 by default
+	if os.Getenv("ENV") == "production" || os.Getenv("RENDER") == "true" {
+		// Explicitly bind to 0.0.0.0 for Render
+		addr = "0.0.0.0:" + port
 	}
 
 	// Final server info banner
 	fmt.Println("================================================================================")
-	fmt.Printf("🚀 Server running at http://%s:%s\n", host, port)
+	fmt.Printf("🚀 Server running on port %s\n", port)
 	if os.Getenv("ENV") != "production" {
 		fmt.Printf("🌐 Development: http://%s:%s\n", getLocalIP(), port)
 	}
 	fmt.Println("================================================================================")
 	
-	log.Fatal(http.ListenAndServe(host+":"+port, nil))
+	log.Fatal(http.ListenAndServe(addr, nil))
 }
