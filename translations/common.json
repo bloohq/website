@@ -27,8 +27,8 @@
     "open_mobile_menu": "Open mobile menu",
     "close_mobile_menu": "Close mobile menu",
     "dismiss_announcement": "Dismiss announcement",
-    "news_message": "📚 New website and documentation! Everything you need to know about Blue in one place.",
-    "explore_link": "Explore docs",
+    "news_message": "Blue is evolving into the next generation of process management.",
+    "explore_link": "Learn more",
     "see_also": "See also"
   },
   "es": {
@@ -59,8 +59,8 @@
     "open_mobile_menu": "Abrir menú móvil",
     "close_mobile_menu": "Cerrar menú móvil",
     "dismiss_announcement": "Descartar anuncio",
-    "news_message": "📚 ¡Nuevo sitio web y documentación! Todo lo que necesitas saber sobre Blue en un solo lugar.",
-    "explore_link": "Explorar documentación",
+    "news_message": "Blue está evolucionando hacia la próxima generación de gestión de procesos.",
+    "explore_link": "Saber más",
     "see_also": "Ver también"
   },
   "zh": {
@@ -91,8 +91,8 @@
     "open_mobile_menu": "打开手机菜单",
     "close_mobile_menu": "关闭手机菜单",
     "dismiss_announcement": "关闭公告",
-    "news_message": "📚 全新网站和文档！在一个地方了解关于 Blue 的一切信息。",
-    "explore_link": "浏览文档",
+    "news_message": "Blue 正在向下一代流程管理进化。",
+    "explore_link": "了解更多",
     "see_also": "另请参阅"
   },
   "fr": {
@@ -123,8 +123,8 @@
     "open_mobile_menu": "Ouvrir le menu mobile",
     "close_mobile_menu": "Fermer le menu mobile",
     "dismiss_announcement": "Ignorer l'annonce",
-    "news_message": "📚 Nouveau site web et documentation ! Tout ce que vous devez savoir sur Blue en un seul endroit.",
-    "explore_link": "Explorer la documentation",
+    "news_message": "Blue évolue vers la prochaine génération de gestion des processus.",
+    "explore_link": "En savoir plus",
     "see_also": "Voir aussi"
   },
   "de": {
@@ -155,8 +155,8 @@
     "open_mobile_menu": "Mobile Menü öffnen",
     "close_mobile_menu": "Mobile Menü schließen",
     "dismiss_announcement": "Ankündigung schließen",
-    "news_message": "📚 Neue Website und Dokumentation! Alles was Sie über Blue wissen müssen an einem Ort.",
-    "explore_link": "Dokumentation erkunden",
+    "news_message": "Blue entwickelt sich zur nächsten Generation des Prozessmanagements.",
+    "explore_link": "Mehr erfahren",
     "see_also": "Siehe auch"
   },
   "ja": {
@@ -187,8 +187,8 @@
     "open_mobile_menu": "モバイルメニューを開く",
     "close_mobile_menu": "モバイルメニューを閉じる",
     "dismiss_announcement": "お知らせを閉じる",
-    "news_message": "📚 新しいウェブサイトとドキュメント！Blue について知る必要があることすべてが一箇所に。",
-    "explore_link": "ドキュメントを見る",
+    "news_message": "Blue は次世代のプロセス管理へと進化しています。",
+    "explore_link": "詳細を見る",
     "see_also": "参照"
   },
   "pt": {
@@ -219,8 +219,8 @@
     "open_mobile_menu": "Abrir menu móvel",
     "close_mobile_menu": "Fechar menu móvel",
     "dismiss_announcement": "Dispensar anúncio",
-    "news_message": "📚 Novo site e documentação! Tudo o que você precisa saber sobre Blue em um só lugar.",
-    "explore_link": "Explorar documentação",
+    "news_message": "Blue está evoluindo para a próxima geração de gerenciamento de processos.",
+    "explore_link": "Saiba mais",
     "see_also": "Veja também"
   },
   "ru": {
@@ -251,8 +251,8 @@
     "open_mobile_menu": "Открыть мобильное меню",
     "close_mobile_menu": "Закрыть мобильное меню",
     "dismiss_announcement": "Закрыть объявление",
-    "news_message": "📚 Новый сайт и документация! Всё что нужно знать о Blue в одном месте.",
-    "explore_link": "Изучить документацию",
+    "news_message": "Blue развивается в следующее поколение управления процессами.",
+    "explore_link": "Узнать больше",
     "see_also": "Смотрите также"
   },
   "ko": {
@@ -283,8 +283,8 @@
     "open_mobile_menu": "모바일 메뉴 열기",
     "close_mobile_menu": "모바일 메뉴 닫기",
     "dismiss_announcement": "공지사항 닫기",
-    "news_message": "📚 새로운 웹사이트와 문서! Blue에 대해 알아야 할 모든 것을 한 곳에서.",
-    "explore_link": "문서 탐색",
+    "news_message": "Blue는 차세대 프로세스 관리로 진화하고 있습니다.",
+    "explore_link": "더 알아보기",
     "see_also": "또한 보기"
   },
   "it": {
@@ -315,8 +315,8 @@
     "open_mobile_menu": "Apri menu mobile",
     "close_mobile_menu": "Chiudi menu mobile",
     "dismiss_announcement": "Chiudi annuncio",
-    "news_message": "📚 Nuovo sito web e documentazione! Tutto quello che devi sapere su Blue in un unico posto.",
-    "explore_link": "Esplora documentazione",
+    "news_message": "Blue si sta evolvendo nella prossima generazione di gestione dei processi.",
+    "explore_link": "Scopri di più",
     "see_also": "Vedi anche"
   },
   "id": {
@@ -347,8 +347,8 @@
     "open_mobile_menu": "Buka menu mobile",
     "close_mobile_menu": "Tutup menu mobile",
     "dismiss_announcement": "Tutup pengumuman",
-    "news_message": "📚 Website dan dokumentasi baru! Semua yang perlu Anda ketahui tentang Blue dalam satu tempat.",
-    "explore_link": "Jelajahi dokumentasi",
+    "news_message": "Blue berkembang menjadi generasi berikutnya dari manajemen proses.",
+    "explore_link": "Pelajari lebih lanjut",
     "see_also": "Lihat juga"
   },
   "nl": {
@@ -379,8 +379,8 @@
     "open_mobile_menu": "Mobiel menu openen",
     "close_mobile_menu": "Mobiel menu sluiten",
     "dismiss_announcement": "Aankondiging sluiten",
-    "news_message": "📚 Nieuwe website en documentatie! Alles wat je moet weten over Blue op één plek.",
-    "explore_link": "Documentatie verkennen",
+    "news_message": "Blue evolueert naar de volgende generatie procesmanagement.",
+    "explore_link": "Meer informatie",
     "see_also": "Zie ook"
   },
   "pl": {
@@ -411,8 +411,8 @@
     "open_mobile_menu": "Otwórz menu mobilne",
     "close_mobile_menu": "Zamknij menu mobilne",
     "dismiss_announcement": "Zamknij ogłoszenie",
-    "news_message": "📚 Nowa strona internetowa i dokumentacja! Wszystko, co musisz wiedzieć o Blue w jednym miejscu.",
-    "explore_link": "Przeglądaj dokumentację",
+    "news_message": "Blue ewoluuje w kierunku nowej generacji zarządzania procesami.",
+    "explore_link": "Dowiedz się więcej",
     "see_also": "Zobacz także"
   },
   "zh-TW": {
@@ -443,8 +443,8 @@
     "open_mobile_menu": "打開手機選單",
     "close_mobile_menu": "關閉手機選單",
     "dismiss_announcement": "關閉公告",
-    "news_message": "📚 全新網站和文件！在一個地方了解關於 Blue 的所有資訊。",
-    "explore_link": "瀏覽文件",
+    "news_message": "Blue 正在向下一代流程管理進化。",
+    "explore_link": "了解更多",
     "see_also": "另見"
   },
   "sv": {
@@ -475,8 +475,8 @@
     "open_mobile_menu": "Öppna mobilmeny",
     "close_mobile_menu": "Stäng mobilmeny",
     "dismiss_announcement": "Stäng meddelande",
-    "news_message": "📚 Ny webbplats och dokumentation! Allt du behöver veta om Blue på ett ställe.",
-    "explore_link": "Utforska dokumentation",
+    "news_message": "Blue utvecklas till nästa generation av processhantering.",
+    "explore_link": "Läs mer",
     "see_also": "Se även"
   },
   "km": {
@@ -507,8 +507,8 @@
     "open_mobile_menu": "បើកម៉ឺនុយទូរសព្ទ",
     "close_mobile_menu": "បិទម៉ឺនុយទូរសព្ទ",
     "dismiss_announcement": "បិទការប្រកាស",
-    "news_message": "📚 គេហទំព័រ និងឯកសារថ្មី! អ្វីៗទាំងអស់ដែលអ្នកត្រូវដឹងអំពី Blue នៅកន្លែងតែមួយ។",
-    "explore_link": "មើលឯកសារ",
+    "news_message": "Blue កំពុងវិវត្តន៍ទៅកាន់ជំនាន់ថ្មីនៃការគ្រប់គ្រងដំណើរការ។",
+    "explore_link": "ស្វែងយល់បន្ថែម",
     "see_also": "មើលផងដែរ"
   }
 }
