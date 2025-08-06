@@ -205,7 +205,7 @@ window.SPAUtils = {
         }
 
         // Re-initialize Alpine.js components with preserved state
-        setTimeout(() => {
+        setTimeout(async () => {
             // Re-initialize Alpine on updated elements
             componentsToUpdate.forEach(component => {
                 const element = document.querySelector(component.selector);
@@ -267,7 +267,7 @@ window.SPAUtils = {
         currentMain.style.transition = 'opacity 50ms ease-out';
         
         // Update content after very brief fade
-        setTimeout(() => {
+        setTimeout(async () => {
             currentMain.innerHTML = newMain.innerHTML;
             // Instant fade in
             currentMain.style.opacity = '1';
