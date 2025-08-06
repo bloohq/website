@@ -120,3 +120,4 @@ web/public/insights/no-category-no-tags.png
 web/public/insights/new-article.png
 web/public/insights/medium-article.png
 web/public/insights/future-article.png
+cmd/generate-docs-links/documentation-links.md
