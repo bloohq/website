@@ -15,8 +15,13 @@
         document.addEventListener('alpine:init', () => {
             Alpine.store('aiSidebar', {
                 open: false,
+                expanded: sessionStorage.getItem('aiSidebarExpanded') === 'true',
                 toggle() {
                     this.open = !this.open;
+                },
+                toggleExpanded() {
+                    this.expanded = !this.expanded;
+                    sessionStorage.setItem('aiSidebarExpanded', this.expanded);
                 }
             });
         });
@@ -24,7 +29,7 @@
     
     <!-- Wrapper for entire website content that will be width-constrained -->
     <div class="transition-all duration-300 ease-out"
-         :style="$store.aiSidebar.open ? 'width: calc(100% - 384px)' : 'width: 100%'"
+         :style="$store.aiSidebar.open ? ($store.aiSidebar.expanded ? 'width: calc(100% - 768px)' : 'width: calc(100% - 384px)') : 'width: 100%'"
          style="min-height: 100vh; position: relative;">
     
     {{$topNewsData := dict
@@ -264,7 +269,8 @@
          x-transition:leave="transition ease-in duration-200"
          x-transition:leave-start="translate-x-0"
          x-transition:leave-end="translate-x-full"
-         class="fixed right-0 top-0 bottom-0 w-96 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 z-[100] flex flex-col"
+         class="fixed right-0 top-0 bottom-0 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 z-[100] flex flex-col transition-all duration-300"
+         :style="'width: ' + ($store.aiSidebar.expanded ? '768px' : '384px')"
          @click.outside="$store.aiSidebar.open = false"
          @keydown.escape.window="$store.aiSidebar.open = false"
          x-data="{
@@ -384,6 +390,18 @@
                             title="Clear conversation">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                    </button>
+                    <button @click="$store.aiSidebar.toggleExpanded()"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                            :title="$store.aiSidebar.expanded ? 'Collapse chat' : 'Expand chat'">
+                        <!-- Expand icon (arrows pointing outward) -->
+                        <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                        </svg>
+                        <!-- Collapse icon (arrows pointing inward) -->
+                        <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l4-4m0 0V9m0-4H5m14 10l-4 4m0 0v-4m0 4h4M5 15l4 4m0-4H5m14-6l-4-4m4 0h-4m0 0v4"></path>
                         </svg>
                     </button>
                     <button @click="$store.aiSidebar.open = false"

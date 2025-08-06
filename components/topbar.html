@@ -106,7 +106,7 @@
             scrolled && !($store.aiSidebar && $store.aiSidebar.open) ? 'xl:w-[85%] 2xl:w-[80%]' : '',
             $store.aiSidebar && $store.aiSidebar.open ? '!left-0 !right-auto !translate-x-0' : ''
         ]"
-        :style="(scrolled && !($store.aiSidebar && $store.aiSidebar.open) ? 'box-shadow: 0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);' : '') + ($store.aiSidebar && $store.aiSidebar.open ? ' width: calc(100% - 384px);' : '')"
+        :style="(scrolled && !($store.aiSidebar && $store.aiSidebar.open) ? 'box-shadow: 0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);' : '') + ($store.aiSidebar && $store.aiSidebar.open ? ($store.aiSidebar.expanded ? ' width: calc(100% - 768px);' : ' width: calc(100% - 384px);') : '')"
         @keydown.escape="mobileMenuOpen = false">
     <div class="relative flex items-center justify-between px-4 h-full">
         <!-- Logo and Toggle -->
