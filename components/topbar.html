@@ -340,14 +340,20 @@
                             window.location.href = '/contact';
                         }
                     } else if (event.key === 'Enter') {
-                        event.preventDefault();
-                        // Check if user is logged in
-                        if (window.AuthCookie && window.AuthCookie.isLoggedIn()) {
-                            // Open app for logged in users
-                            window.open('https://app.blue.cc', '_blank');
-                        } else {
-                            // Sign up for non-logged in users
-                            openSignUp();
+                        // Check if AI sidebar is open or if we're typing in it
+                        const aiSidebarOpen = window.Alpine && window.Alpine.store('aiSidebar') && window.Alpine.store('aiSidebar').open;
+                        const isInAISidebar = activeElement.closest('.fixed.right-0.top-0.bottom-0.z-\\[100\\]') !== null;
+                        
+                        if (!aiSidebarOpen && !isInAISidebar) {
+                            event.preventDefault();
+                            // Check if user is logged in
+                            if (window.AuthCookie && window.AuthCookie.isLoggedIn()) {
+                                // Open app for logged in users
+                                window.open('https://app.blue.cc', '_blank');
+                            } else {
+                                // Sign up for non-logged in users
+                                openSignUp();
+                            }
                         }
                     }
                 }
