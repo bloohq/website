@@ -15,6 +15,49 @@
          input: '',
          threadId: sessionStorage.getItem('aiThreadId') || null,
          loading: false,
+         loadingText: '',
+         loadingInterval: null,
+         loadingWords: [
+             'Processing...',
+             'Thinking...',
+             'Analyzing...',
+             'Computing...',
+             'Researching...',
+             'Contemplating...',
+             'Evaluating...',
+             'Considering...',
+             'Formulating...',
+             'Preparing response...',
+             'Compiling thoughts...',
+             'Parsing request...',
+             'Synthesizing...',
+             'Optimizing response...',
+             'Calculating...',
+             'Querying knowledge...',
+             'Indexing information...',
+             'Decoding request...',
+             'Pondering deeply...',
+             'Brainstorming...',
+             'Crafting response...',
+             'Consulting the docs...',
+             'Reading the manual...',
+             'Checking my notes...',
+             'Double-checking facts...',
+             'Gathering insights...',
+             'Connecting dots...',
+             'Finding patterns...',
+             'Brewing ideas...',
+             'Dusting off knowledge...',
+             'Warming up neurons...',
+             'Flexing AI muscles...',
+             'Sharpening digital pencils...',
+             'Adjusting virtual glasses...',
+             'Rolling up sleeves...',
+             'Cracking digital knuckles...',
+             'Putting on thinking cap...',
+             'Consulting crystal ball...'
+         ],
+         lastLoadingIndex: -1,
          
          init() {
              // Restore scroll position
@@ -22,6 +65,30 @@
                  const container = this.$refs.messagesContainer;
                  container.scrollTop = container.scrollHeight;
              });
+         },
+         
+         getRandomLoadingText() {
+             let newIndex;
+             do {
+                 newIndex = Math.floor(Math.random() * this.loadingWords.length);
+             } while (newIndex === this.lastLoadingIndex && this.loadingWords.length > 1);
+             this.lastLoadingIndex = newIndex;
+             return this.loadingWords[newIndex];
+         },
+         
+         startLoadingAnimation() {
+             this.loadingText = this.getRandomLoadingText();
+             this.loadingInterval = setInterval(() => {
+                 this.loadingText = this.getRandomLoadingText();
+             }, 3000);
+         },
+         
+         stopLoadingAnimation() {
+             if (this.loadingInterval) {
+                 clearInterval(this.loadingInterval);
+                 this.loadingInterval = null;
+             }
+             this.loadingText = '';
          },
          
          saveSession() {
@@ -37,6 +104,7 @@
              const message = this.input.trim();
              this.input = '';
              this.loading = true;
+             this.startLoadingAnimation();
              
              // Add user message
              this.messages.push({
@@ -97,6 +165,7 @@
                  });
              } finally {
                  this.loading = false;
+                 this.stopLoadingAnimation();
                  this.$nextTick(() => {
                      const container = this.$refs.messagesContainer;
                      container.scrollTop = container.scrollHeight;
@@ -184,11 +253,10 @@
         
         <!-- Loading indicator -->
         <div x-show="loading" class="flex justify-start">
-            <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-3">
-                <div class="flex space-x-2">
-                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
-                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
-                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 min-w-[120px]">
+                <div class="text-sm text-gray-600 dark:text-gray-300 italic transition-opacity duration-500"
+                     x-text="loadingText"
+                     :class="loadingText ? 'opacity-100' : 'opacity-0'">
                 </div>
             </div>
         </div>
