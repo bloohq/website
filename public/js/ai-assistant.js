@@ -41,8 +41,52 @@ console.log('[AI Assistant] Script loading...');
         // Process italic text
         content = content.replace(/\*([^*]+)\*/g, '<em>$1</em>');
         
-        // Process links
-        content = content.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" class="text-brand-blue hover:underline" target="_blank" rel="noopener">$1</a>');
+        // Process markdown links [text](url)
+        content = content.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, function(match, text, url) {
+            // Unescape the URL if it was escaped
+            url = url.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"')
+                    .replace(/&#39;/g, "'");
+            
+            // Check if it's an internal link (starts with / or is a blue.cc URL)
+            const isInternal = url.startsWith('/') || url.includes('blue.cc');
+            
+            if (isInternal) {
+                // Internal links use SPA navigation
+                return `<a href="${url}" class="text-brand-blue hover:underline spa-link">${text}</a>`;
+            } else {
+                // External links still open in new tab
+                return `<a href="${url}" class="text-brand-blue hover:underline" target="_blank" rel="noopener">${text}</a>`;
+            }
+        });
+        
+        // Process naked URLs (http://, https://, ftp://, www.)
+        // Negative lookbehind to avoid double-processing URLs already in anchor tags
+        content = content.replace(/(?<!href=["'])(?<!href=)(?<!>)(https?:\/\/[^\s<]+|ftp:\/\/[^\s<]+|www\.[^\s<]+)/g, function(match) {
+            // Add protocol if missing (for www. links)
+            const url = match.startsWith('www.') ? 'https://' + match : match;
+            // Unescape if needed
+            const cleanUrl = url.replace(/&amp;/g, '&')
+                               .replace(/&lt;/g, '<')
+                               .replace(/&gt;/g, '>')
+                               .replace(/&quot;/g, '"')
+                               .replace(/&#39;/g, "'");
+            // Truncate display text if URL is too long
+            const displayText = match.length > 50 ? match.substring(0, 47) + '...' : match;
+            
+            // Check if it's an internal link
+            const isInternal = cleanUrl.includes('blue.cc');
+            
+            if (isInternal) {
+                // Internal links use SPA navigation
+                return `<a href="${cleanUrl}" class="text-brand-blue hover:underline spa-link">${displayText}</a>`;
+            } else {
+                // External links still open in new tab
+                return `<a href="${cleanUrl}" class="text-brand-blue hover:underline" target="_blank" rel="noopener">${displayText}</a>`;
+            }
+        });
         
         // Process headings
         content = content.replace(/^### (.+)$/gm, '<h3 class="text-base font-semibold mt-3 mb-2">$1</h3>');
