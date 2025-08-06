@@ -9,7 +9,6 @@
      x-transition:leave-end="translate-x-full"
      class="fixed right-0 top-0 bottom-0 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 z-[100] flex flex-col transition-all duration-300"
      :style="'width: ' + ($store.aiSidebar.expanded ? '768px' : '384px')"
-     @click.outside="$store.aiSidebar.open = false"
      @keydown.escape.window="$store.aiSidebar.open = false"
      x-data="{
          messages: JSON.parse(sessionStorage.getItem('aiMessages') || '[]'),
