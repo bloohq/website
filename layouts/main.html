@@ -29,8 +29,8 @@
     
     <!-- Wrapper for entire website content that will be width-constrained -->
     <div class="transition-all duration-300 ease-out"
-         :style="$store.aiSidebar.open ? ($store.aiSidebar.expanded ? 'width: calc(100% - 768px)' : 'width: calc(100% - 384px)') : 'width: 100%'"
-         style="min-height: 100vh; position: relative;">
+         :class="$store.aiSidebar.open ? 'overflow-y-auto' : ''"
+         :style="$store.aiSidebar.open ? ($store.aiSidebar.expanded ? 'width: calc(100% - 768px); height: 100vh; position: fixed; left: 0; top: 0;' : 'width: calc(100% - 384px); height: 100vh; position: fixed; left: 0; top: 0;') : 'width: 100%; min-height: 100vh; position: relative;'">
     
     {{$topNewsData := dict
         "message" (t "common.news_message")
