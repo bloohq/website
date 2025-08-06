@@ -121,29 +121,13 @@
         "title": "Conditional Automations",
         "description": "Add And/Or logic to automation triggers"
       },
-      "zapier_integration": {
-        "title": "Zapier Integration",
-        "description": "Connect Blue with thousands of apps through Zapier"
-      },
       "relative_date_triggers": {
         "title": "Relative Date Triggers",
         "description": "Trigger automations based on days before or after due dates"
       },
-      "enhanced_cover_images": {
-        "title": "Enhanced Cover Images",
-        "description": "Better image handling with cropping and optimization features"
-      },
       "custom_date_automations": {
         "title": "Custom Date Automations",
         "description": "Create automations based on custom date field values"
-      },
-      "file_renaming": {
-        "title": "File Renaming",
-        "description": "Rename uploaded files directly within Blue"
-      },
-      "granular_deletion_permissions": {
-        "title": "Granular Deletion Permissions",
-        "description": "Control record deletion rights for specific user roles"
       },
       "owner_project_access": {
         "title": "Owner Project Access",
