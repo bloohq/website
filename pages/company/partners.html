@@ -46,6 +46,38 @@
         </div>
     </section>
 
+    <!-- Awards & Recognition -->
+    <section id="awards-recognition" class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4 text-center">Partner with an award-winning platform</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12 mx-auto text-center">Join a partner program backed by industry recognition and customer satisfaction</p>
+        
+        {{$awardsData := dict
+            "awards" (slice
+                (dict
+                    "name" "High Performer G2 Winter 2025"
+                    "src" "/awards/high-performer-g2-winter-2025.png"
+                )
+                (dict
+                    "name" "Momentum Leader G2 Winter 2025"
+                    "src" "/awards/momentum-leader-g2-winter-2025.png"
+                )
+                (dict
+                    "name" "Crozdesk Happiest Users"
+                    "src" "/awards/crozdesk-happiest-users-badge.webp"
+                )
+                (dict
+                    "name" "Crozdesk Quality Choice"
+                    "src" "/awards/crozdesk-quality-choice-badge.webp"
+                )
+                (dict
+                    "name" "Crozdesk Trusted Vendor"
+                    "src" "/awards/crozdesk-trusted-vendor-badge.webp"
+                )
+            )
+        }}
+        {{template "awards-grid" $awardsData}}
+    </section>
+
     <!-- Value Proposition Section -->
     <section id="why-partner" class="mb-16">
         {{$valuePropsData := dict
@@ -83,7 +115,7 @@
     </section>
 
     <!-- Customer Logos Section -->
-    <section id="trusted-by" class="mb-16">
+    <section class="mb-16">
         {{$logoData := dict
             "title" "Trusted by more than 17,000 teams"
             "subtitle" "Join our partner network to serve enterprises already using Blue worldwide"
@@ -198,7 +230,7 @@
     </section>
 
     <!-- Integration Partners -->
-    <section id="integration-partners" class="mb-16">
+    <section class="mb-16">
         {{$integrationData := dict
             "title" "Connect with 7,000+ tools through our integration partners"
             "subtitle" "Help your clients integrate Blue with their existing tech stack seamlessly"
@@ -258,6 +290,28 @@
         }}
         
         {{template "features-grid-simple" $industriesData}}
+    </section>
+
+    <!-- Platform Scale Stats -->
+    <section id="platform-scale" class="mb-16">
+        {{$platformStatsData := dict
+            "Title" "Built to operate at scale"
+            "Stats" (slice
+                (dict
+                    "Number" "17000+"
+                    "Description" "Organizations using Blue"
+                )
+                (dict
+                    "Number" "5M+"
+                    "Description" "Processes tracked"
+                )
+                (dict
+                    "Number" "500M+"
+                    "Description" "Records managed"
+                )
+            )
+        }}
+        {{template "stats-section" $platformStatsData}}
     </section>
 
     <!-- Ideal Customer Profile -->
@@ -398,8 +452,67 @@
         </div>
     </section>
 
+    <!-- CEO Message on Partnerships -->
+    <section id="CEO-message" class="mb-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="border-4 border-brand-blue bg-blue-50 dark:bg-gray-800 dark:border-brand-blue/50 rounded-xl p-8 relative">
+                <!-- CEO Profile Photo -->
+                <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                    <img src="/pictures/manny.jpeg" alt="Emanuele Faja" class="w-24 h-24 rounded-full border-4 border-white dark:border-gray-800 shadow-lg">
+                </div>
+                
+                <!-- Message Content -->
+                <div class="pt-16 text-center mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">A Message from Our CEO</h2>
+                    <h3 class="text-xl font-medium text-brand-blue mb-6">On Building Enduring Partnerships</h3>
+                </div>
+                
+                <div class="prose prose-gray dark:prose-invert prose-lg max-w-none">
+                    <p class="text-lg mb-6">
+                        Dear Future Partner,
+                    </p>
+                    
+                    <p class="mb-6">
+                        When we started Blue, we had a vision: to create the world's most flexible process management platform. But we quickly realized that achieving this vision requires more than just great technology—it requires great partnerships.
+                    </p>
+                    
+                    <p class="mb-6">
+                        Our partner program isn't just about revenue sharing or reselling software. It's about creating enduring, win-win relationships where both parties grow stronger together. We believe in partnerships where your success is our success, and where we invest in each other's growth for the long term.
+                    </p>
+                    
+                    <p class="mb-6">
+                        We're not looking for hundreds of partners. We're looking for the right partners—those who share our commitment to transforming how organizations work. Partners who see beyond quick wins to build lasting client relationships. Partners who view Blue not as just another tool, but as a platform for delivering transformational value.
+                    </p>
+                    
+                    <p class="mb-6">
+                        That's why we offer industry-leading revenue shares, dedicated engineering support, and true territory ownership. When you bring a client to Blue, that relationship is yours—forever. We don't compete with our partners; we empower them. Your clients remain your clients, and you continue earning from their success as they grow with Blue.
+                    </p>
+                    
+                    <p class="mb-6">
+                        If you're a consultancy, system integrator, or transformation specialist who believes in doing right by your clients, who values long-term relationships over short-term gains, and who wants a true technology partner rather than just a vendor—then let's talk.
+                    </p>
+                    
+                    <p class="mb-8">
+                        Together, we can help organizations worldwide work better, smarter, and more efficiently. And in doing so, we'll build something remarkable—not just for our companies, but for the thousands of organizations that depend on us.
+                    </p>
+                    
+                    <p class="mb-6">
+                        Looking forward to building something great together,
+                    </p>
+                </div>
+                
+                <!-- Signature -->
+                <div class="mt-8">
+                    <img src="/efsig.png" alt="Emanuele Faja Signature" class="h-12 mb-4 dark:invert">
+                    <p class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">Emanuele Faja</p>
+                    <p class="text-base text-gray-600 dark:text-gray-400">CEO & Co-Founder, Blue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Partner Testimonial -->
-    <section id="partner-testimonial" class="mb-16">
+    <section class="mb-16">
         {{template "testimonial-single" 
             dict 
                 "ImageUrl" "/customers/ivan-keogh.jpeg"
@@ -423,7 +536,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faqs" class="mb-16">
+    <section id="FAQ" class="mb-16">
         
         {{$faqData := dict
             "categories" (slice
