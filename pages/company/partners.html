@@ -1,58 +1,92 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Earn up to 42% lifetime revenue share." 
-            "Subtitle" "Join the Blue Partner Program and earn recurring income by sharing Blue with your audience." 
+            "Title" "Blue Certified Partner Program" 
+            "Subtitle" "Be the first to bring Blue's enterprise process management platform to organizations worldwide." 
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Stats Section -->
+    <!-- Partner Badge Display -->
+    <section class="mb-16 text-center">
+        <div class="inline-block">
+            <!-- Blue Certified Partner Badge -->
+            <div class="border-4 border-brand-blue rounded-lg shadow-lg overflow-hidden w-64">
+                <!-- Blue Top Section with Logo -->
+                <div class="bg-brand-blue p-6 flex justify-center">
+                    <img src="/logo/Blue logo (white).svg" alt="Blue" class="h-12 w-auto">
+                </div>
+                
+                <!-- White/Gray Bottom Section -->
+                <div class="bg-white dark:bg-gray-800 p-6">
+                    <!-- Text -->
+                    <div class="text-center mb-4">
+                        <div class="text-xl font-bold text-gray-900 dark:text-gray-100">Certified Partner</div>
+                    </div>
+                    
+                    <!-- Five Stars -->
+                    <div class="flex justify-center gap-1">
+                        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#eab308">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#eab308">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#eab308">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#eab308">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#eab308">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Testimonial -->
     <section class="mb-16">
-        {{$statsData := dict
-            "stats" (slice
-                (dict
-                    "label" "Lifetime revenue share"
-                    "value" "Up to 42%"
-                    "description" "Earn progressively more as you grow"
-                )
-                (dict
-                    "label" "Cookie attribution"
-                    "value" "180 days"
-                    "description" "Industry-leading attribution window"
-                )
-                (dict
-                    "label" "Minimum payout"
-                    "value" "$200"
-                    "description" "Monthly payments when you hit threshold"
-                )
-                (dict
-                    "label" "Time to approval"
-                    "value" "Instant"
-                    "description" "Start earning immediately"
-                )
-            )
+        {{template "testimonial-single" 
+            dict 
+                "ImageUrl" "/customers/ivan-keogh.jpeg"
+                "Quote" "As a Blue partner, we've been able to deliver incredible value to our enterprise clients. The platform's flexibility and Blue's partner support have been game-changing for our consulting practice."
+                "Name" "Ivan Keogh"
+                "Title" "CEO, Digital Transformation Consultancy"
+                "DesktopFontSize" "lg:text-lg"
         }}
-        
-        {{template "stats-section" $statsData}}
     </section>
 
     <!-- Value Proposition Section -->
     <section class="mb-16">
         {{$valuePropsData := dict
-            "Title" "Why partners love Blue"
-            "Description" "Join thousands of agencies, consultants, and influencers earning recurring income with Blue."
+            "Title" "Why become a Blue Certified Partner?"
+            "Description" "Join leading consultancies and integrators earning recurring revenue while transforming how enterprises work."
             "ValueProps" (slice
                 (dict
-                    "Title" "True lifetime commissions"
-                    "Description" "Earn recurring revenue for the entire customer lifetime, not just the first year."
+                    "Title" "50% lifetime revenue share"
+                    "Description" "Earn commissions for the entire customer lifetime, including all expansions and upgrades."
                 )
                 (dict
-                    "Title" "180-day cookie window"
-                    "Description" "Industry-leading attribution period gives your referrals time to convert."
+                    "Title" "Territory ownership"
+                    "Description" "First-come, first-serve customer ownership - your clients remain yours as long as they're active."
                 )
                 (dict
-                    "Title" "Instant approval"
-                    "Description" "No waiting, no applications. Sign up and start earning immediately."
+                    "Title" "Dedicated engineering support"
+                    "Description" "Get priority support from our engineering team for complex implementations."
+                )
+                (dict
+                    "Title" "White-label options"
+                    "Description" "Offer Blue under your own brand with custom domains and branding."
+                )
+                (dict
+                    "Title" "Early feature access"
+                    "Description" "Get exclusive access to new features before general availability."
+                )
+                (dict
+                    "Title" "Co-marketing opportunities"
+                    "Description" "Joint webinars, case studies, and marketing campaigns to drive growth."
                 )
             )
         }}
@@ -60,37 +94,251 @@
         {{template "value-propositions" $valuePropsData}}
     </section>
 
-    <!-- How It Works Section -->
+    <!-- Ideal Customer Profile -->
     <section class="mb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-medium text-gray-900 mb-12 text-center">How it works</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl font-semibold text-brand-blue">1</span>
-                    </div>
-                    <h3 class="text-xl font-medium mb-2">Sign up instantly</h3>
-                    <p class="text-gray-600">Create your partner account and get your unique tracking links immediately. No approval process needed.</p>
-                </div>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Who benefits from Blue?</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">Our sweet spot is organizations with complex processes that need structure and automation.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Company Size</h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>50-500 employees (primary focus)</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Growing mid-market companies</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Enterprise departments & divisions</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Distributed & remote teams</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Key Industries</h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Government & Public Sector</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Logistics & Supply Chain</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Construction & Engineering</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Manufacturing & Production</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Marketing Agencies</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Professional Services</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Types -->
+    <section class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">What kind of partners are we looking for?</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">We're seeking experienced professionals who understand enterprise needs and can deliver transformation.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">System Integrators</h3>
+                <p class="text-gray-600 dark:text-gray-400">Large-scale implementation expertise across enterprise systems</p>
+            </div>
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Management Consultancies</h3>
+                <p class="text-gray-600 dark:text-gray-400">Strategic advisors driving organizational transformation</p>
+            </div>
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Digital Transformation Agencies</h3>
+                <p class="text-gray-600 dark:text-gray-400">Modernizing business processes through technology</p>
+            </div>
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Process Improvement Consultants</h3>
+                <p class="text-gray-600 dark:text-gray-400">Six Sigma, Lean, and operational excellence experts</p>
+            </div>
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Industry-Specific Consultants</h3>
+                <p class="text-gray-600 dark:text-gray-400">Deep vertical expertise in regulated industries</p>
+            </div>
+            <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">IT Services Firms</h3>
+                <p class="text-gray-600 dark:text-gray-400">Technical implementation and integration specialists</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Regions Map Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">We're seeking partners globally</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">Blue has customers in 126 countries. We're actively recruiting local partners to support our global expansion.</p>
+        
+        <div class="relative w-full max-w-6xl mx-auto" x-data="{ 
+            regions: [
+                { name: 'North America', x: 20, y: 30, priority: true },
+                { name: 'Europe', x: 50, y: 25, priority: true },
+                { name: 'Middle East', x: 60, y: 40, priority: true },
+                { name: 'Asia Pacific', x: 80, y: 45, priority: true },
+                { name: 'Latin America', x: 25, y: 60, priority: false },
+                { name: 'Africa', x: 52, y: 55, priority: false },
+                { name: 'Australia', x: 85, y: 70, priority: false }
+            ]
+        }">
+            <!-- World Map SVG -->
+            <div class="relative">
+                <img src="/pictures/worldmap.svg" alt="World Map" class="w-full h-auto opacity-20 dark:opacity-40 dark:invert">
                 
-                <!-- Step 2 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl font-semibold text-brand-blue">2</span>
+                <!-- Region Markers -->
+                <template x-for="region in regions" :key="region.name">
+                    <div :style="`left: ${region.x}%; top: ${region.y}%;`" 
+                         class="absolute transform -translate-x-1/2 -translate-y-1/2 group">
+                        <!-- Ping Animation for Priority Regions -->
+                        <span class="relative flex h-4 w-4">
+                            <span x-show="region.priority" class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" 
+                                  style="background-color: #00a0d2;"></span>
+                            <span class="relative inline-flex rounded-full h-4 w-4" 
+                                  :style="`background-color: ${region.priority ? '#00a0d2' : '#6b7280'};`"></span>
+                        </span>
+                        <!-- Region Label -->
+                        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 dark:bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                            <span x-text="region.name"></span>
+                            <span x-show="region.priority" class="text-xs text-blue-300 block">Priority Region</span>
+                            <svg class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px" width="8" height="4" viewBox="0 0 8 4">
+                                <path fill="currentColor" d="M0 0h8L4 4z"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-medium mb-2">Share with your audience</h3>
-                    <p class="text-gray-600">Recommend Blue through your content, consultations, or client work using your tracking links.</p>
+                </template>
+            </div>
+        </div>
+        
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">126</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Countries with customers</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">24+</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Languages supported</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">24/7</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Global support coverage</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">2</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Global data centers</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Benefits -->
+    <section class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Program Benefits</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">Blue Certified Partner Badge</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Display your certification and build trust with prospects</p>
                 </div>
-                
-                <!-- Step 3 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl font-semibold text-brand-blue">3</span>
-                    </div>
-                    <h3 class="text-xl font-medium mb-2">Earn lifetime commissions</h3>
-                    <p class="text-gray-600">Get paid monthly as your referrals use Blue. Your commission rate grows automatically up to 42%.</p>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">Partner Portal Access</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Dedicated portal with resources, training, and deal registration</p>
                 </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">Training & Certification Programs</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Comprehensive training on implementation and best practices</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">Demo Environment</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Full-featured demo account for presentations and POCs</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">Partner Directory Listing</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Get listed in our partner directory for lead generation</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">Dedicated Partner Success Manager</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Personal support for deals, implementations, and growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Certification Programs</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6">
+                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Blue Implementation Specialist</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Master the technical implementation of Blue for enterprise clients</p>
+                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Platform architecture</li>
+                    <li>• API integration</li>
+                    <li>• Security & compliance</li>
+                    <li>• Data migration</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6">
+                <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Blue Process Automation Expert</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Design and implement complex automation workflows</p>
+                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Workflow design</li>
+                    <li>• Automation rules</li>
+                    <li>• Custom fields & formulas</li>
+                    <li>• Integration patterns</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6">
+                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Blue Enterprise Architecture</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Design enterprise-scale Blue deployments</p>
+                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Solution architecture</li>
+                    <li>• Change management</li>
+                    <li>• Governance models</li>
+                    <li>• ROI optimization</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -100,10 +348,8 @@
         {{$firstCTA := dict
             "Title" "Start earning today."
             "Subtitle" "Join thousands of partners earning recurring income with the Blue Partner Program."
-            "SecondaryText" "Contact sales"
-            "SecondaryUrl" "/contact"
-            "PrimaryText" "Join now"
-            "PrimaryUrl" "https://partners.blue.cc"
+            "PrimaryText" "Contact us"
+            "PrimaryUrl" "/contact"
         }}
         
         {{template "dual-button-cta" $firstCTA}}
@@ -118,44 +364,40 @@
                     "name" "Frequently asked questions"
                     "questions" (slice
                         (dict
-                            "question" "How does the progressive commission structure work?"
-                            "answer" "You start earning commissions immediately, and your rate increases automatically based on the number of successful referrals. The more customers you bring, the higher your percentage grows, up to 42% lifetime revenue share. There's no need to negotiate—your rate increases automatically."
+                            "question" "What is the revenue share structure for system integrators?"
+                            "answer" "System integrators and management consultancies earn 50% of license fees for the entire customer lifetime. This includes all plan upgrades and expansions. The more enterprise customers you bring, the higher your earning potential grows."
                         )
                         (dict
-                            "question" "What does lifetime commission mean?"
-                            "answer" "You earn recurring commissions for as long as your referred customer remains a paying Blue subscriber. If they upgrade their plan, your commissions increase. You continue earning month after month, year after year, with no expiration date."
+                            "question" "What technical support do you provide for implementation projects?"
+                            "answer" "We provide dedicated engineering support for all your Blue implementation projects. This includes technical consultation, custom integration assistance, and ongoing support for your clients during and after deployment."
                         )
                         (dict
-                            "question" "How long is the attribution window?"
-                            "answer" "Blue offers an industry-leading 180-day cookie attribution window. This means if someone clicks your link and signs up anytime within the next 180 days, you get credit for the referral and earn commissions."
+                            "question" "How do you handle enterprise sales cycles and procurement processes?"
+                            "answer" "We work closely with your sales team to support enterprise deals, including custom proposals, security reviews, and procurement documentation. Our enterprise sales team can assist with complex negotiations and compliance requirements."
                         )
                         (dict
-                            "question" "When and how do I get paid?"
-                            "answer" "Payments are made monthly via bank transfer or PayPal. You need to reach a minimum threshold of $200 to receive payment. If you don't reach the threshold in a given month, your earnings roll over to the next month."
+                            "question" "What certification and training programs are available?"
+                            "answer" "We offer comprehensive Blue certification programs for your technical teams, including implementation training, best practices workshops, and ongoing education on new features and capabilities."
                         )
                         (dict
-                            "question" "Do I need to apply or get approved?"
-                            "answer" "No application or approval process is required. Simply sign up for the partner program and you can start earning immediately. We believe in making it easy for partners to get started."
+                            "question" "Can we white-label Blue for our clients?"
+                            "answer" "Yes, we offer white-labeling options for qualified system integrators and consultancies. This includes custom branding, dedicated support channels, and the ability to resell Blue under your own brand."
                         )
                         (dict
-                            "question" "Can I create multiple tracking links?"
-                            "answer" "Yes, you can create unlimited tracking links to monitor different campaigns, content pieces, or traffic sources. This helps you understand what's working and optimize your promotional efforts."
+                            "question" "What marketing and sales enablement resources do you provide?"
+                            "answer" "Partners receive access to enterprise-focused marketing materials, case studies, ROI calculators, and sales presentations. We also provide co-marketing opportunities and joint go-to-market support for qualified partners."
                         )
                         (dict
-                            "question" "What marketing support is available?"
-                            "answer" "All partners get access to marketing materials including banners, email templates, and content ideas. High-performing partners receive additional benefits like custom landing pages on blue.cc and dedicated support from our partner success team."
+                            "question" "How do you handle multi-year contracts and enterprise pricing?"
+                            "answer" "We support flexible enterprise pricing models including multi-year contracts, volume discounts, and custom pricing tiers. Our partner team works with you to structure deals that work for both your clients and your business model."
                         )
                         (dict
-                            "question" "Are there any restrictions on how I can promote Blue?"
-                            "answer" "We encourage ethical promotion that accurately represents Blue's features and benefits. We don't allow misleading claims, spam, or paid search ads on Blue's branded keywords. Beyond that, you're free to promote Blue in ways that work for your audience."
+                            "question" "What happens if a client wants to expand their Blue usage?"
+                            "answer" "You continue earning commissions on all expansions and upgrades. Whether it's adding more users, upgrading plans, or implementing additional modules, you maintain your revenue share on the entire customer relationship."
                         )
                         (dict
-                            "question" "Can I refer my own company?"
-                            "answer" "No, self-referrals are not eligible for commissions. The partner program is designed to reward you for bringing new customers to Blue, not for your own usage."
-                        )
-                        (dict
-                            "question" "What happens if a customer churns?"
-                            "answer" "If a referred customer cancels their subscription, you stop earning commissions from that customer. However, if they resubscribe within 180 days, your commissions automatically resume."
+                            "question" "Do you provide references and case studies for enterprise prospects?"
+                            "answer" "Yes, we provide access to customer references, detailed case studies, and success stories that demonstrate Blue's value in enterprise environments. We can also arrange customer testimonials for qualified prospects."
                         )
                     )
                 )
