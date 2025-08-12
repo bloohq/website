@@ -1,7 +1,7 @@
 ---
 title: ប្រាក់សាច់គឺជារដ្ឋាភិបាល
 description: ប្រាក់ចំណូលគឺជាផ្នែកសំខាន់បំផុតនៃការប្រតិបត្តិការ អាជីវកម្ម។ រៀនពីរបៀបគ្រប់គ្រងវាដើម្បីឲ្យអ្នកមានកម្រៃប្រតិបត្តិការល្អជានិច្ច។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder.
 

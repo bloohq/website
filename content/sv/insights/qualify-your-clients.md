@@ -1,7 +1,7 @@
 ---
 title: Kvalificera Dina Kunder
 description: Lär dig hur du hittar den bästa typen av kunder — de som är ett nöje att arbeta med och lönsamma.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

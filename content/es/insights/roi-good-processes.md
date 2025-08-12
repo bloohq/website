@@ -1,6 +1,6 @@
 ---
 title: El ROI de los Buenos Procesos Empresariales.
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Mejores procesos empresariales conducen a un mejor retorno de inversión (ROI). Aprenda cómo crear procesos empresariales mejorados que impulsen la rentabilidad.
 date: 2024-07-06
 ---

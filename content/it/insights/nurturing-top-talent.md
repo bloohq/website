@@ -1,8 +1,8 @@
 ---
 title: Coltivare i Migliori Talenti
 description: Attirare, sviluppare e mantenere i migliori talenti significa ottenere risultati migliori e meno mal di testa.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

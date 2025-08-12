@@ -1,7 +1,7 @@
 ---
 title: Работа с людьми
 description: Работа с клиентами и членами команды является ключом к росту успешного агентства.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

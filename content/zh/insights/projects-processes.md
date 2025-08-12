@@ -1,7 +1,7 @@
 ---
 title: 项目与流程
 description: 理解项目与流程之间的区别至关重要，这样您就能始终知道自己参与的是哪种类型的工作。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Escreva Propostas Vencedoras
 description: Escrever propostas vencedoras é a parte mais importante de administrar uma agência. Aprenda como fazer isso corretamente.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

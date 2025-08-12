@@ -1,7 +1,7 @@
 ---
 title: Brak Zasad Tutaj
 description: W tym przewodniku nie ma twardych zasad, są tylko refleksje i wskazówki, które możesz dostosować do swojej sytuacji.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

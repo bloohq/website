@@ -1,7 +1,7 @@
 ---
 title: 대담하게 다르게
 description: 차별화는 에이전시 분야에서 핵심입니다. 장기적으로 보람을 주는 작은 변화를 만드는 방법을 배우세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

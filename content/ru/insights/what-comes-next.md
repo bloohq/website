@@ -1,7 +1,7 @@
 ---
 title: Что будет дальше?
 description: Теперь, когда у вас есть информация, пора действовать!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

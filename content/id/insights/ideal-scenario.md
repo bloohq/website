@@ -1,7 +1,7 @@
 ---
 title: Skenario Ideal
 description: Seperti apa agensi ideal? Ini adalah pertanyaan yang kami jawab dalam bab ini.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

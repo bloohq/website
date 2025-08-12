@@ -1,7 +1,7 @@
 ---
 title: Driv Saker Effektivt
 description: Varför det är avgörande att vara effektiv i en byrå för att förbli vid sina sinnens fulla bruk medan man växer.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

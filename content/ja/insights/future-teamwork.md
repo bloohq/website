@@ -1,7 +1,7 @@
 ---
 title: チームワークの未来
 description: 私たちの使命は、今日、チームワークの未来を創造することです。私たちは、数十年にわたるビジョンを持って、一歩一歩進んでいます。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

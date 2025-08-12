@@ -1,7 +1,7 @@
 ---
 title: ចាប់ផ្តើមកសាងមហិច្ឆតា
 description: យល់ដឹងអំពីគំនិតនៃមហិច្ឆតា និងហេតុអ្វីបានជាវាជារឿងសំខាន់ក្នុងការកសាងមហិច្ឆតានៅក្នុងអាជីវកម្មរបស់អ្នក។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

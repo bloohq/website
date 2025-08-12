@@ -1,7 +1,7 @@
 ---
 title: Projecten vs Processen
 description: Het begrijpen van het verschil tussen projecten en processen is cruciaal, zodat je altijd weet met welk type werk je bezig bent.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

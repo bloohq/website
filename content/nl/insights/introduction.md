@@ -2,7 +2,7 @@
 title: Inleiding
 description: Leer waarom we de definitieve gids hebben geschreven over hoe je een bureau effectief kunt runnen, en hoe we zijn begonnen.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

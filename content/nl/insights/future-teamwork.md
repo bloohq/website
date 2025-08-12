@@ -1,7 +1,7 @@
 ---
 title: De Toekomst van Teamwerk
 description: Onze missie is om de toekomst van teamwerk vandaag te creëren. We doen dit stap voor stap met een visie voor meerdere decennia in gedachten.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

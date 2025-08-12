@@ -1,7 +1,7 @@
 ---
 title: 有效運行事務
 description: 為什麼在機構中有效運作是保持理智並實現增長的關鍵。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

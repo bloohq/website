@@ -1,7 +1,7 @@
 ---
 title: Hier gibt es keine Regeln
 description: In diesem Leitfaden gibt es keine strengen Regeln, nur Überlegungen und Anleitungen, die Sie an Ihre Situation anpassen können.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

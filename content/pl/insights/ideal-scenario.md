@@ -1,7 +1,7 @@
 ---
 title: Idealny scenariusz
 description: Jak wygląda idealna agencja? To pytanie, na które odpowiadamy w tym rozdziale.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

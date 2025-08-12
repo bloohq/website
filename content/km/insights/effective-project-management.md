@@ -1,7 +1,7 @@
 ---
 title: ការគ្រប់គ្រងគម្រោងមានប្រសិទ្ធភាព
 description: រៀនពីរបៀបគ្រប់គ្រងគម្រោងដើម្បីឱ្យអ្នកទទួលបានលទ្ធផលល្អក្នុងពេលវេលានិងក្នុងថវិកា។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

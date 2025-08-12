@@ -1,7 +1,7 @@
 ---
 title: Wat komt er daarna?
 description: Nu je de informatie hebt, is het tijd om actie te ondernemen!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

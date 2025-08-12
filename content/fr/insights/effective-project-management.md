@@ -1,7 +1,7 @@
 ---
 title: Gestion de Projet Efficace
 description: Apprenez à gérer des projets afin d'obtenir d'excellents résultats dans les délais et dans le budget.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

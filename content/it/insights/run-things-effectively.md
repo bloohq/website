@@ -1,7 +1,7 @@
 ---
 title: Gestire le Cose Efficacemente
 description: Perché essere efficaci in un'agenzia è fondamentale per rimanere sani di mente mentre si cresce.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

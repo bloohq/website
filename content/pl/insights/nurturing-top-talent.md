@@ -1,8 +1,8 @@
 ---
 title: Pielęgnowanie Najlepszych Talentów
 description: Przyciąganie, rozwijanie i zatrzymywanie najlepszych talentów oznacza lepsze wyniki i mniej problemów.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

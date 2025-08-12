@@ -1,7 +1,7 @@
 ---
 title: Bekerja Dengan Manusia
 description: Bekerja dengan klien dan anggota tim adalah kunci untuk mengembangkan agensi yang sukses.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Laatste Gedachten
 description: Een samenvatting van alles wat we hebben behandeld in de Agency Success Guide.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

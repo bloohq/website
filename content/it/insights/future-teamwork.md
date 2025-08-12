@@ -1,7 +1,7 @@
 ---
 title: Il Futuro del Lavoro di Squadra
 description: La nostra missione è creare il futuro del lavoro di squadra, oggi. Lo stiamo facendo passo dopo passo con una visione pluridecennale in mente.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

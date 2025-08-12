@@ -1,6 +1,6 @@
 --- 
 title: Projects vs Processes
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Understanding the difference between projects and processes is crucial, so you always know what type of work you are engaging in.
 date: 2024-01-01
 ---

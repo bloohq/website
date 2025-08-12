@@ -1,7 +1,7 @@
 ---
 title: ここにはルールはありません
 description: このガイドには厳格なルールはなく、あなたの状況に合わせて適応できる反映とガイダンスのみがあります。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

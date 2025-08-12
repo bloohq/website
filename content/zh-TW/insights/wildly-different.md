@@ -1,7 +1,7 @@
 ---
 title: 大膽地與眾不同
 description: 在代理商領域，差異化是關鍵。了解如何進行小變化，從而在長期內獲得回報。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

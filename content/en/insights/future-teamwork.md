@@ -1,6 +1,6 @@
 --- 
 title: The Future of Teamwork
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Our mission is to create the future of teamwork, today. We're doing this step by step with a multi-decade vision in mind.
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: L'avenir du travail d'équipe
 description: Notre mission est de créer l'avenir du travail d'équipe, aujourd'hui. Nous le faisons étape par étape avec une vision pluriannuelle en tête.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

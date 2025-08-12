@@ -1,7 +1,7 @@
 ---
 title: Gestione Efficace dei Progetti
 description: Scopri come gestire i progetti in modo da ottenere ottimi risultati in tempo e nel rispetto del budget.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

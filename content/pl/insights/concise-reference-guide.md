@@ -1,7 +1,7 @@
 ---
 title: Zwięzły Przewodnik Referencyjny
 description: To jest jednostronicowy przewodnik referencyjny dla całej treści w Przewodniku Sukcesu Agencji.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

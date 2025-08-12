@@ -1,7 +1,7 @@
 ---
 title: 確認您的客戶
 description: 學習如何找到最佳類型的客戶——那些讓人愉快合作且有利可圖的客戶。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

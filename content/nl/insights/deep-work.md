@@ -1,7 +1,7 @@
 ---
 title: Diep Werk Cultiveren In De Moderne Werkplek
 description: Cultiveer een cultuur van diep werk voor verhoogde productiviteit. Ontdek hoe je diep werk een prioriteit maakt in jouw organisatie.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 다음은 무엇인가?
 description: 이제 정보를 얻었으니, 행동을 취할 시간입니다!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

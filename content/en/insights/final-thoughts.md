@@ -1,6 +1,6 @@
 ---
 title: Final Thoughts
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Wrapping up everything that we have covered in the Agency Success Guide.
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

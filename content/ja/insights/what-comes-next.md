@@ -1,7 +1,7 @@
 ---
 title: 次に来るものは？
 description: 情報を得た今、行動を起こす時です！
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 効果的なプロジェクト管理
 description: プロジェクトを管理して、素晴らしい結果を時間通りに、予算内で得る方法を学びましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

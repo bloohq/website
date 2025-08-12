@@ -1,7 +1,7 @@
 ---
 title: ¿Qué viene después?
 description: ¡Ahora que tienes la información, es hora de actuar!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

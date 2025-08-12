@@ -1,7 +1,7 @@
 ---
 title: Was ist großartige Teamarbeit?
 description: 'Großartige Teamarbeit ist die Grundlage jeder Organisation. In diesem umfassenden Artikel tauchen wir in die Schlüsselfaktoren und Prinzipien ein, die außergewöhnliche Teamarbeit definieren.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

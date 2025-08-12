@@ -1,7 +1,7 @@
 ---
 title: Praca z Ludźmi
 description: Praca z klientami i członkami zespołu jest kluczowa dla rozwoju udanej agencji.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

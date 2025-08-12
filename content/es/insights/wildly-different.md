@@ -1,7 +1,7 @@
 ---
 title: Sé Salvajamente Diferente
 description: La diferenciación es clave en el espacio de las agencias. Aprende cómo hacer pequeños cambios que valen la pena a largo plazo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: La Delegación es Emprendimiento
 description: Aprende a delegar de manera efectiva para que puedas escalar tu agencia a nuevas alturas.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

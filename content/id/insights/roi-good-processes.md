@@ -1,7 +1,7 @@
 ---
 title: ROI dari Proses Bisnis yang Baik.
 description: Proses bisnis yang lebih baik menghasilkan pengembalian investasi (ROI) yang lebih baik. Pelajari cara menciptakan proses bisnis yang lebih baik yang mendorong profitabilitas.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Problemet med att arbeta för mycket
 description: Det finns en oroande trend på senare tid som fetischiserar långa arbetstimmar för att nå framgång. Detta är ett problem eftersom hårt arbete, långa timmar och resultat inte är korrelerade.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

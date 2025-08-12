@@ -1,6 +1,6 @@
 ---
 title: Keep It Simple
-category: "Modern Work Practices"
+category: "Best Practices"
 description: In this chapter, we explain why simple processes are often much better than more academic, complex business processes.
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

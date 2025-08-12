@@ -2,7 +2,7 @@
 title: Einführung
 description: Erfahren Sie, warum wir den umfassenden Leitfaden geschrieben haben, wie man eine Agentur effektiv führt, und wie wir angefangen haben.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

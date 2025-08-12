@@ -1,7 +1,7 @@
 ---
 title: 什麼是偉大的團隊合作？
 description: '偉大的團隊合作是任何組織的基礎。在這篇全面的文章中，我們深入探討定義卓越團隊合作的關鍵要素和原則。'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

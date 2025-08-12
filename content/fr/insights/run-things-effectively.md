@@ -1,7 +1,7 @@
 ---
 title: Gérer les choses efficacement
 description: Pourquoi être efficace dans une agence est essentiel pour rester sain d'esprit tout en grandissant.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

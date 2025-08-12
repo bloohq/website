@@ -1,7 +1,7 @@
 ---
 title: 保持简单
 description: 在本章中，我们解释了为什么简单的流程往往比更学术化、复杂的商业流程要好得多。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

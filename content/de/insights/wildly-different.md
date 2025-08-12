@@ -1,7 +1,7 @@
 ---
 title: Sei Wild Anders
 description: Differenzierung ist der Schlüssel im Agenturgeschäft. Erfahren Sie, wie kleine Veränderungen langfristig von Vorteil sein können.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

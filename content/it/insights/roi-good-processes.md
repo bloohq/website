@@ -1,7 +1,7 @@
 ---
 title: Il ROI dei Buoni Processi Aziendali.
 description: Processi aziendali migliori portano a un migliore ritorno sugli investimenti (ROI). Scopri come creare processi aziendali migliorati che aumentano la redditività.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

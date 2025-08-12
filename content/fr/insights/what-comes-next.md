@@ -1,7 +1,7 @@
 ---
 title: Que faire ensuite ?
 description: Maintenant que vous avez les informations, il est temps de passer à l'action !
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

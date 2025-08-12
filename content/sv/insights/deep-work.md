@@ -1,7 +1,7 @@
 ---
 title: Att Odla Djup Arbete I Den Moderna Arbetsplatsen
 description: Odla en kultur av djup arbete för ökad produktivitet. Upptäck hur du gör djup arbete till en prioritet i din organisation.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

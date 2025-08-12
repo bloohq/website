@@ -1,7 +1,7 @@
 ---
 title: Идеальный сценарий
 description: Как выглядит идеальное агентство? На этот вопрос мы отвечаем в этой главе.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

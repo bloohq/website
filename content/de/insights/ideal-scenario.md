@@ -1,7 +1,7 @@
 ---
 title: Das ideale Szenario
 description: Wie sieht eine ideale Agentur aus? Diese Frage beantworten wir in diesem Kapitel.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

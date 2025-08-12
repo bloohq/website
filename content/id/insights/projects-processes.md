@@ -1,7 +1,7 @@
 ---
 title: Proyek vs Proses
 description: Memahami perbedaan antara proyek dan proses sangat penting, sehingga Anda selalu tahu jenis pekerjaan apa yang Anda lakukan.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

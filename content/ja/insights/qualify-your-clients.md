@@ -1,7 +1,7 @@
 ---
 title: クライアントを適切に選ぶ
 description: 一緒に働くのが楽しく、利益をもたらす最適なクライアントを見つける方法を学びましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

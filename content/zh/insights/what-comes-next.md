@@ -1,7 +1,7 @@
 ---
 title: 接下来是什么？
 description: 现在你已经掌握了信息，是时候采取行动了！
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

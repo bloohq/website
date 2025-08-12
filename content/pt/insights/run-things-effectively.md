@@ -1,7 +1,7 @@
 ---
 title: Execute as Coisas de Forma Eficiente
 description: Por que ser eficiente em uma agência é fundamental para manter a sanidade enquanto cresce.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Scrivere Proposte Vincenti
 description: Scrivere proposte vincenti è la parte più importante della gestione di un'agenzia. Scopri come farlo nel modo giusto.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

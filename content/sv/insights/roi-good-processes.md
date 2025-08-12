@@ -1,7 +1,7 @@
 ---
 title: ROI för Bra Affärsprocesser.
 description: Bättre affärsprocesser leder till en bättre avkastning på investeringar (ROI). Lär dig hur du skapar förbättrade affärsprocesser som driver lönsamhet.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Mantenha Simples
 description: Neste capítulo, explicamos por que processos simples são frequentemente muito melhores do que processos de negócios mais acadêmicos e complexos.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

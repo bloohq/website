@@ -1,7 +1,7 @@
 ---
 title: Begin met het Opbouwen van Momentum
 description: Begrijp het concept van momentum en waarom het cruciaal is om momentum op te bouwen in jouw bureau.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

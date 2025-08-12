@@ -1,7 +1,7 @@
 ---
 title: Эффективное управление
 description: Почему эффективность в агентстве является ключом к сохранению здравомыслия во время роста.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

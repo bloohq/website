@@ -2,7 +2,7 @@
 title: L'argent est roi
 slug: cash-is-king
 description: La gestion de la trésorerie est le composant le plus critique de la gestion d'une agence, apprenez à la gérer afin d'avoir toujours un bon tampon opérationnel.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

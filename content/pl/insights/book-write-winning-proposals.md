@@ -1,7 +1,7 @@
 ---
 title: Pisanie Zwycięskich Propozycji
 description: Pisanie zwycięskich propozycji to najważniejsza część prowadzenia agencji. Dowiedz się, jak robić to dobrze.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

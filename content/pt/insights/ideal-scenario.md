@@ -1,7 +1,7 @@
 ---
 title: O Cenário Ideal
 description: Como é uma agência ideal? Esta é a pergunta que respondemos neste capítulo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

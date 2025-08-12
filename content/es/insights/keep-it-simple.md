@@ -1,7 +1,7 @@
 ---
 title: Mantenlo Simple
 description: En este capítulo, explicamos por qué los procesos simples son a menudo mucho mejores que los procesos empresariales más académicos y complejos.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

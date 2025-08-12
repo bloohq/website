@@ -1,7 +1,7 @@
 ---
 title: Qualifique Seus Clientes
 description: Aprenda como encontrar o melhor tipo de clientes — aqueles que são um prazer de trabalhar e lucrativos.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

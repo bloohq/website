@@ -1,7 +1,7 @@
 ---
 title: Werken Met Mensen
 description: Werken met klanten en teamleden is de sleutel tot het laten groeien van een succesvolle bureau.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 성공적인 제안서 작성하기
 description: 성공적인 제안서를 작성하는 것은 에이전시 운영의 가장 중요한 부분입니다. 올바르게 작성하는 방법을 배우세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

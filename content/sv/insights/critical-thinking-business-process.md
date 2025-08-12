@@ -1,7 +1,7 @@
 ---
 title: Tillämpa kritiskt tänkande på processdesign.
 description: Ett företag är summan av flera processer som pågår samtidigt, oavbrutet för att uppnå affärsmålen.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

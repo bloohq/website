@@ -1,7 +1,7 @@
 ---
 title: Projekty a Procesy
 description: Zrozumienie różnicy między projektami a procesami jest kluczowe, aby zawsze wiedzieć, w jakim rodzaju pracy uczestniczysz.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

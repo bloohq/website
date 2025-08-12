@@ -1,7 +1,7 @@
 ---
 title: Califica a Tus Clientes
 description: Aprende a encontrar el mejor tipo de clientes: aquellos con los que es un placer trabajar y que son rentables.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

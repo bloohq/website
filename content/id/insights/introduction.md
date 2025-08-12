@@ -2,7 +2,7 @@
 title: Pengantar
 description: Pelajari mengapa kami menulis panduan definitif tentang cara menjalankan agensi secara efektif, dan bagaimana kami memulainya.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

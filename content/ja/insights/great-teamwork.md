@@ -1,7 +1,7 @@
 ---
 title: 優れたチームワークとは何か？
 description: '優れたチームワークは、あらゆる組織の基盤です。この包括的な解説では、卓越したチームワークを定義する重要な要素と原則について掘り下げていきます。'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

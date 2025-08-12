@@ -1,7 +1,7 @@
 ---
 title: Эффективное управление проектами
 description: Узнайте, как управлять проектами, чтобы получать отличные результаты в срок и в рамках бюджета.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

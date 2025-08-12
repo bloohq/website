@@ -1,7 +1,7 @@
 ---
 title: Jaga Sederhana
 description: Dalam bab ini, kami menjelaskan mengapa proses yang sederhana seringkali jauh lebih baik daripada proses bisnis yang lebih akademis dan kompleks.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

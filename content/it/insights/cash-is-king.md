@@ -2,7 +2,7 @@
 title: Il Denaro È Re
 slug: il-denaro-e-re
 description: Il flusso di cassa è il componente più critico per gestire un'agenzia, scopri come gestirlo in modo da avere sempre un buon margine operativo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: ស្ថានភាពដ៏ល្អឥតខ្ចោះ
 description: អAgency ដ៏ល្អឥតខ្ចោះមានរូបរាងដូចម្តេច? នេះគឺជាសំណួរដែលយើងឆ្លើយនៅក្នុងជំពូកនេះ។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

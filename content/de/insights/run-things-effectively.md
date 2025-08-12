@@ -1,7 +1,7 @@
 ---
 title: Dinge Effektiv Führen
 description: Warum Effektivität in einer Agentur entscheidend ist, um während des Wachstums gesund zu bleiben.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -2,7 +2,7 @@
 title: 介紹
 description: 瞭解為什麼我們撰寫了如何有效經營代理機構的權威指南，以及我們是如何開始的。
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

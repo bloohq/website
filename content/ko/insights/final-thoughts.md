@@ -1,7 +1,7 @@
 ---
 title: 최종 생각
 description: 에이전시 성공 가이드에서 다룬 모든 내용을 정리합니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

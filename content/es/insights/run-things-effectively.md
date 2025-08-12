@@ -1,7 +1,7 @@
 ---
 title: Ejecutar las cosas de manera efectiva
 description: Por qué ser efectivo en una agencia es clave para mantener la cordura mientras creces.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

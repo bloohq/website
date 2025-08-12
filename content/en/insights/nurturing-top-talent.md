@@ -1,8 +1,8 @@
 ---
 title: Nurturing Top Talent
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Attracting, developing, and keeping top talent means better results and fewer headaches. 
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 
 

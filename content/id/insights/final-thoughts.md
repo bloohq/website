@@ -1,7 +1,7 @@
 ---
 title: Pemikiran Akhir
 description: Mengakhiri semua yang telah kita bahas dalam Panduan Sukses Agensi.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

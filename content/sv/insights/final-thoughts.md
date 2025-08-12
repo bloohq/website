@@ -1,7 +1,7 @@
 ---
 title: Slutliga Tankar
 description: Sammanfattning av allt vi har täckt i Agency Success Guide.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -2,7 +2,7 @@
 title: Introduktion
 description: Lär dig varför vi skrev den definitiva guiden om hur man driver en byrå effektivt, och hur vi kom igång.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

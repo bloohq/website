@@ -1,7 +1,7 @@
 ---
 title: Prägnanter Referenzleitfaden
 description: Dies ist ein einseitiger Referenzleitfaden für alle Inhalte im Agenturerfolgsleitfaden.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: Working With Humans
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Working with clients and team members is key to growing a successful agency.
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

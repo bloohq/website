@@ -1,7 +1,7 @@
 ---
 title: ការគិតចុងក្រោយ
 description: ការបញ្ចប់អ្វីៗទាំងអស់ដែលយើងបានគ្របដណ្តប់ក្នុងមគ្គុទេសក៍ជោគជ័យរបស់អាជីវកម្ម។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

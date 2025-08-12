@@ -1,7 +1,7 @@
 ---
 title: 最後の考え
 description: エージェンシー成功ガイドで取り上げたすべてをまとめます。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

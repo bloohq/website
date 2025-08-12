@@ -1,7 +1,7 @@
 ---
 title: O ROI de Bons Processos de Negócios.
 description: Melhores processos de negócios levam a um melhor retorno sobre investimento (ROI). Aprenda como criar processos de negócios aprimorados que impulsionam a lucratividade.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

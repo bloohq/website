@@ -1,7 +1,7 @@
 ---
 title: Здесь нет правил
 description: В этом руководстве нет жестких правил, только размышления и рекомендации, которые вы можете адаптировать к своей ситуации.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

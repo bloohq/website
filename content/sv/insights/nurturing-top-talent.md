@@ -1,8 +1,8 @@
 ---
 title: Vårda Topp Talang
 description: Att attrahera, utveckla och behålla topp talang innebär bättre resultat och färre huvudvärk.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

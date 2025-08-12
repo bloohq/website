@@ -1,7 +1,7 @@
 ---
 title: Geen Regels Hier
 description: Er zijn geen harde regels in deze gids, alleen reflecties en richtlijnen die je kunt aanpassen aan jouw situatie.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Dingen Effectief Runnen
 description: Waarom effectief zijn in een bureau essentieel is om mentaal gezond te blijven tijdens groei.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

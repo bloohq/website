@@ -1,7 +1,7 @@
 ---
 title: O Futuro do Trabalho em Equipe
 description: Nossa missão é criar o futuro do trabalho em equipe, hoje. Estamos fazendo isso passo a passo com uma visão de várias décadas em mente.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

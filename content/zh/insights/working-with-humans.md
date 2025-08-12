@@ -1,7 +1,7 @@
 ---
 title: 与人合作
 description: 与客户和团队成员合作是发展成功代理机构的关键。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

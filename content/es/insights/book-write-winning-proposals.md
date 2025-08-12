@@ -1,7 +1,7 @@
 ---
 title: Escribir Propuestas Ganadoras
 description: Escribir propuestas ganadoras es la parte más importante de la gestión de una agencia. Aprende a hacerlo bien.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

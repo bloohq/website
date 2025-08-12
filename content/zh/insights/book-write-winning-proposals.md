@@ -1,7 +1,7 @@
 ---
 title: 撰写成功提案
 description: 撰写成功提案是经营一家机构最重要的部分。了解如何正确地做到这一点。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

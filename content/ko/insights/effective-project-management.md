@@ -1,7 +1,7 @@
 ---
 title: 효과적인 프로젝트 관리
 description: 프로젝트를 관리하여 제때 예산 내에서 훌륭한 결과를 얻는 방법을 배우십시오.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

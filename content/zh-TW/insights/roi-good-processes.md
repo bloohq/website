@@ -1,7 +1,7 @@
 ---
 title: 良好商業流程的投資回報率
 description: 更好的商業流程能帶來更好的投資回報率（ROI）。了解如何創建改善商業流程以推動盈利能力。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

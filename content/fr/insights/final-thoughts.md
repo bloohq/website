@@ -1,7 +1,7 @@
 ---
 title: Réflexions finales
 description: Conclusion de tout ce que nous avons couvert dans le Guide de succès des agences.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

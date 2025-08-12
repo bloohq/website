@@ -1,8 +1,8 @@
 ---
 title: 培養頂尖人才
 description: 吸引、發展和留住頂尖人才意味著更好的結果和更少的麻煩。
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

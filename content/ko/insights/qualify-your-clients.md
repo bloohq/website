@@ -1,7 +1,7 @@
 ---
 title: 고객 자격 확인하기
 description: 함께 일하기 즐겁고 수익성이 높은 최상의 고객을 찾는 방법을 배우세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

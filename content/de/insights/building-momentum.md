@@ -1,7 +1,7 @@
 ---
 title: Beginnen Sie, Momentum aufzubauen
 description: Verstehen Sie das Konzept des Moments und warum es entscheidend ist, Momentum in Ihrer Agentur aufzubauen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

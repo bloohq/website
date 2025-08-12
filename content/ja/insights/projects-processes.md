@@ -1,7 +1,7 @@
 ---
 title: プロジェクトとプロセスの違い
 description: プロジェクトとプロセスの違いを理解することは重要であり、どのタイプの作業に従事しているかを常に把握できます。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

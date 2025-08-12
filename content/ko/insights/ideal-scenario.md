@@ -1,7 +1,7 @@
 ---
 title: 이상적인 시나리오
 description: 이상적인 에이전시는 어떤 모습일까요? 이 장에서 우리가 답하는 질문입니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

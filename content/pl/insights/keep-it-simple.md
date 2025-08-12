@@ -1,7 +1,7 @@
 ---
 title: Utrzymaj To Prosto
 description: W tym rozdziale wyjaśniamy, dlaczego proste procesy są często znacznie lepsze niż bardziej akademickie, złożone procesy biznesowe.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

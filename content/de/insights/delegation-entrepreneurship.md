@@ -1,7 +1,7 @@
 ---
 title: Delegation ist Unternehmertum
 description: Lernen Sie, wie Sie effektiv delegieren können, damit Sie Ihre Agentur auf neue Höhen skalieren können.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

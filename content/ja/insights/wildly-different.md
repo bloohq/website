@@ -1,7 +1,7 @@
 ---
 title: 大胆に異なる
 description: 差別化はエージェンシー業界で重要です。長期的に利益をもたらす小さな変化を作る方法を学びましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

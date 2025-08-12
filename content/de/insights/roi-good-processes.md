@@ -1,7 +1,7 @@
 ---
 title: Der ROI guter Geschäftsprozesse.
 description: Bessere Geschäftsprozesse führen zu einer besseren Rendite (ROI). Erfahren Sie, wie Sie verbesserte Geschäftsprozesse schaffen, die die Rentabilität steigern.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

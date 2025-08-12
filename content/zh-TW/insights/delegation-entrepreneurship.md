@@ -1,7 +1,7 @@
 ---
 title: 委任即創業
 description: 學習如何有效地委任，以便將您的代理機構提升到新的高度。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

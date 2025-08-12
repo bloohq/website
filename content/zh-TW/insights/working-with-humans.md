@@ -1,7 +1,7 @@
 ---
 title: 與人合作
 description: 與客戶和團隊成員合作是成功經營代理商的關鍵。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -2,7 +2,7 @@
 title: ការណែនាំ
 description: រៀនពីមូលហេតុដែលយើងបានសរសេរជាដំណោះស្រាយច្បាស់លាស់ពីរបៀបដំណើរការក្រុមហ៊ុនយ៉ាងមានប្រសិទ្ធភាព និងរបៀបដែលយើងបានចាប់ផ្តើម។
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

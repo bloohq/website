@@ -1,7 +1,7 @@
 ---
 title: 効果的に物事を運営する
 description: エージェンシーで効果的であることが、成長しながら冷静さを保つための鍵である理由。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

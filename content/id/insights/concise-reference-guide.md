@@ -1,7 +1,7 @@
 ---
 title: Panduan Referensi Singkat
 description: Ini adalah panduan referensi satu halaman untuk semua konten dalam Panduan Sukses Agensi.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

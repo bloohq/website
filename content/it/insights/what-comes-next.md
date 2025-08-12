@@ -1,7 +1,7 @@
 ---
 title: Cosa Viene Dopo?
 description: Ora che hai le informazioni, è tempo di agire!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

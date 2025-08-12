@@ -1,7 +1,7 @@
 ---
 title: 有效的專案管理
 description: 學習如何管理專案，以便按時並在預算內獲得優秀的結果。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

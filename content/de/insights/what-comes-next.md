@@ -1,7 +1,7 @@
 ---
 title: Was kommt als Nächstes?
 description: Jetzt, da Sie die Informationen haben, ist es Zeit zu handeln!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

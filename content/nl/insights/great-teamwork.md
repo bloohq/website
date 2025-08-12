@@ -1,7 +1,7 @@
 ---
 title: Wat is Geweldig Teamwerk?
 description: 'Geweldig teamwerk is de basis van elke organisatie. In deze uitgebreide beschrijving duiken we in de belangrijkste elementen en principes die uitzonderlijk teamwerk definiëren.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Pas de règles ici
 description: Il n'y a pas de règles strictes dans ce guide, seulement des réflexions et des conseils que vous pouvez adapter à votre situation.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

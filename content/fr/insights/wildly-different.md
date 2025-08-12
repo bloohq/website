@@ -1,7 +1,7 @@
 ---
 title: Soyez Follement Différent
 description: La différenciation est essentielle dans le secteur des agences. Apprenez à apporter de petits changements qui porteront leurs fruits à long terme.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

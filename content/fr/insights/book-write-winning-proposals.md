@@ -1,7 +1,7 @@
 ---
 title: Rédiger des propositions gagnantes
 description: Rédiger des propositions gagnantes est la partie la plus importante de la gestion d'une agence. Apprenez à le faire correctement.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

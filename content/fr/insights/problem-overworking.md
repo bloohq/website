@@ -1,7 +1,7 @@
 ---
 title: Le Problème du Surmenage
 description: Il y a une tendance troublante ces derniers temps qui fétichise les longues heures de travail pour atteindre le succès. C'est un problème car le travail acharné et les longues heures ne sont pas corrélés aux résultats.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

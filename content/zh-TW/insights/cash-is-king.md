@@ -2,7 +2,7 @@
 title: 現金為王
 slug: cash-is-king
 description: 現金流是運營代理機構最關鍵的組成部分，了解如何管理它，以便您始終擁有良好的運營緩衝。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Het Ideale Scenario
 description: Hoe ziet een ideaal bureau eruit? Dit is de vraag die we in dit hoofdstuk beantwoorden.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

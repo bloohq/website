@@ -1,7 +1,7 @@
 ---
 title: 开始建立动能
 description: 理解动能的概念以及为什么在你的机构中建立动能至关重要。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

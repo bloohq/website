@@ -1,8 +1,8 @@
 ---
 title: Top-Talente fördern
 description: Top-Talente zu gewinnen, zu entwickeln und zu halten bedeutet bessere Ergebnisse und weniger Kopfschmerzen.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

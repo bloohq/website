@@ -1,7 +1,7 @@
 ---
 title: តើអ្វីដែលនឹងកើតឡើងបន្ទាប់?
 description: ឥឡូវនេះអ្នកមានព័ត៌មានហើយ, វេលាដើម្បីចាប់ផ្តើមអនុវត្ត!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

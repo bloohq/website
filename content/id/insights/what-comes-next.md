@@ -1,7 +1,7 @@
 ---
 title: Apa Selanjutnya?
 description: Sekarang Anda memiliki informasi, saatnya untuk mengambil tindakan!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

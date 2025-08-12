@@ -2,7 +2,7 @@
 title: Uang Tunai Adalah Raja
 slug: uang-tunai-adalah-raja
 description: Arus kas adalah komponen paling kritis dalam menjalankan sebuah agensi, pelajari cara mengelolanya sehingga Anda selalu memiliki buffer operasional yang baik.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

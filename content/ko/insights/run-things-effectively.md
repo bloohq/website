@@ -1,7 +1,7 @@
 ---
 title: 효과적으로 운영하기
 description: 에이전시에서 효과적이라는 것이 성장하면서 정신을 유지하는 데 중요한 이유.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: El Problema del Exceso de Trabajo
 description: Hay una tendencia preocupante últimamente que está fetichizando las largas horas para alcanzar el éxito. Este es un problema porque las horas largas y duras no están correlacionadas con los resultados.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Qualifizieren Sie Ihre Kunden
 description: Erfahren Sie, wie Sie die besten Kunden finden — die, mit denen es Freude macht zu arbeiten und die profitabel sind.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

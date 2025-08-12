@@ -1,7 +1,7 @@
 ---
 title: Projekt vs Processer
 description: Att förstå skillnaden mellan projekt och processer är avgörande, så att du alltid vet vilken typ av arbete du engagerar dig i.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

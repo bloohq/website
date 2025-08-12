@@ -1,7 +1,7 @@
 ---
 title: Guide de Référence Concis
 description: Ceci est un guide de référence d'une page pour tout le contenu du Guide de Réussite des Agences.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

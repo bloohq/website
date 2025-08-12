@@ -1,7 +1,7 @@
 ---
 title: 과도한 근무의 문제
 description: 최근 성공을 위해 긴 시간을 일하는 것을 성적 취향으로 삼는 불안한 경향이 있습니다. 이는 힘든 긴 근무 시간과 결과가 상관관계가 없기 때문에 문제입니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

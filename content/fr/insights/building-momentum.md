@@ -1,7 +1,7 @@
 ---
 title: Commencez à Créer de l'Élan
 description: Comprenez le concept d'élan et pourquoi il est crucial de créer de l'élan dans votre agence.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

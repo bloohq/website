@@ -1,7 +1,7 @@
 ---
 title: 모멘텀 구축 시작하기
 description: 모멘텀의 개념을 이해하고 에이전시에서 모멘텀을 구축하는 것이 왜 중요한지 알아보세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

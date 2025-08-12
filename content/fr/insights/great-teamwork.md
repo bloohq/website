@@ -1,7 +1,7 @@
 ---
 title: Qu'est-ce qu'un excellent travail d'équipe ?
 description: 'Un excellent travail d'équipe est la fondation de toute organisation. Dans cet article complet, nous plongeons dans les éléments clés et les principes qui définissent un travail d'équipe exceptionnel.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

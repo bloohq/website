@@ -1,8 +1,8 @@
 ---
 title: Cultivando Talentos de Alto Nível
 description: Atrair, desenvolver e reter talentos de alto nível significa melhores resultados e menos dores de cabeça.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

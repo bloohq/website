@@ -1,7 +1,7 @@
 ---
 title: Kultywowanie Głębokiej Pracy w Nowoczesnym Miejscu Pracy
 description: Kultywuj kulturę głębokiej pracy dla zwiększonej produktywności. Odkryj, jak uczynić głęboką pracę priorytetem w swojej organizacji.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

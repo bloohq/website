@@ -2,7 +2,7 @@
 title: Gotówka jest królem
 slug: gotowka-jest-krolem
 description: Przepływ gotówki jest najważniejszym elementem prowadzenia agencji, dowiedz się, jak nim zarządzać, aby zawsze mieć dobry bufor operacyjny.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

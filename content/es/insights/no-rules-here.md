@@ -1,7 +1,7 @@
 ---
 title: No Hay Reglas Aquí
 description: No hay reglas estrictas en esta guía, solo reflexiones y orientaciones que puedes adaptar a tu situación.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Gardez-le Simple
 description: Dans ce chapitre, nous expliquons pourquoi des processus simples sont souvent bien meilleurs que des processus commerciaux plus académiques et complexes.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

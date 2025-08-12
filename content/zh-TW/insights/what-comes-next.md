@@ -1,7 +1,7 @@
 ---
 title: 接下來該怎麼辦？
 description: 現在你已經擁有資訊，是時候採取行動了！
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

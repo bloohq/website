@@ -1,7 +1,7 @@
 ---
 title: Qualifiez Vos Clients
 description: Apprenez à trouver le meilleur type de clients — ceux avec qui il est agréable de travailler et qui sont rentables.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

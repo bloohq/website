@@ -1,7 +1,7 @@
 ---
 title: Gestión Efectiva de Proyectos
 description: Aprende a gestionar proyectos para obtener grandes resultados a tiempo y dentro del presupuesto.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

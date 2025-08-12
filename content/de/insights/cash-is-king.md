@@ -2,7 +2,7 @@
 title: Bargeld ist König
 slug: cash-is-king
 description: Der Cashflow ist die kritischste Komponente beim Betrieb einer Agentur. Lernen Sie, wie Sie ihn verwalten, damit Sie immer über einen guten Betriebspuffer verfügen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

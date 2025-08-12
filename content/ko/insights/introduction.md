@@ -2,7 +2,7 @@
 title: 소개
 description: 에이전시를 효과적으로 운영하는 방법에 대한 확정적인 가이드를 작성한 이유와 우리가 어떻게 시작했는지 알아보세요.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

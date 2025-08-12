@@ -1,7 +1,7 @@
 ---
 title: Masa Depan Kerja Tim
 description: Misi kami adalah menciptakan masa depan kerja tim, hari ini. Kami melakukan ini langkah demi langkah dengan visi multi-dekade di pikiran.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Riflessioni Finali
 description: Riassumendo tutto ciò che abbiamo trattato nella Guida al Successo dell'Agenzia.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

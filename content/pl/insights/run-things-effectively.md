@@ -1,7 +1,7 @@
 ---
 title: Efektywne Zarządzanie
 description: Dlaczego efektywność w agencji jest kluczowa dla zachowania zdrowego rozsądku podczas wzrostu.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

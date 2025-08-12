@@ -1,7 +1,7 @@
 ---
 title: 撰寫成功提案
 description: 撰寫成功的提案是經營代理機構最重要的部分。了解如何正確地做到這一點。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

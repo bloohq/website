@@ -1,7 +1,7 @@
 ---
 title: Kwalificeer Je Klanten
 description: Leer hoe je het beste type klanten kunt vinden - degenen met wie het prettig samenwerken is en die winstgevend zijn.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 title: 培养顶尖人才
 description: 吸引、发展和留住顶尖人才意味着更好的结果和更少的麻烦。
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

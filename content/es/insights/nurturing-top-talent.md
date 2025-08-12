@@ -1,8 +1,8 @@
 ---
 title: Fomentando el Talento Superior
 description: Atraer, desarrollar y retener talento superior significa mejores resultados y menos dolores de cabeza.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

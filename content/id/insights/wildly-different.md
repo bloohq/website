@@ -1,7 +1,7 @@
 ---
 title: Jadilah Berbeda dengan Cara yang Luar Biasa
 description: Diferensiasi adalah kunci dalam ruang agensi. Pelajari bagaimana membuat perubahan kecil yang memberikan hasil dalam jangka panjang.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

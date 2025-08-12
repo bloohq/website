@@ -1,6 +1,6 @@
 ---
 title: Run Things Effectively
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Why being effective in an agency is key to staying sane while growing.
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

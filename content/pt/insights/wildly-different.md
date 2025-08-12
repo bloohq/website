@@ -1,7 +1,7 @@
 ---
 title: Seja Radicalmente Diferente
 description: A diferenciação é fundamental no espaço das agências. Aprenda como fazer pequenas mudanças que valem a pena a longo prazo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

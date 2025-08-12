@@ -1,7 +1,7 @@
 ---
 title: Mantienilo Semplice
 description: In questo capitolo, spieghiamo perché i processi semplici sono spesso molto migliori rispetto a processi aziendali più accademici e complessi.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

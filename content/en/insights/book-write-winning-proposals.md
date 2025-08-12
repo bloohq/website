@@ -1,6 +1,6 @@
 ---
 title: Write Winning Proposals
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Writing winning proposals is the most important part of running an agency. Learn how to do it right. 
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

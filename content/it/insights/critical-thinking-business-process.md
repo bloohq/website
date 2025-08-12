@@ -1,7 +1,7 @@
 ---
 title: Applicare il Pensiero Critico al Design dei Processi.
 description: Un'azienda è la somma di più processi che avvengono simultaneamente, senza sosta, per raggiungere gli obiettivi aziendali.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

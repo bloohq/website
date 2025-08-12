@@ -2,7 +2,7 @@
 title: Введение
 description: Узнайте, почему мы написали окончательное руководство о том, как эффективно управлять агентством, и как мы начали.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

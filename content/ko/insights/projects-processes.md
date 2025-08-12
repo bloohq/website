@@ -1,7 +1,7 @@
 ---
 title: 프로젝트와 프로세스
 description: 프로젝트와 프로세스의 차이를 이해하는 것은 매우 중요하며, 이를 통해 어떤 유형의 작업에 참여하고 있는지 항상 알 수 있습니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

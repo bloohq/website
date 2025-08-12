@@ -1,7 +1,7 @@
 ---
 title: Przyszłość Pracy Zespołowej
 description: Naszą misją jest stworzenie przyszłości pracy zespołowej już dziś. Robimy to krok po kroku, mając na uwadze wizję na wiele dekad.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

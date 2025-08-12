@@ -1,7 +1,7 @@
 ---
 title: 簡單為上
 description: 在本章中，我們解釋為什麼簡單的流程往往比更學術化、複雜的商業流程要好得多。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Menulis Proposal yang Menang
 description: Menulis proposal yang menang adalah bagian terpenting dari menjalankan sebuah agensi. Pelajari cara melakukannya dengan benar.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

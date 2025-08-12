@@ -1,7 +1,7 @@
 ---
 title: 有效的项目管理
 description: 学习如何管理项目，以便按时并在预算内获得良好的结果。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: La Delegazione è Imprenditorialità
 description: Scopri come delegare in modo efficace per poter far crescere la tua agenzia a nuovi livelli.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

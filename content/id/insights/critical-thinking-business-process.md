@@ -1,7 +1,7 @@
 ---
 title: Menerapkan Pemikiran Kritis pada Desain Proses.
 description: Sebuah bisnis adalah jumlah dari berbagai proses yang terjadi secara bersamaan, tanpa henti untuk mencapai tujuan bisnis.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

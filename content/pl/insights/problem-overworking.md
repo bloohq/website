@@ -1,7 +1,7 @@
 ---
 title: Problem Z Pracą Przesadną
 description: Ostatnio pojawił się niepokojący trend fetyszyzowania długich godzin pracy w celu osiągnięcia sukcesu. To jest problem, ponieważ ciężka, długa praca i wyniki nie są ze sobą skorelowane.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Koncis Referensguide
 description: Detta är en en-sidig referensguide för allt innehåll i Agency Success Guide.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

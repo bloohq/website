@@ -1,7 +1,7 @@
 ---
 title: Сжатый справочник
 description: Это одностраничный справочник для всего содержимого Руководства по успеху агентства.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

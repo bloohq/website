@@ -1,7 +1,7 @@
 ---
 title: Inga regler här
 description: Det finns inga hårda regler i denna guide, endast reflektioner och vägledning som du kan anpassa till din situation.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

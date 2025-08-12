@@ -1,7 +1,7 @@
 ---
 title: 识别您的客户
 description: 学习如何找到最佳类型的客户——那些与之合作愉快且有利可图的客户。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

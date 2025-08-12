@@ -1,6 +1,6 @@
 --- 
 title: ¿Qué es el Gran Trabajo en Equipo?
-category: "Modern Work Practices"
+category: "Best Practices"
 description: 'El gran trabajo en equipo es la base de cualquier organización. En este análisis integral, profundizamos en los elementos clave y principios que definen el trabajo en equipo excepcional.' 
 ---
 Descubra los secretos del gran trabajo en equipo: Aprenda cómo la colaboración estructurada y el equilibrio adecuado pueden mejorar el rendimiento de su equipo. ¡Comience a transformar su equipo hoy mismo!

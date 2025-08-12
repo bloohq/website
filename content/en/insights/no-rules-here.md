@@ -1,6 +1,6 @@
 ---
 title: No Rules Here
-category: "Modern Work Practices"
+category: "Best Practices"
 description: There are no hard rules in this guide, only reflections and guidance that you can adapt to your situation.  
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

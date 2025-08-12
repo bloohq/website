@@ -1,7 +1,7 @@
 ---
 title: Bondige Referentiegids
 description: Dit is een eenpagina referentiegids voor alle inhoud in de Agency Success Guide.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

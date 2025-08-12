@@ -1,7 +1,7 @@
 ---
 title: 最后的思考
 description: 总结我们在《代理成功指南》中所涵盖的一切内容。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

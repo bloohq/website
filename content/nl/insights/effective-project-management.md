@@ -1,7 +1,7 @@
 ---
 title: Effectief Projectmanagement
 description: Leer hoe je projecten kunt beheren zodat je geweldige resultaten op tijd en binnen budget behaalt.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

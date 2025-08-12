@@ -1,7 +1,7 @@
 ---
 title: Reflexiones Finales
 description: Resumiendo todo lo que hemos cubierto en la Guía de Éxito para Agencias.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

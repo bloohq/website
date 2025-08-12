@@ -1,7 +1,7 @@
 ---
 title: プロセス設計におけるクリティカルシンキングの適用
 description: ビジネスは、ビジネス目標を達成するために同時に非停止で行われる複数のプロセスの合計です。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

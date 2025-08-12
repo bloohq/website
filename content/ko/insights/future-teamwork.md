@@ -1,7 +1,7 @@
 ---
 title: 팀워크의 미래
 description: 우리의 사명은 오늘날 팀워크의 미래를 창조하는 것입니다. 우리는 다년간의 비전을 염두에 두고 한 걸음씩 이 일을 진행하고 있습니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

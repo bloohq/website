@@ -1,7 +1,7 @@
 ---
 title: Lo Scenario Ideale
 description: Come appare un'agenzia ideale? Questa è la domanda a cui rispondiamo in questo capitolo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

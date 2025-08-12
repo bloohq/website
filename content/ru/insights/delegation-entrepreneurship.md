@@ -1,7 +1,7 @@
 ---
 title: Делегирование — это предпринимательство
 description: Узнайте, как эффективно делегировать, чтобы вы могли поднять свое агентство на новые высоты.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

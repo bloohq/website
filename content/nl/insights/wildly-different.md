@@ -1,7 +1,7 @@
 ---
 title: Wees Wild Verschillend
 description: Differentiatie is de sleutel in de bureau-ruimte. Leer hoe je kleine veranderingen kunt aanbrengen die op de lange termijn vruchten afwerpen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

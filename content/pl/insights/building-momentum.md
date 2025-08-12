@@ -1,7 +1,7 @@
 ---
 title: Zacznij Budować Impuls
 description: Zrozum koncepcję impetu i dlaczego kluczowe jest budowanie impetu w Twojej agencji.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -2,7 +2,7 @@
 title: 介绍
 description: 了解我们为何撰写这本关于如何有效运营代理机构的权威指南，以及我们是如何开始的。
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

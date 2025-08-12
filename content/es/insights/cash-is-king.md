@@ -2,7 +2,7 @@
 title: El Efectivo es Rey
 slug: el-efectivo-es-rey
 description: El flujo de efectivo es el componente más crítico para gestionar una agencia, aprende a manejarlo para que siempre tengas un buen margen operativo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

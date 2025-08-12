@@ -1,7 +1,7 @@
 ---
 title: Zastosowanie myślenia krytycznego w projektowaniu procesów.
 description: Firma jest sumą wielu procesów zachodzących jednocześnie, non-stop, w celu osiągnięcia celów biznesowych.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

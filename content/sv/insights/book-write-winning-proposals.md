@@ -1,7 +1,7 @@
 ---
 title: Skriv Vinnande Förslag
 description: Att skriva vinnande förslag är den viktigaste delen av att driva en byrå. Lär dig hur man gör det rätt.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

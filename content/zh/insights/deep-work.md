@@ -1,7 +1,7 @@
 ---
 title: 在现代职场中培养深度工作
 description: 培养深度工作的文化以提高生产力。了解如何在您的组织中将深度工作作为优先事项。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

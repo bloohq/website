@@ -1,7 +1,7 @@
 ---
 title: Kualifikasi Klien Anda
 description: Pelajari cara menemukan jenis klien terbaik — yang menyenangkan untuk diajak bekerja sama dan menguntungkan.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

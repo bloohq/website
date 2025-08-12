@@ -1,7 +1,7 @@
 ---
 title: Nessuna Regola Qui
 description: Non ci sono regole rigide in questa guida, solo riflessioni e indicazioni che puoi adattare alla tua situazione.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

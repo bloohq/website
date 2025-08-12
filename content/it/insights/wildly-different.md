@@ -1,7 +1,7 @@
 ---
 title: Essere Wildly Different
 description: La differenziazione è fondamentale nel settore delle agenzie. Scopri come apportare piccoli cambiamenti che ripagano nel lungo termine.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

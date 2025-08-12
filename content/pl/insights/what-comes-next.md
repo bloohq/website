@@ -1,7 +1,7 @@
 ---
 title: Co dalej?
 description: Teraz, gdy masz informacje, czas na działanie!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

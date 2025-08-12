@@ -1,7 +1,7 @@
 ---
 title: Vad är Stort Teamarbete?
 description: 'Stort teamarbete är grunden för varje organisation. I denna omfattande artikel dyker vi ner i de centrala elementen och principerna som definierar exceptionellt teamarbete.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

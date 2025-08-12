@@ -1,7 +1,7 @@
 ---
 title: 簡明參考指南
 description: 這是一份針對《代理商成功指南》中所有內容的一頁式參考指南。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

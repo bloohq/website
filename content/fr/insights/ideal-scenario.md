@@ -1,7 +1,7 @@
 ---
 title: Le Scénario Idéal
 description: À quoi ressemble une agence idéale ? C'est la question à laquelle nous répondons dans ce chapitre.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

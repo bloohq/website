@@ -1,7 +1,7 @@
 ---
 title: Tidak Ada Aturan di Sini
 description: Tidak ada aturan keras dalam panduan ini, hanya refleksi dan panduan yang dapat Anda sesuaikan dengan situasi Anda.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

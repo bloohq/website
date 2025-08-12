@@ -1,7 +1,7 @@
 ---
 title: Kwalifikacja Twoich Klientów
 description: Dowiedz się, jak znaleźć najlepszy typ klientów — tych, z którymi przyjemnie się pracuje i którzy przynoszą zyski.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

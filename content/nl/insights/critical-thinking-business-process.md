@@ -1,7 +1,7 @@
 ---
 title: Kritisch Denken Toepassen op Procesontwerp.
 description: Een bedrijf is de som van meerdere processen die gelijktijdig en continu plaatsvinden om de bedrijfsdoelstellingen te bereiken.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

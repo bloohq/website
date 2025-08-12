@@ -1,7 +1,7 @@
 ---
 title: Effektiv Projektledning
 description: Lär dig hur du hanterar projekt så att du får fantastiska resultat i tid och inom budget.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

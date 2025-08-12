@@ -1,7 +1,7 @@
 ---
 title: Guia de Referência Conciso
 description: Este é um guia de referência em uma página para todo o conteúdo do Guia de Sucesso da Agência.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

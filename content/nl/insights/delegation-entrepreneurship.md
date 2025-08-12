@@ -1,7 +1,7 @@
 ---
 title: Delegatie is Ondernemerschap
 description: Leer hoe je effectief kunt delegeren, zodat je jouw bureau naar nieuwe hoogten kunt schalen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

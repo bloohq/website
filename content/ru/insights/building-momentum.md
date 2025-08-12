@@ -1,7 +1,7 @@
 ---
 title: Начните наращивать импульс
 description: Поймите концепцию импульса и почему крайне важно наращивать импульс в вашем агентстве.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

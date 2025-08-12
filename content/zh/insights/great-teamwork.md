@@ -1,7 +1,7 @@
 ---
 title: 什么是卓越团队合作？
 description: '卓越的团队合作是任何组织的基础。在这篇全面的文章中，我们深入探讨了定义卓越团队合作的关键要素和原则。'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 간단하게 유지하기
 description: 이 장에서는 간단한 프로세스가 종종 더 학문적이고 복잡한 비즈니스 프로세스보다 훨씬 더 나은 이유를 설명합니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

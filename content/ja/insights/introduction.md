@@ -2,7 +2,7 @@
 title: はじめに
 description: 効率的にエージェンシーを運営する方法についての決定版ガイドを書いた理由と、私たちがどのように始めたのかを学びましょう。
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

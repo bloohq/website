@@ -1,7 +1,7 @@
 ---
 title: De ROI van Goede Bedrijfsprocessen.
 description: Betere bedrijfsprocessen leiden tot een betere return on investment (ROI). Leer hoe je verbeterde bedrijfsprocessen kunt creëren die de winstgevendheid stimuleren.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

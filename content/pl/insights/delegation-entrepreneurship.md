@@ -1,7 +1,7 @@
 ---
 title: Delegowanie to przedsiębiorczość
 description: Dowiedz się, jak skutecznie delegować, aby móc rozwijać swoją agencję na nowe wyżyny.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -2,7 +2,7 @@
 title: Introdução
 description: Aprenda por que escrevemos o guia definitivo sobre como administrar uma agência de forma eficaz e como começamos.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

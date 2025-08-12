@@ -1,7 +1,7 @@
 ---
 title: 過労の問題
 description: 最近、成功を収めるために長時間働くことをフェティシズム化するという不穏なトレンドがあります。これは、長時間働くことと成果が相関していないため、問題です。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

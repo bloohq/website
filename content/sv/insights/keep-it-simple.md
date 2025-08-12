@@ -1,7 +1,7 @@
 ---
 title: Håll det enkelt
 description: I detta kapitel förklarar vi varför enkla processer ofta är mycket bättre än mer akademiska, komplexa affärsprocesser.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

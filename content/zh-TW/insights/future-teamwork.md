@@ -1,7 +1,7 @@
 ---
 title: 團隊合作的未來
 description: 我們的使命是今天創造團隊合作的未來。我們正一步一步地朝著這個多年代的願景邁進。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

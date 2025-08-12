@@ -1,7 +1,7 @@
 ---
 title: Mit Menschen Arbeiten
 description: Die Zusammenarbeit mit Kunden und Teammitgliedern ist der Schlüssel zum Wachstum einer erfolgreichen Agentur.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

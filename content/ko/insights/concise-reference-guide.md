@@ -1,7 +1,7 @@
 ---
 title: 간결한 참고 가이드
 description: 이것은 에이전시 성공 가이드의 모든 내용을 위한 원페이지 참고 가이드입니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

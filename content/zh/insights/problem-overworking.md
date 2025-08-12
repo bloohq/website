@@ -1,7 +1,7 @@
 ---
 title: 过度工作的困境
 description: 最近有一个令人不安的趋势，就是将长时间工作与成功挂钩。这是一个问题，因为辛苦的长时间工作与结果并没有直接的关联。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

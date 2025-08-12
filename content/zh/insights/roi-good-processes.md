@@ -1,7 +1,7 @@
 ---
 title: 良好业务流程的投资回报率
 description: 更好的业务流程带来更好的投资回报率（ROI）。了解如何创建改进的业务流程，以推动盈利能力。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

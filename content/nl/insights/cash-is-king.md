@@ -2,7 +2,7 @@
 title: Cash Is King
 slug: cash-is-king
 description: Cashflow is de meest kritische component van het runnen van een bureau, leer hoe je het kunt beheren zodat je altijd een goede operationele buffer hebt.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

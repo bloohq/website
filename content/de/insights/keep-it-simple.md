@@ -1,7 +1,7 @@
 ---
 title: Halte es einfach
 description: In diesem Kapitel erklären wir, warum einfache Prozesse oft viel besser sind als akademischere, komplexe Geschäftsprozesse.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: O Problema com o Excesso de Trabalho
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Há uma tendência perturbadora ultimamente que está fetichizando longas horas de trabalho para alcançar o sucesso. Isso é um problema porque trabalho árduo, longas horas e resultados não estão correlacionados.
 date: 2024-01-01
 ---

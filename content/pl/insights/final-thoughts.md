@@ -1,7 +1,7 @@
 ---
 title: Ostateczne myśli
 description: Podsumowanie wszystkiego, co omówiliśmy w Przewodniku po Sukcesie Agencji.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

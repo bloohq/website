@@ -2,7 +2,7 @@
 title: Wprowadzenie
 description: Dowiedz się, dlaczego napisaliśmy ostateczny przewodnik po skutecznym prowadzeniu agencji oraz jak zaczęliśmy.
 image: /insights/madoffice1.jpeg
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

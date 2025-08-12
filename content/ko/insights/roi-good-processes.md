@@ -1,7 +1,7 @@
 ---
 title: 좋은 비즈니스 프로세스의 ROI
 description: 더 나은 비즈니스 프로세스는 더 나은 투자 수익률(ROI)로 이어집니다. 수익성을 높이는 개선된 비즈니스 프로세스를 만드는 방법을 알아보세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

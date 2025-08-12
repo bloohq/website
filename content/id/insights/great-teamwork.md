@@ -1,7 +1,7 @@
 ---
 title: Apa itu Kerja Tim yang Hebat?
 description: 'Kerja tim yang hebat adalah fondasi dari setiap organisasi. Dalam tulisan komprehensif ini, kami membahas elemen dan prinsip kunci yang mendefinisikan kerja tim yang luar biasa.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

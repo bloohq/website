@@ -1,7 +1,7 @@
 ---
 title: Het Probleem Met Overwerken
 description: Er is een verontrustende trend die de lange uren om succes te bereiken fetishiseert. Dit is een probleem omdat hard, lang werken en resultaten niet gecorreleerd zijn.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

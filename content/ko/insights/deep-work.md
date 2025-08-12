@@ -1,7 +1,7 @@
 ---
 title: 현대 직장에서의 깊은 작업 배양
 description: 생산성을 높이기 위해 깊은 작업 문화를 배양하세요. 조직에서 깊은 작업을 우선시하는 방법을 알아보세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

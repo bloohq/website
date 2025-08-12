@@ -1,7 +1,7 @@
 ---
 title: Le ROI des bons processus d'affaires.
 description: De meilleurs processus d'affaires entraînent un meilleur retour sur investissement (ROI). Découvrez comment créer des processus d'affaires améliorés qui favorisent la rentabilité.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

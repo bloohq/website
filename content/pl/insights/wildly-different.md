@@ -1,7 +1,7 @@
 ---
 title: Bądź Dziko Inny
 description: Różnicowanie jest kluczowe w przestrzeni agencji. Dowiedz się, jak wprowadzać małe zmiany, które przyniosą korzyści w dłuższej perspektywie.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Trabalhando com Humanos
 description: Trabalhar com clientes e membros da equipe é fundamental para o crescimento de uma agência de sucesso.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

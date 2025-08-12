@@ -2,7 +2,7 @@
 title: Dinheiro É Rei
 slug: dinheiro-e-rei
 description: O fluxo de caixa é o componente mais crítico para administrar uma agência, aprenda a gerenciá-lo para que você sempre tenha um bom buffer operacional.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

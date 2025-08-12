@@ -1,7 +1,7 @@
 ---
 title: 狂野不同
 description: 在代理空间中，差异化是关键。了解如何进行小的改变，以便在长期内获得回报。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

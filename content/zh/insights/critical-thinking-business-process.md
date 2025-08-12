@@ -1,7 +1,7 @@
 ---
 title: 将批判性思维应用于流程设计
 description: 企业是多个流程同时、不间断地发生的总和，以实现商业目标。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

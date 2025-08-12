@@ -2,7 +2,7 @@
 title: 现金为王
 slug: cash-is-king
 description: 现金流是运营代理机构最关键的组成部分，了解如何管理它，以便您始终拥有良好的运营缓冲。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

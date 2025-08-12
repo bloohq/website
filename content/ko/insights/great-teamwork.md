@@ -1,7 +1,7 @@
 ---
 title: 훌륭한 팀워크란 무엇인가?
 description: '훌륭한 팀워크는 모든 조직의 기초입니다. 이 포괄적인 글에서는 뛰어난 팀워크를 정의하는 핵심 요소와 원칙에 대해 깊이 탐구합니다.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

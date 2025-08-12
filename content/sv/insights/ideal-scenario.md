@@ -1,7 +1,7 @@
 ---
 title: Det Ideala Scenariot
 description: Hur ser en ideal byrå ut? Detta är frågan vi besvarar i detta kapitel.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

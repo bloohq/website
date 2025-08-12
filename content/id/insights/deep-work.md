@@ -1,7 +1,7 @@
 ---
 title: Mengembangkan Kerja Mendalam di Tempat Kerja Modern
 description: Kembangkan budaya kerja mendalam untuk meningkatkan produktivitas. Temukan cara menjadikan kerja mendalam sebagai prioritas di organisasi Anda.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

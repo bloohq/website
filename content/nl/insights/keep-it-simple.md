@@ -1,7 +1,7 @@
 ---
 title: Houd Het Simpel
 description: In dit hoofdstuk leggen we uit waarom eenvoudige processen vaak veel beter zijn dan meer academische, complexe bedrijfsprocessen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: ការបញ្ជាក់អតិថិជនរបស់អ្នក
 description: រៀនពីរបៀបស្វែងរកប្រភេទអតិថិជនល្អបំផុត - អ្នកដែលធ្វើឱ្យការងារជាមួយគ្នាមានភាពរីករាយ និងមានផលចំណេញ។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

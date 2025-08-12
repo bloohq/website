@@ -1,7 +1,7 @@
 ---
 title: ការងារជាមួយមនុស្ស
 description: ការងារជាមួយអតិថិជន និងសមាជិកក្រុមគឺជាគន្លងសំខាន់ក្នុងការលូតលាស់អាជីវកម្មដែលជោគជ័យ។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

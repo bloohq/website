@@ -1,7 +1,7 @@
 ---
 title: Aplicando el Pensamiento Crítico al Diseño de Procesos.
 description: Un negocio es la suma de múltiples procesos que ocurren simultáneamente, sin parar, para alcanzar los objetivos empresariales.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

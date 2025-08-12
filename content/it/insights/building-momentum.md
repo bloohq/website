@@ -1,7 +1,7 @@
 ---
 title: Inizia a Costruire Slancio
 description: Comprendi il concetto di slancio e perché è cruciale costruire slancio nella tua agenzia.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

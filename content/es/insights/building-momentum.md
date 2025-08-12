@@ -1,7 +1,7 @@
 ---
 title: Comienza a Construir Momentum
 description: Entiende el concepto de momentum y por qué es crucial construir momentum en tu agencia.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

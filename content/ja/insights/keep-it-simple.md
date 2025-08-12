@@ -1,7 +1,7 @@
 ---
 title: シンプルに保つ
 description: この章では、シンプルなプロセスがしばしばより学術的で複雑なビジネスプロセスよりも優れている理由を説明します。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 简明参考指南
 description: 这是《机构成功指南》中所有内容的一页参考指南。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

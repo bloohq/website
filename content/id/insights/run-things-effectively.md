@@ -1,7 +1,7 @@
 ---
 title: Menjalankan Segalanya dengan Efektif
 description: Mengapa menjadi efektif di sebuah agensi adalah kunci untuk tetap waras saat berkembang.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

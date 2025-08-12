@@ -1,7 +1,7 @@
 ---
 title: La Délégation est l'Entrepreneuriat
 description: Apprenez à déléguer efficacement afin de faire évoluer votre agence vers de nouveaux sommets.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

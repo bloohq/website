@@ -1,7 +1,7 @@
 ---
 title: Квалификация ваших клиентов
 description: Узнайте, как найти лучших клиентов — тех, с кем приятно работать и которые приносят прибыль.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

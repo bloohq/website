@@ -1,8 +1,8 @@
 ---
 title: ការថែរក្សាអ្នកមានទេពកោសល្យខ្ពស់
 description: ការទាក់ទាញ អភិវឌ្ឍន៍ និងរក្សាអ្នកមានទេពកោសល្យខ្ពស់មានន័យថា មានលទ្ធផលល្អប្រសើរ និងមានការលំបាកតិចតួច។
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

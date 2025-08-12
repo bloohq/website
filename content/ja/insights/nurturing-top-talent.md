@@ -1,8 +1,8 @@
 ---
 title: トップタレントの育成
 description: トップタレントを引き付け、育成し、維持することは、より良い結果と少ない頭痛を意味します。
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

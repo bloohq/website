@@ -1,7 +1,7 @@
 ---
 title: Lavorare con gli Umani
 description: Lavorare con i clienti e i membri del team è fondamentale per far crescere un'agenzia di successo.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

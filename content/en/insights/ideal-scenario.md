@@ -1,6 +1,6 @@
 ---
 title: The Ideal Scenario
-category: "Modern Work Practices"
+category: "Best Practices"
 description: What does an ideal agency look like? This is the question we answer in this chapter.
 
 ---

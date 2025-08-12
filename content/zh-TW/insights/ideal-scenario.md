@@ -1,7 +1,7 @@
 ---
 title: 理想的情境
 description: 理想的代理機構是什麼樣的？這是我們在本章中回答的問題。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

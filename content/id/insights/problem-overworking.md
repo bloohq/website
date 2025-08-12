@@ -1,7 +1,7 @@
 ---
 title: Masalah Dengan Kerja Berlebihan
 description: Ada tren yang mengganggu belakangan ini yang mengagungkan jam kerja panjang untuk mencapai kesuksesan. Ini adalah masalah karena kerja keras dan jam panjang tidak berkorelasi dengan hasil.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

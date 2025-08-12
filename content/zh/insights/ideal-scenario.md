@@ -1,7 +1,7 @@
 ---
 title: 理想的场景
 description: 理想的代理机构是什么样的？这是我们在本章中回答的问题。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

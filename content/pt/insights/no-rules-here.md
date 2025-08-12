@@ -1,7 +1,7 @@
 ---
 title: Sem Regras Aqui
 description: Não há regras rígidas neste guia, apenas reflexões e orientações que você pode adaptar à sua situação.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

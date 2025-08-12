@@ -1,7 +1,7 @@
 ---
 title: Projets vs Processus
 description: Comprendre la différence entre projets et processus est crucial, afin que vous sachiez toujours quel type de travail vous engagez.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

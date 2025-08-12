@@ -1,6 +1,6 @@
 ---
 title: The ROI of Good Business Processes.
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Better business processes lead to a better return on investment (ROI). Learn how to create improved business processes that drive profitability.
 date: 2024-07-06
 ---

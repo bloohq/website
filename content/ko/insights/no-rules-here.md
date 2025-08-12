@@ -1,7 +1,7 @@
 ---
 title: 규칙이 없는 곳
 description: 이 가이드에는 엄격한 규칙이 없습니다. 오직 여러분의 상황에 맞게 조정할 수 있는 반성과 안내만 있습니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

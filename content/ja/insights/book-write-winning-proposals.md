@@ -1,7 +1,7 @@
 ---
 title: 勝利する提案書を書く
 description: 勝利する提案書を書くことは、エージェンシーを運営する上で最も重要な部分です。正しく行う方法を学びましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

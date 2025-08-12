@@ -2,7 +2,7 @@
 title: Kontanter är Kung
 slug: kontanter-ar-kung
 description: Kassaflöde är den mest kritiska komponenten för att driva en byrå, lär dig hur du hanterar det så att du alltid har en bra driftbuffert.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

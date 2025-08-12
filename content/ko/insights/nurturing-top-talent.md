@@ -1,8 +1,8 @@
 ---
 title: 최고의 인재 육성
 description: 최고의 인재를 유치하고 개발하며 유지하는 것은 더 나은 결과와 더 적은 문제를 의미합니다.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

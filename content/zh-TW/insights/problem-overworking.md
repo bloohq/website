@@ -1,7 +1,7 @@
 ---
 title: 過度工作的問題
 description: 最近有一個令人不安的趨勢，將長時間工作當作成功的迷戀。這是一個問題，因為辛苦的長時間工作與結果並不相關。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

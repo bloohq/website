@@ -1,6 +1,6 @@
 ---
 title: Cultivando o Trabalho Profundo no Local de Trabalho Moderno
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Cultive uma cultura de trabalho profundo para produtividade aprimorada. Descubra como tornar o trabalho profundo uma prioridade em sua organização.
 date: 2024-01-01
 ---

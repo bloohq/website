@@ -1,7 +1,7 @@
 ---
 title: Abschließende Gedanken
 description: Zusammenfassung von allem, was wir im Agentur-Erfolgsguide behandelt haben.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

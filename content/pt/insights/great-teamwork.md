@@ -1,7 +1,7 @@
 ---
 title: O que é um Grande Trabalho em Equipe?
 description: 'Um grande trabalho em equipe é a base de qualquer organização. Neste artigo abrangente, mergulhamos nos elementos e princípios-chave que definem um trabalho em equipe excepcional.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

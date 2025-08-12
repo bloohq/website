@@ -1,7 +1,7 @@
 ---
 title: Manajemen Proyek yang Efektif
 description: Pelajari cara mengelola proyek agar Anda mendapatkan hasil yang luar biasa tepat waktu dan sesuai anggaran.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

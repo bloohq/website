@@ -1,7 +1,7 @@
 ---
 title: 委任は起業家精神である
 description: 効果的に委任する方法を学び、あなたのエージェンシーを新たな高みへとスケールアップしましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

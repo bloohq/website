@@ -1,7 +1,7 @@
 ---
 title: Будущее командной работы
 description: Наша миссия — создать будущее командной работы уже сегодня. Мы делаем это шаг за шагом с многолетним видением в уме.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

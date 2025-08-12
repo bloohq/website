@@ -1,7 +1,7 @@
 ---
 title: 有效管理事务
 description: 在代理机构中有效性为何是保持理智并实现增长的关键。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

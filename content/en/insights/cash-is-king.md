@@ -1,7 +1,7 @@
 ---
 title: Cash Is King
 slug: cash-is-king
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Cash flow is the most critical component of running an agency, learn how to manage it so you always have a good operating buffer.
 
 ---

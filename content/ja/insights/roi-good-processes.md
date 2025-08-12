@@ -1,7 +1,7 @@
 ---
 title: 良いビジネスプロセスのROI
 description: より良いビジネスプロセスは、より良い投資収益率（ROI）につながります。収益性を高める改善されたビジネスプロセスを作成する方法を学びましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

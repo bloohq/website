@@ -1,7 +1,7 @@
 ---
 title: Coltivare il Lavoro Profondo Nel Moderno Ambiente di Lavoro
 description: Coltiva una cultura del lavoro profondo per una produttività migliorata. Scopri come rendere il lavoro profondo una priorità nella tua organizzazione.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

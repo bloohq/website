@@ -1,7 +1,7 @@
 ---
 title: Заключительные мысли
 description: Подведение итогов всего, что мы обсудили в Руководстве по успеху агентства.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

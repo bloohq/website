@@ -1,7 +1,7 @@
 ---
 title: គ្មានច្បាប់នៅទីនេះ
 description: គ្មានច្បាប់កំណត់នៅក្នុងមគ្គុទេសក៍នេះ មានតែការពិចារណានិងការណែនាំដែលអ្នកអាចកែប្រែទៅតាមស្ថានភាពរបស់អ្នក។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

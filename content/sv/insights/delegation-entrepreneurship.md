@@ -1,7 +1,7 @@
 ---
 title: Delegation är Entreprenörskap
 description: Lär dig hur du delegerar effektivt så att du kan skala din byrå till nya höjder.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 title: Mengembangkan Talenta Terbaik
 description: Menarik, mengembangkan, dan mempertahankan talenta terbaik berarti hasil yang lebih baik dan lebih sedikit masalah.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

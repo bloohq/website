@@ -1,6 +1,6 @@
 ---
 title: Start Building Momentum
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Understand the concept of momentum and why it is crucial to build momentum in your agency. 
 
 ---

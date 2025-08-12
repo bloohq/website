@@ -1,7 +1,7 @@
 ---
 title: Travailler avec des Humains
 description: Travailler avec des clients et des membres de l'équipe est essentiel pour faire croître une agence prospère.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

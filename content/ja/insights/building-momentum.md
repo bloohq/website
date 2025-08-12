@@ -1,7 +1,7 @@
 ---
 title: モメンタムを築き始める
 description: モメンタムの概念を理解し、なぜあなたのエージェンシーでモメンタムを築くことが重要なのかを説明します。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 title: Nourrir les Meilleurs Talents
 description: Attirer, développer et garder les meilleurs talents signifie de meilleurs résultats et moins de maux de tête.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

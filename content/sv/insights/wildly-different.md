@@ -1,7 +1,7 @@
 ---
 title: Var Vilt Annorlunda
 description: Differentiering är nyckeln inom byråvärlden. Lär dig hur små förändringar kan ge långsiktiga vinster.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

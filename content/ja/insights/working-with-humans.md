@@ -1,7 +1,7 @@
 ---
 title: 人間との協働
 description: クライアントやチームメンバーとの協働は、成功するエージェンシーを成長させるための鍵です。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

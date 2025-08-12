@@ -1,6 +1,6 @@
 --- 
 title: Cultivating Deep Work In The Modern Workplace
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Cultivate a culture of deep work for enhanced productivity. Discover how to make deep work a priority in your organization.
 date: 2024-01-01
 ---

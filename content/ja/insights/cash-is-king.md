@@ -2,7 +2,7 @@
 title: 現金は王様
 slug: cash-is-king
 description: キャッシュフローはエージェンシー運営の最も重要な要素です。常に良好な運営バッファを持つための管理方法を学びましょう。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

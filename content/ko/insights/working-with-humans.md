@@ -1,7 +1,7 @@
 ---
 title: 인간과의 협력
 description: 고객 및 팀원과의 협력은 성공적인 에이전시를 성장시키는 데 핵심입니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

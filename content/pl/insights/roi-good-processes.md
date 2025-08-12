@@ -1,7 +1,7 @@
 ---
 title: ROI dobrych procesów biznesowych.
 description: Lepsze procesy biznesowe prowadzą do lepszego zwrotu z inwestycji (ROI). Dowiedz się, jak tworzyć ulepszone procesy biznesowe, które zwiększają rentowność.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

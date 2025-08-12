@@ -1,7 +1,7 @@
 ---
 title: 現代の職場におけるディープワークの育成
 description: 生産性を向上させるためにディープワークの文化を育成しましょう。組織でディープワークを優先する方法を見つけてください。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

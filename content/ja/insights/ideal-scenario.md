@@ -1,7 +1,7 @@
 ---
 title: 理想的なシナリオ
 description: 理想的なエージェンシーとはどのようなものか？この章で私たちが答える質問です。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

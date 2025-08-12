@@ -1,7 +1,7 @@
 ---
 title: 專案與流程
 description: 理解專案與流程之間的差異至關重要，讓您始終知道自己參與的是哪種類型的工作。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

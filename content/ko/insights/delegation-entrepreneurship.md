@@ -1,7 +1,7 @@
 ---
 title: 위임은 기업가 정신입니다
 description: 효과적으로 위임하는 방법을 배워 귀하의 에이전시를 새로운 차원으로 확장하세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Projekte vs Prozesse
 description: Das Verständnis des Unterschieds zwischen Projekten und Prozessen ist entscheidend, damit Sie immer wissen, in welcher Art von Arbeit Sie sich engagieren.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

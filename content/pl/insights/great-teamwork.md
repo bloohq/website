@@ -1,7 +1,7 @@
 ---
 title: Czym jest wspaniała współpraca zespołowa?
 description: 'Wspaniała współpraca zespołowa jest fundamentem każdej organizacji. W tym obszernym opracowaniu zagłębiamy się w kluczowe elementy i zasady, które definiują wyjątkową współpracę zespołową.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

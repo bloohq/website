@@ -1,8 +1,8 @@
 ---
 title: Воспитание Топ-Талантов
 description: Привлечение, развитие и удержание топ-талантов означает лучшие результаты и меньше головной боли.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

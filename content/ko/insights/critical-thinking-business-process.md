@@ -1,7 +1,7 @@
 ---
 title: 프로세스 설계에 비판적 사고 적용하기
 description: 비즈니스는 비즈니스 목표를 달성하기 위해 동시에 지속적으로 발생하는 여러 프로세스의 합입니다.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

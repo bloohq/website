@@ -1,7 +1,7 @@
 ---
 title: Skuteczne Zarządzanie Projektami
 description: Dowiedz się, jak zarządzać projektami, aby osiągać świetne wyniki na czas i w ramach budżetu.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

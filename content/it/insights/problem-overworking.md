@@ -1,7 +1,7 @@
 ---
 title: Il Problema del Lavoro Eccessivo
 description: C'è una tendenza preoccupante ultimamente che fetishizza le lunghe ore di lavoro per raggiungere il successo. Questo è un problema perché il lavoro duro e le lunghe ore non sono correlati ai risultati.
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-01-01
 ---
 

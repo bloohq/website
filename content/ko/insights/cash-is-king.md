@@ -1,7 +1,7 @@
 ---
 title: 현금이 왕이다  
 description: 현금 흐름은 에이전시 운영의 가장 중요한 요소입니다. 항상 좋은 운영 버퍼를 유지할 수 있도록 관리하는 방법을 배우세요.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 이것은 Blue의 CEO가 모든 에이전시 및 전문 서비스 회사 소유자를 위해 쓴 에이전시 성공 가이드의 일부로, 에이전시 창립자로서의 10년 경험을 바탕으로 합니다.
 

@@ -1,6 +1,6 @@
 ---
 title: Delegation is Entrepreneurship
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Learn how to delegate effectively so you can scale your agency to new heights.
 ---
 This is part of the Agency Success Guide, a book written by the CEO of Blue for all agency and professional service firm owners, based on his 10-year experience as an agency founder. 

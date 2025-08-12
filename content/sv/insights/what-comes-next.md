@@ -1,7 +1,7 @@
 ---
 title: Vad Kommer Nästa?
 description: Nu när du har informationen är det dags att agera!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

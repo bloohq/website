@@ -1,7 +1,7 @@
 ---
 title: Gewinnen Sie mit überzeugenden Angeboten
 description: Überzeugende Angebote zu schreiben, ist der wichtigste Teil der Führung einer Agentur. Erfahren Sie, wie Sie es richtig machen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

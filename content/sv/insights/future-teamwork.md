@@ -1,7 +1,7 @@
 ---
 title: Framtiden för Teamarbete
 description: Vår mission är att skapa framtiden för teamarbete, idag. Vi gör detta steg för steg med en flerårig vision i åtanke.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

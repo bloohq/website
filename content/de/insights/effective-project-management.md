@@ -1,7 +1,7 @@
 ---
 title: Effektives Projektmanagement
 description: Lernen Sie, wie Sie Projekte so verwalten, dass Sie großartige Ergebnisse pünktlich und im Budgetrahmen erzielen.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

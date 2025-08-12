@@ -1,7 +1,7 @@
 ---
 title: 將批判性思維應用於流程設計
 description: 一個企業是多個同時進行的流程的總和，持續不斷地運行以實現商業目標。
-category: "Modern Work Practices"
+category: "Best Practices"
 date: 2024-07-06
 ---
 

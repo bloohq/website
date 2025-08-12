@@ -1,7 +1,7 @@
 ---
 title: Winnende Voorstellen Schrijven
 description: Winnende voorstellen schrijven is het belangrijkste onderdeel van het runnen van een bureau. Leer hoe je het goed doet.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

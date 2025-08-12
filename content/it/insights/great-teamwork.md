@@ -1,7 +1,7 @@
 ---
 title: Cos'è un Grande Lavoro di Squadra?
 description: 'Un grande lavoro di squadra è la base di qualsiasi organizzazione. In questo approfondimento completo, esploriamo gli elementi chiave e i principi che definiscono un lavoro di squadra eccezionale.'
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

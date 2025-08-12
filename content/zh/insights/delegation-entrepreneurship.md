@@ -1,7 +1,7 @@
 ---
 title: 委派即创业
 description: 学习如何有效委派，以便将您的代理机构提升到新的高度。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

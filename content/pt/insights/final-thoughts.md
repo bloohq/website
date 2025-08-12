@@ -1,7 +1,7 @@
 ---
 title: Considerações Finais
 description: Concluindo tudo o que cobrimos no Guia de Sucesso para Agências.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

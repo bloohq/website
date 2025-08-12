@@ -1,6 +1,6 @@
 ---
 title: Appliquer la pensée critique à la conception de processus.
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Une entreprise est la somme de plusieurs processus qui se déroulent simultanément, sans interruption, pour atteindre les objectifs commerciaux.
 date: 2024-07-06
 ---

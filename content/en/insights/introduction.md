@@ -1,6 +1,6 @@
 ---
 title: Introduction
-category: "Modern Work Practices"
+category: "Best Practices"
 description: Learn why we wrote the definitive guide on how to run an agency effectively, and how we got started.
 image: /insights/madoffice1.jpeg
 ---

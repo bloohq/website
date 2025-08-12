@@ -1,8 +1,8 @@
 ---
 title: Top Talent Koesteren
 description: Het aantrekken, ontwikkelen en behouden van top talent betekent betere resultaten en minder hoofdpijn.
-category: "Modern Work Practices"
-category: "Modern Work Practices"
+category: "Best Practices"
+category: "Best Practices"
 ---
 
 

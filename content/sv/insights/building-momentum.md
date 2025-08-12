@@ -1,7 +1,7 @@
 ---
 title: Börja Bygga Momentum
 description: Förstå konceptet momentum och varför det är avgörande att bygga momentum i din byrå.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

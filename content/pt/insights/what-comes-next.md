@@ -1,7 +1,7 @@
 ---
 title: O Que Vem a Seguir?
 description: Agora que você tem as informações, é hora de agir!
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

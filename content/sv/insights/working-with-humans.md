@@ -1,7 +1,7 @@
 ---
 title: Arbeta Med Människor
 description: Att arbeta med kunder och teammedlemmar är nyckeln till att växa en framgångsrik byrå.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

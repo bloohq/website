@@ -1,7 +1,7 @@
 ---
 title: មគ្គុទេសក៍យោងខ្លី
 description: នេះគឺជាមគ្គុទេសក៍យោងមួយទំព័រ សម្រាប់មាតិកាទាំងអស់នៅក្នុងមគ្គុទេសក៍ជោគជ័យសាធារណៈ។
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 簡潔なリファレンスガイド
 description: これは、エージェンシー成功ガイドのすべてのコンテンツのための1ページのリファレンスガイドです。
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Delegasi adalah Kewirausahaan
 description: Pelajari cara mendelegasikan dengan efektif sehingga Anda dapat mengembangkan agensi Anda ke tingkat yang lebih tinggi.
-category: "Modern Work Practices"
+category: "Best Practices"
 ---
 
 
