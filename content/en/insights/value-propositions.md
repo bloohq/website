@@ -89,16 +89,11 @@ Let's dive into what makes Blue special when selling to enterprise deals.
 
 **How to Position:** "Blue isn't a walled garden. Our 100% API coverage means it fits into your existing tech ecosystem perfectly."
 
-## Deployment Flexibility: Have It Your Way
+## Deployment Flexibility
 
-| **Deployment Model** | **What It Means** | **Ideal For** |
-|---------------------|-------------------|---------------|
-| **Cloud** | Fully managed by Blue | Most enterprises |
-| **Hybrid** | Database on-premise, application in cloud | Data sovereignty requirements |
-| **On-Premise** | Complete on-premise deployment | Strict security requirements |
-| **White-Label Cloud** | Your brand, our infrastructure | Service providers |
+Blue offers four deployment models (Cloud, Hybrid, On-Premise, White-Label) with no feature penalties. Every customer gets the same updates and functionality regardless of deployment choice. 
 
-All models receive the same updates and features - no deployment penalties.
+**See our comprehensive [Deployment Options Guide](/insights/deployment-options) for detailed architecture, pricing, and decision frameworks for each model.**
 
 ## vs Competitors
 
