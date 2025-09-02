@@ -121,6 +121,10 @@
         "title": "Conditional Automations",
         "description": "Add And/Or logic to automation triggers"
       },
+      "reporting_module": {
+        "title": "Reporting Module",
+        "description": "Advanced reporting and analytics dashboard with customizable reports"
+      },
       "relative_date_triggers": {
         "title": "Relative Date Triggers",
         "description": "Trigger automations based on days before or after due dates"
@@ -256,6 +260,10 @@
       "conditional_automations": {
         "title": "Automatizaciones Condicionales",
         "description": "Agregar lógica Y/O a los activadores de automatización"
+      },
+      "reporting_module": {
+        "title": "Módulo de Informes",
+        "description": "Panel de informes y análisis avanzado con informes personalizables"
       },
       "zapier_integration": {
         "title": "Integración con Zapier",
@@ -409,6 +417,10 @@
         "title": "条件自动化",
         "description": "为自动化触发器添加与/或逻辑"
       },
+      "reporting_module": {
+        "title": "报告模块",
+        "description": "具有可自定义报告的高级报告和分析仪表板"
+      },
       "zapier_integration": {
         "title": "Zapier集成",
         "description": "通过Zapier将Blue与数千个应用程序连接"
@@ -560,6 +572,10 @@
       "conditional_automations": {
         "title": "Automatisations Conditionnelles",
         "description": "Ajouter la logique ET/OU aux déclencheurs d'automatisation"
+      },
+      "reporting_module": {
+        "title": "Module de Rapports",
+        "description": "Tableau de bord de rapports et d'analyses avancés avec rapports personnalisables"
       },
       "zapier_integration": {
         "title": "Intégration Zapier",
@@ -713,6 +729,10 @@
         "title": "Bedingte Automatisierungen",
         "description": "Fügen Sie UND/ODER-Logik zu Automatisierungsauslösern hinzu"
       },
+      "reporting_module": {
+        "title": "Berichtsmodul",
+        "description": "Erweitertes Berichts- und Analyse-Dashboard mit anpassbaren Berichten"
+      },
       "zapier_integration": {
         "title": "Zapier-Integration",
         "description": "Verbinden Sie Blue mit Tausenden von Apps über Zapier"
@@ -864,6 +884,10 @@
       "conditional_automations": {
         "title": "条件付き自動化",
         "description": "自動化トリガーにAND/ORロジックを追加"
+      },
+      "reporting_module": {
+        "title": "レポートモジュール",
+        "description": "カスタマイズ可能なレポートを備えた高度なレポートと分析ダッシュボード"
       },
       "zapier_integration": {
         "title": "Zapier統合",
@@ -1017,6 +1041,10 @@
         "title": "Automações Condicionais",
         "description": "Adicione lógica E/OU aos gatilhos de automação"
       },
+      "reporting_module": {
+        "title": "Módulo de Relatórios",
+        "description": "Painel de relatórios e análises avançados com relatórios personalizáveis"
+      },
       "zapier_integration": {
         "title": "Integração Zapier",
         "description": "Conecte o Blue com milhares de aplicativos através do Zapier"
@@ -1168,6 +1196,10 @@
       "conditional_automations": {
         "title": "Условные автоматизации",
         "description": "Добавьте логику И/ИЛИ к триггерам автоматизации"
+      },
+      "reporting_module": {
+        "title": "Модуль отчетов",
+        "description": "Расширенная панель отчетов и аналитики с настраиваемыми отчетами"
       },
       "zapier_integration": {
         "title": "Интеграция с Zapier",
@@ -1321,6 +1353,10 @@
         "title": "조건부 자동화",
         "description": "자동화 트리거에 AND/OR 논리 추가"
       },
+      "reporting_module": {
+        "title": "보고 모듈",
+        "description": "사용자 정의 가능한 보고서가 포함된 고급 보고 및 분석 대시보드"
+      },
       "zapier_integration": {
         "title": "Zapier 통합",
         "description": "Zapier를 통해 Blue를 수천 개의 앱과 연결"
@@ -1472,6 +1508,10 @@
       "conditional_automations": {
         "title": "Automazioni Condizionali",
         "description": "Aggiungi logica E/O ai trigger di automazione"
+      },
+      "reporting_module": {
+        "title": "Modulo di Reportistica",
+        "description": "Dashboard avanzato di reportistica e analisi con report personalizzabili"
       },
       "zapier_integration": {
         "title": "Integrazione Zapier",
@@ -1625,6 +1665,10 @@
         "title": "Otomasi Kondisional",
         "description": "Tambahkan logika Dan/Atau ke pemicu otomasi"
       },
+      "reporting_module": {
+        "title": "Modul Pelaporan",
+        "description": "Dasbor pelaporan dan analitik lanjutan dengan laporan yang dapat disesuaikan"
+      },
       "zapier_integration": {
         "title": "Integrasi Zapier",
         "description": "Hubungkan Blue dengan ribuan aplikasi melalui Zapier"
@@ -1776,6 +1820,10 @@
       "conditional_automations": {
         "title": "Voorwaardelijke Automatiseringen",
         "description": "Voeg EN/OF logica toe aan automatiseringstriggers"
+      },
+      "reporting_module": {
+        "title": "Rapportagemodule",
+        "description": "Geavanceerd rapportage- en analysedashboard met aanpasbare rapporten"
       },
       "zapier_integration": {
         "title": "Zapier Integratie",
@@ -1929,6 +1977,10 @@
         "title": "Automatyzacje warunkowe",
         "description": "Dodaj logikę I/LUB do wyzwalaczy automatyzacji"
       },
+      "reporting_module": {
+        "title": "Moduł raportowania",
+        "description": "Zaawansowany pulpit raportowania i analityki z konfigurowalnymi raportami"
+      },
       "zapier_integration": {
         "title": "Integracja Zapier",
         "description": "Połącz Blue z tysiącami aplikacji przez Zapier"
@@ -2080,6 +2132,10 @@
       "conditional_automations": {
         "title": "條件自動化",
         "description": "為自動化觸發器添加與/或邏輯"
+      },
+      "reporting_module": {
+        "title": "報告模組",
+        "description": "具有可自訂報告的進階報告和分析儀表板"
       },
       "zapier_integration": {
         "title": "Zapier整合",
@@ -2233,6 +2289,10 @@
         "title": "Villkorliga automatiseringar",
         "description": "Lägg till OCH/ELLER-logik till automatiseringstriggers"
       },
+      "reporting_module": {
+        "title": "Rapporteringsmodul",
+        "description": "Avancerad rapporterings- och analyspanel med anpassningsbara rapporter"
+      },
       "zapier_integration": {
         "title": "Zapier-integration",
         "description": "Anslut Blue med tusentals appar genom Zapier"
@@ -2384,6 +2444,10 @@
       "conditional_automations": {
         "title": "ស្វ័យប្រវត្តិកម្មតាមលក្ខខណ្ឌ",
         "description": "បន្ថែមតក្កវិទ្យា AND/OR ទៅគន្លឹះស្វ័យប្រវត្តិកម្ម"
+      },
+      "reporting_module": {
+        "title": "ម៉ូឌុលរបាយការណ៍",
+        "description": "ផ្ទាំងគ្រប់គ្រងរបាយការណ៍និងការវិភាគកម្រិតខ្ពស់ជាមួយរបាយការណ៍ដែលអាចប្តូរតាមបំណង"
       },
       "zapier_integration": {
         "title": "ការរួមបញ្ចូល Zapier",
