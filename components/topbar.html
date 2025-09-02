@@ -263,10 +263,10 @@
                        class="hidden xl:flex relative px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition-all duration-200 ease-out items-center cursor-pointer overflow-hidden"
                        x-data="{ supportHovering: false }"
                        @mouseenter="supportHovering = true">
-                        <span class="relative h-5 overflow-hidden inline-block">
-                            <span class="block transition-transform duration-300"
+                        <span class="relative h-5 overflow-hidden inline-block whitespace-nowrap">
+                            <span class="block transition-transform duration-300 whitespace-nowrap"
                                   :class="supportHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.support"}}</span>
-                            <span class="block transition-transform duration-300"
+                            <span class="block transition-transform duration-300 whitespace-nowrap"
                                   :class="supportHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.get_help"}}</span>
                         </span>
                         <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
