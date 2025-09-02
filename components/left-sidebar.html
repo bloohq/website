@@ -111,6 +111,9 @@
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 <span class="font-medium text-sm" x-text="section.name"></span>
+                                <template x-if="section.id === 'partners'">
+                                    <span class="bg-brand-blue text-white text-[10px] px-1 py-0.5 rounded ml-2 font-medium">New</span>
+                                </template>
                             </button>
                             <div x-show="section.expanded" x-collapse class="ml-7 space-y-1">
                                 <template x-for="child in section.children" :key="child.id">
