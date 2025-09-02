@@ -1,6 +1,6 @@
 ---
 title: "Deployment Options"
-category: "Partner Resources"
+category: "Partner Playbooks"
 description: "Complete guide to Blue's flexible deployment models - Cloud, Hybrid, On-Premise, and White-Label. Help customers choose the right architecture for their needs."
 date: 2025-08-12
 ---

@@ -1,6 +1,6 @@
 ---
 title: "How to Introduce Blue to Your Clients"
-category: "Partner Resources"
+category: "Partner Playbooks"
 description: "A simple email template and talking points for partners to introduce Blue to their existing clients and prospects."
 date: 2025-09-01
 ---

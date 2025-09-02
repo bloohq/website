@@ -45,9 +45,9 @@
             const urlParams = new URLSearchParams(window.location.search);
             const categoryParam = urlParams.get('category');
             
-            // Valid categories list
+            // Valid categories list (excluding partner-playbooks which has its own page)
             const validCategories = ['all', 'product-updates', 'engineering', 'ceo-blog', 
-                                    'best-practices', 'partner-resources', 'news', 'faq'];
+                                    'best-practices', 'news', 'faq'];
             
             // Set activeCategory if valid parameter exists
             if (categoryParam && validCategories.includes(categoryParam)) {
@@ -98,12 +98,6 @@
                             :class="activeCategory === 'best-practices' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
                             class="pb-0.5 sm:pb-1 cursor-pointer relative whitespace-nowrap">
                         {{t "insights.categories.best-practices"}}
-                    </button>
-                    <button @click="selectCategory('partner-resources')" 
-                            data-category="partner-resources"
-                            :class="activeCategory === 'partner-resources' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
-                            class="pb-0.5 sm:pb-1 cursor-pointer relative whitespace-nowrap">
-                        {{t "insights.categories.partner-resources"}}
                     </button>
                     <button @click="selectCategory('news')" 
                             data-category="news"

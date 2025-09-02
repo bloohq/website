@@ -1,6 +1,6 @@
 ---
 title: "How Discovery Calls Work"
-category: "Partner Resources"
+category: "Partner Playbooks"
 description: "Master the discovery process to win enterprise deals. Learn Blue's proven framework for uncovering customer pain points, building urgency, and positioning solutions that actually solve problems."
 date: 2025-09-01
 ---

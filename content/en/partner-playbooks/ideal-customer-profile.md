@@ -1,6 +1,6 @@
 ---
 title: "ICP: Ideal Customer Profile"
-category: "Partner Resources"
+category: "Partner Playbooks"
 description: "A comprehensive guide for Blue partners to identify and qualify ideal enterprise customers, ensuring focused efforts on organizations where Blue delivers maximum value."
 date: 2025-08-12
 CtaHeader: Partner with Blue

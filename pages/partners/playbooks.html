@@ -1,0 +1,24 @@
+<!-- Main content -->
+    {{template "page-heading" 
+        dict 
+            "Title" "Partner Playbooks" 
+            "Subtitle" "Essential resources and strategies for Blue partners to successfully sell and implement enterprise solutions." 
+            "MarginBottom" "mb-8"
+    }}
+    
+    <!-- Partner Playbooks Section -->
+    <div>
+        <!-- Playbooks Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{if .PartnerPlaybooks}}
+            {{range .PartnerPlaybooks}}
+            {{template "playbook-card" .}}
+            {{end}}
+            {{else}}
+            <!-- No playbooks available -->
+            <div class="col-span-full text-center py-12">
+                <p class="text-gray-500 text-lg">No partner playbooks available at this time.</p>
+            </div>
+            {{end}}
+        </div>
+    </div>

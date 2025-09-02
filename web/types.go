@@ -36,6 +36,7 @@ type PageData struct {
 	TOC                []TOCEntry
 	CustomerNumber     int
 	Insights           []InsightData
+	PartnerPlaybooks   []InsightData
 	Path               string
 	SchemaData         template.JS
 	Language           string

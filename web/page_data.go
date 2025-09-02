@@ -30,6 +30,8 @@ func (r *Router) preparePageDataWithCache(path string, content template.HTML, is
 
 	// Prepare insights data - only include if on insights page
 	var insights []InsightData
+	var partnerPlaybooks []InsightData
+	
 	if path == "/insights" {
 		// Get all cached insights from MarkdownService
 		cachedInsights := r.markdownService.GetAllCachedContent()
@@ -71,8 +73,60 @@ func (r *Router) preparePageDataWithCache(path string, content template.HTML, is
 				})
 			}
 		}
+	}
+	
+	// Prepare partner playbooks data - only include if on partner playbooks page
+	if path == "/partners/playbooks" {
+		// Get all cached content from MarkdownService
+		cachedContent := r.markdownService.GetAllCachedContent()
+
+		// Initialize PNG generator
+		pngGen := NewPNGGenerator()
+
+		// Build the language-specific cache key prefix for partner playbooks
+		// Cache keys are stored as "lang:/path" format
+		cachePrefix := lang + ":/partner-playbooks/"
+
+		for cacheKey, content := range cachedContent {
+			if strings.HasPrefix(cacheKey, cachePrefix) && content.Frontmatter != nil {
+				// Extract the actual URL path from the cache key
+				urlPath := strings.TrimPrefix(cacheKey, lang+":")
+				
+				// Generate unique PNG for this playbook based on title
+				pngPath, err := pngGen.GenerateOrGetPNG(content.Frontmatter.Title, content.Frontmatter.Slug)
+				if err != nil {
+					log.Printf("Error generating PNG for playbook %s: %v", content.Frontmatter.Title, err)
+					continue
+				}
+
+				partnerPlaybooks = append(partnerPlaybooks, InsightData{
+					Title:       content.Frontmatter.Title,
+					Description: content.Frontmatter.Description,
+					Category:    content.Frontmatter.Category,
+					Slug:        content.Frontmatter.Slug,
+					PNGPath:     pngPath,
+					Date:        content.Frontmatter.Date,
+					URL:         urlPath,
+				})
+			}
+		}
 		
-		// Sort insights by date in reverse chronological order (latest first)
+		// Sort partner playbooks by date in reverse chronological order (latest first)
+		sort.Slice(partnerPlaybooks, func(i, j int) bool {
+			// Handle empty dates by putting them at the end
+			if partnerPlaybooks[i].Date == "" {
+				return false
+			}
+			if partnerPlaybooks[j].Date == "" {
+				return true
+			}
+			// Compare dates as strings (assumes YYYY-MM-DD format)
+			return partnerPlaybooks[i].Date > partnerPlaybooks[j].Date
+		})
+	}
+	
+	// Sort insights by date in reverse chronological order (latest first)
+	if path == "/insights" {
 		sort.Slice(insights, func(i, j int) bool {
 			// Handle empty dates by putting them at the end
 			if insights[i].Date == "" {
@@ -147,6 +201,7 @@ func (r *Router) preparePageDataWithCache(path string, content template.HTML, is
 		TOC:                toc,
 		CustomerNumber:     17000,
 		Insights:           insights,
+		PartnerPlaybooks:   partnerPlaybooks,
 		Path:               path,
 		SchemaData:         schemaData,
 		Language:           lang,

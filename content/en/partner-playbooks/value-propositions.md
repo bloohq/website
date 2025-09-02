@@ -1,6 +1,6 @@
 ---
 title: "Value Propositions"
-category: "Partner Resources"
+category: "Partner Playbooks"
 description: "A comprehensive guide to Blue's unique value propositions for partners selling to enterprise customers. Learn how to position Blue's speed, flexibility, and partnership approach."
 date: 2025-08-12
 ---
