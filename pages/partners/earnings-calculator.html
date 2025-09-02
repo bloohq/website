@@ -12,22 +12,22 @@
             <!-- Scenario Presets -->
             <div class="mb-8 flex flex-wrap gap-4 justify-center">
                 <button @click="setScenario('conservative')"
-                        :class="activeScenario === 'conservative' ? 'border-brand-blue bg-blue-50' : 'border-gray-300'"
-                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue hover:bg-blue-50 transition-all duration-200 font-medium cursor-pointer">
+                        :class="activeScenario === 'conservative' ? 'border-brand-blue bg-blue-50 dark:bg-blue-900/20 dark:border-blue-400' : 'border-gray-300 dark:border-gray-600'"
+                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 font-medium cursor-pointer">
                     Conservative Scenario
-                    <span class="text-sm text-gray-600 block">5 clients @ $25K/year</span>
+                    <span class="text-sm text-gray-600 dark:text-gray-400 block">5 clients @ $25K/year</span>
                 </button>
                 <button @click="setScenario('moderate')"
-                        :class="activeScenario === 'moderate' ? 'border-brand-blue bg-blue-50' : 'border-gray-300'"
-                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue hover:bg-blue-50 transition-all duration-200 font-medium cursor-pointer">
+                        :class="activeScenario === 'moderate' ? 'border-brand-blue bg-blue-50 dark:bg-blue-900/20 dark:border-blue-400' : 'border-gray-300 dark:border-gray-600'"
+                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 font-medium cursor-pointer">
                     Moderate Scenario
-                    <span class="text-sm text-gray-600 block">10 clients @ $50K/year</span>
+                    <span class="text-sm text-gray-600 dark:text-gray-400 block">10 clients @ $50K/year</span>
                 </button>
                 <button @click="setScenario('aggressive')"
-                        :class="activeScenario === 'aggressive' ? 'border-brand-blue bg-blue-50' : 'border-gray-300'"
-                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue hover:bg-blue-50 transition-all duration-200 font-medium cursor-pointer">
+                        :class="activeScenario === 'aggressive' ? 'border-brand-blue bg-blue-50 dark:bg-blue-900/20 dark:border-blue-400' : 'border-gray-300 dark:border-gray-600'"
+                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 font-medium cursor-pointer">
                     Aggressive Scenario
-                    <span class="text-sm text-gray-600 block">20 clients @ $100K/year</span>
+                    <span class="text-sm text-gray-600 dark:text-gray-400 block">20 clients @ $100K/year</span>
                 </button>
             </div>
 
