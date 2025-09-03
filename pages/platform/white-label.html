@@ -152,32 +152,6 @@
         {{template "feature-image" $emailData}}
     </section>
 
-
-    <!-- White Label Pricing Section -->
-    <section class="mb-20">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            {{template "pricing-card" dict
-                "Title" (t "white-label.pricing_title")
-                "Description" (t "white-label.pricing_description")
-                "WhatsIncludedText" (t "white-label.whats_included")
-                "Features" (slice
-                    (t "white-label.remove_branding")
-                    (t "white-label.custom_onboarding")
-                    (t "white-label.branded_desktop")
-                    (t "white-label.custom_logo_colors")
-                    (t "white-label.emails_from_domain")
-                    (t "white-label.white_label_docs")
-                )
-                "MonthlyPrice" "$50"
-                "YearlyPrice" "$500"
-                "PriceUnit" (t "white-label.per_company")
-                "ButtonText" (t "white-label.get_started")
-                "ButtonLink" "https://app.blue.cc"
-                "FooterText" (t "white-label.addon_note")
-            }}
-        </div>
-    </section>
-
     <!-- FAQ Section -->
     <section class="mb-20">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">{{t "white-label.faq_title"}}</h2>
