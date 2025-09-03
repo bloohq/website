@@ -1,0 +1,132 @@
+<!-- Partner FAQ Page -->
+    {{template "page-heading" 
+        dict 
+            "Title" "Partner Program FAQ" 
+            "Subtitle" "Everything you need to know about becoming a Blue partner" 
+            "MarginBottom" "mb-16"
+    }}
+    
+    <!-- Getting Started Category -->
+    {{$gettingStartedData := dict
+        "categories" (slice
+            (dict
+                "id" "getting-started"
+                "name" "Getting Started & Eligibility"
+                "questions" (slice
+                    (dict "question" "What are the minimum requirements to become a Blue partner?" "answer" "We look for partners with proven experience in enterprise software implementation, an established client base, and the ability to commit to at least 3-5 implementations per year. You should have technical resources capable of handling complex integrations and process design.")
+                    (dict "question" "How long does the partner onboarding process take?" "answer" "The typical onboarding process takes 1-2 weeks, including initial assessment, agreement signing, training completion, and portal access setup.")
+                    (dict "question" "Do you have different partner tiers or levels?" "answer" "We have two levels: Registered (entry level) and Certified (after completing training and first implementation). Each level offers increasing benefits and support.")
+                    (dict "question" "Can individual consultants join, or do you only work with firms?" "answer" "We welcome both established firms and experienced independent consultants. Individual consultants need to demonstrate a track record of enterprise implementations and active client relationships.")
+                )
+            )
+        )
+    }}
+    {{template "faq-sections" $gettingStartedData}}
+
+    <!-- Territory & Client Management Category -->
+    {{$territoryData := dict
+        "categories" (slice
+            (dict
+                "id" "territory"
+                "name" "Territory & Client Management"
+                "questions" (slice
+                    (dict "question" "How does client protection work exactly?" "answer" "Client protection works on a first-come, first-served basis. When you register a deal, that specific client/company becomes exclusively yours in our system. This isn't about geographic territories or cities - it's about individual client relationships. Even if they approach us directly later, we'll redirect them to you.")
+                    (dict "question" "What determines client ownership?" "answer" "The first partner to successfully register a specific company/organization owns that relationship exclusively. It's not based on geographic regions but on individual client accounts.")
+                    (dict "question" "What if my client already contacted Blue directly?" "answer" "If a prospect hasn't signed with Blue yet and you have an active relationship with them, you can still register the opportunity. We'll review on a case-by-case basis, prioritizing partners who can demonstrate existing engagement.")
+                    (dict "question" "Can I transfer client relationships to another partner?" "answer" "Yes, with mutual agreement and Blue's approval, you can transfer client relationships to another certified partner. This might occur during acquisitions, partnerships, or strategic realignments.")
+                    (dict "question" "What happens to my clients if I leave the partner program?" "answer" "Your recurring revenue continues for existing clients as long as they remain active Blue customers. However, you won't be able to register new deals or access partner resources.")
+                )
+            )
+        )
+    }}
+    {{template "faq-sections" $territoryData}}
+
+    <!-- Financial & Commercial Category -->
+    {{$financialData := dict
+        "categories" (slice
+            (dict
+                "id" "financial"
+                "name" "Financial & Commercial"
+                "questions" (slice
+                    (dict "question" "What is the revenue share structure for partners?" "answer" "Partners earn 50% of license fees for the first two years, then 25% for the entire remaining customer lifetime. This includes all plan upgrades and expansions. The more enterprise customers you bring, the higher your earning potential grows.")
+                    (dict "question" "When and how do partner commissions get paid?" "answer" "Commissions are paid monthly, 30 days after client payment is received. We provide detailed commission statements via ACH or wire transfer.")
+                    (dict "question" "Are there any costs to join the partner program?" "answer" "There are no fees to join. The only investment is your time for training and certification.")
+                    (dict "question" "What currency do you use for payments?" "answer" "We pay all partner commissions in US dollars exclusively. All client payments are also processed in US dollars.")
+                    (dict "question" "How do you handle international partners?" "answer" "International partners receive payments in US dollars via wire transfer. Partners are responsible for any currency conversion or local tax obligations.")
+                    (dict "question" "What happens if a client wants to expand their Blue usage?" "answer" "You continue earning commissions on all expansions and upgrades. Whether it's adding more users, upgrading plans, or implementing additional modules, you maintain your revenue share on the entire customer relationship.")
+                    (dict "question" "How do you handle multi-year contracts and enterprise pricing?" "answer" "We support flexible enterprise pricing models including multi-year contracts, volume discounts, and custom pricing tiers. Our partner team works with you to structure deals that work for both your clients and your business model.")
+                )
+            )
+        )
+    }}
+    {{template "faq-sections" $financialData}}
+
+    <!-- Technical & Implementation Category -->
+    {{$technicalData := dict
+        "categories" (slice
+            (dict
+                "id" "technical"
+                "name" "Technical & Implementation"
+                "questions" (slice
+                    (dict "question" "What's the typical implementation timeline for enterprise clients?" "answer" "Most enterprise implementations take 4-12 weeks depending on complexity, integrations required, and data migration needs. We provide project templates and timelines based on industry and use case.")
+                    (dict "question" "Do you offer sandbox environments for testing and development?" "answer" "Yes, partners receive dedicated sandbox environments for testing, training, and proof-of-concept development. These environments mirror production capabilities with sample data.")
+                    (dict "question" "How do you handle custom development requests from enterprise clients?" "answer" "We maintain a strict one-codebase policy across all customers to ensure platform stability and scalability. When enterprise clients need specific functionality, we develop configurable solutions that can be deployed across our platform, benefiting all users while meeting specific needs.")
+                    (dict "question" "What level of API access do partners get?" "answer" "Partners receive full API access including advanced endpoints, higher rate limits, and early access to new API features. We also provide dedicated API support for complex integrations.")
+                    (dict "question" "What technical support do you provide for implementation projects?" "answer" "We provide dedicated engineering support for all your Blue implementation projects. This includes technical consultation, custom integration assistance, and ongoing support for your clients during and after deployment.")
+                )
+            )
+        )
+    }}
+    {{template "faq-sections" $technicalData}}
+
+    <!-- Support & Resources Category -->
+    {{$supportData := dict
+        "categories" (slice
+            (dict
+                "id" "support"
+                "name" "Support & Resources"
+                "questions" (slice
+                    (dict "question" "What's included in the dedicated engineering support?" "answer" "Engineering support includes architecture reviews, integration assistance, performance optimization, security consultation, and direct access to our engineering team for complex technical issues.")
+                    (dict "question" "Do you provide leads or referrals to partners?" "answer" "Yes, we refer qualified enterprise leads to certified partners based on geography, industry expertise, and capacity.")
+                    (dict "question" "How often do you release product updates, and how are partners notified?" "answer" "We release updates monthly. Partners receive advance notice, release notes, and training materials at least two weeks before public release.")
+                    (dict "question" "What certification and training programs are available?" "answer" "We offer comprehensive Blue certification programs for your technical teams, including implementation training, best practices workshops, and ongoing education on new features and capabilities.")
+                    (dict "question" "How do you handle enterprise sales cycles and procurement processes?" "answer" "We work closely with your sales team to support enterprise deals, including custom proposals, security reviews, and procurement documentation. Our enterprise sales team can assist with complex negotiations and compliance requirements.")
+                    (dict "question" "Do you provide references and case studies for enterprise prospects?" "answer" "Yes, we provide access to customer references, detailed case studies, and success stories that demonstrate Blue's value in enterprise environments. We can also arrange customer testimonials for qualified prospects.")
+                )
+            )
+        )
+    }}
+    {{template "faq-sections" $supportData}}
+
+    <!-- Competition & Market Category -->
+    {{$competitionData := dict
+        "categories" (slice
+            (dict
+                "id" "competition"
+                "name" "Competition & Differentiation"
+                "questions" (slice
+                    (dict "question" "How do you compare to other platforms' partner programs?" "answer" "Our 50%/25% revenue share is industry-leading, and unlike others, we offer true lifetime commissions and customer ownership. Most competitors cap commissions at 10-20% for 1-2 years only.")
+                    (dict "question" "Can we sell Blue alongside competing platforms?" "answer" "Yes, we don't require exclusivity. Many partners offer multiple platforms and position Blue for specific use cases where flexibility and customization are priorities.")
+                    (dict "question" "What if a client wants to migrate from another platform to Blue?" "answer" "We provide migration tools, documentation, and engineering support for migrations from major platforms like Asana, Monday.com, and others. Partners earn full commissions on migrated accounts.")
+                    (dict "question" "Can we white-label Blue for our clients?" "answer" "Yes, we offer white-labeling options for qualified system integrators and consultancies. This includes custom branding, dedicated support channels, and the ability to resell Blue under your own brand.")
+                    (dict "question" "What marketing and sales enablement resources do you provide?" "answer" "Partners receive access to enterprise-focused marketing materials, case studies, ROI calculators, and sales presentations. We also provide co-marketing opportunities and joint go-to-market support for qualified partners.")
+                )
+            )
+        )
+    }}
+    {{template "faq-sections" $competitionData}}
+
+    <!-- CTA Section -->
+    <section class="mt-16">
+        {{$ctaData := dict
+            "Title" "Ready to become a partner?"
+            "Subtitle" "Join our partner program and start earning recurring revenue today."
+            "PrimaryText" "Apply to Partner Program"
+            "PrimaryUrl" "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3BNmJi48WvzJaG8nZkWdSUE4B31koCpXvEHuafbneqoGo43gBd7mkgYxEGpbXEKgSPv0V8caeV"
+            "PrimaryExternal" true
+            "SecondaryText" "View Partner Overview"
+            "SecondaryUrl" "/partners/"
+        }}
+        
+        {{template "dual-button-cta" $ctaData}}
+    </section>
