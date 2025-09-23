@@ -60,6 +60,7 @@
     "/platform/security-scalability": "/platform/security",
     "/platform/project-management-automation": "/platform/features/automations",
     "/platform/kanban-boards": "/platform/features/views/board",
+    "/docs/welcome": "/docs/start-guide/welcome",
     "/docs/dashboards": "/docs/dashboards/introduction",
     "/docs/custom-fields": "/docs/custom-fields/introduction",
     "/docs/automations": "/docs/automations/introduction",
