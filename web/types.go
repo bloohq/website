@@ -45,4 +45,6 @@ type PageData struct {
 	StatusData         *StatusPageData
 	NeedsCodeHighlight bool
 	ForceAuthState     bool
+	RawMarkdown        string
+	ShowCopyButton     bool
 }

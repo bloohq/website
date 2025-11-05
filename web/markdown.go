@@ -56,11 +56,11 @@ func (ms *MarkdownService) Convert(markdownContent []byte) (string, error) {
 }
 
 // ProcessMarkdownFile reads a markdown file, parses frontmatter, and converts to HTML
-func (ms *MarkdownService) ProcessMarkdownFile(filePath string, seoService *SEOService) (string, *Frontmatter, error) {
+func (ms *MarkdownService) ProcessMarkdownFile(filePath string, seoService *SEOService) (string, *Frontmatter, string, error) {
 	// Read file
 	mdBytes, err := os.ReadFile(filePath)
 	if err != nil {
-		return "", nil, err
+		return "", nil, "", err
 	}
 
 	// Parse frontmatter
@@ -71,13 +71,16 @@ func (ms *MarkdownService) ProcessMarkdownFile(filePath string, seoService *SEOS
 		markdownContent = mdBytes
 	}
 
+	// Store raw markdown (without frontmatter)
+	rawMarkdown := string(markdownContent)
+
 	// Convert to HTML
 	html, err := ms.Convert(markdownContent)
 	if err != nil {
-		return "", nil, err
+		return "", nil, "", err
 	}
 
-	return html, frontmatter, nil
+	return html, frontmatter, rawMarkdown, nil
 }
 
 // fileTask represents a file to be processed
@@ -150,7 +153,7 @@ func (ms *MarkdownService) PreRenderAllMarkdown(contentService *ContentService, 
 				urlPath := ms.generateURLPath(task.path)
 
 				// Process the markdown file
-				html, frontmatter, err := ms.ProcessMarkdownFile(task.path, seoService)
+				html, frontmatter, rawMarkdown, err := ms.ProcessMarkdownFile(task.path, seoService)
 				if err != nil {
 					log.Printf("Warning: failed to process %s: %v", task.path, err)
 					continue // Continue processing other files
@@ -166,6 +169,7 @@ func (ms *MarkdownService) PreRenderAllMarkdown(contentService *ContentService, 
 					ModTime:            task.modTime,
 					FilePath:           task.path,
 					NeedsCodeHighlight: needsCodeHighlight,
+					RawMarkdown:        rawMarkdown,
 				}
 
 				// Use language-specific cache key

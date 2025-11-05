@@ -90,7 +90,7 @@ func (r *Router) RenderMarkdown(w http.ResponseWriter, req *http.Request, path, 
 		}
 
 		// Process markdown file on-demand
-		htmlContent, fm, err := r.markdownService.ProcessMarkdownFile(markdownPath, r.seoService)
+		htmlContent, fm, _, err := r.markdownService.ProcessMarkdownFile(markdownPath, r.seoService)
 		if err != nil {
 			http.Error(w, "Error processing markdown file", http.StatusInternalServerError)
 			log.Printf("Markdown processing error: %v", err)

@@ -14,6 +14,7 @@ type CachedContent struct {
 	ModTime            time.Time
 	FilePath           string
 	NeedsCodeHighlight bool
+	RawMarkdown        string
 }
 
 // MarkdownCache provides thread-safe caching for pre-rendered markdown content

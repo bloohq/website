@@ -186,7 +186,18 @@ func (r *Router) preparePageDataWithCache(path string, content template.HTML, is
 	
 	// Check if auth state should be forced for testing
 	forceAuthState := os.Getenv("FORCE_AUTH_STATE") == "true"
-	
+
+	// Determine if copy button should be shown (for docs, api, and legal pages)
+	showCopyButton := isMarkdown && (strings.HasPrefix(path, "/docs") ||
+		strings.HasPrefix(path, "/api") ||
+		strings.HasPrefix(path, "/legal"))
+
+	// Get raw markdown if available
+	rawMarkdown := ""
+	if cachedContent != nil {
+		rawMarkdown = cachedContent.RawMarkdown
+	}
+
 	// Return PageData with all components
 	return PageData{
 		Title:              title,
@@ -210,5 +221,7 @@ func (r *Router) preparePageDataWithCache(path string, content template.HTML, is
 		StatusData:         statusData,
 		NeedsCodeHighlight: needsCodeHighlight,
 		ForceAuthState:     forceAuthState,
+		RawMarkdown:        rawMarkdown,
+		ShowCopyButton:     showCopyButton,
 	}
 }
